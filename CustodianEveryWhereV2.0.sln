@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustodianEveryWhereV2.0", "CustodianEveryWhereV2.0\CustodianEveryWhereV2.0.csproj", "{1BDA8F26-B76C-4EED-BD39-F6CC9D005D6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStore", "DataStore\DataStore.csproj", "{84FC4D85-940B-4A62-BDCE-A9C61C2C463D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSerials", "TestSerials\TestSerials.csproj", "{E0869C50-6977-4EA9-9BA0-1B0912716DF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BDA8F26-B76C-4EED-BD39-F6CC9D005D6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BDA8F26-B76C-4EED-BD39-F6CC9D005D6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BDA8F26-B76C-4EED-BD39-F6CC9D005D6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BDA8F26-B76C-4EED-BD39-F6CC9D005D6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84FC4D85-940B-4A62-BDCE-A9C61C2C463D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84FC4D85-940B-4A62-BDCE-A9C61C2C463D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84FC4D85-940B-4A62-BDCE-A9C61C2C463D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84FC4D85-940B-4A62-BDCE-A9C61C2C463D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0869C50-6977-4EA9-9BA0-1B0912716DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0869C50-6977-4EA9-9BA0-1B0912716DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0869C50-6977-4EA9-9BA0-1B0912716DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0869C50-6977-4EA9-9BA0-1B0912716DF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal
