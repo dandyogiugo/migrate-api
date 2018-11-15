@@ -28,7 +28,6 @@ namespace CustodianEveryWhereV2._0.Controllers
             util = new Utility();
         }
 
-
         [HttpPost]
         public async Task<notification_response> SendEmail(Email email)
         {

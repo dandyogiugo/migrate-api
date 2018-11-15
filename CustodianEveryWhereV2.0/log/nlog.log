@@ -1,0 +1,170 @@
+2018-11-15 12:40:47.3588|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 12:43:21.5934|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 12:59:11.8442|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 13:09:38.0349|ERROR|DataStore.repository.store`1|An error occurred while updating the entries. See the inner exception for details.
+2018-11-15 13:09:38.0449|ERROR|DataStore.repository.store`1|   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at DataStore.repository.store`1.<Save>d__8.MoveNext() in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\repository\store.cs:line 100
+2018-11-15 13:09:38.2448|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 13:09:38.2448|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 13:09:38.2448|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 13:09:38.2727|ERROR|DataStore.Utilities.Utility|Object reference not set to an instance of an object.
+2018-11-15 13:09:38.2747|ERROR|DataStore.Utilities.Utility|   at DataStore.Utilities.Utility.SendMail(ViewModelNonLife mail, Boolean IsCustodian, String template, String imagepath) in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\Utilities\Utility.cs:line 342
+2018-11-15 13:09:38.2747|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 13:09:38.2747|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 13:09:38.2747|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 13:12:37.2284|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 13:13:17.5327|ERROR|DataStore.repository.store`1|An error occurred while updating the entries. See the inner exception for details.
+2018-11-15 13:13:18.2134|ERROR|DataStore.repository.store`1|   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at DataStore.repository.store`1.<Save>d__8.MoveNext() in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\repository\store.cs:line 105
+2018-11-15 13:13:18.9020|ERROR|CustodianEveryWhereV2._0.Controllers.ClaimsController|An error occurred while updating the entries. See the inner exception for details.
+2018-11-15 13:13:18.9020|ERROR|CustodianEveryWhereV2._0.Controllers.ClaimsController|   at DataStore.repository.store`1.<Save>d__8.MoveNext() in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\repository\store.cs:line 112
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at CustodianEveryWhereV2._0.Controllers.ClaimsController.<ProcessNonLifeClaims>d__7.MoveNext() in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\Controllers\ClaimsController.cs:line 302
+2018-11-15 13:13:18.9020|ERROR|CustodianEveryWhereV2._0.Controllers.ClaimsController|System.Data.Entity.Core.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The conversion of a datetime2 data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__180_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Utilities.TaskExtensions.CultureAwaiter`1.GetResult()
+   at System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.<UpdateAsync>d__0.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.<UpdateAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.Objects.ObjectContext.<ExecuteInTransactionAsync>d__3d`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStoreAsync>d__39.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<ExecuteAsyncImplementation>d__9`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesInternalAsync>d__31.MoveNext()
+2018-11-15 13:13:42.2121|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 13:33:00.5639|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 13:40:51.8214|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 13:45:28.7301|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 13:53:51.0757|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 14:09:05.7041|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 14:09:43.3508|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 14:09:43.3528|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 14:09:43.3528|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 14:09:43.3837|ERROR|DataStore.Utilities.Utility|Object reference not set to an instance of an object.
+2018-11-15 14:09:43.4087|ERROR|DataStore.Utilities.Utility|   at DataStore.Utilities.Utility.SendMail(ViewModelNonLife mail, Boolean IsCustodian, String template, String imagepath) in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\Utilities\Utility.cs:line 342
+2018-11-15 14:09:43.4087|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 14:09:43.4087|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 14:09:43.4087|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 14:12:27.4308|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 14:13:08.9467|ERROR|DataStore.repository.store`1|An error occurred while updating the entries. See the inner exception for details.
+2018-11-15 14:13:08.9737|ERROR|DataStore.repository.store`1|   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at DataStore.repository.store`1.<Save>d__8.MoveNext() in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\repository\store.cs:line 105
+2018-11-15 14:13:09.0606|ERROR|CustodianEveryWhereV2._0.Controllers.ClaimsController|An error occurred while updating the entries. See the inner exception for details.
+2018-11-15 14:13:09.0606|ERROR|CustodianEveryWhereV2._0.Controllers.ClaimsController|   at DataStore.repository.store`1.<Save>d__8.MoveNext() in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\repository\store.cs:line 112
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at CustodianEveryWhereV2._0.Controllers.ClaimsController.<ProcessNonLifeClaims>d__7.MoveNext() in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\Controllers\ClaimsController.cs:line 302
+2018-11-15 14:13:09.0726|ERROR|CustodianEveryWhereV2._0.Controllers.ClaimsController|System.Data.Entity.Core.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The conversion of a datetime2 data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__180_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Utilities.TaskExtensions.CultureAwaiter`1.GetResult()
+   at System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.<UpdateAsync>d__0.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.<UpdateAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.Objects.ObjectContext.<ExecuteInTransactionAsync>d__3d`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStoreAsync>d__39.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<ExecuteAsyncImplementation>d__9`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesInternalAsync>d__31.MoveNext()
+2018-11-15 14:13:19.3209|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 14:17:02.6618|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 14:18:33.6770|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 14:18:54.8141|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 14:18:54.8141|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 14:18:54.8251|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 14:18:54.8550|ERROR|DataStore.Utilities.Utility|Object reference not set to an instance of an object.
+2018-11-15 14:18:54.8730|ERROR|DataStore.Utilities.Utility|   at DataStore.Utilities.Utility.SendMail(ViewModelNonLife mail, Boolean IsCustodian, String template, String imagepath) in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\Utilities\Utility.cs:line 342
+2018-11-15 14:18:54.8730|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 14:18:54.8730|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 14:18:54.8880|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 15:07:51.8676|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 15:08:15.0553|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 15:08:15.0603|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 15:08:15.0603|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 15:08:15.1103|ERROR|DataStore.Utilities.Utility|Object reference not set to an instance of an object.
+2018-11-15 15:08:15.1342|ERROR|DataStore.Utilities.Utility|   at DataStore.Utilities.Utility.SendMail(ViewModelNonLife mail, Boolean IsCustodian, String template, String imagepath) in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\Utilities\Utility.cs:line 342
+2018-11-15 15:08:15.1342|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 15:08:15.1342|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 15:08:15.1342|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 15:15:54.8890|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 15:19:53.4536|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 15:22:03.9274|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 15:22:03.9274|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 15:22:03.9404|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 15:22:03.9864|ERROR|DataStore.Utilities.Utility|Object reference not set to an instance of an object.
+2018-11-15 15:22:04.0124|ERROR|DataStore.Utilities.Utility|   at DataStore.Utilities.Utility.SendMail(ViewModelNonLife mail, Boolean IsCustodian, String template, String imagepath) in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\Utilities\Utility.cs:line 342
+2018-11-15 15:22:04.0124|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 15:22:04.0124|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 15:22:04.0124|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 15:22:27.5860|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 15:23:24.8680|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 15:25:00.7189|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 15:25:00.7189|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 15:25:00.7299|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 15:25:00.8928|ERROR|DataStore.Utilities.Utility|Object reference not set to an instance of an object.
+2018-11-15 15:25:00.8928|ERROR|DataStore.Utilities.Utility|   at DataStore.Utilities.Utility.SendMail(ViewModelNonLife mail, Boolean IsCustodian, String template, String imagepath) in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\Utilities\Utility.cs:line 342
+2018-11-15 15:25:00.8928|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 15:25:00.8928|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 15:25:00.8928|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 15:27:04.7590|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-15 15:27:11.0778|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 15:27:11.0778|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 15:27:11.0928|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 15:27:11.3176|ERROR|DataStore.Utilities.Utility|Object reference not set to an instance of an object.
+2018-11-15 15:27:11.3176|ERROR|DataStore.Utilities.Utility|   at DataStore.Utilities.Utility.SendMail(ViewModelNonLife mail, Boolean IsCustodian, String template, String imagepath) in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\Utilities\Utility.cs:line 342
+2018-11-15 15:27:11.3176|INFO|DataStore.Utilities.Utility|About to send email to okjool2012@gmail.com
+2018-11-15 15:27:11.3226|INFO|DataStore.Utilities.Utility|About to send temp to here
+2018-11-15 15:27:11.3226|INFO|DataStore.Utilities.Utility|About to send param to all
+2018-11-15 15:29:42.6514|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
