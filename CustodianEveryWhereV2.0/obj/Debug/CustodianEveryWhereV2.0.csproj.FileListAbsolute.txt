@@ -118,3 +118,4 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Cu
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\Spire.Doc.xml
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\Spire.License.xml
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\CustodianEmailSMSGateway.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\SendGrid.dll

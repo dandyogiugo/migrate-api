@@ -131,6 +131,62 @@ namespace DataStore.Utilities
 
             return response;
         }
+
+        public async Task<response> GenerateCertificateOneOff(GenerateCert cert)
+        {
+            response response = new response();
+            try
+            {
+
+                Document doc = new Document();
+                string newrtfPath = HttpContext.Current.Server.MapPath("~/Cert/templateOneoff.rtf");
+                doc.LoadFromFile(newrtfPath, FileFormat.Rtf);
+                doc.Replace("#POLICY_NO#", cert.policy_no, false, true);
+                doc.Replace("#NAME#", cert.name, false, true);
+                doc.Replace("#ADDRESS#", cert.address, false, true);
+                doc.Replace("#FROM_DATE#", cert.from_date, false, true);
+                doc.Replace("#TO_DATE#", cert.to_date, false, true);
+                doc.Replace("#VREG_NO#", cert.vehicle_reg_no, false, true);
+                doc.Replace("#SERIAL_NUMBER#", cert.serial_number, false, true);
+                string pdfPath = HttpContext.Current.Server.MapPath($"~/Cert/GeneratedCert/{cert.serial_number}_NB.pdf");
+                if (System.IO.File.Exists(pdfPath))
+                {
+                    System.IO.File.Delete(pdfPath);
+                    doc.SaveToFile(pdfPath, FileFormat.PDF);
+                }
+                else
+                {
+                    doc.SaveToFile(pdfPath, FileFormat.PDF);
+                }
+
+                cert.cert_path = pdfPath;
+                //dont wait for certificate to send continue process and let ths OS thread do the sending without slowing down the application
+                var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
+                string imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
+                Task.Factory.StartNew(() =>
+                {
+                    this.SendEmail(cert, template, imagepath);
+                });
+
+                response.status = 200;
+                response.message = $"Insurance purchase was successful, a copy of your insurance document has been sent to this ({cert.email_address}) email";
+                response.policy_details = new policy_details
+                {
+                    certificate_no = cert.serial_number,
+                    policy_number = cert.policy_no,
+                };
+
+            }
+            catch (Exception ex)
+            {
+                response.status = 401;
+                response.message = $"System malfunction";
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+            }
+
+            return response;
+        }
         public async Task<string> GetSerialNumber()
         {
             Guid serialGuid = Guid.NewGuid();
@@ -158,7 +214,7 @@ namespace DataStore.Utilities
 
             return finalSerialNumber;
         }
-        public void SendEmail(GenerateCert sendmail, string temp, string Imagepath)
+        public void SendEmail(GenerateCert sendmail, string temp, string Imagepath, string new_biz = "")
         {
             try
             {
@@ -169,7 +225,7 @@ namespace DataStore.Utilities
                 List<string> attach = new List<string>();
                 attach.Add(sendmail.cert_path);
 
-                var send = new SendEmail().Send_Email(sendmail.email_address, "GIT Insurance Document", template.ToString(), "GIT Insurance Document", true, Imagepath, null, null, attach);
+                var send = new SendEmail().Send_Email(sendmail.email_address, $"{new_biz} GIT Insurance Document", template.ToString(), $"{new_biz}  GIT Insurance Document", true, Imagepath, null, null, attach);
             }
             catch (Exception ex)
             {
@@ -316,7 +372,72 @@ namespace DataStore.Utilities
                 log.Error(ex.StackTrace);
             }
         }
+        public void SendMail(ViewModelNonLife mail, bool IsCustodian, string template, string imagepath)
+        {
+            try
+            {
+                log.Info($"About to send email to {mail.email_address}");
+                StringBuilder sb = new StringBuilder(template);
+                log.Info($"About to send temp to here");
+                sb.Replace("#NAME#", mail.policy_holder_name);
+                sb.Replace("#POLICYNUMBER#", mail.policy_number);
+                sb.Replace("#POLICYTYPE#", mail.policy_type);
+                sb.Replace("#CLAIMSTYPE#", mail.claim_request_type);
+                sb.Replace("#EMAILADDRESS#", mail.email_address);
+                sb.Replace("#PHONENUMBER#", mail.phone_number);
+                sb.Replace("#CLAIMNUMBER#", "Not Avaliable Yet");
+                sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
+                log.Info($"About to send param to all");
+                var image_path = imagepath;
+                if (IsCustodian)
+                {
+                    string msg_1 = @"Dear Team,<br/><br/> A claim has been logged succesfully and require your attention for further processing";
+                    sb.Replace("#CONTENT#", msg_1);
+                    var email = ConfigurationManager.AppSettings["Notification"];
+                    var list = email.Split('|');
+                    string emailaddress = "";
+                    List<string> cc = new List<string>();
+                    if (list.Count() > 1)
+                    {
+                        int i = 0;
+                        emailaddress = list[0];
+                        foreach (var item in list)
+                        {
+                            if (i == 0)
+                            {
+                                ++i;
+                                continue;
+                            }
+                            else
+                            {
+                                cc.Add(item);
+                                ++i;
+                            }
 
+
+                        }
+                    }
+                    else
+                    {
+                        emailaddress = list[0];
+                    }
+                    var send = new SendEmail().Send_Email(emailaddress, "Claim Request", sb.ToString(), "Claims Request", true, image_path, cc, null, null);
+                }
+                else
+                {
+
+                    string msg_1 = $@"Your claim has been submitted successfully. Your claim number is <strong>Not Avaliable Yet</strong>. 
+                                You can check your claim status on our website or call(+234)12774000 - 9";
+                    sb.Replace("#CONTENT#", msg_1);
+                    var send = new SendEmail().Send_Email(mail.email_address, "Claim Request", sb.ToString(), "Claims Request", true, image_path, null, null, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+            }
+        }
         public async Task<string> SendGITMail(GITInsurance git, string status, string merchant_id)
         {
             try
@@ -380,6 +501,70 @@ namespace DataStore.Utilities
                     sb.Replace("#END#", git.to_date.Value.ToShortDateString());
                 }
 
+                Task.Factory.StartNew(() =>
+                {
+                    var send = new SendEmail().Send_Email(emailaddress, title, sb.ToString(), title, true, imagepath, cc, null, null);
+                });
+                return "True";
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                return null;
+            }
+        }
+        public async Task<string> SendGITMail(GITInsurance git, string merchant_id)
+        {
+            try
+            {
+                var path = HttpContext.Current.Server.MapPath("~/Cert/Gitnotification.html");
+                var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
+                var template = System.IO.File.ReadAllText(path);
+                StringBuilder sb = new StringBuilder(template);
+                sb.Replace("#NAME#", git.insured_name);
+                sb.Replace("#POLICYNUMBER#", git.policy_no);
+                sb.Replace("#VALUE_OF_GOODS#", "---");
+                sb.Replace("#DESCRIPTION#", git.category);
+                sb.Replace("#EMAILADDRESS#", git.email_address);
+                sb.Replace("#PHONENUMBER#", git.phone_number);
+                sb.Replace("#PREMIUM#", string.Format("N {0:N}", git.premium));
+                sb.Replace("#STATUS#", "---");
+                sb.Replace("#START#", git.from_date.ToShortDateString());
+                sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
+                sb.Replace("#END#", git.to_date.Value.ToShortDateString());
+                var email = ConfigurationManager.AppSettings["Notification"];
+                var list = email.Split('|');
+                string emailaddress = "";
+                List<string> cc = new List<string>();
+                if (list.Count() > 1)
+                {
+                    int i = 0;
+                    emailaddress = list[0];
+                    foreach (var item in list)
+                    {
+                        if (i == 0)
+                        {
+                            ++i;
+                            continue;
+                        }
+                        else
+                        {
+                            cc.Add(item);
+                            ++i;
+                        }
+
+                    }
+                }
+                else
+                {
+                    emailaddress = list[0];
+                }
+                string title = "New Business Custodian GIT Insurance";
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+              
+                sb.Replace("#HEADER#", " ");
+                sb.Replace("#CONTENT#", $"Dear Team,<br/><br/>A customer just bought GIT Insurance from {config.merchant_name}");
                 Task.Factory.StartNew(() =>
                 {
                     var send = new SendEmail().Send_Email(emailaddress, title, sb.ToString(), title, true, imagepath, cc, null, null);

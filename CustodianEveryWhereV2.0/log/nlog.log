@@ -168,3 +168,7 @@ The statement has been terminated.
 2018-11-15 15:27:11.3226|INFO|DataStore.Utilities.Utility|About to send temp to here
 2018-11-15 15:27:11.3226|INFO|DataStore.Utilities.Utility|About to send param to all
 2018-11-15 15:29:42.6514|INFO|CustodianEveryWhereV2._0.Controllers.ClaimsController|about to validate request params for ProcessNonLifeClaims()
+2018-11-19 13:36:01.9077|INFO|CustodianEveryWhereV2._0.Controllers.GITController|new request {"vehicle_registration_no":"545SDSF","insured_name":"Itaba Oscar","sum_insured":5000.0,"address":"17 new balogun street fadeyi ","email_address":"oscardybabaphd@gmail.com","phone_number":"08069314541","merchant_id":"CUST_00001","hash":"B07FD8F45661DC4BDC5E9869B7D6571D4C69418B04586608DE1827D73305CE30"}
+2018-11-19 13:38:53.1876|INFO|CustodianEveryWhereV2._0.Controllers.GITController|new request {"vehicle_registration_no":"545SDSF","insured_name":"Itaba Oscar","sum_insured":5000.0,"address":"17 new balogun street fadeyi ","email_address":"oscardybabaphd@gmail.com","phone_number":"08069314541","merchant_id":"CUST_00001","hash":"B07FD8F45661DC4BDC5E9869B7D6571D4C69418B04586608DE1827D73305CE30"}
+2018-11-19 13:40:52.2076|ERROR|DataStore.Utilities.Utility|Object reference not set to an instance of an object.
+2018-11-19 13:40:52.2076|ERROR|DataStore.Utilities.Utility|   at DataStore.Utilities.Utility.<SendGITMail>d__15.MoveNext() in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\Utilities\Utility.cs:line 537

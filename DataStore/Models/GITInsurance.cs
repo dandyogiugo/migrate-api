@@ -47,6 +47,8 @@ namespace DataStore.Models
         public DateTime date_created { get; set; }
         [MaxLength(20)]
         public string trip_completed { get; set; }
+        [MaxLength(20)]
+        public string Type { get; set; }
 
     }
 }

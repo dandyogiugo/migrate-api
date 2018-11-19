@@ -18,4 +18,10 @@ namespace DataStore.ViewModels
         EMAIL,
         SMS
     }
+
+    public enum Types
+    {
+        OneOff,
+        Continuous
+    }
 }

@@ -103,7 +103,7 @@ namespace DataStore.ViewModels
         public string name { get; set; }
         public string address { get; set; }
         public string from_date { get; set; }
-        //public string to_date { get; set; }
+        public string to_date { get; set; }
         public string vehicle_reg_no { get; set; }
         public string interest { get; set; }
         public string value_of_goods { get; set; }
@@ -208,6 +208,32 @@ namespace DataStore.ViewModels
         public string Message { get; set; }
         public string Merchant_Id { get; set; }
     }
+
+
+    public class BuyOneOffGITInsurance
+    {
+        public BuyOneOffGITInsurance()
+        {
+
+        }
+        [Required]
+        public string vehicle_registration_no { get; set; }
+        [Required]
+        public string insured_name { get; set; }
+        [Required]
+        public decimal sum_insured { get; set; }
+        [Required]
+        public string address { get; set; }
+        [Required]
+        public string email_address { get; set; }
+        [Required]
+        public string phone_number { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public string hash { get; set; }
+    }
+
 }
 
 

@@ -144,7 +144,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     to_location = BuyGIT.movement.to,
                     certificate_serial = await util.GetSerialNumber(),
                     date_created = DateTime.Now,
-                    trip_completed = "NO"
+                    trip_completed = "NO",
+                    Type = Types.Continuous.ToString()
                 };
                 await _git.Save(save_git_insurance);
                 string generate_policy_no = await util.GeneratePolicyNO(save_git_insurance.Id);
@@ -237,6 +238,80 @@ namespace CustodianEveryWhereV2._0.Controllers
                     premium = get_tranx.premium.ToString(),
                     value_of_goods = get_tranx.value_of_goods
                 };
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                return new response
+                {
+                    status = 404,
+                    message = "system malfunction"
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<response> BuyGITOneOffInsurance(BuyOneOffGITInsurance OneOffGit)
+        {
+            try
+            {
+                log.Info($"new request {Newtonsoft.Json.JsonConvert.SerializeObject(OneOffGit)}");
+                if (!ModelState.IsValid)
+                {
+                    return new response
+                    {
+                        status = 404,
+                        message = "Some required parameters missing from request"
+                    };
+                }
+                //check user access and hash and other validations
+                var response = await util.Validator("BuyGITOneOffInsurance", OneOffGit.merchant_id, Category.BREAKABLES.ToString(), OneOffGit.sum_insured, OneOffGit.hash);
+                if (response != null)
+                {
+                    return response;
+                }
+
+                var save_git_insurance = new GITInsurance
+                {
+                    address = OneOffGit.address,
+                    category = Category.GENERAL_GOODS.ToString(),
+                    email_address = OneOffGit.email_address,
+                    insured_name = OneOffGit.insured_name,
+                    phone_number = OneOffGit.phone_number,
+                    vehicle_registration_no = OneOffGit.vehicle_registration_no,
+                    premium = OneOffGit.sum_insured,
+                    from_date = DateTime.Now,
+                    to_date = DateTime.Now.AddMonths(12),
+                    certificate_serial = await util.GetSerialNumber(),
+                    date_created = DateTime.Now,
+                    trip_completed = "NO",
+                    Type = Types.OneOff.ToString()
+                };
+
+                await _git.Save(save_git_insurance);
+                string generate_policy_no = await util.GeneratePolicyNO(save_git_insurance.Id);
+                save_git_insurance.policy_no = generate_policy_no;
+                var getobject = await _git.FindOneByCriteria(x => x.Id == save_git_insurance.Id);
+                getobject.policy_no = generate_policy_no;
+                await _git.Update(getobject);
+
+
+                var SendAndSaveCert = await util.GenerateCertificateOneOff(new GenerateCert
+                {
+                    address = save_git_insurance.address,
+                    from_date = save_git_insurance.from_date.ToShortDateString(),
+                    name = save_git_insurance.insured_name,
+                    policy_no = save_git_insurance.policy_no,
+                    to_date = save_git_insurance.to_date.Value.ToShortDateString(),
+                    vehicle_reg_no = save_git_insurance.vehicle_registration_no,
+                    serial_number = save_git_insurance.certificate_serial,
+                    email_address = save_git_insurance.email_address
+                });
+
+                var resp = await util.SendGITMail(getobject,  OneOffGit.merchant_id.Trim());
+                return SendAndSaveCert;
 
             }
             catch (Exception ex)

@@ -19,6 +19,7 @@ namespace DataStore.repository
         {
             session = new dbcontext();
             _db = session.Set<T>();
+            
         }
 
         public async Task<T> GetOne(int id)
@@ -32,6 +33,7 @@ namespace DataStore.repository
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                throw ex;
             }
             return result;
         }
@@ -46,6 +48,7 @@ namespace DataStore.repository
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                throw ex;
             }
 
             return result;
@@ -66,6 +69,7 @@ namespace DataStore.repository
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                throw ex;
             }
 
             return result;
@@ -86,6 +90,7 @@ namespace DataStore.repository
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                throw ex;
             }
 
             return result;
@@ -104,6 +109,7 @@ namespace DataStore.repository
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                throw ex;
             }
             return result;
         }
@@ -121,6 +127,7 @@ namespace DataStore.repository
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                throw ex;
             }
             return result;
         }
@@ -137,6 +144,7 @@ namespace DataStore.repository
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                throw ex;
             }
             return result;
         }
