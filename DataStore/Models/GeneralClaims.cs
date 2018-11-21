@@ -55,7 +55,7 @@ namespace DataStore.Models
         public DateTime? police_report_date_time { get; set; }
         [MaxLength(190)]
         public string police_station_address { get; set; }
-        [MaxLength(5)]
+        [MaxLength(30)]
         public string thirdparty_involved { get; set; }
         [MaxLength(160)]
         public string third_party_info { get; set; }
