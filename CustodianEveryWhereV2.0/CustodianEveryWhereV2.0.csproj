@@ -311,6 +311,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Service References\CustodianAPI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -351,6 +356,7 @@
     </Content>
     <Content Include="Cert\template.rtf" />
     <Content Include="Cert\templateOneoff.rtf" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\PublishProfiles\Api.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -363,6 +369,91 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.certificate_out.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Claimfl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.ClientData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.NotificationsDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.PolBalances.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.PolExpDate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.PolicyDet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.PolValidation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\CustodianAPI\Policyservices.disco" />
+    <None Include="Service References\CustodianAPI\configuration91.svcinfo" />
+    <None Include="Service References\CustodianAPI\configuration.svcinfo" />
+    <None Include="Service References\CustodianAPI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -378,6 +469,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Service References\CustodianAPI\Policyservices.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -396,6 +488,12 @@
       <Project>{84fc4d85-940b-4a62-bdce-a9c61c2c463d}</Project>
       <Name>DataStore</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CustodianAPI\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

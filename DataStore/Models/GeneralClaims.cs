@@ -13,7 +13,7 @@ namespace DataStore.Models
     {
         public GeneralClaims()
         {
-           
+
         }
 
         [Key]
@@ -100,5 +100,7 @@ namespace DataStore.Models
         [MaxLength(50)]
         public string vehicle_details { get; set; }
         public virtual IList<NonLifeClaimsDocument> NonLifeDocument { get; set; }
+        [MaxLength(30)]
+        public string claims_number { get; set; }
     }
 }

@@ -6,6 +6,9 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Configuration;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -72,24 +75,26 @@ namespace CustodianEveryWhereV2._0.Controllers
                     policy_type = claims.policy_type,
                     status = true
                 };
+
                 if (claims.documents != null && claims.documents.Count() > 0)
                 {
                     List<LifeDocument> docs = new List<LifeDocument>();
                     foreach (var item in claims.documents)
                     {
+                        var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{save_claims.policy_number.Replace('/', '-')}_{item.name}.{item.extension}";
+                        var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Life/{nameurl}";
                         var newdocs = new LifeDocument
                         {
-                            data = Convert.FromBase64String(item.data),
+                            path = nameurl,
                             extension = item.extension,
                             name = item.name
                         };
-
                         docs.Add(newdocs);
+                        byte[] content = Convert.FromBase64String(item.data);
+                        File.WriteAllBytes(filepath, content);
                     }
-
                     save_claims.LifeDocument = docs;
                 }
-
                 await _claims.Save(save_claims);
                 var path = HttpContext.Current.Server.MapPath("~/Cert/claims.html");
                 var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
@@ -188,25 +193,52 @@ namespace CustodianEveryWhereV2._0.Controllers
                     witness_name = claims.witness_name,
 
                 };
+                var merchant_id = ConfigurationManager.AppSettings["Merchant_ID"];
+                var password = ConfigurationManager.AppSettings["Password"];
+                string claim_number = "";
+                using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                {
+                    var submite_claim = await api.SubmitClaimRegisterAsync(merchant_id, password, newClaims.policy_holder_name, "", newClaims.email_address,
+                        newClaims.phone_number, newClaims.policy_number, newClaims.incident_description,
+                        newClaims.incident_date_time.Value, newClaims.vehicle_reg_number, newClaims.claim_amount.ToString());
+                    log.Info($"Response from Claims api {submite_claim.Generating_Claims_NumberResult.RegStatusCode}");
+                    if (submite_claim.Generating_Claims_NumberResult.RegStatusCode != "200")
+                    {
+
+                        return new claims_response
+                        {
+                            status = 404,
+                            message = "Operation failed. No response from Claims system"
+                        };
+                    }
+                    claim_number = submite_claim.Generating_Claims_NumberResult.RegStatus;
+                }
+
 
                 if (claims.documents != null && claims.documents.Count() > 0)
                 {
+
                     List<NonLifeClaimsDocument> docs = new List<NonLifeClaimsDocument>();
                     foreach (var item in claims.documents)
                     {
+                        var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{newClaims.policy_number.Replace('/', '-')}_{item.name}.{item.extension}";
+                        var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/General/{nameurl}";
                         var newdocs = new NonLifeClaimsDocument
                         {
-                            data = Convert.FromBase64String(item.data),
+                            path = nameurl,
                             extension = item.extension,
                             name = item.name
                         };
 
                         docs.Add(newdocs);
+                        byte[] content = Convert.FromBase64String(item.data);
+                        File.WriteAllBytes(filepath, content);
                     }
 
                     newClaims.NonLifeDocument = docs;
                 }
-
+                claims.claims_number = claim_number;
+                newClaims.claims_number = claim_number;
                 await __nonlifeclaim.Save(newClaims);
                 var path = HttpContext.Current.Server.MapPath("~/Cert/claims.html");
                 var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
@@ -221,7 +253,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 return new claims_response
                 {
                     status = 200,
-                    cliams_number = "Not Yet Availabe",
+                    cliams_number = claim_number,
                     message = "Claims was submitted successfully. Thank you"
                 };
             }

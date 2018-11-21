@@ -95,6 +95,7 @@ namespace DataStore.ViewModels
         public string vehicle_details { get; set; }
         public List<document> documents { get; set; }
         public string merchant_id { get; set; }
+        public string claims_number { get; set; }
     }
 
 

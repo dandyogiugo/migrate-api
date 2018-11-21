@@ -22,6 +22,7 @@ namespace DataStore.Models
         public string extension { get; set; }
         [MaxLength(40)]
         public string name { get; set; }
-        public byte[] data { get; set; }
+        [MaxLength(300)]
+        public string path { get; set; }
     }
 }

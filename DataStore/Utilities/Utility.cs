@@ -385,7 +385,7 @@ namespace DataStore.Utilities
                 sb.Replace("#CLAIMSTYPE#", mail.claim_request_type);
                 sb.Replace("#EMAILADDRESS#", mail.email_address);
                 sb.Replace("#PHONENUMBER#", mail.phone_number);
-                sb.Replace("#CLAIMNUMBER#", "Not Avaliable Yet");
+                sb.Replace("#CLAIMNUMBER#", mail.claims_number);
                 sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
                 log.Info($"About to send param to all");
                 var image_path = imagepath;
