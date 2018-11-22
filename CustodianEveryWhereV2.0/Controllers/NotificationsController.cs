@@ -59,10 +59,39 @@ namespace CustodianEveryWhereV2._0.Controllers
                 sb.Replace("#CONTENT#", email.htmlBody);
                 sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
                 var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
-                await Task.Factory.StartNew(() =>
+                Task.Factory.StartNew(() =>
                 {
                     new SendEmail().Send_Email(email.ToAddress, email.Subject, sb.ToString(), email.Title, true, imagepath, email.CC, email.Bcc, null);
                 });
+
+                if (!string.IsNullOrEmpty(email.ExtraHtmlBody) && email.CCUnit != null && email.CCUnit.Count() > 0)
+                {
+                    var template2 = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
+                    StringBuilder sb2 = new StringBuilder(template);
+                    sb2.Replace("#CONTENT#", email.ExtraHtmlBody);
+                    sb2.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
+                    int i = 0;
+                    List<string> newCC = new List<string>();
+                    foreach (var item in email.CCUnit)
+                    {
+                        if (i == 0)
+                        {
+                            ++i;
+                            continue;
+
+                        }
+                        else
+                        {
+                            newCC.Add(item);
+                        }
+                        ++i;
+                    }
+
+                    Task.Factory.StartNew(() =>
+                    {
+                        new SendEmail().Send_Email(email.CCUnit[0], email.Subject, sb2.ToString(), email.Title, true, imagepath, newCC, null, null);
+                    });
+                }
 
                 return new notification_response
                 {
@@ -76,6 +105,7 @@ namespace CustodianEveryWhereV2._0.Controllers
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
                 return new notification_response
                 {
                     message = "Error occured while sending email",

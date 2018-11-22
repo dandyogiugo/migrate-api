@@ -57,6 +57,36 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Permission denied from accessing this feature"
                     };
                 }
+
+                //  if (claims.claim_request_type =)
+                var claim_code = await util.ClaimCode(claims.claim_request_type);
+                string claim_no = string.Empty;
+                if (claim_code != "PROCEED")
+                {
+                    var submit_claim_to_turnquest = await util.SubmitLifeClaims(claims.policy_number.Trim(), claim_code);
+                    if (submit_claim_to_turnquest == null)
+                    {
+                        return new claims_response
+                        {
+                            status = 204,
+                            message = "Claim request could not be submitted"
+                        };
+                    }
+                    else if (submit_claim_to_turnquest.code != 200)
+                    {
+                        return new claims_response
+                        {
+                            status = 204,
+                            message = submit_claim_to_turnquest.message
+                        };
+
+                    }
+                    else
+                    {
+                        claim_no = submit_claim_to_turnquest.claim_no;
+                    }
+                }
+
                 var save_claims = new LifeClaims
                 {
                     updated_at = DateTime.Now,
@@ -73,7 +103,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     policy_holder_name = claims.policy_holder_name,
                     policy_number = claims.policy_number,
                     policy_type = claims.policy_type,
-                    status = true
+                    status = true,
+                    Claim_No = claim_no
                 };
 
                 if (claims.documents != null && claims.documents.Count() > 0)
@@ -99,7 +130,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                 var path = HttpContext.Current.Server.MapPath("~/Cert/claims.html");
                 var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
                 var template = System.IO.File.ReadAllText(path);
-
+                // claims
+                claims.claim_number = claim_no;
                 Task.Factory.StartNew(() =>
                 {
                     util.SendMail(claims, true, template, imagepath);
@@ -109,7 +141,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 return new claims_response
                 {
                     status = 200,
-                    cliams_number = "Not Yet Availabe",
+                    cliams_number = claim_no,
                     message = "Claims was submitted successfully. Thank you"
                 };
             }
@@ -125,6 +157,7 @@ namespace CustodianEveryWhereV2._0.Controllers
             }
         }
 
+        [HttpPost]
         public async Task<claims_response> ProcessNonLifeClaims(ViewModelNonLife claims)
         {
             try
@@ -201,14 +234,13 @@ namespace CustodianEveryWhereV2._0.Controllers
                     var submite_claim = await api.SubmitClaimRegisterAsync(merchant_id, password, newClaims.policy_holder_name, "", newClaims.email_address,
                         newClaims.phone_number, newClaims.policy_number, newClaims.incident_description,
                         newClaims.incident_date_time.Value, newClaims.vehicle_reg_number, newClaims.claim_amount.ToString());
-                    log.Info($"Response from Claims api {submite_claim.Generating_Claims_NumberResult.RegStatusCode}");
+                    log.Info($"Response from Claims api {Newtonsoft.Json.JsonConvert.SerializeObject(submite_claim.Generating_Claims_NumberResult)}");
                     if (submite_claim.Generating_Claims_NumberResult.RegStatusCode != "200")
                     {
-
                         return new claims_response
                         {
                             status = 404,
-                            message = "Operation failed. No response from Claims system"
+                            message = submite_claim.Generating_Claims_NumberResult.RegStatus
                         };
                     }
                     claim_number = submite_claim.Generating_Claims_NumberResult.RegStatus;
@@ -263,6 +295,103 @@ namespace CustodianEveryWhereV2._0.Controllers
                 log.Error(ex.StackTrace);
                 log.Error(ex.InnerException);
                 return new claims_response
+                {
+                    status = 404,
+                    message = "system malfunction"
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<ClaimsStatus> ClaimsStatus(ClaimsRequest claims)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return new ClaimsStatus
+                    {
+                        status = 204,
+                        message = "Some parameters missing from request"
+                    };
+                }
+                //check permision
+                var check_user_function = await util.CheckForAssignedFunction("ClaimsStatus", claims.merchant_id);
+                if (!check_user_function)
+                {
+                    return new ClaimsStatus
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+
+                if (claims.subsidiary.ToLower().Trim() != "general")
+                {
+                    var get_status_turnquest = await util.CheckClaimStatus(claims.claims_number);
+                    if (get_status_turnquest == null)
+                    {
+                        log.Info($"Could not retrieve claim status {claims.claims_number}");
+                        return new ClaimsStatus
+                        {
+                            status = 206,
+                            message = "Claim number is not valid"
+                        };
+                    }
+                    else if (get_status_turnquest.code != 200)
+                    {
+                        log.Info($"Could not retrieve claim status {claims.claims_number}");
+                        return new ClaimsStatus
+                        {
+                            status = 206,
+                            message = "Claim number is not valid"
+                        };
+                    }
+                    else
+                    {
+                        return new ClaimsStatus
+                        {
+                            status = 200,
+                            message = "Claim status is avaliable",
+                            claim_status = get_status_turnquest.claim_status,
+                            policy_number = get_status_turnquest.policy_no
+                        };
+                    }
+                }
+                else
+                {
+                    using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                    {
+                        var response = await api.GetClaimStatusAsync(claims.claims_number);
+                        log.Info($"response from ABS {Newtonsoft.Json.JsonConvert.SerializeObject(response)}");
+                        if (response.ClPolicyNo == "NULL")
+                        {
+                            log.Info($"Claim number is not valid {claims.claims_number}");
+                            return new ClaimsStatus
+                            {
+                                status = 206,
+                                message = "Claim number is not valid"
+                            };
+                        }
+                        else
+                        {
+                            return new ClaimsStatus
+                            {
+                                status = 200,
+                                message = "Claim status is avaliable",
+                                claim_status = response.ClaimStatus,
+                                policy_number = response.ClPolicyNo
+                            };
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new ClaimsStatus
                 {
                     status = 404,
                     message = "system malfunction"

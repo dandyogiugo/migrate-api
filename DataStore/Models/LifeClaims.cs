@@ -46,5 +46,7 @@ namespace DataStore.Models
         public DateTime created_at { get; set; }
         public DateTime updated_at { get; set; }
         public virtual IList<LifeDocument> LifeDocument { get; set; }
+        [MaxLength(30)]
+        public string Claim_No { get; set; }
     }
 }

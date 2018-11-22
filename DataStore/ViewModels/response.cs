@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,5 +53,44 @@ namespace DataStore.ViewModels
         public int status { get; set; }
         public string message { get; set; }
         public string type { get; set; }
+    }
+
+    public class LifeClaimStatus
+    {
+        public LifeClaimStatus()
+        {
+
+        }
+        public string claim_no { get; set; }
+        public int code { get; set; }
+        public string message { get; set; }
+        public string policy_no { get; set; }
+        public string claim_status { get; set; }
+    }
+
+    public class ClaimsStatus
+    {
+        public ClaimsStatus()
+        {
+
+        }
+        public int status { get; set; }
+        public string claim_status { get; set; }
+        public string message { get; set; }
+        public string policy_number { get; set; }
+    }
+
+    public class ClaimsRequest
+    {
+        public ClaimsRequest()
+        {
+
+        }
+        [Required]
+        public string claims_number { get; set; }
+        [Required]
+        public string subsidiary { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
     }
 }

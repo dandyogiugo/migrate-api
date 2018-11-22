@@ -14,6 +14,8 @@ using NLog;
 using Spire.Doc;
 using CustodianEmailSMSGateway.Email;
 using System.Configuration;
+using Oracle.DataAccess.Client;
+using System.Data;
 
 namespace DataStore.Utilities
 {
@@ -127,11 +129,11 @@ namespace DataStore.Utilities
                 response.message = $"System malfunction";
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
             }
 
             return response;
         }
-
         public async Task<response> GenerateCertificateOneOff(GenerateCert cert)
         {
             response response = new response();
@@ -183,6 +185,7 @@ namespace DataStore.Utilities
                 response.message = $"System malfunction";
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
             }
 
             return response;
@@ -231,6 +234,7 @@ namespace DataStore.Utilities
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
             }
         }
         public async Task<string> GeneratePolicyNO(int val)
@@ -303,6 +307,7 @@ namespace DataStore.Utilities
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
             }
             return null;
         }
@@ -319,7 +324,7 @@ namespace DataStore.Utilities
                 sb.Replace("#CLAIMSTYPE#", mail.claim_request_type);
                 sb.Replace("#EMAILADDRESS#", mail.email_address);
                 sb.Replace("#PHONENUMBER#", mail.phone_number);
-                sb.Replace("#CLAIMNUMBER#", "Not Avaliable Yet");
+                sb.Replace("#CLAIMNUMBER#", mail.claim_number);
                 sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
                 log.Info($"About to send param to all");
                 var image_path = imagepath;
@@ -370,6 +375,7 @@ namespace DataStore.Utilities
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
             }
         }
         public void SendMail(ViewModelNonLife mail, bool IsCustodian, string template, string imagepath)
@@ -436,6 +442,7 @@ namespace DataStore.Utilities
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
             }
         }
         public async Task<string> SendGITMail(GITInsurance git, string status, string merchant_id)
@@ -511,6 +518,7 @@ namespace DataStore.Utilities
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
                 return null;
             }
         }
@@ -562,7 +570,7 @@ namespace DataStore.Utilities
                 }
                 string title = "New Business Custodian GIT Insurance";
                 var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
-              
+
                 sb.Replace("#HEADER#", " ");
                 sb.Replace("#CONTENT#", $"Dear Team,<br/><br/>A customer just bought GIT Insurance from {config.merchant_name}");
                 Task.Factory.StartNew(() =>
@@ -575,6 +583,98 @@ namespace DataStore.Utilities
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return null;
+            }
+        }
+        public async Task<LifeClaimStatus> SubmitLifeClaims(string policy_no, string claim_type)
+        {
+            try
+            {
+                string ConnectionString = ConfigurationManager.ConnectionStrings["OracleConnectionString"].ConnectionString;
+                using (OracleConnection cn = new OracleConnection(ConnectionString))
+                {
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.Connection = cn;
+                    cn.Open();
+                    cmd.CommandText = "cust_max_mgt.create_claim";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("p_policy_no", OracleDbType.Varchar2).Value = policy_no;
+                    cmd.Parameters.Add("p_type_code", OracleDbType.Varchar2).Value = claim_type;
+                    cmd.Parameters.Add("v_data", OracleDbType.Varchar2, 300).Direction = ParameterDirection.Output;
+                    cmd.ExecuteNonQuery();
+                    string response = cmd.Parameters["v_data"].Value.ToString();
+                    log.Info($"response from turnquest {response}");
+                    if (string.IsNullOrEmpty(response))
+                    {
+                        return null;
+                    }
+                    var transpose = Newtonsoft.Json.JsonConvert.DeserializeObject<LifeClaimStatus>(response);
+                    return transpose;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return null;
+            }
+        }
+        public async Task<string> ClaimCode(string claim_type)
+        {
+            if (claim_type.ToLower().Trim() == "surrender")
+            {
+                return "SUR";
+            }
+            else if (claim_type.ToLower().Trim() == "death")
+            {
+                return "DTH";
+            }
+            else if (claim_type.ToLower().Trim() == "termination")
+            {
+                return "TEM";
+            }
+            else if (claim_type.ToLower().Trim().StartsWith("parmanet"))
+            {
+                return "DIS";
+            }
+            else
+            {
+                return "PROCEED";
+            }
+        }
+
+        public async Task<LifeClaimStatus> CheckClaimStatus(string claim_number)
+        {
+            try
+            {
+                string ConnectionString = ConfigurationManager.ConnectionStrings["OracleConnectionString"].ConnectionString;
+                using (OracleConnection cn = new OracleConnection(ConnectionString))
+                {
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.Connection = cn;
+                    cn.Open();
+                    cmd.CommandText = "cust_max_mgt.check_claim_status";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("p_claim_no", OracleDbType.Varchar2).Value = claim_number;
+                    cmd.Parameters.Add("v_data", OracleDbType.Varchar2, 300).Direction = ParameterDirection.Output;
+                    cmd.ExecuteNonQuery();
+                    string response = cmd.Parameters["v_data"].Value.ToString();
+                    log.Info($"response from turnquest claims status {response}");
+                    if (string.IsNullOrEmpty(response))
+                    {
+                        return null;
+                    }
+                    var transpose = Newtonsoft.Json.JsonConvert.DeserializeObject<LifeClaimStatus>(response);
+                    return transpose;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
                 return null;
             }
         }

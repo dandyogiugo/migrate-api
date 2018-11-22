@@ -144,6 +144,7 @@ namespace DataStore.ViewModels
         public List<documents> documents { get; set; }
         [Required]
         public string merchant_id { get; set; }
+        public string claim_number { get; set; }
 
     }
 
@@ -182,6 +183,8 @@ namespace DataStore.ViewModels
         [DataType(DataType.Html)]
         [Required]
         public string htmlBody { get; set; }
+        [DataType(DataType.Html)]
+        public string ExtraHtmlBody { get; set; }
         public List<string> CC { get; set; }
         public List<string> Bcc { get; set; }
         [Required]
@@ -190,6 +193,7 @@ namespace DataStore.ViewModels
         public string Title { get; set; }
         [Required]
         public string Merchant_Id { get; set; }
+        public  List<string> CCUnit { get; set; }
     }
 
 
