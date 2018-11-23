@@ -61,11 +61,13 @@ namespace DataStore.ViewModels
         {
 
         }
+        public int status { get; set; }
         public string claim_no { get; set; }
         public int code { get; set; }
         public string message { get; set; }
         public string policy_no { get; set; }
         public string claim_status { get; set; }
+        
     }
 
     public class ClaimsStatus

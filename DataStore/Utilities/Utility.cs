@@ -365,7 +365,7 @@ namespace DataStore.Utilities
                 else
                 {
 
-                    string msg_1 = $@"Your claim has been submitted successfully. Your claim number is <strong>Not Avaliable Yet</strong>. 
+                    string msg_1 = $@"Your claim has been submitted successfully. Your claim number is <strong>{mail.claim_number}</strong>. 
                                 You can check your claim status on our website or call(+234)12774000 - 9";
                     sb.Replace("#CONTENT#", msg_1);
                     var send = new SendEmail().Send_Email(mail.email_address, "Claim Request", sb.ToString(), "Claims Request", true, image_path, null, null, null);
@@ -432,7 +432,7 @@ namespace DataStore.Utilities
                 else
                 {
 
-                    string msg_1 = $@"Your claim has been submitted successfully. Your claim number is <strong>Not Avaliable Yet</strong>. 
+                    string msg_1 = $@"Your claim has been submitted successfully. Your claim number is <strong>{mail.claims_number}</strong>. 
                                 You can check your claim status on our website or call(+234)12774000 - 9";
                     sb.Replace("#CONTENT#", msg_1);
                     var send = new SendEmail().Send_Email(mail.email_address, "Claim Request", sb.ToString(), "Claims Request", true, image_path, null, null, null);
@@ -644,7 +644,6 @@ namespace DataStore.Utilities
                 return "PROCEED";
             }
         }
-
         public async Task<LifeClaimStatus> CheckClaimStatus(string claim_number)
         {
             try

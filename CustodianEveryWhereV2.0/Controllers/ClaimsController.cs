@@ -338,7 +338,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             message = "Claim number is not valid"
                         };
                     }
-                    else if (get_status_turnquest.code != 200)
+                    else if (get_status_turnquest.status != 200)
                     {
                         log.Info($"Could not retrieve claim status {claims.claims_number}");
                         return new ClaimsStatus
