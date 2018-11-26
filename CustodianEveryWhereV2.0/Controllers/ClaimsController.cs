@@ -104,7 +104,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     policy_number = claims.policy_number,
                     policy_type = claims.policy_type,
                     status = true,
-                    Claim_No = claim_no
+                    Claim_No = claim_no,
+                    division = claims.division
                 };
 
                 if (claims.documents != null && claims.documents.Count() > 0)
@@ -166,6 +167,14 @@ namespace CustodianEveryWhereV2._0.Controllers
                 // log.Info(Newtonsoft.Json.JsonConvert.SerializeObject(claims));
                 if (!ModelState.IsValid)
                 {
+                    //log.Error(Newtonsoft.Json.JsonConvert.SerializeObject(ModelState.Values));
+                    foreach (var state in ModelState)
+                    {
+                        foreach (var error in state.Value.Errors)
+                        {
+                            log.Error(error.ErrorMessage);
+                        }
+                    }
                     return new claims_response
                     {
                         status = 401,
@@ -224,7 +233,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     witness_available = claims.witness_available,
                     witness_contact_info = claims.witness_contact_info,
                     witness_name = claims.witness_name,
-
+                    datecreated = DateTime.Now,
+                    division = claims.division
                 };
                 var merchant_id = ConfigurationManager.AppSettings["Merchant_ID"];
                 var password = ConfigurationManager.AppSettings["Password"];
