@@ -145,6 +145,7 @@ namespace DataStore.ViewModels
         [Required]
         public string merchant_id { get; set; }
         public string claim_number { get; set; }
+        public string division { get; set; }
 
     }
 

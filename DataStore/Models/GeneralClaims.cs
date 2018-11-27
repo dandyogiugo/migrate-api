@@ -102,5 +102,8 @@ namespace DataStore.Models
         public virtual IList<NonLifeClaimsDocument> NonLifeDocument { get; set; }
         [MaxLength(30)]
         public string claims_number { get; set; }
+        [MaxLength(30)]
+        public string division { get; set; }
+        public DateTime datecreated { get; set; }
     }
 }

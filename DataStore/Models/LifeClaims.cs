@@ -48,5 +48,7 @@ namespace DataStore.Models
         public virtual IList<LifeDocument> LifeDocument { get; set; }
         [MaxLength(30)]
         public string Claim_No { get; set; }
+        [MaxLength(30)]
+        public string division { get; set; }
     }
 }

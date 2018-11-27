@@ -96,6 +96,7 @@ namespace DataStore.ViewModels
         public List<document> documents { get; set; }
         public string merchant_id { get; set; }
         public string claims_number { get; set; }
+        public string division { get; set; }
     }
 
 
