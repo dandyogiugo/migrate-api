@@ -76,7 +76,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     {
                         return new claims_response
                         {
-                            status = 204,
+                            status = 208,
                             message = submit_claim_to_turnquest.message
                         };
 
@@ -105,7 +105,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     policy_type = claims.policy_type,
                     status = true,
                     Claim_No = claim_no,
-                    division = claims.division
+                    division = claims.division,
+                    BranchCode = claims.branch
                 };
 
                 if (claims.documents != null && claims.documents.Count() > 0)
@@ -133,6 +134,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 var template = System.IO.File.ReadAllText(path);
                 // claims
                 claims.claim_number = claim_no;
+
                 Task.Factory.StartNew(() =>
                 {
                     util.SendMail(claims, true, template, imagepath);
@@ -164,7 +166,7 @@ namespace CustodianEveryWhereV2._0.Controllers
             try
             {
                 log.Info("about to validate request params for ProcessNonLifeClaims()");
-                // log.Info(Newtonsoft.Json.JsonConvert.SerializeObject(claims));
+                log.Info(Newtonsoft.Json.JsonConvert.SerializeObject(claims));
                 if (!ModelState.IsValid)
                 {
                     //log.Error(Newtonsoft.Json.JsonConvert.SerializeObject(ModelState.Values));
@@ -234,7 +236,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     witness_contact_info = claims.witness_contact_info,
                     witness_name = claims.witness_name,
                     datecreated = DateTime.Now,
-                    division = claims.division
+                    division = claims.division,
+                    BranchCode = claims.branch
                 };
                 var merchant_id = ConfigurationManager.AppSettings["Merchant_ID"];
                 var password = ConfigurationManager.AppSettings["Password"];
@@ -249,7 +252,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     {
                         return new claims_response
                         {
-                            status = 404,
+                            status = 409,
                             message = submite_claim.Generating_Claims_NumberResult.RegStatus
                         };
                     }
@@ -285,10 +288,20 @@ namespace CustodianEveryWhereV2._0.Controllers
                 var path = HttpContext.Current.Server.MapPath("~/Cert/claims.html");
                 var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
                 var template = System.IO.File.ReadAllText(path);
+                string email_division = string.Empty;
+                var divisionn_obj = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DivisionEmail>>(System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/json.json")));
+                if (claims.division.ToUpper() == "BRANCH")
+                {
+                    email_division = divisionn_obj.FirstOrDefault(x => x.Key.ToUpper() == claims.branch.ToUpper().Trim()).Email;
+                }
+                else
+                {
+                    email_division = divisionn_obj.FirstOrDefault(x => x.Code.ToUpper() == claims.division.ToUpper().Trim()).Email;
+                }
 
                 Task.Factory.StartNew(() =>
                 {
-                    util.SendMail(claims, true, template, imagepath);
+                    util.SendMail(claims, true, template, imagepath, email_division);
                     util.SendMail(claims, false, template, imagepath);
                 });
 
@@ -364,7 +377,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                             status = 200,
                             message = "Claim status is avaliable",
                             claim_status = get_status_turnquest.claim_status,
-                            policy_number = get_status_turnquest.policy_no
+                            policy_number = get_status_turnquest.policy_no,
+
                         };
                     }
                 }
@@ -390,7 +404,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 status = 200,
                                 message = "Claim status is avaliable",
                                 claim_status = response.ClaimStatus,
-                                policy_number = response.ClPolicyNo
+                                policy_number = response.ClPolicyNo,
+                                policy_holder_name = response.InsuredName
                             };
                         }
                     }

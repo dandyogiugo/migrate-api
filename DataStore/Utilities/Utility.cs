@@ -378,7 +378,7 @@ namespace DataStore.Utilities
                 log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
             }
         }
-        public void SendMail(ViewModelNonLife mail, bool IsCustodian, string template, string imagepath)
+        public void SendMail(ViewModelNonLife mail, bool IsCustodian, string template, string imagepath, string divisionemail = "")
         {
             try
             {
@@ -397,7 +397,8 @@ namespace DataStore.Utilities
                 var image_path = imagepath;
                 if (IsCustodian)
                 {
-                    string msg_1 = @"Dear Team,<br/><br/> A claim has been logged succesfully and require your attention for further processing";
+                    sb.Replace("#FOOTER#", "");
+                    string msg_1 = @"Dear Team,<br/><br/>A claim has been logged successfully and require your attention for further processing";
                     sb.Replace("#CONTENT#", msg_1);
                     var email = ConfigurationManager.AppSettings["Notification"];
                     var list = email.Split('|');
@@ -406,34 +407,57 @@ namespace DataStore.Utilities
                     if (list.Count() > 1)
                     {
                         int i = 0;
-                        emailaddress = list[0];
+                        if (!string.IsNullOrEmpty(divisionemail))
+                        {
+                            emailaddress = divisionemail;
+                        }
+                        else
+                        {
+                            emailaddress = list[0];
+                        }
+
                         foreach (var item in list)
                         {
-                            if (i == 0)
-                            {
-                                ++i;
-                                continue;
-                            }
-                            else
+                            if (!string.IsNullOrEmpty(divisionemail))
                             {
                                 cc.Add(item);
                                 ++i;
                             }
-
-
+                            else
+                            {
+                                if (i == 0)
+                                {
+                                    ++i;
+                                    continue;
+                                }
+                                else
+                                {
+                                    cc.Add(item);
+                                    ++i;
+                                }
+                            }
                         }
                     }
                     else
                     {
-                        emailaddress = list[0];
+                        //emailaddress = list[0];
+                        if (!string.IsNullOrEmpty(divisionemail))
+                        {
+                            emailaddress = divisionemail;
+                            cc.Add(list[0]);
+                        }
+                        else
+                        {
+                            emailaddress = list[0];
+                        }
                     }
                     var send = new SendEmail().Send_Email(emailaddress, "Claim Request", sb.ToString(), "Claims Request", true, image_path, cc, null, null);
                 }
                 else
                 {
-
-                    string msg_1 = $@"Your claim has been submitted successfully. Your claim number is <strong>{mail.claims_number}</strong>. 
-                                You can check your claim status on our website or call(+234)12774000 - 9";
+                    sb.Replace("#FOOTER#", @"Please visit our website to confirm the status of your claim.<br /><br />
+                                    If you did not initiate this process, please contact us on (+234)12774008-9 or carecentre@custodianinsurance.com");
+                    string msg_1 = @"Dear Valued Customer,<br/><br/>Your claim with the below details has been submitted successfully.";
                     sb.Replace("#CONTENT#", msg_1);
                     var send = new SendEmail().Send_Email(mail.email_address, "Claim Request", sb.ToString(), "Claims Request", true, image_path, null, null, null);
                 }

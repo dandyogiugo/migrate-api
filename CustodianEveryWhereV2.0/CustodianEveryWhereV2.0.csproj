@@ -358,6 +358,7 @@
     <Content Include="Cert\template.rtf" />
     <Content Include="Cert\templateOneoff.rtf" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <Content Include="Cert\json.json" />
     <None Include="Properties\PublishProfiles\Api.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -522,6 +523,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties Cert_4json_1json__JSONSchema="swagger" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

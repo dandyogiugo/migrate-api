@@ -42,7 +42,7 @@ namespace DataStore.Models
         [MaxLength(300)]
         public string damage_type { get; set; }
         public DateTime? incident_date_time { get; set; }
-        [MaxLength(100)]
+       
         public string incident_description { get; set; }
         [MaxLength(5)]
         public string witness_available { get; set; }
@@ -93,7 +93,7 @@ namespace DataStore.Models
         public string taken_to_hospital { get; set; }
         [MaxLength(200)]
         public string inspection_location { get; set; }
-        [MaxLength(200)]
+      
         public string list_of_items_lost { get; set; }
         [MaxLength(50)]
         public string mode_of_conveyance { get; set; }
@@ -105,5 +105,10 @@ namespace DataStore.Models
         [MaxLength(30)]
         public string division { get; set; }
         public DateTime datecreated { get; set; }
+        [MaxLength(10)]
+        public string BranchCode { get; set; }
+        public decimal adjustedamount { get; set; }
+        [MaxLength(10)]
+        public string Status { get; set; }
     }
 }

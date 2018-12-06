@@ -97,6 +97,7 @@ namespace DataStore.ViewModels
         public string merchant_id { get; set; }
         public string claims_number { get; set; }
         public string division { get; set; }
+        public string branch { get; set; }
     }
 
 

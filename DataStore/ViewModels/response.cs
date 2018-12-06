@@ -80,6 +80,7 @@ namespace DataStore.ViewModels
         public string claim_status { get; set; }
         public string message { get; set; }
         public string policy_number { get; set; }
+        public string policy_holder_name { get; set; }
     }
 
     public class ClaimsRequest

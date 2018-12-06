@@ -50,5 +50,8 @@ namespace DataStore.Models
         public string Claim_No { get; set; }
         [MaxLength(30)]
         public string division { get; set; }
+        public string BranchCode { get; set; }
+        [MaxLength(10)]
+        public string State { get; set; }
     }
 }

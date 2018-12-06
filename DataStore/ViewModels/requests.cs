@@ -146,6 +146,7 @@ namespace DataStore.ViewModels
         public string merchant_id { get; set; }
         public string claim_number { get; set; }
         public string division { get; set; }
+        public string branch { get; set; }
 
     }
 
@@ -237,6 +238,17 @@ namespace DataStore.ViewModels
         public string merchant_id { get; set; }
         [Required]
         public string hash { get; set; }
+    }
+
+    public class DivisionEmail
+    {
+        public DivisionEmail()
+        {
+
+        }
+        public string Key { get; set; }
+        public string Code { get; set; }
+        public string Email { get; set; }
     }
 
 }
