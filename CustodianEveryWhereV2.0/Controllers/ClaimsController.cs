@@ -239,12 +239,12 @@ namespace CustodianEveryWhereV2._0.Controllers
                     division = claims.division,
                     BranchCode = claims.branch
                 };
-                var merchant_id = ConfigurationManager.AppSettings["Merchant_ID"];
-                var password = ConfigurationManager.AppSettings["Password"];
+                //var merchant_id = ConfigurationManager.AppSettings["Merchant_ID"];
+                //var password = ConfigurationManager.AppSettings["Password"];
                 string claim_number = "";
                 using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
                 {
-                    var submite_claim = await api.SubmitClaimRegisterAsync(merchant_id, password, newClaims.policy_holder_name, "", newClaims.email_address,
+                    var submite_claim = await api.SubmitClaimRegisterAsync(GlobalConstant.merchant_id, GlobalConstant.password, newClaims.policy_holder_name, "", newClaims.email_address,
                         newClaims.phone_number, newClaims.policy_number, newClaims.incident_description,
                         newClaims.incident_date_time.Value, newClaims.vehicle_reg_number, newClaims.claim_amount.ToString());
                     log.Info($"Response from Claims api {Newtonsoft.Json.JsonConvert.SerializeObject(submite_claim.Generating_Claims_NumberResult)}");

@@ -100,6 +100,7 @@
     <Compile Include="repository\store.cs" />
     <Compile Include="Utilities\Utility.cs" />
     <Compile Include="ViewModels\enums.cs" />
+    <Compile Include="ViewModels\GlobalConstant.cs" />
     <Compile Include="ViewModels\requests.cs" />
     <Compile Include="ViewModels\response.cs" />
     <Compile Include="ViewModels\ViewModelNonLife.cs" />

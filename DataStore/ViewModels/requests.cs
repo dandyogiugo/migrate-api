@@ -195,7 +195,7 @@ namespace DataStore.ViewModels
         public string Title { get; set; }
         [Required]
         public string Merchant_Id { get; set; }
-        public  List<string> CCUnit { get; set; }
+        public List<string> CCUnit { get; set; }
     }
 
 
@@ -249,6 +249,19 @@ namespace DataStore.ViewModels
         public string Key { get; set; }
         public string Code { get; set; }
         public string Email { get; set; }
+    }
+
+    public class Enquiry
+    {
+        public Enquiry()
+        {
+
+        }
+
+        [Required]
+        public string policy_no { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
     }
 
 }

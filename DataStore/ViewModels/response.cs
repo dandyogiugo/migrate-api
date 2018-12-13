@@ -96,4 +96,16 @@ namespace DataStore.ViewModels
         [Required]
         public string merchant_id { get; set; }
     }
+
+    public class Policy
+    {
+        public Policy()
+        {
+
+        }
+
+        public int status { get; set; }
+        public string message { get; set; }
+        public object details { get; set; }
+    }
 }

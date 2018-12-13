@@ -331,6 +331,7 @@ namespace DataStore.Utilities
                 if (IsCustodian)
                 {
                     string msg_1 = @"Dear Team,<br/> A claim has been logged succesfully and require your attention for further processing";
+                    sb.Replace("#FOOTER#", "");
                     sb.Replace("#CONTENT#", msg_1);
                     var email = ConfigurationManager.AppSettings["Notification"];
                     var list = email.Split('|');
@@ -368,6 +369,7 @@ namespace DataStore.Utilities
                     string msg_1 = $@"Your claim has been submitted successfully. Your claim number is <strong>{mail.claim_number}</strong>. 
                                 You can check your claim status on our website or call(+234)12774000 - 9";
                     sb.Replace("#CONTENT#", msg_1);
+                    sb.Replace("#FOOTER#", "");
                     var send = new SendEmail().Send_Email(mail.email_address, "Claim Request", sb.ToString(), "Claims Request", true, image_path, null, null, null);
                 }
             }
