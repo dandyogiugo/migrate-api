@@ -24,4 +24,10 @@ namespace DataStore.ViewModels
         OneOff,
         Continuous
     }
+
+    public enum Zones
+    {
+        AREA_1,
+        AREA_2
+    }
 }

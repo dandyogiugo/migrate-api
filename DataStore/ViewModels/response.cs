@@ -67,7 +67,7 @@ namespace DataStore.ViewModels
         public string message { get; set; }
         public string policy_no { get; set; }
         public string claim_status { get; set; }
-        
+
     }
 
     public class ClaimsStatus
@@ -107,5 +107,69 @@ namespace DataStore.ViewModels
         public int status { get; set; }
         public string message { get; set; }
         public object details { get; set; }
+    }
+
+    public class Wallet
+    {
+        public Wallet()
+        {
+
+        }
+        public int status { get; set; }
+        public string message { get; set; }
+        public List<object> trnx_details { get; set; }
+        public decimal wallet_balance { get; set; }
+    }
+
+    public class claim_details
+    {
+        public claim_details()
+        {
+
+        }
+
+        public string policy_no { get; set; }
+        public string policy_type { get; set; }
+        public string claim_type { get; set; }
+    }
+
+    public class claims_details
+    {
+        public claims_details()
+        {
+
+        }
+        public string status { get; set; }
+        public string message { get; set; }
+        public string claim_no { get; set; }
+        public decimal amount { get; set; }
+        public string policy_no { get; set; }
+        public  int code { get; set; }
+    }
+
+
+    public class ClaimsDetails
+    {
+        public ClaimsDetails()
+        {
+
+        }
+
+        public string p_policy_no { get; set; }
+        public string p_type { get; set; }
+        public string p_claim_type { get; set; }
+        public string merchant_id { get; set; }
+    }
+
+    public class TravelQuoteResponse
+    {
+        public TravelQuoteResponse()
+        {
+
+        }
+        public int status { get; set; }
+        public string message { get; set; }
+        public string quote_amount { get; set; }
+        public string cert_url { get; set; }
     }
 }

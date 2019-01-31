@@ -423,5 +423,60 @@ namespace CustodianEveryWhereV2._0.Controllers
                 };
             }
         }
+
+        [HttpPost]
+        public async Task<claims_details> GetLifeClaimsDetails(ClaimsDetails details)
+        {
+            try
+            {
+                // var properties = details.GetType().GetProperties();
+                // log.Info(Newtonsoft.Json.JsonConvert.SerializeObject(details));
+                //  log.Info("merchant id: " + (string)properties["merchant_id"]);
+                var check_user_function = await util.CheckForAssignedFunction("GetLifeClaimsDetails", details.merchant_id);
+                if (!check_user_function)
+                {
+                    return new claims_details
+                    {
+                        code = 401,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+
+                var getdetails = await util.GetLifeClaimsDetails(details);
+                if (getdetails != null && getdetails.code == 200)
+                {
+                    //return new claims_details
+                    //{
+                    //    code = 200,
+                    //    message = getdetails.message,
+                    //    amount = getdetails.amount,
+                    //    claim_no = getdetails.claim_no,
+                    //    policy_no = details.p_policy_no
+                    //};
+                    return getdetails;
+
+                }
+                else
+                {
+                    return new claims_details
+                    {
+                        code = 404,
+                        message = "Unable to retrieve claims details"
+                    };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new claims_details
+                {
+                    code = 404,
+                    message = "system malfunction"
+                };
+            }
+        }
     }
 }

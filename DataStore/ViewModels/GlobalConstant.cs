@@ -11,5 +11,6 @@ namespace DataStore.ViewModels
     {
         public static string merchant_id = ConfigurationManager.AppSettings["Merchant_ID"];
         public static string password = ConfigurationManager.AppSettings["Password"];
+        public static string Certificate_url = ConfigurationManager.AppSettings["TRAVEL_CERT_URL"];
     }
 }

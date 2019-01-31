@@ -46,6 +46,24 @@ namespace DataStore.Utilities
             }
             return res;
         }
+
+        public async Task<bool> ValidateHash2(string pattern, string secret, string _hash)
+        {
+            bool res = false;
+            StringBuilder Sb = new StringBuilder();
+            using (SHA256 hash = SHA256Managed.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                byte[] result = hash.ComputeHash(enc.GetBytes(pattern + secret));
+                foreach (Byte b in result)
+                    Sb.Append(b.ToString("x2"));
+            }
+            if (Sb.ToString().ToUpper().Equals(_hash.ToUpper()))
+            {
+                res = true;
+            }
+            return res;
+        }
         public async Task<bool> CheckForAssignedFunction(string methodName, string merchant_id)
         {
             var apiconfig = new store<ApiConfiguration>();
@@ -692,6 +710,43 @@ namespace DataStore.Utilities
                         return null;
                     }
                     var transpose = Newtonsoft.Json.JsonConvert.DeserializeObject<LifeClaimStatus>(response);
+                    return transpose;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return null;
+            }
+        }
+
+
+        public async Task<claims_details> GetLifeClaimsDetails(ClaimsDetails claim_detail)
+        {
+            try
+            {
+                string ConnectionString = ConfigurationManager.ConnectionStrings["OracleConnectionString"].ConnectionString;
+                using (OracleConnection cn = new OracleConnection(ConnectionString))
+                {
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.Connection = cn;
+                    cn.Open();
+                    cmd.CommandText = "cust_max_mgt.get_claim_policy_info";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("p_policy_no", OracleDbType.Varchar2).Value = claim_detail.p_policy_no;
+                    cmd.Parameters.Add("p_type", OracleDbType.Varchar2).Value = claim_detail.p_type;
+                    cmd.Parameters.Add("v_data", OracleDbType.Varchar2, 300).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("p_claim_type", OracleDbType.Varchar2).Value = claim_detail.p_claim_type;
+                    cmd.ExecuteNonQuery();
+                    string response = cmd.Parameters["v_data"].Value.ToString();
+                    log.Info($"response from turnquest claims status {response}");
+                    if (string.IsNullOrEmpty(response))
+                    {
+                        return null;
+                    }
+                    var transpose = Newtonsoft.Json.JsonConvert.DeserializeObject<claims_details>(response);
                     return transpose;
                 }
             }

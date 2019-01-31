@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -262,6 +263,93 @@ namespace DataStore.ViewModels
         public string policy_no { get; set; }
         [Required]
         public string merchant_id { get; set; }
+    }
+
+    public class TravelQuote
+    {
+        public TravelQuote()
+        {
+
+        }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime date_of_birth { get; set; }
+        [Required]
+        public Zones zone { get; set; }
+        [Required]
+        public string destination { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime departure_date { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime return_date { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+    }
+
+    public class BuyTravelInsurance
+    {
+        public BuyTravelInsurance()
+        {
+
+        }
+
+        public string title { get; set; }
+        [Required]
+        public string surname { get; set; }
+        [Required]
+        public string firstname { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime date_of_birth { get; set; }
+        [Required]
+        public string gender { get; set; }
+        [Required]
+        public string nationality { get; set; }
+        [Required]
+        public string passport_number { get; set; }
+        [Required]
+        public string occupation { get; set; }
+        [Required]
+        public string phone_number { get; set; }
+        [Required]
+        public string address { get; set; }
+        [Required]
+        public Zones zone { get; set; }
+        [Required]
+        public string destination { get; set; }
+        [Required]
+        public string purpose_of_trip { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime depature_date { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime return_date { get; set; }
+        [Required]
+        public decimal premium { get; set; }
+        [Required]
+        public string transaction_ref { get; set; }
+        public string multiple_destination { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public string hash { get; set; }
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+        [Required]
+        [MaxLength(10)]
+        public string extension { get; set; }
+        public string attachment { get; set; }
+
     }
 
 }

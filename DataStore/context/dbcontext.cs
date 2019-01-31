@@ -23,6 +23,7 @@ namespace DataStore.context
         public DbSet<LifeClaims> LifeClaims { get; set; }
         public DbSet<GeneralClaims> GeneralClaims { get; set; }
         public DbSet<NonLifeClaimsDocument> NonLifeClaimsDocument { get; set; }
+        public DbSet<TravelInsurance> TravelInsurance { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
