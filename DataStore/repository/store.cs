@@ -19,7 +19,7 @@ namespace DataStore.repository
         {
             session = new dbcontext();
             _db = session.Set<T>();
-            
+
         }
 
         public async Task<T> GetOne(int id)
@@ -132,13 +132,13 @@ namespace DataStore.repository
             return result;
         }
 
-        public async Task<bool> CreateQuery(string sql)
+        public async Task<List<T>> CreateQuery(string sql)
         {
-            bool result = false;
+            List<T> result = null;
             try
             {
-                var sql_query = _db.SqlQuery(sql);
-                result = true;
+                var sql_query = await _db.SqlQuery(sql).ToListAsync();
+                result = sql_query;
             }
             catch (Exception ex)
             {
@@ -148,5 +148,7 @@ namespace DataStore.repository
             }
             return result;
         }
+
+
     }
 }

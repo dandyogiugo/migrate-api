@@ -548,6 +548,62 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/SubmitClaimRegister", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterResponse> SubmitClaimRegister1Async(CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostClaimsUpdate", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus PostClaimsUpdate(string MerchantID, string MerchantPWD, string ClaimNo, string ClaimStatusCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostClaimsUpdate", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus> PostClaimsUpdateAsync(string MerchantID, string MerchantPWD, string ClaimNo, string ClaimStatusCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetMorePolicyDetails", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        CustodianEveryWhereV2._0.CustodianAPI.MorePolicyDetails GetMorePolicyDetails(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetMorePolicyDetails", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.MorePolicyDetails> GetMorePolicyDetailsAsync(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActivePolicies", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetCRM_ActivePolicies(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActivePolicies", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_ActivePoliciesAsync(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Customers", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetCRM_Customers(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Customers", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_CustomersAsync(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActiveCustomers", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetCRM_ActiveCustomers(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActiveCustomers", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_ActiveCustomersAsync(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_CustomerPolicy", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetCRM_CustomerPolicy(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_CustomerPolicy", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_CustomerPolicyAsync(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_PolicyRenewal", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetCRM_PolicyRenewal(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_PolicyRenewal", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_PolicyRenewalAsync(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Birthday", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetCRM_Birthday(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Birthday", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_BirthdayAsync(string MDescription, string userid);
     }
     
     /// <remarks/>
@@ -611,6 +667,374 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             set {
                 this.insuredNameField = value;
                 this.RaisePropertyChanged("InsuredName");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class MorePolicyDetails : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string policyNoField;
+        
+        private string policyEBusinessField;
+        
+        private string agenctNumField;
+        
+        private string agenctNameField;
+        
+        private string insuredNumField;
+        
+        private string insuredNameField;
+        
+        private string insuredOthNameField;
+        
+        private string insAddr1Field;
+        
+        private string insAddr2Field;
+        
+        private string insAddr3Field;
+        
+        private string telNumField;
+        
+        private string insuredTelNumField;
+        
+        private string insuredEmailField;
+        
+        private System.DateTime dOBField;
+        
+        private string insStateField;
+        
+        private string insLGAField;
+        
+        private string bizUnitField;
+        
+        private string insOccupField;
+        
+        private string bizBranchField;
+        
+        private System.DateTime startdateField;
+        
+        private System.DateTime enddateField;
+        
+        private decimal sumInsField;
+        
+        private decimal mPremiumField;
+        
+        private decimal outPremiumField;
+        
+        private decimal instPremiumField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string PolicyNo {
+            get {
+                return this.policyNoField;
+            }
+            set {
+                this.policyNoField = value;
+                this.RaisePropertyChanged("PolicyNo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string PolicyEBusiness {
+            get {
+                return this.policyEBusinessField;
+            }
+            set {
+                this.policyEBusinessField = value;
+                this.RaisePropertyChanged("PolicyEBusiness");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string AgenctNum {
+            get {
+                return this.agenctNumField;
+            }
+            set {
+                this.agenctNumField = value;
+                this.RaisePropertyChanged("AgenctNum");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string AgenctName {
+            get {
+                return this.agenctNameField;
+            }
+            set {
+                this.agenctNameField = value;
+                this.RaisePropertyChanged("AgenctName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string InsuredNum {
+            get {
+                return this.insuredNumField;
+            }
+            set {
+                this.insuredNumField = value;
+                this.RaisePropertyChanged("InsuredNum");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string InsuredName {
+            get {
+                return this.insuredNameField;
+            }
+            set {
+                this.insuredNameField = value;
+                this.RaisePropertyChanged("InsuredName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string InsuredOthName {
+            get {
+                return this.insuredOthNameField;
+            }
+            set {
+                this.insuredOthNameField = value;
+                this.RaisePropertyChanged("InsuredOthName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string InsAddr1 {
+            get {
+                return this.insAddr1Field;
+            }
+            set {
+                this.insAddr1Field = value;
+                this.RaisePropertyChanged("InsAddr1");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string InsAddr2 {
+            get {
+                return this.insAddr2Field;
+            }
+            set {
+                this.insAddr2Field = value;
+                this.RaisePropertyChanged("InsAddr2");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string InsAddr3 {
+            get {
+                return this.insAddr3Field;
+            }
+            set {
+                this.insAddr3Field = value;
+                this.RaisePropertyChanged("InsAddr3");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string TelNum {
+            get {
+                return this.telNumField;
+            }
+            set {
+                this.telNumField = value;
+                this.RaisePropertyChanged("TelNum");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string InsuredTelNum {
+            get {
+                return this.insuredTelNumField;
+            }
+            set {
+                this.insuredTelNumField = value;
+                this.RaisePropertyChanged("InsuredTelNum");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string InsuredEmail {
+            get {
+                return this.insuredEmailField;
+            }
+            set {
+                this.insuredEmailField = value;
+                this.RaisePropertyChanged("InsuredEmail");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public System.DateTime DOB {
+            get {
+                return this.dOBField;
+            }
+            set {
+                this.dOBField = value;
+                this.RaisePropertyChanged("DOB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string InsState {
+            get {
+                return this.insStateField;
+            }
+            set {
+                this.insStateField = value;
+                this.RaisePropertyChanged("InsState");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string InsLGA {
+            get {
+                return this.insLGAField;
+            }
+            set {
+                this.insLGAField = value;
+                this.RaisePropertyChanged("InsLGA");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string BizUnit {
+            get {
+                return this.bizUnitField;
+            }
+            set {
+                this.bizUnitField = value;
+                this.RaisePropertyChanged("BizUnit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string InsOccup {
+            get {
+                return this.insOccupField;
+            }
+            set {
+                this.insOccupField = value;
+                this.RaisePropertyChanged("InsOccup");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public string BizBranch {
+            get {
+                return this.bizBranchField;
+            }
+            set {
+                this.bizBranchField = value;
+                this.RaisePropertyChanged("BizBranch");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public System.DateTime Startdate {
+            get {
+                return this.startdateField;
+            }
+            set {
+                this.startdateField = value;
+                this.RaisePropertyChanged("Startdate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public System.DateTime Enddate {
+            get {
+                return this.enddateField;
+            }
+            set {
+                this.enddateField = value;
+                this.RaisePropertyChanged("Enddate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        public decimal SumIns {
+            get {
+                return this.sumInsField;
+            }
+            set {
+                this.sumInsField = value;
+                this.RaisePropertyChanged("SumIns");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        public decimal mPremium {
+            get {
+                return this.mPremiumField;
+            }
+            set {
+                this.mPremiumField = value;
+                this.RaisePropertyChanged("mPremium");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        public decimal OutPremium {
+            get {
+                return this.outPremiumField;
+            }
+            set {
+                this.outPremiumField = value;
+                this.RaisePropertyChanged("OutPremium");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        public decimal InstPremium {
+            get {
+                return this.instPremiumField;
+            }
+            set {
+                this.instPremiumField = value;
+                this.RaisePropertyChanged("InstPremium");
             }
         }
         
@@ -6168,6 +6592,70 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.lossDescription = lossDescription;
             inValue.DateofLoss = DateofLoss;
             return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).SubmitClaimRegister1Async(inValue);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus PostClaimsUpdate(string MerchantID, string MerchantPWD, string ClaimNo, string ClaimStatusCode) {
+            return base.Channel.PostClaimsUpdate(MerchantID, MerchantPWD, ClaimNo, ClaimStatusCode);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus> PostClaimsUpdateAsync(string MerchantID, string MerchantPWD, string ClaimNo, string ClaimStatusCode) {
+            return base.Channel.PostClaimsUpdateAsync(MerchantID, MerchantPWD, ClaimNo, ClaimStatusCode);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.MorePolicyDetails GetMorePolicyDetails(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
+            return base.Channel.GetMorePolicyDetails(MerchantID, MerchantPWD, Subsidiary, PolicyNumber);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.MorePolicyDetails> GetMorePolicyDetailsAsync(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
+            return base.Channel.GetMorePolicyDetailsAsync(MerchantID, MerchantPWD, Subsidiary, PolicyNumber);
+        }
+        
+        public System.Data.DataSet GetCRM_ActivePolicies(string MDescription, string userid) {
+            return base.Channel.GetCRM_ActivePolicies(MDescription, userid);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_ActivePoliciesAsync(string MDescription, string userid) {
+            return base.Channel.GetCRM_ActivePoliciesAsync(MDescription, userid);
+        }
+        
+        public System.Data.DataSet GetCRM_Customers(string MDescription, string userid) {
+            return base.Channel.GetCRM_Customers(MDescription, userid);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_CustomersAsync(string MDescription, string userid) {
+            return base.Channel.GetCRM_CustomersAsync(MDescription, userid);
+        }
+        
+        public System.Data.DataSet GetCRM_ActiveCustomers(string MDescription, string userid) {
+            return base.Channel.GetCRM_ActiveCustomers(MDescription, userid);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_ActiveCustomersAsync(string MDescription, string userid) {
+            return base.Channel.GetCRM_ActiveCustomersAsync(MDescription, userid);
+        }
+        
+        public System.Data.DataSet GetCRM_CustomerPolicy(string MDescription, string userid) {
+            return base.Channel.GetCRM_CustomerPolicy(MDescription, userid);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_CustomerPolicyAsync(string MDescription, string userid) {
+            return base.Channel.GetCRM_CustomerPolicyAsync(MDescription, userid);
+        }
+        
+        public System.Data.DataSet GetCRM_PolicyRenewal(string MDescription, string userid) {
+            return base.Channel.GetCRM_PolicyRenewal(MDescription, userid);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_PolicyRenewalAsync(string MDescription, string userid) {
+            return base.Channel.GetCRM_PolicyRenewalAsync(MDescription, userid);
+        }
+        
+        public System.Data.DataSet GetCRM_Birthday(string MDescription, string userid) {
+            return base.Channel.GetCRM_Birthday(MDescription, userid);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_BirthdayAsync(string MDescription, string userid) {
+            return base.Channel.GetCRM_BirthdayAsync(MDescription, userid);
         }
     }
 }

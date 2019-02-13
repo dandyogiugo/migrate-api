@@ -36,6 +36,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         {
             try
             {
+                log.Info($"object {Newtonsoft.Json.JsonConvert.SerializeObject(quote)}");
                 // check if parameters are correct
                 if (!ModelState.IsValid)
                 {
@@ -116,9 +117,11 @@ namespace CustodianEveryWhereV2._0.Controllers
         {
             try
             {
+                log.Info("raw request object: " + Newtonsoft.Json.JsonConvert.SerializeObject(travel));
                 var check_user_function = await util.CheckForAssignedFunction("BuyTravelInsurance", travel.merchant_id);
                 if (!check_user_function)
                 {
+                    log.Info($"Permission denied from accessing this feature {travel.Email}");
                     return new TravelQuoteResponse
                     {
                         status = 401,
@@ -128,6 +131,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == travel.merchant_id.Trim());
                 if (config == null)
                 {
+                    log.Info($"Invalid merchant Id {travel.Email}");
                     return new TravelQuoteResponse
                     {
                         status = 402,
@@ -136,20 +140,32 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 var checkhash = await util.ValidateHash2(travel.premium.ToString() + travel.zone.ToString() + travel.destination, config.secret_key, travel.hash);
 
+
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {travel.Email}");
+                    return new TravelQuoteResponse
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
                 using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
                 {
                     var request = await api.POSTTravelRecAsync(GlobalConstant.merchant_id,
                         GlobalConstant.password, travel.title, travel.surname, travel.firstname, travel.date_of_birth, travel.gender, travel.nationality,
                         "Int'l PassPort", travel.passport_number, travel.occupation, travel.phone_number,
-                        travel.Email, travel.address, travel.zone.ToString().Replace("_", " "), travel.destination, travel.date_of_birth, travel.return_date.Subtract(travel.depature_date).ToString(),
-                        travel.purpose_of_trip, travel.depature_date, travel.return_date, travel.premium, "", "", travel.transaction_ref, "API", "", "", "", travel.multiple_destination);
+                        travel.Email, travel.address, travel.zone.ToString().Replace("_", " "), travel.destination, travel.date_of_birth, travel.return_date.Subtract(travel.departure_date).ToString(),
+                        travel.purpose_of_trip, travel.departure_date, travel.return_date, travel.premium, "", "", travel.transaction_ref, "API", "", "", "", travel.multiple_destination);
+                    log.Info("RAW Response from API" + request.Passing_Travel_PostSourceResult);
                     if (!string.IsNullOrEmpty(request.Passing_Travel_PostSourceResult))
                     {
                         var save_data = new TravelInsurance
                         {
                             address = travel.address,
                             date_of_birth = travel.date_of_birth,
-                            depature_date = travel.depature_date,
+                            depature_date = travel.departure_date,
                             destination = travel.destination,
                             Email = travel.Email,
                             firstname = travel.firstname,
@@ -178,10 +194,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                         byte[] content = Convert.FromBase64String(travel.attachment);
                         File.WriteAllBytes(filepath, content);
 
-
                         save_data.file_path = filepath;
                         save_data.Image_extension_type = travel.extension;
-
 
                         await _buyinsurannce.Save(save_data);
                         //http://192.168.10.74/webportal/travelcert.aspx?muser=ebusiness&mcert=0002474&mcert2=0002474
@@ -195,6 +209,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
                     else
                     {
+                        log.Info($"Transaction processing failed {travel.Email}");
                         return new TravelQuoteResponse
                         {
                             status = 403,

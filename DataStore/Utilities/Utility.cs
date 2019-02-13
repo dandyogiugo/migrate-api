@@ -47,11 +47,24 @@ namespace DataStore.Utilities
             return res;
         }
 
+        public async Task<string> Sha256(string pattern)
+        {
+            StringBuilder Sb = new StringBuilder();
+            using (SHA256 hash = SHA256.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                byte[] result = hash.ComputeHash(enc.GetBytes(pattern));
+                foreach (Byte b in result)
+                    Sb.Append(b.ToString("x2"));
+            }
+            return Sb.ToString();
+        }
+
         public async Task<bool> ValidateHash2(string pattern, string secret, string _hash)
         {
             bool res = false;
             StringBuilder Sb = new StringBuilder();
-            using (SHA256 hash = SHA256Managed.Create())
+            using (MD5 hash = MD5.Create())
             {
                 Encoding enc = Encoding.UTF8;
                 byte[] result = hash.ComputeHash(enc.GetBytes(pattern + secret));
@@ -88,6 +101,46 @@ namespace DataStore.Utilities
                     return false;
                 }
 
+            }
+        }
+
+        public string base64Decode(string data)
+        {
+            try
+            {
+                UTF8Encoding encoder = new UTF8Encoding();
+                Decoder utf8Decode = encoder.GetDecoder();
+
+                byte[] todecode_byte = Convert.FromBase64String(data);
+                int charCount = utf8Decode.GetCharCount(todecode_byte, 0, todecode_byte.Length);
+                char[] decoded_char = new char[charCount];
+                utf8Decode.GetChars(todecode_byte, 0, todecode_byte.Length, decoded_char, 0);
+                string result = new String(decoded_char);
+                return result;
+            }
+            catch (Exception e)
+            {
+                return null;
+                //throw new Exception("Error in base64Decode" + e.Message);
+            }
+        }
+        public async Task<bool> ValidateHeaders(string sentHeader, string merchant_id)
+        {
+            var apiconfig = new store<ApiConfiguration>();
+            var getconfig = await apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim() && x.is_active == true);
+            if (getconfig == null || string.IsNullOrEmpty(getconfig.assigned_function))
+            {
+                return false;
+            }
+            var formhash = await Sha256(getconfig.secret_key + getconfig.merchant_id);
+            var formbase64headers = base64Decode(sentHeader);
+            if (formhash.ToUpper().Equals(formbase64headers.ToUpper()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
         public async Task<response> GenerateCertificate(GenerateCert cert)

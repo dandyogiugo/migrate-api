@@ -325,14 +325,20 @@ namespace DataStore.ViewModels
         public string destination { get; set; }
         [Required]
         public string purpose_of_trip { get; set; }
+
+
         [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime depature_date { get; set; }
+        public DateTime departure_date { get; set; }
+
+
         [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime return_date { get; set; }
+
+
         [Required]
         public decimal premium { get; set; }
         [Required]
@@ -350,6 +356,45 @@ namespace DataStore.ViewModels
         public string extension { get; set; }
         public string attachment { get; set; }
 
+    }
+
+    public class policydetails
+    {
+        public policydetails()
+        {
+
+        }
+
+        [Required]
+        public string policy_number { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public subsidiary subsidiary { get; set; }
+
+    }
+
+    public class PostTransaction
+    {
+        public PostTransaction()
+        {
+
+        }
+
+        [Required]
+        public string policy_number { get; set; }
+        [Required]
+        public subsidiary subsidiary { get; set; }
+        [Required]
+        public string payment_narrtn { get; set; }
+        [Required]
+        public string reference_no { get; set; }
+        [Required]
+        public string biz_unit { get; set; }
+        [Required]
+        public decimal premium { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
     }
 
 }

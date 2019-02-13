@@ -30,4 +30,10 @@ namespace DataStore.ViewModels
         AREA_1,
         AREA_2
     }
+
+    public enum subsidiary
+    {
+        Life = 1,
+        General = 2
+    }
 }

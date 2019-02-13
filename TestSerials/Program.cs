@@ -47,6 +47,7 @@ namespace TestSerials
                 byte[] concatenated = System.Text.ASCIIEncoding.ASCII.GetBytes(username + ":" + password);
                 string header = System.Convert.ToBase64String(concatenated);
 
+
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri("https://{base_url}/");
                 client.DefaultRequestHeaders.Accept.Clear();

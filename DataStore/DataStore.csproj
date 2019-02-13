@@ -90,6 +90,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApiConfiguration.cs" />
     <Compile Include="Models\ApiMethods.cs" />
+    <Compile Include="Models\FlightAndAirPortData.cs" />
     <Compile Include="Models\GITInsurance.cs" />
     <Compile Include="Models\LifeClaims.cs" />
     <Compile Include="Models\GeneralClaims.cs" />

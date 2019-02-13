@@ -88,10 +88,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2018 14:07:14</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.dll">
-      <publishTime>01/30/2019 13:14:20</publishTime>
+      <publishTime>02/12/2019 14:52:14</publishTime>
     </File>
     <File Include="bin/DataStore.dll">
-      <publishTime>01/30/2019 13:14:15</publishTime>
+      <publishTime>02/12/2019 14:47:40</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/23/2017 13:15:18</publishTime>
@@ -382,82 +382,85 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/29/2018 12:17:15</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.certificate_out.datasource">
-      <publishTime>11/22/2018 09:38:16</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.Claimfl.datasource">
-      <publishTime>11/22/2018 09:38:16</publishTime>
+      <publishTime>02/12/2019 12:48:52</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.ClientData.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number1.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
+    </File>
+    <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.MorePolicyDetails.datasource">
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.NotificationsDetails.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource1.datasource">
-      <publishTime>11/22/2018 09:38:18</publishTime>
+      <publishTime>02/12/2019 12:48:54</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource1.datasource">
-      <publishTime>11/22/2018 09:38:18</publishTime>
+      <publishTime>02/12/2019 12:48:54</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource1.datasource">
-      <publishTime>11/22/2018 09:38:18</publishTime>
+      <publishTime>02/12/2019 12:48:54</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource1.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource1.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:54</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource1.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:54</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource1.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource1.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:54</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource1.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:54</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource1.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:54</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.PolBalances.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.PolExpDate.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.PolicyDet.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.PolValidation.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldResponse.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecResponse.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:54</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:54</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecResponse.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:54</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterResponse.datasource">
-      <publishTime>11/22/2018 09:38:18</publishTime>
+      <publishTime>02/12/2019 12:48:54</publishTime>
     </File>
     <File Include="Service References/CustodianAPI/CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordResponse.datasource">
-      <publishTime>11/22/2018 09:38:17</publishTime>
+      <publishTime>02/12/2019 12:48:53</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>10/30/2018 08:53:06</publishTime>
@@ -475,7 +478,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/29/2018 12:15:54</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/30/2019 12:32:47</publishTime>
+      <publishTime>02/12/2019 14:47:50</publishTime>
     </File>
   </ItemGroup>
 </Project>

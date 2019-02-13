@@ -144,7 +144,7 @@ namespace DataStore.ViewModels
         public string claim_no { get; set; }
         public decimal amount { get; set; }
         public string policy_no { get; set; }
-        public  int code { get; set; }
+        public int code { get; set; }
     }
 
 
@@ -171,5 +171,42 @@ namespace DataStore.ViewModels
         public string message { get; set; }
         public string quote_amount { get; set; }
         public string cert_url { get; set; }
+    }
+
+
+    public class FlightData
+    {
+        public FlightData()
+        {
+
+        }
+        public string AirportCode { get; set; }
+        public string AirportName { get; set; }
+        public string CityCountry { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+    }
+
+    public class FlightSearch
+    {
+        public FlightSearch()
+        {
+
+        }
+
+        public int status { get; set; }
+        public string message { get; set; }
+        public List<FlightData> flight_search { get; set; }
+    }
+
+    public class policy_data
+    {
+        public policy_data()
+        {
+
+        }
+        public int status { get; set; }
+        public string message { get; set; }
+        public object data { get; set; }
     }
 }

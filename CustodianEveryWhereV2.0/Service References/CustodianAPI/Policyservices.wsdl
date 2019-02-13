@@ -1289,6 +1289,201 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="PostClaimsUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantPWD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClaimNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClaimStatusCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostClaimsUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostClaimsUpdateResult" type="tns:ClaimRegStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMorePolicyDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantPWD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subsidiary" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMorePolicyDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMorePolicyDetailsResult" type="tns:MorePolicyDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MorePolicyDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyEBusiness" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgenctNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgenctName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuredNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuredName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuredOthName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsAddr1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsAddr2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsAddr3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuredTelNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuredEmail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DOB" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsLGA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BizUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsOccup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BizBranch" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Startdate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Enddate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumIns" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mPremium" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutPremium" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstPremium" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCRM_ActivePolicies">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_ActivePoliciesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_ActivePoliciesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_Customers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_CustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_CustomersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_ActiveCustomers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_ActiveCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_ActiveCustomersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_CustomerPolicy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_CustomerPolicyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_CustomerPolicyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_PolicyRenewal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_PolicyRenewalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_PolicyRenewalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_Birthday">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_BirthdayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_BirthdayResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetClaimStatusSoapIn">
@@ -1579,6 +1774,54 @@
   <wsdl:message name="SubmitClaimRegisterSoapOut">
     <wsdl:part name="parameters" element="tns:SubmitClaimRegisterResponse" />
   </wsdl:message>
+  <wsdl:message name="PostClaimsUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:PostClaimsUpdate" />
+  </wsdl:message>
+  <wsdl:message name="PostClaimsUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:PostClaimsUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMorePolicyDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMorePolicyDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetMorePolicyDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMorePolicyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_ActivePoliciesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCRM_ActivePolicies" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_ActivePoliciesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCRM_ActivePoliciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_CustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCRM_Customers" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_CustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCRM_CustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_ActiveCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCRM_ActiveCustomers" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_ActiveCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCRM_ActiveCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_CustomerPolicySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCRM_CustomerPolicy" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_CustomerPolicySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCRM_CustomerPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_PolicyRenewalSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCRM_PolicyRenewal" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_PolicyRenewalSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCRM_PolicyRenewalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_BirthdaySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCRM_Birthday" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_BirthdaySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCRM_BirthdayResponse" />
+  </wsdl:message>
   <wsdl:portType name="CustodianEverywhere_x0020_API.Soap">
     <wsdl:operation name="GetClaimStatus">
       <wsdl:input message="tns:GetClaimStatusSoapIn" />
@@ -1771,6 +2014,38 @@
     <wsdl:operation name="SubmitClaimRegister">
       <wsdl:input message="tns:SubmitClaimRegisterSoapIn" />
       <wsdl:output message="tns:SubmitClaimRegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostClaimsUpdate">
+      <wsdl:input message="tns:PostClaimsUpdateSoapIn" />
+      <wsdl:output message="tns:PostClaimsUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMorePolicyDetails">
+      <wsdl:input message="tns:GetMorePolicyDetailsSoapIn" />
+      <wsdl:output message="tns:GetMorePolicyDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_ActivePolicies">
+      <wsdl:input message="tns:GetCRM_ActivePoliciesSoapIn" />
+      <wsdl:output message="tns:GetCRM_ActivePoliciesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_Customers">
+      <wsdl:input message="tns:GetCRM_CustomersSoapIn" />
+      <wsdl:output message="tns:GetCRM_CustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_ActiveCustomers">
+      <wsdl:input message="tns:GetCRM_ActiveCustomersSoapIn" />
+      <wsdl:output message="tns:GetCRM_ActiveCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_CustomerPolicy">
+      <wsdl:input message="tns:GetCRM_CustomerPolicySoapIn" />
+      <wsdl:output message="tns:GetCRM_CustomerPolicySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_PolicyRenewal">
+      <wsdl:input message="tns:GetCRM_PolicyRenewalSoapIn" />
+      <wsdl:output message="tns:GetCRM_PolicyRenewalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_Birthday">
+      <wsdl:input message="tns:GetCRM_BirthdaySoapIn" />
+      <wsdl:output message="tns:GetCRM_BirthdaySoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CustodianEverywhere_x0020_API.Soap" type="tns:CustodianEverywhere_x0020_API.Soap">
@@ -2207,6 +2482,78 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="PostClaimsUpdate">
+      <soap:operation soapAction="http://Custodianservices.com/PostClaimsUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMorePolicyDetails">
+      <soap:operation soapAction="http://Custodianservices.com/GetMorePolicyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_ActivePolicies">
+      <soap:operation soapAction="http://Custodianservices.com/GetCRM_ActivePolicies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_Customers">
+      <soap:operation soapAction="http://Custodianservices.com/GetCRM_Customers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_ActiveCustomers">
+      <soap:operation soapAction="http://Custodianservices.com/GetCRM_ActiveCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_CustomerPolicy">
+      <soap:operation soapAction="http://Custodianservices.com/GetCRM_CustomerPolicy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_PolicyRenewal">
+      <soap:operation soapAction="http://Custodianservices.com/GetCRM_PolicyRenewal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_Birthday">
+      <soap:operation soapAction="http://Custodianservices.com/GetCRM_Birthday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="CustodianEverywhere_x0020_API.Soap12" type="tns:CustodianEverywhere_x0020_API.Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -2635,6 +2982,78 @@
     </wsdl:operation>
     <wsdl:operation name="SubmitClaimRegister">
       <soap12:operation soapAction="http://Custodianservices.com/SubmitClaimRegister" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostClaimsUpdate">
+      <soap12:operation soapAction="http://Custodianservices.com/PostClaimsUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMorePolicyDetails">
+      <soap12:operation soapAction="http://Custodianservices.com/GetMorePolicyDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_ActivePolicies">
+      <soap12:operation soapAction="http://Custodianservices.com/GetCRM_ActivePolicies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_Customers">
+      <soap12:operation soapAction="http://Custodianservices.com/GetCRM_Customers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_ActiveCustomers">
+      <soap12:operation soapAction="http://Custodianservices.com/GetCRM_ActiveCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_CustomerPolicy">
+      <soap12:operation soapAction="http://Custodianservices.com/GetCRM_CustomerPolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_PolicyRenewal">
+      <soap12:operation soapAction="http://Custodianservices.com/GetCRM_PolicyRenewal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_Birthday">
+      <soap12:operation soapAction="http://Custodianservices.com/GetCRM_Birthday" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
