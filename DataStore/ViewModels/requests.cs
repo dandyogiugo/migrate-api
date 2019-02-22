@@ -271,10 +271,9 @@ namespace DataStore.ViewModels
         {
 
         }
-        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime date_of_birth { get; set; }
+        public DateTime? date_of_birth { get; set; }
         [Required]
         public Zones zone { get; set; }
         [Required]
@@ -289,6 +288,9 @@ namespace DataStore.ViewModels
         public DateTime return_date { get; set; }
         [Required]
         public string merchant_id { get; set; }
+
+        [DataType(DataType.Date)]
+        public List<DateTime> multiple_dob { get; set; }
     }
 
     public class BuyTravelInsurance
@@ -299,19 +301,19 @@ namespace DataStore.ViewModels
         }
 
         public string title { get; set; }
-        [Required]
+      
         public string surname { get; set; }
-        [Required]
+     
         public string firstname { get; set; }
-        [Required]
+ 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime date_of_birth { get; set; }
-        [Required]
+        public DateTime? date_of_birth { get; set; }
+      
         public string gender { get; set; }
         [Required]
         public string nationality { get; set; }
-        [Required]
+      
         public string passport_number { get; set; }
         [Required]
         public string occupation { get; set; }
@@ -351,11 +353,33 @@ namespace DataStore.ViewModels
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        [Required]
+     
         [MaxLength(10)]
         public string extension { get; set; }
         public string attachment { get; set; }
+        public List<Passenger> Passenger { get; set; }
 
+    }
+
+    public class Passenger
+    {
+        public string surname { get; set; }
+        [MaxLength(50)]
+        public string firstname { get; set; }
+        [MaxLength(10)]
+        public string title { get; set; }
+        public DateTime date_of_birth { get; set; }
+        [MaxLength(8)]
+        public string gender { get; set; }
+        [MaxLength(20)]
+        public string passport_number { get; set; }
+        [MaxLength(50)]
+        public string occupation { get; set; }
+        [MaxLength(8)]
+        public string extension { get; set; }
+        public decimal premium { get; set; }
+        [MaxLength(400)]
+        public string attachment { get; set; }
     }
 
     public class policydetails

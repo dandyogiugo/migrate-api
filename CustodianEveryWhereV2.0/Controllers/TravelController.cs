@@ -56,42 +56,100 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Permission denied from accessing this feature"
                     };
                 }
-                using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                if (quote.date_of_birth != null)
                 {
-                    var quote_amount = await api.GetTravelQuoteAsync(quote.date_of_birth, quote.departure_date, quote.return_date, quote.zone.ToString().Replace("_", " "));
-                    if (!string.IsNullOrEmpty(quote_amount))
+                    using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
                     {
-                        decimal amount;
-                        var check_if_amount_is_number = decimal.TryParse(quote_amount, out amount);
-                        if (check_if_amount_is_number)
+                        var quote_amount = await api.GetTravelQuoteAsync(quote.date_of_birth.Value, quote.departure_date, quote.return_date, quote.zone.ToString().Replace("_", " "));
+                        if (!string.IsNullOrEmpty(quote_amount))
                         {
-                            return new TravelQuoteResponse
+                            decimal amount;
+                            var check_if_amount_is_number = decimal.TryParse(quote_amount, out amount);
+                            if (check_if_amount_is_number)
                             {
-                                status = 200,
-                                message = "Quote computed successfully",
-                                quote_amount = quote_amount
-                            };
+                                return new TravelQuoteResponse
+                                {
+                                    status = 200,
+                                    message = "Quote computed successfully",
+                                    quote_amount = quote_amount
+                                };
+                            }
+                            else
+                            {
+                                return new TravelQuoteResponse
+                                {
+                                    status = 403,
+                                    message = "Something happend while computing your quote",
+
+                                };
+                            }
+
                         }
                         else
                         {
                             return new TravelQuoteResponse
                             {
-                                status = 403,
-                                message = "Something happend while computing your quote",
+                                status = 405,
+                                message = "qoute computation was not successful",
 
                             };
                         }
-
                     }
-                    else
+                }
+                else
+                {
+                    decimal sum = 0;
+                    using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
                     {
+                        var quote_list = new List<decimal>();
+                        foreach (var date in quote.multiple_dob)
+                        {
+                            try
+                            {
+                                var quote_amount = await api.GetTravelQuoteAsync(date, quote.departure_date, quote.return_date, quote.zone.ToString().Replace("_", " "));
+                                if (!string.IsNullOrEmpty(quote_amount))
+                                {
+                                    decimal amount;
+                                    var check_if_amount_is_number = decimal.TryParse(quote_amount, out amount);
+                                    if (check_if_amount_is_number)
+                                    {
+                                        quote_list.Add(amount);
+                                        sum += amount;
+                                    }
+                                }
+                                else
+                                {
+                                    return new TravelQuoteResponse
+                                    {
+                                        status = 405,
+                                        message = "qoute computation failed",
+                                    };
+                                }
+
+
+                            }
+                            catch (Exception ex)
+                            {
+                                log.Error(ex.Message);
+                                log.Error(ex.StackTrace);
+                                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                                return new TravelQuoteResponse
+                                {
+                                    status = 405,
+                                    message = "qoute computation was not successful",
+                                };
+                            }
+                        }
+
                         return new TravelQuoteResponse
                         {
-                            status = 405,
-                            message = "qoute computation was not successful",
-
+                            status = 200,
+                            message = "Quote computed successfully",
+                            quote_amount = sum.ToString(),
+                            quote_list = quote_list
                         };
                     }
+
                 }
             }
             catch (Exception ex)
@@ -150,62 +208,159 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
-
-                using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                if (travel.Passenger.Count() == 0)
                 {
-                    var request = await api.POSTTravelRecAsync(GlobalConstant.merchant_id,
-                        GlobalConstant.password, travel.title, travel.surname, travel.firstname, travel.date_of_birth, travel.gender, travel.nationality,
-                        "Int'l PassPort", travel.passport_number, travel.occupation, travel.phone_number,
-                        travel.Email, travel.address, travel.zone.ToString().Replace("_", " "), travel.destination, travel.date_of_birth, travel.return_date.Subtract(travel.departure_date).ToString(),
-                        travel.purpose_of_trip, travel.departure_date, travel.return_date, travel.premium, "", "", travel.transaction_ref, "API", "", "", "", travel.multiple_destination);
-                    log.Info("RAW Response from API" + request.Passing_Travel_PostSourceResult);
-                    if (!string.IsNullOrEmpty(request.Passing_Travel_PostSourceResult))
+                    using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
                     {
-                        var save_data = new TravelInsurance
+                        var request = await api.POSTTravelRecAsync(GlobalConstant.merchant_id,
+                            GlobalConstant.password, travel.title, travel.surname, travel.firstname, travel.date_of_birth.Value, travel.gender, travel.nationality,
+                            "Int'l PassPort", travel.passport_number, travel.occupation, travel.phone_number,
+                            travel.Email, travel.address, travel.zone.ToString().Replace("_", " "), travel.destination, travel.date_of_birth.Value, travel.return_date.Subtract(travel.departure_date).ToString(),
+                            travel.purpose_of_trip, travel.departure_date, travel.return_date, travel.premium, "", "", travel.transaction_ref, "API", "", "", "", travel.multiple_destination);
+                        log.Info("RAW Response from API" + request.Passing_Travel_PostSourceResult);
+                        if (!string.IsNullOrEmpty(request.Passing_Travel_PostSourceResult))
                         {
-                            address = travel.address,
-                            date_of_birth = travel.date_of_birth,
-                            depature_date = travel.departure_date,
-                            destination = travel.destination,
-                            Email = travel.Email,
-                            firstname = travel.firstname,
-                            gender = travel.gender,
-                            merchant_id = travel.merchant_id,
-                            merchant_name = config.merchant_name,
-                            multiple_destination = travel.multiple_destination,
-                            nationality = travel.nationality,
-                            occupation = travel.occupation,
-                            passport_number = travel.passport_number,
-                            phone_number = travel.phone_number,
-                            premium = travel.premium,
-                            purpose_of_trip = travel.purpose_of_trip,
-                            return_date = travel.return_date,
-                            surname = travel.surname,
-                            title = travel.title,
-                            transaction_ref = travel.transaction_ref,
-                            zone = travel.zone.ToString().Replace("_", " ")
-                        };
+                            var save_data = new TravelInsurance
+                            {
+                                address = travel.address,
+                                date_of_birth = travel.date_of_birth.Value,
+                                depature_date = travel.departure_date,
+                                destination = travel.destination,
+                                Email = travel.Email,
+                                firstname = travel.firstname,
+                                gender = travel.gender,
+                                merchant_id = travel.merchant_id,
+                                merchant_name = config.merchant_name,
+                                multiple_destination = travel.multiple_destination,
+                                nationality = travel.nationality,
+                                occupation = travel.occupation,
+                                passport_number = travel.passport_number,
+                                phone_number = travel.phone_number,
+                                premium = travel.premium,
+                                purpose_of_trip = travel.purpose_of_trip,
+                                return_date = travel.return_date,
+                                surname = travel.surname,
+                                title = travel.title,
+                                transaction_ref = travel.transaction_ref,
+                                zone = travel.zone.ToString().Replace("_", " ")
+                            };
 
 
 
-                        var cert_number = request.Passing_Travel_PostSourceResult.Trim().Remove(0, request.Passing_Travel_PostSourceResult.Trim().Length - 7);
-                        var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{cert_number}.{travel.extension}";
-                        var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Travel/{nameurl}";
-                        byte[] content = Convert.FromBase64String(travel.attachment);
-                        File.WriteAllBytes(filepath, content);
+                            var cert_number = request.Passing_Travel_PostSourceResult.Trim().Remove(0, request.Passing_Travel_PostSourceResult.Trim().Length - 7);
+                            var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{cert_number}.{travel.extension}";
+                            var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Travel/{nameurl}";
+                            byte[] content = Convert.FromBase64String(travel.attachment);
+                            File.WriteAllBytes(filepath, content);
 
-                        save_data.file_path = filepath;
-                        save_data.Image_extension_type = travel.extension;
+                            save_data.file_path = filepath;
+                            save_data.Image_extension_type = travel.extension;
 
-                        await _buyinsurannce.Save(save_data);
-                        //http://192.168.10.74/webportal/travelcert.aspx?muser=ebusiness&mcert=0002474&mcert2=0002474
+                            await _buyinsurannce.Save(save_data);
+                            //http://192.168.10.74/webportal/travelcert.aspx?muser=ebusiness&mcert=0002474&mcert2=0002474
+                            return new TravelQuoteResponse
+                            {
+                                status = 200,
+                                message = "Transaction was successful",
+                                cert_url = GlobalConstant.Certificate_url + string.Format("muser=ebusiness&mcert={0}&mcert2={1}", cert_number, cert_number)
+                            };
+                            //muser=ebusiness&mcert={0}&mcert2={1}
+                        }
+                        else
+                        {
+                            log.Info($"Transaction processing failed {travel.Email}");
+                            return new TravelQuoteResponse
+                            {
+                                status = 403,
+                                message = "Transaction processing failed",
+
+                            };
+                        }
+                    }
+                }
+                else
+                {
+                    var list_cert_no = new List<string>();
+                    using (var api2 = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                    {
+                        try
+                        {
+                            foreach (var item in travel.Passenger)
+                            {
+                                travel.date_of_birth = item.date_of_birth;
+                                travel.firstname = item.firstname;
+                                travel.gender = item.gender;
+                                travel.passport_number = item.passport_number;
+                                travel.premium = item.premium;
+                                travel.surname = item.surname;
+                                travel.title = item.title;
+                                travel.attachment = item.attachment;
+                                travel.extension = item.extension;
+                                travel.occupation = item.occupation;
+
+                                log.Info($"New object {Newtonsoft.Json.JsonConvert.SerializeObject(travel)}");
+                                var request = await api2.POSTTravelRecAsync(GlobalConstant.merchant_id,
+                               GlobalConstant.password, travel.title, travel.surname, travel.firstname, travel.date_of_birth.Value, travel.gender, travel.nationality,
+                               "Int'l PassPort", travel.passport_number, travel.occupation, travel.phone_number,
+                               travel.Email, travel.address, travel.zone.ToString().Replace("_", " "), travel.destination, travel.date_of_birth.Value, travel.return_date.Subtract(travel.departure_date).ToString(),
+                               travel.purpose_of_trip, travel.departure_date, travel.return_date, travel.premium, "", "", travel.transaction_ref, "API", "", "", "", travel.multiple_destination);
+                                log.Info("RAW Response from API" + request.Passing_Travel_PostSourceResult);
+                                if (!string.IsNullOrEmpty(request.Passing_Travel_PostSourceResult))
+                                {
+                                    var save_data = new TravelInsurance
+                                    {
+                                        address = travel.address,
+                                        date_of_birth = travel.date_of_birth.Value,
+                                        depature_date = travel.departure_date,
+                                        destination = travel.destination,
+                                        Email = travel.Email,
+                                        firstname = travel.firstname,
+                                        gender = travel.gender,
+                                        merchant_id = travel.merchant_id,
+                                        merchant_name = config.merchant_name,
+                                        multiple_destination = travel.multiple_destination,
+                                        nationality = travel.nationality,
+                                        occupation = travel.occupation,
+                                        passport_number = travel.passport_number,
+                                        phone_number = travel.phone_number,
+                                        premium = travel.premium,
+                                        purpose_of_trip = travel.purpose_of_trip,
+                                        return_date = travel.return_date,
+                                        surname = travel.surname,
+                                        title = travel.title,
+                                        transaction_ref = travel.transaction_ref,
+                                        zone = travel.zone.ToString().Replace("_", " ")
+                                    };
+
+                                    var cert_number = request.Passing_Travel_PostSourceResult.Trim().Remove(0, request.Passing_Travel_PostSourceResult.Trim().Length - 7);
+                                    var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{cert_number}.{travel.extension}";
+                                    var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Travel/{nameurl}";
+                                    byte[] content = Convert.FromBase64String(travel.attachment);
+                                    File.WriteAllBytes(filepath, content);
+                                    list_cert_no.Add(cert_number);
+                                    save_data.file_path = filepath;
+                                    save_data.Image_extension_type = travel.extension;
+
+                                    await _buyinsurannce.Save(save_data);
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            log.Error(ex.Message);
+                            log.Error(ex.StackTrace);
+                            log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                        }
+                    }
+
+                    if (list_cert_no.Count() > 0)
+                    {
                         return new TravelQuoteResponse
                         {
                             status = 200,
                             message = "Transaction was successful",
-                            cert_url = GlobalConstant.Certificate_url + string.Format("muser=ebusiness&mcert={0}&mcert2={1}", cert_number, cert_number)
+                            cert_url = GlobalConstant.Certificate_url + string.Format("muser=ebusiness&mcert={0}&mcert2={1}", list_cert_no[0], list_cert_no[list_cert_no.Count() - 1])
                         };
-                        //muser=ebusiness&mcert={0}&mcert2={1}
                     }
                     else
                     {

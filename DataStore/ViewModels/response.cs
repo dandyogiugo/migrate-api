@@ -171,6 +171,7 @@ namespace DataStore.ViewModels
         public string message { get; set; }
         public string quote_amount { get; set; }
         public string cert_url { get; set; }
+        public List<decimal> quote_list { get; set; }
     }
 
 
