@@ -62,6 +62,8 @@ namespace DataStore.Utilities
 
         public async Task<bool> ValidateHash2(string pattern, string secret, string _hash)
         {
+            log.Info($"Passed hash {_hash.ToUpper()}");
+            log.Info($"my hash partten {pattern + secret}");
             bool res = false;
             StringBuilder Sb = new StringBuilder();
             using (MD5 hash = MD5.Create())
@@ -71,6 +73,7 @@ namespace DataStore.Utilities
                 foreach (Byte b in result)
                     Sb.Append(b.ToString("x2"));
             }
+            log.Info($"Computed hash {Sb.ToString().ToUpper()}");
             if (Sb.ToString().ToUpper().Equals(_hash.ToUpper()))
             {
                 res = true;

@@ -5,6 +5,7 @@ using DataStore.ViewModels;
 using NLog;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -211,7 +212,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
 
                 // validate hash
-                var checkhash = await util.ValidateHash2(Auto.premium + Auto.sum_insured + Auto.insurance_type.ToString() + Auto.reference_no, config.secret_key, Auto.hash);
+                var checkhash = await util.ValidateHash2(Auto.premium.ToString() + Auto.sum_insured.ToString() + Auto.insurance_type.ToString() + Auto.reference_no, config.secret_key, Auto.hash);
                 if (!checkhash)
                 {
                     log.Info($"Hash missmatched from request {Auto.merchant_id}");
@@ -230,13 +231,21 @@ namespace CustodianEveryWhereV2._0.Controllers
                         , Auto.chassis_number, Auto.registration_number, Auto.vehicle_model,
                         Auto.vehicle_model, Auto.vehicle_color, Auto.vehicle_model, Auto.vehicle_type, Auto.vehicle_year,
                         DateTime.Now, DateTime.Now, DateTime.Now.AddMonths(12), Auto.reference_no, "", "ADAPT", "", "", "");
-
+                    log.Info($"Response from Api {request.Passing_Motor_PostSourceResult}");
+                    //HO/V/29/G0000529E|17294
                     if (!string.IsNullOrEmpty(request.Passing_Motor_PostSourceResult) || request.Passing_Motor_PostSourceResult.ToLower() == "success")
                     {
+                        var cert_code = request.Passing_Motor_PostSourceResult.Replace("**", "|").Split('|')[1];
+                        var reciept_base_url = ConfigurationManager.AppSettings["Reciept_Base_Url"];
+                        //http://192.168.10.74/webportal/PushCertSlip.aspx?
                         return new res
                         {
                             status = 200,
-                            message = "Transaction was successful"
+                            message = "Transaction was successful",
+                            data = new Dictionary<string, string>
+                            {
+                                {"cert_url",reciept_base_url+$"mUser=CUST_WEB&mCert={cert_code}&mCert2={cert_code}" }
+                            }
                         };
                     }
                     else
