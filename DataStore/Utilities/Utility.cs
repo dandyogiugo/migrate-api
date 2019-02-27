@@ -143,9 +143,9 @@ namespace DataStore.Utilities
                 return false;
             }
         }
-        public async Task<response> GenerateCertificate(GenerateCert cert)
+        public async Task<req_response> GenerateCertificate(GenerateCert cert)
         {
-            response response = new response();
+            req_response response = new req_response();
             try
             {
 
@@ -205,9 +205,9 @@ namespace DataStore.Utilities
 
             return response;
         }
-        public async Task<response> GenerateCertificateOneOff(GenerateCert cert)
+        public async Task<req_response> GenerateCertificateOneOff(GenerateCert cert)
         {
-            response response = new response();
+            req_response response = new req_response();
             try
             {
 
@@ -332,14 +332,14 @@ namespace DataStore.Utilities
 
             return "HO/A/07/T" + final + "E";
         }
-        public async Task<response> Validator(string method_name, string merchant_id, string _category, decimal value_of_goods, string hash)
+        public async Task<req_response> Validator(string method_name, string merchant_id, string _category, decimal value_of_goods, string hash)
         {
             try
             {
                 var check_user_function = await this.CheckForAssignedFunction(method_name, merchant_id);
                 if (!check_user_function)
                 {
-                    return new response
+                    return new req_response
                     {
                         status = 406,
                         message = "Access denied. user not configured for this service "
@@ -348,7 +348,7 @@ namespace DataStore.Utilities
                 Category category;
                 if (!Enum.TryParse(_category, out category))
                 {
-                    return new response
+                    return new req_response
                     {
                         status = 401,
                         message = "Invalid category type, kindly check the api  documentation for the category types"
@@ -357,7 +357,7 @@ namespace DataStore.Utilities
                 var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
                 if (config == null)
                 {
-                    return new response
+                    return new req_response
                     {
                         status = 405,
                         message = "Invalid merchant Id"
@@ -366,7 +366,7 @@ namespace DataStore.Utilities
                 var can_proceed = await this.ValidateHash(value_of_goods, config.secret_key, hash);
                 if (!can_proceed)
                 {
-                    return new response
+                    return new req_response
                     {
                         status = 403,
                         message = "Security violation: hash value mismatch"

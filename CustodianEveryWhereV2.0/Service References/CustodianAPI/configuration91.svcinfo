@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="4wMfqfb3OY6Di8GcSz8kOriF7WA=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="dkKO0CNDY+W4BGqUb9SoXjNXVtM=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="CustodianEverywhere API.Soap">
       <properties>
@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CustodianEverywhere API.Soap" contract="CustodianAPI.CustodianEverywhereAPISoap" bindingType="basicHttpBinding" address="https://developers.custodianplc.com.ng/Testapi/Policyservices.asmx" bindingConfiguration="CustodianEverywhere API.Soap">
+    <endpoint name="CustodianEverywhere API.Soap" contract="CustodianAPI.CustodianEverywhereAPISoap" bindingType="basicHttpBinding" address="https://developers.custodianplc.com.ng/testapi/Policyservices.asmx" bindingConfiguration="CustodianEverywhere API.Soap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://developers.custodianplc.com.ng/Testapi/Policyservices.asmx</serializedValue>
+          <serializedValue>https://developers.custodianplc.com.ng/testapi/Policyservices.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -71,7 +71,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 {
                                     status = 200,
                                     message = "Quote computed successfully",
-                                    quote_amount = quote_amount
+                                    quote_amount = amount.ToString()
                                 };
                             }
                             else
@@ -208,6 +208,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
+
                 if (travel.Passenger.Count() == 0)
                 {
                     using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())

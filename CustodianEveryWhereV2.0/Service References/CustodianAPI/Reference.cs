@@ -565,45 +565,120 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActivePolicies", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetCRM_ActivePolicies(string MDescription, string userid);
+        CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActivePolicies(string MDescription, string userid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActivePolicies", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_ActivePoliciesAsync(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_ActivePoliciesAsync(string MDescription, string userid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Customers", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetCRM_Customers(string MDescription, string userid);
+        CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_Customers(string MDescription, string userid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Customers", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_CustomersAsync(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_CustomersAsync(string MDescription, string userid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActiveCustomers", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetCRM_ActiveCustomers(string MDescription, string userid);
+        CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActiveCustomers(string MDescription, string userid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActiveCustomers", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_ActiveCustomersAsync(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_ActiveCustomersAsync(string MDescription, string userid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_CustomerPolicy", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_AllPolicies", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetCRM_CustomerPolicy(string MDescription, string userid);
+        CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_AllPolicies(string MDescription, string userid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_CustomerPolicy", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_CustomerPolicyAsync(string MDescription, string userid);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_AllPolicies", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_AllPoliciesAsync(string MDescription, string userid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_PolicyRenewal", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetCRM_PolicyRenewal(string MDescription, string userid);
+        CustodianEveryWhereV2._0.CustodianAPI.Crm_Renewal[] GetCRM_PolicyRenewal(string MDescription, string userid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_PolicyRenewal", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_PolicyRenewalAsync(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_Renewal[]> GetCRM_PolicyRenewalAsync(string MDescription, string userid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Birthday", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetCRM_Birthday(string MDescription, string userid);
+        CustodianEveryWhereV2._0.CustodianAPI.Crm_Birthday[] GetCRM_Birthday(string MDescription, string userid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Birthday", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_BirthdayAsync(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_Birthday[]> GetCRM_BirthdayAsync(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Claims", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims[] GetCRM_Claims(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Claims", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims[]> GetCRM_ClaimsAsync(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_DashBoard", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        CustodianEveryWhereV2._0.CustodianAPI.CRM_Dashboard[] GetCRM_DashBoard(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_DashBoard", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.CRM_Dashboard[]> GetCRM_DashBoardAsync(string MDescription, string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/ABSMotorInterest", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string ABSMotorInterest(
+                    string MERCHANTID, 
+                    string MERCHANTPWD, 
+                    string MOT_POL_NUM, 
+                    string MOT_REG_NUM, 
+                    string MOT_USER_NAME, 
+                    System.DateTime MOT_START_DATE, 
+                    System.DateTime MOT_END_DATE, 
+                    string MOT_HP_CC, 
+                    string MOT_ENGINE_NUM, 
+                    string MOT_CHASSIS_NUM, 
+                    string MOT_MANUF_YEAR, 
+                    string MOT_VEH_COLOR, 
+                    string MOT_VEH_MAKE, 
+                    string MOT_VEH_TYPE, 
+                    string MOT_VEH_VALUE, 
+                    string MOT_VEH_PREM, 
+                    string MOT_VEH_RATE, 
+                    string MOT_FLEET_RATE, 
+                    string MOT_SPECIAL_RATE, 
+                    string MOT_EXCESS_BY_BACK, 
+                    string MOT_RISK_DAYS, 
+                    string MOT_TPPD_VALUE, 
+                    decimal MOT_SRCC_RATE, 
+                    decimal MOT_FLOOD_RATE, 
+                    decimal MOT_EQUAKE_RATE, 
+                    decimal MOT_OTHER_RATE, 
+                    string MOT_USERID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/ABSMotorInterest", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> ABSMotorInterestAsync(
+                    string MERCHANTID, 
+                    string MERCHANTPWD, 
+                    string MOT_POL_NUM, 
+                    string MOT_REG_NUM, 
+                    string MOT_USER_NAME, 
+                    System.DateTime MOT_START_DATE, 
+                    System.DateTime MOT_END_DATE, 
+                    string MOT_HP_CC, 
+                    string MOT_ENGINE_NUM, 
+                    string MOT_CHASSIS_NUM, 
+                    string MOT_MANUF_YEAR, 
+                    string MOT_VEH_COLOR, 
+                    string MOT_VEH_MAKE, 
+                    string MOT_VEH_TYPE, 
+                    string MOT_VEH_VALUE, 
+                    string MOT_VEH_PREM, 
+                    string MOT_VEH_RATE, 
+                    string MOT_FLEET_RATE, 
+                    string MOT_SPECIAL_RATE, 
+                    string MOT_EXCESS_BY_BACK, 
+                    string MOT_RISK_DAYS, 
+                    string MOT_TPPD_VALUE, 
+                    decimal MOT_SRCC_RATE, 
+                    decimal MOT_FLOOD_RATE, 
+                    decimal MOT_EQUAKE_RATE, 
+                    decimal MOT_OTHER_RATE, 
+                    string MOT_USERID);
     }
     
     /// <remarks/>
@@ -667,6 +742,502 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             set {
                 this.insuredNameField = value;
                 this.RaisePropertyChanged("InsuredName");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class CRM_Dashboard : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int cntActivePoliciesField;
+        
+        private int countCustomersField;
+        
+        private int activeCustomersField;
+        
+        private int customerPolicyField;
+        
+        private int policyRenewalField;
+        
+        private int birthdayField;
+        
+        private int claimsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int CntActivePolicies {
+            get {
+                return this.cntActivePoliciesField;
+            }
+            set {
+                this.cntActivePoliciesField = value;
+                this.RaisePropertyChanged("CntActivePolicies");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int CountCustomers {
+            get {
+                return this.countCustomersField;
+            }
+            set {
+                this.countCustomersField = value;
+                this.RaisePropertyChanged("CountCustomers");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int ActiveCustomers {
+            get {
+                return this.activeCustomersField;
+            }
+            set {
+                this.activeCustomersField = value;
+                this.RaisePropertyChanged("ActiveCustomers");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int CustomerPolicy {
+            get {
+                return this.customerPolicyField;
+            }
+            set {
+                this.customerPolicyField = value;
+                this.RaisePropertyChanged("CustomerPolicy");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public int PolicyRenewal {
+            get {
+                return this.policyRenewalField;
+            }
+            set {
+                this.policyRenewalField = value;
+                this.RaisePropertyChanged("PolicyRenewal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public int Birthday {
+            get {
+                return this.birthdayField;
+            }
+            set {
+                this.birthdayField = value;
+                this.RaisePropertyChanged("Birthday");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public int Claims {
+            get {
+                return this.claimsField;
+            }
+            set {
+                this.claimsField = value;
+                this.RaisePropertyChanged("Claims");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class CRM_Claims : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string firstNameField;
+        
+        private string lastNameField;
+        
+        private string policyNoField;
+        
+        private string claimsNoField;
+        
+        private string phoneField;
+        
+        private string emailField;
+        
+        private string productsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+                this.RaisePropertyChanged("FirstName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string LastName {
+            get {
+                return this.lastNameField;
+            }
+            set {
+                this.lastNameField = value;
+                this.RaisePropertyChanged("LastName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string PolicyNo {
+            get {
+                return this.policyNoField;
+            }
+            set {
+                this.policyNoField = value;
+                this.RaisePropertyChanged("PolicyNo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string ClaimsNo {
+            get {
+                return this.claimsNoField;
+            }
+            set {
+                this.claimsNoField = value;
+                this.RaisePropertyChanged("ClaimsNo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Phone {
+            get {
+                return this.phoneField;
+            }
+            set {
+                this.phoneField = value;
+                this.RaisePropertyChanged("Phone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string Email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+                this.RaisePropertyChanged("Email");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string Products {
+            get {
+                return this.productsField;
+            }
+            set {
+                this.productsField = value;
+                this.RaisePropertyChanged("Products");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class Crm_Birthday : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string firstNameField;
+        
+        private string lastNameField;
+        
+        private string dOBField;
+        
+        private string phoneField;
+        
+        private string emailField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+                this.RaisePropertyChanged("FirstName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string LastName {
+            get {
+                return this.lastNameField;
+            }
+            set {
+                this.lastNameField = value;
+                this.RaisePropertyChanged("LastName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string DOB {
+            get {
+                return this.dOBField;
+            }
+            set {
+                this.dOBField = value;
+                this.RaisePropertyChanged("DOB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Phone {
+            get {
+                return this.phoneField;
+            }
+            set {
+                this.phoneField = value;
+                this.RaisePropertyChanged("Phone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+                this.RaisePropertyChanged("Email");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class Crm_Renewal : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string pol_NoField;
+        
+        private string daysLeftField;
+        
+        private string renwDateField;
+        
+        private string gross_PremiumField;
+        
+        private string sum_InsuredField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Pol_No {
+            get {
+                return this.pol_NoField;
+            }
+            set {
+                this.pol_NoField = value;
+                this.RaisePropertyChanged("Pol_No");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string daysLeft {
+            get {
+                return this.daysLeftField;
+            }
+            set {
+                this.daysLeftField = value;
+                this.RaisePropertyChanged("daysLeft");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string RenwDate {
+            get {
+                return this.renwDateField;
+            }
+            set {
+                this.renwDateField = value;
+                this.RaisePropertyChanged("RenwDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Gross_Premium {
+            get {
+                return this.gross_PremiumField;
+            }
+            set {
+                this.gross_PremiumField = value;
+                this.RaisePropertyChanged("Gross_Premium");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Sum_Insured {
+            get {
+                return this.sum_InsuredField;
+            }
+            set {
+                this.sum_InsuredField = value;
+                this.RaisePropertyChanged("Sum_Insured");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class Crm_PolicyInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string firstNameField;
+        
+        private string lastNameField;
+        
+        private string policy_NoField;
+        
+        private string phoneField;
+        
+        private string emailField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+                this.RaisePropertyChanged("FirstName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string LastName {
+            get {
+                return this.lastNameField;
+            }
+            set {
+                this.lastNameField = value;
+                this.RaisePropertyChanged("LastName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Policy_No {
+            get {
+                return this.policy_NoField;
+            }
+            set {
+                this.policy_NoField = value;
+                this.RaisePropertyChanged("Policy_No");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Phone {
+            get {
+                return this.phoneField;
+            }
+            set {
+                this.phoneField = value;
+                this.RaisePropertyChanged("Phone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+                this.RaisePropertyChanged("Email");
             }
         }
         
@@ -6610,52 +7181,130 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             return base.Channel.GetMorePolicyDetailsAsync(MerchantID, MerchantPWD, Subsidiary, PolicyNumber);
         }
         
-        public System.Data.DataSet GetCRM_ActivePolicies(string MDescription, string userid) {
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActivePolicies(string MDescription, string userid) {
             return base.Channel.GetCRM_ActivePolicies(MDescription, userid);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_ActivePoliciesAsync(string MDescription, string userid) {
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_ActivePoliciesAsync(string MDescription, string userid) {
             return base.Channel.GetCRM_ActivePoliciesAsync(MDescription, userid);
         }
         
-        public System.Data.DataSet GetCRM_Customers(string MDescription, string userid) {
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_Customers(string MDescription, string userid) {
             return base.Channel.GetCRM_Customers(MDescription, userid);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_CustomersAsync(string MDescription, string userid) {
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_CustomersAsync(string MDescription, string userid) {
             return base.Channel.GetCRM_CustomersAsync(MDescription, userid);
         }
         
-        public System.Data.DataSet GetCRM_ActiveCustomers(string MDescription, string userid) {
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActiveCustomers(string MDescription, string userid) {
             return base.Channel.GetCRM_ActiveCustomers(MDescription, userid);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_ActiveCustomersAsync(string MDescription, string userid) {
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_ActiveCustomersAsync(string MDescription, string userid) {
             return base.Channel.GetCRM_ActiveCustomersAsync(MDescription, userid);
         }
         
-        public System.Data.DataSet GetCRM_CustomerPolicy(string MDescription, string userid) {
-            return base.Channel.GetCRM_CustomerPolicy(MDescription, userid);
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_AllPolicies(string MDescription, string userid) {
+            return base.Channel.GetCRM_AllPolicies(MDescription, userid);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_CustomerPolicyAsync(string MDescription, string userid) {
-            return base.Channel.GetCRM_CustomerPolicyAsync(MDescription, userid);
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_AllPoliciesAsync(string MDescription, string userid) {
+            return base.Channel.GetCRM_AllPoliciesAsync(MDescription, userid);
         }
         
-        public System.Data.DataSet GetCRM_PolicyRenewal(string MDescription, string userid) {
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_Renewal[] GetCRM_PolicyRenewal(string MDescription, string userid) {
             return base.Channel.GetCRM_PolicyRenewal(MDescription, userid);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_PolicyRenewalAsync(string MDescription, string userid) {
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_Renewal[]> GetCRM_PolicyRenewalAsync(string MDescription, string userid) {
             return base.Channel.GetCRM_PolicyRenewalAsync(MDescription, userid);
         }
         
-        public System.Data.DataSet GetCRM_Birthday(string MDescription, string userid) {
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_Birthday[] GetCRM_Birthday(string MDescription, string userid) {
             return base.Channel.GetCRM_Birthday(MDescription, userid);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetCRM_BirthdayAsync(string MDescription, string userid) {
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_Birthday[]> GetCRM_BirthdayAsync(string MDescription, string userid) {
             return base.Channel.GetCRM_BirthdayAsync(MDescription, userid);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims[] GetCRM_Claims(string MDescription, string userid) {
+            return base.Channel.GetCRM_Claims(MDescription, userid);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims[]> GetCRM_ClaimsAsync(string MDescription, string userid) {
+            return base.Channel.GetCRM_ClaimsAsync(MDescription, userid);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_Dashboard[] GetCRM_DashBoard(string MDescription, string userid) {
+            return base.Channel.GetCRM_DashBoard(MDescription, userid);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.CRM_Dashboard[]> GetCRM_DashBoardAsync(string MDescription, string userid) {
+            return base.Channel.GetCRM_DashBoardAsync(MDescription, userid);
+        }
+        
+        public string ABSMotorInterest(
+                    string MERCHANTID, 
+                    string MERCHANTPWD, 
+                    string MOT_POL_NUM, 
+                    string MOT_REG_NUM, 
+                    string MOT_USER_NAME, 
+                    System.DateTime MOT_START_DATE, 
+                    System.DateTime MOT_END_DATE, 
+                    string MOT_HP_CC, 
+                    string MOT_ENGINE_NUM, 
+                    string MOT_CHASSIS_NUM, 
+                    string MOT_MANUF_YEAR, 
+                    string MOT_VEH_COLOR, 
+                    string MOT_VEH_MAKE, 
+                    string MOT_VEH_TYPE, 
+                    string MOT_VEH_VALUE, 
+                    string MOT_VEH_PREM, 
+                    string MOT_VEH_RATE, 
+                    string MOT_FLEET_RATE, 
+                    string MOT_SPECIAL_RATE, 
+                    string MOT_EXCESS_BY_BACK, 
+                    string MOT_RISK_DAYS, 
+                    string MOT_TPPD_VALUE, 
+                    decimal MOT_SRCC_RATE, 
+                    decimal MOT_FLOOD_RATE, 
+                    decimal MOT_EQUAKE_RATE, 
+                    decimal MOT_OTHER_RATE, 
+                    string MOT_USERID) {
+            return base.Channel.ABSMotorInterest(MERCHANTID, MERCHANTPWD, MOT_POL_NUM, MOT_REG_NUM, MOT_USER_NAME, MOT_START_DATE, MOT_END_DATE, MOT_HP_CC, MOT_ENGINE_NUM, MOT_CHASSIS_NUM, MOT_MANUF_YEAR, MOT_VEH_COLOR, MOT_VEH_MAKE, MOT_VEH_TYPE, MOT_VEH_VALUE, MOT_VEH_PREM, MOT_VEH_RATE, MOT_FLEET_RATE, MOT_SPECIAL_RATE, MOT_EXCESS_BY_BACK, MOT_RISK_DAYS, MOT_TPPD_VALUE, MOT_SRCC_RATE, MOT_FLOOD_RATE, MOT_EQUAKE_RATE, MOT_OTHER_RATE, MOT_USERID);
+        }
+        
+        public System.Threading.Tasks.Task<string> ABSMotorInterestAsync(
+                    string MERCHANTID, 
+                    string MERCHANTPWD, 
+                    string MOT_POL_NUM, 
+                    string MOT_REG_NUM, 
+                    string MOT_USER_NAME, 
+                    System.DateTime MOT_START_DATE, 
+                    System.DateTime MOT_END_DATE, 
+                    string MOT_HP_CC, 
+                    string MOT_ENGINE_NUM, 
+                    string MOT_CHASSIS_NUM, 
+                    string MOT_MANUF_YEAR, 
+                    string MOT_VEH_COLOR, 
+                    string MOT_VEH_MAKE, 
+                    string MOT_VEH_TYPE, 
+                    string MOT_VEH_VALUE, 
+                    string MOT_VEH_PREM, 
+                    string MOT_VEH_RATE, 
+                    string MOT_FLEET_RATE, 
+                    string MOT_SPECIAL_RATE, 
+                    string MOT_EXCESS_BY_BACK, 
+                    string MOT_RISK_DAYS, 
+                    string MOT_TPPD_VALUE, 
+                    decimal MOT_SRCC_RATE, 
+                    decimal MOT_FLOOD_RATE, 
+                    decimal MOT_EQUAKE_RATE, 
+                    decimal MOT_OTHER_RATE, 
+                    string MOT_USERID) {
+            return base.Channel.ABSMotorInterestAsync(MERCHANTID, MERCHANTPWD, MOT_POL_NUM, MOT_REG_NUM, MOT_USER_NAME, MOT_START_DATE, MOT_END_DATE, MOT_HP_CC, MOT_ENGINE_NUM, MOT_CHASSIS_NUM, MOT_MANUF_YEAR, MOT_VEH_COLOR, MOT_VEH_MAKE, MOT_VEH_TYPE, MOT_VEH_VALUE, MOT_VEH_PREM, MOT_VEH_RATE, MOT_FLEET_RATE, MOT_SPECIAL_RATE, MOT_EXCESS_BY_BACK, MOT_RISK_DAYS, MOT_TPPD_VALUE, MOT_SRCC_RATE, MOT_FLOOD_RATE, MOT_EQUAKE_RATE, MOT_OTHER_RATE, MOT_USERID);
         }
     }
 }

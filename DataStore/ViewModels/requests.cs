@@ -301,19 +301,19 @@ namespace DataStore.ViewModels
         }
 
         public string title { get; set; }
-      
+
         public string surname { get; set; }
-     
+
         public string firstname { get; set; }
- 
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? date_of_birth { get; set; }
-      
+
         public string gender { get; set; }
         [Required]
         public string nationality { get; set; }
-      
+
         public string passport_number { get; set; }
         [Required]
         public string occupation { get; set; }
@@ -353,7 +353,7 @@ namespace DataStore.ViewModels
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-     
+
         [MaxLength(10)]
         public string extension { get; set; }
         public string attachment { get; set; }
@@ -419,6 +419,109 @@ namespace DataStore.ViewModels
         public decimal premium { get; set; }
         [Required]
         public string merchant_id { get; set; }
+    }
+
+
+    public class res
+    {
+        public res()
+        {
+
+        }
+        public string message { get; set; }
+        public int status { get; set; }
+        public object data { get; set; }
+    }
+
+
+    public class LicenseInfo
+    {
+        public LicenseInfo()
+        {
+
+        }
+        public string ChasisNo { get; set; }
+        public string EngineNo { get; set; }
+        public string Color { get; set; }
+        public string Model { get; set; }
+        public string Name { get; set; }
+        public string RegistrationNo { get; set; }
+        public string VehicleStatus { get; set; }
+    }
+
+    public class response
+    {
+        public response()
+        {
+
+        }
+        public string ResponseCode { get; set; }
+        public string ResponseMessage { get; set; }
+        public string DV_url { get; set; }
+    }
+
+
+    public class AutoQuoute
+    {
+        public AutoQuoute()
+        {
+
+        }
+
+        [Required]
+        public TypeOfCover cover_type { get; set; }
+        public string vehicle_category { get; set; }
+        [Required]
+        public decimal vehicle_value { get; set; }
+        public string payment_option { get; set; }
+        public string excess { get; set; }
+        public string tracking { get; set; }
+        public string flood { get; set; }
+        public string srcc { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public string hash { get; set; }
+    }
+
+    public class Auto
+    {
+        public Auto()
+        {
+
+        }
+
+        [Required]
+        public string customer_name { get; set; }
+        [Required]
+        public string address { get; set; }
+        [Required]
+        public string phone_number { get; set; }
+        [Required]
+        public string email { get; set; }
+        [Required]
+        public string engine_number { get; set; }
+        [Required]
+        public TypeOfCover insurance_type { get; set; }
+        [Required]
+        public decimal premium { get; set; }
+        [Required]
+        public decimal sum_insured { get; set; }
+        [Required]
+        public string chassis_number { get; set; }
+        [Required]
+        public string registration_number { get; set; }
+        public string vehicle_model { get; set; }
+        public string vehicle_category { get; set; }
+        public string vehicle_color { get; set; }
+        public string vehicle_type { get; set; }
+        public string vehicle_year { get; set; }
+        [Required]
+        public string hash { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public string reference_no { get; set; }
     }
 
 }

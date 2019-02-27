@@ -37,14 +37,14 @@ namespace CustodianEveryWhereV2._0.Controllers
         /// <param name="Quote"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<response> GetGITQuote(GetQuote Quote)
+        public async Task<req_response> GetGITQuote(GetQuote Quote)
         {
             try
             {
                 log.Info("about to validate request params for GetQuote()");
                 if (!ModelState.IsValid)
                 {
-                    return new response
+                    return new req_response
                     {
                         status = 404,
                         message = "Some required parameters missing from request"
@@ -60,7 +60,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 var premConfig = await _premium_map.FindOneByCriteria(x => x.category.ToLower() == Quote.category.ToLower().Trim().Trim());
                 if (premConfig == null)
                 {
-                    return new response
+                    return new req_response
                     {
                         status = 407,
                         message = "Unable to compute premium, please try again"
@@ -68,7 +68,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 premium = (Quote.value_of_goods * premConfig.rate) / 100;
 
-                return new response
+                return new req_response
                 {
                     status = 200,
                     value_of_goods = Quote.value_of_goods,
@@ -81,7 +81,7 @@ namespace CustodianEveryWhereV2._0.Controllers
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
-                return new response
+                return new req_response
                 {
                     status = 404,
                     message = "system malfunction"
@@ -94,14 +94,14 @@ namespace CustodianEveryWhereV2._0.Controllers
         /// <param name="BuyGIT"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<response> BuyGITInsurance(BuyGITInsurance BuyGIT)
+        public async Task<req_response> BuyGITInsurance(BuyGITInsurance BuyGIT)
         {
             try
             {
                 log.Info($"new request {Newtonsoft.Json.JsonConvert.SerializeObject(BuyGIT)}");
                 if (!ModelState.IsValid)
                 {
-                    return new response
+                    return new req_response
                     {
                         status = 404,
                         message = "Some required parameters missing from request"
@@ -118,7 +118,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 var premConfig = await _premium_map.FindOneByCriteria(x => x.category.ToLower() == BuyGIT.category.ToLower().Trim().Trim());
                 if (premConfig == null)
                 {
-                    return new response
+                    return new req_response
                     {
                         status = 407,
                         message = "Unable to re-compute premium, please try again"
@@ -183,7 +183,7 @@ namespace CustodianEveryWhereV2._0.Controllers
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
-                return new response
+                return new req_response
                 {
                     status = 404,
                     message = "system malfunction"
@@ -192,7 +192,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
-        public async Task<response> EndTrip(string policy_no, string hash, string merchant_id)
+        public async Task<req_response> EndTrip(string policy_no, string hash, string merchant_id)
         {
             try
             {
@@ -200,7 +200,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 if (string.IsNullOrEmpty(policy_no) || string.IsNullOrEmpty(hash) || string.IsNullOrEmpty(merchant_id))
                 {
                     log.Info("parameters missing from request");
-                    return new response
+                    return new req_response
                     {
                         status = 405,
                         message = "Some parameters missing from request: hint(all params are required)"
@@ -210,7 +210,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 if (get_tranx == null)
                 {
                     log.Info("the certificate number is not valid");
-                    return new response
+                    return new req_response
                     {
                         status = 402,
                         message = "The certificate number is not valid"
@@ -230,7 +230,7 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                 var resp = await util.SendGITMail(get_tranx, "YES", merchant_id.Trim());
 
-                return new response
+                return new req_response
                 {
                     status = 200,
                     message = "Trip has ended successfully",
@@ -244,7 +244,7 @@ namespace CustodianEveryWhereV2._0.Controllers
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
-                return new response
+                return new req_response
                 {
                     status = 404,
                     message = "system malfunction"
@@ -253,14 +253,14 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpPost]
-        public async Task<response> BuyGITOneOffInsurance(BuyOneOffGITInsurance OneOffGit)
+        public async Task<req_response> BuyGITOneOffInsurance(BuyOneOffGITInsurance OneOffGit)
         {
             try
             {
                 log.Info($"new request {Newtonsoft.Json.JsonConvert.SerializeObject(OneOffGit)}");
                 if (!ModelState.IsValid)
                 {
-                    return new response
+                    return new req_response
                     {
                         status = 404,
                         message = "Some required parameters missing from request"
@@ -318,7 +318,7 @@ namespace CustodianEveryWhereV2._0.Controllers
             {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
-                return new response
+                return new req_response
                 {
                     status = 404,
                     message = "system malfunction"

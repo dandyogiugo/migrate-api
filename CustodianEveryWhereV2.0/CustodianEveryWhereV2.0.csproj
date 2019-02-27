@@ -301,6 +301,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AgentController.cs" />
     <Compile Include="Controllers\AirPortSearchController.cs" />
+    <Compile Include="Controllers\AutoInsuranceController.cs" />
     <Compile Include="Controllers\ClaimsController.cs" />
     <Compile Include="Controllers\EnquiryController.cs" />
     <Compile Include="Controllers\FitfamPlusController.cs" />
@@ -317,6 +318,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Service References\AutoReg\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\CustodianAPI\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -376,6 +382,13 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <None Include="Service References\AutoReg\vehiclecheck.disco" />
+    <None Include="Service References\AutoReg\configuration91.svcinfo" />
+    <None Include="Service References\AutoReg\configuration.svcinfo" />
+    <None Include="Service References\AutoReg\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.certificate_out.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -454,16 +467,33 @@
     <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\AutoReg\vehiclecheck.wsdl" />
+    <None Include="Service References\CustodianAPI\configuration91.svcinfo" />
+    <None Include="Service References\CustodianAPI\configuration.svcinfo" />
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Crm_Birthday.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.CRM_Dashboard.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Crm_Renewal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.MorePolicyDetails.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\CustodianAPI\Policyservices.disco" />
-    <None Include="Service References\CustodianAPI\configuration91.svcinfo" />
-    <None Include="Service References\CustodianAPI\configuration.svcinfo" />
+    <None Include="Service References\CustodianAPI\Policyservices.wsdl" />
     <None Include="Service References\CustodianAPI\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\CustodianAPI\Policyservices.disco" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -479,7 +509,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Service References\CustodianAPI\Policyservices.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -503,6 +532,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AutoReg\" />
     <WCFMetadataStorage Include="Service References\CustodianAPI\" />
   </ItemGroup>
   <PropertyGroup>
@@ -531,7 +561,6 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties Cert_4json_1json__JSONSchema="swagger" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

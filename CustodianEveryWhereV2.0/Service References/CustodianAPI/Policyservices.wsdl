@@ -1363,17 +1363,24 @@
       <s:element name="GetCRM_ActivePoliciesResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_ActivePoliciesResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_ActivePoliciesResult" type="tns:ArrayOfCrm_PolicyInfo" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfCrm_PolicyInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Crm_PolicyInfo" nillable="true" type="tns:Crm_PolicyInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Crm_PolicyInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Policy_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="GetCRM_Customers">
         <s:complexType>
           <s:sequence>
@@ -1385,14 +1392,7 @@
       <s:element name="GetCRM_CustomersResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_CustomersResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_CustomersResult" type="tns:ArrayOfCrm_PolicyInfo" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1407,18 +1407,11 @@
       <s:element name="GetCRM_ActiveCustomersResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_ActiveCustomersResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_ActiveCustomersResult" type="tns:ArrayOfCrm_PolicyInfo" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetCRM_CustomerPolicy">
+      <s:element name="GetCRM_AllPolicies">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="MDescription" type="s:string" />
@@ -1426,17 +1419,10 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetCRM_CustomerPolicyResponse">
+      <s:element name="GetCRM_AllPoliciesResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_CustomerPolicyResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_AllPoliciesResult" type="tns:ArrayOfCrm_PolicyInfo" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1451,17 +1437,24 @@
       <s:element name="GetCRM_PolicyRenewalResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_PolicyRenewalResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_PolicyRenewalResult" type="tns:ArrayOfCrm_Renewal" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfCrm_Renewal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Crm_Renewal" nillable="true" type="tns:Crm_Renewal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Crm_Renewal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Pol_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="daysLeft" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RenwDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gross_Premium" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sum_Insured" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="GetCRM_Birthday">
         <s:complexType>
           <s:sequence>
@@ -1473,14 +1466,123 @@
       <s:element name="GetCRM_BirthdayResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_BirthdayResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_BirthdayResult" type="tns:ArrayOfCrm_Birthday" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCrm_Birthday">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Crm_Birthday" nillable="true" type="tns:Crm_Birthday" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Crm_Birthday">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DOB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCRM_Claims">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_ClaimsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_ClaimsResult" type="tns:ArrayOfCRM_Claims" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCRM_Claims">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRM_Claims" nillable="true" type="tns:CRM_Claims" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRM_Claims">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimsNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Products" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCRM_DashBoard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCRM_DashBoardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCRM_DashBoardResult" type="tns:ArrayOfCRM_Dashboard" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCRM_Dashboard">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRM_Dashboard" nillable="true" type="tns:CRM_Dashboard" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRM_Dashboard">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CntActivePolicies" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCustomers" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActiveCustomers" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerPolicy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PolicyRenewal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Birthday" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Claims" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ABSMotorInterest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MERCHANTID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MERCHANTPWD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_POL_NUM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_REG_NUM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_USER_NAME" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MOT_START_DATE" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="MOT_END_DATE" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_HP_CC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_ENGINE_NUM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_CHASSIS_NUM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_MANUF_YEAR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_VEH_COLOR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_VEH_MAKE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_VEH_TYPE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_VEH_VALUE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_VEH_PREM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_VEH_RATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_FLEET_RATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_SPECIAL_RATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_EXCESS_BY_BACK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_RISK_DAYS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_TPPD_VALUE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MOT_SRCC_RATE" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MOT_FLOOD_RATE" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MOT_EQUAKE_RATE" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MOT_OTHER_RATE" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOT_USERID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ABSMotorInterestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ABSMotorInterestResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1804,11 +1906,11 @@
   <wsdl:message name="GetCRM_ActiveCustomersSoapOut">
     <wsdl:part name="parameters" element="tns:GetCRM_ActiveCustomersResponse" />
   </wsdl:message>
-  <wsdl:message name="GetCRM_CustomerPolicySoapIn">
-    <wsdl:part name="parameters" element="tns:GetCRM_CustomerPolicy" />
+  <wsdl:message name="GetCRM_AllPoliciesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCRM_AllPolicies" />
   </wsdl:message>
-  <wsdl:message name="GetCRM_CustomerPolicySoapOut">
-    <wsdl:part name="parameters" element="tns:GetCRM_CustomerPolicyResponse" />
+  <wsdl:message name="GetCRM_AllPoliciesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCRM_AllPoliciesResponse" />
   </wsdl:message>
   <wsdl:message name="GetCRM_PolicyRenewalSoapIn">
     <wsdl:part name="parameters" element="tns:GetCRM_PolicyRenewal" />
@@ -1821,6 +1923,24 @@
   </wsdl:message>
   <wsdl:message name="GetCRM_BirthdaySoapOut">
     <wsdl:part name="parameters" element="tns:GetCRM_BirthdayResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_ClaimsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCRM_Claims" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_ClaimsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCRM_ClaimsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_DashBoardSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCRM_DashBoard" />
+  </wsdl:message>
+  <wsdl:message name="GetCRM_DashBoardSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCRM_DashBoardResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABSMotorInterestSoapIn">
+    <wsdl:part name="parameters" element="tns:ABSMotorInterest" />
+  </wsdl:message>
+  <wsdl:message name="ABSMotorInterestSoapOut">
+    <wsdl:part name="parameters" element="tns:ABSMotorInterestResponse" />
   </wsdl:message>
   <wsdl:portType name="CustodianEverywhere_x0020_API.Soap">
     <wsdl:operation name="GetClaimStatus">
@@ -2035,9 +2155,9 @@
       <wsdl:input message="tns:GetCRM_ActiveCustomersSoapIn" />
       <wsdl:output message="tns:GetCRM_ActiveCustomersSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetCRM_CustomerPolicy">
-      <wsdl:input message="tns:GetCRM_CustomerPolicySoapIn" />
-      <wsdl:output message="tns:GetCRM_CustomerPolicySoapOut" />
+    <wsdl:operation name="GetCRM_AllPolicies">
+      <wsdl:input message="tns:GetCRM_AllPoliciesSoapIn" />
+      <wsdl:output message="tns:GetCRM_AllPoliciesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCRM_PolicyRenewal">
       <wsdl:input message="tns:GetCRM_PolicyRenewalSoapIn" />
@@ -2046,6 +2166,18 @@
     <wsdl:operation name="GetCRM_Birthday">
       <wsdl:input message="tns:GetCRM_BirthdaySoapIn" />
       <wsdl:output message="tns:GetCRM_BirthdaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_Claims">
+      <wsdl:input message="tns:GetCRM_ClaimsSoapIn" />
+      <wsdl:output message="tns:GetCRM_ClaimsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_DashBoard">
+      <wsdl:input message="tns:GetCRM_DashBoardSoapIn" />
+      <wsdl:output message="tns:GetCRM_DashBoardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ABSMotorInterest">
+      <wsdl:input message="tns:ABSMotorInterestSoapIn" />
+      <wsdl:output message="tns:ABSMotorInterestSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CustodianEverywhere_x0020_API.Soap" type="tns:CustodianEverywhere_x0020_API.Soap">
@@ -2527,8 +2659,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetCRM_CustomerPolicy">
-      <soap:operation soapAction="http://Custodianservices.com/GetCRM_CustomerPolicy" style="document" />
+    <wsdl:operation name="GetCRM_AllPolicies">
+      <soap:operation soapAction="http://Custodianservices.com/GetCRM_AllPolicies" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2547,6 +2679,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetCRM_Birthday">
       <soap:operation soapAction="http://Custodianservices.com/GetCRM_Birthday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_Claims">
+      <soap:operation soapAction="http://Custodianservices.com/GetCRM_Claims" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_DashBoard">
+      <soap:operation soapAction="http://Custodianservices.com/GetCRM_DashBoard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABSMotorInterest">
+      <soap:operation soapAction="http://Custodianservices.com/ABSMotorInterest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3034,8 +3193,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetCRM_CustomerPolicy">
-      <soap12:operation soapAction="http://Custodianservices.com/GetCRM_CustomerPolicy" style="document" />
+    <wsdl:operation name="GetCRM_AllPolicies">
+      <soap12:operation soapAction="http://Custodianservices.com/GetCRM_AllPolicies" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -3061,13 +3220,40 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetCRM_Claims">
+      <soap12:operation soapAction="http://Custodianservices.com/GetCRM_Claims" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRM_DashBoard">
+      <soap12:operation soapAction="http://Custodianservices.com/GetCRM_DashBoard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABSMotorInterest">
+      <soap12:operation soapAction="http://Custodianservices.com/ABSMotorInterest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="CustodianEverywhere_x0020_API.">
     <wsdl:port name="CustodianEverywhere_x0020_API.Soap" binding="tns:CustodianEverywhere_x0020_API.Soap">
-      <soap:address location="https://developers.custodianplc.com.ng/Testapi/Policyservices.asmx" />
+      <soap:address location="https://developers.custodianplc.com.ng/testapi/Policyservices.asmx" />
     </wsdl:port>
     <wsdl:port name="CustodianEverywhere_x0020_API.Soap12" binding="tns:CustodianEverywhere_x0020_API.Soap12">
-      <soap12:address location="https://developers.custodianplc.com.ng/Testapi/Policyservices.asmx" />
+      <soap12:address location="https://developers.custodianplc.com.ng/testapi/Policyservices.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

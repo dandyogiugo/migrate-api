@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace DataStore.ViewModels
 {
 
-    public class response
+    public class req_response
     {
-        public response()
+        public req_response()
         {
 
         }

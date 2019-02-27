@@ -36,4 +36,11 @@ namespace DataStore.ViewModels
         Life = 1,
         General = 2
     }
+
+    public enum TypeOfCover
+    {
+        Comprehensive = 1,
+        Third_Party = 2,
+        Third_Party_Fire_And_Theft = 3
+    }
 }
