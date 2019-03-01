@@ -163,5 +163,42 @@ namespace CustodianEveryWhereV2._0.Controllers
                 };
             }
         }
+
+        //public async Task<notification_response> GenerateToken()
+        //{
+        //    try
+        //    {
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error(ex.Message);
+        //        log.Error(ex.StackTrace);
+        //        return new notification_response
+        //        {
+        //            message = "Error generating token",
+        //            status = 203,
+        //        };
+        //    }
+        //}
+
+
+        //public async Task<notification_response> ValidateToken(string toke, string merchant_d, string hash)
+        //{
+        //    try
+        //    {
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error(ex.Message);
+        //        log.Error(ex.StackTrace);
+        //        return new notification_response
+        //        {
+        //            message = "Error validating token",
+        //            status = 203,
+        //        };
+        //    }
+        //}
     }
 }

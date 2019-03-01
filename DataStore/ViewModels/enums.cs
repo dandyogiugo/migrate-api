@@ -43,4 +43,13 @@ namespace DataStore.ViewModels
         Third_Party = 2,
         Third_Party_Fire_And_Theft = 3
     }
+
+    public enum Platforms
+    {
+        ADAPT = 1,
+        USSD = 2,
+        WEBSITE = 3,
+        MAX = 4,
+        OTHERS = 5
+    }
 }

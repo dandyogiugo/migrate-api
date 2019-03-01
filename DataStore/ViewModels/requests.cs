@@ -522,6 +522,17 @@ namespace DataStore.ViewModels
         public string merchant_id { get; set; }
         [Required]
         public string reference_no { get; set; }
+        [Required]
+        public string id_type { get; set; }
+        [Required]
+        public string occupation { get; set; }
+        [Required]
+        public string id_number { get; set; }
+        public DateTime dob { get; set; }
+        [Required]
+        public string attachment { get; set; }
+        [Required]
+        public string extension_type { get; set; }
     }
 
 }

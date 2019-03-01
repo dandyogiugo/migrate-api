@@ -22,10 +22,12 @@ namespace CustodianEveryWhereV2._0.Controllers
         private static Logger log = LogManager.GetCurrentClassLogger();
         private Utility util = null;
         private store<ApiConfiguration> _apiconfig = null;
+        private store<AutoInsurance> auto = null;
         public AutoInsuranceController()
         {
             util = new Utility();
             _apiconfig = new store<ApiConfiguration>();
+            auto = new store<AutoInsurance>();
         }
 
         [HttpGet]
@@ -222,7 +224,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
-
                 using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
                 {
                     var request = await api.POSTMotorRecAsync(GlobalConstant.merchant_id, GlobalConstant.password,
@@ -235,9 +236,46 @@ namespace CustodianEveryWhereV2._0.Controllers
                     //HO/V/29/G0000529E|17294
                     if (!string.IsNullOrEmpty(request.Passing_Motor_PostSourceResult) || request.Passing_Motor_PostSourceResult.ToLower() == "success")
                     {
+
+                        var save_new = new AutoInsurance
+                        {
+                            address = Auto.address,
+                            chassis_number = Auto.chassis_number,
+                            create_at = DateTime.Now,
+                            customer_name = Auto.customer_name,
+                            dob = Auto.dob,
+                            email = Auto.email,
+                            engine_number = Auto.engine_number,
+                            extension_type = Auto.extension_type,
+                            id_number = Auto.id_number,
+                            id_type = Auto.id_type,
+                            insurance_type = Auto.insurance_type,
+                            occupation = Auto.occupation,
+                            phone_number = Auto.phone_number,
+                            premium = Auto.premium,
+                            reference_no = Auto.reference_no,
+                            registration_number = Auto.registration_number,
+                            sum_insured = Auto.sum_insured,
+                            vehicle_category = Auto.vehicle_category,
+                            vehicle_color = Auto.vehicle_color,
+                            vehicle_model = Auto.vehicle_model,
+                            vehicle_type = Auto.vehicle_type,
+                            vehicle_year = Auto.vehicle_year
+                        };
+
                         var cert_code = request.Passing_Motor_PostSourceResult.Replace("**", "|").Split('|')[1];
                         var reciept_base_url = ConfigurationManager.AppSettings["Reciept_Base_Url"];
-                        //http://192.168.10.74/webportal/PushCertSlip.aspx?
+
+                        var cert_number = cert_code;
+                        var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{cert_number}.{Auto.extension_type}";
+                        var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Auto/{nameurl}";
+                        byte[] content = Convert.FromBase64String(Auto.attachment);
+                        File.WriteAllBytes(filepath, content);
+                        save_new.attachemt = filepath;
+                        save_new.extension_type = Auto.extension_type;
+
+                        await auto.Save(save_new);
+                        
                         return new res
                         {
                             status = 200,
