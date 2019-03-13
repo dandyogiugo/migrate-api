@@ -26,7 +26,9 @@ namespace DataStore.context
         public DbSet<TravelInsurance> TravelInsurance { get; set; }
         public DbSet<FlightAndAirPortData> FlightAndAirPortData { get; set; }
         public DbSet<AutoInsurance> AutoInsurance { get; set; }
-        //public DbSet<AdaptTravelInsurance> AdaptTravelInsurance { get; set; }
+        public DbSet<DealsTransactionHistory> DealsTransactionHistory { get; set; }
+        public DbSet<Token> Token { get; set; }
+        public DbSet<AgentTransactionLogs> AgentTransactionLogs { get; set; }
         //public DbSet<Passenger> Passenger { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -419,6 +419,7 @@ namespace DataStore.ViewModels
         public decimal premium { get; set; }
         [Required]
         public string merchant_id { get; set; }
+        public string description { get; set; }
     }
 
 
@@ -533,6 +534,75 @@ namespace DataStore.ViewModels
         public string attachment { get; set; }
         [Required]
         public string extension_type { get; set; }
+    }
+
+    public class user_otp
+    {
+        public user_otp()
+        {
+
+        }
+        [Required]
+        public Platforms platform { get; set; }
+        [Required]
+        public string mobile { get; set; }
+        [Required]
+        public string fullname { get; set; }
+        [Required]
+        public string hash { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+    }
+
+    public class Rate
+    {
+        public Rate()
+        {
+
+        }
+
+        public string customer_name { get; set; }
+
+    }
+
+
+    public class deal
+    {
+        [Required]
+        public string firstname { get; set; }
+        [Required]
+        public string lastname { get; set; }
+        [Required]
+        public string dob { get; set; }
+        [Required]
+        public string gender { get; set; }
+        [Required]
+        public string email { get; set; }
+        public string address { get; set; }
+        [Required]
+        public string mobile { get; set; }
+        public string marital_status { get; set; }
+        public string anniversary { get; set; }
+        public int membership { get; set; }
+        [Required]
+        public decimal discounted_price { get; set; }
+        [Required]
+        public decimal discounted_percent { get; set; }
+        public string purchase_date { get; set; }
+        public string start_date { get; set; }
+        public string end_date { get; set; }
+        [Required]
+        public decimal price { get; set; }
+        [Required]
+        public string gym { get; set; }
+        [Required]
+        public decimal package_id { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public string hash { get; set; }
+        [Required]
+        public string reference { get; set; }
     }
 
 }

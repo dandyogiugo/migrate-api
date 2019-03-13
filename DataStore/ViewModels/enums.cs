@@ -16,7 +16,8 @@ namespace DataStore.ViewModels
     public enum Type
     {
         EMAIL,
-        SMS
+        SMS,
+        OTP
     }
 
     public enum Types

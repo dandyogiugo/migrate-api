@@ -20,10 +20,12 @@ namespace CustodianEveryWhereV2._0.Controllers
         private static Logger log = LogManager.GetCurrentClassLogger();
         private store<ApiConfiguration> _apiconfig = null;
         private Utility util = null;
+        private store<AgentTransactionLogs> trans_logs = null;
         public AgentController()
         {
             _apiconfig = new store<ApiConfiguration>();
             util = new Utility();
+            trans_logs = new store<AgentTransactionLogs>();
         }
 
         [HttpPost]
@@ -119,6 +121,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         {
             try
             {
+                log.Info($"Object from page {Newtonsoft.Json.JsonConvert.SerializeObject(post)}");
                 if (!ModelState.IsValid)
                 {
                     log.Info($"All request parameters are mandatory for policy search(PostTransaction) {post.policy_number}");
@@ -153,12 +156,37 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
+                var new_trans = new AgentTransactionLogs
+                {
+                    biz_unit = post.biz_unit,
+                    createdat = DateTime.Now,
+                    description = post.description,
+                    policy_number = post.policy_number.ToUpper(),
+                    premium = post.premium,
+                    reference_no = post.reference_no,
+                    status = post.payment_narrtn,
+                    subsidiary = ((subsidiary)post.subsidiary).ToString()
+                };
+
+                if (post.payment_narrtn.ToLower() == "failed")
+                {
+                    await trans_logs.Save(new_trans);
+                    log.Info($"Transaction failed dont push to abs");
+                    return new policy_data
+                    {
+                        status = 409,
+                        message = post.description
+                    };
+                }
+
+
 
                 using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
                 {
                     var request = await api.SubmitPaymentRecordAsync(GlobalConstant.merchant_id, GlobalConstant.password, post.policy_number, post.subsidiary.ToString(), post.payment_narrtn,
                         DateTime.Now, DateTime.Now, post.reference_no, "",
                         "", "", "", "", "", "", "", "", post.biz_unit, post.premium, 0, "API", "RW");
+                    log.Info($"raw response from api {request.Passing_Payment_PostSourceResult}");
                     if (string.IsNullOrEmpty(request.Passing_Payment_PostSourceResult) || request.Passing_Payment_PostSourceResult != "1")
                     {
                         log.Info($"Something went wrong while processing your transaction search(PostTransaction)  {post.policy_number}");
@@ -168,6 +196,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             message = "Something went wrong while processing your transaction"
                         };
                     }
+                    await trans_logs.Save(new_trans);
                     //http://41.216.175.114/WebPortal/Receipt.aspx?mUser=CUST_WEB&mCert={}&mCert2={}
                     var url = ConfigurationManager.AppSettings["RecieptBaseUrl"];
                     return new policy_data

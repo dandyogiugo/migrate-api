@@ -89,9 +89,11 @@
     <Compile Include="Irepository\Istore.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdaptTravelInsurance.cs" />
+    <Compile Include="Models\AgentTransactionLogs.cs" />
     <Compile Include="Models\ApiConfiguration.cs" />
     <Compile Include="Models\ApiMethods.cs" />
     <Compile Include="Models\AutoInsurance.cs" />
+    <Compile Include="Models\DealsTransactionHistory.cs" />
     <Compile Include="Models\FlightAndAirPortData.cs" />
     <Compile Include="Models\GITInsurance.cs" />
     <Compile Include="Models\LifeClaims.cs" />

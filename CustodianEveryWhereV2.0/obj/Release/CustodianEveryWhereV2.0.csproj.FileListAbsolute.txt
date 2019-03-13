@@ -119,4 +119,7 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Cu
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.pdb
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\Oracle.DataAccess.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\GenerateTransactionCodes.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\CustodianEveryWhereV2.0.XmlSerializers.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.XmlSerializers.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\SendGrid.dll

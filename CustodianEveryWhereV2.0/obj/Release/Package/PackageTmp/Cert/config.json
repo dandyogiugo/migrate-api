@@ -1,0 +1,14 @@
+﻿[
+  {
+    "gymname": "bodyline",
+    "url": "http://bodyline.fitfamplus.com/api/deals/purchased"
+  },
+  {
+    "gymname": "ekogym",
+    "url": "http://ekogym.fitfamplus.com/api/deals/purchased"
+  },
+  {
+    "gymname": "elitebox",
+    "url": "http://elitebox.fitfamplus.com/api/deals/purchased"
+  }
+]
