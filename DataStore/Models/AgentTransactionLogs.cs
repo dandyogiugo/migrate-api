@@ -32,5 +32,11 @@ namespace DataStore.Models
         public string description { get; set; }
         public decimal premium { get; set; }
         public DateTime createdat { get; set; }
+        [MaxLength(200)]
+        public string issured_name { get; set; }
+        [MaxLength(20)]
+        public string phone_no { get; set; }
+        [MaxLength(200)]
+        public string email_address { get; set; }
     }
 }

@@ -71,16 +71,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                     var request = await api.GetAsync(base_url + $"getLastStatus?email={auth_email}&passcode={passcode}&imei={imei}");
                     if (request.IsSuccessStatusCode)
                     {
-                        var response = await request.Content.ReadAsAsync<dynamic>();
+                        var response = await request.Content.ReadAsAsync<Dictionary<string, object>>();
                         log.Info($"Raw response from api {Newtonsoft.Json.JsonConvert.SerializeObject(response)}");
-                        if (response.response_code == "00")
+                        if (response["response_code"].ToString() == "00")
                         {
-                            log.Info($"unable to get status imei for user imei {imei}");
+                            log.Info($"status imei for user imei {imei}");
                             return new notification_response
                             {
                                 status = 200,
                                 message = "operation successful",
-                                data = response.data
+                                data = response
                             };
                         }
                         else

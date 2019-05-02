@@ -54,6 +54,7 @@ namespace DataStore.ViewModels
         public string message { get; set; }
         public string type { get; set; }
         public object data { get; set; }
+        public string image_base_url { get; set; }
     }
 
     public class LifeClaimStatus

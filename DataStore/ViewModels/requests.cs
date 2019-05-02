@@ -420,6 +420,9 @@ namespace DataStore.ViewModels
         [Required]
         public string merchant_id { get; set; }
         public string description { get; set; }
+        public string issured_name { get; set; }
+        public string phone_no { get; set; }
+        public string email_address { get; set; }
     }
 
 
@@ -603,6 +606,40 @@ namespace DataStore.ViewModels
         public string hash { get; set; }
         [Required]
         public string reference { get; set; }
+    }
+
+    public class _MealPlan
+    {
+        public _MealPlan()
+        {
+
+        }
+        public MealPlanCategory target { get; set; }
+        public Preference preference { get; set; }
+        public string ageRange { get; set; }
+        public GivenBirth givenBirth { get; set; }
+        public MaritalStatus maritalStatus { get; set; }
+        public Gender gender { get; set; }
+        public string email { get; set; }
+        public string phoneNumber { get; set; }
+        public string merchant_id { get; set; }
+        public string hash { get; set; }
+
+        
+    }
+
+    public class temp
+    {
+        public temp()
+        {
+
+        }
+
+        public string food { get; set; }
+        public string quantity { get; set; }
+        public string time { get; set; }
+        public string youtubeurl { get; set; }
+        public string image_path { get; set; }
     }
 
 }

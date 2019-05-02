@@ -29,6 +29,9 @@ namespace DataStore.context
         public DbSet<DealsTransactionHistory> DealsTransactionHistory { get; set; }
         public DbSet<Token> Token { get; set; }
         public DbSet<AgentTransactionLogs> AgentTransactionLogs { get; set; }
+        public DbSet<MealPlan> MealPlan { get; set; }
+        public DbSet<MyMealPlan> MyMealPlan { get; set; }
+        public DbSet<SelectedMealPlan> SelectedMealPlan { get; set; }
         //public DbSet<Passenger> Passenger { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

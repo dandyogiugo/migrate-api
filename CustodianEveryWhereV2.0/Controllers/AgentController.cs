@@ -1,4 +1,5 @@
-﻿using DataStore.Models;
+﻿using CustodianEmailSMSGateway.SMS;
+using DataStore.Models;
 using DataStore.repository;
 using DataStore.Utilities;
 using DataStore.ViewModels;
@@ -165,7 +166,11 @@ namespace CustodianEveryWhereV2._0.Controllers
                     premium = post.premium,
                     reference_no = post.reference_no,
                     status = post.payment_narrtn,
-                    subsidiary = ((subsidiary)post.subsidiary).ToString()
+                    subsidiary = ((subsidiary)post.subsidiary).ToString(),
+                    email_address = post.email_address,
+                    issured_name = post.issured_name,
+                    phone_no = post.phone_no
+
                 };
 
                 if (post.payment_narrtn.ToLower() == "failed")
@@ -183,9 +188,8 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                 using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
                 {
-                    var request = await api.SubmitPaymentRecordAsync(GlobalConstant.merchant_id, GlobalConstant.password, post.policy_number, post.subsidiary.ToString(), post.payment_narrtn,
-                        DateTime.Now, DateTime.Now, post.reference_no, "",
-                        "", "", "", "", "", "", "", "", post.biz_unit, post.premium, 0, "API", "RW");
+                    var request = await api.SubmitPaymentRecordAsync(GlobalConstant.merchant_id, GlobalConstant.password, post.policy_number, post.subsidiary.ToString(), post.payment_narrtn, DateTime.Now,
+                        DateTime.Now, post.reference_no, new_trans.issured_name, "", "", new_trans.phone_no, new_trans.email_address, "", "", "", "", post.biz_unit, post.premium, 0, "MPOS", "RW");
                     log.Info($"raw response from api {request.Passing_Payment_PostSourceResult}");
                     if (string.IsNullOrEmpty(request.Passing_Payment_PostSourceResult) || request.Passing_Payment_PostSourceResult != "1")
                     {
@@ -199,6 +203,19 @@ namespace CustodianEveryWhereV2._0.Controllers
                     await trans_logs.Save(new_trans);
                     //http://41.216.175.114/WebPortal/Receipt.aspx?mUser=CUST_WEB&mCert={}&mCert2={}
                     var url = ConfigurationManager.AppSettings["RecieptBaseUrl"];
+                    if (!string.IsNullOrEmpty(post.phone_no))
+                    {
+                        var phone = post.phone_no.Trim();
+                        if (!phone.StartsWith("234"))
+                        {
+                            phone = "234" + phone.Remove(0, 1);
+                        }
+
+                        var sms = new SendSMS();
+                        string message = $@"Dear {post.issured_name} We have acknowledged receipt of NGN {post.premium} premium payment.We will apply this to your policy number {post.policy_number.ToUpper()}";
+                        await sms.Send_SMS(message, phone);
+                    }
+
                     return new policy_data
                     {
                         status = 200,

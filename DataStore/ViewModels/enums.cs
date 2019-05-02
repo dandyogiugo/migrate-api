@@ -53,4 +53,58 @@ namespace DataStore.ViewModels
         MAX = 4,
         OTHERS = 5
     }
+
+    public enum MealPlanCategory
+    {
+        GainWeight = 1,
+        LoseWeight = 2,
+        MaintainWeight = 3
+    }
+
+    public enum Preference
+    {
+        Poultry = 1,
+        Meat = 2,
+        Fish = 3,
+        SeaFood = 4,
+        Pork = 5
+    }
+
+    public enum DaysInWeeks
+    {
+        Monday = 1,
+        Tuesday = 2,
+        Wednessday = 3,
+        Thursday = 4,
+        Friday = 5,
+        Saturday = 6,
+        Sunday = 7
+    }
+
+    public enum MealType
+    {
+        BreakFast = 1,
+        Lunch = 2,
+        Dinner = 3
+    }
+
+    public enum GivenBirth
+    {
+        Yes = 1,
+        No = 2,
+        NotApplicable = 3
+    }
+
+    public enum MaritalStatus
+    {
+        Single = 1,
+        Married = 2,
+        IdRatherNotSay = 3
+    }
+
+    public enum Gender
+    {
+        Male = 1,
+        Female = 2
+    }
 }

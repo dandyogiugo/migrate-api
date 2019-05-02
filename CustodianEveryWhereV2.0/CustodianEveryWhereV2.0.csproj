@@ -314,6 +314,9 @@
     <Compile Include="Controllers\FitfamPlusController.cs" />
     <Compile Include="Controllers\GITController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LifeController.cs" />
+    <Compile Include="Controllers\MealPlanController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\NotificationsController.cs" />
     <Compile Include="Controllers\PensionController.cs" />
     <Compile Include="Controllers\TravelController.cs" />

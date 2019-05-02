@@ -99,8 +99,11 @@
     <Compile Include="Models\LifeClaims.cs" />
     <Compile Include="Models\GeneralClaims.cs" />
     <Compile Include="Models\LifeDocument.cs" />
+    <Compile Include="Models\MealPlan.cs" />
+    <Compile Include="Models\MyMealPlan.cs" />
     <Compile Include="Models\NonLifeClaimsDocument.cs" />
     <Compile Include="Models\PremiumCalculatorMapping.cs" />
+    <Compile Include="Models\SelectedMealPlan.cs" />
     <Compile Include="Models\Token.cs" />
     <Compile Include="Models\TravelInsurance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
