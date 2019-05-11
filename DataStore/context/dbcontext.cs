@@ -32,6 +32,8 @@ namespace DataStore.context
         public DbSet<MealPlan> MealPlan { get; set; }
         public DbSet<MyMealPlan> MyMealPlan { get; set; }
         public DbSet<SelectedMealPlan> SelectedMealPlan { get; set; }
+        public DbSet<JokesList> JokesList { get; set; }
+        public DbSet<LifeInsurance> LifeInsurance { get; set; }
         //public DbSet<Passenger> Passenger { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -186,7 +186,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
-                var getMyMeal = await myMealPlan.FindMany(x => x.email.ToUpper().Trim() == emailOrphone.ToUpper().Trim() || x.phoneNumber.ToUpper().Trim() == emailOrphone.ToUpper().Trim());
+                var getMyMeal = await myMealPlan.FindMany(x => x.email.ToUpper().Trim() == emailOrphone.ToUpper().Trim());
                 if (getMyMeal != null && getMyMeal.Count > 0)
                 {
                     var final = new List<object>();
@@ -213,7 +213,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 }).ToList());
                             }
                             dic.Add(item.First().MealPlan.daysOfWeek.Trim(), day);
-                            // final.Add(dic);
+                           //final.Add(dic);
                         }
                         temphistory.Add(new Dictionary<string, object>
                         {

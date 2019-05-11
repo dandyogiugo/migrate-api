@@ -55,6 +55,7 @@ namespace DataStore.ViewModels
         public string type { get; set; }
         public object data { get; set; }
         public string image_base_url { get; set; }
+        public string reciept_url { get; set; }
     }
 
     public class LifeClaimStatus
@@ -211,5 +212,17 @@ namespace DataStore.ViewModels
         public int status { get; set; }
         public string message { get; set; }
         public object data { get; set; }
+    }
+
+    public class joke
+    {
+        public joke()
+        {
+
+        }
+        public string youtube_url { get; set; }
+        public string thumbnail_image { get; set; }
+        public string credit { get; set; }
+        public string title { get; set; }
     }
 }

@@ -96,6 +96,7 @@
     <Compile Include="Models\DealsTransactionHistory.cs" />
     <Compile Include="Models\FlightAndAirPortData.cs" />
     <Compile Include="Models\GITInsurance.cs" />
+    <Compile Include="Models\JokesList.cs" />
     <Compile Include="Models\LifeClaims.cs" />
     <Compile Include="Models\GeneralClaims.cs" />
     <Compile Include="Models\LifeDocument.cs" />

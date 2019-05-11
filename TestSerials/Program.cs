@@ -109,26 +109,66 @@ namespace TestSerials
 
                 int A = 10;
                 int B = 20;
-                double a = Math.Ceiling(Math.Sqrt(A));
-                double b = Math.Floor(Math.Sqrt(B));
-                List<int> arry = new List<int>();
-                if(A >= 2 && B <= 1000000000)
-                {
-                    for (double i = a; i <= b; ++i)
-                    {
-                        double sqr = Math.Pow(i, Convert.ToDouble(2));
-                        if (sqr >= A && sqr <= B)
-                        {
-                            //double sqr = Math.Sqrt(sqrt);
-                           int count =  Cal(sqr, 0);
-                            arry.Add(count);
-                        }
-                    }
+                decimal test = Convert.ToDecimal(98)/ Convert.ToDecimal(10);
+                decimal b = Math.Ceiling(test);
+                //double b = Math.Floor(Math.Sqrt(B));
+                //List<int> arry = new List<int>();
+                //if(A >= 2 && B <= 1000000000)
+                //{
+                //    for (double i = a; i <= b; ++i)
+                //    {
+                //        double sqr = Math.Pow(i, Convert.ToDouble(2));
+                //        if (sqr >= A && sqr <= B)
+                //        {
+                //            //double sqr = Math.Sqrt(sqrt);
+                //           int count =  Cal(sqr, 0);
+                //            arry.Add(count);
+                //        }
+                //    }
 
-                    return arry.Min.Max();
+                //    return arry.Min.Max();
+                //}
+
+                var getMyMeal =  myMealPlan.FindMany(x => x.email.ToUpper().Trim() == emailOrphone.ToUpper().Trim());
+                if (getMyMeal != null && getMyMeal.Count > 0)
+                {
+                    var final = new List<object>();
+                    var mealhistory = new List<List<Dictionary<string, object>>>();
+                    var temphistory = new List<Dictionary<string, object>>();
+                    foreach (var item_in_my_meal in getMyMeal.OrderByDescending(x => x.Id))
+                    {
+                        var group_plan = item_in_my_meal.SelectedMealPlan.GroupBy(x => x.MealPlan.daysOfWeek);
+                        var dic = new Dictionary<string, Dictionary<string, List<temp>>>();
+                        foreach (var item in group_plan)
+                        {
+                            var list_meal = new List<temp>();
+                            var meallist = item.GroupBy(x => x.MealPlan.mealType);
+                            var day = new Dictionary<string, List<temp>>();
+                            foreach (var subitem in meallist)
+                            {
+                                day.Add(subitem.First().MealPlan.mealType, subitem.Select(x => new temp
+                                {
+                                    food = x.MealPlan.food,
+                                    quantity = x.MealPlan.quantity,
+                                    time = x.MealPlan.time,
+                                    youtubeurl = x.MealPlan.youTubeUrl,
+                                   //image_path = $"{ConfigurationManager.AppSettings["MEAL_PLAN_IMAGES"]}/{x.MealPlan.image}"
+                                }).ToList());
+                            }
+                            dic.Add(item.First().MealPlan.daysOfWeek.Trim(), day);
+                           //final.Add(dic);
+                        }
+                        temphistory.Add(new Dictionary<string, object>
+                        {
+                            { "preference", item_in_my_meal.preference.ToString() },
+                            { "target", item_in_my_meal.target.ToString() },
+                            { "emailorphone", item_in_my_meal.email.ToString() },
+                            { "datecreated", (item_in_my_meal.datecreated != null)?item_in_my_meal.datecreated.ToShortDateString(): null },
+                            { "mealhistory",dic }
+                        });
+
+                    }
                 }
-              
-            }
             catch (Exception ex)
             {
 

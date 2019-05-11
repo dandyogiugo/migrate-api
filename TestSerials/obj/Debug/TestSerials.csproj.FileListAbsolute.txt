@@ -24,3 +24,7 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Te
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\obj\Debug\TestSerials.csproj.TestSerials.exe.config
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\SendGrid.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\CustodianEmailSMSGateway.pdb
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\SendGrid.pdb
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\SendGrid.xml

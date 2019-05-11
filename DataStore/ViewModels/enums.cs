@@ -107,4 +107,19 @@ namespace DataStore.ViewModels
         Male = 1,
         Female = 2
     }
+
+    public enum Frequency
+    {
+        Monthly = 1,
+        Annually = 2,
+        Quaterly = 3,
+        Bi_Annually = 4
+    }
+
+    public enum PolicyType
+    {
+        EsusuShield = 1,
+        CapitalBuilder = 2,
+        LifeTimeHarvest = 3
+    }
 }
