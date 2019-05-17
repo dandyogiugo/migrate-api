@@ -56,6 +56,7 @@ namespace DataStore.ViewModels
         public object data { get; set; }
         public string image_base_url { get; set; }
         public string reciept_url { get; set; }
+        public decimal sum_insured { get; set; }
     }
 
     public class LifeClaimStatus

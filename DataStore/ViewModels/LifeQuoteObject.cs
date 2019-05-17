@@ -58,7 +58,7 @@ namespace DataStore.ViewModels
         [Required]
         public Gender gender { get; set; }
         [Required]
-        public string beneficiaryname { get; set; }
+        public string indentity_type { get; set; }
         [Required]
         public string emailaddress { get; set; }
         [Required]
@@ -73,6 +73,8 @@ namespace DataStore.ViewModels
         public PolicyType policytype { get; set; }
         [Required]
         public string payment_reference { get; set; }
+        [Required]
+        public string id_number { get; set; }
 
     }
 }

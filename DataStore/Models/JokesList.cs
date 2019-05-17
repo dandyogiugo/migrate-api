@@ -22,8 +22,10 @@ namespace DataStore.Models
         public string youtube_link { get; set; }
         [MaxLength(100)]
         public string credit { get; set; }
-        public DateTime created { get; set; }
+        public DateTime? created { get; set; }
         [MaxLength(100)]
         public string uploadedby { get; set; }
+        [MaxLength(300)]
+        public string title { get; set; }
     }
 }

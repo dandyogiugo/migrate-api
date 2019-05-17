@@ -185,7 +185,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     var clientobj = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(clientCode);
                     if (quote.policy_type.ToString().ToUpper() == PolicyType.CapitalBuilder.ToString().ToUpper())
                     {
-                        var capital = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), "", 1, quote.frequency.ToString().Replace("_", "-"), quote.terms, "");
+                        var capital = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), "", 1, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
                         if (!string.IsNullOrEmpty(capital))
                         {
                             var quot = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(capital);
@@ -194,7 +194,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                             {
                                 status = 200,
                                 message = "operation was successful",
-                                data = quot
+                                data = quot,
+                                sum_insured = Convert.ToDecimal(quot.sumInsured)
                             };
                             //sumassured = quote.sumInsured.ToString();
 
@@ -213,17 +214,28 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                     else if (quote.policy_type.ToString().ToUpper() == PolicyType.LifeTimeHarvest.ToString().ToUpper())
                     {
-                        var lifetime = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), "", 24, quote.frequency.ToString().Replace("_", "-"), quote.terms, "");
+                        var lifetime = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), "", 24, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
                         if (!string.IsNullOrEmpty(lifetime))
                         {
                             var quot = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(lifetime);
                             //sumassured = quote.sumInsured.ToString();
+                            decimal suminsured = 0;
+                          
+                            foreach (var item in quot.coverTypeAllocations)
+                            {
+                                if (item.cvtShtDesc == "LTH")
+                                {
+                                    suminsured = Convert.ToDecimal(item.cvtSa);
+                                }
+                            }
+
                             log.Info($"Success computing(LifeTimeHarvest) premium from service response{lifetime}");
                             return new notification_response
                             {
                                 status = 200,
                                 message = "operation was successful",
-                                data = quot
+                                data = quot,
+                                sum_insured = suminsured
                             };
                             // placeholder = "CUSTODIAN LIFE TIME HARVEST";
                         }
@@ -239,7 +251,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
                     else if (quote.policy_type.ToString().ToUpper() == PolicyType.EsusuShield.ToString().ToUpper())
                     {
-                        var esusushiled = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), "", 14, quote.frequency.ToString().Replace("_", "-"), quote.terms, "");
+                        var esusushiled = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), "", 14, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
                         if (!string.IsNullOrEmpty(esusushiled))
                         {
                             var quot = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(esusushiled);
@@ -250,7 +262,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                             {
                                 status = 200,
                                 message = "operation was successful",
-                                data = quot
+                                data = quot,
+                                sum_insured = Convert.ToDecimal(quot.sumInsured)
                             };
                         }
                         else
@@ -349,7 +362,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 var newBuyer = new LifeInsurance
                 {
                     address = BuyLife.address,
-                    beneficiaryname = BuyLife.beneficiaryname,
+                    indentity_type = BuyLife.indentity_type,
                     computed_premium = BuyLife.computed_premium,
                     date_of_birth = Convert.ToDateTime(BuyLife.date_of_birth),
                     emailaddress = BuyLife.emailaddress,
@@ -361,6 +374,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     premium = BuyLife.premium,
                     terms = BuyLife.terms,
                     policytype = PlaceHolder,
+                    id_number = BuyLife.id_number
                 };
 
                 using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
@@ -375,8 +389,9 @@ namespace CustodianEveryWhereV2._0.Controllers
                         var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Life/{nameurl}";
                         byte[] content = Convert.FromBase64String(BuyLife.base64Image);
                         File.WriteAllBytes(filepath, content);
-                        newBuyer.pathname = filepath;
+                        newBuyer.pathname = nameurl;
                         newBuyer.base64ImageFormat = BuyLife.base64ImageFormat;
+                        log.Info($"Raw object {Newtonsoft.Json.JsonConvert.SerializeObject(newBuyer)}");
                         await _Buy.Save(newBuyer);
                         var shorturl = (GlobalConstant.Reciept_url + $"FinalReceipt.aspx?mUser=CUST_WEB&mCert={BuyLife.payment_reference}&mCert2={BuyLife.payment_reference}");
                         return new notification_response

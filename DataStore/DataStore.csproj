@@ -100,6 +100,7 @@
     <Compile Include="Models\LifeClaims.cs" />
     <Compile Include="Models\GeneralClaims.cs" />
     <Compile Include="Models\LifeDocument.cs" />
+    <Compile Include="Models\LifeInsurance.cs" />
     <Compile Include="Models\MealPlan.cs" />
     <Compile Include="Models\MyMealPlan.cs" />
     <Compile Include="Models\NonLifeClaimsDocument.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Utilities\Utility.cs" />
     <Compile Include="ViewModels\enums.cs" />
     <Compile Include="ViewModels\GlobalConstant.cs" />
+    <Compile Include="ViewModels\LifeQuoteObject.cs" />
     <Compile Include="ViewModels\requests.cs" />
     <Compile Include="ViewModels\response.cs" />
     <Compile Include="ViewModels\ViewModelNonLife.cs" />

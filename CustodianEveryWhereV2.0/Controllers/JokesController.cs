@@ -81,7 +81,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     youtube_url = y.youtube_link,
                     credit = y.credit,
                     thumbnail_image = string.Format("https://img.youtube.com/vi/{0}/0.jpg", y.youtube_link.Split('=')[1].Trim()),
-                    title = "No title yet"
+                    title = y.title
                 }).ToList();
 
                 return new notification_response

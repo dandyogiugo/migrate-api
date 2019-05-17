@@ -39,7 +39,7 @@ namespace DataStore.Models
         [Required]
         public string gender { get; set; }
         [Required]
-        public string beneficiaryname { get; set; }
+        public string indentity_type { get; set; }
         [Required]
         public string emailaddress { get; set; }
         [Required]
@@ -47,10 +47,8 @@ namespace DataStore.Models
         [Required]
         public string occupation { get; set; }
         [Required]
-        public string hash { get; set; }
-        [Required]
-        public string merchant_id { get; set; }
-        [Required]
         public string policytype { get; set; }
+        [Required]
+        public string id_number { get; set; }
     }
 }

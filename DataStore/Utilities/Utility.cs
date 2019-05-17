@@ -814,5 +814,32 @@ namespace DataStore.Utilities
                 return null;
             }
         }
+
+        public async Task<string> Transposer(string frequency)
+        {
+            string frq = "";
+            if (frequency.ToLower() == "annually")
+            {
+                frq = "A";
+            }
+            else if (frequency.ToLower() == "quarterly")
+            {
+                frq = "Q";
+            }
+            else if (frequency.ToLower() == "bi-annually")
+            {
+                frq = "B";
+            }
+            else if (frequency.ToLower() == "monthly")
+            {
+                frq = "M";
+            }
+            else
+            {
+                frq = "S";
+            }
+
+            return frq;
+        }
     }
 }
