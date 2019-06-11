@@ -46,7 +46,6 @@ namespace DataStore.Utilities
             }
             return res;
         }
-
         public async Task<string> Sha256(string pattern)
         {
             StringBuilder Sb = new StringBuilder();
@@ -59,7 +58,6 @@ namespace DataStore.Utilities
             }
             return Sb.ToString();
         }
-
         public async Task<bool> ValidateHash2(string pattern, string secret, string _hash)
         {
             log.Info($"Passed hash {_hash.ToUpper()}");
@@ -106,7 +104,6 @@ namespace DataStore.Utilities
 
             }
         }
-
         public string base64Decode(string data)
         {
             try
@@ -777,8 +774,6 @@ namespace DataStore.Utilities
                 return null;
             }
         }
-
-
         public async Task<claims_details> GetLifeClaimsDetails(ClaimsDetails claim_detail)
         {
             try
@@ -814,7 +809,6 @@ namespace DataStore.Utilities
                 return null;
             }
         }
-
         public async Task<string> Transposer(string frequency)
         {
             string frq = "";

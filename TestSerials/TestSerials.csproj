@@ -108,6 +108,10 @@
       <Project>{84FC4D85-940B-4A62-BDCE-A9C61C2C463D}</Project>
       <Name>DataStore</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WindowsService1\CronJobsNews.csproj">
+      <Project>{C56F099C-E7E7-46A1-8A86-9B9B3CDC4037}</Project>
+      <Name>CronJobsNews</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

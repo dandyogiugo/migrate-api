@@ -149,6 +149,22 @@ namespace DataStore.repository
             return result;
         }
 
-
+        public async Task<bool> Delete(T entity)
+        {
+            bool result = false;
+            try
+            {
+                session.Entry<T>(entity).State = EntityState.Deleted;
+                await session.SaveChangesAsync();
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                throw ex;
+            }
+            return result;
+        }
     }
 }

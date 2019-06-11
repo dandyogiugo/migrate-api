@@ -625,7 +625,7 @@ namespace DataStore.ViewModels
         public string merchant_id { get; set; }
         public string hash { get; set; }
 
-        
+
     }
 
     public class temp
@@ -640,6 +640,54 @@ namespace DataStore.ViewModels
         public string time { get; set; }
         public string youtubeurl { get; set; }
         public string image_path { get; set; }
+    }
+
+
+    public class UserAuthDetails
+    {
+        public UserAuthDetails()
+        {
+
+        }
+
+        [DataType(DataType.EmailAddress)]
+        [MaxLength(100)]
+        [Required]
+        public string email { get; set; }
+        [MaxLength(100)]
+        [Required]
+        public string fullname { get; set; }
+        [MaxLength(200)]
+        [Required]
+        public string UUID { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public string hash { get; set; }
+    }
+
+
+    public class Pinned_News
+    {
+        public Pinned_News()
+        {
+
+        }
+
+        public string merchant_id { get; set; }
+        public string hash { get; set; }
+        public object jsonbase64string { get; set; }
+        public string email { get; set; }
+    }
+
+    public class NewList
+    {
+        public NewList()
+        {
+
+        }
+        public int Id { get; set; }
+        public dynamic news { get; set; }
     }
 
 }

@@ -306,6 +306,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AgentController.cs" />
     <Compile Include="Controllers\AirPortSearchController.cs" />
+    <Compile Include="Controllers\AuthUserDetailsController.cs" />
     <Compile Include="Controllers\AutoInsuranceController.cs" />
     <Compile Include="Controllers\CarTrackingController.cs" />
     <Compile Include="Controllers\ClaimsController.cs" />
@@ -313,6 +314,7 @@
     <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\FitfamPlusController.cs" />
     <Compile Include="Controllers\GITController.cs" />
+    <Compile Include="Controllers\GoogleNewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JokesController.cs" />
     <Compile Include="Controllers\LifeController.cs" />

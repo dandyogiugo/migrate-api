@@ -5,12 +5,15 @@ using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using WindowsService1.NewsAPIJob;
 
 namespace TestSerials
 {
@@ -20,6 +23,56 @@ namespace TestSerials
         {
             try
             {
+
+                var str = "2 3 1 4";
+                var arr = str.Split(' ').Select(x => Convert.ToInt32(x)).ToList();
+                List<int> newlist = new List<int>();
+                for (int i = 0; i < arr.Count(); i++)
+                {
+                    for (int k = 1 + i; k < arr.Count(); k++)
+                    {
+                        newlist.Add(arr[i] * arr[k]);
+                    }
+                    //  arr.RemoveAt(i + 1);
+                }
+
+                int min = newlist.Min();
+
+                //int T = Convert.ToInt32(Console.ReadLine());
+                //string cases = Console.ReadLine();
+                //string[] all = cases.Split(' ');
+
+                //if (T >= 1 && T <= 10)
+                //{
+                //    int count_test = all.Length;
+                //    for (int i = 0; i < count_test; ++i)
+                //    {
+                //        int item = Convert.ToInt32(all[0]);
+                //        for (int k = 1; k <= item; ++k)
+                //        {
+                //            if (k % 3 == 0)
+                //            {
+                //                Console.WriteLine("Fizz");
+                //            }
+                //            else if (k % 5 == 0)
+                //            {
+                //                Console.WriteLine("Buzz");
+                //            }
+                //            else if ((k % 3 == 0) && (k % 5 == 0))
+                //            {
+                //                Console.WriteLine("FizzBuzz");
+                //            }
+                //            else
+                //            {
+                //                Console.WriteLine("{0}", k);
+                //            }
+                //        }
+                //    }
+                //}
+
+
+
+
                 // using (OracleConnection cn = new OracleConnection("Data Source=TESTDB;User id=TQ_LMS; Password=TQ_LMS; enlist=false; pooling=false"))
                 //{
                 //OracleCommand cmd = new OracleCommand();
@@ -107,10 +160,10 @@ namespace TestSerials
                 //}
                 //var net = Newtonsoft.Json.JsonConvert.SerializeObject(final);
 
-                int A = 10;
-                int B = 20;
-                decimal test = Convert.ToDecimal(98)/ Convert.ToDecimal(10);
-                decimal b = Math.Ceiling(test);
+                //int A = 10;
+                //int B = 20;
+                //decimal test = Convert.ToDecimal(98)/ Convert.ToDecimal(10);
+                //decimal b = Math.Ceiling(test);
                 //double b = Math.Floor(Math.Sqrt(B));
                 //List<int> arry = new List<int>();
                 //if(A >= 2 && B <= 1000000000)
@@ -129,46 +182,24 @@ namespace TestSerials
                 //    return arry.Min.Max();
                 //}
 
-                var getMyMeal =  myMealPlan.FindMany(x => x.email.ToUpper().Trim() == emailOrphone.ToUpper().Trim());
-                if (getMyMeal != null && getMyMeal.Count > 0)
-                {
-                    var final = new List<object>();
-                    var mealhistory = new List<List<Dictionary<string, object>>>();
-                    var temphistory = new List<Dictionary<string, object>>();
-                    foreach (var item_in_my_meal in getMyMeal.OrderByDescending(x => x.Id))
-                    {
-                        var group_plan = item_in_my_meal.SelectedMealPlan.GroupBy(x => x.MealPlan.daysOfWeek);
-                        var dic = new Dictionary<string, Dictionary<string, List<temp>>>();
-                        foreach (var item in group_plan)
-                        {
-                            var list_meal = new List<temp>();
-                            var meallist = item.GroupBy(x => x.MealPlan.mealType);
-                            var day = new Dictionary<string, List<temp>>();
-                            foreach (var subitem in meallist)
-                            {
-                                day.Add(subitem.First().MealPlan.mealType, subitem.Select(x => new temp
-                                {
-                                    food = x.MealPlan.food,
-                                    quantity = x.MealPlan.quantity,
-                                    time = x.MealPlan.time,
-                                    youtubeurl = x.MealPlan.youTubeUrl,
-                                   //image_path = $"{ConfigurationManager.AppSettings["MEAL_PLAN_IMAGES"]}/{x.MealPlan.image}"
-                                }).ToList());
-                            }
-                            dic.Add(item.First().MealPlan.daysOfWeek.Trim(), day);
-                           //final.Add(dic);
-                        }
-                        temphistory.Add(new Dictionary<string, object>
-                        {
-                            { "preference", item_in_my_meal.preference.ToString() },
-                            { "target", item_in_my_meal.target.ToString() },
-                            { "emailorphone", item_in_my_meal.email.ToString() },
-                            { "datecreated", (item_in_my_meal.datecreated != null)?item_in_my_meal.datecreated.ToShortDateString(): null },
-                            { "mealhistory",dic }
-                        });
+                // int value = 8;
+                //List<int> binary = Convert.ToString(161, 2).ToCharArray().Select(x => Convert.ToInt32(x)).ToList();
+                //int count = 0;
+                //List<int> index = new List<int>();
+                //int i = 0;
+                //foreach (var item in binary)
+                //{
+                //    if(item % 2 != 0)
+                //    {
+                //        count++;
+                //        index.Add(i + 1);
+                //    }
+                //    ++i;
+                //}
+                //index.Insert(0, count);
+                NewsProcessor.GetNews();
 
-                    }
-                }
+            }
             catch (Exception ex)
             {
 

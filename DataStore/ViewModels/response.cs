@@ -221,6 +221,7 @@ namespace DataStore.ViewModels
         {
 
         }
+        public int JokeId { get; set; }
         public string youtube_url { get; set; }
         public string thumbnail_image { get; set; }
         public string credit { get; set; }

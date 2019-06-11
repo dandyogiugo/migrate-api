@@ -15,7 +15,6 @@ namespace DataStore.context
         {
             Configuration.LazyLoadingEnabled = true;
         }
-
         public DbSet<ApiConfiguration> ApiConfiguration { get; set; }
         public DbSet<GITInsurance> GITInsurance { get; set; }
         public DbSet<PremiumCalculatorMapping> PremiumCalculatorMapping { get; set; }
@@ -34,11 +33,13 @@ namespace DataStore.context
         public DbSet<SelectedMealPlan> SelectedMealPlan { get; set; }
         public DbSet<JokesList> JokesList { get; set; }
         public DbSet<LifeInsurance> LifeInsurance { get; set; }
-        //public DbSet<Passenger> Passenger { get; set; }
+        public DbSet<AdaptLeads> AdaptLeads { get; set; }
+        public DbSet<WatchedJokes> WatchedJokes { get; set; }
+        public DbSet<News> News { get; set; }
+        public DbSet<PinnedNews> PinnedNews { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            //modelBuilder.Entity<NonLifeClaims>().HasMany(x => x.NonLifeDocument);
         }
     }
 }

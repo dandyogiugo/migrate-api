@@ -88,6 +88,7 @@
     <Compile Include="context\dbcontext.cs" />
     <Compile Include="Irepository\Istore.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AdaptLeads.cs" />
     <Compile Include="Models\AdaptTravelInsurance.cs" />
     <Compile Include="Models\AgentTransactionLogs.cs" />
     <Compile Include="Models\ApiConfiguration.cs" />
@@ -103,11 +104,14 @@
     <Compile Include="Models\LifeInsurance.cs" />
     <Compile Include="Models\MealPlan.cs" />
     <Compile Include="Models\MyMealPlan.cs" />
+    <Compile Include="Models\News.cs" />
     <Compile Include="Models\NonLifeClaimsDocument.cs" />
+    <Compile Include="Models\PinnedNews.cs" />
     <Compile Include="Models\PremiumCalculatorMapping.cs" />
     <Compile Include="Models\SelectedMealPlan.cs" />
     <Compile Include="Models\Token.cs" />
     <Compile Include="Models\TravelInsurance.cs" />
+    <Compile Include="Models\WatchedJokes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repository\store.cs" />
     <Compile Include="Utilities\Utility.cs" />
