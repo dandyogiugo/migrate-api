@@ -676,7 +676,7 @@ namespace DataStore.ViewModels
 
         public string merchant_id { get; set; }
         public string hash { get; set; }
-        public object jsonbase64string { get; set; }
+        public dynamic jsonbase64string { get; set; }
         public string email { get; set; }
     }
 

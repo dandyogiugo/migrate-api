@@ -778,6 +778,7 @@ namespace DataStore.Utilities
         {
             try
             {
+                log.Info($"raw response from portal {Newtonsoft.Json.JsonConvert.SerializeObject(claim_detail)}");
                 string ConnectionString = ConfigurationManager.ConnectionStrings["OracleConnectionString"].ConnectionString;
                 using (OracleConnection cn = new OracleConnection(ConnectionString))
                 {

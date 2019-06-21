@@ -177,6 +177,26 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Max pinned cannot exceed 10"
                     };
                 }
+
+                //check if user has click pinned button
+                var get_pinned_new = await pin.FindMany(x => x.AdaptLeads.email.ToLower() == pinned.email.ToLower());
+                if (get_pinned_new != null && get_pinned_new.Count > 0)
+                {
+                    for (int i = 0; i <= get_pinned_new.Count() - 1; ++i)
+                    {
+                        var obj1 = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(get_pinned_new[i].JsonNewsObject);
+                        if (obj1.Url == pinned.jsonbase64string.Url)
+                        {
+                            //new already pinned
+                            return new notification_response
+                            {
+                                status = 205,
+                                message = "This news has been pinned already"
+                            };
+
+                        }
+                    }
+                }
                 var decode_base64 = Newtonsoft.Json.JsonConvert.SerializeObject(pinned.jsonbase64string);
                 log.Info($"decoded string {decode_base64}");
                 var new_pinned_news = new PinnedNews
@@ -243,6 +263,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 var get_pinned_new = await pin.FindMany(x => x.AdaptLeads.email.ToLower() == email.ToLower());
                 if (get_pinned_new == null)
                 {
+
                     log.Info($"You have not pinned any news {email}");
                     return new notification_response
                     {
@@ -250,8 +271,9 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "You have not pinned any news"
                     };
                 }
+                var order_news = get_pinned_new.OrderByDescending(x => x.Id).ToList();
                 List<NewList> news_colections = new List<NewList>();
-                foreach (var item in get_pinned_new)
+                foreach (var item in order_news)
                 {
                     if (item.JsonNewsObject != null)
                     {
