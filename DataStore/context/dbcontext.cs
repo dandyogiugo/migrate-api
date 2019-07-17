@@ -37,6 +37,8 @@ namespace DataStore.context
         public DbSet<WatchedJokes> WatchedJokes { get; set; }
         public DbSet<News> News { get; set; }
         public DbSet<PinnedNews> PinnedNews { get; set; }
+        public DbSet<BuyTrackerDevice> BuyTrackerDevice { get; set; }
+        public DbSet<TelematicsUsers> TelematicsUsers { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

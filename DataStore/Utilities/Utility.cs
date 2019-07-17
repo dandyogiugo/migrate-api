@@ -24,10 +24,12 @@ namespace DataStore.Utilities
         private static Logger log = LogManager.GetCurrentClassLogger();
         private store<ApiConfiguration> _apiconfig = null;
         private store<PremiumCalculatorMapping> _premium_map = null;
+        private store<Token> _otp = null;
         public Utility()
         {
             _apiconfig = new store<ApiConfiguration>();
             _premium_map = new store<PremiumCalculatorMapping>();
+            _otp = new store<Token>();
         }
         public async Task<bool> ValidateHash(decimal value_of_goods, string secret, string _hash)
         {
@@ -835,6 +837,66 @@ namespace DataStore.Utilities
             }
 
             return frq;
+        }
+        public async Task<string> GenerateOTP(bool isSms, string toaddress, string fullname, Platforms source)
+        {
+            try
+            {
+                var old_otp = await _otp.FindOneByCriteria(x => x.is_used == false && x.is_valid == true && (x.mobile_number == toaddress || x.email == toaddress));
+                if (old_otp != null)
+                {
+                    log.Info($"deactivating previous un-used otp for mobile: {toaddress}");
+                    old_otp.is_used = true;
+                    old_otp.is_valid = false;
+                    await _otp.Update(old_otp);
+                }
+                log.Info($"creating new opt for user: {toaddress}");
+                var new_otp = new Token
+                {
+                    datecreated = DateTime.Now,
+                    fullname = fullname,
+                    is_used = false,
+                    is_valid = true,
+                    mobile_number = (isSms) ? toaddress : null,
+                    platform = source,
+                    email = (!isSms) ? toaddress : null,
+                    otp = Security.Transactions.UID.Codes.TransactionCodes.GenTransactionCodes(6)
+                };
+                await _otp.Save(new_otp);
+
+                return new_otp.otp;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return null;
+            }
+        }
+        public async Task<bool> ValidateOTP(string token, string emailorphone)
+        {
+            try
+            {
+                var validate = await _otp.FindOneByCriteria(x => x.is_used == false && x.is_valid == true && (x.mobile_number == emailorphone || x.email == emailorphone) && x.otp == token);
+                if (validate != null)
+                {
+                    log.Info($"you have provided an valid otp {emailorphone}");
+                    return true;
+                }
+                else
+                {
+                    log.Info($"you have provided an invalid otp {emailorphone}");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return false;
+            }
         }
     }
 }

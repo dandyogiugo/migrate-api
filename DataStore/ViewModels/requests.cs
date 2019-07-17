@@ -690,6 +690,113 @@ namespace DataStore.ViewModels
         public dynamic news { get; set; }
     }
 
+
+    public class BuyTracker
+    {
+        public int tracker_type_id { get; set; }
+        [Required]
+        public string customer_name { get; set; }
+        [Required]
+        public string customer_email { get; set; }
+        [Required]
+        public string plate_number { get; set; }
+        [Required]
+        public string installation_date_time { get; set; }
+        [Required]
+        public string address { get; set; }
+        [Required]
+        public string mobile_number { get; set; }
+        public string contact_person { get; set; }
+        [Required]
+        public string hash { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+        public string device_description { get; set; }
+        public string vehicle_year { get; set; }
+        public decimal price { get; set; }
+        public decimal annual_subscription { get; set; }
+        public string vehicle_make { get; set; }
+        public string vehicle_model { get; set; }
+    }
+
+
+    public class BuyTrackerPost
+    {
+        public string user_email { get; set; }
+        public string user_passcode { get; set; }
+        public int tracker_type_id { get; set; }
+        public string customer_name { get; set; }
+        public string customer_email { get; set; }
+        public string plate_number { get; set; }
+        public DateTime installation_date_time { get; set; }
+        public string address { get; set; }
+        public string mobile_number { get; set; }
+        public string contact_person { get; set; }
+    }
+
+    public class DevicePriceDetails
+    {
+        public string id { get; set; }
+        public string description { get; set; }
+        public string features { get; set; }
+        public string in_stock { get; set; }
+        public string minimum_vehicle_year { get; set; }
+        public string maximum_vehicle_year { get; set; }
+        public decimal price { get; set; }
+        public decimal annual_subscription { get; set; }
+        public string active { get; set; }
+        public string discount { get; set; }
+        public decimal actual_price { get; set; }
+        public string label { get; set; }
+    }
+
+    public class DevicePricesResponse
+    {
+        public string response_code { get; set; }
+        public string response_message { get; set; }
+        public List<DevicePriceDetails> data { get; set; }
+    }
+
+    public class SetTeleUser
+    {
+        public SetTeleUser()
+        {
+
+        }
+
+        [Required]
+        public string OwnerName { get; set; }
+        [Required]
+        public Gender Gender { get; set; }
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        public string Newpassword { get; set; }
+        [Required]
+        public string OTP { get; set; }
+        public string LoginLocation { get; set; }
+        public string merchant_id { get; set; }
+        public string hash { get; set; }
+    }
+
+    public class AuthTeleUser
+    {
+        public AuthTeleUser()
+        {
+
+        }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        public string email { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        public string password { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public string hash { get; set; }
+    }
 }
 
 

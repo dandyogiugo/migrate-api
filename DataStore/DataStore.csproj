@@ -41,6 +41,9 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="GenerateTransactionCodes">
+      <HintPath>..\..\..\..\..\..\..\ProjectNotification\RobApi\bin\GenerateTransactionCodes.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -94,6 +97,7 @@
     <Compile Include="Models\ApiConfiguration.cs" />
     <Compile Include="Models\ApiMethods.cs" />
     <Compile Include="Models\AutoInsurance.cs" />
+    <Compile Include="Models\BuyTrackerDevice.cs" />
     <Compile Include="Models\DealsTransactionHistory.cs" />
     <Compile Include="Models\FlightAndAirPortData.cs" />
     <Compile Include="Models\GITInsurance.cs" />
@@ -109,6 +113,7 @@
     <Compile Include="Models\PinnedNews.cs" />
     <Compile Include="Models\PremiumCalculatorMapping.cs" />
     <Compile Include="Models\SelectedMealPlan.cs" />
+    <Compile Include="Models\TelematicsUsers.cs" />
     <Compile Include="Models\Token.cs" />
     <Compile Include="Models\TravelInsurance.cs" />
     <Compile Include="Models\WatchedJokes.cs" />

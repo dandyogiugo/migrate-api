@@ -122,4 +122,10 @@ namespace DataStore.ViewModels
         CapitalBuilder = 2,
         LifeTimeHarvest = 3
     }
+
+    public enum Car
+    {
+        Start = 1,
+        Stop = 2
+    }
 }

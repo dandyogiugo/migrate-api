@@ -29,5 +29,6 @@ namespace DataStore.Models
         public string mobile_number { get; set; }
         [MaxLength(200)]
         public string fullname { get; set; }
+        public string email { get; set; }
     }
 }
