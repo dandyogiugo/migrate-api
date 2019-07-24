@@ -88,13 +88,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2018 14:07:14</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.dll">
-      <publishTime>07/17/2019 13:29:03</publishTime>
+      <publishTime>07/24/2019 18:10:10</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.XmlSerializers.dll">
-      <publishTime>07/17/2019 13:29:04</publishTime>
+      <publishTime>07/24/2019 18:10:12</publishTime>
     </File>
     <File Include="bin/DataStore.dll">
-      <publishTime>07/17/2019 13:15:29</publishTime>
+      <publishTime>07/24/2019 18:10:04</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/23/2017 13:15:18</publishTime>

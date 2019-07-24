@@ -75,7 +75,7 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                 using (var api = new HttpClient())
                 {
-                    var request = await api.GetAsync(GlobalConstant.base_url + $"getLastStatus?email={email}&passcode={passcode}&imei={imei}");
+                    var request = await api.GetAsync(GlobalConstant.base_url + $"getLastStatus?email={email}&passcode={password}&imei={imei}");
                     if (request.IsSuccessStatusCode)
                     {
                         var response = await request.Content.ReadAsAsync<dynamic>();
@@ -815,17 +815,55 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
 
                     var validate_otp = await util.ValidateOTP(user.OTP, user.Email);
+                    if (!validate_otp)
+                    {
+                        log.Info($"Invalid otp{user.Email}");
+                        return new notification_response
+                        {
+                            status = 402,
+                            message = "Invalid OTP provided"
+                        };
+                    }
+
+                    var request2 = await apicall.PostAsJsonAsync(GlobalConstant.base_url + "SetNewPwd",
+                        new Dictionary<string, string>()
+                        {
+                            { "email", user.Email.Trim().ToLower() },
+                            { "passcode", user.Newpassword }
+                        });
+
+                    if (!request2.IsSuccessStatusCode)
+                    {
+                        log.Info($"unable to set password {user.Email}");
+                        return new notification_response
+                        {
+                            status = 406,
+                            message = "Host not responding to request, Try Again"
+                        };
+                    }
+                    var response2 = await request2.Content.ReadAsAsync<dynamic>();
+                    if (response2.response_code != "00")
+                    {
+                        log.Info($"unable to set password/pssword reset failed {user.Email}");
+                        return new notification_response
+                        {
+                            status = 406,
+                            message = "Unable setup user credential, Try Again"
+                        };
+                    }
+
                     if (validate_otp)
                     {
                         var new_setup = new TelematicsUsers
                         {
                             CreatedAt = DateTime.Now,
-                            email = user.Email,
+                            email = user.Email.ToLower(),
                             Gender = user.Gender,
                             IsActive = true,
                             IsFromCustodian = true,
                             LoginLocation = user.LoginLocation,
-                            OwnerName = user.OwnerName
+                            OwnerName = user.OwnerName,
+                            LastLoginDate = DateTime.Now
                         };
                         await telematics_user.Save(new_setup);
                         return new notification_response
@@ -842,11 +880,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             message = "Invalid OTP provided"
                         };
                     }
-
-
                 }
-
-
 
             }
             catch (Exception ex)
@@ -924,7 +958,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         };
                     }
 
-                    var generate_otp = await util.GenerateOTP(false, email, "TELEMATICS", Platforms.ADAPT);
+                    var generate_otp = await util.GenerateOTP(false, email.ToLower(), "TELEMATICS", Platforms.ADAPT);
                     if (string.IsNullOrEmpty(generate_otp))
                     {
                         log.Info("Unable to generate OTP, Try Again");
@@ -936,7 +970,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
 
                     // send OTP to email address
-                    string messageBody = $"Adpat Telematics authentication code <br/><br/><h2><strong>{generate_otp}</strong></h2>";
+                    string messageBody = $"Adapt Telematics authentication code <br/><br/><h2><strong>{generate_otp}</strong></h2>";
                     var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
                     StringBuilder sb = new StringBuilder(template);
                     sb.Replace("#CONTENT#", messageBody);
@@ -944,13 +978,15 @@ namespace CustodianEveryWhereV2._0.Controllers
                     var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
                     await Task.Factory.StartNew(() =>
                     {
-                        new SendEmail().Send_Email(email, "Adapt", sb.ToString(), "Telematics Authentication", true, imagepath, null, null, null);
+                        List<string> cc = new List<string>();
+                        cc.Add("technology@custodianplc.com.ng");
+                        new SendEmail().Send_Email(email, "Adapt-Telematics Authentication", sb.ToString(), "Telematics Authentication", true, imagepath, cc, null, null);
                     });
 
                     log.Info($"Otp was sent successfully to {email}");
                     return new notification_response
                     {
-                        status = 408,
+                        status = 200,
                         message = $"OTP was sent successfully to {email}"
                     };
                 }
@@ -1050,6 +1086,20 @@ namespace CustodianEveryWhereV2._0.Controllers
                         };
                     }
 
+                    log.Info($"Login successful {userAuth.email}");
+                    string messageBody = $"<h2>Authentication was successful at {DateTime.Now.ToString("dddd, dd MMMM yyyy")}</h2>";
+                    var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
+                    StringBuilder sb = new StringBuilder(template);
+                    sb.Replace("#CONTENT#", messageBody);
+                    sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
+                    var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
+                    await Task.Factory.StartNew(() =>
+                    {
+                        List<string> cc = new List<string>();
+                        cc.Add("technology@custodianplc.com.ng");
+                        new SendEmail().Send_Email(userAuth.email, "Adapt-Telematics Authentication successful", sb.ToString(), "Telematics Authentication successful", true, imagepath, cc, null, null);
+                    });
+
                     // successful process
                     return new notification_response
                     {
@@ -1072,5 +1122,160 @@ namespace CustodianEveryWhereV2._0.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<notification_response> TelematicsPasswordReset(TelemaricResetPassword reset)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Some required fields missing from request",
+                    };
+                }
+
+                var check_user_function = await util.CheckForAssignedFunction("TelematicsPasswordReset", reset.merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == reset.merchant_id);
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {reset.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+                // validate hash
+                var checkhash = await util.ValidateHash2(reset.email + reset.OTP + reset.password, config.secret_key, reset.hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {reset.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+                // check if user exist
+                var is_profile_setup = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == reset.email.ToLower());
+
+                if (is_profile_setup == null)
+                {
+                    log.Info($"User profile has not been setup {reset.email}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "User profile has not been setup"
+                    };
+                }
+                //check if user exist at halogen ends
+                using (var apicall = new HttpClient())
+                {
+                    // validate OTP
+                    var validate_otp = await util.ValidateOTP(reset.OTP, reset.email.ToLower());
+                    if (!validate_otp)
+                    {
+                        log.Info($"Invalid otp{reset.email}");
+                        return new notification_response
+                        {
+                            status = 402,
+                            message = "Invalid OTP provided"
+                        };
+                    }
+
+                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"CheckEmail?email={reset.email}");
+                    if (!request.IsSuccessStatusCode)
+                    {
+                        log.Info($"verifying from halogen {reset.email}");
+                        return new notification_response
+                        {
+                            status = 409,
+                            message = "Secondary verification failed"
+                        };
+                    }
+
+                    var response = await request.Content.ReadAsAsync<dynamic>();
+                    if (response.response_code != "00")
+                    {
+                        log.Info($"verifying from halogen failed {reset.email}");
+                        return new notification_response
+                        {
+                            status = 409,
+                            message = response.response_message
+                        };
+                    }
+
+                    var request2 = await apicall.PostAsJsonAsync(GlobalConstant.base_url + "SetNewPwd",
+                        new Dictionary<string, string>()
+                        {
+                            { "email", reset.email.Trim().ToLower() },
+                            { "passcode", reset.password }
+                        });
+
+                    if (!request2.IsSuccessStatusCode)
+                    {
+                        log.Info($"unable to set password {reset.email}");
+                        return new notification_response
+                        {
+                            status = 406,
+                            message = "Host not responding to request, Try Again"
+                        };
+                    }
+                    var response2 = await request2.Content.ReadAsAsync<dynamic>();
+                    if (response2.response_code != "00")
+                    {
+                        log.Info($"unable to set password/pssword reset failed {reset.email}");
+                        return new notification_response
+                        {
+                            status = 406,
+                            message = "Unable setup user credential, Try Again"
+                        };
+                    }
+                    else
+                    {
+                        log.Info($"password reset was successful {reset.email}");
+                        string messageBody = $"<h2>Your password reset was successful at {DateTime.Now.ToString("dddd, dd MMMM yyyy")}</h2>";
+                        var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
+                        StringBuilder sb = new StringBuilder(template);
+                        sb.Replace("#CONTENT#", messageBody);
+                        sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
+                        var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
+                        await Task.Factory.StartNew(() =>
+                        {
+                            List<string> cc = new List<string>();
+                            cc.Add("technology@custodianplc.com.ng");
+                            new SendEmail().Send_Email(reset.email, "Adapt-Telematics Password Reset", sb.ToString(), "Password Reset", true, imagepath, cc, null, null);
+                        });
+
+                        return new notification_response
+                        {
+                            status = 200,
+                            message = "Password reset was successful"
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "Error: Unable to reset password"
+                };
+            }
+        }
     }
 }

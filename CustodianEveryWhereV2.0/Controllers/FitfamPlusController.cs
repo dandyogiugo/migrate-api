@@ -13,6 +13,8 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Net.Http.Formatting;
+using System.Text;
+using CustodianEmailSMSGateway.Email;
 
 namespace CustodianEveryWhereV2._0.Controllers
 {
@@ -21,12 +23,12 @@ namespace CustodianEveryWhereV2._0.Controllers
         private static Logger log = LogManager.GetCurrentClassLogger();
         private store<ApiConfiguration> _apiconfig = null;
         private Utility util = null;
-        private store<DealsTransactionHistory> _deals = null;
+        private store<FitfamplusDeals> _deals = null;
         public FitfamPlusController()
         {
             _apiconfig = new store<ApiConfiguration>();
             util = new Utility();
-            _deals = new store<DealsTransactionHistory>();
+            _deals = new store<FitfamplusDeals>();
         }
 
         [HttpGet]
@@ -242,6 +244,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         [HttpPost]
         public async Task<notification_response> BuyDeal(deal deal)
         {
+            log.Info($"raw data fitfam {Newtonsoft.Json.JsonConvert.SerializeObject(deal)}");
             try
             {
                 if (!ModelState.IsValid)
@@ -284,49 +287,50 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
-                DateTime versary;
 
-                var newdeal = new DealsTransactionHistory
+                DateTime versary;
+                DateTime expiry;
+                var newdeal = new FitfamplusDeals
                 {
                     address = deal.address,
-                    anniversary = (!string.IsNullOrEmpty(deal.anniversary) && DateTime.TryParse(deal.anniversary, out versary)) ? versary : default(DateTime),
-                    discounted_percent = deal.discounted_percent,
+                    anniversary = DateTime.Now,
+                    discount_percent = deal.discounted_percent,
                     discounted_price = deal.discounted_price,
-                    dob = (!string.IsNullOrEmpty(deal.dob) && DateTime.TryParse(deal.dob, out versary)) ? versary : default(DateTime),
+                    dob = (!string.IsNullOrEmpty(deal.dob) && DateTime.TryParse(deal.dob, out versary)) ? versary.Date : default(DateTime).Date,
                     email = deal.email,
-                    end_date = (!string.IsNullOrEmpty(deal.end_date) && DateTime.TryParse(deal.end_date, out versary)) ? versary : default(DateTime),
                     firstname = deal.firstname,
                     gender = deal.gender,
                     gym = deal.gym,
                     lastname = deal.lastname,
                     marital_status = deal.marital_status,
-                    membership = deal.membership,
+                    membership_id = deal.membership,
                     mobile = deal.mobile,
                     package_id = deal.package_id,
                     price = deal.price,
-                    purchase_date = DateTime.Now,
                     reference = deal.reference,
-                    start_date = (!string.IsNullOrEmpty(deal.start_date) && DateTime.TryParse(deal.start_date, out versary)) ? versary : default(DateTime)
+                    deal_description = deal.description,
+                    transactionDate = DateTime.Now,
+                    start_date = (!string.IsNullOrEmpty(deal.start_date) && DateTime.TryParse(deal.start_date, out versary)) ? versary.Date : default(DateTime).Date
                 };
-
-                //  int index = 0;
+                if (deal.period.ToLower() == "day" || deal.period.ToLower() == "week")
+                {
+                    expiry = newdeal.start_date.AddDays(deal.duration);
+                }
+                else
+                {
+                    expiry = newdeal.start_date.AddMonths(deal.duration);
+                }
+                newdeal.end_date = expiry;
+                log.Info($"Date time {DateTime.Now}");
+                log.Info($"Fitfam adapt deals request2:  {Newtonsoft.Json.JsonConvert.SerializeObject(newdeal)}");
                 var geturl = Newtonsoft.Json.JsonConvert.DeserializeObject<List<dynamic>>(System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/config.json"))).FirstOrDefault(x => x.gymname == deal.gym.ToUpper().Trim());
-                //for (int i = 0; i <= geturl.Count - 1; ++i)
-                //{
-                //    if (geturl[i].gymname.ToLower().Trim() == deal.gym.ToLower().Trim())
-                //    {
-                //        index = i;
-                //        break;
-                //    }
-                //}
-
                 if (geturl != null)
                 {
                     using (var _api = new HttpClient())
                     {
                         string url = geturl.url;
                         log.Info($"endpoint to push {url}");
-                        var request = await _api.PostAsJsonAsync(url, deal);
+                        var request = await _api.PostAsJsonAsync(url, newdeal);
                         log.Info($"response code for fitfam {request.StatusCode}");
                         if (request.IsSuccessStatusCode)
                         {
@@ -336,6 +340,31 @@ namespace CustodianEveryWhereV2._0.Controllers
                             if (response != null && response.status != "fail")
                             {
                                 await _deals.Save(newdeal);
+                                //send mail
+                                string messageBody = $@"You just bought a fitfam deal from Adapt details below <br/><br/>
+                                                <table border = '1' width='100%' style = 'border-collapse: collapse;' >
+                                                <tr><td style = 'font-weight:bold'>Fullname</td><td>{newdeal.firstname + " " + newdeal.lastname }</td></tr>
+                                                <tr><td style = 'font-weight:bold'>Deal</td><td>{newdeal.deal_description}</td></tr>
+                                                <tr><td style = 'font-weight:bold'>Price</td><td>NGN {string.Format("{0:N}", newdeal.price)}</td></tr>
+                                                <tr><td style = 'font-weight:bold'>Start Date</td><td>{newdeal.start_date.ToString("dddd, dd MMMM yyyy")}</td></tr>
+                                                <tr><td style = 'font-weight:bold'>End Date</td><td>{newdeal.end_date.ToString("dddd, dd MMMM yyyy")}</td></tr>
+                                                <tr><td style = 'font-weight:bold'>Gym Name</td><td>{newdeal.gym}</td></tr>
+                                                <tr><td style = 'font-weight:bold'>Transction Date</td><td>{newdeal.transactionDate.Value.ToString("dddd, dd MMMM yyyy")}</td></tr>
+                                                <tr><td style = 'font-weight:bold'>Payment Reference</td><td>{newdeal.reference}</td></tr>
+                                                </table>";
+                                var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
+                                StringBuilder sb = new StringBuilder(template);
+                                sb.Replace("#CONTENT#", messageBody);
+                                sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
+                                var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
+                                Task.Factory.StartNew(() =>
+                                {
+                                    List<string> cc = new List<string>();
+                                    cc.Add("technology@custodianplc.com.ng");
+                                    new SendEmail().Send_Email(deal.email, "Adapt-Deal", sb.ToString(), "Adapt-Deal", true, imagepath, cc, null, null);
+                                });
+
+                              
                                 log.Info($"Gym processing to api success");
                                 return new notification_response
                                 {
@@ -366,7 +395,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 else
                 {
-                    log.Info($"Invalid config settings not config found on json config file");
+                    log.Info($"Invalid config settings no config found on json config file");
                     return new notification_response
                     {
                         status = 407,
