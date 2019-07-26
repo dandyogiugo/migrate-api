@@ -58,9 +58,9 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 if (quote.date_of_birth != null)
                 {
-                    using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                    using (var api = new CustodianAPI.PolicyServicesSoapClient())
                     {
-                        var quote_amount = await api.GetTravelQuoteAsync(quote.date_of_birth.Value, quote.departure_date, quote.return_date, quote.zone.ToString().Replace("_", " "));
+                        var quote_amount =  api.GetTravelQuote(quote.date_of_birth.Value, quote.departure_date, quote.return_date, quote.zone.ToString().Replace("_", " "));
                         if (!string.IsNullOrEmpty(quote_amount))
                         {
                             decimal amount;
@@ -99,14 +99,14 @@ namespace CustodianEveryWhereV2._0.Controllers
                 else
                 {
                     decimal sum = 0;
-                    using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                    using (var api = new CustodianAPI.PolicyServicesSoapClient())
                     {
                         var quote_list = new List<decimal>();
                         foreach (var date in quote.multiple_dob)
                         {
                             try
                             {
-                                var quote_amount = await api.GetTravelQuoteAsync(date, quote.departure_date, quote.return_date, quote.zone.ToString().Replace("_", " "));
+                                var quote_amount =  api.GetTravelQuote(date, quote.departure_date, quote.return_date, quote.zone.ToString().Replace("_", " "));
                                 if (!string.IsNullOrEmpty(quote_amount))
                                 {
                                     decimal amount;
@@ -211,7 +211,7 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                 if (travel.Passenger.Count() == 0)
                 {
-                    using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                    using (var api = new CustodianAPI.PolicyServicesSoapClient())
                     {
                         var request = await api.POSTTravelRecAsync(GlobalConstant.merchant_id,
                             GlobalConstant.password, travel.title, travel.surname, travel.firstname, travel.date_of_birth.Value, travel.gender, travel.nationality,
@@ -282,7 +282,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 else
                 {
                     var list_cert_no = new List<string>();
-                    using (var api2 = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                    using (var api2 = new CustodianAPI.PolicyServicesSoapClient())
                     {
                         try
                         {

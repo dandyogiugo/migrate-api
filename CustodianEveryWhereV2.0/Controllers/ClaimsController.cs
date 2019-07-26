@@ -242,21 +242,21 @@ namespace CustodianEveryWhereV2._0.Controllers
                 //var merchant_id = ConfigurationManager.AppSettings["Merchant_ID"];
                 //var password = ConfigurationManager.AppSettings["Password"];
                 string claim_number = "";
-                using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var submite_claim = await api.SubmitClaimRegisterAsync(GlobalConstant.merchant_id, GlobalConstant.password, newClaims.policy_holder_name, "", newClaims.email_address,
+                    var submite_claim =  api.SubmitClaimRegister(GlobalConstant.merchant_id, GlobalConstant.password, newClaims.policy_holder_name, "", newClaims.email_address,
                         newClaims.phone_number, newClaims.policy_number, newClaims.incident_description,
                         newClaims.incident_date_time.Value, newClaims.vehicle_reg_number, newClaims.claim_amount.ToString());
-                    log.Info($"Response from Claims api {Newtonsoft.Json.JsonConvert.SerializeObject(submite_claim.Generating_Claims_NumberResult)}");
-                    if (submite_claim.Generating_Claims_NumberResult.RegStatusCode != "200")
+                    log.Info($"Response from Claims api {Newtonsoft.Json.JsonConvert.SerializeObject(submite_claim)}");
+                    if (submite_claim.RegStatusCode != "200")
                     {
                         return new claims_response
                         {
                             status = 409,
-                            message = submite_claim.Generating_Claims_NumberResult.RegStatus
+                            message = submite_claim.RegStatus
                         };
                     }
-                    claim_number = submite_claim.Generating_Claims_NumberResult.RegStatus;
+                    claim_number = submite_claim.RegStatus;
                 }
 
 
@@ -384,9 +384,9 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 else
                 {
-                    using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                    using (var api = new CustodianAPI.PolicyServicesSoapClient())
                     {
-                        var response = await api.GetClaimStatusAsync(claims.claims_number);
+                        var response =  api.GetClaimStatus(claims.claims_number);
                         log.Info($"response from ABS {Newtonsoft.Json.JsonConvert.SerializeObject(response)}");
                         if (response.ClPolicyNo == "NULL")
                         {

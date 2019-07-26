@@ -139,10 +139,10 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     log.Info($"cover type {quote.cover_type.ToString()}");
-                    var request = await api.GetMotorQuoteAsync(quote.cover_type.ToString().Replace("_", " "),
+                    var request =  api.GetMotorQuote(quote.cover_type.ToString().Replace("_", " "),
                          quote.vehicle_category, quote.vehicle_value.ToString(),
                         !string.IsNullOrEmpty(quote.payment_option) ? quote.payment_option : "",
                         quote.excess, quote.tracking, quote.flood, quote.srcc);
@@ -224,17 +224,17 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
-                using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var request = await api.POSTMotorRecAsync(GlobalConstant.merchant_id, GlobalConstant.password,
+                    var request =  api.POSTMotorRec(GlobalConstant.merchant_id, GlobalConstant.password,
                         Auto.customer_name, Auto.address, Auto.phone_number, Auto.email, Auto.engine_number,
                         Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured
                         , Auto.chassis_number, Auto.registration_number, Auto.vehicle_model,
                         Auto.vehicle_model, Auto.vehicle_color, Auto.vehicle_model, Auto.vehicle_type, Auto.vehicle_year,
                         DateTime.Now, DateTime.Now, DateTime.Now.AddMonths(12), Auto.reference_no, "", "ADAPT", "", "", "");
-                    log.Info($"Response from Api {request.Passing_Motor_PostSourceResult}");
+                    log.Info($"Response from Api {request}");
                     //HO/V/29/G0000529E|17294
-                    if (!string.IsNullOrEmpty(request.Passing_Motor_PostSourceResult) || request.Passing_Motor_PostSourceResult.ToLower() == "success")
+                    if (!string.IsNullOrEmpty(request) || request.ToLower() == "success")
                     {
 
                         var save_new = new AutoInsurance
@@ -263,7 +263,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             vehicle_year = Auto.vehicle_year
                         };
 
-                        var cert_code = request.Passing_Motor_PostSourceResult.Replace("**", "|").Split('|')[1];
+                        var cert_code = request.Replace("**", "|").Split('|')[1];
                         var reciept_base_url = ConfigurationManager.AppSettings["Reciept_Base_Url"];
 
                         var cert_number = cert_code;

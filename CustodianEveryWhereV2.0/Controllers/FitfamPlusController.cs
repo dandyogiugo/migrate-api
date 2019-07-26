@@ -15,6 +15,7 @@ using System.Web.Http;
 using System.Net.Http.Formatting;
 using System.Text;
 using CustodianEmailSMSGateway.Email;
+using System.IO;
 
 namespace CustodianEveryWhereV2._0.Controllers
 {
@@ -179,6 +180,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
 
                 var endpoint = ConfigurationManager.AppSettings["ENDPOINTS"].Split('|');
+                //var geturl = Newtonsoft.Json.JsonConvert.DeserializeObject<List<dynamic>>(File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/config.json")));
                 Dictionary<string, List<dynamic>> deals = new Dictionary<string, List<dynamic>>();
                 List<dynamic> dy_deals = new List<dynamic>();
                 using (var api = new HttpClient())
@@ -341,22 +343,21 @@ namespace CustodianEveryWhereV2._0.Controllers
                             {
                                 await _deals.Save(newdeal);
                                 //send mail
-                                string messageBody = $@"You just bought a fitfam deal from Adapt details below <br/><br/>
+                                string messageBody = $@"Dear {newdeal.firstname + " " + newdeal.lastname }<br/><br/>Congratulations on your purchase on Adapt. Please find summary below: <br/><br/>
                                                 <table border = '1' width='100%' style = 'border-collapse: collapse;' >
-                                                <tr><td style = 'font-weight:bold'>Fullname</td><td>{newdeal.firstname + " " + newdeal.lastname }</td></tr>
+                                                <tr><td style = 'font-weight:bold'>Gym Name</td><td>{geturl.fullname}</td></tr>
                                                 <tr><td style = 'font-weight:bold'>Deal</td><td>{newdeal.deal_description}</td></tr>
                                                 <tr><td style = 'font-weight:bold'>Price</td><td>NGN {string.Format("{0:N}", newdeal.price)}</td></tr>
                                                 <tr><td style = 'font-weight:bold'>Start Date</td><td>{newdeal.start_date.ToString("dddd, dd MMMM yyyy")}</td></tr>
                                                 <tr><td style = 'font-weight:bold'>End Date</td><td>{newdeal.end_date.ToString("dddd, dd MMMM yyyy")}</td></tr>
-                                                <tr><td style = 'font-weight:bold'>Gym Name</td><td>{newdeal.gym}</td></tr>
                                                 <tr><td style = 'font-weight:bold'>Transction Date</td><td>{newdeal.transactionDate.Value.ToString("dddd, dd MMMM yyyy")}</td></tr>
                                                 <tr><td style = 'font-weight:bold'>Payment Reference</td><td>{newdeal.reference}</td></tr>
                                                 </table>";
-                                var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
+                                var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Adapt.html"));
                                 StringBuilder sb = new StringBuilder(template);
                                 sb.Replace("#CONTENT#", messageBody);
                                 sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
-                                var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
+                                var imagepath = HttpContext.Current.Server.MapPath("~/Images/adapt_logo.png");
                                 Task.Factory.StartNew(() =>
                                 {
                                     List<string> cc = new List<string>();
@@ -364,7 +365,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                                     new SendEmail().Send_Email(deal.email, "Adapt-Deal", sb.ToString(), "Adapt-Deal", true, imagepath, cc, null, null);
                                 });
 
-                              
                                 log.Info($"Gym processing to api success");
                                 return new notification_response
                                 {

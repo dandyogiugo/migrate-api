@@ -57,9 +57,9 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var request = await api.GetPolicyDetailsAsync(GlobalConstant.merchant_id, GlobalConstant.password, "Life", policy.policy_no);
+                    var request =  api.GetPolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, "Life", policy.policy_no);
                     if(string.IsNullOrEmpty(request.InsState) && request.InsState.ToLower().Contains("wrong"))
                     {
                         return new Policy
@@ -126,9 +126,9 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var request = await api.GetPolicyDetailsAsync(GlobalConstant.merchant_id, GlobalConstant.password, "General", policy.policy_no);
+                    var request =  api.GetPolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, "General", policy.policy_no);
                     if (string.IsNullOrEmpty(request.InsState) && request.InsState.ToLower().Contains("wrong"))
                     {
                         return new Policy

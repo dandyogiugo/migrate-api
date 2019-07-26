@@ -971,11 +971,11 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                     // send OTP to email address
                     string messageBody = $"Adapt Telematics authentication code <br/><br/><h2><strong>{generate_otp}</strong></h2>";
-                    var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
+                    var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Adapt.html"));
                     StringBuilder sb = new StringBuilder(template);
                     sb.Replace("#CONTENT#", messageBody);
                     sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
-                    var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
+                    var imagepath = HttpContext.Current.Server.MapPath("~/Images/adapt_logo.png");
                     await Task.Factory.StartNew(() =>
                     {
                         List<string> cc = new List<string>();
@@ -1087,12 +1087,12 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
 
                     log.Info($"Login successful {userAuth.email}");
-                    string messageBody = $"<h2>Authentication was successful at {DateTime.Now.ToString("dddd, dd MMMM yyyy")}</h2>";
-                    var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
+                    string messageBody = $"<h3>Authentication was successful on {DateTime.Now.ToString("dddd, dd MMMM yyyy")}</h3>";
+                    var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Adapt.html"));
                     StringBuilder sb = new StringBuilder(template);
                     sb.Replace("#CONTENT#", messageBody);
                     sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
-                    var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
+                    var imagepath = HttpContext.Current.Server.MapPath("~/Images/adapt_logo.png");
                     await Task.Factory.StartNew(() =>
                     {
                         List<string> cc = new List<string>();
@@ -1245,11 +1245,11 @@ namespace CustodianEveryWhereV2._0.Controllers
                     {
                         log.Info($"password reset was successful {reset.email}");
                         string messageBody = $"<h2>Your password reset was successful at {DateTime.Now.ToString("dddd, dd MMMM yyyy")}</h2>";
-                        var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
+                        var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Adapt.html"));
                         StringBuilder sb = new StringBuilder(template);
                         sb.Replace("#CONTENT#", messageBody);
                         sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
-                        var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
+                        var imagepath = HttpContext.Current.Server.MapPath("~/Images/adapt_logo.png");
                         await Task.Factory.StartNew(() =>
                         {
                             List<string> cc = new List<string>();

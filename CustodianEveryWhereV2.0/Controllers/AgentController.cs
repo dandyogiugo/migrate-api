@@ -80,9 +80,9 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
 
 
-                using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var request = await api.GetMorePolicyDetailsAsync(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.subsidiary.ToString(), pol_detials.policy_number);
+                    var request =  api.GetMorePolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.subsidiary.ToString(), pol_detials.policy_number);
                     log.Info($"raw api response  {Newtonsoft.Json.JsonConvert.SerializeObject(request)}");
                     if (request == null || request.PolicyNo == "NULL")
                     {
@@ -186,7 +186,7 @@ namespace CustodianEveryWhereV2._0.Controllers
 
 
 
-                using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     var request = await api.SubmitPaymentRecordAsync(GlobalConstant.merchant_id, GlobalConstant.password, post.policy_number, post.subsidiary.ToString(), post.payment_narrtn, DateTime.Now,
                         DateTime.Now, post.reference_no, new_trans.issured_name, "", "","", new_trans.phone_no, new_trans.email_address, "", "", "", post.biz_unit, post.premium, 0, "MPOS", "RW");

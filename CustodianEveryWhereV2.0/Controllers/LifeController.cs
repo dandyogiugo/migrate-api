@@ -169,7 +169,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 #endregion
 
 
-                using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     var clientCode = api.CreateLifeClient("None", "None", "None", "None", dob, "None", "none@gmail.com", "0800000000001");
                     log.Info($"create client response from api {clientCode}");
@@ -377,7 +377,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     id_number = BuyLife.id_number
                 };
 
-                using (var api = new CustodianAPI.CustodianEverywhereAPISoapClient())
+                using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     var request = api.SubmitPaymentRecord(GlobalConstant.merchant_id, GlobalConstant.password, "NA",
                         "Life", $"NewBusniness|{BuyLife.payment_reference}", Convert.ToDateTime(BuyLife.date_of_birth), DateTime.Now, BuyLife.payment_reference, BuyLife.insured_name, "", "", BuyLife.address, BuyLife.phonenumber,

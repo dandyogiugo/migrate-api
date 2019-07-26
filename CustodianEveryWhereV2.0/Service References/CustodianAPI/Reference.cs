@@ -9,101 +9,4042 @@
 //------------------------------------------------------------------------------
 
 namespace CustodianEveryWhereV2._0.CustodianAPI {
-    using System.Data;
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Claimfl", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class Claimfl : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClaimNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClPolicyNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClaimStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsuredNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string ClaimNo {
+            get {
+                return this.ClaimNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClaimNoField, value) != true)) {
+                    this.ClaimNoField = value;
+                    this.RaisePropertyChanged("ClaimNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string ClPolicyNo {
+            get {
+                return this.ClPolicyNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClPolicyNoField, value) != true)) {
+                    this.ClPolicyNoField = value;
+                    this.RaisePropertyChanged("ClPolicyNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string ClaimStatus {
+            get {
+                return this.ClaimStatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClaimStatusField, value) != true)) {
+                    this.ClaimStatusField = value;
+                    this.RaisePropertyChanged("ClaimStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string InsuredName {
+            get {
+                return this.InsuredNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuredNameField, value) != true)) {
+                    this.InsuredNameField = value;
+                    this.RaisePropertyChanged("InsuredName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PolValidation", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class PolValidation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolicyNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolStatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string PolicyNo {
+            get {
+                return this.PolicyNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
+                    this.PolicyNoField = value;
+                    this.RaisePropertyChanged("PolicyNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string PolStatus {
+            get {
+                return this.PolStatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolStatusField, value) != true)) {
+                    this.PolStatusField = value;
+                    this.RaisePropertyChanged("PolStatus");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PolExpDate", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class PolExpDate : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolicyNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolExpirydateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolInsuredField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string PolicyNo {
+            get {
+                return this.PolicyNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
+                    this.PolicyNoField = value;
+                    this.RaisePropertyChanged("PolicyNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string PolExpirydate {
+            get {
+                return this.PolExpirydateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolExpirydateField, value) != true)) {
+                    this.PolExpirydateField = value;
+                    this.RaisePropertyChanged("PolExpirydate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string PolInsured {
+            get {
+                return this.PolInsuredField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolInsuredField, value) != true)) {
+                    this.PolInsuredField = value;
+                    this.RaisePropertyChanged("PolInsured");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PolicyDet", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class PolicyDet : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolicyNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolicyEBusinessField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AgenctNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AgenctNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsuredNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsuredNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsuredOthNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsAddr1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsAddr2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsAddr3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TelNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsuredTelNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsuredEmailField;
+        
+        private System.DateTime DOBField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsLGAField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BizUnitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsOccupField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BizBranchField;
+        
+        private System.DateTime StartdateField;
+        
+        private System.DateTime EnddateField;
+        
+        private decimal SumInsField;
+        
+        private decimal mPremiumField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string PolicyNo {
+            get {
+                return this.PolicyNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
+                    this.PolicyNoField = value;
+                    this.RaisePropertyChanged("PolicyNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string PolicyEBusiness {
+            get {
+                return this.PolicyEBusinessField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolicyEBusinessField, value) != true)) {
+                    this.PolicyEBusinessField = value;
+                    this.RaisePropertyChanged("PolicyEBusiness");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string AgenctNum {
+            get {
+                return this.AgenctNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AgenctNumField, value) != true)) {
+                    this.AgenctNumField = value;
+                    this.RaisePropertyChanged("AgenctNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string AgenctName {
+            get {
+                return this.AgenctNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AgenctNameField, value) != true)) {
+                    this.AgenctNameField = value;
+                    this.RaisePropertyChanged("AgenctName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string InsuredNum {
+            get {
+                return this.InsuredNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuredNumField, value) != true)) {
+                    this.InsuredNumField = value;
+                    this.RaisePropertyChanged("InsuredNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string InsuredName {
+            get {
+                return this.InsuredNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuredNameField, value) != true)) {
+                    this.InsuredNameField = value;
+                    this.RaisePropertyChanged("InsuredName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string InsuredOthName {
+            get {
+                return this.InsuredOthNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuredOthNameField, value) != true)) {
+                    this.InsuredOthNameField = value;
+                    this.RaisePropertyChanged("InsuredOthName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string InsAddr1 {
+            get {
+                return this.InsAddr1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsAddr1Field, value) != true)) {
+                    this.InsAddr1Field = value;
+                    this.RaisePropertyChanged("InsAddr1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string InsAddr2 {
+            get {
+                return this.InsAddr2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsAddr2Field, value) != true)) {
+                    this.InsAddr2Field = value;
+                    this.RaisePropertyChanged("InsAddr2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string InsAddr3 {
+            get {
+                return this.InsAddr3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsAddr3Field, value) != true)) {
+                    this.InsAddr3Field = value;
+                    this.RaisePropertyChanged("InsAddr3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string TelNum {
+            get {
+                return this.TelNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TelNumField, value) != true)) {
+                    this.TelNumField = value;
+                    this.RaisePropertyChanged("TelNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string InsuredTelNum {
+            get {
+                return this.InsuredTelNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuredTelNumField, value) != true)) {
+                    this.InsuredTelNumField = value;
+                    this.RaisePropertyChanged("InsuredTelNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        public string InsuredEmail {
+            get {
+                return this.InsuredEmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuredEmailField, value) != true)) {
+                    this.InsuredEmailField = value;
+                    this.RaisePropertyChanged("InsuredEmail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public System.DateTime DOB {
+            get {
+                return this.DOBField;
+            }
+            set {
+                if ((this.DOBField.Equals(value) != true)) {
+                    this.DOBField = value;
+                    this.RaisePropertyChanged("DOB");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string InsState {
+            get {
+                return this.InsStateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsStateField, value) != true)) {
+                    this.InsStateField = value;
+                    this.RaisePropertyChanged("InsState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string InsLGA {
+            get {
+                return this.InsLGAField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsLGAField, value) != true)) {
+                    this.InsLGAField = value;
+                    this.RaisePropertyChanged("InsLGA");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        public string BizUnit {
+            get {
+                return this.BizUnitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BizUnitField, value) != true)) {
+                    this.BizUnitField = value;
+                    this.RaisePropertyChanged("BizUnit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        public string InsOccup {
+            get {
+                return this.InsOccupField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsOccupField, value) != true)) {
+                    this.InsOccupField = value;
+                    this.RaisePropertyChanged("InsOccup");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
+        public string BizBranch {
+            get {
+                return this.BizBranchField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BizBranchField, value) != true)) {
+                    this.BizBranchField = value;
+                    this.RaisePropertyChanged("BizBranch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
+        public System.DateTime Startdate {
+            get {
+                return this.StartdateField;
+            }
+            set {
+                if ((this.StartdateField.Equals(value) != true)) {
+                    this.StartdateField = value;
+                    this.RaisePropertyChanged("Startdate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        public System.DateTime Enddate {
+            get {
+                return this.EnddateField;
+            }
+            set {
+                if ((this.EnddateField.Equals(value) != true)) {
+                    this.EnddateField = value;
+                    this.RaisePropertyChanged("Enddate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
+        public decimal SumIns {
+            get {
+                return this.SumInsField;
+            }
+            set {
+                if ((this.SumInsField.Equals(value) != true)) {
+                    this.SumInsField = value;
+                    this.RaisePropertyChanged("SumIns");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
+        public decimal mPremium {
+            get {
+                return this.mPremiumField;
+            }
+            set {
+                if ((this.mPremiumField.Equals(value) != true)) {
+                    this.mPremiumField = value;
+                    this.RaisePropertyChanged("mPremium");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ClaimRegStatus", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class ClaimRegStatus : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegStatusCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RegStatus {
+            get {
+                return this.RegStatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegStatusField, value) != true)) {
+                    this.RegStatusField = value;
+                    this.RaisePropertyChanged("RegStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RegStatusCode {
+            get {
+                return this.RegStatusCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegStatusCodeField, value) != true)) {
+                    this.RegStatusCodeField = value;
+                    this.RaisePropertyChanged("RegStatusCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ClientData", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class ClientData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsEmailField;
+        
+        private System.DateTime StartdateField;
+        
+        private System.DateTime EnddateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolicyNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductNameField;
+        
+        private System.DateTime LastPaidDtField;
+        
+        private decimal OutPremiumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TotPremiumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusRecField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClaimsNoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string InsName {
+            get {
+                return this.InsNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsNameField, value) != true)) {
+                    this.InsNameField = value;
+                    this.RaisePropertyChanged("InsName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string InsEmail {
+            get {
+                return this.InsEmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsEmailField, value) != true)) {
+                    this.InsEmailField = value;
+                    this.RaisePropertyChanged("InsEmail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.DateTime Startdate {
+            get {
+                return this.StartdateField;
+            }
+            set {
+                if ((this.StartdateField.Equals(value) != true)) {
+                    this.StartdateField = value;
+                    this.RaisePropertyChanged("Startdate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.DateTime Enddate {
+            get {
+                return this.EnddateField;
+            }
+            set {
+                if ((this.EnddateField.Equals(value) != true)) {
+                    this.EnddateField = value;
+                    this.RaisePropertyChanged("Enddate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string PolicyNo {
+            get {
+                return this.PolicyNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
+                    this.PolicyNoField = value;
+                    this.RaisePropertyChanged("PolicyNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string ProductName {
+            get {
+                return this.ProductNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
+                    this.ProductNameField = value;
+                    this.RaisePropertyChanged("ProductName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime LastPaidDt {
+            get {
+                return this.LastPaidDtField;
+            }
+            set {
+                if ((this.LastPaidDtField.Equals(value) != true)) {
+                    this.LastPaidDtField = value;
+                    this.RaisePropertyChanged("LastPaidDt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal OutPremium {
+            get {
+                return this.OutPremiumField;
+            }
+            set {
+                if ((this.OutPremiumField.Equals(value) != true)) {
+                    this.OutPremiumField = value;
+                    this.RaisePropertyChanged("OutPremium");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string TotPremium {
+            get {
+                return this.TotPremiumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TotPremiumField, value) != true)) {
+                    this.TotPremiumField = value;
+                    this.RaisePropertyChanged("TotPremium");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string StatusRec {
+            get {
+                return this.StatusRecField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusRecField, value) != true)) {
+                    this.StatusRecField = value;
+                    this.RaisePropertyChanged("StatusRec");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string ClaimsNo {
+            get {
+                return this.ClaimsNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClaimsNoField, value) != true)) {
+                    this.ClaimsNoField = value;
+                    this.RaisePropertyChanged("ClaimsNo");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MotorList", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class MotorList : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mInsurednameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mPolicyNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mVehRegField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mChasisNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mStartdateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mEnddateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mHPCAPACITYField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mVEHVALUEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mVEHPREMIUMField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mVEHMAKEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mVEHCOLORField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mENGINENUMField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string mInsuredname {
+            get {
+                return this.mInsurednameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mInsurednameField, value) != true)) {
+                    this.mInsurednameField = value;
+                    this.RaisePropertyChanged("mInsuredname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string mPolicyNumber {
+            get {
+                return this.mPolicyNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mPolicyNumberField, value) != true)) {
+                    this.mPolicyNumberField = value;
+                    this.RaisePropertyChanged("mPolicyNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string mVehReg {
+            get {
+                return this.mVehRegField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mVehRegField, value) != true)) {
+                    this.mVehRegField = value;
+                    this.RaisePropertyChanged("mVehReg");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string mChasisNum {
+            get {
+                return this.mChasisNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mChasisNumField, value) != true)) {
+                    this.mChasisNumField = value;
+                    this.RaisePropertyChanged("mChasisNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string mStartdate {
+            get {
+                return this.mStartdateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mStartdateField, value) != true)) {
+                    this.mStartdateField = value;
+                    this.RaisePropertyChanged("mStartdate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string mEnddate {
+            get {
+                return this.mEnddateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mEnddateField, value) != true)) {
+                    this.mEnddateField = value;
+                    this.RaisePropertyChanged("mEnddate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string mHPCAPACITY {
+            get {
+                return this.mHPCAPACITYField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mHPCAPACITYField, value) != true)) {
+                    this.mHPCAPACITYField = value;
+                    this.RaisePropertyChanged("mHPCAPACITY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string mVEHVALUE {
+            get {
+                return this.mVEHVALUEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mVEHVALUEField, value) != true)) {
+                    this.mVEHVALUEField = value;
+                    this.RaisePropertyChanged("mVEHVALUE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string mVEHPREMIUM {
+            get {
+                return this.mVEHPREMIUMField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mVEHPREMIUMField, value) != true)) {
+                    this.mVEHPREMIUMField = value;
+                    this.RaisePropertyChanged("mVEHPREMIUM");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string mVEHMAKE {
+            get {
+                return this.mVEHMAKEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mVEHMAKEField, value) != true)) {
+                    this.mVEHMAKEField = value;
+                    this.RaisePropertyChanged("mVEHMAKE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string mVEHCOLOR {
+            get {
+                return this.mVEHCOLORField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mVEHCOLORField, value) != true)) {
+                    this.mVEHCOLORField = value;
+                    this.RaisePropertyChanged("mVEHCOLOR");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string mENGINENUM {
+            get {
+                return this.mENGINENUMField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mENGINENUMField, value) != true)) {
+                    this.mENGINENUMField = value;
+                    this.RaisePropertyChanged("mENGINENUM");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PolBalances", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class PolBalances : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolicyNoField;
+        
+        private decimal PolOutStandBalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolInsuredField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string PolicyNo {
+            get {
+                return this.PolicyNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
+                    this.PolicyNoField = value;
+                    this.RaisePropertyChanged("PolicyNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal PolOutStandBal {
+            get {
+                return this.PolOutStandBalField;
+            }
+            set {
+                if ((this.PolOutStandBalField.Equals(value) != true)) {
+                    this.PolOutStandBalField = value;
+                    this.RaisePropertyChanged("PolOutStandBal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string PolInsured {
+            get {
+                return this.PolInsuredField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolInsuredField, value) != true)) {
+                    this.PolInsuredField = value;
+                    this.RaisePropertyChanged("PolInsured");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NotificationsDetails", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class NotificationsDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MerchantIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MpasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NotifyIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolicyNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        private System.DateTime DOBField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        private System.DateTime RenewalDateField;
+        
+        private System.DateTime PaymentDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReceiptNoField;
+        
+        private decimal ReceiptAmtField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NarrationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RenUrlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailResponseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string smsResponseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PremiumBalanceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string MerchantID {
+            get {
+                return this.MerchantIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MerchantIDField, value) != true)) {
+                    this.MerchantIDField = value;
+                    this.RaisePropertyChanged("MerchantID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Mpassword {
+            get {
+                return this.MpasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MpasswordField, value) != true)) {
+                    this.MpasswordField = value;
+                    this.RaisePropertyChanged("Mpassword");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string NotifyID {
+            get {
+                return this.NotifyIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NotifyIDField, value) != true)) {
+                    this.NotifyIDField = value;
+                    this.RaisePropertyChanged("NotifyID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string PolicyNo {
+            get {
+                return this.PolicyNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
+                    this.PolicyNoField = value;
+                    this.RaisePropertyChanged("PolicyNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime DOB {
+            get {
+                return this.DOBField;
+            }
+            set {
+                if ((this.DOBField.Equals(value) != true)) {
+                    this.DOBField = value;
+                    this.RaisePropertyChanged("DOB");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string PhoneNumber {
+            get {
+                return this.PhoneNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneNumberField, value) != true)) {
+                    this.PhoneNumberField = value;
+                    this.RaisePropertyChanged("PhoneNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public System.DateTime RenewalDate {
+            get {
+                return this.RenewalDateField;
+            }
+            set {
+                if ((this.RenewalDateField.Equals(value) != true)) {
+                    this.RenewalDateField = value;
+                    this.RaisePropertyChanged("RenewalDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public System.DateTime PaymentDate {
+            get {
+                return this.PaymentDateField;
+            }
+            set {
+                if ((this.PaymentDateField.Equals(value) != true)) {
+                    this.PaymentDateField = value;
+                    this.RaisePropertyChanged("PaymentDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string ReceiptNo {
+            get {
+                return this.ReceiptNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReceiptNoField, value) != true)) {
+                    this.ReceiptNoField = value;
+                    this.RaisePropertyChanged("ReceiptNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public decimal ReceiptAmt {
+            get {
+                return this.ReceiptAmtField;
+            }
+            set {
+                if ((this.ReceiptAmtField.Equals(value) != true)) {
+                    this.ReceiptAmtField = value;
+                    this.RaisePropertyChanged("ReceiptAmt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        public string Narration {
+            get {
+                return this.NarrationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NarrationField, value) != true)) {
+                    this.NarrationField = value;
+                    this.RaisePropertyChanged("Narration");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string RenUrl {
+            get {
+                return this.RenUrlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RenUrlField, value) != true)) {
+                    this.RenUrlField = value;
+                    this.RaisePropertyChanged("RenUrl");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string EmailResponse {
+            get {
+                return this.EmailResponseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailResponseField, value) != true)) {
+                    this.EmailResponseField = value;
+                    this.RaisePropertyChanged("EmailResponse");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        public string smsResponse {
+            get {
+                return this.smsResponseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.smsResponseField, value) != true)) {
+                    this.smsResponseField = value;
+                    this.RaisePropertyChanged("smsResponse");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        public string PremiumBalance {
+            get {
+                return this.PremiumBalanceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PremiumBalanceField, value) != true)) {
+                    this.PremiumBalanceField = value;
+                    this.RaisePropertyChanged("PremiumBalance");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="certificate_out", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class certificate_out : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string error_codeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string error_messageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string file_nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string file_contentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string policy_idField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string error_code {
+            get {
+                return this.error_codeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.error_codeField, value) != true)) {
+                    this.error_codeField = value;
+                    this.RaisePropertyChanged("error_code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string error_message {
+            get {
+                return this.error_messageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.error_messageField, value) != true)) {
+                    this.error_messageField = value;
+                    this.RaisePropertyChanged("error_message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string file_name {
+            get {
+                return this.file_nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.file_nameField, value) != true)) {
+                    this.file_nameField = value;
+                    this.RaisePropertyChanged("file_name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string file_content {
+            get {
+                return this.file_contentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.file_contentField, value) != true)) {
+                    this.file_contentField = value;
+                    this.RaisePropertyChanged("file_content");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string policy_id {
+            get {
+                return this.policy_idField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.policy_idField, value) != true)) {
+                    this.policy_idField = value;
+                    this.RaisePropertyChanged("policy_id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MorePolicyDetails", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class MorePolicyDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolicyNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolicyEBusinessField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AgenctNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AgenctNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsuredNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsuredNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsuredOthNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsAddr1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsAddr2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsAddr3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TelNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsuredTelNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsuredEmailField;
+        
+        private System.DateTime DOBField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsLGAField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BizUnitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsOccupField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BizBranchField;
+        
+        private System.DateTime StartdateField;
+        
+        private System.DateTime EnddateField;
+        
+        private decimal SumInsField;
+        
+        private decimal mPremiumField;
+        
+        private decimal OutPremiumField;
+        
+        private decimal InstPremiumField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string PolicyNo {
+            get {
+                return this.PolicyNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
+                    this.PolicyNoField = value;
+                    this.RaisePropertyChanged("PolicyNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string PolicyEBusiness {
+            get {
+                return this.PolicyEBusinessField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolicyEBusinessField, value) != true)) {
+                    this.PolicyEBusinessField = value;
+                    this.RaisePropertyChanged("PolicyEBusiness");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string AgenctNum {
+            get {
+                return this.AgenctNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AgenctNumField, value) != true)) {
+                    this.AgenctNumField = value;
+                    this.RaisePropertyChanged("AgenctNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string AgenctName {
+            get {
+                return this.AgenctNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AgenctNameField, value) != true)) {
+                    this.AgenctNameField = value;
+                    this.RaisePropertyChanged("AgenctName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string InsuredNum {
+            get {
+                return this.InsuredNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuredNumField, value) != true)) {
+                    this.InsuredNumField = value;
+                    this.RaisePropertyChanged("InsuredNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string InsuredName {
+            get {
+                return this.InsuredNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuredNameField, value) != true)) {
+                    this.InsuredNameField = value;
+                    this.RaisePropertyChanged("InsuredName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string InsuredOthName {
+            get {
+                return this.InsuredOthNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuredOthNameField, value) != true)) {
+                    this.InsuredOthNameField = value;
+                    this.RaisePropertyChanged("InsuredOthName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string InsAddr1 {
+            get {
+                return this.InsAddr1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsAddr1Field, value) != true)) {
+                    this.InsAddr1Field = value;
+                    this.RaisePropertyChanged("InsAddr1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string InsAddr2 {
+            get {
+                return this.InsAddr2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsAddr2Field, value) != true)) {
+                    this.InsAddr2Field = value;
+                    this.RaisePropertyChanged("InsAddr2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string InsAddr3 {
+            get {
+                return this.InsAddr3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsAddr3Field, value) != true)) {
+                    this.InsAddr3Field = value;
+                    this.RaisePropertyChanged("InsAddr3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string TelNum {
+            get {
+                return this.TelNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TelNumField, value) != true)) {
+                    this.TelNumField = value;
+                    this.RaisePropertyChanged("TelNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string InsuredTelNum {
+            get {
+                return this.InsuredTelNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuredTelNumField, value) != true)) {
+                    this.InsuredTelNumField = value;
+                    this.RaisePropertyChanged("InsuredTelNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        public string InsuredEmail {
+            get {
+                return this.InsuredEmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuredEmailField, value) != true)) {
+                    this.InsuredEmailField = value;
+                    this.RaisePropertyChanged("InsuredEmail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public System.DateTime DOB {
+            get {
+                return this.DOBField;
+            }
+            set {
+                if ((this.DOBField.Equals(value) != true)) {
+                    this.DOBField = value;
+                    this.RaisePropertyChanged("DOB");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string InsState {
+            get {
+                return this.InsStateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsStateField, value) != true)) {
+                    this.InsStateField = value;
+                    this.RaisePropertyChanged("InsState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string InsLGA {
+            get {
+                return this.InsLGAField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsLGAField, value) != true)) {
+                    this.InsLGAField = value;
+                    this.RaisePropertyChanged("InsLGA");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        public string BizUnit {
+            get {
+                return this.BizUnitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BizUnitField, value) != true)) {
+                    this.BizUnitField = value;
+                    this.RaisePropertyChanged("BizUnit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        public string InsOccup {
+            get {
+                return this.InsOccupField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsOccupField, value) != true)) {
+                    this.InsOccupField = value;
+                    this.RaisePropertyChanged("InsOccup");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
+        public string BizBranch {
+            get {
+                return this.BizBranchField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BizBranchField, value) != true)) {
+                    this.BizBranchField = value;
+                    this.RaisePropertyChanged("BizBranch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
+        public System.DateTime Startdate {
+            get {
+                return this.StartdateField;
+            }
+            set {
+                if ((this.StartdateField.Equals(value) != true)) {
+                    this.StartdateField = value;
+                    this.RaisePropertyChanged("Startdate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        public System.DateTime Enddate {
+            get {
+                return this.EnddateField;
+            }
+            set {
+                if ((this.EnddateField.Equals(value) != true)) {
+                    this.EnddateField = value;
+                    this.RaisePropertyChanged("Enddate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
+        public decimal SumIns {
+            get {
+                return this.SumInsField;
+            }
+            set {
+                if ((this.SumInsField.Equals(value) != true)) {
+                    this.SumInsField = value;
+                    this.RaisePropertyChanged("SumIns");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
+        public decimal mPremium {
+            get {
+                return this.mPremiumField;
+            }
+            set {
+                if ((this.mPremiumField.Equals(value) != true)) {
+                    this.mPremiumField = value;
+                    this.RaisePropertyChanged("mPremium");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
+        public decimal OutPremium {
+            get {
+                return this.OutPremiumField;
+            }
+            set {
+                if ((this.OutPremiumField.Equals(value) != true)) {
+                    this.OutPremiumField = value;
+                    this.RaisePropertyChanged("OutPremium");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=24)]
+        public decimal InstPremium {
+            get {
+                return this.InstPremiumField;
+            }
+            set {
+                if ((this.InstPremiumField.Equals(value) != true)) {
+                    this.InstPremiumField = value;
+                    this.RaisePropertyChanged("InstPremium");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Crm_PolicyInfo", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class Crm_PolicyInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Policy_NoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string CustomerID {
+            get {
+                return this.CustomerIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Policy_No {
+            get {
+                return this.Policy_NoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Policy_NoField, value) != true)) {
+                    this.Policy_NoField = value;
+                    this.RaisePropertyChanged("Policy_No");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Phone {
+            get {
+                return this.PhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Crm_Renewal", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class Crm_Renewal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Pol_NoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string daysLeftField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RenwDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Gross_PremiumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Sum_InsuredField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string CustomerID {
+            get {
+                return this.CustomerIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Pol_No {
+            get {
+                return this.Pol_NoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Pol_NoField, value) != true)) {
+                    this.Pol_NoField = value;
+                    this.RaisePropertyChanged("Pol_No");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Products {
+            get {
+                return this.ProductsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
+                    this.ProductsField = value;
+                    this.RaisePropertyChanged("Products");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string daysLeft {
+            get {
+                return this.daysLeftField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.daysLeftField, value) != true)) {
+                    this.daysLeftField = value;
+                    this.RaisePropertyChanged("daysLeft");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string RenwDate {
+            get {
+                return this.RenwDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RenwDateField, value) != true)) {
+                    this.RenwDateField = value;
+                    this.RaisePropertyChanged("RenwDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Gross_Premium {
+            get {
+                return this.Gross_PremiumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Gross_PremiumField, value) != true)) {
+                    this.Gross_PremiumField = value;
+                    this.RaisePropertyChanged("Gross_Premium");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string Sum_Insured {
+            get {
+                return this.Sum_InsuredField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Sum_InsuredField, value) != true)) {
+                    this.Sum_InsuredField = value;
+                    this.RaisePropertyChanged("Sum_Insured");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Crm_Birthday", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class Crm_Birthday : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DOBField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string CustomerID {
+            get {
+                return this.CustomerIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string DOB {
+            get {
+                return this.DOBField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DOBField, value) != true)) {
+                    this.DOBField = value;
+                    this.RaisePropertyChanged("DOB");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Phone {
+            get {
+                return this.PhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_Claims", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class CRM_Claims : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolicyNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClaimsNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string CustomerID {
+            get {
+                return this.CustomerIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string PolicyNo {
+            get {
+                return this.PolicyNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
+                    this.PolicyNoField = value;
+                    this.RaisePropertyChanged("PolicyNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string ClaimsNo {
+            get {
+                return this.ClaimsNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClaimsNoField, value) != true)) {
+                    this.ClaimsNoField = value;
+                    this.RaisePropertyChanged("ClaimsNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Phone {
+            get {
+                return this.PhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Products {
+            get {
+                return this.ProductsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
+                    this.ProductsField = value;
+                    this.RaisePropertyChanged("Products");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_Dashboard", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class CRM_Dashboard : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int CntActivePoliciesField;
+        
+        private int CountCustomersField;
+        
+        private int ActiveCustomersField;
+        
+        private int CustomerPolicyField;
+        
+        private int PolicyRenewalField;
+        
+        private int BirthdayField;
+        
+        private int ClaimsField;
+        
+        private int LapsePolField;
+        
+        private int NiidPolField;
+        
+        private int To_berenewedField;
+        
+        private int broker_productionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int CntActivePolicies {
+            get {
+                return this.CntActivePoliciesField;
+            }
+            set {
+                if ((this.CntActivePoliciesField.Equals(value) != true)) {
+                    this.CntActivePoliciesField = value;
+                    this.RaisePropertyChanged("CntActivePolicies");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int CountCustomers {
+            get {
+                return this.CountCustomersField;
+            }
+            set {
+                if ((this.CountCustomersField.Equals(value) != true)) {
+                    this.CountCustomersField = value;
+                    this.RaisePropertyChanged("CountCustomers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int ActiveCustomers {
+            get {
+                return this.ActiveCustomersField;
+            }
+            set {
+                if ((this.ActiveCustomersField.Equals(value) != true)) {
+                    this.ActiveCustomersField = value;
+                    this.RaisePropertyChanged("ActiveCustomers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int CustomerPolicy {
+            get {
+                return this.CustomerPolicyField;
+            }
+            set {
+                if ((this.CustomerPolicyField.Equals(value) != true)) {
+                    this.CustomerPolicyField = value;
+                    this.RaisePropertyChanged("CustomerPolicy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int PolicyRenewal {
+            get {
+                return this.PolicyRenewalField;
+            }
+            set {
+                if ((this.PolicyRenewalField.Equals(value) != true)) {
+                    this.PolicyRenewalField = value;
+                    this.RaisePropertyChanged("PolicyRenewal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int Birthday {
+            get {
+                return this.BirthdayField;
+            }
+            set {
+                if ((this.BirthdayField.Equals(value) != true)) {
+                    this.BirthdayField = value;
+                    this.RaisePropertyChanged("Birthday");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int Claims {
+            get {
+                return this.ClaimsField;
+            }
+            set {
+                if ((this.ClaimsField.Equals(value) != true)) {
+                    this.ClaimsField = value;
+                    this.RaisePropertyChanged("Claims");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public int LapsePol {
+            get {
+                return this.LapsePolField;
+            }
+            set {
+                if ((this.LapsePolField.Equals(value) != true)) {
+                    this.LapsePolField = value;
+                    this.RaisePropertyChanged("LapsePol");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public int NiidPol {
+            get {
+                return this.NiidPolField;
+            }
+            set {
+                if ((this.NiidPolField.Equals(value) != true)) {
+                    this.NiidPolField = value;
+                    this.RaisePropertyChanged("NiidPol");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public int To_berenewed {
+            get {
+                return this.To_berenewedField;
+            }
+            set {
+                if ((this.To_berenewedField.Equals(value) != true)) {
+                    this.To_berenewedField = value;
+                    this.RaisePropertyChanged("To_berenewed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public int broker_production {
+            get {
+                return this.broker_productionField;
+            }
+            set {
+                if ((this.broker_productionField.Equals(value) != true)) {
+                    this.broker_productionField = value;
+                    this.RaisePropertyChanged("broker_production");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_PolicyDetail", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class CRM_PolicyDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Policy_NoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProducttypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SumInsuredField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PremiumField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string CustomerID {
+            get {
+                return this.CustomerIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Policy_No {
+            get {
+                return this.Policy_NoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Policy_NoField, value) != true)) {
+                    this.Policy_NoField = value;
+                    this.RaisePropertyChanged("Policy_No");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Phone {
+            get {
+                return this.PhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Producttype {
+            get {
+                return this.ProducttypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProducttypeField, value) != true)) {
+                    this.ProducttypeField = value;
+                    this.RaisePropertyChanged("Producttype");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string SumInsured {
+            get {
+                return this.SumInsuredField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SumInsuredField, value) != true)) {
+                    this.SumInsuredField = value;
+                    this.RaisePropertyChanged("SumInsured");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string Premium {
+            get {
+                return this.PremiumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PremiumField, value) != true)) {
+                    this.PremiumField = value;
+                    this.RaisePropertyChanged("Premium");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_ClaimsDetail", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class CRM_ClaimsDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Claim_NoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProducttypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClaimAmountField;
+        
+        private System.DateTime EnddateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string CustomerID {
+            get {
+                return this.CustomerIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Claim_No {
+            get {
+                return this.Claim_NoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Claim_NoField, value) != true)) {
+                    this.Claim_NoField = value;
+                    this.RaisePropertyChanged("Claim_No");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Phone {
+            get {
+                return this.PhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Producttype {
+            get {
+                return this.ProducttypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProducttypeField, value) != true)) {
+                    this.ProducttypeField = value;
+                    this.RaisePropertyChanged("Producttype");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string ClaimAmount {
+            get {
+                return this.ClaimAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClaimAmountField, value) != true)) {
+                    this.ClaimAmountField = value;
+                    this.RaisePropertyChanged("ClaimAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public System.DateTime Enddate {
+            get {
+                return this.EnddateField;
+            }
+            set {
+                if ((this.EnddateField.Equals(value) != true)) {
+                    this.EnddateField = value;
+                    this.RaisePropertyChanged("Enddate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ClaimCount", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class ClaimCount : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClaimCountMemberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UnitsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="ClaimCount", EmitDefaultValue=false)]
+        public string ClaimCountMember {
+            get {
+                return this.ClaimCountMemberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClaimCountMemberField, value) != true)) {
+                    this.ClaimCountMemberField = value;
+                    this.RaisePropertyChanged("ClaimCountMember");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Units {
+            get {
+                return this.UnitsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UnitsField, value) != true)) {
+                    this.UnitsField = value;
+                    this.RaisePropertyChanged("Units");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Products {
+            get {
+                return this.ProductsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
+                    this.ProductsField = value;
+                    this.RaisePropertyChanged("Products");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ABSNIID", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class ABSNIID : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolicyNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EngineNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChasisNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CoverTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VehMakeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mAnalysisField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mUnitsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mUserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string PolicyNo {
+            get {
+                return this.PolicyNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
+                    this.PolicyNoField = value;
+                    this.RaisePropertyChanged("PolicyNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string EngineNo {
+            get {
+                return this.EngineNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EngineNoField, value) != true)) {
+                    this.EngineNoField = value;
+                    this.RaisePropertyChanged("EngineNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string ChasisNo {
+            get {
+                return this.ChasisNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChasisNoField, value) != true)) {
+                    this.ChasisNoField = value;
+                    this.RaisePropertyChanged("ChasisNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string CoverType {
+            get {
+                return this.CoverTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CoverTypeField, value) != true)) {
+                    this.CoverTypeField = value;
+                    this.RaisePropertyChanged("CoverType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string VehMake {
+            get {
+                return this.VehMakeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VehMakeField, value) != true)) {
+                    this.VehMakeField = value;
+                    this.RaisePropertyChanged("VehMake");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string RegNum {
+            get {
+                return this.RegNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegNumField, value) != true)) {
+                    this.RegNumField = value;
+                    this.RaisePropertyChanged("RegNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string mAnalysis {
+            get {
+                return this.mAnalysisField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mAnalysisField, value) != true)) {
+                    this.mAnalysisField = value;
+                    this.RaisePropertyChanged("mAnalysis");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string mUnits {
+            get {
+                return this.mUnitsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mUnitsField, value) != true)) {
+                    this.mUnitsField = value;
+                    this.RaisePropertyChanged("mUnits");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string mUser {
+            get {
+                return this.mUserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mUserField, value) != true)) {
+                    this.mUserField = value;
+                    this.RaisePropertyChanged("mUser");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_Top10Det", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class CRM_Top10Det : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompanyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClaimAmtField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NetAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UnitsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string CustomerID {
+            get {
+                return this.CustomerIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Company {
+            get {
+                return this.CompanyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
+                    this.CompanyField = value;
+                    this.RaisePropertyChanged("Company");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string ClaimAmt {
+            get {
+                return this.ClaimAmtField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClaimAmtField, value) != true)) {
+                    this.ClaimAmtField = value;
+                    this.RaisePropertyChanged("ClaimAmt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string NetAmount {
+            get {
+                return this.NetAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NetAmountField, value) != true)) {
+                    this.NetAmountField = value;
+                    this.RaisePropertyChanged("NetAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string mAmount {
+            get {
+                return this.mAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mAmountField, value) != true)) {
+                    this.mAmountField = value;
+                    this.RaisePropertyChanged("mAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Units {
+            get {
+                return this.UnitsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UnitsField, value) != true)) {
+                    this.UnitsField = value;
+                    this.RaisePropertyChanged("Units");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_TopProduct", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class CRM_TopProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompanyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mPremiumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UnitsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Company {
+            get {
+                return this.CompanyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
+                    this.CompanyField = value;
+                    this.RaisePropertyChanged("Company");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string mProduct {
+            get {
+                return this.mProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mProductField, value) != true)) {
+                    this.mProductField = value;
+                    this.RaisePropertyChanged("mProduct");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string mPremium {
+            get {
+                return this.mPremiumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mPremiumField, value) != true)) {
+                    this.mPremiumField = value;
+                    this.RaisePropertyChanged("mPremium");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Units {
+            get {
+                return this.UnitsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UnitsField, value) != true)) {
+                    this.UnitsField = value;
+                    this.RaisePropertyChanged("Units");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="To_be_renewed", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class To_be_renewed : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Policy_NoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProducttypeField;
+        
+        private System.DateTime MaxdateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UnitDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AfterdaysField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string CustomerID {
+            get {
+                return this.CustomerIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Policy_No {
+            get {
+                return this.Policy_NoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Policy_NoField, value) != true)) {
+                    this.Policy_NoField = value;
+                    this.RaisePropertyChanged("Policy_No");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Phone {
+            get {
+                return this.PhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Producttype {
+            get {
+                return this.ProducttypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProducttypeField, value) != true)) {
+                    this.ProducttypeField = value;
+                    this.RaisePropertyChanged("Producttype");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.DateTime Maxdate {
+            get {
+                return this.MaxdateField;
+            }
+            set {
+                if ((this.MaxdateField.Equals(value) != true)) {
+                    this.MaxdateField = value;
+                    this.RaisePropertyChanged("Maxdate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string UnitDescription {
+            get {
+                return this.UnitDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UnitDescriptionField, value) != true)) {
+                    this.UnitDescriptionField = value;
+                    this.RaisePropertyChanged("UnitDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string Afterdays {
+            get {
+                return this.AfterdaysField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AfterdaysField, value) != true)) {
+                    this.AfterdaysField = value;
+                    this.RaisePropertyChanged("Afterdays");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BrokerData", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class BrokerData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AgntNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AgntNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AgntPremField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AgntClaimPaidAmtField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AgntNetAmountField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string AgntName {
+            get {
+                return this.AgntNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AgntNameField, value) != true)) {
+                    this.AgntNameField = value;
+                    this.RaisePropertyChanged("AgntName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string AgntNum {
+            get {
+                return this.AgntNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AgntNumField, value) != true)) {
+                    this.AgntNumField = value;
+                    this.RaisePropertyChanged("AgntNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string AgntPrem {
+            get {
+                return this.AgntPremField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AgntPremField, value) != true)) {
+                    this.AgntPremField = value;
+                    this.RaisePropertyChanged("AgntPrem");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string AgntClaimPaidAmt {
+            get {
+                return this.AgntClaimPaidAmtField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AgntClaimPaidAmtField, value) != true)) {
+                    this.AgntClaimPaidAmtField = value;
+                    this.RaisePropertyChanged("AgntClaimPaidAmt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string AgntNetAmount {
+            get {
+                return this.AgntNetAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AgntNetAmountField, value) != true)) {
+                    this.AgntNetAmountField = value;
+                    this.RaisePropertyChanged("AgntNetAmount");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Name="CustodianEverywhere API.Soap", Namespace="http://Custodianservices.com/", ConfigurationName="CustodianAPI.CustodianEverywhereAPISoap")]
-    public interface CustodianEverywhereAPISoap {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://Custodianservices.com/", ConfigurationName="CustodianAPI.PolicyServicesSoap")]
+    public interface PolicyServicesSoap {
+        
+        // CODEGEN: Generating message contract since element name ClaimsNumb from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetClaimStatus", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusResponse GetClaimStatus(CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetClaimStatus", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.Claimfl GetClaimStatus(string ClaimsNumb);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusResponse> GetClaimStatusAsync(CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetClaimStatus", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Claimfl> GetClaimStatusAsync(string ClaimsNumb);
+        // CODEGEN: Generating message contract since element name ClaimsNumb from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetContactClaim", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimResponse GetContactClaim(CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetContactClaim", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.Claimfl GetContactClaim(string ClaimsNumb, string TelNumber);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimResponse> GetContactClaimAsync(CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetContactClaim", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Claimfl> GetContactClaimAsync(string ClaimsNumb, string TelNumber);
+        // CODEGEN: Generating message contract since element name polcode from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPolicyValidation", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationResponse GetPolicyValidation(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPolicyValidation", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.PolValidation GetPolicyValidation(string polcode);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationResponse> GetPolicyValidationAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPolicyValidation", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PolValidation> GetPolicyValidationAsync(string polcode);
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPolicyExpiryDate", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateResponse GetPolicyExpiryDate(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPolicyExpiryDate", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.PolExpDate GetPolicyExpiryDate(string MerchantID, string MerchantPWD, string Subsidiary, string policyNo);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateResponse> GetPolicyExpiryDateAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPolicyExpiryDate", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PolExpDate> GetPolicyExpiryDateAsync(string MerchantID, string MerchantPWD, string Subsidiary, string policyNo);
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPolicyDetails", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsResponse GetPolicyDetails(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPolicyDetails", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.PolicyDet GetPolicyDetails(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPolicyDetails", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PolicyDet> GetPolicyDetailsAsync(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsResponse> GetPolicyDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (Generating_Claims_Number) of message Generating_Claims_Number does not match the default value (SubmitClaimRegister)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Generating_Claims_Number", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number1 SubmitClaimRegister(CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Generating_Claims_Number", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number1> SubmitClaimRegisterAsync(CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number request);
         
+        // CODEGEN: Generating message contract since element name GetLifeProductCategResult from namespace http://Custodianservices.com/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeProductCateg", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetLifeProductCateg();
+        CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategResponse GetLifeProductCateg(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeProductCateg", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetLifeProductCategAsync();
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategResponse> GetLifeProductCategAsync(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetLifeProductTypeResult from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeProductType", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeResponse GetLifeProductType(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeProductType", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetLifeProductType(int ProductCateg);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeResponse> GetLifeProductTypeAsync(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeProductType", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetLifeProductTypeAsync(int ProductCateg);
+        // CODEGEN: Generating message contract since element name popCode from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetAnnuityGuaranteePeriod", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodResponse GetAnnuityGuaranteePeriod(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetAnnuityGuaranteePeriod", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetAnnuityGuaranteePeriod(int prodCode, string popCode);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodResponse> GetAnnuityGuaranteePeriodAsync(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetAnnuityGuaranteePeriod", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetAnnuityGuaranteePeriodAsync(int prodCode, string popCode);
+        // CODEGEN: Generating message contract since element name popCode from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetAnnuitypaymentfreq", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqResponse GetAnnuitypaymentfreq(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetAnnuitypaymentfreq", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetAnnuitypaymentfreq(int prodCode, string popCode);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqResponse> GetAnnuitypaymentfreqAsync(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetAnnuitypaymentfreq", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetAnnuitypaymentfreqAsync(int prodCode, string popCode);
+        // CODEGEN: Generating message contract since element name GetAnnuitypayOutFreqResult from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetAnnuitypayOutFreq", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqResponse GetAnnuitypayOutFreq(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetAnnuitypayOutFreq", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetAnnuitypayOutFreq(int webProdCode);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqResponse> GetAnnuitypayOutFreqAsync(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetAnnuitypayOutFreq", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetAnnuitypayOutFreqAsync(int webProdCode);
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetClientDetails", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsResponse GetClientDetails(CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetClientDetails", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.ClientData GetClientDetails(string MerchantID, string MerchantPWD, string Telephone, string PolicyNo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetClientDetails", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.ClientData> GetClientDetailsAsync(string MerchantID, string MerchantPWD, string Telephone, string PolicyNo);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsResponse> GetClientDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (Passing_Payment_PostSource) of message Passing_Payment_PostSource does not match the default value (SubmitPaymentRecord)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Payment_PostSource", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource1 SubmitPaymentRecord(CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Payment_PostSource", ReplyAction="*")]
@@ -111,7 +4052,6 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         // CODEGEN: Generating message contract since the wrapper name (SubmitPaymentRecord) of message SubmitPaymentRecordRequest does not match the default value (SubmitPaymentRecord1)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/SubmitPaymentRecord", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordResponse SubmitPaymentRecord1(CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/SubmitPaymentRecord", ReplyAction="*")]
@@ -119,7 +4059,6 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         // CODEGEN: Generating message contract since the wrapper name (Passing_HomeShield_PostSource) of message Passing_HomeShield_PostSource does not match the default value (PostHomeShield)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_HomeShield_PostSource", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource1 PostHomeShield(CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_HomeShield_PostSource", ReplyAction="*")]
@@ -127,7 +4066,6 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         // CODEGEN: Generating message contract since the wrapper name (PostHomeShield) of message PostHomeShieldRequest does not match the default value (PostHomeShield1)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostHomeShield", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldResponse PostHomeShield1(CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostHomeShield", ReplyAction="*")]
@@ -135,7 +4073,6 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         // CODEGEN: Generating message contract since the wrapper name (Passing_SafetyPlus_PostSource) of message Passing_SafetyPlus_PostSource does not match the default value (PostSafetyPlus)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_SafetyPlus_PostSource", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource1 PostSafetyPlus(CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_SafetyPlus_PostSource", ReplyAction="*")]
@@ -143,7 +4080,6 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         // CODEGEN: Generating message contract since the wrapper name (PostSafetyPlus) of message PostSafetyPlusRequest does not match the default value (PostSafetyPlus1)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostSafetyPlus", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse PostSafetyPlus1(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostSafetyPlus", ReplyAction="*")]
@@ -151,7 +4087,6 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         // CODEGEN: Generating message contract since the wrapper name (Passing_Motor_PostSource) of message Passing_Motor_PostSource does not match the default value (POSTMotorRec)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Motor_PostSource", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource1 POSTMotorRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Motor_PostSource", ReplyAction="*")]
@@ -159,57 +4094,55 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         // CODEGEN: Generating message contract since the wrapper name (POSTMotorRec) of message POSTMotorRecRequest does not match the default value (POSTMotorRec1)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POSTMotorRec", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecResponse POSTMotorRec1(CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POSTMotorRec", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecResponse> POSTMotorRec1Async(CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecRequest request);
         
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetMotorPolicyDetails", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetMotorPolicyDetails(string MerchantID, string MerchantPWD, string PolicyNumber);
+        CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsResponse GetMotorPolicyDetails(CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetMotorPolicyDetails", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetMotorPolicyDetailsAsync(string MerchantID, string MerchantPWD, string PolicyNumber);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsResponse> GetMotorPolicyDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetLifeProductFrequencyResult from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeProductFrequency", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyResponse GetLifeProductFrequency(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeProductFrequency", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetLifeProductFrequency(int ProductCode);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyResponse> GetLifeProductFrequencyAsync(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeProductFrequency", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetLifeProductFrequencyAsync(int ProductCode);
+        // CODEGEN: Generating message contract since element name ProductCode from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeQuoteTerm", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermResponse GetLifeQuoteTerm(CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeQuoteTerm", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetLifeQuoteTerm(string ProductCode, string ClientCode);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermResponse> GetLifeQuoteTermAsync(CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeQuoteTerm", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetLifeQuoteTermAsync(string ProductCode, string ClientCode);
+        // CODEGEN: Generating message contract since element name ProductCode from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeCoverType", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeResponse GetLifeCoverType(CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeCoverType", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetLifeCoverType(string ProductCode);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeResponse> GetLifeCoverTypeAsync(CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeCoverType", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetLifeCoverTypeAsync(string ProductCode);
+        // CODEGEN: Generating message contract since element name ClntTitle from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/CreateLifeClient", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientResponse CreateLifeClient(CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/CreateLifeClient", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CreateLifeClient(string ClntTitle, string ClntFName, string ClntMName, string ClntLName, System.DateTime ClntDob, string ClntGender, string ClntEmail, string ClntMobile);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientResponse> CreateLifeClientAsync(CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/CreateLifeClient", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> CreateLifeClientAsync(string ClntTitle, string ClntFName, string ClntMName, string ClntLName, System.DateTime ClntDob, string ClntGender, string ClntEmail, string ClntMobile);
+        // CODEGEN: Generating message contract since element name Premium from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeQuote", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteResponse GetLifeQuote(CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeQuote", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetLifeQuote(int clntCode, string Premium, string SumAssured, int WebProdCode, string PaymentFreqCode, int PolicyTerm, string InterestRate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetLifeQuote", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetLifeQuoteAsync(int clntCode, string Premium, string SumAssured, int WebProdCode, string PaymentFreqCode, int PolicyTerm, string InterestRate);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteResponse> GetLifeQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (Passing_Travel_PostSource) of message Passing_Travel_PostSource does not match the default value (POSTTravelRec)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Travel_PostSource", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource1 POSTTravelRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Travel_PostSource", ReplyAction="*")]
@@ -217,295 +4150,104 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         // CODEGEN: Generating message contract since the wrapper name (POSTTravelRec) of message POSTTravelRecRequest does not match the default value (POSTTravelRec1)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POSTTravelRec", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecResponse POSTTravelRec1(CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POSTTravelRec", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecResponse> POSTTravelRec1Async(CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecRequest request);
         
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetlifePolicyBalances", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.PolBalances GetlifePolicyBalances(string MerchantID, string MerchantPWD, string policyNo);
+        CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesResponse GetlifePolicyBalances(CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetlifePolicyBalances", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PolBalances> GetlifePolicyBalancesAsync(string MerchantID, string MerchantPWD, string policyNo);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesResponse> GetlifePolicyBalancesAsync(CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesRequest request);
+        
+        // CODEGEN: Generating message contract since element name GreographicalArea from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetTravelQuote", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteResponse GetTravelQuote(CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetTravelQuote", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetTravelQuote(System.DateTime DateOfBirth, System.DateTime DepartureDate, System.DateTime ArrivalDate, string GreographicalArea);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteResponse> GetTravelQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetTravelQuote", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetTravelQuoteAsync(System.DateTime DateOfBirth, System.DateTime DepartureDate, System.DateTime ArrivalDate, string GreographicalArea);
+        // CODEGEN: Generating message contract since element name TypeOfCover from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetMotorQuote", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteResponse GetMotorQuote(CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetMotorQuote", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetMotorQuote(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteResponse> GetMotorQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetMotorQuote", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetMotorQuoteAsync(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC);
+        // CODEGEN: Generating message contract since element name GetHomeShieldQuoteResult from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetHomeShieldQuote", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteResponse GetHomeShieldQuote(CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetHomeShieldQuote", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetHomeShieldQuote(long mUnit);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteResponse> GetHomeShieldQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetHomeShieldQuote", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetHomeShieldQuoteAsync(long mUnit);
+        // CODEGEN: Generating message contract since element name GetSafetyplusQuoteResult from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetSafetyplusQuote", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteResponse GetSafetyplusQuote(CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetSafetyplusQuote", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetSafetyplusQuote(long mUnit);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteResponse> GetSafetyplusQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetSafetyplusQuote", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetSafetyplusQuoteAsync(long mUnit);
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POSTNotificationDet", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetResponse POSTNotificationDet(CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POSTNotificationDet", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.NotificationsDetails POSTNotificationDet(
-                    string MerchantID, 
-                    string Mpassword, 
-                    string Product, 
-                    string NotifyID, 
-                    string PolicyNo, 
-                    string FirstName, 
-                    string LastName, 
-                    System.DateTime DOB, 
-                    string PhoneNumber, 
-                    string Email, 
-                    System.DateTime RenewalDate, 
-                    string OutstandPrem, 
-                    System.DateTime PaymentDate, 
-                    string ReceiptNo, 
-                    decimal ReceiptAmt, 
-                    string RenUrl, 
-                    string Narration, 
-                    string EmailResponse, 
-                    string smsResponse);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetResponse> POSTNotificationDetAsync(CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POSTNotificationDet", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.NotificationsDetails> POSTNotificationDetAsync(
-                    string MerchantID, 
-                    string Mpassword, 
-                    string Product, 
-                    string NotifyID, 
-                    string PolicyNo, 
-                    string FirstName, 
-                    string LastName, 
-                    System.DateTime DOB, 
-                    string PhoneNumber, 
-                    string Email, 
-                    System.DateTime RenewalDate, 
-                    string OutstandPrem, 
-                    System.DateTime PaymentDate, 
-                    string ReceiptNo, 
-                    decimal ReceiptAmt, 
-                    string RenUrl, 
-                    string Narration, 
-                    string EmailResponse, 
-                    string smsResponse);
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetConfirmTel", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelResponse GetConfirmTel(CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetConfirmTel", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        bool GetConfirmTel(string MerchantID, string MerchantPWD, string Telephone);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetConfirmTel", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> GetConfirmTelAsync(string MerchantID, string MerchantPWD, string Telephone);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelResponse> GetConfirmTelAsync(CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (Passing_RenewalPayment_PostSource) of message Passing_RenewalPayment_PostSource does not match the default value (SubmitRenewBusinessPayRec)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_RenewalPayment_PostSource", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource1 SubmitRenewBusinessPayRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_RenewalPayment_PostSource", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource1> SubmitRenewBusinessPayRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource request);
         
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostTQSync", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string PostTQSync(
-                    string MerchantID, 
-                    string Mpassword, 
-                    string PolicyNo, 
-                    string PostType, 
-                    System.DateTime DateOfBirth, 
-                    System.DateTime startdate, 
-                    string ReferenceNo, 
-                    string Gender, 
-                    string FirstName, 
-                    string LastName, 
-                    string Title, 
-                    string Address, 
-                    string PhoneNumber, 
-                    string Email, 
-                    string PolicyTerm, 
-                    string PaymentFreq, 
-                    string PaymentPayOutFreq, 
-                    string ProductType, 
-                    string PaySource, 
-                    decimal Premium, 
-                    decimal SumAssured);
+        CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncResponse PostTQSync(CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostTQSync", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> PostTQSyncAsync(
-                    string MerchantID, 
-                    string Mpassword, 
-                    string PolicyNo, 
-                    string PostType, 
-                    System.DateTime DateOfBirth, 
-                    System.DateTime startdate, 
-                    string ReferenceNo, 
-                    string Gender, 
-                    string FirstName, 
-                    string LastName, 
-                    string Title, 
-                    string Address, 
-                    string PhoneNumber, 
-                    string Email, 
-                    string PolicyTerm, 
-                    string PaymentFreq, 
-                    string PaymentPayOutFreq, 
-                    string ProductType, 
-                    string PaySource, 
-                    decimal Premium, 
-                    decimal SumAssured);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncResponse> PostTQSyncAsync(CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequest request);
+        
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostABSSync", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncResponse PostABSSync(CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostABSSync", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string PostABSSync(
-                    string MerchantID, 
-                    string Mpassword, 
-                    string PolicyNo, 
-                    string PostType, 
-                    System.DateTime DateOfBirth, 
-                    System.DateTime startdate, 
-                    System.DateTime enddate, 
-                    string ReferenceNo, 
-                    string FirstName, 
-                    string LastName, 
-                    string Title, 
-                    string Address, 
-                    string PhoneNumber, 
-                    string Email, 
-                    string CoverType, 
-                    string ProductType, 
-                    string PaySource, 
-                    string Occupation, 
-                    string ChassisNumber, 
-                    string VehicleMake, 
-                    string VehicleNumber, 
-                    string VehicleType, 
-                    string EngineNumber, 
-                    string RegistrationNumber, 
-                    string VehicleModel, 
-                    decimal Premium, 
-                    decimal SumAssured, 
-                    string BrokerID, 
-                    decimal CommRate, 
-                    decimal PremRate, 
-                    string Gender);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncResponse> PostABSSyncAsync(CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostABSSync", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> PostABSSyncAsync(
-                    string MerchantID, 
-                    string Mpassword, 
-                    string PolicyNo, 
-                    string PostType, 
-                    System.DateTime DateOfBirth, 
-                    System.DateTime startdate, 
-                    System.DateTime enddate, 
-                    string ReferenceNo, 
-                    string FirstName, 
-                    string LastName, 
-                    string Title, 
-                    string Address, 
-                    string PhoneNumber, 
-                    string Email, 
-                    string CoverType, 
-                    string ProductType, 
-                    string PaySource, 
-                    string Occupation, 
-                    string ChassisNumber, 
-                    string VehicleMake, 
-                    string VehicleNumber, 
-                    string VehicleType, 
-                    string EngineNumber, 
-                    string RegistrationNumber, 
-                    string VehicleModel, 
-                    decimal Premium, 
-                    decimal SumAssured, 
-                    string BrokerID, 
-                    decimal CommRate, 
-                    decimal PremRate, 
-                    string Gender);
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetTQproposalNum", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumResponse GetTQproposalNum(CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetTQproposalNum", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetTQproposalNum(
-                    string MerchantID, 
-                    string Mpassword, 
-                    System.DateTime DateOfBirth, 
-                    System.DateTime startdate, 
-                    string ReferenceNo, 
-                    string Gender, 
-                    string FirstName, 
-                    string LastName, 
-                    string Title, 
-                    string Address, 
-                    string PhoneNumber, 
-                    string Email, 
-                    string PolicyTerm, 
-                    string PaymentFreq, 
-                    string PaymentPayOutFreq, 
-                    string ProductType, 
-                    string PaySource, 
-                    decimal Premium, 
-                    decimal SumAssured);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetTQproposalNum", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetTQproposalNumAsync(
-                    string MerchantID, 
-                    string Mpassword, 
-                    System.DateTime DateOfBirth, 
-                    System.DateTime startdate, 
-                    string ReferenceNo, 
-                    string Gender, 
-                    string FirstName, 
-                    string LastName, 
-                    string Title, 
-                    string Address, 
-                    string PhoneNumber, 
-                    string Email, 
-                    string PolicyTerm, 
-                    string PaymentFreq, 
-                    string PaymentPayOutFreq, 
-                    string ProductType, 
-                    string PaySource, 
-                    decimal Premium, 
-                    decimal SumAssured);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumResponse> GetTQproposalNumAsync(CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (Passing_Marine_PostSource) of message Passing_Marine_PostSource does not match the default value (PostMarineRec)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Marine_PostSource", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource1 PostMarineRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Marine_PostSource", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource1> PostMarineRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource request);
         
+        // CODEGEN: Generating message contract since element name first_name from namespace http://Custodianservices.com/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostTravel2Raga", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.certificate_out PostTravel2Raga(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination);
+        CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaResponse PostTravel2Raga(CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostTravel2Raga", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.certificate_out> PostTravel2RagaAsync(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPPTDetails", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetPPTDetails(string MerchantID, string MerchantPWD, string PolicyNo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPPTDetails", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetPPTDetailsAsync(string MerchantID, string MerchantPWD, string PolicyNo);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaResponse> PostTravel2RagaAsync(CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (Passing_Broker_Motor_PostSource) of message Passing_Broker_Motor_PostSource does not match the default value (POSTBrokerMotorRec)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Broker_Motor_PostSource", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource1 POSTBrokerMotorRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Broker_Motor_PostSource", ReplyAction="*")]
@@ -513,2177 +4255,559 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         // CODEGEN: Generating message contract since the wrapper name (Passing_Broker_Travel_PostSource) of message Passing_Broker_Travel_PostSource does not match the default value (POSTBrokerTravelRec)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Broker_Travel_PostSource", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource1 POSTBrokerTravelRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Broker_Travel_PostSource", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource1> POSTBrokerTravelRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource request);
         
+        // CODEGEN: Generating message contract since element name TypeOfCover from namespace http://Custodianservices.com/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetBrokerMotorQuote", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetBrokerMotorQuote(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC, string PremiumRate);
+        CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteResponse GetBrokerMotorQuote(CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetBrokerMotorQuote", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetBrokerMotorQuoteAsync(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC, string PremiumRate);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteResponse> GetBrokerMotorQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (Passing_Broker_HouseHolder_PostSource) of message Passing_Broker_HouseHolder_PostSource does not match the default value (PostBrokerHouseHolder)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Broker_HouseHolder_PostSource", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource1 PostBrokerHouseHolder(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Broker_HouseHolder_PostSource", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource1> PostBrokerHouseHolderAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource request);
         
+        // CODEGEN: Generating message contract since element name PaymentOption from namespace http://Custodianservices.com/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetHouseHolderQuote", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetHouseHolderQuote(string PaymentOption, decimal GenPremRt, decimal AllPremRt, decimal BuildPremRt, decimal ContentPremRt, decimal GeneratorAmt, decimal AllriskAmt, decimal BuildingAmt, decimal ContentAmt);
+        CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteResponse GetHouseHolderQuote(CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetHouseHolderQuote", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> GetHouseHolderQuoteAsync(string PaymentOption, decimal GenPremRt, decimal AllPremRt, decimal BuildPremRt, decimal ContentPremRt, decimal GeneratorAmt, decimal AllriskAmt, decimal BuildingAmt, decimal ContentAmt);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteResponse> GetHouseHolderQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (SubmitClaimRegister) of message SubmitClaimRegisterRequest does not match the default value (SubmitClaimRegister1)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/SubmitClaimRegister", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterResponse SubmitClaimRegister1(CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/SubmitClaimRegister", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterResponse> SubmitClaimRegister1Async(CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterRequest request);
         
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostClaimsUpdate", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus PostClaimsUpdate(string MerchantID, string MerchantPWD, string ClaimNo, string ClaimStatusCode);
+        CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateResponse PostClaimsUpdate(CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostClaimsUpdate", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus> PostClaimsUpdateAsync(string MerchantID, string MerchantPWD, string ClaimNo, string ClaimStatusCode);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateResponse> PostClaimsUpdateAsync(CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateRequest request);
+        
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetMorePolicyDetails", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsResponse GetMorePolicyDetails(CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetMorePolicyDetails", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.MorePolicyDetails GetMorePolicyDetails(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsResponse> GetMorePolicyDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetMorePolicyDetails", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.MorePolicyDetails> GetMorePolicyDetailsAsync(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber);
+        // CODEGEN: Generating message contract since element name MDescription from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActivePolicies", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesResponse GetCRM_ActivePolicies(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActivePolicies", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActivePolicies(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesResponse> GetCRM_ActivePoliciesAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActivePolicies", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_ActivePoliciesAsync(string MDescription, string userid);
+        // CODEGEN: Generating message contract since element name MDescription from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Customers", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersResponse GetCRM_Customers(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Customers", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_Customers(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersResponse> GetCRM_CustomersAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Customers", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_CustomersAsync(string MDescription, string userid);
+        // CODEGEN: Generating message contract since element name MDescription from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActiveCustomers", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersResponse GetCRM_ActiveCustomers(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActiveCustomers", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActiveCustomers(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersResponse> GetCRM_ActiveCustomersAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ActiveCustomers", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_ActiveCustomersAsync(string MDescription, string userid);
+        // CODEGEN: Generating message contract since element name MDescription from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_AllPolicies", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesResponse GetCRM_AllPolicies(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_AllPolicies", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_AllPolicies(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesResponse> GetCRM_AllPoliciesAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_AllPolicies", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_AllPoliciesAsync(string MDescription, string userid);
+        // CODEGEN: Generating message contract since element name MDescription from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_PolicyRenewal", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalResponse GetCRM_PolicyRenewal(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_PolicyRenewal", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.Crm_Renewal[] GetCRM_PolicyRenewal(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalResponse> GetCRM_PolicyRenewalAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_PolicyRenewal", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_Renewal[]> GetCRM_PolicyRenewalAsync(string MDescription, string userid);
+        // CODEGEN: Generating message contract since element name MDescription from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Birthday", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayResponse GetCRM_Birthday(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Birthday", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.Crm_Birthday[] GetCRM_Birthday(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayResponse> GetCRM_BirthdayAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Birthday", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_Birthday[]> GetCRM_BirthdayAsync(string MDescription, string userid);
+        // CODEGEN: Generating message contract since element name MDescription from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Claims", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsResponse GetCRM_Claims(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Claims", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims[] GetCRM_Claims(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsResponse> GetCRM_ClaimsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Claims", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims[]> GetCRM_ClaimsAsync(string MDescription, string userid);
+        // CODEGEN: Generating message contract since element name MDescription from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_DashBoard", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardResponse GetCRM_DashBoard(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_DashBoard", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CustodianEveryWhereV2._0.CustodianAPI.CRM_Dashboard[] GetCRM_DashBoard(string MDescription, string userid);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardResponse> GetCRM_DashBoardAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_DashBoard", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.CRM_Dashboard[]> GetCRM_DashBoardAsync(string MDescription, string userid);
+        // CODEGEN: Generating message contract since element name CustomerID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_PolicyDetail", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailResponse GetCRM_PolicyDetail(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_PolicyDetail", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailResponse> GetCRM_PolicyDetailAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailRequest request);
+        
+        // CODEGEN: Generating message contract since element name CustomerID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ClaimsDetail", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailResponse GetCRM_ClaimsDetail(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ClaimsDetail", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailResponse> GetCRM_ClaimsDetailAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailRequest request);
+        
+        // CODEGEN: Generating message contract since element name MERCHANTID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/ABSMotorInterest", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestResponse ABSMotorInterest(CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/ABSMotorInterest", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string ABSMotorInterest(
-                    string MERCHANTID, 
-                    string MERCHANTPWD, 
-                    string MOT_POL_NUM, 
-                    string MOT_REG_NUM, 
-                    string MOT_USER_NAME, 
-                    System.DateTime MOT_START_DATE, 
-                    System.DateTime MOT_END_DATE, 
-                    string MOT_HP_CC, 
-                    string MOT_ENGINE_NUM, 
-                    string MOT_CHASSIS_NUM, 
-                    string MOT_MANUF_YEAR, 
-                    string MOT_VEH_COLOR, 
-                    string MOT_VEH_MAKE, 
-                    string MOT_VEH_TYPE, 
-                    string MOT_VEH_VALUE, 
-                    string MOT_VEH_PREM, 
-                    string MOT_VEH_RATE, 
-                    string MOT_FLEET_RATE, 
-                    string MOT_SPECIAL_RATE, 
-                    string MOT_EXCESS_BY_BACK, 
-                    string MOT_RISK_DAYS, 
-                    string MOT_TPPD_VALUE, 
-                    decimal MOT_SRCC_RATE, 
-                    decimal MOT_FLOOD_RATE, 
-                    decimal MOT_EQUAKE_RATE, 
-                    decimal MOT_OTHER_RATE, 
-                    string MOT_USERID);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestResponse> ABSMotorInterestAsync(CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/ABSMotorInterest", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> ABSMotorInterestAsync(
-                    string MERCHANTID, 
-                    string MERCHANTPWD, 
-                    string MOT_POL_NUM, 
-                    string MOT_REG_NUM, 
-                    string MOT_USER_NAME, 
-                    System.DateTime MOT_START_DATE, 
-                    System.DateTime MOT_END_DATE, 
-                    string MOT_HP_CC, 
-                    string MOT_ENGINE_NUM, 
-                    string MOT_CHASSIS_NUM, 
-                    string MOT_MANUF_YEAR, 
-                    string MOT_VEH_COLOR, 
-                    string MOT_VEH_MAKE, 
-                    string MOT_VEH_TYPE, 
-                    string MOT_VEH_VALUE, 
-                    string MOT_VEH_PREM, 
-                    string MOT_VEH_RATE, 
-                    string MOT_FLEET_RATE, 
-                    string MOT_SPECIAL_RATE, 
-                    string MOT_EXCESS_BY_BACK, 
-                    string MOT_RISK_DAYS, 
-                    string MOT_TPPD_VALUE, 
-                    decimal MOT_SRCC_RATE, 
-                    decimal MOT_FLOOD_RATE, 
-                    decimal MOT_EQUAKE_RATE, 
-                    decimal MOT_OTHER_RATE, 
-                    string MOT_USERID);
+        // CODEGEN: Generating message contract since the wrapper name (Passing_NNPC_Travel_PostSource) of message Passing_NNPC_Travel_PostSource does not match the default value (POSTNNPCTravelRec)
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_NNPC_Travel_PostSource", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource1 POSTNNPCTravelRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_NNPC_Travel_PostSource", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource1> POSTNNPCTravelRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource request);
+        
+        // CODEGEN: Generating message contract since element name MDescription from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ClaimCount", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountResponse GetCRM_ClaimCount(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_ClaimCount", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountResponse> GetCRM_ClaimCountAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountRequest request);
+        
+        // CODEGEN: Generating message contract since element name BusinessUnit from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_NIIDData", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataResponse GetCRM_NIIDData(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_NIIDData", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataResponse> GetCRM_NIIDDataAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataRequest request);
+        
+        // CODEGEN: Generating message contract since element name Subsidiary from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_LapseDetail", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailResponse GetCRM_LapseDetail(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_LapseDetail", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailResponse> GetCRM_LapseDetailAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailRequest request);
+        
+        // CODEGEN: Generating message contract since element name Subsidiary from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPPTDetails", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsResponse GetPPTDetails(CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPPTDetails", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsResponse> GetPPTDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsRequest request);
+        
+        // CODEGEN: Generating message contract since element name Subsidiary from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Top10", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Response GetCRM_Top10(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Request request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Top10", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Response> GetCRM_Top10Async(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Request request);
+        
+        // CODEGEN: Generating message contract since element name Subsidiary from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_TopProductlines", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesResponse GetCRM_TopProductlines(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_TopProductlines", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesResponse> GetCRM_TopProductlinesAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesRequest request);
+        
+        // CODEGEN: Generating message contract since element name Subsidiary from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_TobeRenewed", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedResponse GetCRM_TobeRenewed(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_TobeRenewed", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedResponse> GetCRM_TobeRenewedAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedRequest request);
+        
+        // CODEGEN: Generating message contract since element name Pages from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Broker", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerResponse GetCRM_Broker(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Broker", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerResponse> GetCRM_BrokerAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequest request);
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class Claimfl : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetClaimStatusRequest {
         
-        private string claimNoField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetClaimStatus", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusRequestBody Body;
         
-        private string clPolicyNoField;
-        
-        private string claimStatusField;
-        
-        private string insuredNameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string ClaimNo {
-            get {
-                return this.claimNoField;
-            }
-            set {
-                this.claimNoField = value;
-                this.RaisePropertyChanged("ClaimNo");
-            }
+        public GetClaimStatusRequest() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string ClPolicyNo {
-            get {
-                return this.clPolicyNoField;
-            }
-            set {
-                this.clPolicyNoField = value;
-                this.RaisePropertyChanged("ClPolicyNo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string ClaimStatus {
-            get {
-                return this.claimStatusField;
-            }
-            set {
-                this.claimStatusField = value;
-                this.RaisePropertyChanged("ClaimStatus");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string InsuredName {
-            get {
-                return this.insuredNameField;
-            }
-            set {
-                this.insuredNameField = value;
-                this.RaisePropertyChanged("InsuredName");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetClaimStatusRequest(CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusRequestBody Body) {
+            this.Body = Body;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class CRM_Dashboard : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetClaimStatusRequestBody {
         
-        private int cntActivePoliciesField;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ClaimsNumb;
         
-        private int countCustomersField;
-        
-        private int activeCustomersField;
-        
-        private int customerPolicyField;
-        
-        private int policyRenewalField;
-        
-        private int birthdayField;
-        
-        private int claimsField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int CntActivePolicies {
-            get {
-                return this.cntActivePoliciesField;
-            }
-            set {
-                this.cntActivePoliciesField = value;
-                this.RaisePropertyChanged("CntActivePolicies");
-            }
+        public GetClaimStatusRequestBody() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public int CountCustomers {
-            get {
-                return this.countCustomersField;
-            }
-            set {
-                this.countCustomersField = value;
-                this.RaisePropertyChanged("CountCustomers");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public int ActiveCustomers {
-            get {
-                return this.activeCustomersField;
-            }
-            set {
-                this.activeCustomersField = value;
-                this.RaisePropertyChanged("ActiveCustomers");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public int CustomerPolicy {
-            get {
-                return this.customerPolicyField;
-            }
-            set {
-                this.customerPolicyField = value;
-                this.RaisePropertyChanged("CustomerPolicy");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public int PolicyRenewal {
-            get {
-                return this.policyRenewalField;
-            }
-            set {
-                this.policyRenewalField = value;
-                this.RaisePropertyChanged("PolicyRenewal");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public int Birthday {
-            get {
-                return this.birthdayField;
-            }
-            set {
-                this.birthdayField = value;
-                this.RaisePropertyChanged("Birthday");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public int Claims {
-            get {
-                return this.claimsField;
-            }
-            set {
-                this.claimsField = value;
-                this.RaisePropertyChanged("Claims");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetClaimStatusRequestBody(string ClaimsNumb) {
+            this.ClaimsNumb = ClaimsNumb;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class CRM_Claims : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetClaimStatusResponse {
         
-        private string firstNameField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetClaimStatusResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusResponseBody Body;
         
-        private string lastNameField;
-        
-        private string policyNoField;
-        
-        private string claimsNoField;
-        
-        private string phoneField;
-        
-        private string emailField;
-        
-        private string productsField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string FirstName {
-            get {
-                return this.firstNameField;
-            }
-            set {
-                this.firstNameField = value;
-                this.RaisePropertyChanged("FirstName");
-            }
+        public GetClaimStatusResponse() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string LastName {
-            get {
-                return this.lastNameField;
-            }
-            set {
-                this.lastNameField = value;
-                this.RaisePropertyChanged("LastName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string PolicyNo {
-            get {
-                return this.policyNoField;
-            }
-            set {
-                this.policyNoField = value;
-                this.RaisePropertyChanged("PolicyNo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string ClaimsNo {
-            get {
-                return this.claimsNoField;
-            }
-            set {
-                this.claimsNoField = value;
-                this.RaisePropertyChanged("ClaimsNo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string Phone {
-            get {
-                return this.phoneField;
-            }
-            set {
-                this.phoneField = value;
-                this.RaisePropertyChanged("Phone");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string Email {
-            get {
-                return this.emailField;
-            }
-            set {
-                this.emailField = value;
-                this.RaisePropertyChanged("Email");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string Products {
-            get {
-                return this.productsField;
-            }
-            set {
-                this.productsField = value;
-                this.RaisePropertyChanged("Products");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetClaimStatusResponse(CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusResponseBody Body) {
+            this.Body = Body;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class Crm_Birthday : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetClaimStatusResponseBody {
         
-        private string firstNameField;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Claimfl GetClaimStatusResult;
         
-        private string lastNameField;
-        
-        private string dOBField;
-        
-        private string phoneField;
-        
-        private string emailField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string FirstName {
-            get {
-                return this.firstNameField;
-            }
-            set {
-                this.firstNameField = value;
-                this.RaisePropertyChanged("FirstName");
-            }
+        public GetClaimStatusResponseBody() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string LastName {
-            get {
-                return this.lastNameField;
-            }
-            set {
-                this.lastNameField = value;
-                this.RaisePropertyChanged("LastName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string DOB {
-            get {
-                return this.dOBField;
-            }
-            set {
-                this.dOBField = value;
-                this.RaisePropertyChanged("DOB");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string Phone {
-            get {
-                return this.phoneField;
-            }
-            set {
-                this.phoneField = value;
-                this.RaisePropertyChanged("Phone");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string Email {
-            get {
-                return this.emailField;
-            }
-            set {
-                this.emailField = value;
-                this.RaisePropertyChanged("Email");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetClaimStatusResponseBody(CustodianEveryWhereV2._0.CustodianAPI.Claimfl GetClaimStatusResult) {
+            this.GetClaimStatusResult = GetClaimStatusResult;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class Crm_Renewal : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetContactClaimRequest {
         
-        private string pol_NoField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetContactClaim", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimRequestBody Body;
         
-        private string daysLeftField;
-        
-        private string renwDateField;
-        
-        private string gross_PremiumField;
-        
-        private string sum_InsuredField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Pol_No {
-            get {
-                return this.pol_NoField;
-            }
-            set {
-                this.pol_NoField = value;
-                this.RaisePropertyChanged("Pol_No");
-            }
+        public GetContactClaimRequest() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string daysLeft {
-            get {
-                return this.daysLeftField;
-            }
-            set {
-                this.daysLeftField = value;
-                this.RaisePropertyChanged("daysLeft");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string RenwDate {
-            get {
-                return this.renwDateField;
-            }
-            set {
-                this.renwDateField = value;
-                this.RaisePropertyChanged("RenwDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string Gross_Premium {
-            get {
-                return this.gross_PremiumField;
-            }
-            set {
-                this.gross_PremiumField = value;
-                this.RaisePropertyChanged("Gross_Premium");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string Sum_Insured {
-            get {
-                return this.sum_InsuredField;
-            }
-            set {
-                this.sum_InsuredField = value;
-                this.RaisePropertyChanged("Sum_Insured");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetContactClaimRequest(CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimRequestBody Body) {
+            this.Body = Body;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class Crm_PolicyInfo : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetContactClaimRequestBody {
         
-        private string firstNameField;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ClaimsNumb;
         
-        private string lastNameField;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string TelNumber;
         
-        private string policy_NoField;
-        
-        private string phoneField;
-        
-        private string emailField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string FirstName {
-            get {
-                return this.firstNameField;
-            }
-            set {
-                this.firstNameField = value;
-                this.RaisePropertyChanged("FirstName");
-            }
+        public GetContactClaimRequestBody() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string LastName {
-            get {
-                return this.lastNameField;
-            }
-            set {
-                this.lastNameField = value;
-                this.RaisePropertyChanged("LastName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string Policy_No {
-            get {
-                return this.policy_NoField;
-            }
-            set {
-                this.policy_NoField = value;
-                this.RaisePropertyChanged("Policy_No");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string Phone {
-            get {
-                return this.phoneField;
-            }
-            set {
-                this.phoneField = value;
-                this.RaisePropertyChanged("Phone");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string Email {
-            get {
-                return this.emailField;
-            }
-            set {
-                this.emailField = value;
-                this.RaisePropertyChanged("Email");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetContactClaimRequestBody(string ClaimsNumb, string TelNumber) {
+            this.ClaimsNumb = ClaimsNumb;
+            this.TelNumber = TelNumber;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class MorePolicyDetails : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetContactClaimResponse {
         
-        private string policyNoField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetContactClaimResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimResponseBody Body;
         
-        private string policyEBusinessField;
-        
-        private string agenctNumField;
-        
-        private string agenctNameField;
-        
-        private string insuredNumField;
-        
-        private string insuredNameField;
-        
-        private string insuredOthNameField;
-        
-        private string insAddr1Field;
-        
-        private string insAddr2Field;
-        
-        private string insAddr3Field;
-        
-        private string telNumField;
-        
-        private string insuredTelNumField;
-        
-        private string insuredEmailField;
-        
-        private System.DateTime dOBField;
-        
-        private string insStateField;
-        
-        private string insLGAField;
-        
-        private string bizUnitField;
-        
-        private string insOccupField;
-        
-        private string bizBranchField;
-        
-        private System.DateTime startdateField;
-        
-        private System.DateTime enddateField;
-        
-        private decimal sumInsField;
-        
-        private decimal mPremiumField;
-        
-        private decimal outPremiumField;
-        
-        private decimal instPremiumField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string PolicyNo {
-            get {
-                return this.policyNoField;
-            }
-            set {
-                this.policyNoField = value;
-                this.RaisePropertyChanged("PolicyNo");
-            }
+        public GetContactClaimResponse() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string PolicyEBusiness {
-            get {
-                return this.policyEBusinessField;
-            }
-            set {
-                this.policyEBusinessField = value;
-                this.RaisePropertyChanged("PolicyEBusiness");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string AgenctNum {
-            get {
-                return this.agenctNumField;
-            }
-            set {
-                this.agenctNumField = value;
-                this.RaisePropertyChanged("AgenctNum");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string AgenctName {
-            get {
-                return this.agenctNameField;
-            }
-            set {
-                this.agenctNameField = value;
-                this.RaisePropertyChanged("AgenctName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string InsuredNum {
-            get {
-                return this.insuredNumField;
-            }
-            set {
-                this.insuredNumField = value;
-                this.RaisePropertyChanged("InsuredNum");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string InsuredName {
-            get {
-                return this.insuredNameField;
-            }
-            set {
-                this.insuredNameField = value;
-                this.RaisePropertyChanged("InsuredName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string InsuredOthName {
-            get {
-                return this.insuredOthNameField;
-            }
-            set {
-                this.insuredOthNameField = value;
-                this.RaisePropertyChanged("InsuredOthName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public string InsAddr1 {
-            get {
-                return this.insAddr1Field;
-            }
-            set {
-                this.insAddr1Field = value;
-                this.RaisePropertyChanged("InsAddr1");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public string InsAddr2 {
-            get {
-                return this.insAddr2Field;
-            }
-            set {
-                this.insAddr2Field = value;
-                this.RaisePropertyChanged("InsAddr2");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public string InsAddr3 {
-            get {
-                return this.insAddr3Field;
-            }
-            set {
-                this.insAddr3Field = value;
-                this.RaisePropertyChanged("InsAddr3");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public string TelNum {
-            get {
-                return this.telNumField;
-            }
-            set {
-                this.telNumField = value;
-                this.RaisePropertyChanged("TelNum");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
-        public string InsuredTelNum {
-            get {
-                return this.insuredTelNumField;
-            }
-            set {
-                this.insuredTelNumField = value;
-                this.RaisePropertyChanged("InsuredTelNum");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
-        public string InsuredEmail {
-            get {
-                return this.insuredEmailField;
-            }
-            set {
-                this.insuredEmailField = value;
-                this.RaisePropertyChanged("InsuredEmail");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
-        public System.DateTime DOB {
-            get {
-                return this.dOBField;
-            }
-            set {
-                this.dOBField = value;
-                this.RaisePropertyChanged("DOB");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
-        public string InsState {
-            get {
-                return this.insStateField;
-            }
-            set {
-                this.insStateField = value;
-                this.RaisePropertyChanged("InsState");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
-        public string InsLGA {
-            get {
-                return this.insLGAField;
-            }
-            set {
-                this.insLGAField = value;
-                this.RaisePropertyChanged("InsLGA");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
-        public string BizUnit {
-            get {
-                return this.bizUnitField;
-            }
-            set {
-                this.bizUnitField = value;
-                this.RaisePropertyChanged("BizUnit");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
-        public string InsOccup {
-            get {
-                return this.insOccupField;
-            }
-            set {
-                this.insOccupField = value;
-                this.RaisePropertyChanged("InsOccup");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
-        public string BizBranch {
-            get {
-                return this.bizBranchField;
-            }
-            set {
-                this.bizBranchField = value;
-                this.RaisePropertyChanged("BizBranch");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
-        public System.DateTime Startdate {
-            get {
-                return this.startdateField;
-            }
-            set {
-                this.startdateField = value;
-                this.RaisePropertyChanged("Startdate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
-        public System.DateTime Enddate {
-            get {
-                return this.enddateField;
-            }
-            set {
-                this.enddateField = value;
-                this.RaisePropertyChanged("Enddate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
-        public decimal SumIns {
-            get {
-                return this.sumInsField;
-            }
-            set {
-                this.sumInsField = value;
-                this.RaisePropertyChanged("SumIns");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
-        public decimal mPremium {
-            get {
-                return this.mPremiumField;
-            }
-            set {
-                this.mPremiumField = value;
-                this.RaisePropertyChanged("mPremium");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
-        public decimal OutPremium {
-            get {
-                return this.outPremiumField;
-            }
-            set {
-                this.outPremiumField = value;
-                this.RaisePropertyChanged("OutPremium");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
-        public decimal InstPremium {
-            get {
-                return this.instPremiumField;
-            }
-            set {
-                this.instPremiumField = value;
-                this.RaisePropertyChanged("InstPremium");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetContactClaimResponse(CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimResponseBody Body) {
+            this.Body = Body;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class certificate_out : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetContactClaimResponseBody {
         
-        private string error_codeField;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Claimfl GetContactClaimResult;
         
-        private string error_messageField;
-        
-        private string file_nameField;
-        
-        private string file_contentField;
-        
-        private string policy_idField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string error_code {
-            get {
-                return this.error_codeField;
-            }
-            set {
-                this.error_codeField = value;
-                this.RaisePropertyChanged("error_code");
-            }
+        public GetContactClaimResponseBody() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string error_message {
-            get {
-                return this.error_messageField;
-            }
-            set {
-                this.error_messageField = value;
-                this.RaisePropertyChanged("error_message");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string file_name {
-            get {
-                return this.file_nameField;
-            }
-            set {
-                this.file_nameField = value;
-                this.RaisePropertyChanged("file_name");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string file_content {
-            get {
-                return this.file_contentField;
-            }
-            set {
-                this.file_contentField = value;
-                this.RaisePropertyChanged("file_content");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string policy_id {
-            get {
-                return this.policy_idField;
-            }
-            set {
-                this.policy_idField = value;
-                this.RaisePropertyChanged("policy_id");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetContactClaimResponseBody(CustodianEveryWhereV2._0.CustodianAPI.Claimfl GetContactClaimResult) {
+            this.GetContactClaimResult = GetContactClaimResult;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class NotificationsDetails : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPolicyValidationRequest {
         
-        private string merchantIDField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPolicyValidation", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationRequestBody Body;
         
-        private string mpasswordField;
-        
-        private string notifyIDField;
-        
-        private string policyNoField;
-        
-        private string firstNameField;
-        
-        private string lastNameField;
-        
-        private System.DateTime dOBField;
-        
-        private string phoneNumberField;
-        
-        private string emailField;
-        
-        private System.DateTime renewalDateField;
-        
-        private System.DateTime paymentDateField;
-        
-        private string receiptNoField;
-        
-        private decimal receiptAmtField;
-        
-        private string narrationField;
-        
-        private string renUrlField;
-        
-        private string emailResponseField;
-        
-        private string smsResponseField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string MerchantID {
-            get {
-                return this.merchantIDField;
-            }
-            set {
-                this.merchantIDField = value;
-                this.RaisePropertyChanged("MerchantID");
-            }
+        public GetPolicyValidationRequest() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string Mpassword {
-            get {
-                return this.mpasswordField;
-            }
-            set {
-                this.mpasswordField = value;
-                this.RaisePropertyChanged("Mpassword");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string NotifyID {
-            get {
-                return this.notifyIDField;
-            }
-            set {
-                this.notifyIDField = value;
-                this.RaisePropertyChanged("NotifyID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string PolicyNo {
-            get {
-                return this.policyNoField;
-            }
-            set {
-                this.policyNoField = value;
-                this.RaisePropertyChanged("PolicyNo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string FirstName {
-            get {
-                return this.firstNameField;
-            }
-            set {
-                this.firstNameField = value;
-                this.RaisePropertyChanged("FirstName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string LastName {
-            get {
-                return this.lastNameField;
-            }
-            set {
-                this.lastNameField = value;
-                this.RaisePropertyChanged("LastName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public System.DateTime DOB {
-            get {
-                return this.dOBField;
-            }
-            set {
-                this.dOBField = value;
-                this.RaisePropertyChanged("DOB");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public string PhoneNumber {
-            get {
-                return this.phoneNumberField;
-            }
-            set {
-                this.phoneNumberField = value;
-                this.RaisePropertyChanged("PhoneNumber");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public string Email {
-            get {
-                return this.emailField;
-            }
-            set {
-                this.emailField = value;
-                this.RaisePropertyChanged("Email");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public System.DateTime RenewalDate {
-            get {
-                return this.renewalDateField;
-            }
-            set {
-                this.renewalDateField = value;
-                this.RaisePropertyChanged("RenewalDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public System.DateTime PaymentDate {
-            get {
-                return this.paymentDateField;
-            }
-            set {
-                this.paymentDateField = value;
-                this.RaisePropertyChanged("PaymentDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
-        public string ReceiptNo {
-            get {
-                return this.receiptNoField;
-            }
-            set {
-                this.receiptNoField = value;
-                this.RaisePropertyChanged("ReceiptNo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
-        public decimal ReceiptAmt {
-            get {
-                return this.receiptAmtField;
-            }
-            set {
-                this.receiptAmtField = value;
-                this.RaisePropertyChanged("ReceiptAmt");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
-        public string Narration {
-            get {
-                return this.narrationField;
-            }
-            set {
-                this.narrationField = value;
-                this.RaisePropertyChanged("Narration");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
-        public string RenUrl {
-            get {
-                return this.renUrlField;
-            }
-            set {
-                this.renUrlField = value;
-                this.RaisePropertyChanged("RenUrl");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
-        public string EmailResponse {
-            get {
-                return this.emailResponseField;
-            }
-            set {
-                this.emailResponseField = value;
-                this.RaisePropertyChanged("EmailResponse");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
-        public string smsResponse {
-            get {
-                return this.smsResponseField;
-            }
-            set {
-                this.smsResponseField = value;
-                this.RaisePropertyChanged("smsResponse");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetPolicyValidationRequest(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationRequestBody Body) {
+            this.Body = Body;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class PolBalances : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetPolicyValidationRequestBody {
         
-        private string policyNoField;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string polcode;
         
-        private decimal polOutStandBalField;
-        
-        private string polInsuredField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string PolicyNo {
-            get {
-                return this.policyNoField;
-            }
-            set {
-                this.policyNoField = value;
-                this.RaisePropertyChanged("PolicyNo");
-            }
+        public GetPolicyValidationRequestBody() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public decimal PolOutStandBal {
-            get {
-                return this.polOutStandBalField;
-            }
-            set {
-                this.polOutStandBalField = value;
-                this.RaisePropertyChanged("PolOutStandBal");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string PolInsured {
-            get {
-                return this.polInsuredField;
-            }
-            set {
-                this.polInsuredField = value;
-                this.RaisePropertyChanged("PolInsured");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetPolicyValidationRequestBody(string polcode) {
+            this.polcode = polcode;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class ClientData : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPolicyValidationResponse {
         
-        private string insNameField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPolicyValidationResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationResponseBody Body;
         
-        private string insEmailField;
-        
-        private System.DateTime startdateField;
-        
-        private System.DateTime enddateField;
-        
-        private string policyNoField;
-        
-        private string productNameField;
-        
-        private System.DateTime lastPaidDtField;
-        
-        private decimal outPremiumField;
-        
-        private string totPremiumField;
-        
-        private string statusRecField;
-        
-        private string claimsNoField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string InsName {
-            get {
-                return this.insNameField;
-            }
-            set {
-                this.insNameField = value;
-                this.RaisePropertyChanged("InsName");
-            }
+        public GetPolicyValidationResponse() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string InsEmail {
-            get {
-                return this.insEmailField;
-            }
-            set {
-                this.insEmailField = value;
-                this.RaisePropertyChanged("InsEmail");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public System.DateTime Startdate {
-            get {
-                return this.startdateField;
-            }
-            set {
-                this.startdateField = value;
-                this.RaisePropertyChanged("Startdate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public System.DateTime Enddate {
-            get {
-                return this.enddateField;
-            }
-            set {
-                this.enddateField = value;
-                this.RaisePropertyChanged("Enddate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string PolicyNo {
-            get {
-                return this.policyNoField;
-            }
-            set {
-                this.policyNoField = value;
-                this.RaisePropertyChanged("PolicyNo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string ProductName {
-            get {
-                return this.productNameField;
-            }
-            set {
-                this.productNameField = value;
-                this.RaisePropertyChanged("ProductName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public System.DateTime LastPaidDt {
-            get {
-                return this.lastPaidDtField;
-            }
-            set {
-                this.lastPaidDtField = value;
-                this.RaisePropertyChanged("LastPaidDt");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public decimal OutPremium {
-            get {
-                return this.outPremiumField;
-            }
-            set {
-                this.outPremiumField = value;
-                this.RaisePropertyChanged("OutPremium");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public string TotPremium {
-            get {
-                return this.totPremiumField;
-            }
-            set {
-                this.totPremiumField = value;
-                this.RaisePropertyChanged("TotPremium");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public string StatusRec {
-            get {
-                return this.statusRecField;
-            }
-            set {
-                this.statusRecField = value;
-                this.RaisePropertyChanged("StatusRec");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public string ClaimsNo {
-            get {
-                return this.claimsNoField;
-            }
-            set {
-                this.claimsNoField = value;
-                this.RaisePropertyChanged("ClaimsNo");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetPolicyValidationResponse(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationResponseBody Body) {
+            this.Body = Body;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class ClaimRegStatus : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetPolicyValidationResponseBody {
         
-        private string regStatusField;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PolValidation GetPolicyValidationResult;
         
-        private string regStatusCodeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string RegStatus {
-            get {
-                return this.regStatusField;
-            }
-            set {
-                this.regStatusField = value;
-                this.RaisePropertyChanged("RegStatus");
-            }
+        public GetPolicyValidationResponseBody() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string RegStatusCode {
-            get {
-                return this.regStatusCodeField;
-            }
-            set {
-                this.regStatusCodeField = value;
-                this.RaisePropertyChanged("RegStatusCode");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetPolicyValidationResponseBody(CustodianEveryWhereV2._0.CustodianAPI.PolValidation GetPolicyValidationResult) {
+            this.GetPolicyValidationResult = GetPolicyValidationResult;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class PolicyDet : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPolicyExpiryDateRequest {
         
-        private string policyNoField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPolicyExpiryDate", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateRequestBody Body;
         
-        private string policyEBusinessField;
-        
-        private string agenctNumField;
-        
-        private string agenctNameField;
-        
-        private string insuredNumField;
-        
-        private string insuredNameField;
-        
-        private string insuredOthNameField;
-        
-        private string insAddr1Field;
-        
-        private string insAddr2Field;
-        
-        private string insAddr3Field;
-        
-        private string telNumField;
-        
-        private string insuredTelNumField;
-        
-        private string insuredEmailField;
-        
-        private System.DateTime dOBField;
-        
-        private string insStateField;
-        
-        private string insLGAField;
-        
-        private string bizUnitField;
-        
-        private string insOccupField;
-        
-        private string bizBranchField;
-        
-        private System.DateTime startdateField;
-        
-        private System.DateTime enddateField;
-        
-        private decimal sumInsField;
-        
-        private decimal mPremiumField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string PolicyNo {
-            get {
-                return this.policyNoField;
-            }
-            set {
-                this.policyNoField = value;
-                this.RaisePropertyChanged("PolicyNo");
-            }
+        public GetPolicyExpiryDateRequest() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string PolicyEBusiness {
-            get {
-                return this.policyEBusinessField;
-            }
-            set {
-                this.policyEBusinessField = value;
-                this.RaisePropertyChanged("PolicyEBusiness");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string AgenctNum {
-            get {
-                return this.agenctNumField;
-            }
-            set {
-                this.agenctNumField = value;
-                this.RaisePropertyChanged("AgenctNum");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string AgenctName {
-            get {
-                return this.agenctNameField;
-            }
-            set {
-                this.agenctNameField = value;
-                this.RaisePropertyChanged("AgenctName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string InsuredNum {
-            get {
-                return this.insuredNumField;
-            }
-            set {
-                this.insuredNumField = value;
-                this.RaisePropertyChanged("InsuredNum");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string InsuredName {
-            get {
-                return this.insuredNameField;
-            }
-            set {
-                this.insuredNameField = value;
-                this.RaisePropertyChanged("InsuredName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string InsuredOthName {
-            get {
-                return this.insuredOthNameField;
-            }
-            set {
-                this.insuredOthNameField = value;
-                this.RaisePropertyChanged("InsuredOthName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public string InsAddr1 {
-            get {
-                return this.insAddr1Field;
-            }
-            set {
-                this.insAddr1Field = value;
-                this.RaisePropertyChanged("InsAddr1");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public string InsAddr2 {
-            get {
-                return this.insAddr2Field;
-            }
-            set {
-                this.insAddr2Field = value;
-                this.RaisePropertyChanged("InsAddr2");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public string InsAddr3 {
-            get {
-                return this.insAddr3Field;
-            }
-            set {
-                this.insAddr3Field = value;
-                this.RaisePropertyChanged("InsAddr3");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public string TelNum {
-            get {
-                return this.telNumField;
-            }
-            set {
-                this.telNumField = value;
-                this.RaisePropertyChanged("TelNum");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
-        public string InsuredTelNum {
-            get {
-                return this.insuredTelNumField;
-            }
-            set {
-                this.insuredTelNumField = value;
-                this.RaisePropertyChanged("InsuredTelNum");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
-        public string InsuredEmail {
-            get {
-                return this.insuredEmailField;
-            }
-            set {
-                this.insuredEmailField = value;
-                this.RaisePropertyChanged("InsuredEmail");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
-        public System.DateTime DOB {
-            get {
-                return this.dOBField;
-            }
-            set {
-                this.dOBField = value;
-                this.RaisePropertyChanged("DOB");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
-        public string InsState {
-            get {
-                return this.insStateField;
-            }
-            set {
-                this.insStateField = value;
-                this.RaisePropertyChanged("InsState");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
-        public string InsLGA {
-            get {
-                return this.insLGAField;
-            }
-            set {
-                this.insLGAField = value;
-                this.RaisePropertyChanged("InsLGA");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
-        public string BizUnit {
-            get {
-                return this.bizUnitField;
-            }
-            set {
-                this.bizUnitField = value;
-                this.RaisePropertyChanged("BizUnit");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
-        public string InsOccup {
-            get {
-                return this.insOccupField;
-            }
-            set {
-                this.insOccupField = value;
-                this.RaisePropertyChanged("InsOccup");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
-        public string BizBranch {
-            get {
-                return this.bizBranchField;
-            }
-            set {
-                this.bizBranchField = value;
-                this.RaisePropertyChanged("BizBranch");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
-        public System.DateTime Startdate {
-            get {
-                return this.startdateField;
-            }
-            set {
-                this.startdateField = value;
-                this.RaisePropertyChanged("Startdate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
-        public System.DateTime Enddate {
-            get {
-                return this.enddateField;
-            }
-            set {
-                this.enddateField = value;
-                this.RaisePropertyChanged("Enddate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
-        public decimal SumIns {
-            get {
-                return this.sumInsField;
-            }
-            set {
-                this.sumInsField = value;
-                this.RaisePropertyChanged("SumIns");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
-        public decimal mPremium {
-            get {
-                return this.mPremiumField;
-            }
-            set {
-                this.mPremiumField = value;
-                this.RaisePropertyChanged("mPremium");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetPolicyExpiryDateRequest(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateRequestBody Body) {
+            this.Body = Body;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class PolExpDate : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetPolicyExpiryDateRequestBody {
         
-        private string policyNoField;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
         
-        private string polExpirydateField;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string MerchantPWD;
         
-        private string polInsuredField;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Subsidiary;
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string PolicyNo {
-            get {
-                return this.policyNoField;
-            }
-            set {
-                this.policyNoField = value;
-                this.RaisePropertyChanged("PolicyNo");
-            }
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string policyNo;
+        
+        public GetPolicyExpiryDateRequestBody() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string PolExpirydate {
-            get {
-                return this.polExpirydateField;
-            }
-            set {
-                this.polExpirydateField = value;
-                this.RaisePropertyChanged("PolExpirydate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string PolInsured {
-            get {
-                return this.polInsuredField;
-            }
-            set {
-                this.polInsuredField = value;
-                this.RaisePropertyChanged("PolInsured");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public GetPolicyExpiryDateRequestBody(string MerchantID, string MerchantPWD, string Subsidiary, string policyNo) {
+            this.MerchantID = MerchantID;
+            this.MerchantPWD = MerchantPWD;
+            this.Subsidiary = Subsidiary;
+            this.policyNo = policyNo;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class PolValidation : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPolicyExpiryDateResponse {
         
-        private string policyNoField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPolicyExpiryDateResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateResponseBody Body;
         
-        private string polStatusField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string PolicyNo {
-            get {
-                return this.policyNoField;
-            }
-            set {
-                this.policyNoField = value;
-                this.RaisePropertyChanged("PolicyNo");
-            }
+        public GetPolicyExpiryDateResponse() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string PolStatus {
-            get {
-                return this.polStatusField;
-            }
-            set {
-                this.polStatusField = value;
-                this.RaisePropertyChanged("PolStatus");
-            }
+        public GetPolicyExpiryDateResponse(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetPolicyExpiryDateResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PolExpDate GetPolicyExpiryDateResult;
+        
+        public GetPolicyExpiryDateResponseBody() {
         }
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        public GetPolicyExpiryDateResponseBody(CustodianEveryWhereV2._0.CustodianAPI.PolExpDate GetPolicyExpiryDateResult) {
+            this.GetPolicyExpiryDateResult = GetPolicyExpiryDateResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPolicyDetailsRequest {
         
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPolicyDetails", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsRequestBody Body;
+        
+        public GetPolicyDetailsRequest() {
+        }
+        
+        public GetPolicyDetailsRequest(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetPolicyDetailsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string MerchantPWD;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string PolicyNumber;
+        
+        public GetPolicyDetailsRequestBody() {
+        }
+        
+        public GetPolicyDetailsRequestBody(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
+            this.MerchantID = MerchantID;
+            this.MerchantPWD = MerchantPWD;
+            this.Subsidiary = Subsidiary;
+            this.PolicyNumber = PolicyNumber;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPolicyDetailsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPolicyDetailsResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsResponseBody Body;
+        
+        public GetPolicyDetailsResponse() {
+        }
+        
+        public GetPolicyDetailsResponse(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetPolicyDetailsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PolicyDet GetPolicyDetailsResult;
+        
+        public GetPolicyDetailsResponseBody() {
+        }
+        
+        public GetPolicyDetailsResponseBody(CustodianEveryWhereV2._0.CustodianAPI.PolicyDet GetPolicyDetailsResult) {
+            this.GetPolicyDetailsResult = GetPolicyDetailsResult;
         }
     }
     
@@ -2758,6 +4882,427 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         public Generating_Claims_Number1(CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus Generating_Claims_NumberResult) {
             this.Generating_Claims_NumberResult = Generating_Claims_NumberResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLifeProductCategRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLifeProductCateg", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategRequestBody Body;
+        
+        public GetLifeProductCategRequest() {
+        }
+        
+        public GetLifeProductCategRequest(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetLifeProductCategRequestBody {
+        
+        public GetLifeProductCategRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLifeProductCategResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLifeProductCategResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategResponseBody Body;
+        
+        public GetLifeProductCategResponse() {
+        }
+        
+        public GetLifeProductCategResponse(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetLifeProductCategResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetLifeProductCategResult;
+        
+        public GetLifeProductCategResponseBody() {
+        }
+        
+        public GetLifeProductCategResponseBody(string GetLifeProductCategResult) {
+            this.GetLifeProductCategResult = GetLifeProductCategResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLifeProductTypeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLifeProductType", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeRequestBody Body;
+        
+        public GetLifeProductTypeRequest() {
+        }
+        
+        public GetLifeProductTypeRequest(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetLifeProductTypeRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int ProductCateg;
+        
+        public GetLifeProductTypeRequestBody() {
+        }
+        
+        public GetLifeProductTypeRequestBody(int ProductCateg) {
+            this.ProductCateg = ProductCateg;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLifeProductTypeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLifeProductTypeResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeResponseBody Body;
+        
+        public GetLifeProductTypeResponse() {
+        }
+        
+        public GetLifeProductTypeResponse(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetLifeProductTypeResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetLifeProductTypeResult;
+        
+        public GetLifeProductTypeResponseBody() {
+        }
+        
+        public GetLifeProductTypeResponseBody(string GetLifeProductTypeResult) {
+            this.GetLifeProductTypeResult = GetLifeProductTypeResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAnnuityGuaranteePeriodRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAnnuityGuaranteePeriod", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodRequestBody Body;
+        
+        public GetAnnuityGuaranteePeriodRequest() {
+        }
+        
+        public GetAnnuityGuaranteePeriodRequest(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetAnnuityGuaranteePeriodRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int prodCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string popCode;
+        
+        public GetAnnuityGuaranteePeriodRequestBody() {
+        }
+        
+        public GetAnnuityGuaranteePeriodRequestBody(int prodCode, string popCode) {
+            this.prodCode = prodCode;
+            this.popCode = popCode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAnnuityGuaranteePeriodResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAnnuityGuaranteePeriodResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodResponseBody Body;
+        
+        public GetAnnuityGuaranteePeriodResponse() {
+        }
+        
+        public GetAnnuityGuaranteePeriodResponse(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetAnnuityGuaranteePeriodResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetAnnuityGuaranteePeriodResult;
+        
+        public GetAnnuityGuaranteePeriodResponseBody() {
+        }
+        
+        public GetAnnuityGuaranteePeriodResponseBody(string GetAnnuityGuaranteePeriodResult) {
+            this.GetAnnuityGuaranteePeriodResult = GetAnnuityGuaranteePeriodResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAnnuitypaymentfreqRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAnnuitypaymentfreq", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqRequestBody Body;
+        
+        public GetAnnuitypaymentfreqRequest() {
+        }
+        
+        public GetAnnuitypaymentfreqRequest(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetAnnuitypaymentfreqRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int prodCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string popCode;
+        
+        public GetAnnuitypaymentfreqRequestBody() {
+        }
+        
+        public GetAnnuitypaymentfreqRequestBody(int prodCode, string popCode) {
+            this.prodCode = prodCode;
+            this.popCode = popCode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAnnuitypaymentfreqResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAnnuitypaymentfreqResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqResponseBody Body;
+        
+        public GetAnnuitypaymentfreqResponse() {
+        }
+        
+        public GetAnnuitypaymentfreqResponse(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetAnnuitypaymentfreqResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetAnnuitypaymentfreqResult;
+        
+        public GetAnnuitypaymentfreqResponseBody() {
+        }
+        
+        public GetAnnuitypaymentfreqResponseBody(string GetAnnuitypaymentfreqResult) {
+            this.GetAnnuitypaymentfreqResult = GetAnnuitypaymentfreqResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAnnuitypayOutFreqRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAnnuitypayOutFreq", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqRequestBody Body;
+        
+        public GetAnnuitypayOutFreqRequest() {
+        }
+        
+        public GetAnnuitypayOutFreqRequest(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetAnnuitypayOutFreqRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int webProdCode;
+        
+        public GetAnnuitypayOutFreqRequestBody() {
+        }
+        
+        public GetAnnuitypayOutFreqRequestBody(int webProdCode) {
+            this.webProdCode = webProdCode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAnnuitypayOutFreqResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAnnuitypayOutFreqResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqResponseBody Body;
+        
+        public GetAnnuitypayOutFreqResponse() {
+        }
+        
+        public GetAnnuitypayOutFreqResponse(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetAnnuitypayOutFreqResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetAnnuitypayOutFreqResult;
+        
+        public GetAnnuitypayOutFreqResponseBody() {
+        }
+        
+        public GetAnnuitypayOutFreqResponseBody(string GetAnnuitypayOutFreqResult) {
+            this.GetAnnuitypayOutFreqResult = GetAnnuitypayOutFreqResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetClientDetailsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetClientDetails", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsRequestBody Body;
+        
+        public GetClientDetailsRequest() {
+        }
+        
+        public GetClientDetailsRequest(CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetClientDetailsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string MerchantPWD;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Telephone;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string PolicyNo;
+        
+        public GetClientDetailsRequestBody() {
+        }
+        
+        public GetClientDetailsRequestBody(string MerchantID, string MerchantPWD, string Telephone, string PolicyNo) {
+            this.MerchantID = MerchantID;
+            this.MerchantPWD = MerchantPWD;
+            this.Telephone = Telephone;
+            this.PolicyNo = PolicyNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetClientDetailsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetClientDetailsResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsResponseBody Body;
+        
+        public GetClientDetailsResponse() {
+        }
+        
+        public GetClientDetailsResponse(CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetClientDetailsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.ClientData GetClientDetailsResult;
+        
+        public GetClientDetailsResponseBody() {
+        }
+        
+        public GetClientDetailsResponseBody(CustodianEveryWhereV2._0.CustodianAPI.ClientData GetClientDetailsResult) {
+            this.GetClientDetailsResult = GetClientDetailsResult;
         }
     }
     
@@ -3765,6 +6310,478 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetMotorPolicyDetailsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMotorPolicyDetails", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsRequestBody Body;
+        
+        public GetMotorPolicyDetailsRequest() {
+        }
+        
+        public GetMotorPolicyDetailsRequest(CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetMotorPolicyDetailsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string MerchantPWD;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string PolicyNumber;
+        
+        public GetMotorPolicyDetailsRequestBody() {
+        }
+        
+        public GetMotorPolicyDetailsRequestBody(string MerchantID, string MerchantPWD, string PolicyNumber) {
+            this.MerchantID = MerchantID;
+            this.MerchantPWD = MerchantPWD;
+            this.PolicyNumber = PolicyNumber;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetMotorPolicyDetailsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMotorPolicyDetailsResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsResponseBody Body;
+        
+        public GetMotorPolicyDetailsResponse() {
+        }
+        
+        public GetMotorPolicyDetailsResponse(CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetMotorPolicyDetailsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.MotorList[] GetMotorPolicyDetailsResult;
+        
+        public GetMotorPolicyDetailsResponseBody() {
+        }
+        
+        public GetMotorPolicyDetailsResponseBody(CustodianEveryWhereV2._0.CustodianAPI.MotorList[] GetMotorPolicyDetailsResult) {
+            this.GetMotorPolicyDetailsResult = GetMotorPolicyDetailsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLifeProductFrequencyRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLifeProductFrequency", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyRequestBody Body;
+        
+        public GetLifeProductFrequencyRequest() {
+        }
+        
+        public GetLifeProductFrequencyRequest(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetLifeProductFrequencyRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int ProductCode;
+        
+        public GetLifeProductFrequencyRequestBody() {
+        }
+        
+        public GetLifeProductFrequencyRequestBody(int ProductCode) {
+            this.ProductCode = ProductCode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLifeProductFrequencyResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLifeProductFrequencyResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyResponseBody Body;
+        
+        public GetLifeProductFrequencyResponse() {
+        }
+        
+        public GetLifeProductFrequencyResponse(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetLifeProductFrequencyResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetLifeProductFrequencyResult;
+        
+        public GetLifeProductFrequencyResponseBody() {
+        }
+        
+        public GetLifeProductFrequencyResponseBody(string GetLifeProductFrequencyResult) {
+            this.GetLifeProductFrequencyResult = GetLifeProductFrequencyResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLifeQuoteTermRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLifeQuoteTerm", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermRequestBody Body;
+        
+        public GetLifeQuoteTermRequest() {
+        }
+        
+        public GetLifeQuoteTermRequest(CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetLifeQuoteTermRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ProductCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string ClientCode;
+        
+        public GetLifeQuoteTermRequestBody() {
+        }
+        
+        public GetLifeQuoteTermRequestBody(string ProductCode, string ClientCode) {
+            this.ProductCode = ProductCode;
+            this.ClientCode = ClientCode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLifeQuoteTermResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLifeQuoteTermResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermResponseBody Body;
+        
+        public GetLifeQuoteTermResponse() {
+        }
+        
+        public GetLifeQuoteTermResponse(CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetLifeQuoteTermResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetLifeQuoteTermResult;
+        
+        public GetLifeQuoteTermResponseBody() {
+        }
+        
+        public GetLifeQuoteTermResponseBody(string GetLifeQuoteTermResult) {
+            this.GetLifeQuoteTermResult = GetLifeQuoteTermResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLifeCoverTypeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLifeCoverType", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeRequestBody Body;
+        
+        public GetLifeCoverTypeRequest() {
+        }
+        
+        public GetLifeCoverTypeRequest(CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetLifeCoverTypeRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ProductCode;
+        
+        public GetLifeCoverTypeRequestBody() {
+        }
+        
+        public GetLifeCoverTypeRequestBody(string ProductCode) {
+            this.ProductCode = ProductCode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLifeCoverTypeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLifeCoverTypeResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeResponseBody Body;
+        
+        public GetLifeCoverTypeResponse() {
+        }
+        
+        public GetLifeCoverTypeResponse(CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetLifeCoverTypeResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetLifeCoverTypeResult;
+        
+        public GetLifeCoverTypeResponseBody() {
+        }
+        
+        public GetLifeCoverTypeResponseBody(string GetLifeCoverTypeResult) {
+            this.GetLifeCoverTypeResult = GetLifeCoverTypeResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateLifeClientRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateLifeClient", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientRequestBody Body;
+        
+        public CreateLifeClientRequest() {
+        }
+        
+        public CreateLifeClientRequest(CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class CreateLifeClientRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ClntTitle;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string ClntFName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string ClntMName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string ClntLName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.DateTime ClntDob;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string ClntGender;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string ClntEmail;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string ClntMobile;
+        
+        public CreateLifeClientRequestBody() {
+        }
+        
+        public CreateLifeClientRequestBody(string ClntTitle, string ClntFName, string ClntMName, string ClntLName, System.DateTime ClntDob, string ClntGender, string ClntEmail, string ClntMobile) {
+            this.ClntTitle = ClntTitle;
+            this.ClntFName = ClntFName;
+            this.ClntMName = ClntMName;
+            this.ClntLName = ClntLName;
+            this.ClntDob = ClntDob;
+            this.ClntGender = ClntGender;
+            this.ClntEmail = ClntEmail;
+            this.ClntMobile = ClntMobile;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateLifeClientResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateLifeClientResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientResponseBody Body;
+        
+        public CreateLifeClientResponse() {
+        }
+        
+        public CreateLifeClientResponse(CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class CreateLifeClientResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string CreateLifeClientResult;
+        
+        public CreateLifeClientResponseBody() {
+        }
+        
+        public CreateLifeClientResponseBody(string CreateLifeClientResult) {
+            this.CreateLifeClientResult = CreateLifeClientResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLifeQuoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLifeQuote", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteRequestBody Body;
+        
+        public GetLifeQuoteRequest() {
+        }
+        
+        public GetLifeQuoteRequest(CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetLifeQuoteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int clntCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Premium;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string SumAssured;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int WebProdCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string PaymentFreqCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int PolicyTerm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string InterestRate;
+        
+        public GetLifeQuoteRequestBody() {
+        }
+        
+        public GetLifeQuoteRequestBody(int clntCode, string Premium, string SumAssured, int WebProdCode, string PaymentFreqCode, int PolicyTerm, string InterestRate) {
+            this.clntCode = clntCode;
+            this.Premium = Premium;
+            this.SumAssured = SumAssured;
+            this.WebProdCode = WebProdCode;
+            this.PaymentFreqCode = PaymentFreqCode;
+            this.PolicyTerm = PolicyTerm;
+            this.InterestRate = InterestRate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLifeQuoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLifeQuoteResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteResponseBody Body;
+        
+        public GetLifeQuoteResponse() {
+        }
+        
+        public GetLifeQuoteResponse(CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetLifeQuoteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetLifeQuoteResult;
+        
+        public GetLifeQuoteResponseBody() {
+        }
+        
+        public GetLifeQuoteResponseBody(string GetLifeQuoteResult) {
+            this.GetLifeQuoteResult = GetLifeQuoteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Passing_Travel_PostSource", WrapperNamespace="http://Custodianservices.com/", IsWrapped=true)]
     public partial class Passing_Travel_PostSource {
         
@@ -4100,6 +7117,634 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetlifePolicyBalancesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetlifePolicyBalances", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesRequestBody Body;
+        
+        public GetlifePolicyBalancesRequest() {
+        }
+        
+        public GetlifePolicyBalancesRequest(CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetlifePolicyBalancesRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string MerchantPWD;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string policyNo;
+        
+        public GetlifePolicyBalancesRequestBody() {
+        }
+        
+        public GetlifePolicyBalancesRequestBody(string MerchantID, string MerchantPWD, string policyNo) {
+            this.MerchantID = MerchantID;
+            this.MerchantPWD = MerchantPWD;
+            this.policyNo = policyNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetlifePolicyBalancesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetlifePolicyBalancesResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesResponseBody Body;
+        
+        public GetlifePolicyBalancesResponse() {
+        }
+        
+        public GetlifePolicyBalancesResponse(CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetlifePolicyBalancesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PolBalances GetlifePolicyBalancesResult;
+        
+        public GetlifePolicyBalancesResponseBody() {
+        }
+        
+        public GetlifePolicyBalancesResponseBody(CustodianEveryWhereV2._0.CustodianAPI.PolBalances GetlifePolicyBalancesResult) {
+            this.GetlifePolicyBalancesResult = GetlifePolicyBalancesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTravelQuoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTravelQuote", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteRequestBody Body;
+        
+        public GetTravelQuoteRequest() {
+        }
+        
+        public GetTravelQuoteRequest(CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetTravelQuoteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public System.DateTime DateOfBirth;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public System.DateTime DepartureDate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.DateTime ArrivalDate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string GreographicalArea;
+        
+        public GetTravelQuoteRequestBody() {
+        }
+        
+        public GetTravelQuoteRequestBody(System.DateTime DateOfBirth, System.DateTime DepartureDate, System.DateTime ArrivalDate, string GreographicalArea) {
+            this.DateOfBirth = DateOfBirth;
+            this.DepartureDate = DepartureDate;
+            this.ArrivalDate = ArrivalDate;
+            this.GreographicalArea = GreographicalArea;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTravelQuoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTravelQuoteResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteResponseBody Body;
+        
+        public GetTravelQuoteResponse() {
+        }
+        
+        public GetTravelQuoteResponse(CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetTravelQuoteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetTravelQuoteResult;
+        
+        public GetTravelQuoteResponseBody() {
+        }
+        
+        public GetTravelQuoteResponseBody(string GetTravelQuoteResult) {
+            this.GetTravelQuoteResult = GetTravelQuoteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetMotorQuoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMotorQuote", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteRequestBody Body;
+        
+        public GetMotorQuoteRequest() {
+        }
+        
+        public GetMotorQuoteRequest(CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetMotorQuoteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string TypeOfCover;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string VehicleCategory;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string VehicleValue;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string PaymentOpt;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Excess;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Tracking;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Flood;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string SRCC;
+        
+        public GetMotorQuoteRequestBody() {
+        }
+        
+        public GetMotorQuoteRequestBody(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC) {
+            this.TypeOfCover = TypeOfCover;
+            this.VehicleCategory = VehicleCategory;
+            this.VehicleValue = VehicleValue;
+            this.PaymentOpt = PaymentOpt;
+            this.Excess = Excess;
+            this.Tracking = Tracking;
+            this.Flood = Flood;
+            this.SRCC = SRCC;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetMotorQuoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMotorQuoteResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteResponseBody Body;
+        
+        public GetMotorQuoteResponse() {
+        }
+        
+        public GetMotorQuoteResponse(CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetMotorQuoteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetMotorQuoteResult;
+        
+        public GetMotorQuoteResponseBody() {
+        }
+        
+        public GetMotorQuoteResponseBody(string GetMotorQuoteResult) {
+            this.GetMotorQuoteResult = GetMotorQuoteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetHomeShieldQuoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetHomeShieldQuote", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteRequestBody Body;
+        
+        public GetHomeShieldQuoteRequest() {
+        }
+        
+        public GetHomeShieldQuoteRequest(CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetHomeShieldQuoteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public long mUnit;
+        
+        public GetHomeShieldQuoteRequestBody() {
+        }
+        
+        public GetHomeShieldQuoteRequestBody(long mUnit) {
+            this.mUnit = mUnit;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetHomeShieldQuoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetHomeShieldQuoteResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteResponseBody Body;
+        
+        public GetHomeShieldQuoteResponse() {
+        }
+        
+        public GetHomeShieldQuoteResponse(CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetHomeShieldQuoteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetHomeShieldQuoteResult;
+        
+        public GetHomeShieldQuoteResponseBody() {
+        }
+        
+        public GetHomeShieldQuoteResponseBody(string GetHomeShieldQuoteResult) {
+            this.GetHomeShieldQuoteResult = GetHomeShieldQuoteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetSafetyplusQuoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSafetyplusQuote", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteRequestBody Body;
+        
+        public GetSafetyplusQuoteRequest() {
+        }
+        
+        public GetSafetyplusQuoteRequest(CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetSafetyplusQuoteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public long mUnit;
+        
+        public GetSafetyplusQuoteRequestBody() {
+        }
+        
+        public GetSafetyplusQuoteRequestBody(long mUnit) {
+            this.mUnit = mUnit;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetSafetyplusQuoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSafetyplusQuoteResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteResponseBody Body;
+        
+        public GetSafetyplusQuoteResponse() {
+        }
+        
+        public GetSafetyplusQuoteResponse(CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetSafetyplusQuoteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetSafetyplusQuoteResult;
+        
+        public GetSafetyplusQuoteResponseBody() {
+        }
+        
+        public GetSafetyplusQuoteResponseBody(string GetSafetyplusQuoteResult) {
+            this.GetSafetyplusQuoteResult = GetSafetyplusQuoteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class POSTNotificationDetRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="POSTNotificationDet", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequestBody Body;
+        
+        public POSTNotificationDetRequest() {
+        }
+        
+        public POSTNotificationDetRequest(CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class POSTNotificationDetRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Mpassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Product;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string NotifyID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string PolicyNo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string FirstName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string LastName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public System.DateTime DOB;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string PhoneNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string Email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public System.DateTime RenewalDate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string OutstandPrem;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public System.DateTime PaymentDate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        public string ReceiptNo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public decimal ReceiptAmt;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string RenUrl;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        public string Narration;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        public string EmailResponse;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
+        public string smsResponse;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
+        public string PremiumBalance;
+        
+        public POSTNotificationDetRequestBody() {
+        }
+        
+        public POSTNotificationDetRequestBody(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string Product, 
+                    string NotifyID, 
+                    string PolicyNo, 
+                    string FirstName, 
+                    string LastName, 
+                    System.DateTime DOB, 
+                    string PhoneNumber, 
+                    string Email, 
+                    System.DateTime RenewalDate, 
+                    string OutstandPrem, 
+                    System.DateTime PaymentDate, 
+                    string ReceiptNo, 
+                    decimal ReceiptAmt, 
+                    string RenUrl, 
+                    string Narration, 
+                    string EmailResponse, 
+                    string smsResponse, 
+                    string PremiumBalance) {
+            this.MerchantID = MerchantID;
+            this.Mpassword = Mpassword;
+            this.Product = Product;
+            this.NotifyID = NotifyID;
+            this.PolicyNo = PolicyNo;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.DOB = DOB;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
+            this.RenewalDate = RenewalDate;
+            this.OutstandPrem = OutstandPrem;
+            this.PaymentDate = PaymentDate;
+            this.ReceiptNo = ReceiptNo;
+            this.ReceiptAmt = ReceiptAmt;
+            this.RenUrl = RenUrl;
+            this.Narration = Narration;
+            this.EmailResponse = EmailResponse;
+            this.smsResponse = smsResponse;
+            this.PremiumBalance = PremiumBalance;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class POSTNotificationDetResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="POSTNotificationDetResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetResponseBody Body;
+        
+        public POSTNotificationDetResponse() {
+        }
+        
+        public POSTNotificationDetResponse(CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class POSTNotificationDetResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.NotificationsDetails POSTNotificationDetResult;
+        
+        public POSTNotificationDetResponseBody() {
+        }
+        
+        public POSTNotificationDetResponseBody(CustodianEveryWhereV2._0.CustodianAPI.NotificationsDetails POSTNotificationDetResult) {
+            this.POSTNotificationDetResult = POSTNotificationDetResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetConfirmTelRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetConfirmTel", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelRequestBody Body;
+        
+        public GetConfirmTelRequest() {
+        }
+        
+        public GetConfirmTelRequest(CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetConfirmTelRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string MerchantPWD;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Telephone;
+        
+        public GetConfirmTelRequestBody() {
+        }
+        
+        public GetConfirmTelRequestBody(string MerchantID, string MerchantPWD, string Telephone) {
+            this.MerchantID = MerchantID;
+            this.MerchantPWD = MerchantPWD;
+            this.Telephone = Telephone;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetConfirmTelResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetConfirmTelResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelResponseBody Body;
+        
+        public GetConfirmTelResponse() {
+        }
+        
+        public GetConfirmTelResponse(CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetConfirmTelResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool GetConfirmTelResult;
+        
+        public GetConfirmTelResponseBody() {
+        }
+        
+        public GetConfirmTelResponseBody(bool GetConfirmTelResult) {
+            this.GetConfirmTelResult = GetConfirmTelResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Passing_RenewalPayment_PostSource", WrapperNamespace="http://Custodianservices.com/", IsWrapped=true)]
     public partial class Passing_RenewalPayment_PostSource {
         
@@ -4234,6 +7879,553 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         public Passing_RenewalPayment_PostSource1(string Passing_RenewalPayment_PostSourceResult) {
             this.Passing_RenewalPayment_PostSourceResult = Passing_RenewalPayment_PostSourceResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class PostTQSyncRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="PostTQSync", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequestBody Body;
+        
+        public PostTQSyncRequest() {
+        }
+        
+        public PostTQSyncRequest(CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class PostTQSyncRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Mpassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string PolicyNo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string PostType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.DateTime DateOfBirth;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.DateTime startdate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string ReferenceNo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Gender;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string FirstName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string LastName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string Title;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string Address;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        public string PhoneNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        public string Email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string PolicyTerm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string PaymentFreq;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        public string PaymentPayOutFreq;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        public string ProductType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
+        public string PaySource;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        public decimal Premium;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+        public decimal SumAssured;
+        
+        public PostTQSyncRequestBody() {
+        }
+        
+        public PostTQSyncRequestBody(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string PolicyNo, 
+                    string PostType, 
+                    System.DateTime DateOfBirth, 
+                    System.DateTime startdate, 
+                    string ReferenceNo, 
+                    string Gender, 
+                    string FirstName, 
+                    string LastName, 
+                    string Title, 
+                    string Address, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string PolicyTerm, 
+                    string PaymentFreq, 
+                    string PaymentPayOutFreq, 
+                    string ProductType, 
+                    string PaySource, 
+                    decimal Premium, 
+                    decimal SumAssured) {
+            this.MerchantID = MerchantID;
+            this.Mpassword = Mpassword;
+            this.PolicyNo = PolicyNo;
+            this.PostType = PostType;
+            this.DateOfBirth = DateOfBirth;
+            this.startdate = startdate;
+            this.ReferenceNo = ReferenceNo;
+            this.Gender = Gender;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Title = Title;
+            this.Address = Address;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
+            this.PolicyTerm = PolicyTerm;
+            this.PaymentFreq = PaymentFreq;
+            this.PaymentPayOutFreq = PaymentPayOutFreq;
+            this.ProductType = ProductType;
+            this.PaySource = PaySource;
+            this.Premium = Premium;
+            this.SumAssured = SumAssured;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class PostTQSyncResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="PostTQSyncResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncResponseBody Body;
+        
+        public PostTQSyncResponse() {
+        }
+        
+        public PostTQSyncResponse(CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class PostTQSyncResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string PostTQSyncResult;
+        
+        public PostTQSyncResponseBody() {
+        }
+        
+        public PostTQSyncResponseBody(string PostTQSyncResult) {
+            this.PostTQSyncResult = PostTQSyncResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class PostABSSyncRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="PostABSSync", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequestBody Body;
+        
+        public PostABSSyncRequest() {
+        }
+        
+        public PostABSSyncRequest(CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class PostABSSyncRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Mpassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string PolicyNo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string PostType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.DateTime DateOfBirth;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.DateTime startdate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public System.DateTime enddate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string ReferenceNo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string FirstName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string LastName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string Title;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string Address;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        public string PhoneNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        public string Email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string CoverType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string ProductType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        public string PaySource;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        public string Occupation;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
+        public string ChassisNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
+        public string VehicleMake;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
+        public string VehicleNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
+        public string VehicleType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
+        public string EngineNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
+        public string RegistrationNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
+        public string VehicleModel;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+        public decimal Premium;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+        public decimal SumAssured;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=27)]
+        public string BrokerID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
+        public decimal CommRate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=29)]
+        public decimal PremRate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=30)]
+        public string Gender;
+        
+        public PostABSSyncRequestBody() {
+        }
+        
+        public PostABSSyncRequestBody(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string PolicyNo, 
+                    string PostType, 
+                    System.DateTime DateOfBirth, 
+                    System.DateTime startdate, 
+                    System.DateTime enddate, 
+                    string ReferenceNo, 
+                    string FirstName, 
+                    string LastName, 
+                    string Title, 
+                    string Address, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string CoverType, 
+                    string ProductType, 
+                    string PaySource, 
+                    string Occupation, 
+                    string ChassisNumber, 
+                    string VehicleMake, 
+                    string VehicleNumber, 
+                    string VehicleType, 
+                    string EngineNumber, 
+                    string RegistrationNumber, 
+                    string VehicleModel, 
+                    decimal Premium, 
+                    decimal SumAssured, 
+                    string BrokerID, 
+                    decimal CommRate, 
+                    decimal PremRate, 
+                    string Gender) {
+            this.MerchantID = MerchantID;
+            this.Mpassword = Mpassword;
+            this.PolicyNo = PolicyNo;
+            this.PostType = PostType;
+            this.DateOfBirth = DateOfBirth;
+            this.startdate = startdate;
+            this.enddate = enddate;
+            this.ReferenceNo = ReferenceNo;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Title = Title;
+            this.Address = Address;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
+            this.CoverType = CoverType;
+            this.ProductType = ProductType;
+            this.PaySource = PaySource;
+            this.Occupation = Occupation;
+            this.ChassisNumber = ChassisNumber;
+            this.VehicleMake = VehicleMake;
+            this.VehicleNumber = VehicleNumber;
+            this.VehicleType = VehicleType;
+            this.EngineNumber = EngineNumber;
+            this.RegistrationNumber = RegistrationNumber;
+            this.VehicleModel = VehicleModel;
+            this.Premium = Premium;
+            this.SumAssured = SumAssured;
+            this.BrokerID = BrokerID;
+            this.CommRate = CommRate;
+            this.PremRate = PremRate;
+            this.Gender = Gender;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class PostABSSyncResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="PostABSSyncResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncResponseBody Body;
+        
+        public PostABSSyncResponse() {
+        }
+        
+        public PostABSSyncResponse(CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class PostABSSyncResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string PostABSSyncResult;
+        
+        public PostABSSyncResponseBody() {
+        }
+        
+        public PostABSSyncResponseBody(string PostABSSyncResult) {
+            this.PostABSSyncResult = PostABSSyncResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTQproposalNumRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTQproposalNum", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumRequestBody Body;
+        
+        public GetTQproposalNumRequest() {
+        }
+        
+        public GetTQproposalNumRequest(CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetTQproposalNumRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Mpassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.DateTime DateOfBirth;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public System.DateTime startdate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string ReferenceNo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Gender;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string FirstName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string LastName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string Title;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string Address;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string PhoneNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string Email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        public string PolicyTerm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        public string PaymentFreq;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string PaymentPayOutFreq;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string ProductType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        public string PaySource;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+        public decimal Premium;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public decimal SumAssured;
+        
+        public GetTQproposalNumRequestBody() {
+        }
+        
+        public GetTQproposalNumRequestBody(
+                    string MerchantID, 
+                    string Mpassword, 
+                    System.DateTime DateOfBirth, 
+                    System.DateTime startdate, 
+                    string ReferenceNo, 
+                    string Gender, 
+                    string FirstName, 
+                    string LastName, 
+                    string Title, 
+                    string Address, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string PolicyTerm, 
+                    string PaymentFreq, 
+                    string PaymentPayOutFreq, 
+                    string ProductType, 
+                    string PaySource, 
+                    decimal Premium, 
+                    decimal SumAssured) {
+            this.MerchantID = MerchantID;
+            this.Mpassword = Mpassword;
+            this.DateOfBirth = DateOfBirth;
+            this.startdate = startdate;
+            this.ReferenceNo = ReferenceNo;
+            this.Gender = Gender;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Title = Title;
+            this.Address = Address;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
+            this.PolicyTerm = PolicyTerm;
+            this.PaymentFreq = PaymentFreq;
+            this.PaymentPayOutFreq = PaymentPayOutFreq;
+            this.ProductType = ProductType;
+            this.PaySource = PaySource;
+            this.Premium = Premium;
+            this.SumAssured = SumAssured;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTQproposalNumResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTQproposalNumResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumResponseBody Body;
+        
+        public GetTQproposalNumResponse() {
+        }
+        
+        public GetTQproposalNumResponse(CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetTQproposalNumResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetTQproposalNumResult;
+        
+        public GetTQproposalNumResponseBody() {
+        }
+        
+        public GetTQproposalNumResponseBody(string GetTQproposalNumResult) {
+            this.GetTQproposalNumResult = GetTQproposalNumResult;
         }
     }
     
@@ -4399,6 +8591,114 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         public Passing_Marine_PostSource1(string Passing_Marine_PostSourceResult) {
             this.Passing_Marine_PostSourceResult = Passing_Marine_PostSourceResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class PostTravel2RagaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="PostTravel2Raga", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequestBody Body;
+        
+        public PostTravel2RagaRequest() {
+        }
+        
+        public PostTravel2RagaRequest(CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class PostTravel2RagaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public System.DateTime start_date;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public System.DateTime end_date;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string first_name;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string last_name;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Area_Type;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string num_passport;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public System.DateTime date_birth;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string nationality;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string country_residence;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string country_destination;
+        
+        public PostTravel2RagaRequestBody() {
+        }
+        
+        public PostTravel2RagaRequestBody(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+            this.start_date = start_date;
+            this.end_date = end_date;
+            this.first_name = first_name;
+            this.last_name = last_name;
+            this.Area_Type = Area_Type;
+            this.num_passport = num_passport;
+            this.date_birth = date_birth;
+            this.nationality = nationality;
+            this.country_residence = country_residence;
+            this.email = email;
+            this.country_destination = country_destination;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class PostTravel2RagaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="PostTravel2RagaResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaResponseBody Body;
+        
+        public PostTravel2RagaResponse() {
+        }
+        
+        public PostTravel2RagaResponse(CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class PostTravel2RagaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.certificate_out PostTravel2RagaResult;
+        
+        public PostTravel2RagaResponseBody() {
+        }
+        
+        public PostTravel2RagaResponseBody(CustodianEveryWhereV2._0.CustodianAPI.certificate_out PostTravel2RagaResult) {
+            this.PostTravel2RagaResult = PostTravel2RagaResult;
         }
     }
     
@@ -4770,6 +9070,106 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetBrokerMotorQuoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBrokerMotorQuote", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteRequestBody Body;
+        
+        public GetBrokerMotorQuoteRequest() {
+        }
+        
+        public GetBrokerMotorQuoteRequest(CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetBrokerMotorQuoteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string TypeOfCover;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string VehicleCategory;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string VehicleValue;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string PaymentOpt;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Excess;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Tracking;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Flood;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string SRCC;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string PremiumRate;
+        
+        public GetBrokerMotorQuoteRequestBody() {
+        }
+        
+        public GetBrokerMotorQuoteRequestBody(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC, string PremiumRate) {
+            this.TypeOfCover = TypeOfCover;
+            this.VehicleCategory = VehicleCategory;
+            this.VehicleValue = VehicleValue;
+            this.PaymentOpt = PaymentOpt;
+            this.Excess = Excess;
+            this.Tracking = Tracking;
+            this.Flood = Flood;
+            this.SRCC = SRCC;
+            this.PremiumRate = PremiumRate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetBrokerMotorQuoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBrokerMotorQuoteResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteResponseBody Body;
+        
+        public GetBrokerMotorQuoteResponse() {
+        }
+        
+        public GetBrokerMotorQuoteResponse(CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetBrokerMotorQuoteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetBrokerMotorQuoteResult;
+        
+        public GetBrokerMotorQuoteResponseBody() {
+        }
+        
+        public GetBrokerMotorQuoteResponseBody(string GetBrokerMotorQuoteResult) {
+            this.GetBrokerMotorQuoteResult = GetBrokerMotorQuoteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Passing_Broker_HouseHolder_PostSource", WrapperNamespace="http://Custodianservices.com/", IsWrapped=true)]
     public partial class Passing_Broker_HouseHolder_PostSource {
         
@@ -4920,6 +9320,106 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetHouseHolderQuoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetHouseHolderQuote", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteRequestBody Body;
+        
+        public GetHouseHolderQuoteRequest() {
+        }
+        
+        public GetHouseHolderQuoteRequest(CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetHouseHolderQuoteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string PaymentOption;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public decimal GenPremRt;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public decimal AllPremRt;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public decimal BuildPremRt;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public decimal ContentPremRt;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public decimal GeneratorAmt;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public decimal AllriskAmt;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public decimal BuildingAmt;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public decimal ContentAmt;
+        
+        public GetHouseHolderQuoteRequestBody() {
+        }
+        
+        public GetHouseHolderQuoteRequestBody(string PaymentOption, decimal GenPremRt, decimal AllPremRt, decimal BuildPremRt, decimal ContentPremRt, decimal GeneratorAmt, decimal AllriskAmt, decimal BuildingAmt, decimal ContentAmt) {
+            this.PaymentOption = PaymentOption;
+            this.GenPremRt = GenPremRt;
+            this.AllPremRt = AllPremRt;
+            this.BuildPremRt = BuildPremRt;
+            this.ContentPremRt = ContentPremRt;
+            this.GeneratorAmt = GeneratorAmt;
+            this.AllriskAmt = AllriskAmt;
+            this.BuildingAmt = BuildingAmt;
+            this.ContentAmt = ContentAmt;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetHouseHolderQuoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetHouseHolderQuoteResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteResponseBody Body;
+        
+        public GetHouseHolderQuoteResponse() {
+        }
+        
+        public GetHouseHolderQuoteResponse(CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetHouseHolderQuoteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetHouseHolderQuoteResult;
+        
+        public GetHouseHolderQuoteResponseBody() {
+        }
+        
+        public GetHouseHolderQuoteResponseBody(string GetHouseHolderQuoteResult) {
+            this.GetHouseHolderQuoteResult = GetHouseHolderQuoteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="SubmitClaimRegister", WrapperNamespace="http://Custodianservices.com/", IsWrapped=true)]
     public partial class SubmitClaimRegisterRequest {
         
@@ -4983,75 +9483,2148 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface CustodianEverywhereAPISoapChannel : CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap, System.ServiceModel.IClientChannel {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class PostClaimsUpdateRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="PostClaimsUpdate", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateRequestBody Body;
+        
+        public PostClaimsUpdateRequest() {
+        }
+        
+        public PostClaimsUpdateRequest(CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateRequestBody Body) {
+            this.Body = Body;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CustodianEverywhereAPISoapClient : System.ServiceModel.ClientBase<CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap>, CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class PostClaimsUpdateRequestBody {
         
-        public CustodianEverywhereAPISoapClient() {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string MerchantPWD;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string ClaimNo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string ClaimStatusCode;
+        
+        public PostClaimsUpdateRequestBody() {
         }
         
-        public CustodianEverywhereAPISoapClient(string endpointConfigurationName) : 
+        public PostClaimsUpdateRequestBody(string MerchantID, string MerchantPWD, string ClaimNo, string ClaimStatusCode) {
+            this.MerchantID = MerchantID;
+            this.MerchantPWD = MerchantPWD;
+            this.ClaimNo = ClaimNo;
+            this.ClaimStatusCode = ClaimStatusCode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class PostClaimsUpdateResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="PostClaimsUpdateResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateResponseBody Body;
+        
+        public PostClaimsUpdateResponse() {
+        }
+        
+        public PostClaimsUpdateResponse(CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class PostClaimsUpdateResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus PostClaimsUpdateResult;
+        
+        public PostClaimsUpdateResponseBody() {
+        }
+        
+        public PostClaimsUpdateResponseBody(CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus PostClaimsUpdateResult) {
+            this.PostClaimsUpdateResult = PostClaimsUpdateResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetMorePolicyDetailsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMorePolicyDetails", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsRequestBody Body;
+        
+        public GetMorePolicyDetailsRequest() {
+        }
+        
+        public GetMorePolicyDetailsRequest(CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetMorePolicyDetailsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string MerchantPWD;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string PolicyNumber;
+        
+        public GetMorePolicyDetailsRequestBody() {
+        }
+        
+        public GetMorePolicyDetailsRequestBody(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
+            this.MerchantID = MerchantID;
+            this.MerchantPWD = MerchantPWD;
+            this.Subsidiary = Subsidiary;
+            this.PolicyNumber = PolicyNumber;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetMorePolicyDetailsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMorePolicyDetailsResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsResponseBody Body;
+        
+        public GetMorePolicyDetailsResponse() {
+        }
+        
+        public GetMorePolicyDetailsResponse(CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetMorePolicyDetailsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.MorePolicyDetails GetMorePolicyDetailsResult;
+        
+        public GetMorePolicyDetailsResponseBody() {
+        }
+        
+        public GetMorePolicyDetailsResponseBody(CustodianEveryWhereV2._0.CustodianAPI.MorePolicyDetails GetMorePolicyDetailsResult) {
+            this.GetMorePolicyDetailsResult = GetMorePolicyDetailsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_ActivePoliciesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_ActivePolicies", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesRequestBody Body;
+        
+        public GetCRM_ActivePoliciesRequest() {
+        }
+        
+        public GetCRM_ActivePoliciesRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_ActivePoliciesRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MDescription;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string userid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string BusinessUnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Pages;
+        
+        public GetCRM_ActivePoliciesRequestBody() {
+        }
+        
+        public GetCRM_ActivePoliciesRequestBody(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            this.MDescription = MDescription;
+            this.userid = userid;
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_ActivePoliciesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_ActivePoliciesResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesResponseBody Body;
+        
+        public GetCRM_ActivePoliciesResponse() {
+        }
+        
+        public GetCRM_ActivePoliciesResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_ActivePoliciesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActivePoliciesResult;
+        
+        public GetCRM_ActivePoliciesResponseBody() {
+        }
+        
+        public GetCRM_ActivePoliciesResponseBody(CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActivePoliciesResult) {
+            this.GetCRM_ActivePoliciesResult = GetCRM_ActivePoliciesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_CustomersRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_Customers", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersRequestBody Body;
+        
+        public GetCRM_CustomersRequest() {
+        }
+        
+        public GetCRM_CustomersRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_CustomersRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MDescription;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string userid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string BusinessUnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Pages;
+        
+        public GetCRM_CustomersRequestBody() {
+        }
+        
+        public GetCRM_CustomersRequestBody(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            this.MDescription = MDescription;
+            this.userid = userid;
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_CustomersResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_CustomersResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersResponseBody Body;
+        
+        public GetCRM_CustomersResponse() {
+        }
+        
+        public GetCRM_CustomersResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_CustomersResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_CustomersResult;
+        
+        public GetCRM_CustomersResponseBody() {
+        }
+        
+        public GetCRM_CustomersResponseBody(CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_CustomersResult) {
+            this.GetCRM_CustomersResult = GetCRM_CustomersResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_ActiveCustomersRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_ActiveCustomers", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersRequestBody Body;
+        
+        public GetCRM_ActiveCustomersRequest() {
+        }
+        
+        public GetCRM_ActiveCustomersRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_ActiveCustomersRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MDescription;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string userid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string BusinessUnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Pages;
+        
+        public GetCRM_ActiveCustomersRequestBody() {
+        }
+        
+        public GetCRM_ActiveCustomersRequestBody(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            this.MDescription = MDescription;
+            this.userid = userid;
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_ActiveCustomersResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_ActiveCustomersResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersResponseBody Body;
+        
+        public GetCRM_ActiveCustomersResponse() {
+        }
+        
+        public GetCRM_ActiveCustomersResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_ActiveCustomersResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActiveCustomersResult;
+        
+        public GetCRM_ActiveCustomersResponseBody() {
+        }
+        
+        public GetCRM_ActiveCustomersResponseBody(CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActiveCustomersResult) {
+            this.GetCRM_ActiveCustomersResult = GetCRM_ActiveCustomersResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_AllPoliciesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_AllPolicies", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesRequestBody Body;
+        
+        public GetCRM_AllPoliciesRequest() {
+        }
+        
+        public GetCRM_AllPoliciesRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_AllPoliciesRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MDescription;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string userid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string BusinessUnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Pages;
+        
+        public GetCRM_AllPoliciesRequestBody() {
+        }
+        
+        public GetCRM_AllPoliciesRequestBody(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            this.MDescription = MDescription;
+            this.userid = userid;
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_AllPoliciesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_AllPoliciesResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesResponseBody Body;
+        
+        public GetCRM_AllPoliciesResponse() {
+        }
+        
+        public GetCRM_AllPoliciesResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_AllPoliciesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_AllPoliciesResult;
+        
+        public GetCRM_AllPoliciesResponseBody() {
+        }
+        
+        public GetCRM_AllPoliciesResponseBody(CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_AllPoliciesResult) {
+            this.GetCRM_AllPoliciesResult = GetCRM_AllPoliciesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_PolicyRenewalRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_PolicyRenewal", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalRequestBody Body;
+        
+        public GetCRM_PolicyRenewalRequest() {
+        }
+        
+        public GetCRM_PolicyRenewalRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_PolicyRenewalRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MDescription;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string userid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string BusinessUnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Pages;
+        
+        public GetCRM_PolicyRenewalRequestBody() {
+        }
+        
+        public GetCRM_PolicyRenewalRequestBody(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            this.MDescription = MDescription;
+            this.userid = userid;
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_PolicyRenewalResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_PolicyRenewalResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalResponseBody Body;
+        
+        public GetCRM_PolicyRenewalResponse() {
+        }
+        
+        public GetCRM_PolicyRenewalResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_PolicyRenewalResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_Renewal[] GetCRM_PolicyRenewalResult;
+        
+        public GetCRM_PolicyRenewalResponseBody() {
+        }
+        
+        public GetCRM_PolicyRenewalResponseBody(CustodianEveryWhereV2._0.CustodianAPI.Crm_Renewal[] GetCRM_PolicyRenewalResult) {
+            this.GetCRM_PolicyRenewalResult = GetCRM_PolicyRenewalResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_BirthdayRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_Birthday", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayRequestBody Body;
+        
+        public GetCRM_BirthdayRequest() {
+        }
+        
+        public GetCRM_BirthdayRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_BirthdayRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MDescription;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string userid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string BusinessUnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Pages;
+        
+        public GetCRM_BirthdayRequestBody() {
+        }
+        
+        public GetCRM_BirthdayRequestBody(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            this.MDescription = MDescription;
+            this.userid = userid;
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_BirthdayResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_BirthdayResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayResponseBody Body;
+        
+        public GetCRM_BirthdayResponse() {
+        }
+        
+        public GetCRM_BirthdayResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_BirthdayResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_Birthday[] GetCRM_BirthdayResult;
+        
+        public GetCRM_BirthdayResponseBody() {
+        }
+        
+        public GetCRM_BirthdayResponseBody(CustodianEveryWhereV2._0.CustodianAPI.Crm_Birthday[] GetCRM_BirthdayResult) {
+            this.GetCRM_BirthdayResult = GetCRM_BirthdayResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_ClaimsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_Claims", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequestBody Body;
+        
+        public GetCRM_ClaimsRequest() {
+        }
+        
+        public GetCRM_ClaimsRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_ClaimsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MDescription;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string userid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string BusinessUnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Pages;
+        
+        public GetCRM_ClaimsRequestBody() {
+        }
+        
+        public GetCRM_ClaimsRequestBody(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            this.MDescription = MDescription;
+            this.userid = userid;
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_ClaimsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_ClaimsResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsResponseBody Body;
+        
+        public GetCRM_ClaimsResponse() {
+        }
+        
+        public GetCRM_ClaimsResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_ClaimsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims[] GetCRM_ClaimsResult;
+        
+        public GetCRM_ClaimsResponseBody() {
+        }
+        
+        public GetCRM_ClaimsResponseBody(CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims[] GetCRM_ClaimsResult) {
+            this.GetCRM_ClaimsResult = GetCRM_ClaimsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_DashBoardRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_DashBoard", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequestBody Body;
+        
+        public GetCRM_DashBoardRequest() {
+        }
+        
+        public GetCRM_DashBoardRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_DashBoardRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MDescription;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string userid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string BusinessUnit;
+        
+        public GetCRM_DashBoardRequestBody() {
+        }
+        
+        public GetCRM_DashBoardRequestBody(string MDescription, string userid, string Subsidiary, string BusinessUnit) {
+            this.MDescription = MDescription;
+            this.userid = userid;
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_DashBoardResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_DashBoardResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardResponseBody Body;
+        
+        public GetCRM_DashBoardResponse() {
+        }
+        
+        public GetCRM_DashBoardResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_DashBoardResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_Dashboard[] GetCRM_DashBoardResult;
+        
+        public GetCRM_DashBoardResponseBody() {
+        }
+        
+        public GetCRM_DashBoardResponseBody(CustodianEveryWhereV2._0.CustodianAPI.CRM_Dashboard[] GetCRM_DashBoardResult) {
+            this.GetCRM_DashBoardResult = GetCRM_DashBoardResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_PolicyDetailRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_PolicyDetail", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailRequestBody Body;
+        
+        public GetCRM_PolicyDetailRequest() {
+        }
+        
+        public GetCRM_PolicyDetailRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_PolicyDetailRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string CustomerID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string BusinessUnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Pages;
+        
+        public GetCRM_PolicyDetailRequestBody() {
+        }
+        
+        public GetCRM_PolicyDetailRequestBody(string CustomerID, string Subsidiary, string BusinessUnit, string Pages) {
+            this.CustomerID = CustomerID;
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_PolicyDetailResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_PolicyDetailResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailResponseBody Body;
+        
+        public GetCRM_PolicyDetailResponse() {
+        }
+        
+        public GetCRM_PolicyDetailResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_PolicyDetailResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_PolicyDetail[] GetCRM_PolicyDetailResult;
+        
+        public GetCRM_PolicyDetailResponseBody() {
+        }
+        
+        public GetCRM_PolicyDetailResponseBody(CustodianEveryWhereV2._0.CustodianAPI.CRM_PolicyDetail[] GetCRM_PolicyDetailResult) {
+            this.GetCRM_PolicyDetailResult = GetCRM_PolicyDetailResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_ClaimsDetailRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_ClaimsDetail", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailRequestBody Body;
+        
+        public GetCRM_ClaimsDetailRequest() {
+        }
+        
+        public GetCRM_ClaimsDetailRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_ClaimsDetailRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string CustomerID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string BusinessUnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Pages;
+        
+        public GetCRM_ClaimsDetailRequestBody() {
+        }
+        
+        public GetCRM_ClaimsDetailRequestBody(string CustomerID, string Subsidiary, string BusinessUnit, string Pages) {
+            this.CustomerID = CustomerID;
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_ClaimsDetailResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_ClaimsDetailResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailResponseBody Body;
+        
+        public GetCRM_ClaimsDetailResponse() {
+        }
+        
+        public GetCRM_ClaimsDetailResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_ClaimsDetailResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_ClaimsDetail[] GetCRM_ClaimsDetailResult;
+        
+        public GetCRM_ClaimsDetailResponseBody() {
+        }
+        
+        public GetCRM_ClaimsDetailResponseBody(CustodianEveryWhereV2._0.CustodianAPI.CRM_ClaimsDetail[] GetCRM_ClaimsDetailResult) {
+            this.GetCRM_ClaimsDetailResult = GetCRM_ClaimsDetailResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ABSMotorInterestRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ABSMotorInterest", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestRequestBody Body;
+        
+        public ABSMotorInterestRequest() {
+        }
+        
+        public ABSMotorInterestRequest(CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class ABSMotorInterestRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MERCHANTID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string MERCHANTPWD;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string MOT_POL_NUM;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string MOT_REG_NUM;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string MOT_USER_NAME;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.DateTime MOT_START_DATE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public System.DateTime MOT_END_DATE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string MOT_HP_CC;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string MOT_ENGINE_NUM;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string MOT_CHASSIS_NUM;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string MOT_MANUF_YEAR;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string MOT_VEH_COLOR;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        public string MOT_VEH_MAKE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        public string MOT_VEH_TYPE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string MOT_VEH_VALUE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string MOT_VEH_PREM;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        public string MOT_VEH_RATE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        public string MOT_FLEET_RATE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
+        public string MOT_SPECIAL_RATE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
+        public string MOT_EXCESS_BY_BACK;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
+        public string MOT_RISK_DAYS;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
+        public string MOT_TPPD_VALUE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
+        public decimal MOT_SRCC_RATE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+        public decimal MOT_FLOOD_RATE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+        public decimal MOT_EQUAKE_RATE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+        public decimal MOT_OTHER_RATE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=26)]
+        public string MOT_USERID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=27)]
+        public string MOT_COVER_TYPE;
+        
+        public ABSMotorInterestRequestBody() {
+        }
+        
+        public ABSMotorInterestRequestBody(
+                    string MERCHANTID, 
+                    string MERCHANTPWD, 
+                    string MOT_POL_NUM, 
+                    string MOT_REG_NUM, 
+                    string MOT_USER_NAME, 
+                    System.DateTime MOT_START_DATE, 
+                    System.DateTime MOT_END_DATE, 
+                    string MOT_HP_CC, 
+                    string MOT_ENGINE_NUM, 
+                    string MOT_CHASSIS_NUM, 
+                    string MOT_MANUF_YEAR, 
+                    string MOT_VEH_COLOR, 
+                    string MOT_VEH_MAKE, 
+                    string MOT_VEH_TYPE, 
+                    string MOT_VEH_VALUE, 
+                    string MOT_VEH_PREM, 
+                    string MOT_VEH_RATE, 
+                    string MOT_FLEET_RATE, 
+                    string MOT_SPECIAL_RATE, 
+                    string MOT_EXCESS_BY_BACK, 
+                    string MOT_RISK_DAYS, 
+                    string MOT_TPPD_VALUE, 
+                    decimal MOT_SRCC_RATE, 
+                    decimal MOT_FLOOD_RATE, 
+                    decimal MOT_EQUAKE_RATE, 
+                    decimal MOT_OTHER_RATE, 
+                    string MOT_USERID, 
+                    string MOT_COVER_TYPE) {
+            this.MERCHANTID = MERCHANTID;
+            this.MERCHANTPWD = MERCHANTPWD;
+            this.MOT_POL_NUM = MOT_POL_NUM;
+            this.MOT_REG_NUM = MOT_REG_NUM;
+            this.MOT_USER_NAME = MOT_USER_NAME;
+            this.MOT_START_DATE = MOT_START_DATE;
+            this.MOT_END_DATE = MOT_END_DATE;
+            this.MOT_HP_CC = MOT_HP_CC;
+            this.MOT_ENGINE_NUM = MOT_ENGINE_NUM;
+            this.MOT_CHASSIS_NUM = MOT_CHASSIS_NUM;
+            this.MOT_MANUF_YEAR = MOT_MANUF_YEAR;
+            this.MOT_VEH_COLOR = MOT_VEH_COLOR;
+            this.MOT_VEH_MAKE = MOT_VEH_MAKE;
+            this.MOT_VEH_TYPE = MOT_VEH_TYPE;
+            this.MOT_VEH_VALUE = MOT_VEH_VALUE;
+            this.MOT_VEH_PREM = MOT_VEH_PREM;
+            this.MOT_VEH_RATE = MOT_VEH_RATE;
+            this.MOT_FLEET_RATE = MOT_FLEET_RATE;
+            this.MOT_SPECIAL_RATE = MOT_SPECIAL_RATE;
+            this.MOT_EXCESS_BY_BACK = MOT_EXCESS_BY_BACK;
+            this.MOT_RISK_DAYS = MOT_RISK_DAYS;
+            this.MOT_TPPD_VALUE = MOT_TPPD_VALUE;
+            this.MOT_SRCC_RATE = MOT_SRCC_RATE;
+            this.MOT_FLOOD_RATE = MOT_FLOOD_RATE;
+            this.MOT_EQUAKE_RATE = MOT_EQUAKE_RATE;
+            this.MOT_OTHER_RATE = MOT_OTHER_RATE;
+            this.MOT_USERID = MOT_USERID;
+            this.MOT_COVER_TYPE = MOT_COVER_TYPE;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ABSMotorInterestResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ABSMotorInterestResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestResponseBody Body;
+        
+        public ABSMotorInterestResponse() {
+        }
+        
+        public ABSMotorInterestResponse(CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class ABSMotorInterestResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ABSMotorInterestResult;
+        
+        public ABSMotorInterestResponseBody() {
+        }
+        
+        public ABSMotorInterestResponseBody(string ABSMotorInterestResult) {
+            this.ABSMotorInterestResult = ABSMotorInterestResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Passing_NNPC_Travel_PostSource", WrapperNamespace="http://Custodianservices.com/", IsWrapped=true)]
+    public partial class Passing_NNPC_Travel_PostSource {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=0)]
+        public string MerchantID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=1)]
+        public string Mpassword;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=2)]
+        public string Title;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=3)]
+        public string Surname;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=4)]
+        public string FirstName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=5)]
+        public System.DateTime Dateofbirth;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=6)]
+        public string Gender;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=7)]
+        public string Nationality;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=8)]
+        public string IdentificationType;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=9)]
+        public string IdentificationNo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=10)]
+        public string Occupation;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=11)]
+        public string PhoneNo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=12)]
+        public string Email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=13)]
+        public string Address;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=14)]
+        public string TravelType;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=15)]
+        public string TravelDestination;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=16)]
+        public System.DateTime TravelerDOB;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=17)]
+        public string PeriodofInsurance;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=18)]
+        public string Purposeoftrip;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=19)]
+        public System.DateTime DepartureDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=20)]
+        public System.DateTime ReturnDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=21)]
+        public decimal totalCost;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=22)]
+        public string ChildU18;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=23)]
+        public string GroupCount;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=24)]
+        public string ReferenceNo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=25)]
+        public string PostSource;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=26)]
+        public string BrokerID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=27)]
+        public string CommRate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=28)]
+        public string PremRate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=29)]
+        public string OtherCountry;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=30)]
+        public string PolicyNo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=31)]
+        public string mCompany;
+        
+        public Passing_NNPC_Travel_PostSource() {
+        }
+        
+        public Passing_NNPC_Travel_PostSource(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string Title, 
+                    string Surname, 
+                    string FirstName, 
+                    System.DateTime Dateofbirth, 
+                    string Gender, 
+                    string Nationality, 
+                    string IdentificationType, 
+                    string IdentificationNo, 
+                    string Occupation, 
+                    string PhoneNo, 
+                    string Email, 
+                    string Address, 
+                    string TravelType, 
+                    string TravelDestination, 
+                    System.DateTime TravelerDOB, 
+                    string PeriodofInsurance, 
+                    string Purposeoftrip, 
+                    System.DateTime DepartureDate, 
+                    System.DateTime ReturnDate, 
+                    decimal totalCost, 
+                    string ChildU18, 
+                    string GroupCount, 
+                    string ReferenceNo, 
+                    string PostSource, 
+                    string BrokerID, 
+                    string CommRate, 
+                    string PremRate, 
+                    string OtherCountry, 
+                    string PolicyNo, 
+                    string mCompany) {
+            this.MerchantID = MerchantID;
+            this.Mpassword = Mpassword;
+            this.Title = Title;
+            this.Surname = Surname;
+            this.FirstName = FirstName;
+            this.Dateofbirth = Dateofbirth;
+            this.Gender = Gender;
+            this.Nationality = Nationality;
+            this.IdentificationType = IdentificationType;
+            this.IdentificationNo = IdentificationNo;
+            this.Occupation = Occupation;
+            this.PhoneNo = PhoneNo;
+            this.Email = Email;
+            this.Address = Address;
+            this.TravelType = TravelType;
+            this.TravelDestination = TravelDestination;
+            this.TravelerDOB = TravelerDOB;
+            this.PeriodofInsurance = PeriodofInsurance;
+            this.Purposeoftrip = Purposeoftrip;
+            this.DepartureDate = DepartureDate;
+            this.ReturnDate = ReturnDate;
+            this.totalCost = totalCost;
+            this.ChildU18 = ChildU18;
+            this.GroupCount = GroupCount;
+            this.ReferenceNo = ReferenceNo;
+            this.PostSource = PostSource;
+            this.BrokerID = BrokerID;
+            this.CommRate = CommRate;
+            this.PremRate = PremRate;
+            this.OtherCountry = OtherCountry;
+            this.PolicyNo = PolicyNo;
+            this.mCompany = mCompany;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Passing_NNPC_Travel_PostSourceResponse", WrapperNamespace="http://Custodianservices.com/", IsWrapped=true)]
+    public partial class Passing_NNPC_Travel_PostSource1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=0)]
+        public string Passing_NNPC_Travel_PostSourceResult;
+        
+        public Passing_NNPC_Travel_PostSource1() {
+        }
+        
+        public Passing_NNPC_Travel_PostSource1(string Passing_NNPC_Travel_PostSourceResult) {
+            this.Passing_NNPC_Travel_PostSourceResult = Passing_NNPC_Travel_PostSourceResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_ClaimCountRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_ClaimCount", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountRequestBody Body;
+        
+        public GetCRM_ClaimCountRequest() {
+        }
+        
+        public GetCRM_ClaimCountRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_ClaimCountRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MDescription;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string ProductType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string BusinessUnit;
+        
+        public GetCRM_ClaimCountRequestBody() {
+        }
+        
+        public GetCRM_ClaimCountRequestBody(string MDescription, string ProductType, string BusinessUnit) {
+            this.MDescription = MDescription;
+            this.ProductType = ProductType;
+            this.BusinessUnit = BusinessUnit;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_ClaimCountResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_ClaimCountResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountResponseBody Body;
+        
+        public GetCRM_ClaimCountResponse() {
+        }
+        
+        public GetCRM_ClaimCountResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_ClaimCountResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.ClaimCount[] GetCRM_ClaimCountResult;
+        
+        public GetCRM_ClaimCountResponseBody() {
+        }
+        
+        public GetCRM_ClaimCountResponseBody(CustodianEveryWhereV2._0.CustodianAPI.ClaimCount[] GetCRM_ClaimCountResult) {
+            this.GetCRM_ClaimCountResult = GetCRM_ClaimCountResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_NIIDDataRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_NIIDData", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataRequestBody Body;
+        
+        public GetCRM_NIIDDataRequest() {
+        }
+        
+        public GetCRM_NIIDDataRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_NIIDDataRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string BusinessUnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string ABSID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Pages;
+        
+        public GetCRM_NIIDDataRequestBody() {
+        }
+        
+        public GetCRM_NIIDDataRequestBody(string BusinessUnit, string ABSID, string Pages) {
+            this.BusinessUnit = BusinessUnit;
+            this.ABSID = ABSID;
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_NIIDDataResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_NIIDDataResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataResponseBody Body;
+        
+        public GetCRM_NIIDDataResponse() {
+        }
+        
+        public GetCRM_NIIDDataResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_NIIDDataResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.ABSNIID[] GetCRM_NIIDDataResult;
+        
+        public GetCRM_NIIDDataResponseBody() {
+        }
+        
+        public GetCRM_NIIDDataResponseBody(CustodianEveryWhereV2._0.CustodianAPI.ABSNIID[] GetCRM_NIIDDataResult) {
+            this.GetCRM_NIIDDataResult = GetCRM_NIIDDataResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_LapseDetailRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_LapseDetail", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailRequestBody Body;
+        
+        public GetCRM_LapseDetailRequest() {
+        }
+        
+        public GetCRM_LapseDetailRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_LapseDetailRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string BusinessUnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Pages;
+        
+        public GetCRM_LapseDetailRequestBody() {
+        }
+        
+        public GetCRM_LapseDetailRequestBody(string Subsidiary, string BusinessUnit, string Pages) {
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_LapseDetailResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_LapseDetailResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailResponseBody Body;
+        
+        public GetCRM_LapseDetailResponse() {
+        }
+        
+        public GetCRM_LapseDetailResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_LapseDetailResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_ClaimsDetail[] GetCRM_LapseDetailResult;
+        
+        public GetCRM_LapseDetailResponseBody() {
+        }
+        
+        public GetCRM_LapseDetailResponseBody(CustodianEveryWhereV2._0.CustodianAPI.CRM_ClaimsDetail[] GetCRM_LapseDetailResult) {
+            this.GetCRM_LapseDetailResult = GetCRM_LapseDetailResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPPTDetailsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPPTDetails", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsRequestBody Body;
+        
+        public GetPPTDetailsRequest() {
+        }
+        
+        public GetPPTDetailsRequest(CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetPPTDetailsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string PolicyNo;
+        
+        public GetPPTDetailsRequestBody() {
+        }
+        
+        public GetPPTDetailsRequestBody(string Subsidiary, string PolicyNo) {
+            this.Subsidiary = Subsidiary;
+            this.PolicyNo = PolicyNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPPTDetailsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPPTDetailsResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsResponseBody Body;
+        
+        public GetPPTDetailsResponse() {
+        }
+        
+        public GetPPTDetailsResponse(CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetPPTDetailsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.ClientData[] GetPPTDetailsResult;
+        
+        public GetPPTDetailsResponseBody() {
+        }
+        
+        public GetPPTDetailsResponseBody(CustodianEveryWhereV2._0.CustodianAPI.ClientData[] GetPPTDetailsResult) {
+            this.GetPPTDetailsResult = GetPPTDetailsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_Top10Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_Top10", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10RequestBody Body;
+        
+        public GetCRM_Top10Request() {
+        }
+        
+        public GetCRM_Top10Request(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_Top10RequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string BusinessUnit;
+        
+        public GetCRM_Top10RequestBody() {
+        }
+        
+        public GetCRM_Top10RequestBody(string Subsidiary, string BusinessUnit) {
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_Top10Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_Top10Response", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10ResponseBody Body;
+        
+        public GetCRM_Top10Response() {
+        }
+        
+        public GetCRM_Top10Response(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_Top10ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_Top10Det[] GetCRM_Top10Result;
+        
+        public GetCRM_Top10ResponseBody() {
+        }
+        
+        public GetCRM_Top10ResponseBody(CustodianEveryWhereV2._0.CustodianAPI.CRM_Top10Det[] GetCRM_Top10Result) {
+            this.GetCRM_Top10Result = GetCRM_Top10Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_TopProductlinesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_TopProductlines", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesRequestBody Body;
+        
+        public GetCRM_TopProductlinesRequest() {
+        }
+        
+        public GetCRM_TopProductlinesRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_TopProductlinesRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Products;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string BusinessUnit;
+        
+        public GetCRM_TopProductlinesRequestBody() {
+        }
+        
+        public GetCRM_TopProductlinesRequestBody(string Subsidiary, string Products, string BusinessUnit) {
+            this.Subsidiary = Subsidiary;
+            this.Products = Products;
+            this.BusinessUnit = BusinessUnit;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_TopProductlinesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_TopProductlinesResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesResponseBody Body;
+        
+        public GetCRM_TopProductlinesResponse() {
+        }
+        
+        public GetCRM_TopProductlinesResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_TopProductlinesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_TopProduct[] GetCRM_TopProductlinesResult;
+        
+        public GetCRM_TopProductlinesResponseBody() {
+        }
+        
+        public GetCRM_TopProductlinesResponseBody(CustodianEveryWhereV2._0.CustodianAPI.CRM_TopProduct[] GetCRM_TopProductlinesResult) {
+            this.GetCRM_TopProductlinesResult = GetCRM_TopProductlinesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_TobeRenewedRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_TobeRenewed", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedRequestBody Body;
+        
+        public GetCRM_TobeRenewedRequest() {
+        }
+        
+        public GetCRM_TobeRenewedRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_TobeRenewedRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Subsidiary;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string BusinessUnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Pages;
+        
+        public GetCRM_TobeRenewedRequestBody() {
+        }
+        
+        public GetCRM_TobeRenewedRequestBody(string Subsidiary, string BusinessUnit, string Pages) {
+            this.Subsidiary = Subsidiary;
+            this.BusinessUnit = BusinessUnit;
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_TobeRenewedResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_TobeRenewedResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedResponseBody Body;
+        
+        public GetCRM_TobeRenewedResponse() {
+        }
+        
+        public GetCRM_TobeRenewedResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_TobeRenewedResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.To_be_renewed[] GetCRM_TobeRenewedResult;
+        
+        public GetCRM_TobeRenewedResponseBody() {
+        }
+        
+        public GetCRM_TobeRenewedResponseBody(CustodianEveryWhereV2._0.CustodianAPI.To_be_renewed[] GetCRM_TobeRenewedResult) {
+            this.GetCRM_TobeRenewedResult = GetCRM_TobeRenewedResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_BrokerRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_Broker", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequestBody Body;
+        
+        public GetCRM_BrokerRequest() {
+        }
+        
+        public GetCRM_BrokerRequest(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_BrokerRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Pages;
+        
+        public GetCRM_BrokerRequestBody() {
+        }
+        
+        public GetCRM_BrokerRequestBody(string Pages) {
+            this.Pages = Pages;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCRM_BrokerResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCRM_BrokerResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerResponseBody Body;
+        
+        public GetCRM_BrokerResponse() {
+        }
+        
+        public GetCRM_BrokerResponse(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetCRM_BrokerResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.BrokerData[] GetCRM_BrokerResult;
+        
+        public GetCRM_BrokerResponseBody() {
+        }
+        
+        public GetCRM_BrokerResponseBody(CustodianEveryWhereV2._0.CustodianAPI.BrokerData[] GetCRM_BrokerResult) {
+            this.GetCRM_BrokerResult = GetCRM_BrokerResult;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface PolicyServicesSoapChannel : CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class PolicyServicesSoapClient : System.ServiceModel.ClientBase<CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap>, CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap {
+        
+        public PolicyServicesSoapClient() {
+        }
+        
+        public PolicyServicesSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public CustodianEverywhereAPISoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public PolicyServicesSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public CustodianEverywhereAPISoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PolicyServicesSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public CustodianEverywhereAPISoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PolicyServicesSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetClaimStatus(CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusRequest request) {
+            return base.Channel.GetClaimStatus(request);
+        }
+        
         public CustodianEveryWhereV2._0.CustodianAPI.Claimfl GetClaimStatus(string ClaimsNumb) {
-            return base.Channel.GetClaimStatus(ClaimsNumb);
-        }
-        
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Claimfl> GetClaimStatusAsync(string ClaimsNumb) {
-            return base.Channel.GetClaimStatusAsync(ClaimsNumb);
-        }
-        
-        public CustodianEveryWhereV2._0.CustodianAPI.Claimfl GetContactClaim(string ClaimsNumb, string TelNumber) {
-            return base.Channel.GetContactClaim(ClaimsNumb, TelNumber);
-        }
-        
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Claimfl> GetContactClaimAsync(string ClaimsNumb, string TelNumber) {
-            return base.Channel.GetContactClaimAsync(ClaimsNumb, TelNumber);
-        }
-        
-        public CustodianEveryWhereV2._0.CustodianAPI.PolValidation GetPolicyValidation(string polcode) {
-            return base.Channel.GetPolicyValidation(polcode);
-        }
-        
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PolValidation> GetPolicyValidationAsync(string polcode) {
-            return base.Channel.GetPolicyValidationAsync(polcode);
-        }
-        
-        public CustodianEveryWhereV2._0.CustodianAPI.PolExpDate GetPolicyExpiryDate(string MerchantID, string MerchantPWD, string Subsidiary, string policyNo) {
-            return base.Channel.GetPolicyExpiryDate(MerchantID, MerchantPWD, Subsidiary, policyNo);
-        }
-        
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PolExpDate> GetPolicyExpiryDateAsync(string MerchantID, string MerchantPWD, string Subsidiary, string policyNo) {
-            return base.Channel.GetPolicyExpiryDateAsync(MerchantID, MerchantPWD, Subsidiary, policyNo);
-        }
-        
-        public CustodianEveryWhereV2._0.CustodianAPI.PolicyDet GetPolicyDetails(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
-            return base.Channel.GetPolicyDetails(MerchantID, MerchantPWD, Subsidiary, PolicyNumber);
-        }
-        
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PolicyDet> GetPolicyDetailsAsync(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
-            return base.Channel.GetPolicyDetailsAsync(MerchantID, MerchantPWD, Subsidiary, PolicyNumber);
+            CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusRequestBody();
+            inValue.Body.ClaimsNumb = ClaimsNumb;
+            CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetClaimStatus(inValue);
+            return retVal.Body.GetClaimStatusResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number1 CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.SubmitClaimRegister(CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetClaimStatusAsync(CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusRequest request) {
+            return base.Channel.GetClaimStatusAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusResponse> GetClaimStatusAsync(string ClaimsNumb) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetClaimStatusRequestBody();
+            inValue.Body.ClaimsNumb = ClaimsNumb;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetClaimStatusAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetContactClaim(CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimRequest request) {
+            return base.Channel.GetContactClaim(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.Claimfl GetContactClaim(string ClaimsNumb, string TelNumber) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimRequestBody();
+            inValue.Body.ClaimsNumb = ClaimsNumb;
+            inValue.Body.TelNumber = TelNumber;
+            CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetContactClaim(inValue);
+            return retVal.Body.GetContactClaimResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetContactClaimAsync(CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimRequest request) {
+            return base.Channel.GetContactClaimAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimResponse> GetContactClaimAsync(string ClaimsNumb, string TelNumber) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetContactClaimRequestBody();
+            inValue.Body.ClaimsNumb = ClaimsNumb;
+            inValue.Body.TelNumber = TelNumber;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetContactClaimAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetPolicyValidation(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationRequest request) {
+            return base.Channel.GetPolicyValidation(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.PolValidation GetPolicyValidation(string polcode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationRequestBody();
+            inValue.Body.polcode = polcode;
+            CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPolicyValidation(inValue);
+            return retVal.Body.GetPolicyValidationResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetPolicyValidationAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationRequest request) {
+            return base.Channel.GetPolicyValidationAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationResponse> GetPolicyValidationAsync(string polcode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyValidationRequestBody();
+            inValue.Body.polcode = polcode;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPolicyValidationAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetPolicyExpiryDate(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateRequest request) {
+            return base.Channel.GetPolicyExpiryDate(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.PolExpDate GetPolicyExpiryDate(string MerchantID, string MerchantPWD, string Subsidiary, string policyNo) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.policyNo = policyNo;
+            CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPolicyExpiryDate(inValue);
+            return retVal.Body.GetPolicyExpiryDateResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetPolicyExpiryDateAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateRequest request) {
+            return base.Channel.GetPolicyExpiryDateAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateResponse> GetPolicyExpiryDateAsync(string MerchantID, string MerchantPWD, string Subsidiary, string policyNo) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyExpiryDateRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.policyNo = policyNo;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPolicyExpiryDateAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetPolicyDetails(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsRequest request) {
+            return base.Channel.GetPolicyDetails(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.PolicyDet GetPolicyDetails(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.PolicyNumber = PolicyNumber;
+            CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPolicyDetails(inValue);
+            return retVal.Body.GetPolicyDetailsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetPolicyDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsRequest request) {
+            return base.Channel.GetPolicyDetailsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsResponse> GetPolicyDetailsAsync(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyDetailsRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.PolicyNumber = PolicyNumber;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPolicyDetailsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.SubmitClaimRegister(CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number request) {
             return base.Channel.SubmitClaimRegister(request);
         }
         
@@ -5068,12 +11641,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.DateofLoss = DateofLoss;
             inValue.VehicleReg = VehicleReg;
             inValue.ClaimsAmt = ClaimsAmt;
-            CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).SubmitClaimRegister(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).SubmitClaimRegister(inValue);
             return retVal.Generating_Claims_NumberResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number1> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.SubmitClaimRegisterAsync(CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.SubmitClaimRegisterAsync(CustodianEveryWhereV2._0.CustodianAPI.Generating_Claims_Number request) {
             return base.Channel.SubmitClaimRegisterAsync(request);
         }
         
@@ -5090,59 +11663,169 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.DateofLoss = DateofLoss;
             inValue.VehicleReg = VehicleReg;
             inValue.ClaimsAmt = ClaimsAmt;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).SubmitClaimRegisterAsync(inValue);
-        }
-        
-        public string GetLifeProductCateg() {
-            return base.Channel.GetLifeProductCateg();
-        }
-        
-        public System.Threading.Tasks.Task<string> GetLifeProductCategAsync() {
-            return base.Channel.GetLifeProductCategAsync();
-        }
-        
-        public string GetLifeProductType(int ProductCateg) {
-            return base.Channel.GetLifeProductType(ProductCateg);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetLifeProductTypeAsync(int ProductCateg) {
-            return base.Channel.GetLifeProductTypeAsync(ProductCateg);
-        }
-        
-        public string GetAnnuityGuaranteePeriod(int prodCode, string popCode) {
-            return base.Channel.GetAnnuityGuaranteePeriod(prodCode, popCode);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetAnnuityGuaranteePeriodAsync(int prodCode, string popCode) {
-            return base.Channel.GetAnnuityGuaranteePeriodAsync(prodCode, popCode);
-        }
-        
-        public string GetAnnuitypaymentfreq(int prodCode, string popCode) {
-            return base.Channel.GetAnnuitypaymentfreq(prodCode, popCode);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetAnnuitypaymentfreqAsync(int prodCode, string popCode) {
-            return base.Channel.GetAnnuitypaymentfreqAsync(prodCode, popCode);
-        }
-        
-        public string GetAnnuitypayOutFreq(int webProdCode) {
-            return base.Channel.GetAnnuitypayOutFreq(webProdCode);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetAnnuitypayOutFreqAsync(int webProdCode) {
-            return base.Channel.GetAnnuitypayOutFreqAsync(webProdCode);
-        }
-        
-        public CustodianEveryWhereV2._0.CustodianAPI.ClientData GetClientDetails(string MerchantID, string MerchantPWD, string Telephone, string PolicyNo) {
-            return base.Channel.GetClientDetails(MerchantID, MerchantPWD, Telephone, PolicyNo);
-        }
-        
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.ClientData> GetClientDetailsAsync(string MerchantID, string MerchantPWD, string Telephone, string PolicyNo) {
-            return base.Channel.GetClientDetailsAsync(MerchantID, MerchantPWD, Telephone, PolicyNo);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).SubmitClaimRegisterAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.SubmitPaymentRecord(CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource request) {
+        CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetLifeProductCateg(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategRequest request) {
+            return base.Channel.GetLifeProductCateg(request);
+        }
+        
+        public string GetLifeProductCateg() {
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategRequestBody();
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetLifeProductCateg(inValue);
+            return retVal.Body.GetLifeProductCategResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetLifeProductCategAsync(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategRequest request) {
+            return base.Channel.GetLifeProductCategAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategResponse> GetLifeProductCategAsync() {
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductCategRequestBody();
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetLifeProductCategAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetLifeProductType(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeRequest request) {
+            return base.Channel.GetLifeProductType(request);
+        }
+        
+        public string GetLifeProductType(int ProductCateg) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeRequestBody();
+            inValue.Body.ProductCateg = ProductCateg;
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetLifeProductType(inValue);
+            return retVal.Body.GetLifeProductTypeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetLifeProductTypeAsync(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeRequest request) {
+            return base.Channel.GetLifeProductTypeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeResponse> GetLifeProductTypeAsync(int ProductCateg) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductTypeRequestBody();
+            inValue.Body.ProductCateg = ProductCateg;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetLifeProductTypeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetAnnuityGuaranteePeriod(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodRequest request) {
+            return base.Channel.GetAnnuityGuaranteePeriod(request);
+        }
+        
+        public string GetAnnuityGuaranteePeriod(int prodCode, string popCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodRequestBody();
+            inValue.Body.prodCode = prodCode;
+            inValue.Body.popCode = popCode;
+            CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetAnnuityGuaranteePeriod(inValue);
+            return retVal.Body.GetAnnuityGuaranteePeriodResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetAnnuityGuaranteePeriodAsync(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodRequest request) {
+            return base.Channel.GetAnnuityGuaranteePeriodAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodResponse> GetAnnuityGuaranteePeriodAsync(int prodCode, string popCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityGuaranteePeriodRequestBody();
+            inValue.Body.prodCode = prodCode;
+            inValue.Body.popCode = popCode;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetAnnuityGuaranteePeriodAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetAnnuitypaymentfreq(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqRequest request) {
+            return base.Channel.GetAnnuitypaymentfreq(request);
+        }
+        
+        public string GetAnnuitypaymentfreq(int prodCode, string popCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqRequestBody();
+            inValue.Body.prodCode = prodCode;
+            inValue.Body.popCode = popCode;
+            CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetAnnuitypaymentfreq(inValue);
+            return retVal.Body.GetAnnuitypaymentfreqResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetAnnuitypaymentfreqAsync(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqRequest request) {
+            return base.Channel.GetAnnuitypaymentfreqAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqResponse> GetAnnuitypaymentfreqAsync(int prodCode, string popCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypaymentfreqRequestBody();
+            inValue.Body.prodCode = prodCode;
+            inValue.Body.popCode = popCode;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetAnnuitypaymentfreqAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetAnnuitypayOutFreq(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqRequest request) {
+            return base.Channel.GetAnnuitypayOutFreq(request);
+        }
+        
+        public string GetAnnuitypayOutFreq(int webProdCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqRequestBody();
+            inValue.Body.webProdCode = webProdCode;
+            CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetAnnuitypayOutFreq(inValue);
+            return retVal.Body.GetAnnuitypayOutFreqResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetAnnuitypayOutFreqAsync(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqRequest request) {
+            return base.Channel.GetAnnuitypayOutFreqAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqResponse> GetAnnuitypayOutFreqAsync(int webProdCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuitypayOutFreqRequestBody();
+            inValue.Body.webProdCode = webProdCode;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetAnnuitypayOutFreqAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetClientDetails(CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsRequest request) {
+            return base.Channel.GetClientDetails(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.ClientData GetClientDetails(string MerchantID, string MerchantPWD, string Telephone, string PolicyNo) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.Telephone = Telephone;
+            inValue.Body.PolicyNo = PolicyNo;
+            CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetClientDetails(inValue);
+            return retVal.Body.GetClientDetailsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetClientDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsRequest request) {
+            return base.Channel.GetClientDetailsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsResponse> GetClientDetailsAsync(string MerchantID, string MerchantPWD, string Telephone, string PolicyNo) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetClientDetailsRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.Telephone = Telephone;
+            inValue.Body.PolicyNo = PolicyNo;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetClientDetailsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.SubmitPaymentRecord(CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource request) {
             return base.Channel.SubmitPaymentRecord(request);
         }
         
@@ -5192,12 +11875,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.SumInsured = SumInsured;
             inValue.PostSource = PostSource;
             inValue.PostType = PostType;
-            CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).SubmitPaymentRecord(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).SubmitPaymentRecord(inValue);
             return retVal.Passing_Payment_PostSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.SubmitPaymentRecordAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.SubmitPaymentRecordAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource request) {
             return base.Channel.SubmitPaymentRecordAsync(request);
         }
         
@@ -5247,11 +11930,11 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.SumInsured = SumInsured;
             inValue.PostSource = PostSource;
             inValue.PostType = PostType;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).SubmitPaymentRecordAsync(inValue);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).SubmitPaymentRecordAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordResponse CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.SubmitPaymentRecord1(CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordRequest request) {
+        CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.SubmitPaymentRecord1(CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordRequest request) {
             return base.Channel.SubmitPaymentRecord1(request);
         }
         
@@ -5297,12 +11980,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.ProductType = ProductType;
             inValue.Premium = Premium;
             inValue.SumInsured = SumInsured;
-            CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).SubmitPaymentRecord1(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).SubmitPaymentRecord1(inValue);
             return retVal.SubmitPaymentRecordResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordResponse> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.SubmitPaymentRecord1Async(CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordRequest request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.SubmitPaymentRecord1Async(CustodianEveryWhereV2._0.CustodianAPI.SubmitPaymentRecordRequest request) {
             return base.Channel.SubmitPaymentRecord1Async(request);
         }
         
@@ -5348,11 +12031,11 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.ProductType = ProductType;
             inValue.Premium = Premium;
             inValue.SumInsured = SumInsured;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).SubmitPaymentRecord1Async(inValue);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).SubmitPaymentRecord1Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.PostHomeShield(CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource request) {
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostHomeShield(CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource request) {
             return base.Channel.PostHomeShield(request);
         }
         
@@ -5373,12 +12056,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.CreditNote = CreditNote;
             inValue.mDescription = mDescription;
             inValue.PostSource = PostSource;
-            CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).PostHomeShield(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostHomeShield(inValue);
             return retVal.Passing_HomeShield_PostSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.PostHomeShieldAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostHomeShieldAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_HomeShield_PostSource request) {
             return base.Channel.PostHomeShieldAsync(request);
         }
         
@@ -5399,11 +12082,11 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.CreditNote = CreditNote;
             inValue.mDescription = mDescription;
             inValue.PostSource = PostSource;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).PostHomeShieldAsync(inValue);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostHomeShieldAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldResponse CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.PostHomeShield1(CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldRequest request) {
+        CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostHomeShield1(CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldRequest request) {
             return base.Channel.PostHomeShield1(request);
         }
         
@@ -5423,12 +12106,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.expiryDate = expiryDate;
             inValue.CreditNote = CreditNote;
             inValue.mDescription = mDescription;
-            CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).PostHomeShield1(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostHomeShield1(inValue);
             return retVal.PostHomeShieldResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldResponse> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.PostHomeShield1Async(CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldRequest request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostHomeShield1Async(CustodianEveryWhereV2._0.CustodianAPI.PostHomeShieldRequest request) {
             return base.Channel.PostHomeShield1Async(request);
         }
         
@@ -5448,11 +12131,11 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.expiryDate = expiryDate;
             inValue.CreditNote = CreditNote;
             inValue.mDescription = mDescription;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).PostHomeShield1Async(inValue);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostHomeShield1Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.PostSafetyPlus(CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource request) {
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostSafetyPlus(CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource request) {
             return base.Channel.PostSafetyPlus(request);
         }
         
@@ -5496,12 +12179,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.BeneficiaryDOB = BeneficiaryDOB;
             inValue.BeneficiaryRelatn = BeneficiaryRelatn;
             inValue.PostSource = PostSource;
-            CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).PostSafetyPlus(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostSafetyPlus(inValue);
             return retVal.Passing_SafetyPlus_PostSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.PostSafetyPlusAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostSafetyPlusAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource request) {
             return base.Channel.PostSafetyPlusAsync(request);
         }
         
@@ -5545,11 +12228,11 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.BeneficiaryDOB = BeneficiaryDOB;
             inValue.BeneficiaryRelatn = BeneficiaryRelatn;
             inValue.PostSource = PostSource;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).PostSafetyPlusAsync(inValue);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostSafetyPlusAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.PostSafetyPlus1(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request) {
+        CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostSafetyPlus1(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request) {
             return base.Channel.PostSafetyPlus1(request);
         }
         
@@ -5591,12 +12274,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.BeneficiarySex = BeneficiarySex;
             inValue.BeneficiaryDOB = BeneficiaryDOB;
             inValue.BeneficiaryRelatn = BeneficiaryRelatn;
-            CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).PostSafetyPlus1(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostSafetyPlus1(inValue);
             return retVal.PostSafetyPlusResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.PostSafetyPlus1Async(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostSafetyPlus1Async(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request) {
             return base.Channel.PostSafetyPlus1Async(request);
         }
         
@@ -5638,11 +12321,11 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.BeneficiarySex = BeneficiarySex;
             inValue.BeneficiaryDOB = BeneficiaryDOB;
             inValue.BeneficiaryRelatn = BeneficiaryRelatn;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).PostSafetyPlus1Async(inValue);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostSafetyPlus1Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.POSTMotorRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource request) {
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTMotorRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource request) {
             return base.Channel.POSTMotorRec(request);
         }
         
@@ -5702,12 +12385,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.BrokerID = BrokerID;
             inValue.CommRate = CommRate;
             inValue.PremRate = PremRate;
-            CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).POSTMotorRec(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTMotorRec(inValue);
             return retVal.Passing_Motor_PostSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.POSTMotorRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTMotorRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource request) {
             return base.Channel.POSTMotorRecAsync(request);
         }
         
@@ -5767,11 +12450,11 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.BrokerID = BrokerID;
             inValue.CommRate = CommRate;
             inValue.PremRate = PremRate;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).POSTMotorRecAsync(inValue);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTMotorRecAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecResponse CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.POSTMotorRec1(CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecRequest request) {
+        CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTMotorRec1(CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecRequest request) {
             return base.Channel.POSTMotorRec1(request);
         }
         
@@ -5823,12 +12506,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.expiryDate = expiryDate;
             inValue.CreditNote = CreditNote;
             inValue.PrnNo = PrnNo;
-            CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).POSTMotorRec1(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTMotorRec1(inValue);
             return retVal.POSTMotorRecResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecResponse> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.POSTMotorRec1Async(CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecRequest request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTMotorRec1Async(CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecRequest request) {
             return base.Channel.POSTMotorRec1Async(request);
         }
         
@@ -5880,59 +12563,193 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.expiryDate = expiryDate;
             inValue.CreditNote = CreditNote;
             inValue.PrnNo = PrnNo;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).POSTMotorRec1Async(inValue);
-        }
-        
-        public System.Data.DataSet GetMotorPolicyDetails(string MerchantID, string MerchantPWD, string PolicyNumber) {
-            return base.Channel.GetMotorPolicyDetails(MerchantID, MerchantPWD, PolicyNumber);
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetMotorPolicyDetailsAsync(string MerchantID, string MerchantPWD, string PolicyNumber) {
-            return base.Channel.GetMotorPolicyDetailsAsync(MerchantID, MerchantPWD, PolicyNumber);
-        }
-        
-        public string GetLifeProductFrequency(int ProductCode) {
-            return base.Channel.GetLifeProductFrequency(ProductCode);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetLifeProductFrequencyAsync(int ProductCode) {
-            return base.Channel.GetLifeProductFrequencyAsync(ProductCode);
-        }
-        
-        public string GetLifeQuoteTerm(string ProductCode, string ClientCode) {
-            return base.Channel.GetLifeQuoteTerm(ProductCode, ClientCode);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetLifeQuoteTermAsync(string ProductCode, string ClientCode) {
-            return base.Channel.GetLifeQuoteTermAsync(ProductCode, ClientCode);
-        }
-        
-        public string GetLifeCoverType(string ProductCode) {
-            return base.Channel.GetLifeCoverType(ProductCode);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetLifeCoverTypeAsync(string ProductCode) {
-            return base.Channel.GetLifeCoverTypeAsync(ProductCode);
-        }
-        
-        public string CreateLifeClient(string ClntTitle, string ClntFName, string ClntMName, string ClntLName, System.DateTime ClntDob, string ClntGender, string ClntEmail, string ClntMobile) {
-            return base.Channel.CreateLifeClient(ClntTitle, ClntFName, ClntMName, ClntLName, ClntDob, ClntGender, ClntEmail, ClntMobile);
-        }
-        
-        public System.Threading.Tasks.Task<string> CreateLifeClientAsync(string ClntTitle, string ClntFName, string ClntMName, string ClntLName, System.DateTime ClntDob, string ClntGender, string ClntEmail, string ClntMobile) {
-            return base.Channel.CreateLifeClientAsync(ClntTitle, ClntFName, ClntMName, ClntLName, ClntDob, ClntGender, ClntEmail, ClntMobile);
-        }
-        
-        public string GetLifeQuote(int clntCode, string Premium, string SumAssured, int WebProdCode, string PaymentFreqCode, int PolicyTerm, string InterestRate) {
-            return base.Channel.GetLifeQuote(clntCode, Premium, SumAssured, WebProdCode, PaymentFreqCode, PolicyTerm, InterestRate);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetLifeQuoteAsync(int clntCode, string Premium, string SumAssured, int WebProdCode, string PaymentFreqCode, int PolicyTerm, string InterestRate) {
-            return base.Channel.GetLifeQuoteAsync(clntCode, Premium, SumAssured, WebProdCode, PaymentFreqCode, PolicyTerm, InterestRate);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTMotorRec1Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.POSTTravelRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource request) {
+        CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetMotorPolicyDetails(CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsRequest request) {
+            return base.Channel.GetMotorPolicyDetails(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.MotorList[] GetMotorPolicyDetails(string MerchantID, string MerchantPWD, string PolicyNumber) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.PolicyNumber = PolicyNumber;
+            CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetMotorPolicyDetails(inValue);
+            return retVal.Body.GetMotorPolicyDetailsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetMotorPolicyDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsRequest request) {
+            return base.Channel.GetMotorPolicyDetailsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsResponse> GetMotorPolicyDetailsAsync(string MerchantID, string MerchantPWD, string PolicyNumber) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetMotorPolicyDetailsRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.PolicyNumber = PolicyNumber;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetMotorPolicyDetailsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetLifeProductFrequency(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyRequest request) {
+            return base.Channel.GetLifeProductFrequency(request);
+        }
+        
+        public string GetLifeProductFrequency(int ProductCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyRequestBody();
+            inValue.Body.ProductCode = ProductCode;
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetLifeProductFrequency(inValue);
+            return retVal.Body.GetLifeProductFrequencyResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetLifeProductFrequencyAsync(CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyRequest request) {
+            return base.Channel.GetLifeProductFrequencyAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyResponse> GetLifeProductFrequencyAsync(int ProductCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeProductFrequencyRequestBody();
+            inValue.Body.ProductCode = ProductCode;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetLifeProductFrequencyAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetLifeQuoteTerm(CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermRequest request) {
+            return base.Channel.GetLifeQuoteTerm(request);
+        }
+        
+        public string GetLifeQuoteTerm(string ProductCode, string ClientCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermRequestBody();
+            inValue.Body.ProductCode = ProductCode;
+            inValue.Body.ClientCode = ClientCode;
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetLifeQuoteTerm(inValue);
+            return retVal.Body.GetLifeQuoteTermResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetLifeQuoteTermAsync(CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermRequest request) {
+            return base.Channel.GetLifeQuoteTermAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermResponse> GetLifeQuoteTermAsync(string ProductCode, string ClientCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteTermRequestBody();
+            inValue.Body.ProductCode = ProductCode;
+            inValue.Body.ClientCode = ClientCode;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetLifeQuoteTermAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetLifeCoverType(CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeRequest request) {
+            return base.Channel.GetLifeCoverType(request);
+        }
+        
+        public string GetLifeCoverType(string ProductCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeRequestBody();
+            inValue.Body.ProductCode = ProductCode;
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetLifeCoverType(inValue);
+            return retVal.Body.GetLifeCoverTypeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetLifeCoverTypeAsync(CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeRequest request) {
+            return base.Channel.GetLifeCoverTypeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeResponse> GetLifeCoverTypeAsync(string ProductCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeCoverTypeRequestBody();
+            inValue.Body.ProductCode = ProductCode;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetLifeCoverTypeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.CreateLifeClient(CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientRequest request) {
+            return base.Channel.CreateLifeClient(request);
+        }
+        
+        public string CreateLifeClient(string ClntTitle, string ClntFName, string ClntMName, string ClntLName, System.DateTime ClntDob, string ClntGender, string ClntEmail, string ClntMobile) {
+            CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientRequestBody();
+            inValue.Body.ClntTitle = ClntTitle;
+            inValue.Body.ClntFName = ClntFName;
+            inValue.Body.ClntMName = ClntMName;
+            inValue.Body.ClntLName = ClntLName;
+            inValue.Body.ClntDob = ClntDob;
+            inValue.Body.ClntGender = ClntGender;
+            inValue.Body.ClntEmail = ClntEmail;
+            inValue.Body.ClntMobile = ClntMobile;
+            CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).CreateLifeClient(inValue);
+            return retVal.Body.CreateLifeClientResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.CreateLifeClientAsync(CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientRequest request) {
+            return base.Channel.CreateLifeClientAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientResponse> CreateLifeClientAsync(string ClntTitle, string ClntFName, string ClntMName, string ClntLName, System.DateTime ClntDob, string ClntGender, string ClntEmail, string ClntMobile) {
+            CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.CreateLifeClientRequestBody();
+            inValue.Body.ClntTitle = ClntTitle;
+            inValue.Body.ClntFName = ClntFName;
+            inValue.Body.ClntMName = ClntMName;
+            inValue.Body.ClntLName = ClntLName;
+            inValue.Body.ClntDob = ClntDob;
+            inValue.Body.ClntGender = ClntGender;
+            inValue.Body.ClntEmail = ClntEmail;
+            inValue.Body.ClntMobile = ClntMobile;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).CreateLifeClientAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetLifeQuote(CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteRequest request) {
+            return base.Channel.GetLifeQuote(request);
+        }
+        
+        public string GetLifeQuote(int clntCode, string Premium, string SumAssured, int WebProdCode, string PaymentFreqCode, int PolicyTerm, string InterestRate) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteRequestBody();
+            inValue.Body.clntCode = clntCode;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SumAssured = SumAssured;
+            inValue.Body.WebProdCode = WebProdCode;
+            inValue.Body.PaymentFreqCode = PaymentFreqCode;
+            inValue.Body.PolicyTerm = PolicyTerm;
+            inValue.Body.InterestRate = InterestRate;
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetLifeQuote(inValue);
+            return retVal.Body.GetLifeQuoteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetLifeQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteRequest request) {
+            return base.Channel.GetLifeQuoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteResponse> GetLifeQuoteAsync(int clntCode, string Premium, string SumAssured, int WebProdCode, string PaymentFreqCode, int PolicyTerm, string InterestRate) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetLifeQuoteRequestBody();
+            inValue.Body.clntCode = clntCode;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SumAssured = SumAssured;
+            inValue.Body.WebProdCode = WebProdCode;
+            inValue.Body.PaymentFreqCode = PaymentFreqCode;
+            inValue.Body.PolicyTerm = PolicyTerm;
+            inValue.Body.InterestRate = InterestRate;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetLifeQuoteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTTravelRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource request) {
             return base.Channel.POSTTravelRec(request);
         }
         
@@ -5998,12 +12815,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.CommRate = CommRate;
             inValue.PremRate = PremRate;
             inValue.OtherCountry = OtherCountry;
-            CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).POSTTravelRec(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTTravelRec(inValue);
             return retVal.Passing_Travel_PostSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.POSTTravelRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTTravelRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource request) {
             return base.Channel.POSTTravelRecAsync(request);
         }
         
@@ -6069,11 +12886,11 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.CommRate = CommRate;
             inValue.PremRate = PremRate;
             inValue.OtherCountry = OtherCountry;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).POSTTravelRecAsync(inValue);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTTravelRecAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecResponse CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.POSTTravelRec1(CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecRequest request) {
+        CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTTravelRec1(CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecRequest request) {
             return base.Channel.POSTTravelRec1(request);
         }
         
@@ -6129,12 +12946,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.ChildU18 = ChildU18;
             inValue.GroupCount = GroupCount;
             inValue.ReferenceNo = ReferenceNo;
-            CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).POSTTravelRec1(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTTravelRec1(inValue);
             return retVal.POSTTravelRecResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecResponse> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.POSTTravelRec1Async(CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecRequest request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTTravelRec1Async(CustodianEveryWhereV2._0.CustodianAPI.POSTTravelRecRequest request) {
             return base.Channel.POSTTravelRec1Async(request);
         }
         
@@ -6190,47 +13007,161 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.ChildU18 = ChildU18;
             inValue.GroupCount = GroupCount;
             inValue.ReferenceNo = ReferenceNo;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).POSTTravelRec1Async(inValue);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTTravelRec1Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetlifePolicyBalances(CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesRequest request) {
+            return base.Channel.GetlifePolicyBalances(request);
         }
         
         public CustodianEveryWhereV2._0.CustodianAPI.PolBalances GetlifePolicyBalances(string MerchantID, string MerchantPWD, string policyNo) {
-            return base.Channel.GetlifePolicyBalances(MerchantID, MerchantPWD, policyNo);
+            CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.policyNo = policyNo;
+            CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetlifePolicyBalances(inValue);
+            return retVal.Body.GetlifePolicyBalancesResult;
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PolBalances> GetlifePolicyBalancesAsync(string MerchantID, string MerchantPWD, string policyNo) {
-            return base.Channel.GetlifePolicyBalancesAsync(MerchantID, MerchantPWD, policyNo);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetlifePolicyBalancesAsync(CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesRequest request) {
+            return base.Channel.GetlifePolicyBalancesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesResponse> GetlifePolicyBalancesAsync(string MerchantID, string MerchantPWD, string policyNo) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetlifePolicyBalancesRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.policyNo = policyNo;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetlifePolicyBalancesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetTravelQuote(CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteRequest request) {
+            return base.Channel.GetTravelQuote(request);
         }
         
         public string GetTravelQuote(System.DateTime DateOfBirth, System.DateTime DepartureDate, System.DateTime ArrivalDate, string GreographicalArea) {
-            return base.Channel.GetTravelQuote(DateOfBirth, DepartureDate, ArrivalDate, GreographicalArea);
+            CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteRequestBody();
+            inValue.Body.DateOfBirth = DateOfBirth;
+            inValue.Body.DepartureDate = DepartureDate;
+            inValue.Body.ArrivalDate = ArrivalDate;
+            inValue.Body.GreographicalArea = GreographicalArea;
+            CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetTravelQuote(inValue);
+            return retVal.Body.GetTravelQuoteResult;
         }
         
-        public System.Threading.Tasks.Task<string> GetTravelQuoteAsync(System.DateTime DateOfBirth, System.DateTime DepartureDate, System.DateTime ArrivalDate, string GreographicalArea) {
-            return base.Channel.GetTravelQuoteAsync(DateOfBirth, DepartureDate, ArrivalDate, GreographicalArea);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetTravelQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteRequest request) {
+            return base.Channel.GetTravelQuoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteResponse> GetTravelQuoteAsync(System.DateTime DateOfBirth, System.DateTime DepartureDate, System.DateTime ArrivalDate, string GreographicalArea) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetTravelQuoteRequestBody();
+            inValue.Body.DateOfBirth = DateOfBirth;
+            inValue.Body.DepartureDate = DepartureDate;
+            inValue.Body.ArrivalDate = ArrivalDate;
+            inValue.Body.GreographicalArea = GreographicalArea;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetTravelQuoteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetMotorQuote(CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteRequest request) {
+            return base.Channel.GetMotorQuote(request);
         }
         
         public string GetMotorQuote(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC) {
-            return base.Channel.GetMotorQuote(TypeOfCover, VehicleCategory, VehicleValue, PaymentOpt, Excess, Tracking, Flood, SRCC);
+            CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteRequestBody();
+            inValue.Body.TypeOfCover = TypeOfCover;
+            inValue.Body.VehicleCategory = VehicleCategory;
+            inValue.Body.VehicleValue = VehicleValue;
+            inValue.Body.PaymentOpt = PaymentOpt;
+            inValue.Body.Excess = Excess;
+            inValue.Body.Tracking = Tracking;
+            inValue.Body.Flood = Flood;
+            inValue.Body.SRCC = SRCC;
+            CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetMotorQuote(inValue);
+            return retVal.Body.GetMotorQuoteResult;
         }
         
-        public System.Threading.Tasks.Task<string> GetMotorQuoteAsync(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC) {
-            return base.Channel.GetMotorQuoteAsync(TypeOfCover, VehicleCategory, VehicleValue, PaymentOpt, Excess, Tracking, Flood, SRCC);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetMotorQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteRequest request) {
+            return base.Channel.GetMotorQuoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteResponse> GetMotorQuoteAsync(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetMotorQuoteRequestBody();
+            inValue.Body.TypeOfCover = TypeOfCover;
+            inValue.Body.VehicleCategory = VehicleCategory;
+            inValue.Body.VehicleValue = VehicleValue;
+            inValue.Body.PaymentOpt = PaymentOpt;
+            inValue.Body.Excess = Excess;
+            inValue.Body.Tracking = Tracking;
+            inValue.Body.Flood = Flood;
+            inValue.Body.SRCC = SRCC;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetMotorQuoteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetHomeShieldQuote(CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteRequest request) {
+            return base.Channel.GetHomeShieldQuote(request);
         }
         
         public string GetHomeShieldQuote(long mUnit) {
-            return base.Channel.GetHomeShieldQuote(mUnit);
+            CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteRequestBody();
+            inValue.Body.mUnit = mUnit;
+            CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetHomeShieldQuote(inValue);
+            return retVal.Body.GetHomeShieldQuoteResult;
         }
         
-        public System.Threading.Tasks.Task<string> GetHomeShieldQuoteAsync(long mUnit) {
-            return base.Channel.GetHomeShieldQuoteAsync(mUnit);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetHomeShieldQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteRequest request) {
+            return base.Channel.GetHomeShieldQuoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteResponse> GetHomeShieldQuoteAsync(long mUnit) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetHomeShieldQuoteRequestBody();
+            inValue.Body.mUnit = mUnit;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetHomeShieldQuoteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetSafetyplusQuote(CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteRequest request) {
+            return base.Channel.GetSafetyplusQuote(request);
         }
         
         public string GetSafetyplusQuote(long mUnit) {
-            return base.Channel.GetSafetyplusQuote(mUnit);
+            CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteRequestBody();
+            inValue.Body.mUnit = mUnit;
+            CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetSafetyplusQuote(inValue);
+            return retVal.Body.GetSafetyplusQuoteResult;
         }
         
-        public System.Threading.Tasks.Task<string> GetSafetyplusQuoteAsync(long mUnit) {
-            return base.Channel.GetSafetyplusQuoteAsync(mUnit);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetSafetyplusQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteRequest request) {
+            return base.Channel.GetSafetyplusQuoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteResponse> GetSafetyplusQuoteAsync(long mUnit) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetSafetyplusQuoteRequestBody();
+            inValue.Body.mUnit = mUnit;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetSafetyplusQuoteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTNotificationDet(CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequest request) {
+            return base.Channel.POSTNotificationDet(request);
         }
         
         public CustodianEveryWhereV2._0.CustodianAPI.NotificationsDetails POSTNotificationDet(
@@ -6252,11 +13183,40 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string RenUrl, 
                     string Narration, 
                     string EmailResponse, 
-                    string smsResponse) {
-            return base.Channel.POSTNotificationDet(MerchantID, Mpassword, Product, NotifyID, PolicyNo, FirstName, LastName, DOB, PhoneNumber, Email, RenewalDate, OutstandPrem, PaymentDate, ReceiptNo, ReceiptAmt, RenUrl, Narration, EmailResponse, smsResponse);
+                    string smsResponse, 
+                    string PremiumBalance) {
+            CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.Product = Product;
+            inValue.Body.NotifyID = NotifyID;
+            inValue.Body.PolicyNo = PolicyNo;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.DOB = DOB;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Email = Email;
+            inValue.Body.RenewalDate = RenewalDate;
+            inValue.Body.OutstandPrem = OutstandPrem;
+            inValue.Body.PaymentDate = PaymentDate;
+            inValue.Body.ReceiptNo = ReceiptNo;
+            inValue.Body.ReceiptAmt = ReceiptAmt;
+            inValue.Body.RenUrl = RenUrl;
+            inValue.Body.Narration = Narration;
+            inValue.Body.EmailResponse = EmailResponse;
+            inValue.Body.smsResponse = smsResponse;
+            inValue.Body.PremiumBalance = PremiumBalance;
+            CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTNotificationDet(inValue);
+            return retVal.Body.POSTNotificationDetResult;
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.NotificationsDetails> POSTNotificationDetAsync(
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTNotificationDetAsync(CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequest request) {
+            return base.Channel.POSTNotificationDetAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetResponse> POSTNotificationDetAsync(
                     string MerchantID, 
                     string Mpassword, 
                     string Product, 
@@ -6275,20 +13235,64 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string RenUrl, 
                     string Narration, 
                     string EmailResponse, 
-                    string smsResponse) {
-            return base.Channel.POSTNotificationDetAsync(MerchantID, Mpassword, Product, NotifyID, PolicyNo, FirstName, LastName, DOB, PhoneNumber, Email, RenewalDate, OutstandPrem, PaymentDate, ReceiptNo, ReceiptAmt, RenUrl, Narration, EmailResponse, smsResponse);
-        }
-        
-        public bool GetConfirmTel(string MerchantID, string MerchantPWD, string Telephone) {
-            return base.Channel.GetConfirmTel(MerchantID, MerchantPWD, Telephone);
-        }
-        
-        public System.Threading.Tasks.Task<bool> GetConfirmTelAsync(string MerchantID, string MerchantPWD, string Telephone) {
-            return base.Channel.GetConfirmTelAsync(MerchantID, MerchantPWD, Telephone);
+                    string smsResponse, 
+                    string PremiumBalance) {
+            CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.Product = Product;
+            inValue.Body.NotifyID = NotifyID;
+            inValue.Body.PolicyNo = PolicyNo;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.DOB = DOB;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Email = Email;
+            inValue.Body.RenewalDate = RenewalDate;
+            inValue.Body.OutstandPrem = OutstandPrem;
+            inValue.Body.PaymentDate = PaymentDate;
+            inValue.Body.ReceiptNo = ReceiptNo;
+            inValue.Body.ReceiptAmt = ReceiptAmt;
+            inValue.Body.RenUrl = RenUrl;
+            inValue.Body.Narration = Narration;
+            inValue.Body.EmailResponse = EmailResponse;
+            inValue.Body.smsResponse = smsResponse;
+            inValue.Body.PremiumBalance = PremiumBalance;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTNotificationDetAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.SubmitRenewBusinessPayRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource request) {
+        CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetConfirmTel(CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelRequest request) {
+            return base.Channel.GetConfirmTel(request);
+        }
+        
+        public bool GetConfirmTel(string MerchantID, string MerchantPWD, string Telephone) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.Telephone = Telephone;
+            CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetConfirmTel(inValue);
+            return retVal.Body.GetConfirmTelResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetConfirmTelAsync(CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelRequest request) {
+            return base.Channel.GetConfirmTelAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelResponse> GetConfirmTelAsync(string MerchantID, string MerchantPWD, string Telephone) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetConfirmTelRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.Telephone = Telephone;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetConfirmTelAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.SubmitRenewBusinessPayRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource request) {
             return base.Channel.SubmitRenewBusinessPayRec(request);
         }
         
@@ -6338,12 +13342,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.SumInsured = SumInsured;
             inValue.PostSource = PostSource;
             inValue.PostType = PostType;
-            CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).SubmitRenewBusinessPayRec(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).SubmitRenewBusinessPayRec(inValue);
             return retVal.Passing_RenewalPayment_PostSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.SubmitRenewBusinessPayRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.SubmitRenewBusinessPayRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_RenewalPayment_PostSource request) {
             return base.Channel.SubmitRenewBusinessPayRecAsync(request);
         }
         
@@ -6393,7 +13397,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.SumInsured = SumInsured;
             inValue.PostSource = PostSource;
             inValue.PostType = PostType;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).SubmitRenewBusinessPayRecAsync(inValue);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).SubmitRenewBusinessPayRecAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostTQSync(CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequest request) {
+            return base.Channel.PostTQSync(request);
         }
         
         public string PostTQSync(
@@ -6418,10 +13427,39 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string PaySource, 
                     decimal Premium, 
                     decimal SumAssured) {
-            return base.Channel.PostTQSync(MerchantID, Mpassword, PolicyNo, PostType, DateOfBirth, startdate, ReferenceNo, Gender, FirstName, LastName, Title, Address, PhoneNumber, Email, PolicyTerm, PaymentFreq, PaymentPayOutFreq, ProductType, PaySource, Premium, SumAssured);
+            CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.PolicyNo = PolicyNo;
+            inValue.Body.PostType = PostType;
+            inValue.Body.DateOfBirth = DateOfBirth;
+            inValue.Body.startdate = startdate;
+            inValue.Body.ReferenceNo = ReferenceNo;
+            inValue.Body.Gender = Gender;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.Title = Title;
+            inValue.Body.Address = Address;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Email = Email;
+            inValue.Body.PolicyTerm = PolicyTerm;
+            inValue.Body.PaymentFreq = PaymentFreq;
+            inValue.Body.PaymentPayOutFreq = PaymentPayOutFreq;
+            inValue.Body.ProductType = ProductType;
+            inValue.Body.PaySource = PaySource;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SumAssured = SumAssured;
+            CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostTQSync(inValue);
+            return retVal.Body.PostTQSyncResult;
         }
         
-        public System.Threading.Tasks.Task<string> PostTQSyncAsync(
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostTQSyncAsync(CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequest request) {
+            return base.Channel.PostTQSyncAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncResponse> PostTQSyncAsync(
                     string MerchantID, 
                     string Mpassword, 
                     string PolicyNo, 
@@ -6443,7 +13481,35 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string PaySource, 
                     decimal Premium, 
                     decimal SumAssured) {
-            return base.Channel.PostTQSyncAsync(MerchantID, Mpassword, PolicyNo, PostType, DateOfBirth, startdate, ReferenceNo, Gender, FirstName, LastName, Title, Address, PhoneNumber, Email, PolicyTerm, PaymentFreq, PaymentPayOutFreq, ProductType, PaySource, Premium, SumAssured);
+            CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.PolicyNo = PolicyNo;
+            inValue.Body.PostType = PostType;
+            inValue.Body.DateOfBirth = DateOfBirth;
+            inValue.Body.startdate = startdate;
+            inValue.Body.ReferenceNo = ReferenceNo;
+            inValue.Body.Gender = Gender;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.Title = Title;
+            inValue.Body.Address = Address;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Email = Email;
+            inValue.Body.PolicyTerm = PolicyTerm;
+            inValue.Body.PaymentFreq = PaymentFreq;
+            inValue.Body.PaymentPayOutFreq = PaymentPayOutFreq;
+            inValue.Body.ProductType = ProductType;
+            inValue.Body.PaySource = PaySource;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SumAssured = SumAssured;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostTQSyncAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostABSSync(CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequest request) {
+            return base.Channel.PostABSSync(request);
         }
         
         public string PostABSSync(
@@ -6478,10 +13544,49 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     decimal CommRate, 
                     decimal PremRate, 
                     string Gender) {
-            return base.Channel.PostABSSync(MerchantID, Mpassword, PolicyNo, PostType, DateOfBirth, startdate, enddate, ReferenceNo, FirstName, LastName, Title, Address, PhoneNumber, Email, CoverType, ProductType, PaySource, Occupation, ChassisNumber, VehicleMake, VehicleNumber, VehicleType, EngineNumber, RegistrationNumber, VehicleModel, Premium, SumAssured, BrokerID, CommRate, PremRate, Gender);
+            CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.PolicyNo = PolicyNo;
+            inValue.Body.PostType = PostType;
+            inValue.Body.DateOfBirth = DateOfBirth;
+            inValue.Body.startdate = startdate;
+            inValue.Body.enddate = enddate;
+            inValue.Body.ReferenceNo = ReferenceNo;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.Title = Title;
+            inValue.Body.Address = Address;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Email = Email;
+            inValue.Body.CoverType = CoverType;
+            inValue.Body.ProductType = ProductType;
+            inValue.Body.PaySource = PaySource;
+            inValue.Body.Occupation = Occupation;
+            inValue.Body.ChassisNumber = ChassisNumber;
+            inValue.Body.VehicleMake = VehicleMake;
+            inValue.Body.VehicleNumber = VehicleNumber;
+            inValue.Body.VehicleType = VehicleType;
+            inValue.Body.EngineNumber = EngineNumber;
+            inValue.Body.RegistrationNumber = RegistrationNumber;
+            inValue.Body.VehicleModel = VehicleModel;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SumAssured = SumAssured;
+            inValue.Body.BrokerID = BrokerID;
+            inValue.Body.CommRate = CommRate;
+            inValue.Body.PremRate = PremRate;
+            inValue.Body.Gender = Gender;
+            CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostABSSync(inValue);
+            return retVal.Body.PostABSSyncResult;
         }
         
-        public System.Threading.Tasks.Task<string> PostABSSyncAsync(
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostABSSyncAsync(CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequest request) {
+            return base.Channel.PostABSSyncAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncResponse> PostABSSyncAsync(
                     string MerchantID, 
                     string Mpassword, 
                     string PolicyNo, 
@@ -6513,7 +13618,45 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     decimal CommRate, 
                     decimal PremRate, 
                     string Gender) {
-            return base.Channel.PostABSSyncAsync(MerchantID, Mpassword, PolicyNo, PostType, DateOfBirth, startdate, enddate, ReferenceNo, FirstName, LastName, Title, Address, PhoneNumber, Email, CoverType, ProductType, PaySource, Occupation, ChassisNumber, VehicleMake, VehicleNumber, VehicleType, EngineNumber, RegistrationNumber, VehicleModel, Premium, SumAssured, BrokerID, CommRate, PremRate, Gender);
+            CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.PolicyNo = PolicyNo;
+            inValue.Body.PostType = PostType;
+            inValue.Body.DateOfBirth = DateOfBirth;
+            inValue.Body.startdate = startdate;
+            inValue.Body.enddate = enddate;
+            inValue.Body.ReferenceNo = ReferenceNo;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.Title = Title;
+            inValue.Body.Address = Address;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Email = Email;
+            inValue.Body.CoverType = CoverType;
+            inValue.Body.ProductType = ProductType;
+            inValue.Body.PaySource = PaySource;
+            inValue.Body.Occupation = Occupation;
+            inValue.Body.ChassisNumber = ChassisNumber;
+            inValue.Body.VehicleMake = VehicleMake;
+            inValue.Body.VehicleNumber = VehicleNumber;
+            inValue.Body.VehicleType = VehicleType;
+            inValue.Body.EngineNumber = EngineNumber;
+            inValue.Body.RegistrationNumber = RegistrationNumber;
+            inValue.Body.VehicleModel = VehicleModel;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SumAssured = SumAssured;
+            inValue.Body.BrokerID = BrokerID;
+            inValue.Body.CommRate = CommRate;
+            inValue.Body.PremRate = PremRate;
+            inValue.Body.Gender = Gender;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostABSSyncAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetTQproposalNum(CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumRequest request) {
+            return base.Channel.GetTQproposalNum(request);
         }
         
         public string GetTQproposalNum(
@@ -6536,10 +13679,37 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string PaySource, 
                     decimal Premium, 
                     decimal SumAssured) {
-            return base.Channel.GetTQproposalNum(MerchantID, Mpassword, DateOfBirth, startdate, ReferenceNo, Gender, FirstName, LastName, Title, Address, PhoneNumber, Email, PolicyTerm, PaymentFreq, PaymentPayOutFreq, ProductType, PaySource, Premium, SumAssured);
+            CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.DateOfBirth = DateOfBirth;
+            inValue.Body.startdate = startdate;
+            inValue.Body.ReferenceNo = ReferenceNo;
+            inValue.Body.Gender = Gender;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.Title = Title;
+            inValue.Body.Address = Address;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Email = Email;
+            inValue.Body.PolicyTerm = PolicyTerm;
+            inValue.Body.PaymentFreq = PaymentFreq;
+            inValue.Body.PaymentPayOutFreq = PaymentPayOutFreq;
+            inValue.Body.ProductType = ProductType;
+            inValue.Body.PaySource = PaySource;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SumAssured = SumAssured;
+            CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetTQproposalNum(inValue);
+            return retVal.Body.GetTQproposalNumResult;
         }
         
-        public System.Threading.Tasks.Task<string> GetTQproposalNumAsync(
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetTQproposalNumAsync(CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumRequest request) {
+            return base.Channel.GetTQproposalNumAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumResponse> GetTQproposalNumAsync(
                     string MerchantID, 
                     string Mpassword, 
                     System.DateTime DateOfBirth, 
@@ -6559,11 +13729,32 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string PaySource, 
                     decimal Premium, 
                     decimal SumAssured) {
-            return base.Channel.GetTQproposalNumAsync(MerchantID, Mpassword, DateOfBirth, startdate, ReferenceNo, Gender, FirstName, LastName, Title, Address, PhoneNumber, Email, PolicyTerm, PaymentFreq, PaymentPayOutFreq, ProductType, PaySource, Premium, SumAssured);
+            CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetTQproposalNumRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.DateOfBirth = DateOfBirth;
+            inValue.Body.startdate = startdate;
+            inValue.Body.ReferenceNo = ReferenceNo;
+            inValue.Body.Gender = Gender;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.Title = Title;
+            inValue.Body.Address = Address;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Email = Email;
+            inValue.Body.PolicyTerm = PolicyTerm;
+            inValue.Body.PaymentFreq = PaymentFreq;
+            inValue.Body.PaymentPayOutFreq = PaymentPayOutFreq;
+            inValue.Body.ProductType = ProductType;
+            inValue.Body.PaySource = PaySource;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SumAssured = SumAssured;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetTQproposalNumAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.PostMarineRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource request) {
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostMarineRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource request) {
             return base.Channel.PostMarineRec(request);
         }
         
@@ -6623,12 +13814,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.PostSource = PostSource;
             inValue.ReferenceNo = ReferenceNo;
             inValue.PostType = PostType;
-            CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).PostMarineRec(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostMarineRec(inValue);
             return retVal.Passing_Marine_PostSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.PostMarineRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostMarineRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Marine_PostSource request) {
             return base.Channel.PostMarineRecAsync(request);
         }
         
@@ -6688,27 +13879,56 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.PostSource = PostSource;
             inValue.ReferenceNo = ReferenceNo;
             inValue.PostType = PostType;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).PostMarineRecAsync(inValue);
-        }
-        
-        public CustodianEveryWhereV2._0.CustodianAPI.certificate_out PostTravel2Raga(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
-            return base.Channel.PostTravel2Raga(start_date, end_date, first_name, last_name, Area_Type, num_passport, date_birth, nationality, country_residence, email, country_destination);
-        }
-        
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.certificate_out> PostTravel2RagaAsync(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
-            return base.Channel.PostTravel2RagaAsync(start_date, end_date, first_name, last_name, Area_Type, num_passport, date_birth, nationality, country_residence, email, country_destination);
-        }
-        
-        public string GetPPTDetails(string MerchantID, string MerchantPWD, string PolicyNo) {
-            return base.Channel.GetPPTDetails(MerchantID, MerchantPWD, PolicyNo);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetPPTDetailsAsync(string MerchantID, string MerchantPWD, string PolicyNo) {
-            return base.Channel.GetPPTDetailsAsync(MerchantID, MerchantPWD, PolicyNo);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostMarineRecAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.POSTBrokerMotorRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource request) {
+        CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostTravel2Raga(CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest request) {
+            return base.Channel.PostTravel2Raga(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.certificate_out PostTravel2Raga(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+            CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequestBody();
+            inValue.Body.start_date = start_date;
+            inValue.Body.end_date = end_date;
+            inValue.Body.first_name = first_name;
+            inValue.Body.last_name = last_name;
+            inValue.Body.Area_Type = Area_Type;
+            inValue.Body.num_passport = num_passport;
+            inValue.Body.date_birth = date_birth;
+            inValue.Body.nationality = nationality;
+            inValue.Body.country_residence = country_residence;
+            inValue.Body.email = email;
+            inValue.Body.country_destination = country_destination;
+            CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostTravel2Raga(inValue);
+            return retVal.Body.PostTravel2RagaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostTravel2RagaAsync(CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest request) {
+            return base.Channel.PostTravel2RagaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaResponse> PostTravel2RagaAsync(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+            CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequestBody();
+            inValue.Body.start_date = start_date;
+            inValue.Body.end_date = end_date;
+            inValue.Body.first_name = first_name;
+            inValue.Body.last_name = last_name;
+            inValue.Body.Area_Type = Area_Type;
+            inValue.Body.num_passport = num_passport;
+            inValue.Body.date_birth = date_birth;
+            inValue.Body.nationality = nationality;
+            inValue.Body.country_residence = country_residence;
+            inValue.Body.email = email;
+            inValue.Body.country_destination = country_destination;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostTravel2RagaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTBrokerMotorRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource request) {
             return base.Channel.POSTBrokerMotorRec(request);
         }
         
@@ -6772,12 +13992,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.CommRate = CommRate;
             inValue.PremRate = PremRate;
             inValue.RenewPolNo = RenewPolNo;
-            CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).POSTBrokerMotorRec(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTBrokerMotorRec(inValue);
             return retVal.Passing_Broker_Motor_PostSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.POSTBrokerMotorRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTBrokerMotorRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor_PostSource request) {
             return base.Channel.POSTBrokerMotorRecAsync(request);
         }
         
@@ -6841,11 +14061,11 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.CommRate = CommRate;
             inValue.PremRate = PremRate;
             inValue.RenewPolNo = RenewPolNo;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).POSTBrokerMotorRecAsync(inValue);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTBrokerMotorRecAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.POSTBrokerTravelRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource request) {
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTBrokerTravelRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource request) {
             return base.Channel.POSTBrokerTravelRec(request);
         }
         
@@ -6915,12 +14135,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.PremRate = PremRate;
             inValue.RenewPolNo = RenewPolNo;
             inValue.OtherCountry = OtherCountry;
-            CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).POSTBrokerTravelRec(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTBrokerTravelRec(inValue);
             return retVal.Passing_Broker_Travel_PostSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.POSTBrokerTravelRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTBrokerTravelRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Travel_PostSource request) {
             return base.Channel.POSTBrokerTravelRecAsync(request);
         }
         
@@ -6990,19 +14210,52 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.PremRate = PremRate;
             inValue.RenewPolNo = RenewPolNo;
             inValue.OtherCountry = OtherCountry;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).POSTBrokerTravelRecAsync(inValue);
-        }
-        
-        public string GetBrokerMotorQuote(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC, string PremiumRate) {
-            return base.Channel.GetBrokerMotorQuote(TypeOfCover, VehicleCategory, VehicleValue, PaymentOpt, Excess, Tracking, Flood, SRCC, PremiumRate);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetBrokerMotorQuoteAsync(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC, string PremiumRate) {
-            return base.Channel.GetBrokerMotorQuoteAsync(TypeOfCover, VehicleCategory, VehicleValue, PaymentOpt, Excess, Tracking, Flood, SRCC, PremiumRate);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTBrokerTravelRecAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.PostBrokerHouseHolder(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource request) {
+        CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetBrokerMotorQuote(CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteRequest request) {
+            return base.Channel.GetBrokerMotorQuote(request);
+        }
+        
+        public string GetBrokerMotorQuote(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC, string PremiumRate) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteRequestBody();
+            inValue.Body.TypeOfCover = TypeOfCover;
+            inValue.Body.VehicleCategory = VehicleCategory;
+            inValue.Body.VehicleValue = VehicleValue;
+            inValue.Body.PaymentOpt = PaymentOpt;
+            inValue.Body.Excess = Excess;
+            inValue.Body.Tracking = Tracking;
+            inValue.Body.Flood = Flood;
+            inValue.Body.SRCC = SRCC;
+            inValue.Body.PremiumRate = PremiumRate;
+            CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetBrokerMotorQuote(inValue);
+            return retVal.Body.GetBrokerMotorQuoteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetBrokerMotorQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteRequest request) {
+            return base.Channel.GetBrokerMotorQuoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteResponse> GetBrokerMotorQuoteAsync(string TypeOfCover, string VehicleCategory, string VehicleValue, string PaymentOpt, string Excess, string Tracking, string Flood, string SRCC, string PremiumRate) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetBrokerMotorQuoteRequestBody();
+            inValue.Body.TypeOfCover = TypeOfCover;
+            inValue.Body.VehicleCategory = VehicleCategory;
+            inValue.Body.VehicleValue = VehicleValue;
+            inValue.Body.PaymentOpt = PaymentOpt;
+            inValue.Body.Excess = Excess;
+            inValue.Body.Tracking = Tracking;
+            inValue.Body.Flood = Flood;
+            inValue.Body.SRCC = SRCC;
+            inValue.Body.PremiumRate = PremiumRate;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetBrokerMotorQuoteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostBrokerHouseHolder(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource request) {
             return base.Channel.PostBrokerHouseHolder(request);
         }
         
@@ -7056,12 +14309,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.CommRate = CommRate;
             inValue.PremRate = PremRate;
             inValue.RenewPolNo = RenewPolNo;
-            CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).PostBrokerHouseHolder(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostBrokerHouseHolder(inValue);
             return retVal.Passing_Broker_HouseHolder_PostSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.PostBrokerHouseHolderAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostBrokerHouseHolderAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_HouseHolder_PostSource request) {
             return base.Channel.PostBrokerHouseHolderAsync(request);
         }
         
@@ -7115,19 +14368,52 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.CommRate = CommRate;
             inValue.PremRate = PremRate;
             inValue.RenewPolNo = RenewPolNo;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).PostBrokerHouseHolderAsync(inValue);
-        }
-        
-        public string GetHouseHolderQuote(string PaymentOption, decimal GenPremRt, decimal AllPremRt, decimal BuildPremRt, decimal ContentPremRt, decimal GeneratorAmt, decimal AllriskAmt, decimal BuildingAmt, decimal ContentAmt) {
-            return base.Channel.GetHouseHolderQuote(PaymentOption, GenPremRt, AllPremRt, BuildPremRt, ContentPremRt, GeneratorAmt, AllriskAmt, BuildingAmt, ContentAmt);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetHouseHolderQuoteAsync(string PaymentOption, decimal GenPremRt, decimal AllPremRt, decimal BuildPremRt, decimal ContentPremRt, decimal GeneratorAmt, decimal AllriskAmt, decimal BuildingAmt, decimal ContentAmt) {
-            return base.Channel.GetHouseHolderQuoteAsync(PaymentOption, GenPremRt, AllPremRt, BuildPremRt, ContentPremRt, GeneratorAmt, AllriskAmt, BuildingAmt, ContentAmt);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostBrokerHouseHolderAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterResponse CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.SubmitClaimRegister1(CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterRequest request) {
+        CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetHouseHolderQuote(CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteRequest request) {
+            return base.Channel.GetHouseHolderQuote(request);
+        }
+        
+        public string GetHouseHolderQuote(string PaymentOption, decimal GenPremRt, decimal AllPremRt, decimal BuildPremRt, decimal ContentPremRt, decimal GeneratorAmt, decimal AllriskAmt, decimal BuildingAmt, decimal ContentAmt) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteRequestBody();
+            inValue.Body.PaymentOption = PaymentOption;
+            inValue.Body.GenPremRt = GenPremRt;
+            inValue.Body.AllPremRt = AllPremRt;
+            inValue.Body.BuildPremRt = BuildPremRt;
+            inValue.Body.ContentPremRt = ContentPremRt;
+            inValue.Body.GeneratorAmt = GeneratorAmt;
+            inValue.Body.AllriskAmt = AllriskAmt;
+            inValue.Body.BuildingAmt = BuildingAmt;
+            inValue.Body.ContentAmt = ContentAmt;
+            CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetHouseHolderQuote(inValue);
+            return retVal.Body.GetHouseHolderQuoteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetHouseHolderQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteRequest request) {
+            return base.Channel.GetHouseHolderQuoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteResponse> GetHouseHolderQuoteAsync(string PaymentOption, decimal GenPremRt, decimal AllPremRt, decimal BuildPremRt, decimal ContentPremRt, decimal GeneratorAmt, decimal AllriskAmt, decimal BuildingAmt, decimal ContentAmt) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetHouseHolderQuoteRequestBody();
+            inValue.Body.PaymentOption = PaymentOption;
+            inValue.Body.GenPremRt = GenPremRt;
+            inValue.Body.AllPremRt = AllPremRt;
+            inValue.Body.BuildPremRt = BuildPremRt;
+            inValue.Body.ContentPremRt = ContentPremRt;
+            inValue.Body.GeneratorAmt = GeneratorAmt;
+            inValue.Body.AllriskAmt = AllriskAmt;
+            inValue.Body.BuildingAmt = BuildingAmt;
+            inValue.Body.ContentAmt = ContentAmt;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetHouseHolderQuoteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.SubmitClaimRegister1(CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterRequest request) {
             return base.Channel.SubmitClaimRegister1(request);
         }
         
@@ -7142,12 +14428,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.PolicyNo = PolicyNo;
             inValue.lossDescription = lossDescription;
             inValue.DateofLoss = DateofLoss;
-            CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).SubmitClaimRegister1(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).SubmitClaimRegister1(inValue);
             return retVal.SubmitClaimRegisterResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterResponse> CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap.SubmitClaimRegister1Async(CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterRequest request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.SubmitClaimRegister1Async(CustodianEveryWhereV2._0.CustodianAPI.SubmitClaimRegisterRequest request) {
             return base.Channel.SubmitClaimRegister1Async(request);
         }
         
@@ -7162,87 +14448,398 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.PolicyNo = PolicyNo;
             inValue.lossDescription = lossDescription;
             inValue.DateofLoss = DateofLoss;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.CustodianEverywhereAPISoap)(this)).SubmitClaimRegister1Async(inValue);
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).SubmitClaimRegister1Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostClaimsUpdate(CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateRequest request) {
+            return base.Channel.PostClaimsUpdate(request);
         }
         
         public CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus PostClaimsUpdate(string MerchantID, string MerchantPWD, string ClaimNo, string ClaimStatusCode) {
-            return base.Channel.PostClaimsUpdate(MerchantID, MerchantPWD, ClaimNo, ClaimStatusCode);
+            CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.ClaimNo = ClaimNo;
+            inValue.Body.ClaimStatusCode = ClaimStatusCode;
+            CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostClaimsUpdate(inValue);
+            return retVal.Body.PostClaimsUpdateResult;
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.ClaimRegStatus> PostClaimsUpdateAsync(string MerchantID, string MerchantPWD, string ClaimNo, string ClaimStatusCode) {
-            return base.Channel.PostClaimsUpdateAsync(MerchantID, MerchantPWD, ClaimNo, ClaimStatusCode);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostClaimsUpdateAsync(CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateRequest request) {
+            return base.Channel.PostClaimsUpdateAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateResponse> PostClaimsUpdateAsync(string MerchantID, string MerchantPWD, string ClaimNo, string ClaimStatusCode) {
+            CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostClaimsUpdateRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.ClaimNo = ClaimNo;
+            inValue.Body.ClaimStatusCode = ClaimStatusCode;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostClaimsUpdateAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetMorePolicyDetails(CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsRequest request) {
+            return base.Channel.GetMorePolicyDetails(request);
         }
         
         public CustodianEveryWhereV2._0.CustodianAPI.MorePolicyDetails GetMorePolicyDetails(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
-            return base.Channel.GetMorePolicyDetails(MerchantID, MerchantPWD, Subsidiary, PolicyNumber);
+            CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.PolicyNumber = PolicyNumber;
+            CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetMorePolicyDetails(inValue);
+            return retVal.Body.GetMorePolicyDetailsResult;
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.MorePolicyDetails> GetMorePolicyDetailsAsync(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
-            return base.Channel.GetMorePolicyDetailsAsync(MerchantID, MerchantPWD, Subsidiary, PolicyNumber);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetMorePolicyDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsRequest request) {
+            return base.Channel.GetMorePolicyDetailsAsync(request);
         }
         
-        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActivePolicies(string MDescription, string userid) {
-            return base.Channel.GetCRM_ActivePolicies(MDescription, userid);
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsResponse> GetMorePolicyDetailsAsync(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetMorePolicyDetailsRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.PolicyNumber = PolicyNumber;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetMorePolicyDetailsAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_ActivePoliciesAsync(string MDescription, string userid) {
-            return base.Channel.GetCRM_ActivePoliciesAsync(MDescription, userid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_ActivePolicies(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesRequest request) {
+            return base.Channel.GetCRM_ActivePolicies(request);
         }
         
-        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_Customers(string MDescription, string userid) {
-            return base.Channel.GetCRM_Customers(MDescription, userid);
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActivePolicies(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_ActivePolicies(inValue);
+            return retVal.Body.GetCRM_ActivePoliciesResult;
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_CustomersAsync(string MDescription, string userid) {
-            return base.Channel.GetCRM_CustomersAsync(MDescription, userid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_ActivePoliciesAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesRequest request) {
+            return base.Channel.GetCRM_ActivePoliciesAsync(request);
         }
         
-        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActiveCustomers(string MDescription, string userid) {
-            return base.Channel.GetCRM_ActiveCustomers(MDescription, userid);
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesResponse> GetCRM_ActivePoliciesAsync(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActivePoliciesRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_ActivePoliciesAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_ActiveCustomersAsync(string MDescription, string userid) {
-            return base.Channel.GetCRM_ActiveCustomersAsync(MDescription, userid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_Customers(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersRequest request) {
+            return base.Channel.GetCRM_Customers(request);
         }
         
-        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_AllPolicies(string MDescription, string userid) {
-            return base.Channel.GetCRM_AllPolicies(MDescription, userid);
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_Customers(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_Customers(inValue);
+            return retVal.Body.GetCRM_CustomersResult;
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[]> GetCRM_AllPoliciesAsync(string MDescription, string userid) {
-            return base.Channel.GetCRM_AllPoliciesAsync(MDescription, userid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_CustomersAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersRequest request) {
+            return base.Channel.GetCRM_CustomersAsync(request);
         }
         
-        public CustodianEveryWhereV2._0.CustodianAPI.Crm_Renewal[] GetCRM_PolicyRenewal(string MDescription, string userid) {
-            return base.Channel.GetCRM_PolicyRenewal(MDescription, userid);
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersResponse> GetCRM_CustomersAsync(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_CustomersRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_CustomersAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_Renewal[]> GetCRM_PolicyRenewalAsync(string MDescription, string userid) {
-            return base.Channel.GetCRM_PolicyRenewalAsync(MDescription, userid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_ActiveCustomers(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersRequest request) {
+            return base.Channel.GetCRM_ActiveCustomers(request);
         }
         
-        public CustodianEveryWhereV2._0.CustodianAPI.Crm_Birthday[] GetCRM_Birthday(string MDescription, string userid) {
-            return base.Channel.GetCRM_Birthday(MDescription, userid);
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_ActiveCustomers(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_ActiveCustomers(inValue);
+            return retVal.Body.GetCRM_ActiveCustomersResult;
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Crm_Birthday[]> GetCRM_BirthdayAsync(string MDescription, string userid) {
-            return base.Channel.GetCRM_BirthdayAsync(MDescription, userid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_ActiveCustomersAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersRequest request) {
+            return base.Channel.GetCRM_ActiveCustomersAsync(request);
         }
         
-        public CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims[] GetCRM_Claims(string MDescription, string userid) {
-            return base.Channel.GetCRM_Claims(MDescription, userid);
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersResponse> GetCRM_ActiveCustomersAsync(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ActiveCustomersRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_ActiveCustomersAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims[]> GetCRM_ClaimsAsync(string MDescription, string userid) {
-            return base.Channel.GetCRM_ClaimsAsync(MDescription, userid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_AllPolicies(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesRequest request) {
+            return base.Channel.GetCRM_AllPolicies(request);
         }
         
-        public CustodianEveryWhereV2._0.CustodianAPI.CRM_Dashboard[] GetCRM_DashBoard(string MDescription, string userid) {
-            return base.Channel.GetCRM_DashBoard(MDescription, userid);
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_PolicyInfo[] GetCRM_AllPolicies(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_AllPolicies(inValue);
+            return retVal.Body.GetCRM_AllPoliciesResult;
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.CRM_Dashboard[]> GetCRM_DashBoardAsync(string MDescription, string userid) {
-            return base.Channel.GetCRM_DashBoardAsync(MDescription, userid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_AllPoliciesAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesRequest request) {
+            return base.Channel.GetCRM_AllPoliciesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesResponse> GetCRM_AllPoliciesAsync(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_AllPoliciesRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_AllPoliciesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_PolicyRenewal(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalRequest request) {
+            return base.Channel.GetCRM_PolicyRenewal(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_Renewal[] GetCRM_PolicyRenewal(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_PolicyRenewal(inValue);
+            return retVal.Body.GetCRM_PolicyRenewalResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_PolicyRenewalAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalRequest request) {
+            return base.Channel.GetCRM_PolicyRenewalAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalResponse> GetCRM_PolicyRenewalAsync(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyRenewalRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_PolicyRenewalAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_Birthday(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayRequest request) {
+            return base.Channel.GetCRM_Birthday(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.Crm_Birthday[] GetCRM_Birthday(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_Birthday(inValue);
+            return retVal.Body.GetCRM_BirthdayResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_BirthdayAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayRequest request) {
+            return base.Channel.GetCRM_BirthdayAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayResponse> GetCRM_BirthdayAsync(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BirthdayRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_BirthdayAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_Claims(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequest request) {
+            return base.Channel.GetCRM_Claims(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims[] GetCRM_Claims(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_Claims(inValue);
+            return retVal.Body.GetCRM_ClaimsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_ClaimsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequest request) {
+            return base.Channel.GetCRM_ClaimsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsResponse> GetCRM_ClaimsAsync(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_ClaimsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_DashBoard(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequest request) {
+            return base.Channel.GetCRM_DashBoard(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_Dashboard[] GetCRM_DashBoard(string MDescription, string userid, string Subsidiary, string BusinessUnit) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_DashBoard(inValue);
+            return retVal.Body.GetCRM_DashBoardResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_DashBoardAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequest request) {
+            return base.Channel.GetCRM_DashBoardAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardResponse> GetCRM_DashBoardAsync(string MDescription, string userid, string Subsidiary, string BusinessUnit) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.userid = userid;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_DashBoardAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_PolicyDetail(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailRequest request) {
+            return base.Channel.GetCRM_PolicyDetail(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_PolicyDetail[] GetCRM_PolicyDetail(string CustomerID, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailRequestBody();
+            inValue.Body.CustomerID = CustomerID;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_PolicyDetail(inValue);
+            return retVal.Body.GetCRM_PolicyDetailResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_PolicyDetailAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailRequest request) {
+            return base.Channel.GetCRM_PolicyDetailAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailResponse> GetCRM_PolicyDetailAsync(string CustomerID, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_PolicyDetailRequestBody();
+            inValue.Body.CustomerID = CustomerID;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_PolicyDetailAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_ClaimsDetail(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailRequest request) {
+            return base.Channel.GetCRM_ClaimsDetail(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_ClaimsDetail[] GetCRM_ClaimsDetail(string CustomerID, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailRequestBody();
+            inValue.Body.CustomerID = CustomerID;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_ClaimsDetail(inValue);
+            return retVal.Body.GetCRM_ClaimsDetailResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_ClaimsDetailAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailRequest request) {
+            return base.Channel.GetCRM_ClaimsDetailAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailResponse> GetCRM_ClaimsDetailAsync(string CustomerID, string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsDetailRequestBody();
+            inValue.Body.CustomerID = CustomerID;
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_ClaimsDetailAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.ABSMotorInterest(CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestRequest request) {
+            return base.Channel.ABSMotorInterest(request);
         }
         
         public string ABSMotorInterest(
@@ -7272,11 +14869,48 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     decimal MOT_FLOOD_RATE, 
                     decimal MOT_EQUAKE_RATE, 
                     decimal MOT_OTHER_RATE, 
-                    string MOT_USERID) {
-            return base.Channel.ABSMotorInterest(MERCHANTID, MERCHANTPWD, MOT_POL_NUM, MOT_REG_NUM, MOT_USER_NAME, MOT_START_DATE, MOT_END_DATE, MOT_HP_CC, MOT_ENGINE_NUM, MOT_CHASSIS_NUM, MOT_MANUF_YEAR, MOT_VEH_COLOR, MOT_VEH_MAKE, MOT_VEH_TYPE, MOT_VEH_VALUE, MOT_VEH_PREM, MOT_VEH_RATE, MOT_FLEET_RATE, MOT_SPECIAL_RATE, MOT_EXCESS_BY_BACK, MOT_RISK_DAYS, MOT_TPPD_VALUE, MOT_SRCC_RATE, MOT_FLOOD_RATE, MOT_EQUAKE_RATE, MOT_OTHER_RATE, MOT_USERID);
+                    string MOT_USERID, 
+                    string MOT_COVER_TYPE) {
+            CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestRequestBody();
+            inValue.Body.MERCHANTID = MERCHANTID;
+            inValue.Body.MERCHANTPWD = MERCHANTPWD;
+            inValue.Body.MOT_POL_NUM = MOT_POL_NUM;
+            inValue.Body.MOT_REG_NUM = MOT_REG_NUM;
+            inValue.Body.MOT_USER_NAME = MOT_USER_NAME;
+            inValue.Body.MOT_START_DATE = MOT_START_DATE;
+            inValue.Body.MOT_END_DATE = MOT_END_DATE;
+            inValue.Body.MOT_HP_CC = MOT_HP_CC;
+            inValue.Body.MOT_ENGINE_NUM = MOT_ENGINE_NUM;
+            inValue.Body.MOT_CHASSIS_NUM = MOT_CHASSIS_NUM;
+            inValue.Body.MOT_MANUF_YEAR = MOT_MANUF_YEAR;
+            inValue.Body.MOT_VEH_COLOR = MOT_VEH_COLOR;
+            inValue.Body.MOT_VEH_MAKE = MOT_VEH_MAKE;
+            inValue.Body.MOT_VEH_TYPE = MOT_VEH_TYPE;
+            inValue.Body.MOT_VEH_VALUE = MOT_VEH_VALUE;
+            inValue.Body.MOT_VEH_PREM = MOT_VEH_PREM;
+            inValue.Body.MOT_VEH_RATE = MOT_VEH_RATE;
+            inValue.Body.MOT_FLEET_RATE = MOT_FLEET_RATE;
+            inValue.Body.MOT_SPECIAL_RATE = MOT_SPECIAL_RATE;
+            inValue.Body.MOT_EXCESS_BY_BACK = MOT_EXCESS_BY_BACK;
+            inValue.Body.MOT_RISK_DAYS = MOT_RISK_DAYS;
+            inValue.Body.MOT_TPPD_VALUE = MOT_TPPD_VALUE;
+            inValue.Body.MOT_SRCC_RATE = MOT_SRCC_RATE;
+            inValue.Body.MOT_FLOOD_RATE = MOT_FLOOD_RATE;
+            inValue.Body.MOT_EQUAKE_RATE = MOT_EQUAKE_RATE;
+            inValue.Body.MOT_OTHER_RATE = MOT_OTHER_RATE;
+            inValue.Body.MOT_USERID = MOT_USERID;
+            inValue.Body.MOT_COVER_TYPE = MOT_COVER_TYPE;
+            CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).ABSMotorInterest(inValue);
+            return retVal.Body.ABSMotorInterestResult;
         }
         
-        public System.Threading.Tasks.Task<string> ABSMotorInterestAsync(
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.ABSMotorInterestAsync(CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestRequest request) {
+            return base.Channel.ABSMotorInterestAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestResponse> ABSMotorInterestAsync(
                     string MERCHANTID, 
                     string MERCHANTPWD, 
                     string MOT_POL_NUM, 
@@ -7303,8 +14937,412 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     decimal MOT_FLOOD_RATE, 
                     decimal MOT_EQUAKE_RATE, 
                     decimal MOT_OTHER_RATE, 
-                    string MOT_USERID) {
-            return base.Channel.ABSMotorInterestAsync(MERCHANTID, MERCHANTPWD, MOT_POL_NUM, MOT_REG_NUM, MOT_USER_NAME, MOT_START_DATE, MOT_END_DATE, MOT_HP_CC, MOT_ENGINE_NUM, MOT_CHASSIS_NUM, MOT_MANUF_YEAR, MOT_VEH_COLOR, MOT_VEH_MAKE, MOT_VEH_TYPE, MOT_VEH_VALUE, MOT_VEH_PREM, MOT_VEH_RATE, MOT_FLEET_RATE, MOT_SPECIAL_RATE, MOT_EXCESS_BY_BACK, MOT_RISK_DAYS, MOT_TPPD_VALUE, MOT_SRCC_RATE, MOT_FLOOD_RATE, MOT_EQUAKE_RATE, MOT_OTHER_RATE, MOT_USERID);
+                    string MOT_USERID, 
+                    string MOT_COVER_TYPE) {
+            CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.ABSMotorInterestRequestBody();
+            inValue.Body.MERCHANTID = MERCHANTID;
+            inValue.Body.MERCHANTPWD = MERCHANTPWD;
+            inValue.Body.MOT_POL_NUM = MOT_POL_NUM;
+            inValue.Body.MOT_REG_NUM = MOT_REG_NUM;
+            inValue.Body.MOT_USER_NAME = MOT_USER_NAME;
+            inValue.Body.MOT_START_DATE = MOT_START_DATE;
+            inValue.Body.MOT_END_DATE = MOT_END_DATE;
+            inValue.Body.MOT_HP_CC = MOT_HP_CC;
+            inValue.Body.MOT_ENGINE_NUM = MOT_ENGINE_NUM;
+            inValue.Body.MOT_CHASSIS_NUM = MOT_CHASSIS_NUM;
+            inValue.Body.MOT_MANUF_YEAR = MOT_MANUF_YEAR;
+            inValue.Body.MOT_VEH_COLOR = MOT_VEH_COLOR;
+            inValue.Body.MOT_VEH_MAKE = MOT_VEH_MAKE;
+            inValue.Body.MOT_VEH_TYPE = MOT_VEH_TYPE;
+            inValue.Body.MOT_VEH_VALUE = MOT_VEH_VALUE;
+            inValue.Body.MOT_VEH_PREM = MOT_VEH_PREM;
+            inValue.Body.MOT_VEH_RATE = MOT_VEH_RATE;
+            inValue.Body.MOT_FLEET_RATE = MOT_FLEET_RATE;
+            inValue.Body.MOT_SPECIAL_RATE = MOT_SPECIAL_RATE;
+            inValue.Body.MOT_EXCESS_BY_BACK = MOT_EXCESS_BY_BACK;
+            inValue.Body.MOT_RISK_DAYS = MOT_RISK_DAYS;
+            inValue.Body.MOT_TPPD_VALUE = MOT_TPPD_VALUE;
+            inValue.Body.MOT_SRCC_RATE = MOT_SRCC_RATE;
+            inValue.Body.MOT_FLOOD_RATE = MOT_FLOOD_RATE;
+            inValue.Body.MOT_EQUAKE_RATE = MOT_EQUAKE_RATE;
+            inValue.Body.MOT_OTHER_RATE = MOT_OTHER_RATE;
+            inValue.Body.MOT_USERID = MOT_USERID;
+            inValue.Body.MOT_COVER_TYPE = MOT_COVER_TYPE;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).ABSMotorInterestAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTNNPCTravelRec(CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource request) {
+            return base.Channel.POSTNNPCTravelRec(request);
+        }
+        
+        public string POSTNNPCTravelRec(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string Title, 
+                    string Surname, 
+                    string FirstName, 
+                    System.DateTime Dateofbirth, 
+                    string Gender, 
+                    string Nationality, 
+                    string IdentificationType, 
+                    string IdentificationNo, 
+                    string Occupation, 
+                    string PhoneNo, 
+                    string Email, 
+                    string Address, 
+                    string TravelType, 
+                    string TravelDestination, 
+                    System.DateTime TravelerDOB, 
+                    string PeriodofInsurance, 
+                    string Purposeoftrip, 
+                    System.DateTime DepartureDate, 
+                    System.DateTime ReturnDate, 
+                    decimal totalCost, 
+                    string ChildU18, 
+                    string GroupCount, 
+                    string ReferenceNo, 
+                    string PostSource, 
+                    string BrokerID, 
+                    string CommRate, 
+                    string PremRate, 
+                    string OtherCountry, 
+                    string PolicyNo, 
+                    string mCompany) {
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource inValue = new CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource();
+            inValue.MerchantID = MerchantID;
+            inValue.Mpassword = Mpassword;
+            inValue.Title = Title;
+            inValue.Surname = Surname;
+            inValue.FirstName = FirstName;
+            inValue.Dateofbirth = Dateofbirth;
+            inValue.Gender = Gender;
+            inValue.Nationality = Nationality;
+            inValue.IdentificationType = IdentificationType;
+            inValue.IdentificationNo = IdentificationNo;
+            inValue.Occupation = Occupation;
+            inValue.PhoneNo = PhoneNo;
+            inValue.Email = Email;
+            inValue.Address = Address;
+            inValue.TravelType = TravelType;
+            inValue.TravelDestination = TravelDestination;
+            inValue.TravelerDOB = TravelerDOB;
+            inValue.PeriodofInsurance = PeriodofInsurance;
+            inValue.Purposeoftrip = Purposeoftrip;
+            inValue.DepartureDate = DepartureDate;
+            inValue.ReturnDate = ReturnDate;
+            inValue.totalCost = totalCost;
+            inValue.ChildU18 = ChildU18;
+            inValue.GroupCount = GroupCount;
+            inValue.ReferenceNo = ReferenceNo;
+            inValue.PostSource = PostSource;
+            inValue.BrokerID = BrokerID;
+            inValue.CommRate = CommRate;
+            inValue.PremRate = PremRate;
+            inValue.OtherCountry = OtherCountry;
+            inValue.PolicyNo = PolicyNo;
+            inValue.mCompany = mCompany;
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTNNPCTravelRec(inValue);
+            return retVal.Passing_NNPC_Travel_PostSourceResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTNNPCTravelRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource request) {
+            return base.Channel.POSTNNPCTravelRecAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource1> POSTNNPCTravelRecAsync(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string Title, 
+                    string Surname, 
+                    string FirstName, 
+                    System.DateTime Dateofbirth, 
+                    string Gender, 
+                    string Nationality, 
+                    string IdentificationType, 
+                    string IdentificationNo, 
+                    string Occupation, 
+                    string PhoneNo, 
+                    string Email, 
+                    string Address, 
+                    string TravelType, 
+                    string TravelDestination, 
+                    System.DateTime TravelerDOB, 
+                    string PeriodofInsurance, 
+                    string Purposeoftrip, 
+                    System.DateTime DepartureDate, 
+                    System.DateTime ReturnDate, 
+                    decimal totalCost, 
+                    string ChildU18, 
+                    string GroupCount, 
+                    string ReferenceNo, 
+                    string PostSource, 
+                    string BrokerID, 
+                    string CommRate, 
+                    string PremRate, 
+                    string OtherCountry, 
+                    string PolicyNo, 
+                    string mCompany) {
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource inValue = new CustodianEveryWhereV2._0.CustodianAPI.Passing_NNPC_Travel_PostSource();
+            inValue.MerchantID = MerchantID;
+            inValue.Mpassword = Mpassword;
+            inValue.Title = Title;
+            inValue.Surname = Surname;
+            inValue.FirstName = FirstName;
+            inValue.Dateofbirth = Dateofbirth;
+            inValue.Gender = Gender;
+            inValue.Nationality = Nationality;
+            inValue.IdentificationType = IdentificationType;
+            inValue.IdentificationNo = IdentificationNo;
+            inValue.Occupation = Occupation;
+            inValue.PhoneNo = PhoneNo;
+            inValue.Email = Email;
+            inValue.Address = Address;
+            inValue.TravelType = TravelType;
+            inValue.TravelDestination = TravelDestination;
+            inValue.TravelerDOB = TravelerDOB;
+            inValue.PeriodofInsurance = PeriodofInsurance;
+            inValue.Purposeoftrip = Purposeoftrip;
+            inValue.DepartureDate = DepartureDate;
+            inValue.ReturnDate = ReturnDate;
+            inValue.totalCost = totalCost;
+            inValue.ChildU18 = ChildU18;
+            inValue.GroupCount = GroupCount;
+            inValue.ReferenceNo = ReferenceNo;
+            inValue.PostSource = PostSource;
+            inValue.BrokerID = BrokerID;
+            inValue.CommRate = CommRate;
+            inValue.PremRate = PremRate;
+            inValue.OtherCountry = OtherCountry;
+            inValue.PolicyNo = PolicyNo;
+            inValue.mCompany = mCompany;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTNNPCTravelRecAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_ClaimCount(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountRequest request) {
+            return base.Channel.GetCRM_ClaimCount(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.ClaimCount[] GetCRM_ClaimCount(string MDescription, string ProductType, string BusinessUnit) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.ProductType = ProductType;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_ClaimCount(inValue);
+            return retVal.Body.GetCRM_ClaimCountResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_ClaimCountAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountRequest request) {
+            return base.Channel.GetCRM_ClaimCountAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountResponse> GetCRM_ClaimCountAsync(string MDescription, string ProductType, string BusinessUnit) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimCountRequestBody();
+            inValue.Body.MDescription = MDescription;
+            inValue.Body.ProductType = ProductType;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_ClaimCountAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_NIIDData(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataRequest request) {
+            return base.Channel.GetCRM_NIIDData(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.ABSNIID[] GetCRM_NIIDData(string BusinessUnit, string ABSID, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataRequestBody();
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.ABSID = ABSID;
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_NIIDData(inValue);
+            return retVal.Body.GetCRM_NIIDDataResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_NIIDDataAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataRequest request) {
+            return base.Channel.GetCRM_NIIDDataAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataResponse> GetCRM_NIIDDataAsync(string BusinessUnit, string ABSID, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_NIIDDataRequestBody();
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.ABSID = ABSID;
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_NIIDDataAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_LapseDetail(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailRequest request) {
+            return base.Channel.GetCRM_LapseDetail(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_ClaimsDetail[] GetCRM_LapseDetail(string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailRequestBody();
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_LapseDetail(inValue);
+            return retVal.Body.GetCRM_LapseDetailResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_LapseDetailAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailRequest request) {
+            return base.Channel.GetCRM_LapseDetailAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailResponse> GetCRM_LapseDetailAsync(string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_LapseDetailRequestBody();
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_LapseDetailAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetPPTDetails(CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsRequest request) {
+            return base.Channel.GetPPTDetails(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.ClientData[] GetPPTDetails(string Subsidiary, string PolicyNo) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsRequestBody();
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.PolicyNo = PolicyNo;
+            CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPPTDetails(inValue);
+            return retVal.Body.GetPPTDetailsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetPPTDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsRequest request) {
+            return base.Channel.GetPPTDetailsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsResponse> GetPPTDetailsAsync(string Subsidiary, string PolicyNo) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetPPTDetailsRequestBody();
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.PolicyNo = PolicyNo;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPPTDetailsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Response CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_Top10(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Request request) {
+            return base.Channel.GetCRM_Top10(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_Top10Det[] GetCRM_Top10(string Subsidiary, string BusinessUnit) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Request inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Request();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10RequestBody();
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Response retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_Top10(inValue);
+            return retVal.Body.GetCRM_Top10Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Response> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_Top10Async(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Request request) {
+            return base.Channel.GetCRM_Top10Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Response> GetCRM_Top10Async(string Subsidiary, string BusinessUnit) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Request inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10Request();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_Top10RequestBody();
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_Top10Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_TopProductlines(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesRequest request) {
+            return base.Channel.GetCRM_TopProductlines(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_TopProduct[] GetCRM_TopProductlines(string Subsidiary, string Products, string BusinessUnit) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesRequestBody();
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.Products = Products;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_TopProductlines(inValue);
+            return retVal.Body.GetCRM_TopProductlinesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_TopProductlinesAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesRequest request) {
+            return base.Channel.GetCRM_TopProductlinesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesResponse> GetCRM_TopProductlinesAsync(string Subsidiary, string Products, string BusinessUnit) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TopProductlinesRequestBody();
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.Products = Products;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_TopProductlinesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_TobeRenewed(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedRequest request) {
+            return base.Channel.GetCRM_TobeRenewed(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.To_be_renewed[] GetCRM_TobeRenewed(string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedRequestBody();
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_TobeRenewed(inValue);
+            return retVal.Body.GetCRM_TobeRenewedResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_TobeRenewedAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedRequest request) {
+            return base.Channel.GetCRM_TobeRenewedAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedResponse> GetCRM_TobeRenewedAsync(string Subsidiary, string BusinessUnit, string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_TobeRenewedRequestBody();
+            inValue.Body.Subsidiary = Subsidiary;
+            inValue.Body.BusinessUnit = BusinessUnit;
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_TobeRenewedAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_Broker(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequest request) {
+            return base.Channel.GetCRM_Broker(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.BrokerData[] GetCRM_Broker(string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequestBody();
+            inValue.Body.Pages = Pages;
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_Broker(inValue);
+            return retVal.Body.GetCRM_BrokerResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetCRM_BrokerAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequest request) {
+            return base.Channel.GetCRM_BrokerAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerResponse> GetCRM_BrokerAsync(string Pages) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequestBody();
+            inValue.Body.Pages = Pages;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_BrokerAsync(inValue);
         }
     }
 }
