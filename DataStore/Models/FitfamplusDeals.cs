@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataStore.Models
 {
-    public class DealsTransactionHistory
+    public class FitfamplusDeals
     {
 
         [Key]
@@ -30,17 +30,18 @@ namespace DataStore.Models
         [MaxLength(200)]
         public string marital_status { get; set; }
         public DateTime? anniversary { get; set; }
-        public int membership { get; set; }
+        public int membership_id { get; set; }
         public decimal discounted_price { get; set; }
-        public decimal discounted_percent { get; set; }
-        public DateTime purchase_date { get; set; }
+        public decimal discount_percent { get; set; }
         public DateTime start_date { get; set; }
         public DateTime end_date { get; set; }
         public decimal price { get; set; }
         [MaxLength(50)]
         public string gym { get; set; }
-        public decimal package_id { get; set; }
+        public int package_id { get; set; }
         [MaxLength(200)]
         public string reference { get; set; }
+        public string deal_description { get; set; }
+        public DateTime? transactionDate { get; set; }
     }
 }

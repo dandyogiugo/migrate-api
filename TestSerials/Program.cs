@@ -14,6 +14,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using WindowsService1.NewsAPIJob;
+using DapperLayer.Dapper.Core;
+using DapperLayer.utilities;
 
 namespace TestSerials
 {
@@ -23,20 +25,22 @@ namespace TestSerials
         {
             try
             {
+                var test = new Core<dynamic>();
+                var l = test.GetAllbyPagination(0, 20, connectionManager.sp_getall).GetAwaiter().GetResult();
 
-                var str = "2 3 1 4";
-                var arr = str.Split(' ').Select(x => Convert.ToInt32(x)).ToList();
-                List<int> newlist = new List<int>();
-                for (int i = 0; i < arr.Count(); i++)
-                {
-                    for (int k = 1 + i; k < arr.Count(); k++)
-                    {
-                        newlist.Add(arr[i] * arr[k]);
-                    }
-                    //  arr.RemoveAt(i + 1);
-                }
+                //var str = "2 3 1 4";
+                //var arr = str.Split(' ').Select(x => Convert.ToInt32(x)).ToList();
+                //List<int> newlist = new List<int>();
+                //for (int i = 0; i < arr.Count(); i++)
+                //{
+                //    for (int k = 1 + i; k < arr.Count(); k++)
+                //    {
+                //        newlist.Add(arr[i] * arr[k]);
+                //    }
+                //    //  arr.RemoveAt(i + 1);
+                //}
 
-                int min = newlist.Min();
+                //int min = newlist.Min();
 
                 //int T = Convert.ToInt32(Console.ReadLine());
                 //string cases = Console.ReadLine();
@@ -197,7 +201,7 @@ namespace TestSerials
                 //    ++i;
                 //}
                 //index.Insert(0, count);
-                NewsProcessor.GetNews();
+                //NewsProcessor.GetNews();
 
             }
             catch (Exception ex)

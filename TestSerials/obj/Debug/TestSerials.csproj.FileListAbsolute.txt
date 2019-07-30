@@ -21,7 +21,6 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Te
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\Spire.Doc.xml
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\EntityFramework.xml
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\Spire.License.xml
-C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\obj\Debug\TestSerials.csproj.TestSerials.exe.config
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\SendGrid.dll
@@ -41,3 +40,8 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Te
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\Common.Logging.Core.xml
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\Common.Logging.pdb
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\Common.Logging.xml
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\Dapper.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\DapperLayer.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\GenerateTransactionCodes.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\DapperLayer.pdb
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\Dapper.xml

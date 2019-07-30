@@ -1,0 +1,6 @@
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\bin\Release\DapperLayer.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\bin\Release\DapperLayer.pdb
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\bin\Release\Dapper.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\bin\Release\Dapper.xml
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\obj\Release\DapperLayer.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\obj\Release\DapperLayer.pdb

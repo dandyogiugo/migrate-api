@@ -585,27 +585,27 @@ namespace DataStore.ViewModels
         [Required]
         public string mobile { get; set; }
         public string marital_status { get; set; }
-        public string anniversary { get; set; }
         public int membership { get; set; }
         [Required]
         public decimal discounted_price { get; set; }
         [Required]
         public decimal discounted_percent { get; set; }
-        public string purchase_date { get; set; }
         public string start_date { get; set; }
-        public string end_date { get; set; }
         [Required]
         public decimal price { get; set; }
         [Required]
         public string gym { get; set; }
         [Required]
-        public decimal package_id { get; set; }
+        public int package_id { get; set; }
         [Required]
         public string merchant_id { get; set; }
         [Required]
         public string hash { get; set; }
         [Required]
         public string reference { get; set; }
+        public string description { get; set; }
+        public string period { get; set; }
+        public int duration { get; set; }
     }
 
     public class _MealPlan
@@ -796,6 +796,25 @@ namespace DataStore.ViewModels
         public string merchant_id { get; set; }
         [Required]
         public string hash { get; set; }
+    }
+
+    public class TelemaricResetPassword
+    {
+        public TelemaricResetPassword()
+        {
+
+        }
+
+        [Required]
+        public string email { get; set; }
+        [Required]
+        public string password { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public string hash { get; set; }
+        [Required]
+        public string OTP { get; set; }
     }
 }
 

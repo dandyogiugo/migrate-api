@@ -51,6 +51,10 @@
     <Reference Include="CustodianEmailSMSGateway">
       <HintPath>..\..\..\..\Broker\CustodianBroker\WebApplication\bin\CustodianEmailSMSGateway.dll</HintPath>
     </Reference>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -310,6 +314,7 @@
     <Compile Include="Controllers\AutoInsuranceController.cs" />
     <Compile Include="Controllers\CarTrackingController.cs" />
     <Compile Include="Controllers\ClaimsController.cs" />
+    <Compile Include="Controllers\CRMController.cs" />
     <Compile Include="Controllers\EnquiryController.cs" />
     <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\FitfamPlusController.cs" />
@@ -750,6 +755,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DapperLayer\DapperLayer.csproj">
+      <Project>{665a828c-98a3-4417-8721-bc3a9225429b}</Project>
+      <Name>DapperLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataStore\DataStore.csproj">
       <Project>{84fc4d85-940b-4a62-bdce-a9c61c2c463d}</Project>
       <Name>DataStore</Name>

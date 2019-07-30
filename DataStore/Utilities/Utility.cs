@@ -338,7 +338,7 @@ namespace DataStore.Utilities
         {
             try
             {
-                var check_user_function = await this.CheckForAssignedFunction(method_name, merchant_id);
+                var check_user_function = await CheckForAssignedFunction(method_name, merchant_id);
                 if (!check_user_function)
                 {
                     return new req_response
@@ -365,7 +365,7 @@ namespace DataStore.Utilities
                         message = "Invalid merchant Id"
                     };
                 }
-                var can_proceed = await this.ValidateHash(value_of_goods, config.secret_key, hash);
+                var can_proceed = await ValidateHash(value_of_goods, config.secret_key, hash);
                 if (!can_proceed)
                 {
                     return new req_response
@@ -882,6 +882,9 @@ namespace DataStore.Utilities
                 if (validate != null)
                 {
                     log.Info($"you have provided an valid otp {emailorphone}");
+                    validate.is_used = true;
+                    validate.is_valid = false;
+                    await _otp.Update(validate);
                     return true;
                 }
                 else

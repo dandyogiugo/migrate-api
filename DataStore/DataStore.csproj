@@ -98,7 +98,7 @@
     <Compile Include="Models\ApiMethods.cs" />
     <Compile Include="Models\AutoInsurance.cs" />
     <Compile Include="Models\BuyTrackerDevice.cs" />
-    <Compile Include="Models\DealsTransactionHistory.cs" />
+    <Compile Include="Models\FitfamplusDeals.cs" />
     <Compile Include="Models\FlightAndAirPortData.cs" />
     <Compile Include="Models\GITInsurance.cs" />
     <Compile Include="Models\JokesList.cs" />
@@ -112,6 +112,7 @@
     <Compile Include="Models\NonLifeClaimsDocument.cs" />
     <Compile Include="Models\PinnedNews.cs" />
     <Compile Include="Models\PremiumCalculatorMapping.cs" />
+    <Compile Include="Models\SafetyPlus.cs" />
     <Compile Include="Models\SelectedMealPlan.cs" />
     <Compile Include="Models\TelematicsUsers.cs" />
     <Compile Include="Models\Token.cs" />
