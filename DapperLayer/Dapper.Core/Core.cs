@@ -32,5 +32,41 @@ namespace DapperLayer.Dapper.Core
             return ret;
         }
 
+        public async Task<dynamic> SearchPager(int page, int skip, string terms, string sql)
+        {
+            IList<T> results = null;
+            dynamic obj = new ExpandoObject();
+            using (var cnn = new SqlConnection(connectionManager.connectionString()))
+            {
+                var p = new { search = terms };
+                var result = await cnn.QueryAsync<T>(sql.Trim(), p);
+                obj.count = result.Count();
+                results = result.Skip(skip).Take(page).ToList();
+            };
+
+            obj.results = results;
+            return obj;
+        }
+
+        public async Task<dynamic> GetPredictionByCustomerID(int customer_id, string sql)
+        {
+            IList<T> current = null;
+            IList<T> recommended = null;
+            dynamic obj = new ExpandoObject();
+            using (var cnn = new SqlConnection(connectionManager.connectionString()))
+            {
+                var p = new { customer_id = customer_id };
+                using (var multiple = await cnn.QueryMultipleAsync(sql.Trim(), p))
+                {
+                    recommended = multiple.Read<T>().ToList();
+                    current = multiple.Read<T>().ToList();
+                   
+                }
+            };
+
+            obj.current = current;
+            obj.recommended = recommended[0];
+            return obj;
+        }
     }
 }

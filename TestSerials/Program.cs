@@ -26,7 +26,7 @@ namespace TestSerials
             try
             {
                 var test = new Core<dynamic>();
-                var l = test.GetAllbyPagination(0, 20, connectionManager.sp_getall).GetAwaiter().GetResult();
+                var l = test.GetPredictionByCustomerID(100049357, connectionManager.recomendation).GetAwaiter().GetResult();
 
                 //var str = "2 3 1 4";
                 //var arr = str.Split(' ').Select(x => Convert.ToInt32(x)).ToList();
