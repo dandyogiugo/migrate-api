@@ -23,7 +23,7 @@ namespace DapperLayer.utilities
 
         public static string sp_getall_new = @"  SELECT  count(*)  from [ABS_MEMO].[dbo].[Product_recommender];
                                                 SELECT  result.CustomerID,Customer.FullName,Customer.Email,Customer.Phone,Customer.Occupation,Customer.Data_source,
-                                                 result.product1, result.product2, result.product3, result.product4,prod.product5, 
+                                                 result.product1, result.product2, result.product3, result.product4,result.product5, 
                                                 (SELECT count(*) FROM [ABS_MEMO].[dbo].Dim_Policies AS pol inner join [ABS_MEMO].[dbo].Dim_Product as prod 
                                                 on pol.ProdID = prod.ProductID and pol.CustomerID = result.CustomerID) as 'currentProdCount'
                                                 FROM (SELECT ROW_NUMBER() OVER (ORDER BY CustomerID) AS RowNum, * FROM [ABS_MEMO].[dbo].[Product_recommender]) AS result
