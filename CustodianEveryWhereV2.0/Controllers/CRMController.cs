@@ -56,7 +56,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 int pagesize = 30;
                 int skip = (page == 1) ? 0 : pagesize * (page - 1);
                 int limit = skip + pagesize;
-                var result = await dapper_core.GetAllbyPagination(skip, limit, connectionManager.sp_getall_new);
+                var result = await dapper_core.GetAllbyPagination(skip, string.Format(connectionManager.sp_getall_new, skip));
                 if (result == null)
                 {
                     return new
@@ -84,9 +84,10 @@ namespace CustodianEveryWhereV2._0.Controllers
                         Email = item.Email,
                         Phone = item.Phone,
                         Occupation = item.Occupation,
-                        Products = Newtonsoft.Json.JsonConvert.DeserializeObject($"['{item.product1}','{item.product2}','{item.product3}','{item.product4}','{item.product5}']"),
+                        NoOfProductRecommended = item.NoOfProductRecommended,
                         Source = item.Data_source,
-                        currentProdCount = item.currentProdCount
+                        currentProdCount = item.currentProdCount,
+                        AvgProbabiltyToBuy = item.AvgProb
                     });
                 }
                 return new { pageProps = props, dataSets = mylist };
@@ -159,9 +160,10 @@ namespace CustodianEveryWhereV2._0.Controllers
                         Email = item.Email,
                         Phone = item.Phone,
                         Occupation = item.Occupation,
-                        Products = Newtonsoft.Json.JsonConvert.DeserializeObject($"['{item.product1}','{item.product2}','{item.product3}','{item.product4}','{item.product5}']"),
+                        NoOfProductRecommended = item.NoOfProductRecommended,
                         Source = item.Data_source,
-                        currentProdCount = item.currentProdCount
+                        currentProdCount = item.currentProdCount,
+                        AvgProbabiltyToBuy = item.AvgProb
                     });
                 }
 
@@ -214,16 +216,12 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "No predicted result found"
                     };
                 }
-                List<dynamic> rec_prod = new List<dynamic>();
-                foreach (var item in result.current)
-                {
-                    rec_prod.Add(item.Product_lng_descr);
-                }
+
                 var p = new
                 {
                     customer_id = customer_id,
-                    currentProduct = rec_prod,
-                    recommendedProduct = Newtonsoft.Json.JsonConvert.DeserializeObject($"['{result.recommended.product1}','{result.recommended.product2}','{result.recommended.product3}','{result.recommended.product4}','{result.recommended.product5}']")
+                    currentProduct = result.current,
+                    recommendedProduct = result.recommended
                 };
 
                 return p;

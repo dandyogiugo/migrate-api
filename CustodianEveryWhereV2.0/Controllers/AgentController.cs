@@ -82,9 +82,9 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var request =  api.GetMorePolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.subsidiary.ToString(), pol_detials.policy_number);
+                    var request = await  api.GetMorePolicyDetailsAsync(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.subsidiary.ToString(), pol_detials.policy_number);
                     log.Info($"raw api response  {Newtonsoft.Json.JsonConvert.SerializeObject(request)}");
-                    if (request == null || request.PolicyNo == "NULL")
+                    if (request == null || request.Body.GetMorePolicyDetailsResult.PolicyNo == "NULL")
                     {
 
                         log.Info($"Invalid policy number for policy search {pol_detials.policy_number}");
@@ -99,7 +99,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     {
                         status = 200,
                         message = "policy number is valid",
-                        data = request
+                        data = request.Body
                     };
 
                 }

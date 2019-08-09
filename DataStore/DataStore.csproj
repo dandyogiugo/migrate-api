@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="context\dbcontext.cs" />
+    <Compile Include="ExtensionMethods\MyExtensions.cs" />
     <Compile Include="Irepository\Istore.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdaptLeads.cs" />

@@ -25,8 +25,16 @@ namespace TestSerials
         {
             try
             {
-                var test = new Core<dynamic>();
-                var l = test.GetPredictionByCustomerID(100049357, connectionManager.recomendation).GetAwaiter().GetResult();
+                int[] arr = { 5, 4, 2, 2, 8, 2, 3 };
+                int sum = 0;
+                for (var i = 0; i <= arr.Length - 1; ++i)
+                {
+                    sum += arr[i];
+                }
+                var d = (arr.Length * (arr.Length + 1)) / 2;
+                var dif = sum - d;
+                // var test = new Core<dynamic>();
+                // var l = test.GetPredictionByCustomerID(100049357, connectionManager.recomendation).GetAwaiter().GetResult();
 
                 //var str = "2 3 1 4";
                 //var arr = str.Split(' ').Select(x => Convert.ToInt32(x)).ToList();

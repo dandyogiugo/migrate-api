@@ -10,7 +10,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-
+using DataStore.ExtensionMethods;
 namespace CustodianEveryWhereV2._0.Controllers
 {
     public class JokesController : ApiController
@@ -92,7 +92,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 int skip = (page == 1) ? 0 : pagesize * (page - 1);
                 decimal total = Convert.ToDecimal(getjokes.Count) / Convert.ToDecimal(pagesize);
                 int totalpage = (int)Math.Ceiling(total);
-                var sortjoke = getjokes.OrderByDescending(x => x.Id).Skip(skip).Take(pagesize).Select(y => new joke
+                var sortjoke = getjokes.OrderBy(x => Guid.NewGuid()).Skip(skip).Take(pagesize).Select(y => new joke
                 {
                     youtube_url = y.youtube_link,
                     credit = y.credit,
@@ -100,7 +100,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     title = y.title,
                     JokeId = y.Id
                 }).ToList();
-
+                //sortjoke.Shuffle();
                 return new notification_response
                 {
                     status = 200,

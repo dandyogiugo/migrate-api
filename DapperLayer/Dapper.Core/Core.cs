@@ -13,13 +13,13 @@ namespace DapperLayer.Dapper.Core
 {
     public class Core<T> where T : class
     {
-        public async Task<dynamic> GetAllbyPagination(int offset, int limit, string sql)
+        public async Task<dynamic> GetAllbyPagination(int limit, string sql)
         {
             IList<int> count = null;
             IList<T> results = null;
             using (var cnn = new SqlConnection(connectionManager.connectionString()))
             {
-                var p = new { offset = offset, limit = limit };
+                var p = new { limit = limit };
                 using (var multiple = await cnn.QueryMultipleAsync(sql.Trim(), p))
                 {
                     count = multiple.Read<int>().ToList();
@@ -65,7 +65,7 @@ namespace DapperLayer.Dapper.Core
             };
 
             obj.current = current;
-            obj.recommended = recommended[0];
+            obj.recommended = recommended;
             return obj;
         }
     }
