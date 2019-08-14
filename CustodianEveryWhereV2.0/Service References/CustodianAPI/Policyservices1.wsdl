@@ -3902,10 +3902,10 @@
   </wsdl:binding>
   <wsdl:service name="PolicyServices">
     <wsdl:port name="PolicyServicesSoap" binding="tns:PolicyServicesSoap">
-      <soap:address location="https://developers.custodianplc.com.ng/testapi/Policyservices.asmx" />
+      <soap:address location="https://developers.custodianplc.com.ng/api/Policyservices.asmx" />
     </wsdl:port>
     <wsdl:port name="PolicyServicesSoap12" binding="tns:PolicyServicesSoap12">
-      <soap12:address location="https://developers.custodianplc.com.ng/testapi/Policyservices.asmx" />
+      <soap12:address location="https://developers.custodianplc.com.ng/api/Policyservices.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

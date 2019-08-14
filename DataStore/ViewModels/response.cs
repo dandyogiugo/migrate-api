@@ -227,4 +227,34 @@ namespace DataStore.ViewModels
         public string credit { get; set; }
         public string title { get; set; }
     }
+
+    public class TransPoseGetPolicyDetails
+    {
+        public string policyNoField { get; set; }
+        public string policyEBusinessField { get; set; }
+        public string agenctNumField { get; set; }
+        public string agenctNameField { get; set; }
+        public string insuredNumField { get; set; }
+        public string insuredNameField { get; set; }
+        public string insuredOthNameField { get; set; }
+        public string insAddr1Field { get; set; }
+        public string insAddr2Field { get; set; }
+        public string insAddr3Field { get; set; }
+        public string telNumField { get; set; }
+        public string insuredTelNumField { get; set; }
+        public string insuredEmailField { get; set; }
+        public DateTime dOBField { get; set; }
+        public string insStateField { get; set; }
+        public string insLGAField { get; set; }
+        public string bizUnitField { get; set; }
+        public string insOccupField { get; set; }
+        public string bizBranchField { get; set; }
+        public DateTime startdateField { get; set; }
+        public DateTime enddateField { get; set; }
+        public decimal sumInsField { get; set; }
+        public decimal mPremiumField { get; set; }
+        public decimal outPremiumField { get; set; }
+        public decimal instPremiumField { get; set; }
+        public object PropertyChanged { get; set; }
+    }
 }

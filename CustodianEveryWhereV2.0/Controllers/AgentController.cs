@@ -82,9 +82,9 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var request = await  api.GetMorePolicyDetailsAsync(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.subsidiary.ToString(), pol_detials.policy_number);
+                    var request = api.GetMorePolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.subsidiary.ToString(), pol_detials.policy_number);
                     log.Info($"raw api response  {Newtonsoft.Json.JsonConvert.SerializeObject(request)}");
-                    if (request == null || request.Body.GetMorePolicyDetailsResult.PolicyNo == "NULL")
+                    if (request == null || request.PolicyNo == "NULL")
                     {
 
                         log.Info($"Invalid policy number for policy search {pol_detials.policy_number}");
@@ -99,7 +99,35 @@ namespace CustodianEveryWhereV2._0.Controllers
                     {
                         status = 200,
                         message = "policy number is valid",
-                        data = request.Body
+                        data = new TransPoseGetPolicyDetails
+                        {
+                            agenctNameField = request.AgenctName?.Trim(),
+                            bizBranchField = request.BizBranch?.Trim(),
+                            dOBField = request.DOB,
+                            agenctNumField = request.AgenctNum?.Trim(),
+                            bizUnitField = request.BizUnit?.Trim(),
+                            enddateField = request.Enddate,
+                            insAddr1Field = request.InsAddr1?.Trim(),
+                            insAddr2Field = request.InsAddr2?.Trim(),
+                            insAddr3Field = request.InsAddr3?.Trim(),
+                            insLGAField = request.InsLGA?.Trim(),
+                            insOccupField = request.InsOccup?.Trim(),
+                            insStateField = request.InsState?.Trim(),
+                            instPremiumField = request.InstPremium,
+                            insuredEmailField = request.InsuredEmail?.Trim(),
+                            insuredNameField = request.InsuredName?.Trim(),
+                            insuredNumField = request.InsuredNum?.Trim(),
+                            insuredOthNameField = request.InsuredOthName?.Trim(),
+                            insuredTelNumField = request.InsuredTelNum?.Trim(),
+                            mPremiumField = request.mPremium,
+                            outPremiumField = request.OutPremium,
+                            policyEBusinessField = request.PolicyEBusiness?.Trim(),
+                            policyNoField = request.PolicyNo?.Trim(),
+                            startdateField = request.Startdate,
+                            sumInsField = request.SumIns,
+                            telNumField = request.TelNum?.Trim()
+
+                        }
                     };
 
                 }
@@ -189,7 +217,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     var request = await api.SubmitPaymentRecordAsync(GlobalConstant.merchant_id, GlobalConstant.password, post.policy_number, post.subsidiary.ToString(), post.payment_narrtn, DateTime.Now,
-                        DateTime.Now, post.reference_no, new_trans.issured_name, "", "","", new_trans.phone_no, new_trans.email_address, "", "", "", post.biz_unit, post.premium, 0, "MPOS", "RW");
+                        DateTime.Now, post.reference_no, new_trans.issured_name, "", "", "", new_trans.phone_no, new_trans.email_address, "", "", "", post.biz_unit, post.premium, 0, "MPOS", "RW");
                     log.Info($"raw response from api {request.Passing_Payment_PostSourceResult}");
                     if (string.IsNullOrEmpty(request.Passing_Payment_PostSourceResult) || request.Passing_Payment_PostSourceResult != "1")
                     {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="kD/01Gs9MJ80hko3GwsHFgBFcZA=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="M1gLrpMyZimbaxZAKojJVArEF8g=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="PolicyServicesSoap">
       <properties>
@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="PolicyServicesSoap" contract="CustodianAPI.PolicyServicesSoap" bindingType="basicHttpBinding" address="https://developers.custodianplc.com.ng/testapi/Policyservices.asmx" bindingConfiguration="PolicyServicesSoap">
+    <endpoint name="PolicyServicesSoap" contract="CustodianAPI.PolicyServicesSoap" bindingType="basicHttpBinding" address="https://developers.custodianplc.com.ng/api/Policyservices.asmx" bindingConfiguration="PolicyServicesSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://developers.custodianplc.com.ng/testapi/Policyservices.asmx</serializedValue>
+          <serializedValue>https://developers.custodianplc.com.ng/api/Policyservices.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
