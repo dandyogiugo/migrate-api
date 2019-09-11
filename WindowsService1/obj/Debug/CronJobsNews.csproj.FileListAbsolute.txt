@@ -34,9 +34,12 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Wi
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\bin\Debug\Spire.License.xml
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\bin\Debug\SendGrid.pdb
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\bin\Debug\SendGrid.xml
-C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\obj\Debug\CronJobsNews.csprojResolveAssemblyReference.cache
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\obj\Debug\WindowsService1.ProjectInstaller.resources
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\obj\Debug\CronJobsNews.csproj.GenerateResource.Cache
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\obj\Debug\WindowsService1.exe
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\obj\Debug\WindowsService1.pdb
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\bin\Debug\GenerateTransactionCodes.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\bin\Debug\DataStore.dll.config
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\obj\Debug\CronJobsNews.csprojAssemblyReference.cache
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\obj\Debug\CronJobsNews.csproj.CoreCompileInputs.cache
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\WindowsService1\obj\Debug\CronJobsNews.csproj.CopyComplete

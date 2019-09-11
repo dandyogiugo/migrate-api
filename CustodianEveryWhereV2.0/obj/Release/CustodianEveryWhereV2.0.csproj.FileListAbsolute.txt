@@ -115,7 +115,6 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Cu
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\System.Web.Http.Owin.xml
-C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.csprojResolveAssemblyReference.cache
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.pdb
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\Oracle.DataAccess.dll
@@ -126,4 +125,7 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Cu
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\DapperLayer.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\DapperLayer.pdb
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\Dapper.xml
-C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\SendGrid.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\bin\DataStore.dll.config
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.csprojAssemblyReference.cache
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.csproj.CoreCompileInputs.cache
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.csproj.CopyComplete

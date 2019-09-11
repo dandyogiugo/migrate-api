@@ -16,6 +16,7 @@ namespace DataStore.Models
         }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column(Order = 1)]
         public int Id { get; set; }
         public string title { get; set; }
         [Required]
@@ -60,6 +61,8 @@ namespace DataStore.Models
         public decimal premium { get; set; }
         [MaxLength(100)]
         [Required]
+        [Key]
+        [Column(Order = 2)]
         public string transaction_ref { get; set; }
         public string multiple_destination { get; set; }
         [MaxLength(100)]

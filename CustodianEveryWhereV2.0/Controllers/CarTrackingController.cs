@@ -7,8 +7,6 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -332,6 +330,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Permission denied from accessing this feature",
                     };
                 }
+
                 var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == tracker.merchant_id.Trim());
                 if (config == null)
                 {
@@ -343,8 +342,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                // validate hash
-                var checkhash = await util.ValidateHash2(tracker.address + tracker.customer_email, config.secret_key, tracker.hash);
+                //validate hash
+                var checkhash = await util.ValidateHash2(tracker.address + tracker.customer_email + tracker.reference, config.secret_key, tracker.hash);
                 if (!checkhash)
                 {
                     log.Info($"Hash missmatched from request {tracker.merchant_id}");
@@ -363,6 +362,17 @@ namespace CustodianEveryWhereV2._0.Controllers
                     {
                         status = 407,
                         message = "Invalid Installation date"
+                    };
+                }
+
+                var checkme = await track.FindOneByCriteria(x => x.reference.ToLower() == tracker.reference.ToLower());
+                if (checkme != null)
+                {
+                    log.Info($"duplicate request {tracker.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 300,
+                        message = "Duplicate request"
                     };
                 }
 
@@ -404,8 +414,10 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 tracker_type_id = tracker.tracker_type_id,
                                 vehicle_year = tracker.vehicle_year,
                                 vehicle_make = tracker.vehicle_make,
-                                vehicle_model = tracker.vehicle_model
+                                vehicle_model = tracker.vehicle_model,
+                                reference = tracker.reference
                             };
+
                             log.Info($"about to save to database");
                             if (await track.Save(savenew_request))
                             {

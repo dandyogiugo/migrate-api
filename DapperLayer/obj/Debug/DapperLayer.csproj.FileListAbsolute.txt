@@ -4,4 +4,6 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Da
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\bin\Debug\Dapper.xml
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\obj\Debug\DapperLayer.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\obj\Debug\DapperLayer.pdb
-C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\obj\Debug\DapperLayer.csprojResolveAssemblyReference.cache
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\obj\Debug\DapperLayer.csproj.CoreCompileInputs.cache
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\obj\Debug\DapperLayer.csproj.CopyComplete
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\obj\Debug\DapperLayer.csprojAssemblyReference.cache

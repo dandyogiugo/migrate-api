@@ -17,6 +17,7 @@ namespace DataStore.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column(Order = 1)]
         public int Id { get; set; }
         [Required]
         public decimal premium { get; set; }
@@ -50,5 +51,9 @@ namespace DataStore.Models
         public string policytype { get; set; }
         [Required]
         public string id_number { get; set; }
+        [Required]
+        [Key]
+        [Column(Order = 2)]
+        public string reference { get; set; }
     }
 }

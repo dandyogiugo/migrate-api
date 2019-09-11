@@ -17,6 +17,7 @@ namespace DataStore.Models
         }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column(Order = 1)]
         public int Id { get; set; }
         [MaxLength(200)]
         public string customer_name { get; set; }
@@ -44,6 +45,9 @@ namespace DataStore.Models
         [MaxLength(200)]
         public string vehicle_year { get; set; }
         [MaxLength(200)]
+        [Key]
+        [Column(Order = 2)]
+        [Required]
         public string reference_no { get; set; }
         [MaxLength(200)]
         public string id_type { get; set; }

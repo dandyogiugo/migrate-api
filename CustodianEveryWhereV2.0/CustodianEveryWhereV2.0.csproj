@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -328,6 +329,7 @@
     <Compile Include="Controllers\NotificationsController.cs" />
     <Compile Include="Controllers\PensionController.cs" />
     <Compile Include="Controllers\PersonalProductionController.cs" />
+    <Compile Include="Controllers\SafetyPlusController.cs" />
     <Compile Include="Controllers\TravelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -745,6 +747,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Cert\GeneratedCert\" />
+    <Folder Include="Views\SafetyPlus\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

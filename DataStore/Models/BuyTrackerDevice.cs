@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStore.Models
 {
@@ -12,6 +8,7 @@ namespace DataStore.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column(Order = 1)]
         public int Id { get; set; }
         public int tracker_type_id { get; set; }
         public string customer_name { get; set; }
@@ -28,5 +25,9 @@ namespace DataStore.Models
         public decimal annual_subscription { get; set; }
         public string vehicle_make { get; set; }
         public string vehicle_model { get; set; }
+        [Key]
+        [Required]
+        [Column(Order = 2)]
+        public string reference { get; set; }
     }
 }

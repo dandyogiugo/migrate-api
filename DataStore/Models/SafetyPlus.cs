@@ -18,6 +18,9 @@ namespace DataStore.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
+        [Required]
+        public DateTime CustomerDOB { get; set; }
         [Required]
         public string Address { get; set; }
         [Required]
@@ -50,5 +53,9 @@ namespace DataStore.Models
         public string BeneficiaryRelatn { get; set; }
         [Required]
         public string ImagePath { get; set; }
+        [Required]
+        public string IdentificationType { get; set; }
+        [Required]
+        public string IndetificationNUmber { get; set; }
     }
 }

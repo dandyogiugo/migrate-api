@@ -33,6 +33,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         {
             try
             {
+                log.Info($"Raw quote form Life {Newtonsoft.Json.JsonConvert.SerializeObject(quote)}");
                 if (!ModelState.IsValid)
                 {
                     return new notification_response
@@ -189,7 +190,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         if (!string.IsNullOrEmpty(capital))
                         {
                             var quot = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(capital);
-                            log.Info($"Success computing(CapitalBuilder) premium from service response{capital}");
+                            log.Info($"Success computing(CapitalBuilder) premium from service response {capital}");
                             return new notification_response
                             {
                                 status = 200,
@@ -220,7 +221,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             var quot = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(lifetime);
                             //sumassured = quote.sumInsured.ToString();
                             decimal suminsured = 0;
-                          
+
                             foreach (var item in quot.coverTypeAllocations)
                             {
                                 if (item.cvtShtDesc == "LTH")
@@ -359,6 +360,17 @@ namespace CustodianEveryWhereV2._0.Controllers
                     PlaceHolder = "CUSTODIAN LIFE TIME HARVEST";
                 }
 
+                var checkme = await _Buy.FindOneByCriteria(x => x.reference.ToLower() == BuyLife.payment_reference.ToLower());
+                if (checkme != null)
+                {
+                    log.Info($"duplicate request {BuyLife.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 300,
+                        message = "Duplicate request"
+                    };
+                }
+
                 var newBuyer = new LifeInsurance
                 {
                     address = BuyLife.address,
@@ -374,14 +386,15 @@ namespace CustodianEveryWhereV2._0.Controllers
                     premium = BuyLife.premium,
                     terms = BuyLife.terms,
                     policytype = PlaceHolder,
-                    id_number = BuyLife.id_number
+                    id_number = BuyLife.id_number,
+                    reference = BuyLife.payment_reference
                 };
 
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     var request = api.SubmitPaymentRecord(GlobalConstant.merchant_id, GlobalConstant.password, "NA",
                         "Life", $"NewBusniness|{BuyLife.payment_reference}", Convert.ToDateTime(BuyLife.date_of_birth), DateTime.Now, BuyLife.payment_reference, BuyLife.insured_name, "", "", BuyLife.address, BuyLife.phonenumber,
-                        BuyLife.emailaddress, BuyLife.terms.ToString(), BuyLife.frequency.ToString().Replace("_", "-"), "", PlaceHolder, BuyLife.premium, BuyLife.computed_premium, "API", "NB");
+                        BuyLife.emailaddress, BuyLife.terms.ToString(), BuyLife.frequency.ToString().Replace("_", "-"), "", PlaceHolder, BuyLife.premium, BuyLife.computed_premium, "ADAPT", "NB");
                     log.Info("RAW Response from api" + request);
                     if (!string.IsNullOrEmpty(request))
                     {

@@ -16,6 +16,7 @@ using System.Net.Http.Formatting;
 using System.Text;
 using CustodianEmailSMSGateway.Email;
 using System.IO;
+using DataStore.ExtensionMethods;
 
 namespace CustodianEveryWhereV2._0.Controllers
 {
@@ -95,6 +96,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                                     }
                                 }
                             }
+                            // dy_deals.sh
                         }
                         catch (Exception ex)
                         {
@@ -287,6 +289,17 @@ namespace CustodianEveryWhereV2._0.Controllers
                     {
                         status = 405,
                         message = "Data mismatched"
+                    };
+                }
+
+                var checkme = await _deals.FindOneByCriteria(x => x.reference.ToLower() == deal.reference.ToLower());
+                if (checkme != null)
+                {
+                    log.Info($"duplicate request {deal.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 300,
+                        message = "Duplicate request"
                     };
                 }
 

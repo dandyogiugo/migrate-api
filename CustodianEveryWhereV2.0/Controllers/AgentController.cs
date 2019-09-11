@@ -197,8 +197,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     subsidiary = ((subsidiary)post.subsidiary).ToString(),
                     email_address = post.email_address,
                     issured_name = post.issured_name,
-                    phone_no = post.phone_no
-
+                    phone_no = post.phone_no,
+                    merchant_id = post.merchant_id
                 };
 
                 if (post.payment_narrtn.ToLower() == "failed")

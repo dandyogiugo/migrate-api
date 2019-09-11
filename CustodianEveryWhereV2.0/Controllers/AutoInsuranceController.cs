@@ -142,7 +142,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     log.Info($"cover type {quote.cover_type.ToString()}");
-                    var request =  api.GetMotorQuote(quote.cover_type.ToString().Replace("_", " "),
+                    var request = api.GetMotorQuote(quote.cover_type.ToString().Replace("_", " "),
                          quote.vehicle_category, quote.vehicle_value.ToString(),
                         !string.IsNullOrEmpty(quote.payment_option) ? quote.payment_option : "",
                         quote.excess, quote.tracking, quote.flood, quote.srcc);
@@ -224,9 +224,20 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
+
+                var checkme = await auto.FindOneByCriteria(x => x.reference_no.ToLower() == Auto.reference_no.ToLower());
+                if (checkme != null)
+                {
+                    log.Info($"duplicate request {Auto.merchant_id}");
+                    return new res
+                    {
+                        status = 300,
+                        message = "Duplicate request"
+                    };
+                }
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var request =  api.POSTMotorRec(GlobalConstant.merchant_id, GlobalConstant.password,
+                    var request = api.POSTMotorRec(GlobalConstant.merchant_id, GlobalConstant.password,
                         Auto.customer_name, Auto.address, Auto.phone_number, Auto.email, Auto.engine_number,
                         Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured
                         , Auto.chassis_number, Auto.registration_number, Auto.vehicle_model,
@@ -275,7 +286,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         save_new.extension_type = Auto.extension_type;
 
                         await auto.Save(save_new);
-                        
+
                         return new res
                         {
                             status = 200,

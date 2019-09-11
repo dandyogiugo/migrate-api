@@ -427,12 +427,19 @@ namespace DataStore.Utilities
                                 ++i;
                             }
 
-
                         }
                     }
                     else
                     {
                         emailaddress = list[0];
+                    }
+
+                    var divisionn_obj = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DivisionEmail>>(System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/json.json")));
+                    var div_email = divisionn_obj.FirstOrDefault(x => x.Code.ToUpper() == "Life").Email;
+                    if (!string.IsNullOrEmpty(div_email))
+                    {
+                        emailaddress = div_email;
+                        cc.Add(list[0]);
                     }
                     var send = new SendEmail().Send_Email(emailaddress, "Claim Request", sb.ToString(), "Claims Request", true, image_path, cc, null, null);
                 }
@@ -825,7 +832,7 @@ namespace DataStore.Utilities
             }
             else if (frequency.ToLower() == "bi-annually")
             {
-                frq = "B";
+                frq = "S";
             }
             else if (frequency.ToLower() == "monthly")
             {
@@ -833,7 +840,7 @@ namespace DataStore.Utilities
             }
             else
             {
-                frq = "S";
+                frq = "F";
             }
 
             return frq;

@@ -38,5 +38,6 @@ namespace DataStore.Models
         public string phone_no { get; set; }
         [MaxLength(200)]
         public string email_address { get; set; }
+        public string merchant_id { get; set; }
     }
 }

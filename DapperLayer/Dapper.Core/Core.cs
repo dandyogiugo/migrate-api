@@ -60,10 +60,9 @@ namespace DapperLayer.Dapper.Core
                 {
                     recommended = multiple.Read<T>().ToList();
                     current = multiple.Read<T>().ToList();
-                   
+
                 }
             };
-
             obj.current = current;
             obj.recommended = recommended;
             return obj;

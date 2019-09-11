@@ -16,6 +16,8 @@ using System.Xml;
 using WindowsService1.NewsAPIJob;
 using DapperLayer.Dapper.Core;
 using DapperLayer.utilities;
+using System.Dynamic;
+using System.Reflection;
 
 namespace TestSerials
 {
@@ -25,14 +27,30 @@ namespace TestSerials
         {
             try
             {
-                int[] arr = { 5, 4, 2, 2, 8, 2, 3 };
-                int sum = 0;
-                for (var i = 0; i <= arr.Length - 1; ++i)
-                {
-                    sum += arr[i];
-                }
-                var d = (arr.Length * (arr.Length + 1)) / 2;
-                var dif = sum - d;
+                #region
+                //var a = new { name = "oscar  ", age = 30, sex = 'M', amount = 345.66, isActive = true };
+                //dynamic expando = new ExpandoObject();
+                //expando.obj = a;
+                //Console.WriteLine(((string)expando.obj.name).Trim());
+                //if (expando.obj.amount is decimal)
+                //{
+                //    Console.WriteLine(true);
+                //}
+                //else
+                //{
+                //    Console.WriteLine(false);
+                //}
+                //Console.ReadKey();
+                //int[] arr = { 5, 4, 2, 2, 8, 2, 3 };
+                //var test = arr.ToList().OrderBy(x=>x);
+
+                //int sum = 0;
+                //for (var i = 0; i <= arr.Length - 1; ++i)
+                //{
+                //    sum += arr[i];
+                //}
+                //var d = (arr.Length * (arr.Length + 1)) / 2;
+                //var dif = sum - d;
                 // var test = new Core<dynamic>();
                 // var l = test.GetPredictionByCustomerID(100049357, connectionManager.recomendation).GetAwaiter().GetResult();
 
@@ -210,7 +228,11 @@ namespace TestSerials
                 //}
                 //index.Insert(0, count);
                 //NewsProcessor.GetNews();
+                #endregion
 
+                temp myObj = new temp();
+
+               var test =  myObj.MapToObject(typeof(Viewtemp));
             }
             catch (Exception ex)
             {
@@ -254,6 +276,16 @@ namespace TestSerials
 
             return "HO/A/07/T" + final;
         }
+
+
+        (string, object, int) LookupName(long id) // tuple return type
+        {
+            var first = "";
+            var last = "";
+            var middle = 60;
+            return (first, middle, Convert.ToInt32(last)); // tuple literal
+        }
+      
     }
 
     public class temp
@@ -263,8 +295,52 @@ namespace TestSerials
 
         }
         public string food { get; set; }
-        public string quantity { get; set; }
-        public string time { get; set; }
-        public string youtubeurl { get; set; }
+        public tp quantity { get; set; }
+        public double time { get; set; }
+        public decimal youtubeurl { get; set; }
+    }
+
+    public class Viewtemp
+    {
+        public Viewtemp()
+        {
+
+        }
+        public string food { get; set; }
+        public tp quantity { get; set; }
+        public double time { get; set; }
+        public decimal youtubeurl { get; set; }
+    }
+
+    public class tp
+    {
+        public tp()
+        {
+
+        }
+        public int Id { get; set; }
+        public DateTime MyDate { get; set; }
+    }
+
+    public static class SimpleObjectMapper
+    {
+        public static T MapToObject<T>(this T obj, Type type) where T : class
+        {
+            try
+            {
+                // get from object mapper properties
+                Type FromMapperProperty = obj.GetType();
+                IList<PropertyInfo> PropsOfObj = new List<PropertyInfo>(FromMapperProperty.GetProperties());
+
+                IList<PropertyInfo> PropsOfType = new List<PropertyInfo>(type.GetProperties());
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return null;
+        }
     }
 }

@@ -112,7 +112,7 @@ namespace DataStore.ViewModels
     {
         Monthly = 1,
         Annually = 2,
-        Quaterly = 3,
+        Quarterly = 3,
         Bi_Annually = 4
     }
 

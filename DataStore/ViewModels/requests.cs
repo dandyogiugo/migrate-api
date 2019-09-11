@@ -1,11 +1,6 @@
-﻿using Newtonsoft.Json.Converters;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStore.ViewModels
 {
@@ -717,6 +712,8 @@ namespace DataStore.ViewModels
         public decimal annual_subscription { get; set; }
         public string vehicle_make { get; set; }
         public string vehicle_model { get; set; }
+        [Required]
+        public string reference { get; set; }
     }
 
 
@@ -815,6 +812,57 @@ namespace DataStore.ViewModels
         public string hash { get; set; }
         [Required]
         public string OTP { get; set; }
+    }
+
+
+
+    public class SafetyRequest
+    {
+        public SafetyRequest()
+        {
+
+        }
+        [Required]
+        public string hash { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public string Address { get; set; }
+        [Required]
+        public DateTime CustomerDOB { get; set; }
+        [Required]
+        public string CustomerName { get; set; }
+        [Required]
+        public string PhoneNumber { get; set; }
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        public string Occupation { get; set; }
+        [Required]
+        public decimal Premium { get; set; }
+        [Required]
+        public int NoOfUnit { get; set; }
+        [Required]
+        public string Reference { get; set; }
+        [Required]
+        public string Description { get; set; }
+        [Required]
+        public string BeneficiaryName { get; set; }
+        [Required]
+        public Gender BeneficiarySex { get; set; }
+        [Required]
+        public DateTime BeneficiaryDOB { get; set; }
+        [Required]
+        public string BeneficiaryRelatn { get; set; }
+        [Required]
+        public string ImageBase64 { get; set; }
+        [Required]
+        public string ImageFormat { get; set; }
+        [Required]
+        public string IdentificationType { get; set; }
+
+        [Required]
+        public string IdentificationNumber { get; set; }
     }
 }
 

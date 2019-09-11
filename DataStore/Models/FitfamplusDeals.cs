@@ -13,6 +13,7 @@ namespace DataStore.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column(Order = 1)]
         public int Id { get; set; }
         [MaxLength(200)]
         public string firstname { get; set; }
@@ -40,6 +41,8 @@ namespace DataStore.Models
         public string gym { get; set; }
         public int package_id { get; set; }
         [MaxLength(200)]
+        [Key]
+        [Column(Order = 2)]
         public string reference { get; set; }
         public string deal_description { get; set; }
         public DateTime? transactionDate { get; set; }
