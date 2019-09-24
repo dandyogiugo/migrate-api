@@ -64,7 +64,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     return new policy_data
                     {
                         status = 407,
-                        message = "Authorizatikon failed"
+                        message = "Authorisation failed"
                     };
                 }
 
@@ -78,7 +78,31 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Permission denied from accessing this feature"
                     };
                 }
+                var merchantConfig = await _apiconfig.FindOneByCriteria(x => x.merchant_id == pol_detials.merchant_id);
+                //check if request is from GT Bank and apply sha512
+                if (merchantConfig != null && merchantConfig.merchant_name == GlobalConstant.GTBANK)
+                {
+                    if (string.IsNullOrEmpty(pol_detials.checksum))
+                    {
+                        log.Info($"Checksum is required {pol_detials.policy_number}");
+                        return new policy_data
+                        {
+                            status = 405,
+                            message = "Checksum is required for this merchant"
+                        };
+                    }
 
+                    var computedhash = await util.Sha512(merchantConfig.merchant_id + pol_detials.policy_number + merchantConfig.secret_key);
+                    if (!await util.ValidateGTBankUsers(pol_detials.checksum, computedhash))
+                    {
+                        log.Info($"Invalid hash for {pol_detials.policy_number}");
+                        return new policy_data
+                        {
+                            status = 403,
+                            message = "Invalid checksum"
+                        };
+                    }
+                }
 
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
@@ -173,6 +197,31 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
+                var merchantConfig = await _apiconfig.FindOneByCriteria(x => x.merchant_id == post.merchant_id);
+                //check if request is from GT Bank and apply sha512
+                if (merchantConfig != null && merchantConfig.merchant_name == GlobalConstant.GTBANK)
+                {
+                    if (string.IsNullOrEmpty(post.checksum))
+                    {
+                        log.Info($"Checksum is required {post.policy_number}");
+                        return new policy_data
+                        {
+                            status = 405,
+                            message = "Checksum is required for this merchant"
+                        };
+                    }
+                    var computedhash = await util.Sha512(merchantConfig.merchant_id + post.policy_number + post.premium + post.reference_no + merchantConfig.secret_key);
+                    if (!await util.ValidateGTBankUsers(post.checksum, computedhash))
+                    {
+                        log.Info($"Invalid hash for {post.policy_number}");
+                        return new policy_data
+                        {
+                            status = 403,
+                            message = "Invalid checksum"
+                        };
+                    }
+                }
+
                 var validate_headers = await util.ValidateHeaders(headerValues, post.merchant_id);
 
                 if (!validate_headers)
@@ -181,7 +230,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     return new policy_data
                     {
                         status = 407,
-                        message = "Authorizatikon failed"
+                        message = "Authorisation failed"
                     };
                 }
 
@@ -193,7 +242,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     policy_number = post.policy_number.ToUpper(),
                     premium = post.premium,
                     reference_no = post.reference_no,
-                    status = post.payment_narrtn,
+                    status = !string.IsNullOrEmpty(post.payment_narrtn) ? post.payment_narrtn : post.status,
                     subsidiary = ((subsidiary)post.subsidiary).ToString(),
                     email_address = post.email_address,
                     issured_name = post.issured_name,
@@ -201,7 +250,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     merchant_id = post.merchant_id
                 };
 
-                if (post.payment_narrtn.ToLower() == "failed")
+                if (post.payment_narrtn?.ToLower() == "failed" || post.status?.ToLower() == "failed")
                 {
                     await trans_logs.Save(new_trans);
                     log.Info($"Transaction failed dont push to abs");
@@ -241,7 +290,10 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                         var sms = new SendSMS();
                         string message = $@"Dear {post.issured_name} We have acknowledged receipt of NGN {post.premium} premium payment.We will apply this to your policy number {post.policy_number.ToUpper()}";
-                        await sms.Send_SMS(message, phone);
+                        if (!GlobalConstant.IsDemoMode)
+                        {
+                            await sms.Send_SMS(message, phone);
+                        }
                     }
 
                     return new policy_data
@@ -250,7 +302,113 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Transaction was successful",
                         data = new Dictionary<string, string>
                         {
-                            {"RecieptUrl",url+$"Receipt.aspx?mUser=CUST_WEB&mCert={post.reference_no}&mCert2={post.reference_no}" }
+                            {"RecieptUrl",url+$"Receipt.aspx?mUser=CUST_WEB&mCert={post.reference_no}&mCert2={post.reference_no}" },
+                            {"message",$"Notification of payment sent to customer mobile number ({(GlobalConstant.IsDemoMode?"Message are not sent in demo mode":"")})" }
+                        }
+                    };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new policy_data
+                {
+                    status = 404,
+                    message = "system malfunction"
+                };
+            }
+        }
+
+        [HttpGet]
+        public async Task<policy_data> GetTransactionWithReferenceNumber(string reference_no, string merchant_id, string checksum)
+        {
+            try
+            {
+                var headerValues = HttpContext.Current.Request.Headers.Get("Authorization");
+
+                if (string.IsNullOrEmpty(headerValues))
+                {
+                    log.Info($"Authorization denied for policy GetTransaction()  {reference_no}");
+                    return new policy_data
+                    {
+                        status = 205,
+                        message = "Authorization denied"
+                    };
+                }
+
+                var merchantConfig = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id);
+                //check if request is from GT Bank and apply sha512
+                if (merchantConfig != null && merchantConfig.merchant_name == GlobalConstant.GTBANK)
+                {
+                    if (string.IsNullOrEmpty(checksum))
+                    {
+                        log.Info($"Checksum is required {reference_no}");
+                        return new policy_data
+                        {
+                            status = 405,
+                            message = "Checksum is required for this merchant"
+                        };
+                    }
+                    var computedhash = await util.Sha512(merchant_id + reference_no + merchantConfig.secret_key);
+                    if (!await util.ValidateGTBankUsers(checksum, computedhash))
+                    {
+                        log.Info($"Invalid hash for {reference_no}");
+                        return new policy_data
+                        {
+                            status = 403,
+                            message = "Invalid checksum"
+                        };
+                    }
+                }
+
+                var validate_headers = await util.ValidateHeaders(headerValues, merchant_id);
+
+                if (!validate_headers)
+                {
+                    log.Info($"Authorization failed feature for policy GetTransactionWithReferenceNumber(PostTransaction)  {reference_no}");
+                    return new policy_data
+                    {
+                        status = 407,
+                        message = "Authorizatikon failed"
+                    };
+                }
+
+                var getTransaction = await trans_logs.FindOneByCriteria(x => x.reference_no?.Trim().ToLower() == reference_no?.Trim().ToLower() && x.merchant_id?.ToLower() == merchant_id?.Trim().ToLower());
+                if (getTransaction == null)
+                {
+                    log.Info($"Transaction not found with reference {reference_no}");
+                    return new policy_data
+                    {
+                        status = 303,
+                        message = "Transaction not found",
+                        data = new
+                        {
+                            message = $"Transaction not found with reference number '({reference_no})'"
+                        }
+                    };
+                }
+                else
+                {
+                    return new policy_data
+                    {
+                        status = 200,
+                        message = "Transaction found",
+                        data = new
+                        {
+                            merchantName = merchantConfig.merchant_name,
+                            policyNumber = getTransaction.policy_number,
+                            subsidiary = getTransaction.subsidiary,
+                            businessUnit = getTransaction.biz_unit,
+                            referenceNumber = getTransaction.reference_no,
+                            status = getTransaction.status,
+                            description = getTransaction.description,
+                            amountPaid = getTransaction.premium,
+                            transactionDateTime = getTransaction.createdat,
+                            insuredName = getTransaction.issured_name,
+                            emailAddress = getTransaction.email_address
                         }
                     };
                 }

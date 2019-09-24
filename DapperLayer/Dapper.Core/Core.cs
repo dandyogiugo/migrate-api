@@ -67,5 +67,15 @@ namespace DapperLayer.Dapper.Core
             obj.recommended = recommended;
             return obj;
         }
+
+        public async Task<IEnumerable<T>> GetNewCustomerDetails(DateTime start_date, DateTime end_date)
+        {
+            var p = new { start_date = "2019-05-01 00:00:00.000", end_date = "2019-09-30 00:00:00.000" };
+            using (var cnn = new SqlConnection(connectionManager.connectionString()))
+            {
+                var result = await cnn.QueryAsync<T>(connectionManager._getNewCustomerSP, p, null, null, CommandType.StoredProcedure);
+                return result;
+            }
+        }
     }
 }

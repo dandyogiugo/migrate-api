@@ -18,6 +18,7 @@ using DapperLayer.Dapper.Core;
 using DapperLayer.utilities;
 using System.Dynamic;
 using System.Reflection;
+using UpSellingAndCrossSelling.CrossSelling;
 
 namespace TestSerials
 {
@@ -27,6 +28,9 @@ namespace TestSerials
         {
             try
             {
+                var obj = new CrossSellingEngine().GetCustomerRecords().GetAwaiter().GetResult();
+                var test = obj;
+
                 #region
                 //var a = new { name = "oscar  ", age = 30, sex = 'M', amount = 345.66, isActive = true };
                 //dynamic expando = new ExpandoObject();
@@ -232,7 +236,7 @@ namespace TestSerials
 
                 temp myObj = new temp();
 
-               var test =  myObj.MapToObject(typeof(Viewtemp));
+               //var test =  myObj.MapToObject(typeof(Viewtemp));
             }
             catch (Exception ex)
             {

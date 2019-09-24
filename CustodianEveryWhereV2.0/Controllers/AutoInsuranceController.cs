@@ -237,13 +237,26 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var request = api.POSTMotorRec(GlobalConstant.merchant_id, GlobalConstant.password,
-                        Auto.customer_name, Auto.address, Auto.phone_number, Auto.email, Auto.engine_number,
-                        Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured
-                        , Auto.chassis_number, Auto.registration_number, Auto.vehicle_model,
-                        Auto.vehicle_model, Auto.vehicle_color, Auto.vehicle_model, Auto.vehicle_type, Auto.vehicle_year,
-                        DateTime.Now, DateTime.Now, DateTime.Now.AddMonths(12), Auto.reference_no, "", "ADAPT", "", "", "");
+                    string request = null;
+                    if (Auto.insurance_type == TypeOfCover.Comprehensive)
+                    {
+                        request = api.SubmitPaymentRecord(GlobalConstant.merchant_id,
+                            GlobalConstant.password, "", "", "", Auto.dob, DateTime.Now, "",
+                            Auto.customer_name, "", "", Auto.address, Auto.phone_number, Auto.email, Auto.payment_option, "", "",
+                            Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured, "ADAPT", "NB");
+                    }
+                    else
+                    {
+                        request = api.POSTMotorRec(GlobalConstant.merchant_id, GlobalConstant.password,
+                           Auto.customer_name, Auto.address, Auto.phone_number, Auto.email, Auto.engine_number,
+                           Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured
+                           , Auto.chassis_number, Auto.registration_number, Auto.vehicle_model,
+                           Auto.vehicle_model, Auto.vehicle_color, Auto.vehicle_model, Auto.vehicle_type, Auto.vehicle_year,
+                           DateTime.Now, DateTime.Now, DateTime.Now.AddMonths(12), Auto.reference_no, "", "ADAPT", "", "", "");
+                    }
+
                     log.Info($"Response from Api {request}");
+
                     //HO/V/29/G0000529E|17294
                     if (!string.IsNullOrEmpty(request) || request.ToLower() == "success")
                     {
@@ -271,18 +284,30 @@ namespace CustodianEveryWhereV2._0.Controllers
                             vehicle_color = Auto.vehicle_color,
                             vehicle_model = Auto.vehicle_model,
                             vehicle_type = Auto.vehicle_type,
-                            vehicle_year = Auto.vehicle_year
+                            vehicle_year = Auto.vehicle_year,
+                            excess = Auto.excess,
+                            payment_option = Auto.payment_option,
+                            flood = Auto.flood,
+                            tracking = Auto.tracking,
+                            start_date = Auto.start_date,
+                            srcc = Auto.srcc
                         };
 
-                        var cert_code = request.Replace("**", "|").Split('|')[1];
-                        var reciept_base_url = ConfigurationManager.AppSettings["Reciept_Base_Url"];
+                        string cert_url = "";
+                        string cert_number = Guid.NewGuid().ToString();
+                        if (Auto.insurance_type != TypeOfCover.Comprehensive)
+                        {
+                            var cert_code = request.Replace("**", "|").Split('|')[1];
+                            var reciept_base_url = ConfigurationManager.AppSettings["Reciept_Base_Url"];
+                            cert_number = cert_code;
+                            cert_url = $"{reciept_base_url}+mUser = CUST_WEB & mCert={cert_code}&mCert2={cert_code}";
+                        }
 
-                        var cert_number = cert_code;
                         var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{cert_number}.{Auto.extension_type}";
                         var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Auto/{nameurl}";
                         byte[] content = Convert.FromBase64String(Auto.attachment);
                         File.WriteAllBytes(filepath, content);
-                        save_new.attachemt = filepath;
+                        save_new.attachemt = nameurl;
                         save_new.extension_type = Auto.extension_type;
 
                         await auto.Save(save_new);
@@ -293,7 +318,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             message = "Transaction was successful",
                             data = new Dictionary<string, string>
                             {
-                                {"cert_url",reciept_base_url+$"mUser=CUST_WEB&mCert={cert_code}&mCert2={cert_code}" }
+                                {"cert_url", cert_url}
                             }
                         };
                     }

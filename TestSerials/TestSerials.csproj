@@ -119,6 +119,10 @@
       <Project>{84FC4D85-940B-4A62-BDCE-A9C61C2C463D}</Project>
       <Name>DataStore</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UpSellingAndCrossSelling\UpSellingAndCrossSelling.csproj">
+      <Project>{eeed8eb9-4843-4a0e-a532-5326a9464281}</Project>
+      <Name>UpSellingAndCrossSelling</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WindowsService1\CronJobsNews.csproj">
       <Project>{C56F099C-E7E7-46A1-8A86-9B9B3CDC4037}</Project>
       <Name>CronJobsNews</Name>

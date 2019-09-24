@@ -390,6 +390,7 @@ namespace DataStore.ViewModels
         public string merchant_id { get; set; }
         [Required]
         public subsidiary subsidiary { get; set; }
+        public string checksum { get; set; }
 
     }
 
@@ -404,7 +405,6 @@ namespace DataStore.ViewModels
         public string policy_number { get; set; }
         [Required]
         public subsidiary subsidiary { get; set; }
-        [Required]
         public string payment_narrtn { get; set; }
         [Required]
         public string reference_no { get; set; }
@@ -418,6 +418,8 @@ namespace DataStore.ViewModels
         public string issured_name { get; set; }
         public string phone_no { get; set; }
         public string email_address { get; set; }
+        public string checksum { get; set; }
+        public string status { get; set; }
     }
 
 
@@ -532,6 +534,12 @@ namespace DataStore.ViewModels
         public string attachment { get; set; }
         [Required]
         public string extension_type { get; set; }
+        public string payment_option { get; set; }
+        public string excess { get; set; }
+        public string tracking { get; set; }
+        public string flood { get; set; }
+        public string srcc { get; set; }
+        public DateTime? start_date { get; set; }
     }
 
     public class user_otp

@@ -51,3 +51,9 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Te
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\obj\Debug\TestSerials.csprojAssemblyReference.cache
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\obj\Debug\TestSerials.csproj.CoreCompileInputs.cache
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\obj\Debug\TestSerials.csproj.CopyComplete
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\NLog.config
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\UpSellingAndCrossSelling.exe
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\UpSellingAndCrossSelling.pdb
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\UpSellingAndCrossSelling.exe.config
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\TestSerials\bin\Debug\System.Net.Http.Formatting.xml

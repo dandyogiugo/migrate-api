@@ -59,6 +59,12 @@ namespace DataStore.Models
         public string attachemt { get; set; }
         [MaxLength(200)]
         public string extension_type { get; set; }
-        
+        public string payment_option { get; set; }
+        public string excess { get; set; }
+        public string tracking { get; set; }
+        public string flood { get; set; }
+        public string srcc { get; set; }
+        public DateTime? start_date { get; set; }
+
     }
 }

@@ -11,12 +11,8 @@ namespace DapperLayer.utilities
     public static class connectionManager
     {
         public static string connectionString() => ConfigurationManager.ConnectionStrings["Dapper"].ConnectionString;
-        //{
-        //    var cnn = ConfigurationManager.ConnectionStrings["Dapper"].ConnectionString;
-        //    return cnn;
-        //}
 
-        public static string sp_getall_new = @"SELECT count(DISTINCT(Customerid)) from [ABS_MEMO].[dbo].[Recommended_products];
+        public static string sp_getall_new { get; } = @"SELECT count(DISTINCT(Customerid)) from [ABS_MEMO].[dbo].[Recommended_products];
                                             SELECT  result.CustomerID,(Customer.FirstName +' '+ Customer.LastName) as 'FullName',Customer.Email,Customer.Phone,Customer.Occupation,Customer.Data_source,
                                             (SELECT count(*) FROM [ABS_MEMO].[dbo].Dim_Policies AS pol inner join [ABS_MEMO].[dbo].Dim_Product as prod 
                                             on pol.ProdID = prod.ProductID and pol.CustomerID = result.CustomerID and 
@@ -37,14 +33,38 @@ namespace DapperLayer.utilities
                                                         (SELECT SUM(Scored_probability)/Count(*) FROM [ABS_MEMO].[dbo].[Recommended_products] where CustomerID = prod.CustomerID) as 'AvgProb'
                                                         FROM [ABS_MEMO].[dbo].[Dim_Customers]  as Customer
                                                         inner join [ABS_MEMO].[dbo].[Recommended_products] as prod
-                                                        on Customer.CustomerID = prod.CustomerID and Customer.FullName  like '%' + @search + '%' order by 'AvgProb' desc
-;";
+                                                        on Customer.CustomerID = prod.CustomerID and Customer.FullName  like '%' + @search + '%' order by 'AvgProb' desc;";
 
         public static string recomendation { get; } = @"SELECT Product_recommended,Scored_probability FROM [ABS_MEMO].[dbo].[Recommended_products] where CustomerID = @customer_id order by Scored_probability desc;
                                                         SELECT prod.Product_lng_descr,pol.Policy_no FROM [ABS_MEMO].[dbo].Dim_Policies as pol
                                                         inner join [ABS_MEMO].[dbo].Dim_Product as prod
                                                         on pol.ProdID = prod.ProductID and pol.CustomerID = @customer_id and
                                                         pol.Bus_Category = 'Individual' and pol.Bus_Source = 'Non_Broker';";
+        //public static string _getNewCustomer { get; } = $@"SELECT cus.Occupation, cus.Date_of_Birth, cus.Gender, cus.Email, cus.CustomerID,(SELECT Convert(nvarchar, (SELECT Product_lng_descr FROM [dbo].[Dim_Product] WHERE ProductID = ProdID)) + ',' 
+        //                                                FROM[dbo].[Dim_Policies] where CustomerID = cus.CustomerID and Bus_Source = 'Non_Broker' and Bus_Category = 'Individual' for xml path('')) as currentProds
+        //                                                from[ABS_MEMO].[dbo].[Dim_Customers] as cus where cus.Created_date between '2019-05-01 00:00:00.000'
+        //                                                and  '2019-09-30 00:00:00.000' and cus.Email<> '' and cus.Email is not null ";
+
+
+        public static string _getNewCustomer2 { get; } = @" declare @table as Table(
+                                                            Occupation VARCHAR(MAX),
+                                                            Date_of_Birth datetime2,
+                                                            Gender VARCHAR(5),
+	                                                        Email VARCHAR(max) not null,
+	                                                        CustomerID VARCHAR(max) not null,
+	                                                        Premium bigint ,
+	                                                        currentProds VARCHAR(MAX));
+                                                            INSERT INTO @table SELECT cus.Occupation,cus.Date_of_Birth,cus.Gender,cus.Email,cus.CustomerID,
+                                                              (SELECT TOP(1) Premium FROM  [dbo].[Dim_Policies] WHERE CustomerID = cus.CustomerID and Premium is not null) as Premium,
+                                                              (SELECT Convert(nvarchar,(SELECT Product_lng_descr FROM [dbo].[Dim_Product] WHERE ProductID = ProdID  )) + ','
+                                                              FROM  [dbo].[Dim_Policies] 
+                                                              where CustomerID = cus.CustomerID and Bus_Source = 'Non_Broker' and Bus_Category = 'Individual'   for xml path('')) as currentProds
+                                                              from [ABS_MEMO].[dbo].[Dim_Customers] as cus where cus.Created_date between '2019-05-01 00:00:00.000'  
+                                                              and  '2019-09-30 00:00:00.000' and cus.Email <> '' and cus.Email is not null;
+                                                              
+                                                               SELECT * FROM @table where currentProds is not null;
+                                                              ";
+        public static string _getNewCustomerSP { get; } = "RecommendationEngine";
 
     }
 }

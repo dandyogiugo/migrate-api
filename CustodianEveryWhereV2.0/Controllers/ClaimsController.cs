@@ -430,7 +430,7 @@ namespace CustodianEveryWhereV2._0.Controllers
             try
             {
                 // var properties = details.GetType().GetProperties();
-                // log.Info(Newtonsoft.Json.JsonConvert.SerializeObject(details));
+                 log.Info($"Raw data from backoffice portal: {Newtonsoft.Json.JsonConvert.SerializeObject(details)}");
                 //  log.Info("merchant id: " + (string)properties["merchant_id"]);
                 var check_user_function = await util.CheckForAssignedFunction("GetLifeClaimsDetails", details.merchant_id);
                 if (!check_user_function)

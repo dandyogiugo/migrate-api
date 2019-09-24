@@ -523,7 +523,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 response.data[0].discount = GlobalConstant.DiscountPriceHalogen;
                                 response.data[0].actual_price = Convert.ToDecimal(GlobalConstant.HalogenDefaultPrice);
                                 response.data[0].label = GlobalConstant.LabelHalogen;
-                                response.data[0].price = Convert.ToDecimal(response.data[0].price) + Convert.ToDecimal(GlobalConstant.LoadingPrice);
+                                response.data[0].price = GlobalConstant.HardCodedHalogenPrice + Convert.ToDecimal(GlobalConstant.LoadingPrice);
                                 return new notification_response
                                 {
                                     status = 200,

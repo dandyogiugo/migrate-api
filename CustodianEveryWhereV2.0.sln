@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CronJobsNews", "WindowsServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperLayer", "DapperLayer\DapperLayer.csproj", "{665A828C-98A3-4417-8721-BC3A9225429B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpSellingAndCrossSelling", "UpSellingAndCrossSelling\UpSellingAndCrossSelling.csproj", "{EEED8EB9-4843-4A0E-A532-5326A9464281}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{665A828C-98A3-4417-8721-BC3A9225429B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{665A828C-98A3-4417-8721-BC3A9225429B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{665A828C-98A3-4417-8721-BC3A9225429B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEED8EB9-4843-4A0E-A532-5326A9464281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEED8EB9-4843-4A0E-A532-5326A9464281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEED8EB9-4843-4A0E-A532-5326A9464281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEED8EB9-4843-4A0E-A532-5326A9464281}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

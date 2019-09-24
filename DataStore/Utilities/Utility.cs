@@ -60,6 +60,32 @@ namespace DataStore.Utilities
             }
             return Sb.ToString();
         }
+
+        public async Task<string> Sha512(string pattern)
+        {
+            StringBuilder Sb = new StringBuilder();
+            using (SHA512 hash = SHA512.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                byte[] result = hash.ComputeHash(enc.GetBytes(pattern));
+                foreach (Byte b in result)
+                    Sb.Append(b.ToString("x2"));
+            }
+            return Sb.ToString();
+        }
+        public async Task<bool> ValidateGTBankUsers(string userhash, string computedhash)
+        {
+            if (userhash.ToUpper().Equals(computedhash.ToUpper()))
+            {
+                log.Info("valid hash for GTB users");
+                return true;
+            }
+            else
+            {
+                log.Info("Invalid hash for GTB users");
+                return false;
+            }
+        }
         public async Task<bool> ValidateHash2(string pattern, string secret, string _hash)
         {
             log.Info($"Passed hash {_hash.ToUpper()}");
