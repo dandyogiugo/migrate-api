@@ -57,6 +57,7 @@ namespace DataStore.ViewModels
         public string image_base_url { get; set; }
         public string reciept_url { get; set; }
         public decimal sum_insured { get; set; }
+        public bool can_buy_comprehensive { get; set; }
     }
 
     public class LifeClaimStatus
@@ -213,6 +214,7 @@ namespace DataStore.ViewModels
         public int status { get; set; }
         public string message { get; set; }
         public object data { get; set; }
+        public object hash { get; set; }
     }
 
     public class joke

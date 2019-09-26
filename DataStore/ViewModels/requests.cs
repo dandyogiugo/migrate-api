@@ -737,6 +737,10 @@ namespace DataStore.ViewModels
         public string address { get; set; }
         public string mobile_number { get; set; }
         public string contact_person { get; set; }
+        public string vehicle_year { get; set; }
+        public string vehicle_make { get; set; }
+        public string vehicle_model { get; set; }
+
     }
 
     public class DevicePriceDetails
@@ -760,6 +764,7 @@ namespace DataStore.ViewModels
         public string response_code { get; set; }
         public string response_message { get; set; }
         public List<DevicePriceDetails> data { get; set; }
+        public bool can_buy_comprehensive { get; set; }
     }
 
     public class SetTeleUser

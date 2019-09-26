@@ -151,7 +151,13 @@ namespace CustodianEveryWhereV2._0.Controllers
                             sumInsField = request.SumIns,
                             telNumField = request.TelNum?.Trim()
 
+                        },
+                        hash = new
+                        {
+                            checksum = await util.Sha512(merchantConfig.merchant_id + request.SumIns + request.PolicyNo?.Trim() + merchantConfig.secret_key),
+                            message = $"checksum created on {DateTime.Now}"
                         }
+
                     };
 
                 }
@@ -304,10 +310,14 @@ namespace CustodianEveryWhereV2._0.Controllers
                         {
                             {"RecieptUrl",url+$"Receipt.aspx?mUser=CUST_WEB&mCert={post.reference_no}&mCert2={post.reference_no}" },
                             {"message",$"Notification of payment sent to customer mobile number ({(GlobalConstant.IsDemoMode?"Message are not sent in demo mode":"")})" }
+                        },
+                        hash = new
+                        {
+                            checksum = await util.Sha512(merchantConfig.merchant_id + post.reference_no + post.policy_number + post.premium + merchantConfig.secret_key),
+                            message = $"checksum created on {DateTime.Now}"
                         }
                     };
                 }
-
             }
             catch (Exception ex)
             {
@@ -409,6 +419,11 @@ namespace CustodianEveryWhereV2._0.Controllers
                             transactionDateTime = getTransaction.createdat,
                             insuredName = getTransaction.issured_name,
                             emailAddress = getTransaction.email_address
+                        },
+                        hash = new
+                        {
+                            checksum = await util.Sha512(merchantConfig.merchant_id + getTransaction.reference_no + getTransaction.policy_number + merchantConfig.secret_key),
+                            message = $"checksum created on {DateTime.Now}"
                         }
                     };
                 }

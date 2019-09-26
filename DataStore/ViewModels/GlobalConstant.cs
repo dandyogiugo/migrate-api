@@ -70,5 +70,30 @@ namespace DataStore.ViewModels
                 }
             }
         }
+
+        public static decimal DeviceComprehensiveTracker
+        {
+            get
+            {
+                const decimal default_value = 4000000;
+                var getKey = ConfigurationManager.AppSettings["DEVICECOMPREHENSIVETRACKER"];
+                if (!string.IsNullOrEmpty(getKey))
+                {
+                    var min_value = decimal.TryParse(getKey, out decimal result);
+                    if (min_value)
+                    {
+                        return result;
+                    }
+                    else
+                    {
+                        return default_value;
+                    }
+                }
+                else
+                {
+                    return default_value;
+                }
+            }
+        }
     }
 }

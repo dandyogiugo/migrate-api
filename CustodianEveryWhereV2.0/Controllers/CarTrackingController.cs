@@ -389,7 +389,10 @@ namespace CustodianEveryWhereV2._0.Controllers
                         plate_number = tracker.plate_number,
                         tracker_type_id = tracker.tracker_type_id,
                         user_email = GlobalConstant.auth_email,
-                        user_passcode = GlobalConstant.passcode
+                        user_passcode = GlobalConstant.passcode,
+                        vehicle_year = tracker.vehicle_year,
+                        vehicle_make = tracker.vehicle_make,
+                        vehicle_model = tracker.vehicle_model
                     });
                     log.Info($"response from halogen buytracker device is {request.StatusCode}");
                     if (request.IsSuccessStatusCode)
@@ -472,7 +475,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
-        public async Task<notification_response> GetCompactibleVehicle(int year, string merchant_id, string hash)
+        public async Task<notification_response> GetCompactibleVehicle(int year, string merchant_id, string hash, decimal car_value = 0)
         {
             try
             {
@@ -508,6 +511,11 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
+                bool can_buy_comprehensive = false;
+                if (car_value > 0 && car_value >= GlobalConstant.DeviceComprehensiveTracker)
+                {
+                    can_buy_comprehensive = true;
+                }
                 using (var apicall = new HttpClient())
                 {
                     var request = await apicall.GetAsync(GlobalConstant.base_url + $"getCompatibleTrackerTypes?vehicle_year={year}");
@@ -520,15 +528,18 @@ namespace CustodianEveryWhereV2._0.Controllers
                             var cnt = response.data;
                             if (cnt.Count > 0)
                             {
+
                                 response.data[0].discount = GlobalConstant.DiscountPriceHalogen;
                                 response.data[0].actual_price = Convert.ToDecimal(GlobalConstant.HalogenDefaultPrice);
                                 response.data[0].label = GlobalConstant.LabelHalogen;
                                 response.data[0].price = GlobalConstant.HardCodedHalogenPrice + Convert.ToDecimal(GlobalConstant.LoadingPrice);
+                                //response.can_buy_comprehensive = can_buy_comprehensive;
                                 return new notification_response
                                 {
                                     status = 200,
                                     message = "operation successful",
-                                    data = response.data
+                                    data = response.data,
+                                    can_buy_comprehensive = can_buy_comprehensive
                                 };
                             }
                             else
