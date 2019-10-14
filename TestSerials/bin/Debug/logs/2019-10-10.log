@@ -1,0 +1,132 @@
+2019-10-10 08:58:13.9178 INFO about to read from API_SETTINGS.json
+2019-10-10 08:58:14.8981 INFO Reading file failed from API_SETTINGS.json
+2019-10-10 08:58:14.9752 ERROR Thread was being aborted.
+2019-10-10 08:58:15.1516 ERROR    at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)
+   at Newtonsoft.Json.Utilities.ConvertUtils.GetTypeCode(Type t, Boolean& isEnum)
+   at Newtonsoft.Json.Serialization.DefaultContractResolver.IsJsonPrimitiveType(Type t)
+   at Newtonsoft.Json.Serialization.DefaultContractResolver.CreateContract(Type objectType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Newtonsoft.Json.Serialization.DefaultContractResolver.ResolveContract(Type type)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get__configSettings() in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 28
+2019-10-10 08:58:15.1516 ERROR 
+2019-10-10 08:58:15.2680 INFO about to read from API_SETTINGS.json
+2019-10-10 08:58:15.4609 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:58:15.6348 INFO about to read from API_SETTINGS.json
+2019-10-10 08:58:15.7487 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:58:16.4544 INFO about to read from API_SETTINGS.json
+2019-10-10 08:58:16.4914 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:58:17.5099 INFO about to read from API_SETTINGS.json
+2019-10-10 08:58:17.5099 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:58:18.2915 INFO about to read from API_SETTINGS.json
+2019-10-10 08:58:18.2915 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:58:18.4744 INFO about to read from API_SETTINGS.json
+2019-10-10 08:58:18.4744 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:58:31.2438 INFO No recommendation for customer with name   probability0.458378913923823
+2019-10-10 08:58:32.3825 INFO No recommendation for customer with name   probability0.139520636827321
+2019-10-10 08:58:53.2394 INFO about to read from API_SETTINGS.json
+2019-10-10 08:58:53.2394 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:58:53.2424 INFO about to read from API_SETTINGS.json
+2019-10-10 08:58:53.2424 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:59:03.9373 INFO about to read from API_SETTINGS.json
+2019-10-10 08:59:03.9373 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:59:03.9403 INFO about to read from API_SETTINGS.json
+2019-10-10 08:59:03.9403 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:59:05.0521 INFO No recommendation for customer with name   probability0.44178262651921
+2019-10-10 08:59:06.1515 INFO No recommendation for customer with name   probability0.401413035001549
+2019-10-10 08:59:15.8306 INFO No recommendation for customer with name   probability0.205357142857143
+2019-10-10 08:59:22.2432 INFO about to read from API_SETTINGS.json
+2019-10-10 08:59:22.2452 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:59:22.2452 INFO about to read from API_SETTINGS.json
+2019-10-10 08:59:22.2452 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:59:30.8689 INFO No recommendation for customer with name   probability0
+2019-10-10 08:59:33.1619 INFO No recommendation for customer with name   probability0
+2019-10-10 08:59:33.1619 INFO about to read from API_SETTINGS.json
+2019-10-10 08:59:33.1619 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:59:33.1619 INFO about to read from API_SETTINGS.json
+2019-10-10 08:59:33.1619 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:59:43.5557 INFO No recommendation for customer with name   probability0.458378913923823
+2019-10-10 08:59:44.7508 INFO No recommendation for customer with name   probability0.483271121472485
+2019-10-10 08:59:53.6505 INFO No recommendation for customer with name   probability0.03125
+2019-10-10 08:59:54.7533 INFO No recommendation for customer with name   probability0.349588293087233
+2019-10-10 08:59:55.5872 INFO about to read email template EMAIL_TEMPLATE.html
+2019-10-10 08:59:55.8192 INFO Read was successful from  EMAIL_TEMPLATE.html
+2019-10-10 08:59:55.8192 INFO about to read from API_SETTINGS.json
+2019-10-10 08:59:55.8222 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:59:55.8222 INFO about to read from API_SETTINGS.json
+2019-10-10 08:59:55.8222 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:59:55.8222 INFO about to read from API_SETTINGS.json
+2019-10-10 08:59:55.8222 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 08:59:55.8222 INFO about to read from API_SETTINGS.json
+2019-10-10 08:59:55.8222 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:02.4701 INFO about to read email template EMAIL_TEMPLATE.html
+2019-10-10 09:00:02.4701 INFO Read was successful from  EMAIL_TEMPLATE.html
+2019-10-10 09:00:02.4701 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:02.4701 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:02.4701 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:02.4761 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:02.4761 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:02.4761 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:02.4761 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:02.4761 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:02.4761 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:02.4761 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:02.4761 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:02.4761 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:05.3645 INFO about to read email template EMAIL_TEMPLATE.html
+2019-10-10 09:00:05.3645 INFO Read was successful from  EMAIL_TEMPLATE.html
+2019-10-10 09:00:05.3645 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:05.3645 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:05.3645 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:05.3645 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:09.6856 INFO about to read email template EMAIL_TEMPLATE.html
+2019-10-10 09:00:09.6856 INFO Read was successful from  EMAIL_TEMPLATE.html
+2019-10-10 09:00:09.6856 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:09.6856 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:09.6856 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:09.6916 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:09.6916 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:09.6916 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:13.1388 INFO about to read email template EMAIL_TEMPLATE.html
+2019-10-10 09:00:13.1388 INFO Read was successful from  EMAIL_TEMPLATE.html
+2019-10-10 09:00:13.1388 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:13.1429 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:00:13.1429 INFO about to read from API_SETTINGS.json
+2019-10-10 09:00:13.1429 INFO Read was successful from  API_SETTINGS.json
+2019-10-10 09:18:19.0496 ERROR A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+2019-10-10 09:18:20.4081 ERROR    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadUInt32(UInt32& value)
+   at System.Data.SqlClient.TdsParserStateObject.TryReadPlpLength(Boolean returnPlpNullIfNull, UInt64& lengthLeft)
+   at System.Data.SqlClient.TdsParser.TryReadPlpUnicodeChars(Char[]& buff, Int32 offst, Int32 len, TdsParserStateObject stateObj, Int32& totalCharsRead)
+   at System.Data.SqlClient.TdsParser.TryReadSqlStringValue(SqlBuffer value, Byte type, Int32 length, Encoding encoding, Boolean isPlp, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.TryReadSqlValue(SqlBuffer value, SqlMetaDataPriv md, Int32 length, TdsParserStateObject stateObj, SqlCommandColumnEncryptionSetting columnEncryptionOverride, String columnName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumnData()
+   at System.Data.SqlClient.SqlDataReader.TryReadColumnInternal(Int32 i, Boolean readHeaderOnly)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at lambda_method(Closure , Shaper )
+   at System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   at lambda_method(Closure , Shaper )
+   at System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   at System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at DataStore.repository.store`1.<>c__DisplayClass6_0.<FindOneByCriteria>b__0() in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\repository\store.cs:line 64
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DataStore.repository.store`1.<FindOneByCriteria>d__6.MoveNext() in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\repository\store.cs:line 62

@@ -1,6 +1,9 @@
-﻿using NLog;
+﻿using Newtonsoft.Json;
+using NLog;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,8 +24,8 @@ namespace UpSellingAndCrossSelling.Config
                 try
                 {
                     _log.Info("about to read from API_SETTINGS.json");
-                    var configSettings = Newtonsoft.Json.JsonConvert.DeserializeObject<List<JsonConfigSettings>>(System.IO.File.ReadAllText
-                    (HttpContext.Current.Server.MapPath("~/Config/API_SETTINGS.json"))).Where(x => x.IsActive == true).ToList();
+                    var content = File.ReadAllText(ConfigurationManager.AppSettings["CONFIG"]);
+                    var configSettings = JsonConvert.DeserializeObject<List<JsonConfigSettings>>(content).Where(x => x.IsActive == true).ToList();
                     _log.Info("Read was successful from  API_SETTINGS.json");
                     return configSettings;
                 }
@@ -47,7 +50,7 @@ namespace UpSellingAndCrossSelling.Config
                 try
                 {
                     _log.Info("about to read email template EMAIL_TEMPLATE.html");
-                    var emailTemplate = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Config/EMAIL_TEMPLATE.html"));
+                    var emailTemplate = System.IO.File.ReadAllText(ConfigurationManager.AppSettings["EMAIL_TEMPLATE"]);
                     _log.Info("Read was successful from  EMAIL_TEMPLATE.html");
                     return emailTemplate;
                 }

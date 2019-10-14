@@ -70,7 +70,7 @@ namespace DapperLayer.Dapper.Core
 
         public async Task<IEnumerable<T>> GetNewCustomerDetails(DateTime start_date, DateTime end_date)
         {
-            var p = new { start_date = "2019-05-01 00:00:00.000", end_date = "2019-09-30 00:00:00.000" };
+            var p = new { start_date = start_date, end_date = end_date };
             using (var cnn = new SqlConnection(connectionManager.connectionString()))
             {
                 var result = await cnn.QueryAsync<T>(connectionManager._getNewCustomerSP, p, null, null, CommandType.StoredProcedure);

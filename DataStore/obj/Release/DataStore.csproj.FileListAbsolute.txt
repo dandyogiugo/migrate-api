@@ -24,6 +24,5 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Da
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\bin\Release\Oracle.DataAccess.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\bin\Release\CustodianEmailSMSGateway.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\bin\Release\GenerateTransactionCodes.dll
-C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\obj\Release\DataStore.csproj.CoreCompileInputs.cache
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\obj\Release\DataStore.csproj.CopyComplete
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\obj\Release\DataStore.csprojAssemblyReference.cache

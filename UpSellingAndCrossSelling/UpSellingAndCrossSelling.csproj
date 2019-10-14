@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustodianEmailSMSGateway">
+      <HintPath>..\CustodianEveryWhereV2.0\bin\CustodianEmailSMSGateway.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -83,6 +86,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Config\API_SETTINGS.json" />
+    <Content Include="Config\EmailTemplate.html" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

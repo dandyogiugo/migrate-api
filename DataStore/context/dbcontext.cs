@@ -40,6 +40,7 @@ namespace DataStore.context
         public DbSet<BuyTrackerDevice> BuyTrackerDevice { get; set; }
         public DbSet<TelematicsUsers> TelematicsUsers { get; set; }
         public DbSet<SafetyPlus> SafetyPlus { get; set; }
+        public DbSet<ListOfGyms> ListOfGyms { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

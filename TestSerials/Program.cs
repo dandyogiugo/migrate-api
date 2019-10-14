@@ -28,9 +28,15 @@ namespace TestSerials
         {
             try
             {
-                var obj = new CrossSellingEngine().GetCustomerRecords().GetAwaiter().GetResult();
-                var test = obj;
-
+                //NumberFormatInfo setPrecision = new NumberFormatInfo();
+                //setPrecision.NumberDecimalDigits = 1;
+                //var premium = 5000.00;
+                //var format = string.Format("{0:1}", premium);
+                //var test = format;
+                //GetAllLeague.GetLeague();
+                //Console.ReadKey();
+                //var t = new CrossSellingEngine();
+                // t.EngineProcessor();
                 #region
                 //var a = new { name = "oscar  ", age = 30, sex = 'M', amount = 345.66, isActive = true };
                 //dynamic expando = new ExpandoObject();
@@ -45,16 +51,21 @@ namespace TestSerials
                 //    Console.WriteLine(false);
                 //}
                 //Console.ReadKey();
-                //int[] arr = { 5, 4, 2, 2, 8, 2, 3 };
+                int[] arr = { 5, 4, 8, 2, 6, 7, 1, 3, 7 };
                 //var test = arr.ToList().OrderBy(x=>x);
 
                 //int sum = 0;
-                //for (var i = 0; i <= arr.Length - 1; ++i)
+                //for (var i = 0; i < arr.Length; ++i)
                 //{
                 //    sum += arr[i];
                 //}
                 //var d = (arr.Length * (arr.Length + 1)) / 2;
-                //var dif = sum - d;
+                //var dif = d - sum;
+                //var dup = arr[dif];
+                //var dp = dup;
+
+                //List<int> h = new List<int>() { 4, 5, 67, 8 };
+                //h.Min();
                 // var test = new Core<dynamic>();
                 // var l = test.GetPredictionByCustomerID(100049357, connectionManager.recomendation).GetAwaiter().GetResult();
 
@@ -236,7 +247,7 @@ namespace TestSerials
 
                 temp myObj = new temp();
 
-               //var test =  myObj.MapToObject(typeof(Viewtemp));
+                //var test =  myObj.MapToObject(typeof(Viewtemp));
             }
             catch (Exception ex)
             {
@@ -245,6 +256,69 @@ namespace TestSerials
             }
         }
 
+        public int get(List<List<int>> arr)
+        {
+            var M = arr;
+            int i, j;
+            int count = 0;
+            //no of rows in M[,] 
+            int R = arr.Count();
+            //no of columns in M[,] 
+            int C = arr[0].Count();
+            int[,] S = new int[R, C];
+
+            int max_of_s, max_i, max_j;
+
+            /* Set first column of S[,]*/
+            for (i = 0; i < R; i++)
+            {
+                S[i, 0] = M[i][0];
+            }
+
+
+            /* Set first row of S[][]*/
+            for (j = 0; j < C; j++)
+            {
+                S[0, j] = M[0][j];
+            }
+
+            /* Construct other entries of S[,]*/
+            for (i = 1; i < R; i++)
+            {
+                for (j = 1; j < C; j++)
+                {
+                    if (M[i][j] == 1)
+                        S[i, j] = Math.Min(S[i, j - 1],
+                                Math.Min(S[i - 1, j], S[i - 1, j - 1])) + 1;
+                    else
+                        S[i, j] = 0;
+                }
+            }
+
+            max_of_s = S[0, 0]; max_i = 0; max_j = 0;
+            for (i = 0; i < R; i++)
+            {
+                for (j = 0; j < C; j++)
+                {
+                    if (max_of_s < S[i, j])
+                    {
+                        max_of_s = S[i, j];
+                        max_i = i;
+                        max_j = j;
+                    }
+                }
+            }
+
+            for (i = max_i; i > max_i - max_of_s; i--)
+            {
+                for (j = max_j; j > max_j - max_of_s; j--)
+                {
+                    count += count;
+                }
+
+            }
+            return count;
+        }
         public static int Cal(double sqrt, int count)
         {
             double sqr = Math.Sqrt(sqrt);
@@ -280,7 +354,58 @@ namespace TestSerials
 
             return "HO/A/07/T" + final;
         }
+        public static int kk(int[] A)
+        {
+            List<int> diff = new List<int>();
+            for (int i = 0; i < A.Length; ++i)
+            {
+                int fpvalue = A[i];
+                for (int j = i + 1; j < A.Length; ++j)
+                {
+                    int spvalue = A[j];
+                    int first;
+                    int second;
+                    if (fpvalue > spvalue)
+                    {
+                        first = spvalue + 1;
+                        second = fpvalue;
+                    }
+                    else
+                    {
+                        first = fpvalue + 1;
+                        second = spvalue;
+                    }
+                    for (int k = first; k < second; ++k)
+                    {
+                        for (int m = 0; m < A.Length; ++m)
+                        {
+                            if (A[m] == k)
+                            {
+                                break;
+                            }
+                        }
 
+
+                    }
+                    int abs = Math.Abs(fpvalue - spvalue);
+                    diff.Add(abs);
+
+                }
+            }
+            if (diff.Count > 0)
+            {
+                var min = diff.Min();
+                if (min <= 100000000)
+                {
+                    return min;
+                }
+                return -1;
+            }
+            else
+            {
+                return -2;
+            }
+        }
 
         (string, object, int) LookupName(long id) // tuple return type
         {
@@ -289,62 +414,155 @@ namespace TestSerials
             var middle = 60;
             return (first, middle, Convert.ToInt32(last)); // tuple literal
         }
-      
-    }
 
-    public class temp
-    {
-        public temp()
+        public static void Closest(int[] arr1, int[] arr2)
         {
-
-        }
-        public string food { get; set; }
-        public tp quantity { get; set; }
-        public double time { get; set; }
-        public decimal youtubeurl { get; set; }
-    }
-
-    public class Viewtemp
-    {
-        public Viewtemp()
-        {
-
-        }
-        public string food { get; set; }
-        public tp quantity { get; set; }
-        public double time { get; set; }
-        public decimal youtubeurl { get; set; }
-    }
-
-    public class tp
-    {
-        public tp()
-        {
-
-        }
-        public int Id { get; set; }
-        public DateTime MyDate { get; set; }
-    }
-
-    public static class SimpleObjectMapper
-    {
-        public static T MapToObject<T>(this T obj, Type type) where T : class
-        {
-            try
+            for (int i = 0; i < arr1.Length; i++)
             {
-                // get from object mapper properties
-                Type FromMapperProperty = obj.GetType();
-                IList<PropertyInfo> PropsOfObj = new List<PropertyInfo>(FromMapperProperty.GetProperties());
-
-                IList<PropertyInfo> PropsOfType = new List<PropertyInfo>(type.GetProperties());
+                for (int j = 0; j < arr2.Length; j++)
+                {
+                    int sum = arr1[i] + arr2[j];
+                    if (sum > 22 && sum <= 25)
+                    {
+                        Console.WriteLine($"({arr1[i]},{arr2[j]}) Sum = {sum}");
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
             }
-            catch (Exception)
+        }
+
+        public void PostMe(string firstDate, string lastDate, string weekDay)
+        {
+            var _firstdate = Convert.ToDateTime(firstDate);
+            var _lastdate = Convert.ToDateTime(lastDate);
+            var _DaysOfWeek = (DayOfWeek)Enum.Parse(typeof(DayOfWeek), weekDay);
+            List<data> allStocks = new List<data>();
+            if (_DaysOfWeek != DayOfWeek.Saturday && _DaysOfWeek != DayOfWeek.Sunday)
+            {
+                int count = 0;
+                while (_firstdate <= _lastdate)
+                {
+                    DateTime query;
+                    if (count == 0)
+                    {
+                        query = _firstdate;
+                    }
+                    else
+                    {
+                        query = _firstdate.AddDays(count);
+                        if(query.DayOfWeek != _DaysOfWeek)
+                        {
+                            ++count;
+                            continue;
+                        }
+                    }
+                    using (var api = new HttpClient())
+                    {
+                        var request = api.GetAsync($"https://jsonmock.hackerrank.com/api/stocks/?date={query.ToString("d-MMMM-yyyy")}").GetAwaiter().GetResult();
+                        if (request.IsSuccessStatusCode)
+                        {
+                            var response = request.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                            var stocks = JsonConvert.DeserializeObject<stock>(response);
+                            foreach (var item in stocks.data)
+                            {
+                                Console.WriteLine($"{item.date.ToString("d-MMMM-yyyy")} {item.open} {item.close}");
+                            }
+
+                        }
+                    }
+
+                    ++count;
+                }
+            }
+
+
+        }
+
+        public List<data> Pagenated(int pageNumber, DateTime _firstdate, DateTime _lastdate, DayOfWeek _DaysOfWeek)
+        {
+            using (var api = new HttpClient())
+            {
+                var request = api.GetAsync($"https://jsonmock.hackerrank.com/api/stocks?Page={pageNumber}").GetAwaiter().GetResult();
+                if (request.IsSuccessStatusCode)
+                {
+                    var response = request.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                    var stocks = JsonConvert.DeserializeObject<stock>(response);
+                    var filteredStock = stocks.data.Where(x => x.date >= _firstdate && x.date <= _lastdate && x.date.DayOfWeek == _DaysOfWeek).ToList();
+                    return filteredStock;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        public class responseObject
+        {
+            public DateTime date { get; set; }
+            public decimal open { get; set; }
+            public decimal close { get; set; }
+            public decimal high { get; set; }
+            public decimal low { get; set; }
+        }
+        public class temp
+        {
+            public temp()
             {
 
-                throw;
             }
+            public string food { get; set; }
+            public tp quantity { get; set; }
+            public double time { get; set; }
+            public decimal youtubeurl { get; set; }
+        }
 
-            return null;
+        public class Viewtemp
+        {
+            public Viewtemp()
+            {
+
+            }
+            public string food { get; set; }
+            public tp quantity { get; set; }
+            public double time { get; set; }
+            public decimal youtubeurl { get; set; }
+        }
+
+        public class tp
+        {
+            public tp()
+            {
+
+            }
+            public int Id { get; set; }
+            public DateTime MyDate { get; set; }
+        }
+
+        public static class SimpleObjectMapper
+        {
+         
+        }
+
+        public class data
+        {
+            public DateTime date { get; set; }
+            public decimal open { get; set; }
+            public decimal close { get; set; }
+            public decimal high { get; set; }
+            public decimal low { get; set; }
+        }
+
+        public class stock
+        {
+            public int page { get; set; }
+            public int per_page { get; set; }
+            public int total { get; set; }
+            public int total_pages { get; set; }
+            public List<data> data { get; set; }
         }
     }
 }

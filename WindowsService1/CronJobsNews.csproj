@@ -99,6 +99,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\FootballResponse.cs" />
+    <Compile Include="NewsAPIJob\Config.cs" />
+    <Compile Include="NewsAPIJob\GetAllLeague.cs" />
     <Compile Include="NewsAPIJob\NewsJob.cs" />
     <Compile Include="NewsAPIJob\NewsProcessor.cs" />
     <Compile Include="ProjectInstaller.cs">

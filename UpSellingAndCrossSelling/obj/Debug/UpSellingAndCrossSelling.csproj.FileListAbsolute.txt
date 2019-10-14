@@ -2,6 +2,7 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Up
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\bin\Debug\UpSellingAndCrossSelling.exe.config
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\bin\Debug\UpSellingAndCrossSelling.exe
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\bin\Debug\UpSellingAndCrossSelling.pdb
+C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\bin\Debug\CustodianEmailSMSGateway.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\bin\Debug\DapperLayer.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\bin\Debug\Newtonsoft.Json.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\bin\Debug\NLog.dll
@@ -16,7 +17,6 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Up
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\obj\Debug\UpSellingAndCrossSelling.csprojAssemblyReference.cache
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\obj\Debug\UpSellingAndCrossSelling.ProjectInstaller.resources
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\obj\Debug\UpSellingAndCrossSelling.csproj.GenerateResource.cache
-C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\obj\Debug\UpSellingAndCrossSelling.csproj.CoreCompileInputs.cache
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\obj\Debug\UpSellingAndCrossSelling.csproj.CopyComplete
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\obj\Debug\UpSellingAndCrossSelling.exe
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\obj\Debug\UpSellingAndCrossSelling.pdb

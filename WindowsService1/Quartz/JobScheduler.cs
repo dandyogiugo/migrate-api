@@ -18,10 +18,18 @@ namespace WindowsService1.Quartz
         {
             IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
             scheduler.Start();
+            //New Scheduler
             IJobDetail Tranxjob = JobBuilder.Create<NewsJob>().Build();
             ITrigger Ttrigger = TriggerBuilder.Create()
                  .WithSimpleSchedule(s => s.WithIntervalInMinutes(15).RepeatForever()).Build();
             scheduler.ScheduleJob(Tranxjob, Ttrigger);
+
+
+            //Football League Scheduler
+            IJobDetail League = JobBuilder.Create<LeagueJob>().Build();
+            ITrigger TLeague = TriggerBuilder.Create().WithDailyTimeIntervalSchedule(s => s.WithIntervalInHours(24).OnEveryDay()
+                  .StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(6, 00))).Build();
+            scheduler.ScheduleJob(League, TLeague);
         }
         public static void Stop()
         {

@@ -26,11 +26,13 @@ namespace CustodianEveryWhereV2._0.Controllers
         private store<ApiConfiguration> _apiconfig = null;
         private Utility util = null;
         private store<FitfamplusDeals> _deals = null;
+        private store<ListOfGyms> _gymList = null;
         public FitfamPlusController()
         {
             _apiconfig = new store<ApiConfiguration>();
             util = new Utility();
             _deals = new store<FitfamplusDeals>();
+            _gymList = new store<ListOfGyms>();
         }
 
         [HttpGet]
@@ -426,6 +428,285 @@ namespace CustodianEveryWhereV2._0.Controllers
                 {
                     status = 404,
                     message = "oops!, something happend while searching for details"
+                };
+            }
+        }
+
+        [HttpGet]
+        public async Task<notification_response> GetListOfGyms(string merchant_id, string hash)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("GetListOfGyms", merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                        type = DataStore.ViewModels.Type.SMS.ToString()
+                    };
+                }
+
+
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                // validate hash
+                var checkhash = await util.ValidateHash2(merchant_id, config.secret_key, hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                var gymList = await _gymList.GetAll();
+
+                return new notification_response
+                {
+                    status = 200,
+                    message = "Gyms loaded successfully",
+                    data = gymList.Select(x => new
+                    {
+                        gymName = x.GymName,
+                        Id = x.Id
+                    }).ToList()
+                };
+
+            }
+            catch (Exception ex)
+            {
+
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "oops!, something happend while searching for details"
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<notification_response> GymLogin(GymLogin gymLogin)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Some parameters are missing from request",
+                    };
+                }
+                var check_user_function = await util.CheckForAssignedFunction("GymLogin", gymLogin.merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                        type = DataStore.ViewModels.Type.SMS.ToString()
+                    };
+                }
+
+
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == gymLogin.merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {gymLogin.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                // validate hash
+                var checkhash = await util.ValidateHash2(gymLogin.password + gymLogin.username + gymLogin.gym_id, config.secret_key, gymLogin.hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {gymLogin.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                var getGym = await _gymList.FindOneByCriteria(x => x.Id == gymLogin.gym_id);
+                if (getGym == null)
+                {
+                    return new notification_response
+                    {
+                        status = 408,
+                        message = "Requested gym does not exist"
+                    };
+                }
+
+                using (var api = new HttpClient())
+                {
+                    api.BaseAddress = new Uri(getGym.LoginEndPoint?.Trim());
+                    var request = await api.PostAsJsonAsync<dynamic>("", new
+                    {
+                        Email = gymLogin.username,
+                        Password = gymLogin.password
+                    });
+
+                    if (!request.IsSuccessStatusCode)
+                    {
+                        return new notification_response
+                        {
+                            status = 403,
+                            message = "Authentication failed, third-part application not responding"
+                        };
+                    }
+
+                    var response = await request.Content.ReadAsAsync<dynamic>();
+                    if (response == null && response.status != "success")
+                    {
+                        return new notification_response
+                        {
+                            status = 208,
+                            message = "Authentication Failed -- Invalid Username or Password"
+                        };
+                    }
+
+                    return new notification_response
+                    {
+                        status = 200,
+                        message = "Authentication successful"
+                    };
+
+                };
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "oops!, something happend while authenticating user"
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<notification_response> MarkAttendance(MarkAttendance markAttendance)
+        {
+            try
+            {
+
+                if (!ModelState.IsValid)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Some parameters are missing from request",
+                    };
+                }
+                var check_user_function = await util.CheckForAssignedFunction("MarkAttendance", markAttendance.merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                        type = DataStore.ViewModels.Type.SMS.ToString()
+                    };
+                }
+
+
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == markAttendance.merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {markAttendance.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                // validate hash
+                var checkhash = await util.ValidateHash2(markAttendance.user_id.ToString() + markAttendance.gym_id.ToString(), config.secret_key, markAttendance.hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {markAttendance.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                var getGym = await _gymList.FindOneByCriteria(x => x.Id == markAttendance.gym_id);
+                if (getGym == null)
+                {
+                    return new notification_response
+                    {
+                        status = 408,
+                        message = "Requested gym does not exist"
+                    };
+                }
+
+                using (var api = new HttpClient())
+                {
+                    var request = await api.GetAsync(getGym.CheckInEndPoint + $"/{markAttendance.user_id}");
+                    if (!request.IsSuccessStatusCode)
+                    {
+                        return new notification_response
+                        {
+                            status = 407,
+                            message = "Checking failed for user, third-party not responding"
+                        };
+                    }
+
+                    var response = await request.Content.ReadAsAsync<dynamic>();
+                    if (response == null && response.status != "success")
+                    {
+                        return new notification_response
+                        {
+                            status = 407,
+                            message = "Checking failed for user, Try again"
+                        };
+                    }
+
+                    return new notification_response
+                    {
+                        status = 200,
+                        message = "Check-In successful",
+                        data = response.data
+                    };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "oops!, something happend while authenticating user"
                 };
             }
         }

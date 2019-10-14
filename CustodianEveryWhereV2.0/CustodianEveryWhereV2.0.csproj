@@ -330,6 +330,7 @@
     <Compile Include="Controllers\PensionController.cs" />
     <Compile Include="Controllers\PersonalProductionController.cs" />
     <Compile Include="Controllers\SafetyPlusController.cs" />
+    <Compile Include="Controllers\SportController.cs" />
     <Compile Include="Controllers\TravelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

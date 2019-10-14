@@ -67,13 +67,25 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var base_url = ConfigurationManager.AppSettings["HALOGEN_API"];
-                var auth_email = ConfigurationManager.AppSettings["HALOGEN_AUTH_EMAIL"];
-                var passcode = ConfigurationManager.AppSettings["HALOGEN_PASSCODE"];
+                //var base_url = ConfigurationManager.AppSettings["HALOGEN_API"];
+                //var auth_email = ConfigurationManager.AppSettings["HALOGEN_AUTH_EMAIL"];
+                //var passcode = ConfigurationManager.AppSettings["HALOGEN_PASSCODE"];
+                var passwd = await util.Sha256(password);
+                var auth = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.password == passwd && x.IsActive == true);
+
+                if (auth == null)
+                {
+                    log.Info($"Invalid Username or Password {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 406,
+                        message = "Invalid Username or Password"
+                    };
+                }
 
                 using (var api = new HttpClient())
                 {
-                    var request = await api.GetAsync(GlobalConstant.base_url + $"getLastStatus?email={email}&passcode={password}&imei={imei}");
+                    var request = await api.GetAsync(GlobalConstant.base_url + $"getLastStatus?email={GlobalConstant.auth_email}&passcode={GlobalConstant.passcode}&imei={imei}");
                     if (request.IsSuccessStatusCode)
                     {
                         var response = await request.Content.ReadAsAsync<dynamic>();
@@ -164,9 +176,22 @@ namespace CustodianEveryWhereV2._0.Controllers
                 //var auth_email = ConfigurationManager.AppSettings["HALOGEN_AUTH_EMAIL"];
                 //var passcode = ConfigurationManager.AppSettings["HALOGEN_PASSCODE"];
 
+                var passwd = await util.Sha256(password);
+                var auth = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.password == passwd && x.IsActive == true);
+
+                if (auth == null)
+                {
+                    log.Info($"Invalid Username or Password {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 406,
+                        message = "Invalid Username or Password"
+                    };
+                }
+
                 using (var api = new HttpClient())
                 {
-                    var request = await api.GetAsync(GlobalConstant.base_url + $"getStatusHistory?email={email}&passcode={password}&imei={imei}&start_date_time={start_date_time}&end_date_time={end_date_time}&pageNo={page}&pageSize=10");
+                    var request = await api.GetAsync(GlobalConstant.base_url + $"getStatusHistory?email={GlobalConstant.auth_email}&passcode={GlobalConstant.passcode}&imei={imei}&start_date_time={start_date_time}&end_date_time={end_date_time}&pageNo={page}&pageSize=10");
                     if (request.IsSuccessStatusCode)
                     {
                         var response = await request.Content.ReadAsAsync<dynamic>();
@@ -255,10 +280,21 @@ namespace CustodianEveryWhereV2._0.Controllers
                 //var base_url = ConfigurationManager.AppSettings["HALOGEN_API"];
                 //var auth_email = ConfigurationManager.AppSettings["HALOGEN_AUTH_EMAIL"];
                 //var passcode = ConfigurationManager.AppSettings["HALOGEN_PASSCODE"];
+                var passwd = await util.Sha256(password);
+                var auth = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.password == passwd && x.IsActive == true);
 
+                if (auth == null)
+                {
+                    log.Info($"Invalid Username or Password {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 406,
+                        message = "Invalid Username or Password"
+                    };
+                }
                 using (var api = new HttpClient())
                 {
-                    var request = await api.GetAsync(GlobalConstant.base_url + $"getAddress?email={email}&passcode={password}&latlng={lat},{lng}");
+                    var request = await api.GetAsync(GlobalConstant.base_url + $"getAddress?email={GlobalConstant.auth_email}&passcode={GlobalConstant.passcode}&latlng={lat},{lng}");
                     if (request.IsSuccessStatusCode)
                     {
                         var response = await request.Content.ReadAsAsync<dynamic>();
@@ -629,9 +665,21 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
+                var passwd = await util.Sha256(password);
+                var auth = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.password == passwd && x.IsActive == true);
+
+                if (auth == null)
+                {
+                    log.Info($"Invalid Username or Password {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 406,
+                        message = "Invalid Username or Password"
+                    };
+                }
                 using (var apicall = new HttpClient())
                 {
-                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"{((state == Car.Start) ? "startCar" : "stopCar")}?email={email}&passcode={password}&imei={imei}");
+                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"{((state == Car.Start) ? "startCar" : "stopCar")}?email={GlobalConstant.auth_email}&passcode={GlobalConstant.passcode}&imei={imei}");
                     if (request.IsSuccessStatusCode)
                     {
                         var response = await request.Content.ReadAsAsync<dynamic>();
@@ -712,9 +760,21 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
+                var passwd = await util.Sha256(password);
+                var auth = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.password == passwd && x.IsActive == true);
+
+                if (auth == null)
+                {
+                    log.Info($"Invalid Username or Password {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 406,
+                        message = "Invalid Username or Password"
+                    };
+                }
                 using (var apicall = new HttpClient())
                 {
-                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"listenIn?email={email}&passcode={password}&imei={imei}&sos_number={sos_number}");
+                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"listenIn?email={GlobalConstant.auth_email}&passcode={GlobalConstant.passcode}&imei={imei}&sos_number={sos_number}");
                     if (request.IsSuccessStatusCode)
                     {
                         var response = await request.Content.ReadAsAsync<dynamic>();
@@ -816,7 +876,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 // if user exist at halogen ends
                 using (var apicall = new HttpClient())
                 {
-                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"CheckEmail?email={user.Email}");
+                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"GetImeiByEmail?email={user.Email}");
                     if (!request.IsSuccessStatusCode)
                     {
                         log.Info($"verifying from halogen {user.Email}");
@@ -848,32 +908,32 @@ namespace CustodianEveryWhereV2._0.Controllers
                         };
                     }
 
-                    var request2 = await apicall.PostAsJsonAsync(GlobalConstant.base_url + "SetNewPwd",
-                        new Dictionary<string, string>()
-                        {
-                            { "email", user.Email.Trim().ToLower() },
-                            { "passcode", user.Newpassword }
-                        });
+                    //var request2 = await apicall.PostAsJsonAsync(GlobalConstant.base_url + "SetNewPwd",
+                    //    new Dictionary<string, string>()
+                    //    {
+                    //        { "email", user.Email.Trim().ToLower() },
+                    //        { "passcode", user.Newpassword }
+                    //    });
 
-                    if (!request2.IsSuccessStatusCode)
-                    {
-                        log.Info($"unable to set password {user.Email}");
-                        return new notification_response
-                        {
-                            status = 406,
-                            message = "Host not responding to request, Try Again"
-                        };
-                    }
-                    var response2 = await request2.Content.ReadAsAsync<dynamic>();
-                    if (response2.response_code != "00")
-                    {
-                        log.Info($"unable to set password/pssword reset failed {user.Email}");
-                        return new notification_response
-                        {
-                            status = 406,
-                            message = "Unable setup user credential, Try Again"
-                        };
-                    }
+                    //if (!request2.IsSuccessStatusCode)
+                    //{
+                    //    log.Info($"unable to set password {user.Email}");
+                    //    return new notification_response
+                    //    {
+                    //        status = 406,
+                    //        message = "Host not responding to request, Try Again"
+                    //    };
+                    //}
+                    //var response2 = await request2.Content.ReadAsAsync<dynamic>();
+                    //if (response2.response_code != "00")
+                    //{
+                    //    log.Info($"unable to set password/pssword reset failed {user.Email}");
+                    //    return new notification_response
+                    //    {
+                    //        status = 406,
+                    //        message = "Unable setup user credential, Try Again"
+                    //    };
+                    //}
 
                     if (validate_otp)
                     {
@@ -886,7 +946,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                             IsFromCustodian = true,
                             LoginLocation = user.LoginLocation,
                             OwnerName = user.OwnerName,
-                            LastLoginDate = DateTime.Now
+                            LastLoginDate = DateTime.Now,
+                            password = await util.Sha256(user.Newpassword)
                         };
                         await telematics_user.Save(new_setup);
                         return new notification_response
@@ -959,7 +1020,7 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                 using (var apicall = new HttpClient())
                 {
-                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"CheckEmail?email={email}");
+                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"GetImeiByEmail?email={email?.ToLower().Trim()}");
                     if (!request.IsSuccessStatusCode)
                     {
                         log.Info("Unable to verify email, Try Again");
@@ -971,6 +1032,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
 
                     var response = await request.Content.ReadAsAsync<dynamic>();
+                    log.Info($"new log {Newtonsoft.Json.JsonConvert.SerializeObject(response)}");
                     if (response.response_code != "00")
                     {
                         log.Info("Unable to verify email, Try Again");
@@ -1072,21 +1134,22 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
                 //check if user has been setup first
-                var is_user_setup = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == userAuth.email.ToLower() && x.IsActive == true);
+                var password = await util.Sha256(userAuth.password);
+                var is_user_setup = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == userAuth.email.ToLower() && x.IsActive == true && x.password == password);
                 if (is_user_setup == null)
                 {
                     log.Info("User account has not been mapped. kindly use the setup option");
                     return new notification_response
                     {
                         status = 406,
-                        message = "User account has not been mapped. kindly use the setup option",
+                        message = "Invalid Username or Password",
                     };
                 }
 
                 //authenticate from halogen
                 using (var apicall = new HttpClient())
                 {
-                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"getObjects?email={userAuth.email}&passcode={userAuth.password}");
+                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"GetImeiObjectsByEmail?email={GlobalConstant.auth_email}&passcode={GlobalConstant.passcode}&customer_email={userAuth.email}");
                     if (!request.IsSuccessStatusCode)
                     {
                         log.Info("Host is not reachable, Try Again");
@@ -1216,7 +1279,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         };
                     }
 
-                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"CheckEmail?email={reset.email}");
+                    var request = await apicall.GetAsync(GlobalConstant.base_url + $"GetImeiByEmail?email={reset.email}");
                     if (!request.IsSuccessStatusCode)
                     {
                         log.Info($"verifying from halogen {reset.email}");
@@ -1238,24 +1301,27 @@ namespace CustodianEveryWhereV2._0.Controllers
                         };
                     }
 
-                    var request2 = await apicall.PostAsJsonAsync(GlobalConstant.base_url + "SetNewPwd",
-                        new Dictionary<string, string>()
-                        {
-                            { "email", reset.email.Trim().ToLower() },
-                            { "passcode", reset.password }
-                        });
+                    //var request2 = await apicall.PostAsJsonAsync(GlobalConstant.base_url + "SetNewPwd",
+                    //    new Dictionary<string, string>()
+                    //    {
+                    //        { "email", reset.email.Trim().ToLower() },
+                    //        { "passcode", reset.password }
+                    //    });
 
-                    if (!request2.IsSuccessStatusCode)
-                    {
-                        log.Info($"unable to set password {reset.email}");
-                        return new notification_response
-                        {
-                            status = 406,
-                            message = "Host not responding to request, Try Again"
-                        };
-                    }
-                    var response2 = await request2.Content.ReadAsAsync<dynamic>();
-                    if (response2.response_code != "00")
+                    //if (!request2.IsSuccessStatusCode)
+                    //{
+                    //    log.Info($"unable to set password {reset.email}");
+                    //    return new notification_response
+                    //    {
+                    //        status = 406,
+                    //        message = "Host not responding to request, Try Again"
+                    //    };
+                    //}
+                    //var response2 = await request2.Content.ReadAsAsync<dynamic>();
+                    is_profile_setup.password = await util.Sha256(reset.password);
+
+                    var response2 = await telematics_user.Update(is_profile_setup);
+                    if (!response2)
                     {
                         log.Info($"unable to set password/pssword reset failed {reset.email}");
                         return new notification_response

@@ -877,6 +877,70 @@ namespace DataStore.ViewModels
         [Required]
         public string IdentificationNumber { get; set; }
     }
+
+    public class League
+    {
+        public int league_id { get; set; }
+        public string name { get; set; }
+        public string type { get; set; }
+        public string country { get; set; }
+        public string country_code { get; set; }
+        public int season { get; set; }
+        public DateTime season_start { get; set; }
+        public DateTime season_end { get; set; }
+        public string logo { get; set; }
+        public string flag { get; set; }
+        public bool standings { get; set; }
+        public bool is_current { get; set; }
+    }
+
+    public class LeagueObject
+    {
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public string hash { get; set; }
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        public string email { get; set; }
+        public List<League> leagues { get; set; }
+    }
+
+    public class GymLogin
+    {
+        public GymLogin()
+        {
+
+        }
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public string hash { get; set; }
+        [Required]
+        public string username { get; set; }
+        [Required]
+        public string password { get; set; }
+        [Required]
+        public int gym_id { get; set; }
+    }
+
+
+    public class MarkAttendance
+    {
+        public MarkAttendance()
+        {
+
+        }
+
+        [Required]
+        public string merchant_id { get; set; }
+        [Required]
+        public string hash { get; set; }
+        [Required]
+        public int user_id { get; set; }
+        [Required]
+        public int gym_id { get; set; }
+    }
 }
 
 

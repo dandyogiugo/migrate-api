@@ -7,6 +7,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -239,7 +240,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Authorisation failed"
                     };
                 }
-
+                //NumberFormatInfo setPrecision = new NumberFormatInfo();
+                //setPrecision.NumberDecimalDigits = 1;
                 var new_trans = new AgentTransactionLogs
                 {
                     biz_unit = post.biz_unit,

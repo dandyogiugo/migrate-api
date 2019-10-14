@@ -33,5 +33,7 @@ namespace DataStore.Models
         public string LoginLocation { get; set; }
         [Required]
         public bool IsActive { get; set; }
+        [Required]
+        public string password { get; set; }
     }
 }

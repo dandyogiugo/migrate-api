@@ -43,7 +43,9 @@ namespace WindowsService1.NewsAPIJob
             }
             catch (Exception ex)
             {
-
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException?.ToString());
                 throw;
             }
         }

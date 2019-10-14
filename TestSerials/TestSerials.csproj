@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Human.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\TravelApi\Reference.cs">
@@ -80,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Config\API_SETTINGS.json" />
     <None Include="packages.config" />
     <None Include="Service References\TravelApi\TestSerials.TravelApi.OTA_AirLowFareSearchPlusRS.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
