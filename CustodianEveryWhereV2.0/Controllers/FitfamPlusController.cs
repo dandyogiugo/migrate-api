@@ -680,7 +680,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
 
                     var response = await request.Content.ReadAsAsync<dynamic>();
-                    if (response == null && response.status != "success")
+                    if (response == null || response.status != "success")
                     {
                         return new notification_response
                         {

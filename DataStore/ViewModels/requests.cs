@@ -892,6 +892,7 @@ namespace DataStore.ViewModels
         public string flag { get; set; }
         public bool standings { get; set; }
         public bool is_current { get; set; }
+        public bool is_my_preference { get; set; }
     }
 
     public class LeagueObject
