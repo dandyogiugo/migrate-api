@@ -28,8 +28,8 @@
     "EndPoint": "https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger",
     "ProductName": "MOTOR",
     "IsActive": true,
-    "ProductDescription": "",
-    "HyperLink": ""
+    "ProductDescription": "The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.",
+    "HyperLink": "https://custodianplc.com.ng/car-insurance"
   },
   {
     "Key": "lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==",
@@ -52,6 +52,7 @@
     "EndPoint": "https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger",
     "ProductName": "WILLS AND TRUST",
     "IsActive": true,
-    "ProductDescription": ""
+    "ProductDescription": "We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.",
+    "HyperLink": "https://custodianplc.com.ng/trustees-limited"
   }
 ]

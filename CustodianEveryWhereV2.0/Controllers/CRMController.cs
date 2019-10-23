@@ -12,6 +12,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using CustodianEveryWhereV2._0.ActionFilters;
 
 namespace CustodianEveryWhereV2._0.Controllers
 {
@@ -226,6 +227,127 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                 return p;
 
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "Error: while getting predicted product"
+                };
+            }
+        }
+
+        [HttpPost]
+        [GzipCompression]
+        public async Task<dynamic> GetRenewalRatio(RenewalRatio renewalRatio)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("GetRenewalRatio", renewalRatio.merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == renewalRatio.merchant_id);
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {renewalRatio.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+                Core<RenewRatio> _dapper_core = new Core<RenewRatio>();
+                string condition = new helpers().QueryResolver(renewalRatio);
+                log.Info($"{((string.IsNullOrEmpty(condition)) ? "Admin Access" : condition)}");
+                var result = await _dapper_core.GetRenewalRatio(string.Format(connectionManager.renewalsRatio, condition));
+                if (result.Count() == 0)
+                {
+                    return new notification_response
+                    {
+                        status = 408,
+                        message = "No result found"
+                    };
+                }
+
+                var grouped_item = new helpers().Grouper(result);
+               
+                return new notification_response
+                {
+                    status = 200,
+                    message = "Successful",
+                    data = grouped_item
+                };
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "Error: while getting predicted product"
+                };
+            }
+        }
+
+
+        [HttpPost]
+        [GzipCompression]
+        public async Task<dynamic> GetNextRenewal(RenewalRatio renewalRatio)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("GetNextRenewal", renewalRatio.merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == renewalRatio.merchant_id);
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {renewalRatio.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+                Core<NextRenewal> _dapper_core = new Core<NextRenewal>();
+                string condition = new helpers().QueryResolver(renewalRatio);
+                log.Info($"{((string.IsNullOrEmpty(condition)) ? "Admin Access" : condition)}");
+                var result = await _dapper_core.GetRenewalRatio(string.Format(connectionManager.NexRenewal, condition));
+                if (result.Count() == 0)
+                {
+                    return new notification_response
+                    {
+                        status = 408,
+                        message = "No result found"
+                    };
+                }
+
+                var grouped_item = new helpers().Grouper2(result);
+        
+                return new notification_response
+                {
+                    status = 200,
+                    message = "Successful",
+                    data = grouped_item
+                };
             }
             catch (Exception ex)
             {

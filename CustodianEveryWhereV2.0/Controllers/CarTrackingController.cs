@@ -66,11 +66,11 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
-
+                log.Info($"User password {password}");
                 //var base_url = ConfigurationManager.AppSettings["HALOGEN_API"];
                 //var auth_email = ConfigurationManager.AppSettings["HALOGEN_AUTH_EMAIL"];
                 //var passcode = ConfigurationManager.AppSettings["HALOGEN_PASSCODE"];
-                var passwd = await util.Sha256(password);
+                var passwd = util.Sha256(password);
                 var auth = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.password == passwd && x.IsActive == true);
 
                 if (auth == null)
@@ -176,7 +176,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 //var auth_email = ConfigurationManager.AppSettings["HALOGEN_AUTH_EMAIL"];
                 //var passcode = ConfigurationManager.AppSettings["HALOGEN_PASSCODE"];
 
-                var passwd = await util.Sha256(password);
+                var passwd = util.Sha256(password);
                 var auth = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.password == passwd && x.IsActive == true);
 
                 if (auth == null)
@@ -280,7 +280,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 //var base_url = ConfigurationManager.AppSettings["HALOGEN_API"];
                 //var auth_email = ConfigurationManager.AppSettings["HALOGEN_AUTH_EMAIL"];
                 //var passcode = ConfigurationManager.AppSettings["HALOGEN_PASSCODE"];
-                var passwd = await util.Sha256(password);
+                var passwd = util.Sha256(password);
                 var auth = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.password == passwd && x.IsActive == true);
 
                 if (auth == null)
@@ -665,7 +665,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var passwd = await util.Sha256(password);
+                var passwd = util.Sha256(password);
                 var auth = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.password == passwd && x.IsActive == true);
 
                 if (auth == null)
@@ -760,7 +760,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var passwd = await util.Sha256(password);
+                var passwd = util.Sha256(password);
                 var auth = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.password == passwd && x.IsActive == true);
 
                 if (auth == null)
@@ -887,7 +887,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         };
                     }
                     var response = await request.Content.ReadAsAsync<dynamic>();
-                    if (response.response_code != "00")
+                    if (response.response_code != "00" || response.data == null)
                     {
                         log.Info($"verifying from halogen failed {user.Email}");
                         return new notification_response
@@ -947,7 +947,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             LoginLocation = user.LoginLocation,
                             OwnerName = user.OwnerName,
                             LastLoginDate = DateTime.Now,
-                            password = await util.Sha256(user.Newpassword)
+                            password = util.Sha256(user.Newpassword)
                         };
                         await telematics_user.Save(new_setup);
                         return new notification_response
@@ -1134,7 +1134,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
                 //check if user has been setup first
-                var password = await util.Sha256(userAuth.password);
+                var password = util.Sha256(userAuth.password);
                 var is_user_setup = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == userAuth.email.ToLower() && x.IsActive == true && x.password == password);
                 if (is_user_setup == null)
                 {
@@ -1180,11 +1180,11 @@ namespace CustodianEveryWhereV2._0.Controllers
                     sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
                     var imagepath = HttpContext.Current.Server.MapPath("~/Images/adapt_logo.png");
                     await Task.Factory.StartNew(() =>
-                    {
-                        List<string> cc = new List<string>();
-                        cc.Add("technology@custodianplc.com.ng");
-                        new SendEmail().Send_Email(userAuth.email, "Adapt-Telematics Authentication successful", sb.ToString(), "Telematics Authentication successful", true, imagepath, cc, null, null);
-                    });
+                     {
+                         List<string> bcc = new List<string>();
+                         bcc.Add("technology@custodianplc.com.ng");
+                         new SendEmail().Send_Email(userAuth.email, "Adapt-Telematics Authentication successful", sb.ToString(), "Telematics Authentication successful", true, imagepath, null, bcc, null);
+                     });
 
                     // successful process
                     return new notification_response
@@ -1318,7 +1318,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     //    };
                     //}
                     //var response2 = await request2.Content.ReadAsAsync<dynamic>();
-                    is_profile_setup.password = await util.Sha256(reset.password);
+                    is_profile_setup.password = util.Sha256(reset.password);
 
                     var response2 = await telematics_user.Update(is_profile_setup);
                     if (!response2)

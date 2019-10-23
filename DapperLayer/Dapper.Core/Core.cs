@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Dapper;
 using System.Data;
 using System.Dynamic;
+using DataStore.ViewModels;
 
 namespace DapperLayer.Dapper.Core
 {
@@ -76,6 +77,16 @@ namespace DapperLayer.Dapper.Core
                 var result = await cnn.QueryAsync<T>(connectionManager._getNewCustomerSP, p, null, null, CommandType.StoredProcedure);
                 return result;
             }
+        }
+
+
+        public async Task<List<T>> GetRenewalRatio(string sql)
+        {
+            using (var cnn = new SqlConnection(connectionManager.connectionString()))
+            {
+                var multiple = await cnn.QueryAsync<T>(sql.Trim(), commandTimeout: 60);
+                return multiple?.ToList();
+            };
         }
     }
 }

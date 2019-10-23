@@ -29,8 +29,10 @@ namespace CustodianEveryWhereV2._0.Controllers
             _apiconfig = new store<ApiConfiguration>();
             util = new Utility();
             _MyPeference = new store<MyPreference>();
+            leagues = new store<News>();
+            auth = new store<AdaptLeads>();
         }
-
+        [HttpGet]
         public async Task<notification_response> GetAllPreference(string email, string merchant_id, string hash)
         {
             try
@@ -229,6 +231,486 @@ namespace CustodianEveryWhereV2._0.Controllers
                 {
                     status = 404,
                     message = "oops!, something happend while getting preference"
+                };
+            }
+        }
+        [HttpGet]
+        public async Task<notification_response> GetLeagueFixtures(int league_id, string email, string merchant_id, string hash)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("GetLeagueFixtures", merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+                // validate hash
+                var checkhash = await util.ValidateHash2(merchant_id + email, config.secret_key, hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+
+                if (checkIfUserIsLoginIn == null)
+                {
+                    return new notification_response
+                    {
+                        status = 306,
+                        message = "Please login with your email to use this feature"
+                    };
+                }
+
+
+                using (var api = new HttpClient())
+                {
+                    string url = Config.BASE_URL + $"/fixtures/league/{league_id}";
+                    api.DefaultRequestHeaders.Add("X-RapidAPI-Key", Config.Authorization_Header);
+                    var request = await api.GetAsync(url);
+                    log.Info($"Status: {request.StatusCode} end point {url}");
+                    if (!request.IsSuccessStatusCode)
+                    {
+                        return new notification_response
+                        {
+                            status = 302,
+                            message = "Unable to retrieve fixtures"
+                        };
+                    }
+                    var response = await request.Content.ReadAsAsync<MatchFixtures>();
+                    // log.Info($"Match fixtures: => {Newtonsoft.Json.JsonConvert.SerializeObject(response)}");
+                    if (response == null)
+                    {
+                        return new notification_response
+                        {
+                            status = 301,
+                            message = "Unable to decode response"
+                        };
+                    }
+
+                    DateTime future = DateTime.Now.AddDays(90);
+                    DateTime past = DateTime.Now.AddDays(-90);
+                    var history = response.api.fixtures.Where(x => x.status == "Match Finished" && (x.event_date >= past && x.event_date <= DateTime.Now)).OrderBy(x => x.event_date).Take(30).ToList();
+                    var current = response.api.fixtures.Where(x => (x.status.Contains("Started") || x.status.Contains("Half")) && (x.event_date >= DateTime.Now && x.event_date <= future)).OrderBy(x => x.event_date).Take(30).ToList();
+
+                    return new notification_response
+                    {
+                        status = 200,
+                        message = "successful",
+                        data = new
+                        {
+                            history = history,
+                            not_started = current
+                        }
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "oops!, something happend while getting fixtures"
+                };
+            }
+        }
+        [HttpGet]
+        public async Task<notification_response> GetMyPreference(string email, string merchant_id, string hash)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("GetMyPreference", merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+                // validate hash
+                var checkhash = await util.ValidateHash2(merchant_id + email, config.secret_key, hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+
+                if (checkIfUserIsLoginIn == null)
+                {
+                    return new notification_response
+                    {
+                        status = 306,
+                        message = "Please login with your email to use this feature"
+                    };
+                }
+
+                var preference = await _MyPeference.FindOneByCriteria(x => x.Email?.ToLower() == email?.ToLower());
+                if (preference == null)
+                {
+                    return new notification_response
+                    {
+                        status = 206,
+                        message = $"Sorry no preferences found with email '{email}'"
+                    };
+                }
+
+                var serialise_preference = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(preference.MyPreferenceInJson);
+                return new notification_response
+                {
+                    status = 200,
+                    message = "successful",
+                    data = new
+                    {
+                        my_preference = serialise_preference
+                    }
+                };
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "oops!, something happend while getting preference"
+                };
+            }
+        }
+        [HttpGet]
+        public async Task<notification_response> MatchLineUp(int fixture_id, string email, string merchant_id, string hash)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("MatchLineUp", merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+                // validate hash
+                var checkhash = await util.ValidateHash2(merchant_id + email, config.secret_key, hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+
+                if (checkIfUserIsLoginIn == null)
+                {
+                    return new notification_response
+                    {
+                        status = 306,
+                        message = "Please login with your email to use this feature"
+                    };
+                }
+
+
+                using (var api = new HttpClient())
+                {
+                    api.DefaultRequestHeaders.Add("X-RapidAPI-Key", Config.Authorization_Header);
+                    var request = await api.GetAsync(Config.BASE_URL + $"/lineups/{fixture_id}");
+                    if (!request.IsSuccessStatusCode)
+                    {
+                        return new notification_response
+                        {
+                            status = 302,
+                            message = "Unable to retrieve Line up"
+                        };
+                    }
+                    var response = await request.Content.ReadAsAsync<dynamic>();
+                    if (response == null)
+                    {
+                        return new notification_response
+                        {
+                            status = 301,
+                            message = "Unable to decode response"
+                        };
+                    }
+
+                    return new notification_response
+                    {
+                        status = 200,
+                        message = "successful",
+                        data = new
+                        {
+                            line_up = response,
+                        }
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "oops!, something happend while getting fixtures"
+                };
+            }
+        }
+        [HttpGet]
+        public async Task<notification_response> LiveScore(int league_id, string email, string merchant_id, string hash)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("LiveScore", merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+                // validate hash
+                var checkhash = await util.ValidateHash2(merchant_id + email, config.secret_key, hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+
+                if (checkIfUserIsLoginIn == null)
+                {
+                    return new notification_response
+                    {
+                        status = 306,
+                        message = "Please login with your email to use this feature"
+                    };
+                }
+
+
+                using (var api = new HttpClient())
+                {
+                    api.DefaultRequestHeaders.Add("X-RapidAPI-Key", Config.Authorization_Header);
+                    var request = await api.GetAsync(Config.BASE_URL + $"/fixtures/live/{league_id}");
+                    if (!request.IsSuccessStatusCode)
+                    {
+                        return new notification_response
+                        {
+                            status = 302,
+                            message = "Unable to retrieve live score"
+                        };
+                    }
+                    var response = await request.Content.ReadAsAsync<dynamic>();
+                    if (response == null)
+                    {
+                        return new notification_response
+                        {
+                            status = 301,
+                            message = "Unable to decode response"
+                        };
+                    }
+
+                    if (response.results == 0)
+                    {
+                        return new notification_response
+                        {
+                            status = 301,
+                            message = "No live score currently"
+                        };
+                    }
+
+                    return new notification_response
+                    {
+                        status = 200,
+                        message = "successful",
+                        data = new
+                        {
+                            live_score = response
+                        }
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "oops!, something happend while getting fixtures"
+                };
+            }
+        }
+        [HttpGet]
+        public async Task<notification_response> MatchPrediction(int fixture_id, string email, string merchant_id, string hash)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("MatchPrediction", merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+                // validate hash
+                var checkhash = await util.ValidateHash2(merchant_id + email, config.secret_key, hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+
+                if (checkIfUserIsLoginIn == null)
+                {
+                    return new notification_response
+                    {
+                        status = 306,
+                        message = "Please login with your email to use this feature"
+                    };
+                }
+
+
+                using (var api = new HttpClient())
+                {
+                    api.DefaultRequestHeaders.Add("X-RapidAPI-Key", Config.Authorization_Header);
+                    var request = await api.GetAsync(Config.BASE_URL + $"/predictions/{fixture_id}");
+                    if (!request.IsSuccessStatusCode)
+                    {
+                        return new notification_response
+                        {
+                            status = 302,
+                            message = "Unable to retrieve prediction"
+                        };
+                    }
+                    var response = await request.Content.ReadAsAsync<dynamic>();
+                    if (response == null)
+                    {
+                        return new notification_response
+                        {
+                            status = 301,
+                            message = "Unable to decode response"
+                        };
+                    }
+
+                    if (response.results == 0)
+                    {
+                        return new notification_response
+                        {
+                            status = 301,
+                            message = "No prediction"
+                        };
+                    }
+
+                    return new notification_response
+                    {
+                        status = 200,
+                        message = "successful",
+                        data = new
+                        {
+                            prediction = response
+                        }
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "oops!, something happend while getting fixtures"
                 };
             }
         }

@@ -19,6 +19,7 @@ using DapperLayer.utilities;
 using System.Dynamic;
 using System.Reflection;
 using UpSellingAndCrossSelling.CrossSelling;
+using DataStore.ViewModels;
 
 namespace TestSerials
 {
@@ -28,6 +29,19 @@ namespace TestSerials
         {
             try
             {
+                Core<NextRenewal> dapper_core = new Core<NextRenewal>();
+                var condition = new helpers();
+                var query = condition.QueryResolver(new RenewalRatio
+                {
+                    merchant_id = "Test",
+                    is_MD = true,
+                    subsidary = subsidiary.Life
+
+                });
+                var result = dapper_core.GetRenewalRatio(string.Format(connectionManager.NexRenewal, query)).GetAwaiter().GetResult();
+                var grouped_item = new helpers().Grouper2(result);
+                //var test = Newtonsoft.Json.JsonConvert.SerializeObject(grouped_item);
+                //Console.WriteLine(test);
                 //NumberFormatInfo setPrecision = new NumberFormatInfo();
                 //setPrecision.NumberDecimalDigits = 1;
                 //var premium = 5000.00;
@@ -51,7 +65,7 @@ namespace TestSerials
                 //    Console.WriteLine(false);
                 //}
                 //Console.ReadKey();
-                int[] arr = { 5, 4, 8, 2, 6, 7, 1, 3, 7 };
+                //int[] arr = { 5, 4, 8, 2, 6, 7, 1, 3, 7 };
                 //var test = arr.ToList().OrderBy(x=>x);
 
                 //int sum = 0;
@@ -453,7 +467,7 @@ namespace TestSerials
                     else
                     {
                         query = _firstdate.AddDays(count);
-                        if(query.DayOfWeek != _DaysOfWeek)
+                        if (query.DayOfWeek != _DaysOfWeek)
                         {
                             ++count;
                             continue;
@@ -544,7 +558,7 @@ namespace TestSerials
 
         public static class SimpleObjectMapper
         {
-         
+
         }
 
         public class data

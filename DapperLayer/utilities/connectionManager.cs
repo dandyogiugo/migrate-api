@@ -66,5 +66,29 @@ namespace DapperLayer.utilities
                                                               ";
         public static string _getNewCustomerSP { get; } = "RecommendationEngine";
 
+        public static string renewalsRatio { get; } = @"DECLARE @temp_table as Table(
+                                                 Unit_lng_descr varchar(100),
+                                                 Count int,
+                                                 Status varchar(20),
+                                                 Company varchar(100),
+                                                 Product varchar(max),
+                                                 unit_id int
+                                                )
+
+                                                INSERT INTO @temp_table  SELECT Unit_lng_descr, count(*) AS 'Count', 'Status' = 'Renewed',Company,Product_lng_descr,unitid
+
+                                                FROM         [dbo].[Renewal_queue]
+                                                WHERE        Status LIKE '%Renewed%' and Product_lng_descr is not null {0}
+                                                GROUP BY Product_lng_descr, Unit_lng_descr,Company,unitid;
+
+                                                INSERT INTO @temp_table  SELECT Unit_lng_descr, count(*) AS 'Count', 'Status' = 'Unrenewed',Company,Product_lng_descr,unitid
+                                                FROM         [dbo].[Renewal_queue]
+                                                WHERE        Status LIKE '%Unrenewed%' and Product_lng_descr is not null {0}
+                                                GROUP BY Product_lng_descr, Unit_lng_descr,Company,unitid;
+                                                select * from @temp_table";
+
+        public static string NexRenewal { get; } = @"select * from [dbo].[Renewals_staging] 
+                                                    where month(enddate) =month(getdate()) and year(enddate)=year(getdate()) {0}";
+
     }
 }

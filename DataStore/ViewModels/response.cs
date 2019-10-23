@@ -259,4 +259,124 @@ namespace DataStore.ViewModels
         public decimal instPremiumField { get; set; }
         public object PropertyChanged { get; set; }
     }
+
+    public class HomeTeam
+    {
+        public int team_id { get; set; }
+        public string team_name { get; set; }
+        public string logo { get; set; }
+    }
+
+    public class AwayTeam
+    {
+        public int team_id { get; set; }
+        public string team_name { get; set; }
+        public string logo { get; set; }
+    }
+
+    public class Score
+    {
+        public string halftime { get; set; }
+        public string fulltime { get; set; }
+        public object extratime { get; set; }
+        public object penalty { get; set; }
+    }
+
+    public class Fixtures
+    {
+        public int fixture_id { get; set; }
+        public int league_id { get; set; }
+        public DateTime event_date { get; set; }
+        public int event_timestamp { get; set; }
+        public int firstHalfStart { get; set; }
+        public int secondHalfStart { get; set; }
+        public string round { get; set; }
+        public string status { get; set; }
+        public string statusShort { get; set; }
+        public int elapsed { get; set; }
+        public string venue { get; set; }
+        public object referee { get; set; }
+        public HomeTeam homeTeam { get; set; }
+        public AwayTeam awayTeam { get; set; }
+        public int goalsHomeTeam { get; set; }
+        public int goalsAwayTeam { get; set; }
+        public Score score { get; set; }
+    }
+
+    public class api
+    {
+        public api()
+        {
+
+        }
+        public int results { get; set; }
+        public List<Fixtures> fixtures { get; set; }
+    }
+
+    public class RenewRatio
+    {
+        public RenewRatio()
+        {
+
+        }
+
+        public int Count { get; set; }
+        public string Status { get; set; }
+        public string Unit_lng_descr { get; set; }
+        public int unit_id { get; set; }
+        public string Company { get; set; }
+        public string Product { get; set; }
+    }
+
+
+
+    public class Fixture
+    {
+        public int fixture_id { get; set; }
+        public int league_id { get; set; }
+        public DateTime event_date { get; set; }
+        public int event_timestamp { get; set; }
+        public int? firstHalfStart { get; set; }
+        public int? secondHalfStart { get; set; }
+        public string round { get; set; }
+        public string status { get; set; }
+        public string statusShort { get; set; }
+        public int elapsed { get; set; }
+        public string venue { get; set; }
+        public string referee { get; set; }
+        public HomeTeam homeTeam { get; set; }
+        public AwayTeam awayTeam { get; set; }
+        public int? goalsHomeTeam { get; set; }
+        public int? goalsAwayTeam { get; set; }
+        public Score score { get; set; }
+    }
+
+    public class Api
+    {
+        public int results { get; set; }
+        public List<Fixture> fixtures { get; set; }
+    }
+
+    public class MatchFixtures
+    {
+        public Api api { get; set; }
+    }
+
+
+    public class NextRenewal
+    {
+        public NextRenewal()
+        {
+
+        }
+
+        public decimal Premium { get; set; }
+        public DateTime EndDate { get; set; }
+        public string Unit_lng_descr { get; set; }
+        public int unitid { get; set; }
+        public string Company { get; set; }
+        public string Product_lng_descr { get; set; }
+        public int DaysAfter { get; set; }
+        public string pol_no { get; set; }
+    }
 }

@@ -49,7 +49,7 @@ namespace DataStore.Utilities
             }
             return res;
         }
-        public async Task<string> Sha256(string pattern)
+        public string Sha256(string pattern)
         {
             StringBuilder Sb = new StringBuilder();
             using (SHA256 hash = SHA256.Create())
@@ -161,7 +161,7 @@ namespace DataStore.Utilities
             {
                 return false;
             }
-            var formhash = await Sha256(getconfig.secret_key + getconfig.merchant_id);
+            var formhash = Sha256(getconfig.secret_key + getconfig.merchant_id);
             var formbase64headers = base64Decode(sentHeader);
             if (formhash.ToUpper().Equals(formbase64headers.ToUpper()))
             {
@@ -935,7 +935,7 @@ namespace DataStore.Utilities
                 return false;
             }
         }
- 
+
     }
 
 

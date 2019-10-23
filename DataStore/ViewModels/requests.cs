@@ -938,9 +938,23 @@ namespace DataStore.ViewModels
         [Required]
         public string hash { get; set; }
         [Required]
-        public int user_id { get; set; }
+        public string user_id { get; set; }
         [Required]
         public int gym_id { get; set; }
+    }
+
+    public class RenewalRatio
+    {
+        public RenewalRatio()
+        {
+
+        }
+
+        [Required]
+        public string merchant_id { get; set; }
+        public List<int> user_division { get; set; }
+        public bool is_MD { get; set; } = false;
+        public subsidiary? subsidary { get; set; }
     }
 }
 
