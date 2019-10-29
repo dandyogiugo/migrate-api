@@ -20,6 +20,7 @@ namespace WindowsService1.NewsAPIJob
         {
             try
             {
+                log.Info("about to get league");
                 store<News> newupdate = new store<News>();
                 using (var api = new HttpClient())
                 {
@@ -46,7 +47,7 @@ namespace WindowsService1.NewsAPIJob
                     {
                         log.Info("API authorization key is null, please check your condiguration file");
                     }
-
+                    log.Info("finished  getting league");
                 }
             }
             catch (Exception ex)
@@ -54,7 +55,7 @@ namespace WindowsService1.NewsAPIJob
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
                 log.Error(ex.InnerException?.ToString());
-                throw;
+                // throw;
             }
         }
     }

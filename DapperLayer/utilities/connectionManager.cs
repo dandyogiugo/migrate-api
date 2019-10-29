@@ -68,23 +68,23 @@ namespace DapperLayer.utilities
 
         public static string renewalsRatio { get; } = @"DECLARE @temp_table as Table(
                                                  Unit_lng_descr varchar(100),
-                                                 Count int,
                                                  Status varchar(20),
                                                  Company varchar(100),
                                                  Product varchar(max),
-                                                 unit_id int
+                                                 unit_id int,
+                                                 Premium decimal
                                                 )
 
-                                                INSERT INTO @temp_table  SELECT Unit_lng_descr, count(*) AS 'Count', 'Status' = 'Renewed',Company,Product_lng_descr,unitid
+                                                INSERT INTO @temp_table  SELECT Unit_lng_descr, 'Status' = 'Renewed',Company,Product_lng_descr,unitid,Premium
 
                                                 FROM         [dbo].[Renewal_queue]
-                                                WHERE        Status LIKE '%Renewed%' and Product_lng_descr is not null {0}
-                                                GROUP BY Product_lng_descr, Unit_lng_descr,Company,unitid;
+                                                WHERE        Status LIKE 'Renewed%' and Product_lng_descr is not null {0}
+                                             
 
-                                                INSERT INTO @temp_table  SELECT Unit_lng_descr, count(*) AS 'Count', 'Status' = 'Unrenewed',Company,Product_lng_descr,unitid
+                                                INSERT INTO @temp_table  SELECT Unit_lng_descr, 'Status' = 'Unrenewed',Company,Product_lng_descr,unitid,Premium
                                                 FROM         [dbo].[Renewal_queue]
-                                                WHERE        Status LIKE '%Unrenewed%' and Product_lng_descr is not null {0}
-                                                GROUP BY Product_lng_descr, Unit_lng_descr,Company,unitid;
+                                                WHERE        Status LIKE '%Unrenewed' and Product_lng_descr is not null {0}
+                                              
                                                 select * from @temp_table";
 
         public static string NexRenewal { get; } = @"select * from [dbo].[Renewals_staging] 

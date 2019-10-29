@@ -30,6 +30,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
+        [GzipCompression]
         public async Task<dynamic> GetPrediction(string merchant_id, int page = 1)
         {
             try
@@ -107,6 +108,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
+        [GzipCompression]
         public async Task<dynamic> SearchPrediction(string query, string merchant_id, int page = 1)
         {
             try
@@ -184,6 +186,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
+        [GzipCompression]
         public async Task<dynamic> GetCurrentAndRecommendedProducts(int customer_id, string merchant_id)
         {
             try
@@ -280,7 +283,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
 
                 var grouped_item = new helpers().Grouper(result);
-               
+
                 return new notification_response
                 {
                     status = 200,
@@ -300,7 +303,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                 };
             }
         }
-
 
         [HttpPost]
         [GzipCompression]
@@ -341,7 +343,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
 
                 var grouped_item = new helpers().Grouper2(result);
-        
+
                 return new notification_response
                 {
                     status = 200,

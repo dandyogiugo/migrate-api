@@ -44,7 +44,8 @@ namespace WindowsService1.NewsAPIJob
                 }
                 else
                 {
-                    return null;
+                    //default value
+                    return "73a1a7d816mshb9d8052704e2be1p12cedcjsn425c7ba3c59b";
                 }
 
             }

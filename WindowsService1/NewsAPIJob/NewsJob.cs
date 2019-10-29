@@ -15,6 +15,7 @@ namespace WindowsService1.NewsAPIJob
         {
             log.Info("about to start New Jobs");
             NewsProcessor.GetNews();
+            GetAllLeague.GetLeague();
             log.Info("Job completed");
         }
     }

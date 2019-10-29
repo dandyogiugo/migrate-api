@@ -29,17 +29,18 @@ namespace TestSerials
         {
             try
             {
-                Core<NextRenewal> dapper_core = new Core<NextRenewal>();
-                var condition = new helpers();
-                var query = condition.QueryResolver(new RenewalRatio
-                {
-                    merchant_id = "Test",
-                    is_MD = true,
-                    subsidary = subsidiary.Life
+      
+                //Core<NextRenewal> dapper_core = new Core<NextRenewal>();
+                //var condition = new helpers();
+                //var query = condition.QueryResolver(new RenewalRatio
+                //{
+                //    merchant_id = "Test",
+                //    is_MD = true,
+                //    subsidary = subsidiary.Life
 
-                });
-                var result = dapper_core.GetRenewalRatio(string.Format(connectionManager.NexRenewal, query)).GetAwaiter().GetResult();
-                var grouped_item = new helpers().Grouper2(result);
+                //});
+                //var result = dapper_core.GetRenewalRatio(string.Format(connectionManager.NexRenewal, query)).GetAwaiter().GetResult();
+                //var grouped_item = new helpers().Grouper2(result);
                 //var test = Newtonsoft.Json.JsonConvert.SerializeObject(grouped_item);
                 //Console.WriteLine(test);
                 //NumberFormatInfo setPrecision = new NumberFormatInfo();

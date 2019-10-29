@@ -326,6 +326,7 @@ namespace DataStore.ViewModels
         public int unit_id { get; set; }
         public string Company { get; set; }
         public string Product { get; set; }
+        public decimal Premium { get; set; }
     }
 
 

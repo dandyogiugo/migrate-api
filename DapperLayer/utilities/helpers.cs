@@ -52,24 +52,28 @@ namespace DapperLayer.utilities
                     List<dynamic> groups = new List<dynamic>();
                     dynamic main = new ExpandoObject();
                     main.Source = _item.Key;
-                    main.count = _item.Sum(x => x.Count);
-                    List<IGrouping<string, RenewRatio>> group_by_unit_id = _item.GroupBy(x => x.Status.Trim()).ToList();
+                    main.count = _item.Count();
+
+                    var group_by_unit_id = _item.GroupBy(x => x.Status.Trim()).ToList();
                     foreach (var item in group_by_unit_id)
                     {
                         dynamic obj = new ExpandoObject();
                         List<dynamic> details = new List<dynamic>();
-                        obj.total = item.Sum(x => x.Count);
-                        var sub_groups = item.GroupBy(x => x.Unit_lng_descr.Trim());
+                        obj.total = item.Count();
+                        obj.totalpremium = item.Sum(x => x.Premium);
+                        var sub_groups = item.GroupBy(x => x.unit_id);
                         obj.category = sub_groups.First().First().Status;
-                        List<dynamic> sub_group = new List<dynamic>();
+
                         foreach (var sub_item in sub_groups)
                         {
+                            List<dynamic> sub_group = new List<dynamic>();
                             sub_group.Add(new
                             {
                                 division = sub_item.First().Unit_lng_descr,
                                 division_id = sub_item.First().unit_id,
-                                sub_total = sub_item.Sum(x => x.Count),
-                                data = GetSubGroups(sub_item)
+                                sub_total = sub_item.Count(),
+                                totalsubpremium = sub_item.Sum(x => x.Premium),
+                                data = GetSubGroups(sub_item),
                             });
 
                             details.Add(sub_group);
@@ -93,15 +97,17 @@ namespace DapperLayer.utilities
             }
         }
 
-        public List<dynamic> GetSubGroups(IGrouping<string, RenewRatio> sub_item)
+        public List<dynamic> GetSubGroups(IGrouping<int, RenewRatio> sub_item)
         {
             List<dynamic> sub_sub = new List<dynamic>();
-            foreach (var sub_sub_item in sub_item)
+            var product = sub_item.GroupBy(x => x.Product);
+            foreach (var sub_sub_item in product)
             {
                 sub_sub.Add(new
                 {
-                    product = sub_sub_item.Product,
-                    Count = sub_sub_item.Count
+                    product = sub_sub_item.First().Product,
+                    Count = sub_sub_item.Count(),
+                    premium = sub_sub_item.Sum(x => x.Premium)
                 });
             }
             return sub_sub;
@@ -123,10 +129,11 @@ namespace DapperLayer.utilities
                     main.TotalPremium = _item.Sum(x => x.Premium);
                     main.Count = _item.Count();
                     List<IGrouping<string, NextRenewal>> group_by_unit_id = _item.GroupBy(x => x.Unit_lng_descr.Trim()).ToList();
+                    List<dynamic> details = new List<dynamic>();
                     foreach (var item in group_by_unit_id)
                     {
                         dynamic obj = new ExpandoObject();
-                        List<dynamic> details = new List<dynamic>();
+
                         obj.TotalPremium = item.Sum(x => x.Premium);
                         obj.Unit = item.First().Unit_lng_descr;
                         obj.Count = item.Count();
@@ -150,7 +157,7 @@ namespace DapperLayer.utilities
                     main.data = groups;
                     main_object.Add(main);
                 }
-               
+
                 return main_object;
 
             }
