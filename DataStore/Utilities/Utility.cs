@@ -2,7 +2,6 @@
 using DataStore.Models;
 using DataStore.repository;
 using DataStore.ViewModels;
-using Word = Microsoft.Office.Interop.Word;
 using System;
 using System.Collections.Generic;
 using System.Linq;

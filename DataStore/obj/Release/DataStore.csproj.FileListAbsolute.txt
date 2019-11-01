@@ -26,3 +26,29 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Da
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\obj\Release\DataStore.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\obj\Release\DataStore.pdb
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\obj\Release\DataStore.csprojAssemblyReference.cache
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csprojAssemblyReference.cache
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.dll
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.pdb
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\DataStore.dll.config
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\DataStore.dll
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\DataStore.pdb
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\EntityFramework.dll
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\Newtonsoft.Json.dll
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\NLog.dll
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\Oracle.DataAccess.dll
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\Spire.Doc.dll
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\Spire.License.dll
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\Spire.Pdf.dll
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\SendGrid.dll
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\Microsoft.mshtml.dll
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\CustodianEmailSMSGateway.pdb
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\EntityFramework.xml
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\Newtonsoft.Json.xml
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\NLog.xml
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\Spire.Doc.xml
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\Spire.License.xml
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\SendGrid.pdb
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\SendGrid.xml
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csproj.CopyComplete
