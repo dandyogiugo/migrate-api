@@ -82,11 +82,38 @@ namespace DapperLayer.Dapper.Core
 
         public async Task<List<T>> GetRenewalRatio(string sql)
         {
+
             using (var cnn = new SqlConnection(connectionManager.connectionString()))
             {
                 var multiple = await cnn.QueryAsync<T>(sql.Trim(), commandTimeout: 60);
                 return multiple?.ToList();
             };
+        }
+
+        public async Task<NextRenewalResult> GetRenewalNext(string query, string condition = "", string condition_where = "", int offset = 0, int next = 100)
+        {
+            IList<int> count = null;
+            IList<NextRenewal> results = null;
+            var p = new
+            {
+                condition = condition,
+                condition_where = condition_where,
+                offset = offset,
+                next = next
+            };
+            var result = new NextRenewalResult();
+            var new_query = string.Format(query, condition, offset, next, condition_where);
+            using (var cnn = new SqlConnection(connectionManager.connectionString()))
+            {
+                using (var multiple = await cnn.QueryMultipleAsync(new_query))
+                {
+                    results = multiple.Read<NextRenewal>().ToList();
+                    count = multiple.Read<int>().ToList();
+                    result.TotalPages = count[0];
+                    result.Results = results.ToList();
+                }
+            };
+            return result;
         }
     }
 }

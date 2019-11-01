@@ -128,10 +128,10 @@ namespace DapperLayer.utilities
                     main.Source = _item.Key;
                     main.TotalPremium = _item.Sum(x => x.Premium);
                     main.Count = _item.Count();
-                    List<IGrouping<string, NextRenewal>> group_by_unit_id = _item.GroupBy(x => x.Unit_lng_descr.Trim()).ToList();
-                    List<dynamic> details = new List<dynamic>();
+                    var group_by_unit_id = _item.GroupBy(x => x.Unit_lng_descr.Trim()).ToList();
                     foreach (var item in group_by_unit_id)
                     {
+                        List<dynamic> details = new List<dynamic>();
                         dynamic obj = new ExpandoObject();
 
                         obj.TotalPremium = item.Sum(x => x.Premium);

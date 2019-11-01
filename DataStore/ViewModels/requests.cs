@@ -955,6 +955,7 @@ namespace DataStore.ViewModels
         public List<int> user_division { get; set; }
         public bool is_MD { get; set; } = false;
         public subsidiary? subsidary { get; set; }
+        public int page { get; set; } = 1;
     }
 }
 

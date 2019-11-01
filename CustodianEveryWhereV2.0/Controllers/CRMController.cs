@@ -329,11 +329,17 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Invalid merchant Id"
                     };
                 }
-                Core<NextRenewal> _dapper_core = new Core<NextRenewal>();
+                Core<NextRenewalResult> _dapper_core = new Core<NextRenewalResult>();
                 string condition = new helpers().QueryResolver(renewalRatio);
                 log.Info($"{((string.IsNullOrEmpty(condition)) ? "Admin Access" : condition)}");
-                var result = await _dapper_core.GetRenewalRatio(string.Format(connectionManager.NexRenewal, condition));
-                if (result.Count() == 0)
+                var condition_where = !string.IsNullOrEmpty(condition) ? $" {condition}" : " ";
+                int pagesize = 100;
+                int skip = (renewalRatio.page == 1) ? 0 : pagesize * (renewalRatio.page - 1);
+                var result = await _dapper_core.GetRenewalNext(connectionManager.NexRenewal, condition, condition_where, skip, pagesize);
+                decimal total = Convert.ToDecimal(result.TotalPages) / Convert.ToDecimal(pagesize);
+                int totalpage = (int)Math.Ceiling(total);
+
+                if (result.Results.Count() == 0)
                 {
                     return new notification_response
                     {
@@ -342,12 +348,15 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var grouped_item = new helpers().Grouper2(result);
+                var grouped_item = new helpers().Grouper2(result.Results);
 
-                return new notification_response
+                return new
                 {
                     status = 200,
                     message = "Successful",
+                    pageSize = pagesize,
+                    totalPages = totalpage,
+                    navigation = $"{renewalRatio.page} of {totalpage}",
                     data = grouped_item
                 };
             }

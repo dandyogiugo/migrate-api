@@ -380,4 +380,10 @@ namespace DataStore.ViewModels
         public int DaysAfter { get; set; }
         public string pol_no { get; set; }
     }
+
+    public class NextRenewalResult
+    {
+        public int TotalPages { get; set; }
+        public List<NextRenewal> Results { get; set; }
+    }
 }
