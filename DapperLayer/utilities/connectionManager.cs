@@ -72,16 +72,17 @@ namespace DapperLayer.utilities
                                                  Company varchar(100),
                                                  Product varchar(max),
                                                  unit_id int,
-                                                 Premium decimal
+                                                 Premium decimal,
+                                                 EndDate datetime
                                                 )
 
-                                                INSERT INTO @temp_table  SELECT Unit_lng_descr, 'Status' = 'Renewed',Company,Product_lng_descr,unitid,Premium
+                                                INSERT INTO @temp_table  SELECT Unit_lng_descr, 'Status' = 'Renewed',Company,Product_lng_descr,unitid,Premium,EndDate
 
                                                 FROM         [dbo].[Renewal_queue]
                                                 WHERE        Status LIKE 'Renewed%' and Product_lng_descr is not null {0}
                                              
 
-                                                INSERT INTO @temp_table  SELECT Unit_lng_descr, 'Status' = 'Unrenewed',Company,Product_lng_descr,unitid,Premium
+                                                INSERT INTO @temp_table  SELECT Unit_lng_descr, 'Status' = 'Unrenewed',Company,Product_lng_descr,unitid,Premium,EndDate
                                                 FROM         [dbo].[Renewal_queue]
                                                 WHERE        Status LIKE '%Unrenewed' and Product_lng_descr is not null {0}
                                               

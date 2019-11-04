@@ -47,3 +47,4 @@ C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0
 C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\Spire.Doc.xml
 C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\bin\Release\Spire.License.xml
 C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csproj.CopyComplete
+C:\Users\USER\Documents\OfficeProject\CustodianEveryWhere\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csprojAssemblyReference.cache

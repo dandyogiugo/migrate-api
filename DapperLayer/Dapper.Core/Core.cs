@@ -105,8 +105,7 @@ namespace DapperLayer.Dapper.Core
                             {condition};
 
                             SELECT Count(*) as Total FROM [dbo].[Renewals_staging]
-                            {(!string.IsNullOrEmpty(condition) ? "where  " + query_filter : " ")}
-                            {condition};";
+                            where  {query_filter}  {condition};";
 
 
             // var new_query = string.Format(query_filter,query, condition, offset, query_filter, next, condition_where);

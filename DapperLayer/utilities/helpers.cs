@@ -40,12 +40,20 @@ namespace DapperLayer.utilities
             return condition;
         }
 
-        public List<dynamic> Grouper(List<RenewRatio> renewRatios)
+        public List<dynamic> Grouper(List<RenewRatio> renewRatios, DateTime? from, DateTime? to)
         {
             try
             {
+                List<IGrouping<string, RenewRatio>> group_by_company = null;
+                if (from.HasValue && to.HasValue)
+                {
+                    group_by_company = renewRatios.Where(x => x.EndDate >= from && x.EndDate <= to).GroupBy(x => x.Company.Trim()).ToList();
+                }
+                else
+                {
+                    group_by_company = renewRatios.GroupBy(x => x.Company.Trim()).ToList();
+                }
 
-                List<IGrouping<string, RenewRatio>> group_by_company = renewRatios.GroupBy(x => x.Company.Trim()).ToList();
                 List<dynamic> main_object = new List<dynamic>();
                 foreach (var _item in group_by_company)
                 {
@@ -62,8 +70,9 @@ namespace DapperLayer.utilities
                         obj.total = item.Count();
                         obj.totalpremium = item.Sum(x => x.Premium);
                         var sub_groups = item.GroupBy(x => x.unit_id);
-                        obj.category = sub_groups.First().First().Status;
-
+                        string status = sub_groups.First().First().Status;
+                        obj.category = status;
+                        obj.grandtotal = renewRatios.Where(x => x.Company == _item.Key && x.Status == status).Count();
                         foreach (var sub_item in sub_groups)
                         {
                             List<dynamic> sub_group = new List<dynamic>();
@@ -146,7 +155,7 @@ namespace DapperLayer.utilities
                                 days_after = sub_item.DaysAfter,
                                 product = sub_item.Product_lng_descr,
                                 premium = sub_item.Premium
-                            }); 
+                            });
                         }
                         details.Add(sub_group);
                         obj.details = details;

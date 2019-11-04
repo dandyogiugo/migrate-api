@@ -282,7 +282,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var grouped_item = new helpers().Grouper(result);
+                var grouped_item = new helpers().Grouper(result, renewalRatio.from, renewalRatio.to);
 
                 return new notification_response
                 {
