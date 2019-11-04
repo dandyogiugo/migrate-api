@@ -87,12 +87,12 @@ namespace DapperLayer.utilities
                                               
                                                 select * from @temp_table";
 
-        public static string NexRenewal { get; } = @"select * from [dbo].[Renewals_staging] where month(enddate) =month(getdate()) and year(enddate)=year(getdate())  {0}
+        public static string NexRenewal { get; } = @"select * from [dbo].[Renewals_staging] where {0}  {1}
                                                         ORDER BY EndDate 
-                                                        OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY OPTION (RECOMPILE);
+                                                        OFFSET {2} ROWS FETCH NEXT {3} ROWS ONLY OPTION (RECOMPILE);
                                                         Select Count(*) as Total from [dbo].[Renewals_staging] 
-                                                        where month(enddate) =month(getdate()) and year(enddate)=year(getdate()) 
-                                                        {3}";
+                                                        where {4}
+                                                        {5}";
 
     }
 }

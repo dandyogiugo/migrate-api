@@ -90,26 +90,35 @@ namespace DapperLayer.Dapper.Core
             };
         }
 
-        public async Task<NextRenewalResult> GetRenewalNext(string query, string condition = "", string condition_where = "", int offset = 0, int next = 100)
+        public async Task<NextRenewalResult> GetRenewalNext(string query, string query_filter, string condition = "", string condition_where = "", int offset = 0, int next = 100)
         {
             IList<int> count = null;
+            IList<int> overallcount = null;
             IList<NextRenewal> results = null;
-            var p = new
-            {
-                condition = condition,
-                condition_where = condition_where,
-                offset = offset,
-                next = next
-            };
             var result = new NextRenewalResult();
-            var new_query = string.Format(query, condition, offset, next, condition_where);
+            var new_query = $@"SELECT * FROM [dbo].[Renewals_staging] where {query_filter}  {condition}
+                            ORDER BY EndDate
+                            OFFSET {offset} ROWS FETCH NEXT {next} ROWS ONLY OPTION(RECOMPILE);
+
+                            SELECT Count(*) as Total FROM [dbo].[Renewals_staging]
+                            where {query_filter}
+                            {condition};
+
+                            SELECT Count(*) as Total FROM [dbo].[Renewals_staging]
+                            {(!string.IsNullOrEmpty(condition) ? "where  " + query_filter : " ")}
+                            {condition};";
+
+
+            // var new_query = string.Format(query_filter,query, condition, offset, query_filter, next, condition_where);
             using (var cnn = new SqlConnection(connectionManager.connectionString()))
             {
                 using (var multiple = await cnn.QueryMultipleAsync(new_query))
                 {
-                    results = multiple.Read<NextRenewal>().ToList();
-                    count = multiple.Read<int>().ToList();
+                    results = (await multiple.ReadAsync<NextRenewal>()).ToList();
+                    count = (await multiple.ReadAsync<int>()).ToList();
+                    overallcount = (await multiple.ReadAsync<int>()).ToList();
                     result.TotalPages = count[0];
+                    result.OverAllCount = overallcount[0];
                     result.Results = results.ToList();
                 }
             };

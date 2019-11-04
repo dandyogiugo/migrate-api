@@ -956,6 +956,8 @@ namespace DataStore.ViewModels
         public bool is_MD { get; set; } = false;
         public subsidiary? subsidary { get; set; }
         public int page { get; set; } = 1;
+        public DateTime? from { get; set; }
+        public DateTime? to { get; set; }
     }
 }
 

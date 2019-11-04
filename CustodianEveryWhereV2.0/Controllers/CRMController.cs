@@ -331,11 +331,12 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 Core<NextRenewalResult> _dapper_core = new Core<NextRenewalResult>();
                 string condition = new helpers().QueryResolver(renewalRatio);
+                string default_query = (renewalRatio.from.HasValue && renewalRatio.to.HasValue) ? $"(enddate between '{renewalRatio.from.Value}' and '{renewalRatio.to.Value}')" : "month(enddate)=month(getdate()) and year(enddate)=year(getdate())";
                 log.Info($"{((string.IsNullOrEmpty(condition)) ? "Admin Access" : condition)}");
                 var condition_where = !string.IsNullOrEmpty(condition) ? $" {condition}" : " ";
                 int pagesize = 100;
                 int skip = (renewalRatio.page == 1) ? 0 : pagesize * (renewalRatio.page - 1);
-                var result = await _dapper_core.GetRenewalNext(connectionManager.NexRenewal, condition, condition_where, skip, pagesize);
+                var result = await _dapper_core.GetRenewalNext(connectionManager.NexRenewal, default_query, condition, condition_where, skip, pagesize);
                 decimal total = Convert.ToDecimal(result.TotalPages) / Convert.ToDecimal(pagesize);
                 int totalpage = (int)Math.Ceiling(total);
 
@@ -356,6 +357,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     message = "Successful",
                     pageSize = pagesize,
                     totalPages = totalpage,
+                    totalrecord = result.OverAllCount,
                     navigation = $"{renewalRatio.page} of {totalpage}",
                     data = grouped_item
                 };

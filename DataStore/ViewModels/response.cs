@@ -384,6 +384,7 @@ namespace DataStore.ViewModels
     public class NextRenewalResult
     {
         public int TotalPages { get; set; }
+        public int OverAllCount { get; set; }
         public List<NextRenewal> Results { get; set; }
     }
 }

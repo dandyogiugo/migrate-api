@@ -133,7 +133,6 @@ namespace DapperLayer.utilities
                     {
                         List<dynamic> details = new List<dynamic>();
                         dynamic obj = new ExpandoObject();
-
                         obj.TotalPremium = item.Sum(x => x.Premium);
                         obj.Unit = item.First().Unit_lng_descr;
                         obj.Count = item.Count();
@@ -147,10 +146,9 @@ namespace DapperLayer.utilities
                                 days_after = sub_item.DaysAfter,
                                 product = sub_item.Product_lng_descr,
                                 premium = sub_item.Premium
-                            });
-
-                            details.Add(sub_group);
+                            }); 
                         }
+                        details.Add(sub_group);
                         obj.details = details;
                         groups.Add(obj);
                     }
