@@ -29,7 +29,7 @@ namespace TestSerials
         {
             try
             {
-      
+
                 //Core<NextRenewal> dapper_core = new Core<NextRenewal>();
                 //var condition = new helpers();
                 //var query = condition.QueryResolver(new RenewalRatio
@@ -269,6 +269,45 @@ namespace TestSerials
 
                 throw;
             }
+        }
+
+        static string timeConversion(string s)
+        {
+            /*
+             * Write your code here.
+             */
+            var part = s.Split(':');
+            int h = Convert.ToInt32(part[0]);
+
+            if (s.Contains("AM"))
+            {
+
+                if (h == 12)
+                {
+                    return $"00:{part[1]}:{part[2].Substring(0, 1)}";
+                }
+                else
+                {
+                    return $"{h}:{part[1]}:{part[2].Substring(0, 1)}";
+
+                }
+
+
+            }
+            else
+            {
+
+                int f = h + 12;
+                if (f == 24)
+                {
+                    return $"00:{part[1]}:{part[2].Substring(0, 1)}";
+                }
+                else
+                {
+                    return $"{f}:{part[1]}:{part[2].Substring(0, 1)}";
+                }
+            }
+
         }
 
         public int get(List<List<int>> arr)
