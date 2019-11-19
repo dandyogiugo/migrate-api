@@ -91,6 +91,7 @@ namespace DapperLayer.utilities
         public static string NexRenewal { get; } = @"select * from [dbo].[Renewals_staging] where {0}  {1}
                                                         ORDER BY EndDate 
                                                         OFFSET {2} ROWS FETCH NEXT {3} ROWS ONLY OPTION (RECOMPILE);
+                                                        
                                                         Select Count(*) as Total from [dbo].[Renewals_staging] 
                                                         where {4}
                                                         {5}";

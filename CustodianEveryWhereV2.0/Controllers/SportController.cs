@@ -919,5 +919,27 @@ namespace CustodianEveryWhereV2._0.Controllers
             }
         }
 
+
+        [HttpGet]
+        [GzipCompression]
+        public async Task<notification_response> GetMatchStatistics()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "oops!, something happend while getting match statistics"
+                };
+            }
+        }
+
     }
 }

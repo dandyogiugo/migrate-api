@@ -20,6 +20,7 @@ using System.Dynamic;
 using System.Reflection;
 using UpSellingAndCrossSelling.CrossSelling;
 using DataStore.ViewModels;
+using System.Text.RegularExpressions;
 
 namespace TestSerials
 {
@@ -27,6 +28,7 @@ namespace TestSerials
     {
         static void Main(string[] args)
         {
+            MatchCollection
             try
             {
 
@@ -271,352 +273,392 @@ namespace TestSerials
             }
         }
 
-        static string timeConversion(string s)
+        public List<string> popularNFeatures(int numFeatures,
+                                        int topFeatures,
+                                        List<string> possibleFeatures,
+                                        int numFeatureRequests,
+                                        List<string> featureRequests)
         {
-            /*
-             * Write your code here.
-             */
-            var part = s.Split(':');
-            int h = Convert.ToInt32(part[0]);
-
-            if (s.Contains("AM"))
+            // WRITE YOUR CODE HERE
+            if (topFeatures > numFeatures) return possibleFeatures;
+            Dictionary<string, int> count = new Dictionary<string, int>();
+            
+            foreach (string pfeatures in possibleFeatures)
             {
-
-                if (h == 12)
+                foreach (var item in featureRequests)
                 {
-                    return $"00:{part[1]}:{part[2].Substring(0, 1)}";
+                    if (item.Contains(pfeatures))
+                    {
+                        if (count.ContainsKey(pfeatures))
+                        {
+                            count[pfeatures] += 1;
+                        }
+                        else
+                        {
+                            count.Add(pfeatures, 1);
+                        }
+                    }
                 }
-                else
-                {
-                    return $"{h}:{part[1]}:{part[2].Substring(0, 1)}";
 
-                }
+            }
+          var final =  count.OrderByDescending(x => x.Value).ToList();
+            List<string> f = new List<string>();
+            for(int i = 0;i< topFeatures;++i)
+            {
+                f.Add(final[i].Key);
+            }
+            return f;
+        }
+    }
 
+    static string timeConversion(string s)
+    {
+        List<int[]> sbdjh = new List<int[]>();
+        Regex
+        /*
+         * Write your code here.
+         */
+        var part = s.Split(':');
+        int h = Convert.ToInt32(part[0]);
 
+        if (s.Contains("AM"))
+        {
+
+            if (h == 12)
+            {
+                return $"00:{part[1]}:{part[2].Substring(0, 1)}";
             }
             else
             {
+                return $"{h}:{part[1]}:{part[2].Substring(0, 1)}";
 
-                int f = h + 12;
-                if (f == 24)
-                {
-                    return $"00:{part[1]}:{part[2].Substring(0, 1)}";
-                }
-                else
-                {
-                    return $"{f}:{part[1]}:{part[2].Substring(0, 1)}";
-                }
             }
+
 
         }
-
-        public int get(List<List<int>> arr)
+        else
         {
-            var M = arr;
-            int i, j;
-            int count = 0;
-            //no of rows in M[,] 
-            int R = arr.Count();
-            //no of columns in M[,] 
-            int C = arr[0].Count();
-            int[,] S = new int[R, C];
 
-            int max_of_s, max_i, max_j;
-
-            /* Set first column of S[,]*/
-            for (i = 0; i < R; i++)
+            int f = h + 12;
+            if (f == 24)
             {
-                S[i, 0] = M[i][0];
+                return $"00:{part[1]}:{part[2].Substring(0, 1)}";
             }
+            else
+            {
+                return $"{f}:{part[1]}:{part[2].Substring(0, 1)}";
+            }
+        }
+
+    }
+
+    public int get(List<List<int>> arr)
+    {
+        var M = arr;
+        int i, j;
+        int count = 0;
+        //no of rows in M[,] 
+        int R = arr.Count();
+        //no of columns in M[,] 
+        int C = arr[0].Count();
+        int[,] S = new int[R, C];
+
+        int max_of_s, max_i, max_j;
+
+        /* Set first column of S[,]*/
+        for (i = 0; i < R; i++)
+        {
+            S[i, 0] = M[i][0];
+        }
 
 
-            /* Set first row of S[][]*/
+        /* Set first row of S[][]*/
+        for (j = 0; j < C; j++)
+        {
+            S[0, j] = M[0][j];
+        }
+
+        /* Construct other entries of S[,]*/
+        for (i = 1; i < R; i++)
+        {
+            for (j = 1; j < C; j++)
+            {
+                if (M[i][j] == 1)
+                    S[i, j] = Math.Min(S[i, j - 1],
+                            Math.Min(S[i - 1, j], S[i - 1, j - 1])) + 1;
+                else
+                    S[i, j] = 0;
+            }
+        }
+
+        max_of_s = S[0, 0]; max_i = 0; max_j = 0;
+        for (i = 0; i < R; i++)
+        {
             for (j = 0; j < C; j++)
             {
-                S[0, j] = M[0][j];
-            }
-
-            /* Construct other entries of S[,]*/
-            for (i = 1; i < R; i++)
-            {
-                for (j = 1; j < C; j++)
+                if (max_of_s < S[i, j])
                 {
-                    if (M[i][j] == 1)
-                        S[i, j] = Math.Min(S[i, j - 1],
-                                Math.Min(S[i - 1, j], S[i - 1, j - 1])) + 1;
-                    else
-                        S[i, j] = 0;
+                    max_of_s = S[i, j];
+                    max_i = i;
+                    max_j = j;
                 }
             }
-
-            max_of_s = S[0, 0]; max_i = 0; max_j = 0;
-            for (i = 0; i < R; i++)
-            {
-                for (j = 0; j < C; j++)
-                {
-                    if (max_of_s < S[i, j])
-                    {
-                        max_of_s = S[i, j];
-                        max_i = i;
-                        max_j = j;
-                    }
-                }
-            }
-
-            for (i = max_i; i > max_i - max_of_s; i--)
-            {
-                for (j = max_j; j > max_j - max_of_s; j--)
-                {
-                    count += count;
-                }
-
-            }
-            return count;
         }
-        public static int Cal(double sqrt, int count)
+
+        for (i = max_i; i > max_i - max_of_s; i--)
         {
-            double sqr = Math.Sqrt(sqrt);
-            if (sqr - Math.Floor(sqr) == 0)
+            for (j = max_j; j > max_j - max_of_s; j--)
             {
-                ++count;
-                return Cal(sqr, count);
+                count += count;
             }
-            return count;
 
         }
-        public static string Serials(int val)
+        return count;
+    }
+    public static int Cal(double sqrt, int count)
+    {
+        double sqr = Math.Sqrt(sqrt);
+        if (sqr - Math.Floor(sqr) == 0)
         {
-            string final = "";
-            if (val <= 9)
-            {
-                final = "000000" + val;
-            }
-            else if (val.ToString().Length < 7)
-            {
-                int loop = 7 - val.ToString().Length;
-                string zeros = "";
-                for (int i = 0; i < loop; i++)
-                {
-                    zeros += "0";
-                }
-                final = zeros + val;
-            }
-            else
-            {
-                final = val.ToString();
-            }
-
-            return "HO/A/07/T" + final;
+            ++count;
+            return Cal(sqr, count);
         }
-        public static int kk(int[] A)
+        return count;
+
+    }
+    public static string Serials(int val)
+    {
+        string final = "";
+        if (val <= 9)
         {
-            List<int> diff = new List<int>();
-            for (int i = 0; i < A.Length; ++i)
+            final = "000000" + val;
+        }
+        else if (val.ToString().Length < 7)
+        {
+            int loop = 7 - val.ToString().Length;
+            string zeros = "";
+            for (int i = 0; i < loop; i++)
             {
-                int fpvalue = A[i];
-                for (int j = i + 1; j < A.Length; ++j)
+                zeros += "0";
+            }
+            final = zeros + val;
+        }
+        else
+        {
+            final = val.ToString();
+        }
+
+        return "HO/A/07/T" + final;
+    }
+    public static int kk(int[] A)
+    {
+        List<int> diff = new List<int>();
+        for (int i = 0; i < A.Length; ++i)
+        {
+            int fpvalue = A[i];
+            for (int j = i + 1; j < A.Length; ++j)
+            {
+                int spvalue = A[j];
+                int first;
+                int second;
+                if (fpvalue > spvalue)
                 {
-                    int spvalue = A[j];
-                    int first;
-                    int second;
-                    if (fpvalue > spvalue)
+                    first = spvalue + 1;
+                    second = fpvalue;
+                }
+                else
+                {
+                    first = fpvalue + 1;
+                    second = spvalue;
+                }
+                for (int k = first; k < second; ++k)
+                {
+                    for (int m = 0; m < A.Length; ++m)
                     {
-                        first = spvalue + 1;
-                        second = fpvalue;
-                    }
-                    else
-                    {
-                        first = fpvalue + 1;
-                        second = spvalue;
-                    }
-                    for (int k = first; k < second; ++k)
-                    {
-                        for (int m = 0; m < A.Length; ++m)
+                        if (A[m] == k)
                         {
-                            if (A[m] == k)
-                            {
-                                break;
-                            }
+                            break;
                         }
-
-
                     }
-                    int abs = Math.Abs(fpvalue - spvalue);
-                    diff.Add(abs);
+
 
                 }
+                int abs = Math.Abs(fpvalue - spvalue);
+                diff.Add(abs);
+
             }
-            if (diff.Count > 0)
+        }
+        if (diff.Count > 0)
+        {
+            var min = diff.Min();
+            if (min <= 100000000)
             {
-                var min = diff.Min();
-                if (min <= 100000000)
+                return min;
+            }
+            return -1;
+        }
+        else
+        {
+            return -2;
+        }
+    }
+
+    (string, object, int) LookupName(long id) // tuple return type
+    {
+        var first = "";
+        var last = "";
+        var middle = 60;
+        return (first, middle, Convert.ToInt32(last)); // tuple literal
+    }
+
+    public static void Closest(int[] arr1, int[] arr2)
+    {
+        for (int i = 0; i < arr1.Length; i++)
+        {
+            for (int j = 0; j < arr2.Length; j++)
+            {
+                int sum = arr1[i] + arr2[j];
+                if (sum > 22 && sum <= 25)
                 {
-                    return min;
+                    Console.WriteLine($"({arr1[i]},{arr2[j]}) Sum = {sum}");
                 }
-                return -1;
-            }
-            else
-            {
-                return -2;
-            }
-        }
-
-        (string, object, int) LookupName(long id) // tuple return type
-        {
-            var first = "";
-            var last = "";
-            var middle = 60;
-            return (first, middle, Convert.ToInt32(last)); // tuple literal
-        }
-
-        public static void Closest(int[] arr1, int[] arr2)
-        {
-            for (int i = 0; i < arr1.Length; i++)
-            {
-                for (int j = 0; j < arr2.Length; j++)
+                else
                 {
-                    int sum = arr1[i] + arr2[j];
-                    if (sum > 22 && sum <= 25)
+                    continue;
+                }
+            }
+        }
+    }
+
+    public void PostMe(string firstDate, string lastDate, string weekDay)
+    {
+        var _firstdate = Convert.ToDateTime(firstDate);
+        var _lastdate = Convert.ToDateTime(lastDate);
+        var _DaysOfWeek = (DayOfWeek)Enum.Parse(typeof(DayOfWeek), weekDay);
+        List<data> allStocks = new List<data>();
+        if (_DaysOfWeek != DayOfWeek.Saturday && _DaysOfWeek != DayOfWeek.Sunday)
+        {
+            int count = 0;
+            while (_firstdate <= _lastdate)
+            {
+                DateTime query;
+                if (count == 0)
+                {
+                    query = _firstdate;
+                }
+                else
+                {
+                    query = _firstdate.AddDays(count);
+                    if (query.DayOfWeek != _DaysOfWeek)
                     {
-                        Console.WriteLine($"({arr1[i]},{arr2[j]}) Sum = {sum}");
-                    }
-                    else
-                    {
+                        ++count;
                         continue;
                     }
                 }
-            }
-        }
-
-        public void PostMe(string firstDate, string lastDate, string weekDay)
-        {
-            var _firstdate = Convert.ToDateTime(firstDate);
-            var _lastdate = Convert.ToDateTime(lastDate);
-            var _DaysOfWeek = (DayOfWeek)Enum.Parse(typeof(DayOfWeek), weekDay);
-            List<data> allStocks = new List<data>();
-            if (_DaysOfWeek != DayOfWeek.Saturday && _DaysOfWeek != DayOfWeek.Sunday)
-            {
-                int count = 0;
-                while (_firstdate <= _lastdate)
+                using (var api = new HttpClient())
                 {
-                    DateTime query;
-                    if (count == 0)
+                    var request = api.GetAsync($"https://jsonmock.hackerrank.com/api/stocks/?date={query.ToString("d-MMMM-yyyy")}").GetAwaiter().GetResult();
+                    if (request.IsSuccessStatusCode)
                     {
-                        query = _firstdate;
-                    }
-                    else
-                    {
-                        query = _firstdate.AddDays(count);
-                        if (query.DayOfWeek != _DaysOfWeek)
+                        var response = request.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                        var stocks = JsonConvert.DeserializeObject<stock>(response);
+                        foreach (var item in stocks.data)
                         {
-                            ++count;
-                            continue;
+                            Console.WriteLine($"{item.date.ToString("d-MMMM-yyyy")} {item.open} {item.close}");
                         }
+
                     }
-                    using (var api = new HttpClient())
-                    {
-                        var request = api.GetAsync($"https://jsonmock.hackerrank.com/api/stocks/?date={query.ToString("d-MMMM-yyyy")}").GetAwaiter().GetResult();
-                        if (request.IsSuccessStatusCode)
-                        {
-                            var response = request.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-                            var stocks = JsonConvert.DeserializeObject<stock>(response);
-                            foreach (var item in stocks.data)
-                            {
-                                Console.WriteLine($"{item.date.ToString("d-MMMM-yyyy")} {item.open} {item.close}");
-                            }
-
-                        }
-                    }
-
-                    ++count;
                 }
+
+                ++count;
             }
-
-
         }
 
-        public List<data> Pagenated(int pageNumber, DateTime _firstdate, DateTime _lastdate, DayOfWeek _DaysOfWeek)
+
+    }
+
+    public List<data> Pagenated(int pageNumber, DateTime _firstdate, DateTime _lastdate, DayOfWeek _DaysOfWeek)
+    {
+        using (var api = new HttpClient())
         {
-            using (var api = new HttpClient())
+            var request = api.GetAsync($"https://jsonmock.hackerrank.com/api/stocks?Page={pageNumber}").GetAwaiter().GetResult();
+            if (request.IsSuccessStatusCode)
             {
-                var request = api.GetAsync($"https://jsonmock.hackerrank.com/api/stocks?Page={pageNumber}").GetAwaiter().GetResult();
-                if (request.IsSuccessStatusCode)
-                {
-                    var response = request.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-                    var stocks = JsonConvert.DeserializeObject<stock>(response);
-                    var filteredStock = stocks.data.Where(x => x.date >= _firstdate && x.date <= _lastdate && x.date.DayOfWeek == _DaysOfWeek).ToList();
-                    return filteredStock;
-                }
-                else
-                {
-                    return null;
-                }
+                var response = request.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                var stocks = JsonConvert.DeserializeObject<stock>(response);
+                var filteredStock = stocks.data.Where(x => x.date >= _firstdate && x.date <= _lastdate && x.date.DayOfWeek == _DaysOfWeek).ToList();
+                return filteredStock;
             }
-        }
-
-        public class responseObject
-        {
-            public DateTime date { get; set; }
-            public decimal open { get; set; }
-            public decimal close { get; set; }
-            public decimal high { get; set; }
-            public decimal low { get; set; }
-        }
-        public class temp
-        {
-            public temp()
+            else
             {
-
+                return null;
             }
-            public string food { get; set; }
-            public tp quantity { get; set; }
-            public double time { get; set; }
-            public decimal youtubeurl { get; set; }
-        }
-
-        public class Viewtemp
-        {
-            public Viewtemp()
-            {
-
-            }
-            public string food { get; set; }
-            public tp quantity { get; set; }
-            public double time { get; set; }
-            public decimal youtubeurl { get; set; }
-        }
-
-        public class tp
-        {
-            public tp()
-            {
-
-            }
-            public int Id { get; set; }
-            public DateTime MyDate { get; set; }
-        }
-
-        public static class SimpleObjectMapper
-        {
-
-        }
-
-        public class data
-        {
-            public DateTime date { get; set; }
-            public decimal open { get; set; }
-            public decimal close { get; set; }
-            public decimal high { get; set; }
-            public decimal low { get; set; }
-        }
-
-        public class stock
-        {
-            public int page { get; set; }
-            public int per_page { get; set; }
-            public int total { get; set; }
-            public int total_pages { get; set; }
-            public List<data> data { get; set; }
         }
     }
+
+    public class responseObject
+    {
+        public DateTime date { get; set; }
+        public decimal open { get; set; }
+        public decimal close { get; set; }
+        public decimal high { get; set; }
+        public decimal low { get; set; }
+    }
+    public class temp
+    {
+        public temp()
+        {
+
+        }
+        public string food { get; set; }
+        public tp quantity { get; set; }
+        public double time { get; set; }
+        public decimal youtubeurl { get; set; }
+    }
+
+    public class Viewtemp
+    {
+        public Viewtemp()
+        {
+
+        }
+        public string food { get; set; }
+        public tp quantity { get; set; }
+        public double time { get; set; }
+        public decimal youtubeurl { get; set; }
+    }
+
+    public class tp
+    {
+        public tp()
+        {
+
+        }
+        public int Id { get; set; }
+        public DateTime MyDate { get; set; }
+    }
+
+    public static class SimpleObjectMapper
+    {
+
+    }
+
+    public class data
+    {
+        public DateTime date { get; set; }
+        public decimal open { get; set; }
+        public decimal close { get; set; }
+        public decimal high { get; set; }
+        public decimal low { get; set; }
+    }
+
+    public class stock
+    {
+        public int page { get; set; }
+        public int per_page { get; set; }
+        public int total { get; set; }
+        public int total_pages { get; set; }
+        public List<data> data { get; set; }
+    }
+}
 }

@@ -101,8 +101,7 @@ namespace DapperLayer.Dapper.Core
                             OFFSET {offset} ROWS FETCH NEXT {next} ROWS ONLY OPTION(RECOMPILE);
 
                             SELECT Count(*) as Total FROM [dbo].[Renewals_staging]
-                            where {query_filter}
-                            {condition};
+                            where {query_filter} {condition};
 
                             SELECT Count(*) as Total FROM [dbo].[Renewals_staging]
                             where  {query_filter}  {condition};";
