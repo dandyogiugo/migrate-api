@@ -60,7 +60,6 @@ namespace DataStore.Utilities
             }
             return Sb.ToString();
         }
-
         public async Task<string> Sha512(string pattern)
         {
             StringBuilder Sb = new StringBuilder();
@@ -934,7 +933,96 @@ namespace DataStore.Utilities
                 return false;
             }
         }
+        public async Task<double> GetDiscountByAge(int Age, double BasePremium)
+        {
 
+            if (Age < 18)
+            {
+                return BasePremium * 0.7;
+            }
+            else if (Age >= 66 && Age <= 70)
+            {
+                return BasePremium * 1.5;
+            }
+            else if (Age >= 71 && Age <= 76)
+            {
+                return BasePremium * 2;
+            }
+            else
+            {
+                return BasePremium;
+            }
+
+        }
+        public async Task<List<RateCategory>> GetTravelRate(int numbersOfDays, TravelCategory region)
+        {
+            #region
+            string category = "";
+            if (numbersOfDays >= 1 && numbersOfDays <= 7)
+            {
+                category = "A";
+            }
+            else if (numbersOfDays >= 8 && numbersOfDays <= 15)
+            {
+                category = "B";
+            }
+            else if (numbersOfDays >= 16 && numbersOfDays <= 32)
+            {
+                category = "C";
+            }
+            else if (numbersOfDays >= 33 && numbersOfDays <= 62)
+            {
+                category = "D";
+            }
+            else if (numbersOfDays >= 63 && numbersOfDays <= 93)
+            {
+                category = "E";
+            }
+            else if (numbersOfDays >= 94 && numbersOfDays <= 180)
+            {
+                category = "F";
+            }
+            else
+            {
+                category = "G";
+            }
+            #endregion
+            var getRateFile = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/TravelCategoryJSON/RateTable.json"));
+            var getRate = Newtonsoft.Json.JsonConvert.DeserializeObject<List<TravelRate>>(getRateFile);
+            var getCategory = getRate.FirstOrDefault(x => x._class == category);
+            if (region == TravelCategory.WorldWide2 || region == TravelCategory.WorldWide)
+            {
+                List<string> worldwide = new List<string>() { "GOLD", "SILVER", "ECONOMY" };
+                return getCategory.category.Where(x => worldwide.Any(y => y == x.type)).ToList();
+            }
+            else
+            {
+                return getCategory.category.Where(x => x.type == region.ToString().ToUpper()).ToList();
+            }
+
+        }
+        public List<Package> GetPackageDetails(TravelCategory region, out List<string> benefits)
+        {
+            var getFile = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/TravelCategoryJSON/Category.json"));
+            var package = Newtonsoft.Json.JsonConvert.DeserializeObject<PackageList>(getFile);
+            int _region = (int)region;
+            if(_region == 5)
+            {
+                _region = 1;
+            }
+            var getRegion = package.category.Where(x => x.region == _region).ToList();
+            benefits = package.benefits;
+            List<Package> packages = new List<Package>();
+            foreach (var item in getRegion)
+            {
+                foreach (var _item in item.package)
+                {
+                    packages.Add(_item);
+                }
+            }
+            log.Info($" Data from Text file: {Newtonsoft.Json.JsonConvert.SerializeObject(packages)}");
+            return packages;
+        }
     }
 
 

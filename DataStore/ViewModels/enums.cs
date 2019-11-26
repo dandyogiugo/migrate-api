@@ -128,4 +128,18 @@ namespace DataStore.ViewModels
         Start = 1,
         Stop = 2
     }
+
+    public enum TravelCategory
+    {
+        WorldWide = 1,
+        Schenghen = 2,
+        MiddleAndAsia = 3,
+        Africa = 4,
+        WorldWide2 = 5
+    }
+
+    //World Wide => 1
+    // Schengen => 2
+    // Middle East & Asia => 3
+    // Africa => 4
 }

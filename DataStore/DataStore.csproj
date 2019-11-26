@@ -129,6 +129,7 @@
     <Compile Include="ViewModels\LifeQuoteObject.cs" />
     <Compile Include="ViewModels\requests.cs" />
     <Compile Include="ViewModels\response.cs" />
+    <Compile Include="ViewModels\TravelModels.cs" />
     <Compile Include="ViewModels\ViewModelNonLife.cs" />
   </ItemGroup>
   <ItemGroup />

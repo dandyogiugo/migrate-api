@@ -33,6 +33,7 @@
       "package": [
         {
           "type": "GOLD",
+          "name": "Gold",
           "values": [
             "Included in Medex",
             "1 A/R economy class airline ticket  + 100 USD/night -2 nights maxi +fees qualified escort ",
@@ -64,6 +65,7 @@
         },
         {
           "type": "SILVER",
+          "name": "Silver",
           "values": [
             "Included in Medex",
             "1 A/R economy class airline ticket  + 100 USD/night -2 nights maxi +fees qualified escort ",
@@ -95,6 +97,7 @@
         },
         {
           "type": "ECONOMY",
+          "name": "Economy",
           "values": [
             "Included in Medex",
             "X",
@@ -130,7 +133,8 @@
       "region": 2,
       "package": [
         {
-          "type": "SCHENGEN",
+          "type": "SCHENGHEN",
+          "name": "Schenghen",
           "values": [
             "Included in Medex",
             "X",
@@ -166,7 +170,8 @@
       "region": 3,
       "package": [
         {
-          "type": "MIDDLE EAST & ASIA",
+          "type": "MIDDLEANDASIA",
+          "name": "Middle East & Asia",
           "values": [
             "Included in Medex",
             "X",
@@ -203,6 +208,7 @@
       "package": [
         {
           "type": "AFRICA",
+          "name": "Africa",
           "values": [
             "Included in Medex",
             "X",
@@ -237,8 +243,3 @@
   ]
 }
 
-//Enums
-//World Wide => 1
-// Schengen => 2
-// Middle East & Asia => 3
-// Africa => 4
