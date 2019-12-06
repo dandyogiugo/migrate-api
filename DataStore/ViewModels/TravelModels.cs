@@ -23,10 +23,9 @@ namespace DataStore.ViewModels
         [Required]
         public string Country { get; set; }
         [Required]
-        public DateTime DateOfBirth { get; set; }
+        public List<DateTime> DateOfBirth { get; set; }
 
     }
-
 
     public class RateCategory
     {
@@ -61,5 +60,13 @@ namespace DataStore.ViewModels
     {
         public List<string> benefits { get; set; }
         public List<_Category> category { get; set; }
+    }
+
+    public class plans
+    {
+        public double premium { get; set; }
+        public double exchangeRate { get; set; }
+        public Package package { get; set; }
+        public int travellers { get; set; }
     }
 }

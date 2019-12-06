@@ -42,57 +42,75 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                int age = DateTime.Now.Year - quote.DateOfBirth.Year;
-
-                if (age > 76)
+                if (quote.DateOfBirth.Count() < 1)
                 {
                     return new notification_response
                     {
                         status = 302,
-                        message = "Traveller age is greater than 76 years"
+                        message = "date of birth is required"
                     };
+                }
+                List<plans> plans = new List<plans>();
+                List<string> benefits = null;
+                List<int> _age = new List<int>();
+                foreach (var item in quote.DateOfBirth)
+                {
+                    int age = DateTime.Now.Year - item.Year;
+                    if (age > 76)
+                    {
+                        return new notification_response
+                        {
+                            status = 302,
+                            message = "Traveller age is greater than 76 years"
+                        };
+                    }
+                    _age.Add(age);
                 }
 
                 double exchnageRate = Convert.ToDouble(ConfigurationManager.AppSettings["TRAVEL_EXCHANGE_RATE"]);
                 int numbersOfDays = (int)quote.ReturnDate.Subtract(quote.DepartureDate).TotalDays;
-
                 var rateList = await util.GetTravelRate(numbersOfDays, quote.Region);
-                List<string> benefits = null;
                 var myPackage = util.GetPackageDetails(quote.Region, out benefits);
                 //basepremium = 1.32x where x is the base premium
-                List<dynamic> plans = new List<dynamic>();
+
                 foreach (var rate in rateList)
                 {
-                    double premium = 0;
+                    List<double> premium = null;
                     double computedPremium = 0;
                     bool proceed = false;
                     if (quote.Region == TravelCategory.WorldWide2 && rate.excluded_rate.HasValue)
                     {
                         log.Info($"Premium base: {rate.included_rate}");
-                        premium = await util.GetDiscountByAge(age, rate.included_rate);
+                        premium = await util.GetDiscountByAge(_age, rate.included_rate);
                         proceed = true;
                     }
                     else if (quote.Region != TravelCategory.WorldWide2)
                     {
                         log.Info($"Premium base: {rate.excluded_rate ?? rate.included_rate}");
-                        premium = await util.GetDiscountByAge(age, rate.excluded_rate ?? rate.included_rate);
+                        premium = await util.GetDiscountByAge(_age, rate.excluded_rate ?? rate.included_rate);
                         proceed = true;
                     }
                     if (proceed)
                     {
                         log.Info($"Premium: {premium}");
-                        computedPremium = (1.32 * premium) * exchnageRate;
+                        foreach (var prem in premium)
+                        {
+                            computedPremium += (1.32 * prem) * exchnageRate;
+                        }
                         log.Info($"Rate used: => {Newtonsoft.Json.JsonConvert.SerializeObject(rate)}");
                         var section = myPackage.FirstOrDefault(x => x.type == rate.type);
-                        var plan = new
+                        var plan = new plans
                         {
                             premium = computedPremium,
                             exchangeRate = exchnageRate,
+                            travellers = _age.Count(),
                             package = section,
+                           
                         };
                         plans.Add(plan);
                     }
                 }
+
 
                 if (plans.Count() == 0)
                 {
@@ -103,11 +121,11 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-
                 return new notification_response
                 {
                     status = 200,
                     message = "Premium computed successfully",
+
                     data = new
                     {
                         details = plans,

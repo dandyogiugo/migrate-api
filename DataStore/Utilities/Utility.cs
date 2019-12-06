@@ -933,26 +933,30 @@ namespace DataStore.Utilities
                 return false;
             }
         }
-        public async Task<double> GetDiscountByAge(int Age, double BasePremium)
+        public async Task<List<double>> GetDiscountByAge(List<int> _Age, double BasePremium)
         {
+            List<double> rates = new List<double>();
+            foreach (var Age in _Age)
+            {
+                if (Age < 18)
+                {
+                    rates.Add(BasePremium * 0.7);
+                }
+                else if (Age >= 66 && Age <= 70)
+                {
+                    rates.Add(BasePremium * 1.5);
+                }
+                else if (Age >= 71 && Age <= 76)
+                {
+                    rates.Add(BasePremium * 2);
+                }
+                else
+                {
+                    rates.Add(BasePremium);
+                }
+            }
 
-            if (Age < 18)
-            {
-                return BasePremium * 0.7;
-            }
-            else if (Age >= 66 && Age <= 70)
-            {
-                return BasePremium * 1.5;
-            }
-            else if (Age >= 71 && Age <= 76)
-            {
-                return BasePremium * 2;
-            }
-            else
-            {
-                return BasePremium;
-            }
-
+            return rates;
         }
         public async Task<List<RateCategory>> GetTravelRate(int numbersOfDays, TravelCategory region)
         {
@@ -1006,7 +1010,7 @@ namespace DataStore.Utilities
             var getFile = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/TravelCategoryJSON/Category.json"));
             var package = Newtonsoft.Json.JsonConvert.DeserializeObject<PackageList>(getFile);
             int _region = (int)region;
-            if(_region == 5)
+            if (_region == 5)
             {
                 _region = 1;
             }
