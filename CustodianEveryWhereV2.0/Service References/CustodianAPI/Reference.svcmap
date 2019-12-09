@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://developers.custodianplc.com.ng/api/Policyservices.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://developers.custodianplc.com.ng/testapi/Policyservices.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Policyservices1.disco" MetadataType="Disco" ID="708fc557-a47f-45cb-aae2-d3487d6ba487" SourceId="1" SourceUrl="https://developers.custodianplc.com.ng/api/Policyservices.asmx?disco" />
-    <MetadataFile FileName="Policyservices1.wsdl" MetadataType="Wsdl" ID="829c0d5c-fe4e-469b-ba6e-6bc6732c7c35" SourceId="1" SourceUrl="https://developers.custodianplc.com.ng/api/Policyservices.asmx?wsdl" />
+    <MetadataFile FileName="Policyservices.wsdl" MetadataType="Wsdl" ID="c57cade7-2293-45ff-9b99-4f0e7b63c677" SourceId="1" SourceUrl="https://developers.custodianplc.com.ng/testapi/Policyservices.asmx?wsdl" />
+    <MetadataFile FileName="Policyservices.disco" MetadataType="Disco" ID="77c87a1f-3f8a-4c1b-9318-8379eec29ffa" SourceId="1" SourceUrl="https://developers.custodianplc.com.ng/testapi/Policyservices.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

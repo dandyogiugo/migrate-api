@@ -69,4 +69,3 @@ C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Release
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csproj.CopyComplete
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.dll
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.pdb
-C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csprojAssemblyReference.cache

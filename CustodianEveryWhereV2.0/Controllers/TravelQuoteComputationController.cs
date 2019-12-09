@@ -93,10 +93,22 @@ namespace CustodianEveryWhereV2._0.Controllers
                     if (proceed)
                     {
                         log.Info($"Premium: {premium}");
+                        int count = 0;
+                        dynamic premiumForIndividual;
+                        List<dynamic> premiumBreakDown = new List<dynamic>();
                         foreach (var prem in premium)
                         {
                             computedPremium += (1.32 * prem) * exchnageRate;
+                            premiumForIndividual = new
+                            {
+                                Id = count,
+                                premium = (1.32 * prem) * exchnageRate,
+                                dateOfBirth = quote.DateOfBirth[count]
+                            };
+                            count++;
+                            premiumBreakDown.Add(premiumForIndividual);
                         }
+
                         log.Info($"Rate used: => {Newtonsoft.Json.JsonConvert.SerializeObject(rate)}");
                         var section = myPackage.FirstOrDefault(x => x.type == rate.type);
                         var plan = new plans
@@ -105,12 +117,11 @@ namespace CustodianEveryWhereV2._0.Controllers
                             exchangeRate = exchnageRate,
                             travellers = _age.Count(),
                             package = section,
-                           
+                            breakDown = premiumBreakDown
                         };
                         plans.Add(plan);
                     }
                 }
-
 
                 if (plans.Count() == 0)
                 {
@@ -218,6 +229,53 @@ namespace CustodianEveryWhereV2._0.Controllers
                 {
                     status = 404,
                     message = "oops!, something happend while searching for region"
+                };
+            }
+        }
+
+        public async Task<notification_response> GetDetailsByPassportNumber(string passportNumber)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(passportNumber))
+                {
+                    return new notification_response
+                    {
+                        status = 404,
+                        message = "Oops!, passport number cannot be empty"
+                    };
+                }
+
+                using (var api = new CustodianAPI.PolicyServicesSoapClient())
+                {
+                    var request = api.GetPassportDetails(GlobalConstant.password, GlobalConstant.merchant_id, passportNumber);
+                    if (request.StatusCode != "1")
+                    {
+                        return new notification_response
+                        {
+                            status = 302,
+                            message = "passport details not found"
+                        };
+                    }
+
+                    return new notification_response
+                    {
+                        status = 200,
+                        message = "details retrieved successfully",
+                        data = request
+                    };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "oops!, something happend while getting customer details"
                 };
             }
         }

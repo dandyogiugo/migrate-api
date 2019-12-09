@@ -3955,6 +3955,194 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PassportDetails", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class PassportDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        private System.DateTime DateofBirthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OccupationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GenderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NationalityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string PhoneNumber {
+            get {
+                return this.PhoneNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneNumberField, value) != true)) {
+                    this.PhoneNumberField = value;
+                    this.RaisePropertyChanged("PhoneNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime DateofBirth {
+            get {
+                return this.DateofBirthField;
+            }
+            set {
+                if ((this.DateofBirthField.Equals(value) != true)) {
+                    this.DateofBirthField = value;
+                    this.RaisePropertyChanged("DateofBirth");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Occupation {
+            get {
+                return this.OccupationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OccupationField, value) != true)) {
+                    this.OccupationField = value;
+                    this.RaisePropertyChanged("Occupation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Gender {
+            get {
+                return this.GenderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GenderField, value) != true)) {
+                    this.GenderField = value;
+                    this.RaisePropertyChanged("Gender");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string Nationality {
+            get {
+                return this.NationalityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NationalityField, value) != true)) {
+                    this.NationalityField = value;
+                    this.RaisePropertyChanged("Nationality");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string StatusCode {
+            get {
+                return this.StatusCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusCodeField, value) != true)) {
+                    this.StatusCodeField = value;
+                    this.RaisePropertyChanged("StatusCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Custodianservices.com/", ConfigurationName="CustodianAPI.PolicyServicesSoap")]
     public interface PolicyServicesSoap {
@@ -4091,6 +4279,13 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Motor_PostSource", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource1> POSTMotorRecAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Motor_PostSource request);
+        
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POSTOtherMotorRec", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecResponse POSTOtherMotorRec(CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POSTOtherMotorRec", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecResponse> POSTOtherMotorRecAsync(CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (POSTMotorRec) of message POSTMotorRecRequest does not match the default value (POSTMotorRec1)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POSTMotorRec", ReplyAction="*")]
@@ -4441,6 +4636,20 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Broker", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerResponse> GetCRM_BrokerAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequest request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (Passing_Broker_Motor) of message Passing_Broker_Motor does not match the default value (POSTBrokerMotor)
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Broker_Motor", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor1 POSTBrokerMotor(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Broker_Motor", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor1> POSTBrokerMotorAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor request);
+        
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPassportDetails", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsResponse GetPassportDetails(CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPassportDetails", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsResponse> GetPassportDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6165,6 +6374,195 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class POSTOtherMotorRecRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="POSTOtherMotorRec", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecRequestBody Body;
+        
+        public POSTOtherMotorRecRequest() {
+        }
+        
+        public POSTOtherMotorRecRequest(CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class POSTOtherMotorRecRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Mpassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string PolicyNo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string FirstName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string LastName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Address;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string PhoneNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string EngineNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string InsuranceType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public decimal Premium;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public decimal SumInsured;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        public string ChassisNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        public string RegistrationNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string VehicleModel;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string VehicleCategory;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        public string VehicleColor;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        public string VehicleMake;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
+        public string VehicleType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
+        public string YearOfMake;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+        public System.DateTime dateCreated;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
+        public System.DateTime Activedate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
+        public System.DateTime expiryDate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
+        public string CreditNote;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
+        public string PrnNo;
+        
+        public POSTOtherMotorRecRequestBody() {
+        }
+        
+        public POSTOtherMotorRecRequestBody(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string PolicyNo, 
+                    string FirstName, 
+                    string LastName, 
+                    string Address, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string EngineNumber, 
+                    string InsuranceType, 
+                    decimal Premium, 
+                    decimal SumInsured, 
+                    string ChassisNumber, 
+                    string RegistrationNumber, 
+                    string VehicleModel, 
+                    string VehicleCategory, 
+                    string VehicleColor, 
+                    string VehicleMake, 
+                    string VehicleType, 
+                    string YearOfMake, 
+                    System.DateTime dateCreated, 
+                    System.DateTime Activedate, 
+                    System.DateTime expiryDate, 
+                    string CreditNote, 
+                    string PrnNo) {
+            this.MerchantID = MerchantID;
+            this.Mpassword = Mpassword;
+            this.PolicyNo = PolicyNo;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Address = Address;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
+            this.EngineNumber = EngineNumber;
+            this.InsuranceType = InsuranceType;
+            this.Premium = Premium;
+            this.SumInsured = SumInsured;
+            this.ChassisNumber = ChassisNumber;
+            this.RegistrationNumber = RegistrationNumber;
+            this.VehicleModel = VehicleModel;
+            this.VehicleCategory = VehicleCategory;
+            this.VehicleColor = VehicleColor;
+            this.VehicleMake = VehicleMake;
+            this.VehicleType = VehicleType;
+            this.YearOfMake = YearOfMake;
+            this.dateCreated = dateCreated;
+            this.Activedate = Activedate;
+            this.expiryDate = expiryDate;
+            this.CreditNote = CreditNote;
+            this.PrnNo = PrnNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class POSTOtherMotorRecResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="POSTOtherMotorRecResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecResponseBody Body;
+        
+        public POSTOtherMotorRecResponse() {
+        }
+        
+        public POSTOtherMotorRecResponse(CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class POSTOtherMotorRecResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string POSTOtherMotorRecResult;
+        
+        public POSTOtherMotorRecResponseBody() {
+        }
+        
+        public POSTOtherMotorRecResponseBody(string POSTOtherMotorRecResult) {
+            this.POSTOtherMotorRecResult = POSTOtherMotorRecResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="POSTMotorRec", WrapperNamespace="http://Custodianservices.com/", IsWrapped=true)]
     public partial class POSTMotorRecRequest {
         
@@ -6875,6 +7273,9 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=29)]
         public string OtherCountry;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=30)]
+        public string Branch;
+        
         public Passing_Travel_PostSource() {
         }
         
@@ -6908,7 +7309,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string BrokerID, 
                     string CommRate, 
                     string PremRate, 
-                    string OtherCountry) {
+                    string OtherCountry, 
+                    string Branch) {
             this.MerchantID = MerchantID;
             this.Mpassword = Mpassword;
             this.Title = Title;
@@ -6939,6 +7341,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             this.CommRate = CommRate;
             this.PremRate = PremRate;
             this.OtherCountry = OtherCountry;
+            this.Branch = Branch;
         }
     }
     
@@ -11457,6 +11860,257 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Passing_Broker_Motor", WrapperNamespace="http://Custodianservices.com/", IsWrapped=true)]
+    public partial class Passing_Broker_Motor {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=0)]
+        public string MerchantID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=1)]
+        public string Mpassword;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=2)]
+        public string CustomerName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=3)]
+        public string mAddress;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=4)]
+        public string PhoneNumber;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=5)]
+        public string Email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=6)]
+        public string EngineNumber;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=7)]
+        public string InsuranceType;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=8)]
+        public decimal Premium;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=9)]
+        public decimal SumInsured;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=10)]
+        public string ChassisNumber;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=11)]
+        public string RegistrationNumber;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=12)]
+        public string VehicleModel;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=13)]
+        public string VehicleCategory;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=14)]
+        public string VehicleColor;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=15)]
+        public string VehicleMake;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=16)]
+        public string VehicleType;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=17)]
+        public string YearOfMake;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=18)]
+        public System.DateTime dateCreated;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=19)]
+        public System.DateTime Activedate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=20)]
+        public System.DateTime expiryDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=21)]
+        public string CreditNote;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=22)]
+        public string PrnNo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=23)]
+        public string PostSource;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=24)]
+        public string PostType;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=25)]
+        public string BrokerID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=26)]
+        public string CommRate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=27)]
+        public string PremRate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=28)]
+        public string RenewPolNo;
+        
+        public Passing_Broker_Motor() {
+        }
+        
+        public Passing_Broker_Motor(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string CustomerName, 
+                    string mAddress, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string EngineNumber, 
+                    string InsuranceType, 
+                    decimal Premium, 
+                    decimal SumInsured, 
+                    string ChassisNumber, 
+                    string RegistrationNumber, 
+                    string VehicleModel, 
+                    string VehicleCategory, 
+                    string VehicleColor, 
+                    string VehicleMake, 
+                    string VehicleType, 
+                    string YearOfMake, 
+                    System.DateTime dateCreated, 
+                    System.DateTime Activedate, 
+                    System.DateTime expiryDate, 
+                    string CreditNote, 
+                    string PrnNo, 
+                    string PostSource, 
+                    string PostType, 
+                    string BrokerID, 
+                    string CommRate, 
+                    string PremRate, 
+                    string RenewPolNo) {
+            this.MerchantID = MerchantID;
+            this.Mpassword = Mpassword;
+            this.CustomerName = CustomerName;
+            this.mAddress = mAddress;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
+            this.EngineNumber = EngineNumber;
+            this.InsuranceType = InsuranceType;
+            this.Premium = Premium;
+            this.SumInsured = SumInsured;
+            this.ChassisNumber = ChassisNumber;
+            this.RegistrationNumber = RegistrationNumber;
+            this.VehicleModel = VehicleModel;
+            this.VehicleCategory = VehicleCategory;
+            this.VehicleColor = VehicleColor;
+            this.VehicleMake = VehicleMake;
+            this.VehicleType = VehicleType;
+            this.YearOfMake = YearOfMake;
+            this.dateCreated = dateCreated;
+            this.Activedate = Activedate;
+            this.expiryDate = expiryDate;
+            this.CreditNote = CreditNote;
+            this.PrnNo = PrnNo;
+            this.PostSource = PostSource;
+            this.PostType = PostType;
+            this.BrokerID = BrokerID;
+            this.CommRate = CommRate;
+            this.PremRate = PremRate;
+            this.RenewPolNo = RenewPolNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Passing_Broker_MotorResponse", WrapperNamespace="http://Custodianservices.com/", IsWrapped=true)]
+    public partial class Passing_Broker_Motor1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=0)]
+        public string Passing_Broker_MotorResult;
+        
+        public Passing_Broker_Motor1() {
+        }
+        
+        public Passing_Broker_Motor1(string Passing_Broker_MotorResult) {
+            this.Passing_Broker_MotorResult = Passing_Broker_MotorResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPassportDetailsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPassportDetails", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequestBody Body;
+        
+        public GetPassportDetailsRequest() {
+        }
+        
+        public GetPassportDetailsRequest(CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetPassportDetailsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string MerchantPWD;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string PassportNumber;
+        
+        public GetPassportDetailsRequestBody() {
+        }
+        
+        public GetPassportDetailsRequestBody(string MerchantID, string MerchantPWD, string PassportNumber) {
+            this.MerchantID = MerchantID;
+            this.MerchantPWD = MerchantPWD;
+            this.PassportNumber = PassportNumber;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPassportDetailsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPassportDetailsResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsResponseBody Body;
+        
+        public GetPassportDetailsResponse() {
+        }
+        
+        public GetPassportDetailsResponse(CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetPassportDetailsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PassportDetails GetPassportDetailsResult;
+        
+        public GetPassportDetailsResponseBody() {
+        }
+        
+        public GetPassportDetailsResponseBody(CustodianEveryWhereV2._0.CustodianAPI.PassportDetails GetPassportDetailsResult) {
+            this.GetPassportDetailsResult = GetPassportDetailsResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PolicyServicesSoapChannel : CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap, System.ServiceModel.IClientChannel {
     }
@@ -12454,6 +13108,129 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTOtherMotorRec(CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecRequest request) {
+            return base.Channel.POSTOtherMotorRec(request);
+        }
+        
+        public string POSTOtherMotorRec(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string PolicyNo, 
+                    string FirstName, 
+                    string LastName, 
+                    string Address, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string EngineNumber, 
+                    string InsuranceType, 
+                    decimal Premium, 
+                    decimal SumInsured, 
+                    string ChassisNumber, 
+                    string RegistrationNumber, 
+                    string VehicleModel, 
+                    string VehicleCategory, 
+                    string VehicleColor, 
+                    string VehicleMake, 
+                    string VehicleType, 
+                    string YearOfMake, 
+                    System.DateTime dateCreated, 
+                    System.DateTime Activedate, 
+                    System.DateTime expiryDate, 
+                    string CreditNote, 
+                    string PrnNo) {
+            CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.PolicyNo = PolicyNo;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.Address = Address;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Email = Email;
+            inValue.Body.EngineNumber = EngineNumber;
+            inValue.Body.InsuranceType = InsuranceType;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SumInsured = SumInsured;
+            inValue.Body.ChassisNumber = ChassisNumber;
+            inValue.Body.RegistrationNumber = RegistrationNumber;
+            inValue.Body.VehicleModel = VehicleModel;
+            inValue.Body.VehicleCategory = VehicleCategory;
+            inValue.Body.VehicleColor = VehicleColor;
+            inValue.Body.VehicleMake = VehicleMake;
+            inValue.Body.VehicleType = VehicleType;
+            inValue.Body.YearOfMake = YearOfMake;
+            inValue.Body.dateCreated = dateCreated;
+            inValue.Body.Activedate = Activedate;
+            inValue.Body.expiryDate = expiryDate;
+            inValue.Body.CreditNote = CreditNote;
+            inValue.Body.PrnNo = PrnNo;
+            CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTOtherMotorRec(inValue);
+            return retVal.Body.POSTOtherMotorRecResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTOtherMotorRecAsync(CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecRequest request) {
+            return base.Channel.POSTOtherMotorRecAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecResponse> POSTOtherMotorRecAsync(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string PolicyNo, 
+                    string FirstName, 
+                    string LastName, 
+                    string Address, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string EngineNumber, 
+                    string InsuranceType, 
+                    decimal Premium, 
+                    decimal SumInsured, 
+                    string ChassisNumber, 
+                    string RegistrationNumber, 
+                    string VehicleModel, 
+                    string VehicleCategory, 
+                    string VehicleColor, 
+                    string VehicleMake, 
+                    string VehicleType, 
+                    string YearOfMake, 
+                    System.DateTime dateCreated, 
+                    System.DateTime Activedate, 
+                    System.DateTime expiryDate, 
+                    string CreditNote, 
+                    string PrnNo) {
+            CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.POSTOtherMotorRecRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.PolicyNo = PolicyNo;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.Address = Address;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Email = Email;
+            inValue.Body.EngineNumber = EngineNumber;
+            inValue.Body.InsuranceType = InsuranceType;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SumInsured = SumInsured;
+            inValue.Body.ChassisNumber = ChassisNumber;
+            inValue.Body.RegistrationNumber = RegistrationNumber;
+            inValue.Body.VehicleModel = VehicleModel;
+            inValue.Body.VehicleCategory = VehicleCategory;
+            inValue.Body.VehicleColor = VehicleColor;
+            inValue.Body.VehicleMake = VehicleMake;
+            inValue.Body.VehicleType = VehicleType;
+            inValue.Body.YearOfMake = YearOfMake;
+            inValue.Body.dateCreated = dateCreated;
+            inValue.Body.Activedate = Activedate;
+            inValue.Body.expiryDate = expiryDate;
+            inValue.Body.CreditNote = CreditNote;
+            inValue.Body.PrnNo = PrnNo;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTOtherMotorRecAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTMotorRec1(CustodianEveryWhereV2._0.CustodianAPI.POSTMotorRecRequest request) {
             return base.Channel.POSTMotorRec1(request);
         }
@@ -12783,7 +13560,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string BrokerID, 
                     string CommRate, 
                     string PremRate, 
-                    string OtherCountry) {
+                    string OtherCountry, 
+                    string Branch) {
             CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource inValue = new CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource();
             inValue.MerchantID = MerchantID;
             inValue.Mpassword = Mpassword;
@@ -12815,6 +13593,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.CommRate = CommRate;
             inValue.PremRate = PremRate;
             inValue.OtherCountry = OtherCountry;
+            inValue.Branch = Branch;
             CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTTravelRec(inValue);
             return retVal.Passing_Travel_PostSourceResult;
         }
@@ -12854,7 +13633,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string BrokerID, 
                     string CommRate, 
                     string PremRate, 
-                    string OtherCountry) {
+                    string OtherCountry, 
+                    string Branch) {
             CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource inValue = new CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource();
             inValue.MerchantID = MerchantID;
             inValue.Mpassword = Mpassword;
@@ -12886,6 +13666,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.CommRate = CommRate;
             inValue.PremRate = PremRate;
             inValue.OtherCountry = OtherCountry;
+            inValue.Branch = Branch;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTTravelRecAsync(inValue);
         }
         
@@ -15343,6 +16124,172 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetCRM_BrokerRequestBody();
             inValue.Body.Pages = Pages;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_BrokerAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTBrokerMotor(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor request) {
+            return base.Channel.POSTBrokerMotor(request);
+        }
+        
+        public string POSTBrokerMotor(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string CustomerName, 
+                    string mAddress, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string EngineNumber, 
+                    string InsuranceType, 
+                    decimal Premium, 
+                    decimal SumInsured, 
+                    string ChassisNumber, 
+                    string RegistrationNumber, 
+                    string VehicleModel, 
+                    string VehicleCategory, 
+                    string VehicleColor, 
+                    string VehicleMake, 
+                    string VehicleType, 
+                    string YearOfMake, 
+                    System.DateTime dateCreated, 
+                    System.DateTime Activedate, 
+                    System.DateTime expiryDate, 
+                    string CreditNote, 
+                    string PrnNo, 
+                    string PostSource, 
+                    string PostType, 
+                    string BrokerID, 
+                    string CommRate, 
+                    string PremRate, 
+                    string RenewPolNo) {
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor inValue = new CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor();
+            inValue.MerchantID = MerchantID;
+            inValue.Mpassword = Mpassword;
+            inValue.CustomerName = CustomerName;
+            inValue.mAddress = mAddress;
+            inValue.PhoneNumber = PhoneNumber;
+            inValue.Email = Email;
+            inValue.EngineNumber = EngineNumber;
+            inValue.InsuranceType = InsuranceType;
+            inValue.Premium = Premium;
+            inValue.SumInsured = SumInsured;
+            inValue.ChassisNumber = ChassisNumber;
+            inValue.RegistrationNumber = RegistrationNumber;
+            inValue.VehicleModel = VehicleModel;
+            inValue.VehicleCategory = VehicleCategory;
+            inValue.VehicleColor = VehicleColor;
+            inValue.VehicleMake = VehicleMake;
+            inValue.VehicleType = VehicleType;
+            inValue.YearOfMake = YearOfMake;
+            inValue.dateCreated = dateCreated;
+            inValue.Activedate = Activedate;
+            inValue.expiryDate = expiryDate;
+            inValue.CreditNote = CreditNote;
+            inValue.PrnNo = PrnNo;
+            inValue.PostSource = PostSource;
+            inValue.PostType = PostType;
+            inValue.BrokerID = BrokerID;
+            inValue.CommRate = CommRate;
+            inValue.PremRate = PremRate;
+            inValue.RenewPolNo = RenewPolNo;
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTBrokerMotor(inValue);
+            return retVal.Passing_Broker_MotorResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POSTBrokerMotorAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor request) {
+            return base.Channel.POSTBrokerMotorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor1> POSTBrokerMotorAsync(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string CustomerName, 
+                    string mAddress, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string EngineNumber, 
+                    string InsuranceType, 
+                    decimal Premium, 
+                    decimal SumInsured, 
+                    string ChassisNumber, 
+                    string RegistrationNumber, 
+                    string VehicleModel, 
+                    string VehicleCategory, 
+                    string VehicleColor, 
+                    string VehicleMake, 
+                    string VehicleType, 
+                    string YearOfMake, 
+                    System.DateTime dateCreated, 
+                    System.DateTime Activedate, 
+                    System.DateTime expiryDate, 
+                    string CreditNote, 
+                    string PrnNo, 
+                    string PostSource, 
+                    string PostType, 
+                    string BrokerID, 
+                    string CommRate, 
+                    string PremRate, 
+                    string RenewPolNo) {
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor inValue = new CustodianEveryWhereV2._0.CustodianAPI.Passing_Broker_Motor();
+            inValue.MerchantID = MerchantID;
+            inValue.Mpassword = Mpassword;
+            inValue.CustomerName = CustomerName;
+            inValue.mAddress = mAddress;
+            inValue.PhoneNumber = PhoneNumber;
+            inValue.Email = Email;
+            inValue.EngineNumber = EngineNumber;
+            inValue.InsuranceType = InsuranceType;
+            inValue.Premium = Premium;
+            inValue.SumInsured = SumInsured;
+            inValue.ChassisNumber = ChassisNumber;
+            inValue.RegistrationNumber = RegistrationNumber;
+            inValue.VehicleModel = VehicleModel;
+            inValue.VehicleCategory = VehicleCategory;
+            inValue.VehicleColor = VehicleColor;
+            inValue.VehicleMake = VehicleMake;
+            inValue.VehicleType = VehicleType;
+            inValue.YearOfMake = YearOfMake;
+            inValue.dateCreated = dateCreated;
+            inValue.Activedate = Activedate;
+            inValue.expiryDate = expiryDate;
+            inValue.CreditNote = CreditNote;
+            inValue.PrnNo = PrnNo;
+            inValue.PostSource = PostSource;
+            inValue.PostType = PostType;
+            inValue.BrokerID = BrokerID;
+            inValue.CommRate = CommRate;
+            inValue.PremRate = PremRate;
+            inValue.RenewPolNo = RenewPolNo;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTBrokerMotorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetPassportDetails(CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequest request) {
+            return base.Channel.GetPassportDetails(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.PassportDetails GetPassportDetails(string MerchantID, string MerchantPWD, string PassportNumber) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.PassportNumber = PassportNumber;
+            CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPassportDetails(inValue);
+            return retVal.Body.GetPassportDetailsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetPassportDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequest request) {
+            return base.Channel.GetPassportDetailsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsResponse> GetPassportDetailsAsync(string MerchantID, string MerchantPWD, string PassportNumber) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.MerchantPWD = MerchantPWD;
+            inValue.Body.PassportNumber = PassportNumber;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPassportDetailsAsync(inValue);
         }
     }
 }

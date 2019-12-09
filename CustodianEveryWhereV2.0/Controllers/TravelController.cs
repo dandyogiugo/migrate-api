@@ -217,7 +217,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             GlobalConstant.password, travel.title, travel.surname, travel.firstname, travel.date_of_birth.Value, travel.gender, travel.nationality,
                             "Int'l PassPort", travel.passport_number, travel.occupation, travel.phone_number,
                             travel.Email, travel.address, travel.zone.ToString().Replace("_", " "), travel.destination, travel.date_of_birth.Value, travel.return_date.Subtract(travel.departure_date).ToString(),
-                            travel.purpose_of_trip, travel.departure_date, travel.return_date, travel.premium, "", "", travel.transaction_ref, "API", "", "", "", travel.multiple_destination);
+                            travel.purpose_of_trip, travel.departure_date, travel.return_date, travel.premium, "", "", travel.transaction_ref, "API", "", "", "", travel.multiple_destination,"");
                         log.Info("RAW Response from API" + request.Passing_Travel_PostSourceResult);
                         if (!string.IsNullOrEmpty(request.Passing_Travel_PostSourceResult))
                         {
@@ -304,7 +304,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                                GlobalConstant.password, travel.title, travel.surname, travel.firstname, travel.date_of_birth.Value, travel.gender, travel.nationality,
                                "Int'l PassPort", travel.passport_number, travel.occupation, travel.phone_number,
                                travel.Email, travel.address, travel.zone.ToString().Replace("_", " "), travel.destination, travel.date_of_birth.Value, travel.return_date.Subtract(travel.departure_date).ToString(),
-                               travel.purpose_of_trip, travel.departure_date, travel.return_date, travel.premium, "", "", travel.transaction_ref, "API", "", "", "", travel.multiple_destination);
+                               travel.purpose_of_trip, travel.departure_date, travel.return_date, travel.premium, "", "", travel.transaction_ref, "API", "", "", "", travel.multiple_destination,"");
                                 log.Info("RAW Response from API" + request.Passing_Travel_PostSourceResult);
                                 if (!string.IsNullOrEmpty(request.Passing_Travel_PostSourceResult))
                                 {

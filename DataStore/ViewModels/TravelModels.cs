@@ -68,5 +68,6 @@ namespace DataStore.ViewModels
         public double exchangeRate { get; set; }
         public Package package { get; set; }
         public int travellers { get; set; }
+        public dynamic breakDown { get; set; }
     }
 }
