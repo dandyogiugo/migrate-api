@@ -6,3 +6,29 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Da
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\obj\Debug\DapperLayer.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\obj\Debug\DapperLayer.pdb
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DapperLayer\obj\Debug\DapperLayer.csprojAssemblyReference.cache
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\DapperLayer.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\DapperLayer.pdb
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Dapper.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\DataStore.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\NLog.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Spire.Doc.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Oracle.DataAccess.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\EntityFramework.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\CustodianEmailSMSGateway.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\GenerateTransactionCodes.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Spire.Pdf.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Spire.License.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Microsoft.mshtml.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\DataStore.pdb
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\DataStore.dll.config
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Dapper.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\NLog.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Spire.Doc.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\EntityFramework.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Spire.License.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\obj\Debug\DapperLayer.csprojAssemblyReference.cache
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\obj\Debug\DapperLayer.csproj.CopyComplete
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\obj\Debug\DapperLayer.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DapperLayer\obj\Debug\DapperLayer.pdb

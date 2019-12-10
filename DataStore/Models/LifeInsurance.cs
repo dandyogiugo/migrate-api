@@ -55,5 +55,7 @@ namespace DataStore.Models
         [Key]
         [Column(Order = 2)]
         public string reference { get; set; }
+
+        public string merchant_id { get; set; }
     }
 }

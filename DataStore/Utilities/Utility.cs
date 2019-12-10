@@ -105,6 +105,21 @@ namespace DataStore.Utilities
             }
             return res;
         }
+
+
+        public async Task<string> MD_5(string pattern)
+        {
+            StringBuilder Sb = new StringBuilder();
+            using (MD5 hash = MD5.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                byte[] result = hash.ComputeHash(enc.GetBytes(pattern));
+                foreach (Byte b in result)
+                    Sb.Append(b.ToString("x2"));
+            }
+            return Sb.ToString();
+        }
+
         public async Task<bool> CheckForAssignedFunction(string methodName, string merchant_id)
         {
             var apiconfig = new store<ApiConfiguration>();

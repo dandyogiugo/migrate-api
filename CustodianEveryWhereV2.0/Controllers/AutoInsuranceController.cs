@@ -290,9 +290,9 @@ namespace CustodianEveryWhereV2._0.Controllers
                             flood = Auto.flood,
                             tracking = Auto.tracking,
                             start_date = Auto.start_date,
-                            srcc = Auto.srcc
+                            srcc = Auto.srcc,
+                            merchant_id = Auto.merchant_id
                         };
-
                         string cert_url = "";
                         string cert_number = Guid.NewGuid().ToString();
                         if (Auto.insurance_type != TypeOfCover.Comprehensive)
@@ -302,16 +302,13 @@ namespace CustodianEveryWhereV2._0.Controllers
                             cert_number = cert_code;
                             cert_url = $"{reciept_base_url}+mUser = CUST_WEB & mCert={cert_code}&mCert2={cert_code}";
                         }
-
                         var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{cert_number}.{Auto.extension_type}";
                         var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Auto/{nameurl}";
                         byte[] content = Convert.FromBase64String(Auto.attachment);
                         File.WriteAllBytes(filepath, content);
                         save_new.attachemt = nameurl;
                         save_new.extension_type = Auto.extension_type;
-
                         await auto.Save(save_new);
-
                         return new res
                         {
                             status = 200,

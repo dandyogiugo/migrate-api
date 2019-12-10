@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperLayer", "DapperLayer\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpSellingAndCrossSelling", "UpSellingAndCrossSelling\UpSellingAndCrossSelling.csproj", "{EEED8EB9-4843-4A0E-A532-5326A9464281}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingWebApi", "UnitTestingWebApi\UnitTestingWebApi.csproj", "{70CFEAE0-AAAC-4E06-B5E8-A669D65C02A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,12 +47,16 @@ Global
 		{EEED8EB9-4843-4A0E-A532-5326A9464281}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEED8EB9-4843-4A0E-A532-5326A9464281}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEED8EB9-4843-4A0E-A532-5326A9464281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70CFEAE0-AAAC-4E06-B5E8-A669D65C02A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70CFEAE0-AAAC-4E06-B5E8-A669D65C02A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70CFEAE0-AAAC-4E06-B5E8-A669D65C02A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70CFEAE0-AAAC-4E06-B5E8-A669D65C02A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {18B6BDB2-00C4-4913-8910-FF06D936C7EB}
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+		SolutionGuid = {18B6BDB2-00C4-4913-8910-FF06D936C7EB}
 	EndGlobalSection
 EndGlobal

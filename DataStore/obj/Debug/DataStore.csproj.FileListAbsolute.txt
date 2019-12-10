@@ -26,3 +26,25 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Da
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\obj\Debug\DataStore.pdb
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\bin\Debug\Oracle.DataAccess.dll
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\DataStore\obj\Debug\DataStore.csprojAssemblyReference.cache
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\DataStore.dll.config
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\DataStore.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\DataStore.pdb
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\EntityFramework.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\NLog.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\Oracle.DataAccess.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\Spire.Doc.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\Spire.License.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\Spire.Pdf.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\Microsoft.mshtml.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\EntityFramework.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\NLog.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\Spire.Doc.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\Spire.License.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.csprojAssemblyReference.cache
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.csproj.CopyComplete
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.pdb

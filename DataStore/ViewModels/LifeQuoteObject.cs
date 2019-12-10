@@ -72,7 +72,6 @@ namespace DataStore.ViewModels
         [Required]
         public PolicyType policytype { get; set; }
         [Required]
-        
         public string payment_reference { get; set; }
         [Required]
         public string id_number { get; set; }

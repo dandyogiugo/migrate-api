@@ -113,14 +113,16 @@ namespace DataStore.ViewModels
         Monthly = 1,
         Annually = 2,
         Quarterly = 3,
-        Bi_Annually = 4
+        Bi_Annually = 4,
+        Single = 5
     }
 
     public enum PolicyType
     {
         EsusuShield = 1,
         CapitalBuilder = 2,
-        LifeTimeHarvest = 3
+        LifeTimeHarvest = 3,
+        TermAssurance = 4
     }
 
     public enum Car

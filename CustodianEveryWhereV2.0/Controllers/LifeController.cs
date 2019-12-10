@@ -204,7 +204,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         }
                         else
                         {
-                            log.Info($"Error computing(CapitalBuilder) premium from service response{capital}");
+                            log.Info($"Error computing(CapitalBuilder) premium from service response{Newtonsoft.Json.JsonConvert.SerializeObject(capital)}");
                             return new notification_response
                             {
                                 status = 204,
@@ -230,7 +230,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 }
                             }
 
-                            log.Info($"Success computing(LifeTimeHarvest) premium from service response{lifetime}");
+                            log.Info($"Success computing(LifeTimeHarvest) premium from service response{Newtonsoft.Json.JsonConvert.SerializeObject(lifetime)}");
                             return new notification_response
                             {
                                 status = 200,
@@ -257,7 +257,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         {
                             var quot = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(esusushiled);
                             //sumassured = quote.sumInsured.ToString();
-                            log.Info($"Success computing(Esusu Shield) premium from service response{esusushiled}");
+                            log.Info($"Success computing(Esusu Shield) premium from service response{Newtonsoft.Json.JsonConvert.SerializeObject(esusushiled)}");
                             //placeholder = "CUSTODIAN ESUSU SHIELD";
                             return new notification_response
                             {
@@ -269,7 +269,39 @@ namespace CustodianEveryWhereV2._0.Controllers
                         }
                         else
                         {
-                            log.Info($"Error computing(Esusu Shield) premium from service response{esusushiled}");
+                            log.Info($"Error computing(Esusu Shield) premium from service response{Newtonsoft.Json.JsonConvert.SerializeObject(esusushiled)}");
+                            return new notification_response
+                            {
+                                status = 204,
+                                message = "Sorry, something went wrong while computing premium. Try again",
+                            };
+                        }
+                    }
+                    else if (quote.policy_type.ToString().ToUpper() == PolicyType.TermAssurance.ToString().ToUpper())
+                    {
+                        if (quote.terms > 1)
+                        {
+                            log.Info($"Defaut value used durations was set to 1year amount {quote.amount.ToString()}");
+                            quote.terms = 1;
+                        }
+                        var TermAssurance = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), "", 40, "F", Convert.ToInt32(quote.terms), "");
+
+                        if (!string.IsNullOrEmpty(TermAssurance))
+                        {
+                            var quot = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(TermAssurance);
+                            // var parseHtml = new HtmlDocument();
+
+                            return new notification_response
+                            {
+                                status = 200,
+                                message = "operation was successful",
+                                data = quot,
+                                sum_insured = Convert.ToDecimal(quot.sumInsured)
+                            };
+                        }
+                        else
+                        {
+                            log.Info($"Error computing(Term Assurance) premium from service response{Newtonsoft.Json.JsonConvert.SerializeObject(TermAssurance)}");
                             return new notification_response
                             {
                                 status = 204,
@@ -355,9 +387,13 @@ namespace CustodianEveryWhereV2._0.Controllers
                 {
                     PlaceHolder = "CUSTODIAN ESUSU SHIELD";
                 }
-                else
+                else if (BuyLife.policytype.ToString().ToUpper() == PolicyType.LifeTimeHarvest.ToString().ToUpper())
                 {
                     PlaceHolder = "CUSTODIAN LIFE TIME HARVEST";
+                }
+                else
+                {
+                    PlaceHolder = "CUSTODIAN TERM ASSURANCE";
                 }
 
                 var checkme = await _Buy.FindOneByCriteria(x => x.reference.ToLower() == BuyLife.payment_reference.ToLower());
@@ -387,7 +423,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     terms = BuyLife.terms,
                     policytype = PlaceHolder,
                     id_number = BuyLife.id_number,
-                    reference = BuyLife.payment_reference
+                    reference = BuyLife.payment_reference,
+                    merchant_id = BuyLife.merchant_id
                 };
 
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())

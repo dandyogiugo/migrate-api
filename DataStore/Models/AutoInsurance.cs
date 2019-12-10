@@ -28,9 +28,13 @@ namespace DataStore.Models
         public string email { get; set; }
         [MaxLength(100)]
         public string engine_number { get; set; }
+        [Required]
         public TypeOfCover insurance_type { get; set; }
+        [Required]
         public decimal premium { get; set; }
+        [Required]
         public decimal sum_insured { get; set; }
+        [Required]
         public string chassis_number { get; set; }
         [MaxLength(200)]
         public string registration_number { get; set; }
@@ -65,6 +69,6 @@ namespace DataStore.Models
         public string flood { get; set; }
         public string srcc { get; set; }
         public DateTime? start_date { get; set; }
-
+        public string merchant_id { get; set; }
     }
 }

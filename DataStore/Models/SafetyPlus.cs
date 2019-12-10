@@ -57,5 +57,6 @@ namespace DataStore.Models
         public string IdentificationType { get; set; }
         [Required]
         public string IndetificationNUmber { get; set; }
+        public string Merchant_Id { get; set; }
     }
 }

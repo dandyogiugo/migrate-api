@@ -33,3 +33,37 @@ C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\Up
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\bin\Release\Spire.Doc.xml
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\bin\Release\EntityFramework.xml
 C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\bin\Release\Spire.License.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\NLog.config
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\UpSellingAndCrossSelling.exe.config
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\UpSellingAndCrossSelling.exe
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\UpSellingAndCrossSelling.pdb
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\CustodianEmailSMSGateway.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\DapperLayer.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Newtonsoft.Json.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\NLog.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\DataStore.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Dapper.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Spire.Doc.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Oracle.DataAccess.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\EntityFramework.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\GenerateTransactionCodes.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Spire.Pdf.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Spire.License.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Microsoft.mshtml.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\DapperLayer.pdb
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Newtonsoft.Json.pdb
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Newtonsoft.Json.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\NLog.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\DataStore.pdb
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\DataStore.dll.config
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Dapper.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Spire.Doc.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\EntityFramework.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Spire.License.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\obj\Release\UpSellingAndCrossSelling.csprojAssemblyReference.cache
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\obj\Release\UpSellingAndCrossSelling.ProjectInstaller.resources
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\obj\Release\UpSellingAndCrossSelling.csproj.GenerateResource.cache
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\obj\Release\UpSellingAndCrossSelling.csproj.CopyComplete
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\obj\Release\UpSellingAndCrossSelling.exe
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\obj\Release\UpSellingAndCrossSelling.pdb

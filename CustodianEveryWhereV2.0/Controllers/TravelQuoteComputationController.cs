@@ -248,8 +248,8 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var request = api.GetPassportDetails(GlobalConstant.password, GlobalConstant.merchant_id, passportNumber);
-                    if (request.StatusCode != "1")
+                    var request = api.GetPassportDetails("Custodian", "Custodian@123", passportNumber);
+                    if (request.StatusCode != "200")
                     {
                         return new notification_response
                         {

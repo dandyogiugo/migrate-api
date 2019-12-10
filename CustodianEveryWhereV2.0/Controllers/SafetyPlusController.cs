@@ -108,7 +108,6 @@ namespace CustodianEveryWhereV2._0.Controllers
             }
         }
 
-
         [HttpPost]
         public async Task<notification_response> BuySafetyPlus(SafetyRequest safe)
         {
@@ -197,7 +196,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             Premium = safe.Premium,
                             CustomerDOB = safe.CustomerDOB,
                             IndetificationNUmber = safe.IdentificationNumber,
-
+                            Merchant_Id = safe.merchant_id
                         };
                         var cert_code = request.Replace("**", "|").Split('|')[1];
                         var reciept_base_url = ConfigurationManager.AppSettings["Reciept_Base_Url"];

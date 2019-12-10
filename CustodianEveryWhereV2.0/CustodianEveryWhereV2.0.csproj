@@ -328,6 +328,7 @@
     <Compile Include="Controllers\GITController.cs" />
     <Compile Include="Controllers\GoogleNewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeShieldController.cs" />
     <Compile Include="Controllers\JokesController.cs" />
     <Compile Include="Controllers\LifeController.cs" />
     <Compile Include="Controllers\MealPlanController.cs" />
