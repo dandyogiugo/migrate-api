@@ -163,7 +163,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     string items = "";
                     foreach (var item in homeShield.ItemsDescription)
                     {
-                        items += $"{item.ItemName}=>{item.ItemValue}=>{item.Quantity}|";
+                        items += $"Name: {item.ItemName}{Environment.NewLine}Value:{item.ItemValue}{Environment.NewLine}Quantity:{item.Quantity}|";
                     }
                     request = api.PostHomeShield(GlobalConstant.merchant_id, GlobalConstant.password,
                        homeShield.CustomerFullName, homeShield.Address, homeShield.PhoneNumber, homeShield.Email,

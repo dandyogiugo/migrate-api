@@ -246,8 +246,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 zone = travel.zone.ToString().Replace("_", " ")
                             };
 
-
-
                             var cert_number = request.Passing_Travel_PostSourceResult.Trim().Remove(0, request.Passing_Travel_PostSourceResult.Trim().Length - 7);
                             var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{cert_number}.{travel.extension}";
                             var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Travel/{nameurl}";

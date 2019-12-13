@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataStore.ViewModels
 {
-    public class Quote
+    public class Quote: CoreModels
     {
         public Quote()
         {
@@ -20,8 +20,6 @@ namespace DataStore.ViewModels
         public DateTime DepartureDate { get; set; }
         [Required]
         public DateTime ReturnDate { get; set; }
-        [Required]
-        public string Country { get; set; }
         [Required]
         public List<DateTime> DateOfBirth { get; set; }
 

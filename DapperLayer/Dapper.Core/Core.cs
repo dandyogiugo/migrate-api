@@ -9,11 +9,17 @@ using Dapper;
 using System.Data;
 using System.Dynamic;
 using DataStore.ViewModels;
+using DataStore.Models;
 
 namespace DapperLayer.Dapper.Core
 {
     public class Core<T> where T : class
     {
+        public SqlTransaction TransactionState = null;
+        public Core()
+        {
+
+        }
         public async Task<dynamic> GetAllbyPagination(int limit, string sql)
         {
             IList<int> count = null;
@@ -79,7 +85,6 @@ namespace DapperLayer.Dapper.Core
             }
         }
 
-
         public async Task<List<T>> GetRenewalRatio(string sql)
         {
 
@@ -121,6 +126,39 @@ namespace DapperLayer.Dapper.Core
                 }
             };
             return result;
+        }
+        public async Task<bool> BulkInsert(List<TravelInsurance> buyTravels)
+        {
+            var getProps = new TravelInsurance().GetType().GetProperties();
+            List<string> col = new List<string>();
+            List<string> colData = new List<string>();
+            foreach (var item in getProps)
+            {
+                if (item.Name != "Id")
+                {
+                    col.Add(item.Name);
+                    colData.Add("@" + item.Name);
+                }
+            }
+            string query = $@"INSERT INTO TravelInsurance ({string.Join(",", col)}) Values ({string.Join(",", colData)})";
+            bool IsSuccessful = false;
+            try
+            {
+                var cnn = new SqlConnection(connectionManager.connectionString("CustApi2"));
+                await cnn.OpenAsync();
+                TransactionState = cnn.BeginTransaction();
+                int affectedRow = await cnn.ExecuteAsync(query, buyTravels, TransactionState, commandType: CommandType.Text);
+                if (affectedRow == buyTravels.Count())
+                {
+                    IsSuccessful = true;
+                }
+
+                return IsSuccessful;
+            }
+            catch (Exception ex)
+            {
+                return IsSuccessful;
+            }
         }
     }
 }

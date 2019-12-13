@@ -959,6 +959,67 @@ namespace DataStore.ViewModels
         public DateTime? from { get; set; }
         public DateTime? to { get; set; }
     }
+
+    public class TravelInsurance2
+    {
+        public TravelInsurance2()
+        {
+
+        }
+        public string surname { get; set; }
+        public string firstname { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime date_of_birth { get; set; }
+        public string gender { get; set; }
+        [Required]
+        public string nationality { get; set; }
+        public string passport_number { get; set; }
+        [Required]
+        public string occupation { get; set; }
+        [Required]
+        public string phone_number { get; set; }
+        [Required]
+        public string address { get; set; }
+        [Required]
+        public string purpose_of_trip { get; set; }
+        [Required]
+        public decimal premium { get; set; }
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+        [MaxLength(10)]
+        public string extension { get; set; }
+        public string attachment { get; set; }
+        public bool isgroupleader { get; set; }
+    }
+
+    public class BuyTravel:CoreModels
+    {
+        public BuyTravel()
+        {
+
+        }
+
+        public List<TravelInsurance2> details { get; set; }
+        public string transaction_ref { get; set; }
+        /// <summary>
+        /// Date format YYY-MM-DD
+        /// </summary>
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime departure_date { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime return_date { get; set; }
+        [Required]
+        public TravelCategory zone { get; set; }
+        [Required]
+        public List<string> destination { get; set; }
+    }
 }
 
 

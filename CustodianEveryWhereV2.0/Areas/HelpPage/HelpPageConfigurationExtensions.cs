@@ -8,6 +8,7 @@ using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
@@ -28,7 +29,10 @@ namespace CustodianEveryWhereV2._0.Areas.HelpPage
         public static void SetDocumentationProvider(this HttpConfiguration config, IDocumentationProvider documentationProvider)
         {
             config.Services.Replace(typeof(IDocumentationProvider), documentationProvider);
+            config.SetDocumentationProvider(new XmlDocumentationProvider(
+                                            HttpContext.Current.Server.MapPath("~/bin/CustodianEveryWhereV2.0.xml")));
         }
+
 
         /// <summary>
         /// Sets the objects that will be used by the formatters to produce sample requests/responses.

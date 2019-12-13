@@ -78,6 +78,9 @@ namespace DataStore.Models
         [MaxLength(20)]
         public string Image_extension_type { get; set; }
         public string file_path { get; set; }
+        public string group_reference { get; set; }
+        public DateTime createdat { get; set; }
+        public int group_count { get; set; }
 
     }
 }

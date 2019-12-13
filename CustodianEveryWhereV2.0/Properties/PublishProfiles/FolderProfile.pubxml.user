@@ -94,31 +94,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/20/2019 11:14:56</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.dll">
-      <publishTime>12/10/2019 16:31:59</publishTime>
+      <publishTime>12/12/2019 14:40:51</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.pdb">
-      <publishTime>12/10/2019 16:31:59</publishTime>
+      <publishTime>12/12/2019 14:40:51</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.XmlSerializers.dll">
-      <publishTime>12/10/2019 16:32:03</publishTime>
+      <publishTime>12/12/2019 14:41:30</publishTime>
     </File>
     <File Include="bin/Dapper.dll">
       <publishTime>11/20/2019 11:15:11</publishTime>
     </File>
     <File Include="bin/DapperLayer.dll">
-      <publishTime>12/10/2019 16:31:52</publishTime>
+      <publishTime>12/12/2019 14:39:16</publishTime>
     </File>
     <File Include="bin/DapperLayer.pdb">
-      <publishTime>12/10/2019 16:31:52</publishTime>
+      <publishTime>12/12/2019 14:39:16</publishTime>
     </File>
     <File Include="bin/DataStore.dll">
-      <publishTime>12/10/2019 16:31:52</publishTime>
+      <publishTime>12/12/2019 14:39:04</publishTime>
     </File>
     <File Include="bin/DataStore.dll.config">
       <publishTime>11/20/2019 11:15:01</publishTime>
     </File>
     <File Include="bin/DataStore.pdb">
-      <publishTime>12/10/2019 16:31:52</publishTime>
+      <publishTime>12/12/2019 14:39:04</publishTime>
     </File>
     <File Include="bin/DotNetZip.dll">
       <publishTime>11/20/2019 11:15:11</publishTime>
@@ -169,7 +169,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/20/2019 11:15:18</publishTime>
     </File>
     <File Include="bin/Microsoft.mshtml.dll">
-      <publishTime>05/11/2019 23:29:48</publishTime>
+      <publishTime>11/05/2019 23:29:48</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
       <publishTime>11/20/2019 11:15:18</publishTime>
@@ -265,13 +265,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/20/2019 11:15:14</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
-      <publishTime>11/28/2019 10:53:11</publishTime>
+      <publishTime>11/28/2018 13:00:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>11/28/2018 12:58:44</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>11/20/2019 11:15:18</publishTime>
     </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>11/28/2018 13:01:26</publishTime>
+    </File>
     <File Include="bin/System.Web.Http.dll">
-      <publishTime>11/28/2019 10:53:11</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/System.Web.Http.Owin.dll">
       <publishTime>11/20/2019 11:15:18</publishTime>
@@ -400,7 +406,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/20/2019 11:14:57</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>11/28/2019 10:53:10</publishTime>
+      <publishTime>12/11/2019 08:48:43</publishTime>
     </File>
     <File Include="Properties/DataSources/System.Data.DataSet.datasource">
       <publishTime>11/20/2019 11:14:56</publishTime>
@@ -772,7 +778,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/20/2019 11:14:56</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/12/2019 12:36:23</publishTime>
+      <publishTime>12/12/2019 09:17:24</publishTime>
     </File>
   </ItemGroup>
 </Project>

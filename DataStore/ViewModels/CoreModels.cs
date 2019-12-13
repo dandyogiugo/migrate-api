@@ -13,9 +13,9 @@ namespace DataStore.ViewModels
         {
 
         }
-        [Required]
+       // [Required]
         public string merchant_id { get; set; }
-        [Required]
+      //  [Required]
         public string hash { get; set; }
     }
 }

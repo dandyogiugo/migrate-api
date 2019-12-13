@@ -10,7 +10,15 @@ namespace DapperLayer.utilities
 {
     public static class connectionManager
     {
-        public static string connectionString() => ConfigurationManager.ConnectionStrings["Dapper"].ConnectionString;
+        public static string connectionString(string name = "")
+        {
+            if (string.IsNullOrEmpty(name))
+                return ConfigurationManager.ConnectionStrings["Dapper"].ConnectionString;
+            else
+                return ConfigurationManager.ConnectionStrings[name].ConnectionString; ;
+
+        }
+
 
         public static string sp_getall_new { get; } = @"SELECT count(DISTINCT(Customerid)) from [ABS_MEMO].[dbo].[Recommended_products];
                                             SELECT  result.CustomerID,(Customer.FirstName +' '+ Customer.LastName) as 'FullName',Customer.Email,Customer.Phone,Customer.Occupation,Customer.Data_source,

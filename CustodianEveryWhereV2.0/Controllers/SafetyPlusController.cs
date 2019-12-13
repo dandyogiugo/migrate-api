@@ -77,12 +77,27 @@ namespace CustodianEveryWhereV2._0.Controllers
                     string request = api.GetSafetyplusQuote(NoOfUnits);
                     if (!string.IsNullOrEmpty(request))
                     {
-                        return new notification_response
+                        if(config.merchant_name.ToLower() != "adapt")
                         {
-                            status = 200,
-                            message = "Units calculated successfully",
-                            data = request
-                        };
+                            return new notification_response
+                            {
+                                status = 200,
+                                message = "Units calculated successfully",
+                                data = new
+                                {
+                                    quote = request
+                                }
+                            };
+                        }
+                        else
+                        {
+                            return new notification_response
+                            {
+                                status = 200,
+                                message = "Units calculated successfully",
+                                data = request
+                            };
+                        }
                     }
                     else
                     {

@@ -255,3 +255,7 @@ C:\Users\User\Documents\Projects\custodianeverywhere2.0new\CustodianEveryWhereV2
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.csproj.CopyComplete
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.dll
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.pdb
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\System.Web.Cors.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\System.Web.Http.Cors.dll
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\System.Web.Http.Cors.xml
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\CustodianEveryWhereV2.0.xml
