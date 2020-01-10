@@ -10,12 +10,14 @@ using System.Data;
 using System.Dynamic;
 using DataStore.ViewModels;
 using DataStore.Models;
+using NLog;
 
 namespace DapperLayer.Dapper.Core
 {
     public class Core<T> where T : class
     {
         public SqlTransaction TransactionState = null;
+        private static Logger log = LogManager.GetCurrentClassLogger();
         public Core()
         {
 
@@ -157,8 +159,80 @@ namespace DapperLayer.Dapper.Core
             }
             catch (Exception ex)
             {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException?.ToString());
                 return IsSuccessful;
+
             }
         }
+
+        public async Task<bool> BulkInsert(List<TravelBroker> buyTravels)
+        {
+            var getProps = new TravelInsurance().GetType().GetProperties();
+            List<string> col = new List<string>();
+            List<string> colData = new List<string>();
+            foreach (var item in getProps)
+            {
+                if (item.Name != "Id")
+                {
+                    col.Add(item.Name);
+                    colData.Add("@" + item.Name);
+                }
+            }
+            string query = $@"INSERT INTO TravelInsurance ({string.Join(",", col)}) Values ({string.Join(",", colData)})";
+            bool IsSuccessful = false;
+            try
+            {
+                var cnn = new SqlConnection(connectionManager.connectionString("CustApi2"));
+                await cnn.OpenAsync();
+                TransactionState = cnn.BeginTransaction();
+                int affectedRow = await cnn.ExecuteAsync(query, buyTravels, TransactionState, commandType: CommandType.Text);
+                if (affectedRow == buyTravels.Count())
+                {
+                    IsSuccessful = true;
+                }
+
+                return IsSuccessful;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException?.ToString());
+                return IsSuccessful;
+
+            }
+        }
+        public async Task<T> GetConfigTravel(string _token)
+        {
+            try
+            {
+                string query = $@"select usr.id as UserID,lin.Token,
+                                                          cp.CompanyName,cp.CompanyProfileID,cp.Logo,
+                                                          cp.BrokerCode,
+                                                          cp.SubAccountID,cp.SubAccountID_2,cp.Category,
+                                                          cp.TravelRate,cp.TravelRate_2 from [AspNetUsers] usr
+                                                          inner join [TravelExternalLinks] lin
+                                                          on usr.Id = lin.UserID and lin.Token = '{_token}'
+                                                          inner join [CompanyProfiles] cp
+                                                          on cp.CompanyProfileID = usr.CompanyProfileID";
+
+                using (var conn = new SqlConnection(connectionManager.connectionString("Travel")))
+                {
+                    var p = new { token = _token };
+                    var result = await conn.QueryFirstAsync<T>(query, p, commandType: CommandType.Text);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException?.ToString());
+                return null;
+            }
+        }
+
     }
 }

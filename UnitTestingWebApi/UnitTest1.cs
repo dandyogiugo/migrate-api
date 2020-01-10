@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Web;
 using CustodianEveryWhereV2._0.Controllers;
 using DataStore.Utilities;
 using DataStore.ViewModels;
@@ -394,8 +395,9 @@ namespace UnitTestingWebApi
                 hash = "testing",
                 merchant_id = merchant_id,
                 return_date = Convert.ToDateTime("2019-12-30"),
-                transaction_ref = Guid.NewGuid().ToString(),
+                transaction_ref = Guid.NewGuid().ToString().Split('-')[0],
                 zone = TravelCategory.WorldWide2,
+                type = "GOLD",
                 details = new List<TravelInsurance2>() {
                     new TravelInsurance2
                     {
@@ -413,7 +415,8 @@ namespace UnitTestingWebApi
                         premium = 23000,
                         purpose_of_trip = "Tourism",
                         surname = "Itaba",
-                        isgroupleader = true
+                        isgroupleader = true,
+
                     },
                      new TravelInsurance2
                     {
@@ -481,6 +484,57 @@ namespace UnitTestingWebApi
                 Assert.AreNotEqual(response.status, 200);
 
             }
+        }
+
+        [TestMethod]
+        public void GetTravelConfig()
+        {
+            var controller = new BrokerPortalController().GetConfig("DACEAB537BDB37D12225D1298F03D678", "CUST_00003").GetAwaiter().GetResult();
+            Console.WriteLine($"Raw Object from API {Newtonsoft.Json.JsonConvert.SerializeObject(controller)}");
+            Assert.AreEqual(controller.status, 200);
+        }
+
+
+        [TestMethod]
+        public void SendMail()
+        {
+            var path = @"C:\Users\User\Documents\Projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\Cert\claims.html";//HttpContext.Current.Server.MapPath("claims.html");
+            var imagepath = @"C:\Users\User\Documents\Projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\images\adaptlogo.png";
+            var template = System.IO.File.ReadAllText(path);
+            new Utility().SendMail(new Life_Claims
+            {
+                claim_amount = 2000,
+                branch = "HQ",
+                burial_location = "NA",
+                cause_of_death = "NA",
+                claimant_name = "Test Test",
+                claimant_relationship = "SON",
+                claim_number = "TEST1234",
+                claim_request_type = "CUSTODIAN LIFE TIME HARVEST",
+                created_at = DateTime.Now,
+                division = "Life",
+                phone_number = "09098897",
+                merchant_id = "07987",
+                policy_holder_name = "Test",
+                email_address = "oscardybabaphd@gmail.com",
+                policy_number = "75563454678",
+
+
+            }, false, template, imagepath);
+            // Console.WriteLine($"Raw Object from API {Newtonsoft.Json.JsonConvert.SerializeObject(controller)}");
+            // Assert.AreEqual(controller.status, 200);
+        }
+
+        [TestMethod]
+        public void testRand()
+        {
+            double value = 2835;
+            int result = (int)Math.Round(value / 100) + 1;
+            if (value > 0 && result == 0)
+            {
+                result = 1;
+            }
+            var final = (int)result * 100;
         }
     }
 }

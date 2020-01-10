@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataStore.ViewModels
 {
-    public class Quote: CoreModels
+    public class Quote : CoreModels
     {
         public Quote()
         {
@@ -67,5 +67,68 @@ namespace DataStore.ViewModels
         public Package package { get; set; }
         public int travellers { get; set; }
         public dynamic breakDown { get; set; }
+    }
+
+
+    public class TravelBroker
+    {
+        public long Id { get; set; }
+        [MaxLength(200)]
+        public string Fullname { get; set; }
+        public string Surname { get; set; }
+        public string Othername { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        [MaxLength(6)]
+        public string Gender { get; set; }
+        [MaxLength(300)]
+        public string Nationality { get; set; }
+        [MaxLength(300)]
+        public string CountryOfOrigin { get; set; }
+        [MaxLength(50)]
+        public string PassPortNumber { get; set; }
+        [MaxLength(300)]
+        public string Occupation { get; set; }
+        [MaxLength(15)]
+        public string MobileNumber { get; set; }
+        [MaxLength(300)]
+        public string EmailAddress { get; set; }
+        public byte[] PassportImage { get; set; }
+        [MaxLength(50)]
+        public string GeographicalZone { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        [MaxLength(400)]
+        public string Destination { get; set; }
+        [MaxLength(40)]
+        public string PurposeOfTrip { get; set; }
+        public decimal TotalCost { get; set; }
+        public long CompanyProfileID { get; set; }
+        public string UserID { get; set; }
+        public decimal Premium { get; set; }
+        public decimal SwitchFee { get; set; }
+        [MaxLength(300)]
+        public string HomeAddress { get; set; }
+        public decimal Commision { get; set; }
+        [MaxLength(40)]
+        public string PolicyNo { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public long BranchID { get; set; }
+        public double CommisionRate { get; set; }
+        [MaxLength(20)]
+        public string CertificateNo { get; set; }
+        public long? BusinessTypeID { get; set; }
+        [MaxLength(30)]
+        public string Extension { get; set; }
+        public string Source { get; set; }
+        [MaxLength(400)]
+        public string Others { get; set; }
+        [MaxLength(400)]
+        public string ImagePath { get; set; }
+        public bool IsGroup { get; set; }
+        public bool IsGroupLeader { get; set; }
+        public string GroupReference { get; set; }
+        public int GroupCount { get; set; }
+
+        public string TransactionRef { get; set; }
     }
 }

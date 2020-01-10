@@ -67,6 +67,7 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
@@ -79,7 +80,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <Content Include="Cert\config.json" />
+    <Content Include="Cert\json.json" />
+    <Content Include="Cert\template.rtf" />
+    <Content Include="Cert\templateOneoff.rtf" />
     <None Include="packages.config" />
+    <Content Include="Cert\Adapt.html" />
+    <Content Include="Cert\claims.html" />
+    <Content Include="Cert\Gitnotification.html" />
+    <Content Include="Cert\Notification.html" />
     <Content Include="TravelCategoryJSON\Category.json" />
     <Content Include="TravelCategoryJSON\Country.json" />
     <Content Include="TravelCategoryJSON\RateTable.json" />
@@ -96,6 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cert\GeneratedCert\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

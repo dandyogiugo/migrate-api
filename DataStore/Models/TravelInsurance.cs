@@ -44,7 +44,7 @@ namespace DataStore.Models
         [MaxLength(500)]
         [Required]
         public string address { get; set; }
-        [MaxLength(10)]
+        [MaxLength(50)]
         [Required]
         public string zone { get; set; }
         [MaxLength(100)]
@@ -81,6 +81,11 @@ namespace DataStore.Models
         public string group_reference { get; set; }
         public DateTime createdat { get; set; }
         public int group_count { get; set; }
-
+        public string type { get; set; }
+        public string policy_number { get; set; }
+        public string certificate_number { get; set; }
+        public string status { get; set; }
+        public bool IsGroupLeader { get; set; }
+        public bool IsGroup { get; set; }
     }
 }

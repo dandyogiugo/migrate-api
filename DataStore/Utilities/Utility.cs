@@ -105,8 +105,6 @@ namespace DataStore.Utilities
             }
             return res;
         }
-
-
         public async Task<string> MD_5(string pattern)
         {
             StringBuilder Sb = new StringBuilder();
@@ -119,7 +117,6 @@ namespace DataStore.Utilities
             }
             return Sb.ToString();
         }
-
         public async Task<bool> CheckForAssignedFunction(string methodName, string merchant_id)
         {
             var apiconfig = new store<ApiConfiguration>();
@@ -1041,6 +1038,15 @@ namespace DataStore.Utilities
             }
             log.Info($" Data from Text file: {Newtonsoft.Json.JsonConvert.SerializeObject(packages)}");
             return packages;
+        }
+        public async Task<int> RoundValueToNearst100(double value)
+        {
+            int result = (int)Math.Round(value / 100) + 1;
+            if (value > 0 && result == 0)
+            {
+                result = 1;
+            }
+            return (int)result * 100;
         }
     }
 

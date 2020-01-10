@@ -992,6 +992,7 @@ namespace DataStore.ViewModels
         public string extension { get; set; }
         public string attachment { get; set; }
         public bool isgroupleader { get; set; }
+        public string CountryOfOrigin { get; set; }
     }
 
     public class BuyTravel:CoreModels
@@ -1019,6 +1020,49 @@ namespace DataStore.ViewModels
         public TravelCategory zone { get; set; }
         [Required]
         public List<string> destination { get; set; }
+        [Required]
+        public string type { get; set; }
+        public bool isGroup { get; set; }
+    }
+
+
+    public class BuyTravel2 : CoreModels
+    {
+        public BuyTravel2()
+        {
+
+        }
+
+        public List<TravelInsurance2> details { get; set; }
+        public string transaction_ref { get; set; }
+        /// <summary>
+        /// Date format YYY-MM-DD
+        /// </summary>
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime departure_date { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime return_date { get; set; }
+        [Required]
+        public TravelCategory zone { get; set; }
+        [Required]
+        public List<string> destination { get; set; }
+        [Required]
+        public string type { get; set; }
+        public double commRate { get; set; }
+        public long companyProfileID { get; set; }
+        public string userID { get; set; }
+        public decimal commision { get; set; }
+        public decimal swtichfee { get; set; }
+        public long branchID { get; set; }
+        public long businessTypeID { get; set; }
+        public bool isGroup { get; set; }
+        public decimal TotalCost { get; set; }
+        public string BrokerID { get; set; }
     }
 }
 

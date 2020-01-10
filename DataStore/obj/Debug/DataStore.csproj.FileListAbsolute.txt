@@ -44,7 +44,7 @@ C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\N
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\NLog.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\Spire.Doc.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\bin\Debug\Spire.License.xml
-C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.csprojAssemblyReference.cache
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.csproj.CopyComplete
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.dll
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.pdb
+C:\Users\User\Documents\Projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.csprojAssemblyReference.cache
