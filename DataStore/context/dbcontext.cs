@@ -43,6 +43,7 @@ namespace DataStore.context
         public DbSet<ListOfGyms> ListOfGyms { get; set; }
         public DbSet<MyPreference> MyPreference { get; set; }
         public DbSet<HomeShield> HomeShield { get; set; }
+        public DbSet<ReferralCodeLookUp> ReferralCodeLookUp { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

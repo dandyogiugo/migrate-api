@@ -22,6 +22,7 @@ namespace DataStore.ViewModels
         public DateTime ReturnDate { get; set; }
         [Required]
         public List<DateTime> DateOfBirth { get; set; }
+        public double? LoadingRate { get; set; }
 
     }
 
@@ -63,12 +64,21 @@ namespace DataStore.ViewModels
     public class plans
     {
         public double premium { get; set; }
+        public double loadedpremium { get; set; }
         public double exchangeRate { get; set; }
         public Package package { get; set; }
         public int travellers { get; set; }
-        public dynamic breakDown { get; set; }
+        public List<_breakDown> breakDown { get; set; }
+
     }
 
+    public class _breakDown
+    {
+        public int Id { get; set; }
+        public double premium { get; set; }
+        public DateTime dateOfBirth { get; set; }
+        public double loadedpremium { get; set; }
+    }
 
     public class TravelBroker
     {

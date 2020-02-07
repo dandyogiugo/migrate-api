@@ -83,7 +83,11 @@ namespace TestSerials.CustodianE {
         
         private System.Threading.SendOrPostCallback GetLifeQuoteOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetCitiesOperationCompleted;
+        
         private System.Threading.SendOrPostCallback POSTTravelRecOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback POSTMultipleTravelRecOperationCompleted;
         
         private System.Threading.SendOrPostCallback POSTTravelRec1OperationCompleted;
         
@@ -99,6 +103,8 @@ namespace TestSerials.CustodianE {
         
         private System.Threading.SendOrPostCallback POSTNotificationDetOperationCompleted;
         
+        private System.Threading.SendOrPostCallback NotEMAILOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetConfirmTelOperationCompleted;
         
         private System.Threading.SendOrPostCallback SubmitRenewBusinessPayRecOperationCompleted;
@@ -112,6 +118,10 @@ namespace TestSerials.CustodianE {
         private System.Threading.SendOrPostCallback PostMarineRecOperationCompleted;
         
         private System.Threading.SendOrPostCallback PostTravel2RagaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback PostTravelRagaOldOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback PostTravel2RagaArrayOperationCompleted;
         
         private System.Threading.SendOrPostCallback POSTBrokerMotorRecOperationCompleted;
         
@@ -293,7 +303,13 @@ namespace TestSerials.CustodianE {
         public event GetLifeQuoteCompletedEventHandler GetLifeQuoteCompleted;
         
         /// <remarks/>
+        public event GetCitiesCompletedEventHandler GetCitiesCompleted;
+        
+        /// <remarks/>
         public event POSTTravelRecCompletedEventHandler POSTTravelRecCompleted;
+        
+        /// <remarks/>
+        public event POSTMultipleTravelRecCompletedEventHandler POSTMultipleTravelRecCompleted;
         
         /// <remarks/>
         public event POSTTravelRec1CompletedEventHandler POSTTravelRec1Completed;
@@ -317,6 +333,9 @@ namespace TestSerials.CustodianE {
         public event POSTNotificationDetCompletedEventHandler POSTNotificationDetCompleted;
         
         /// <remarks/>
+        public event NotEMAILCompletedEventHandler NotEMAILCompleted;
+        
+        /// <remarks/>
         public event GetConfirmTelCompletedEventHandler GetConfirmTelCompleted;
         
         /// <remarks/>
@@ -336,6 +355,12 @@ namespace TestSerials.CustodianE {
         
         /// <remarks/>
         public event PostTravel2RagaCompletedEventHandler PostTravel2RagaCompleted;
+        
+        /// <remarks/>
+        public event PostTravelRagaOldCompletedEventHandler PostTravelRagaOldCompleted;
+        
+        /// <remarks/>
+        public event PostTravel2RagaArrayCompletedEventHandler PostTravel2RagaArrayCompleted;
         
         /// <remarks/>
         public event POSTBrokerMotorRecCompletedEventHandler POSTBrokerMotorRecCompleted;
@@ -2131,6 +2156,34 @@ namespace TestSerials.CustodianE {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/Passing_Travel_PostSou2344", RequestElementName="Passing_Travel_PostSou2344", RequestNamespace="http://Custodianservices.com/", ResponseElementName="Passing_Travel_PostSou2344Response", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute("Passing_Travel_PostSou2344Result")]
+        public string[] GetCities() {
+            object[] results = this.Invoke("GetCities", new object[0]);
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetCitiesAsync() {
+            this.GetCitiesAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetCitiesAsync(object userState) {
+            if ((this.GetCitiesOperationCompleted == null)) {
+                this.GetCitiesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCitiesOperationCompleted);
+            }
+            this.InvokeAsync("GetCities", new object[0], this.GetCitiesOperationCompleted, userState);
+        }
+        
+        private void OnGetCitiesOperationCompleted(object arg) {
+            if ((this.GetCitiesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCitiesCompleted(this, new GetCitiesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/Passing_Travel_PostSource", RequestElementName="Passing_Travel_PostSource", RequestNamespace="http://Custodianservices.com/", ResponseElementName="Passing_Travel_PostSourceResponse", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("Passing_Travel_PostSourceResult")]
         public string POSTTravelRec(
@@ -2311,6 +2364,36 @@ namespace TestSerials.CustodianE {
             if ((this.POSTTravelRecCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.POSTTravelRecCompleted(this, new POSTTravelRecCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/Passing_Travel_PostSource_Array", RequestElementName="Passing_Travel_PostSource_Array", RequestNamespace="http://Custodianservices.com/", ResponseElementName="Passing_Travel_PostSource_ArrayResponse", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Passing_Travel_PostSource_ArrayResult")]
+        public mResponse POSTMultipleTravelRec(TravelInsuranceArray[] TravelDetails) {
+            object[] results = this.Invoke("POSTMultipleTravelRec", new object[] {
+                        TravelDetails});
+            return ((mResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void POSTMultipleTravelRecAsync(TravelInsuranceArray[] TravelDetails) {
+            this.POSTMultipleTravelRecAsync(TravelDetails, null);
+        }
+        
+        /// <remarks/>
+        public void POSTMultipleTravelRecAsync(TravelInsuranceArray[] TravelDetails, object userState) {
+            if ((this.POSTMultipleTravelRecOperationCompleted == null)) {
+                this.POSTMultipleTravelRecOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPOSTMultipleTravelRecOperationCompleted);
+            }
+            this.InvokeAsync("POSTMultipleTravelRec", new object[] {
+                        TravelDetails}, this.POSTMultipleTravelRecOperationCompleted, userState);
+        }
+        
+        private void OnPOSTMultipleTravelRecOperationCompleted(object arg) {
+            if ((this.POSTMultipleTravelRecCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.POSTMultipleTravelRecCompleted(this, new POSTMultipleTravelRecCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -2763,6 +2846,61 @@ namespace TestSerials.CustodianE {
             if ((this.POSTNotificationDetCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.POSTNotificationDetCompleted(this, new POSTNotificationDetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/NotEMAIL", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NotEMAIL(string FirstName, string LastName, string ToAddress, string PolicyNo, string NotifyID, decimal Amount, string Oustdprem, System.DateTime PaymentDate, System.DateTime RenewalDate, string Product, string Narration, string Receipt, string RenUrl, string PremiumBal) {
+            object[] results = this.Invoke("NotEMAIL", new object[] {
+                        FirstName,
+                        LastName,
+                        ToAddress,
+                        PolicyNo,
+                        NotifyID,
+                        Amount,
+                        Oustdprem,
+                        PaymentDate,
+                        RenewalDate,
+                        Product,
+                        Narration,
+                        Receipt,
+                        RenUrl,
+                        PremiumBal});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NotEMAILAsync(string FirstName, string LastName, string ToAddress, string PolicyNo, string NotifyID, decimal Amount, string Oustdprem, System.DateTime PaymentDate, System.DateTime RenewalDate, string Product, string Narration, string Receipt, string RenUrl, string PremiumBal) {
+            this.NotEMAILAsync(FirstName, LastName, ToAddress, PolicyNo, NotifyID, Amount, Oustdprem, PaymentDate, RenewalDate, Product, Narration, Receipt, RenUrl, PremiumBal, null);
+        }
+        
+        /// <remarks/>
+        public void NotEMAILAsync(string FirstName, string LastName, string ToAddress, string PolicyNo, string NotifyID, decimal Amount, string Oustdprem, System.DateTime PaymentDate, System.DateTime RenewalDate, string Product, string Narration, string Receipt, string RenUrl, string PremiumBal, object userState) {
+            if ((this.NotEMAILOperationCompleted == null)) {
+                this.NotEMAILOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNotEMAILOperationCompleted);
+            }
+            this.InvokeAsync("NotEMAIL", new object[] {
+                        FirstName,
+                        LastName,
+                        ToAddress,
+                        PolicyNo,
+                        NotifyID,
+                        Amount,
+                        Oustdprem,
+                        PaymentDate,
+                        RenewalDate,
+                        Product,
+                        Narration,
+                        Receipt,
+                        RenUrl,
+                        PremiumBal}, this.NotEMAILOperationCompleted, userState);
+        }
+        
+        private void OnNotEMAILOperationCompleted(object arg) {
+            if ((this.NotEMAILCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NotEMAILCompleted(this, new NotEMAILCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -3587,6 +3725,104 @@ namespace TestSerials.CustodianE {
             if ((this.PostTravel2RagaCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.PostTravel2RagaCompleted(this, new PostTravel2RagaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/PostTravelRagaOld", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public certificate_out PostTravelRagaOld(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+            object[] results = this.Invoke("PostTravelRagaOld", new object[] {
+                        start_date,
+                        end_date,
+                        first_name,
+                        last_name,
+                        Area_Type,
+                        num_passport,
+                        date_birth,
+                        nationality,
+                        country_residence,
+                        email,
+                        country_destination});
+            return ((certificate_out)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void PostTravelRagaOldAsync(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+            this.PostTravelRagaOldAsync(start_date, end_date, first_name, last_name, Area_Type, num_passport, date_birth, nationality, country_residence, email, country_destination, null);
+        }
+        
+        /// <remarks/>
+        public void PostTravelRagaOldAsync(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination, object userState) {
+            if ((this.PostTravelRagaOldOperationCompleted == null)) {
+                this.PostTravelRagaOldOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPostTravelRagaOldOperationCompleted);
+            }
+            this.InvokeAsync("PostTravelRagaOld", new object[] {
+                        start_date,
+                        end_date,
+                        first_name,
+                        last_name,
+                        Area_Type,
+                        num_passport,
+                        date_birth,
+                        nationality,
+                        country_residence,
+                        email,
+                        country_destination}, this.PostTravelRagaOldOperationCompleted, userState);
+        }
+        
+        private void OnPostTravelRagaOldOperationCompleted(object arg) {
+            if ((this.PostTravelRagaOldCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.PostTravelRagaOldCompleted(this, new PostTravelRagaOldCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/PostTravel2RagaArray", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public certificate_out PostTravel2RagaArray(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+            object[] results = this.Invoke("PostTravel2RagaArray", new object[] {
+                        start_date,
+                        end_date,
+                        first_name,
+                        last_name,
+                        Area_Type,
+                        num_passport,
+                        date_birth,
+                        nationality,
+                        country_residence,
+                        email,
+                        country_destination});
+            return ((certificate_out)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void PostTravel2RagaArrayAsync(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+            this.PostTravel2RagaArrayAsync(start_date, end_date, first_name, last_name, Area_Type, num_passport, date_birth, nationality, country_residence, email, country_destination, null);
+        }
+        
+        /// <remarks/>
+        public void PostTravel2RagaArrayAsync(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination, object userState) {
+            if ((this.PostTravel2RagaArrayOperationCompleted == null)) {
+                this.PostTravel2RagaArrayOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPostTravel2RagaArrayOperationCompleted);
+            }
+            this.InvokeAsync("PostTravel2RagaArray", new object[] {
+                        start_date,
+                        end_date,
+                        first_name,
+                        last_name,
+                        Area_Type,
+                        num_passport,
+                        date_birth,
+                        nationality,
+                        country_residence,
+                        email,
+                        country_destination}, this.PostTravel2RagaArrayOperationCompleted, userState);
+        }
+        
+        private void OnPostTravel2RagaArrayOperationCompleted(object arg) {
+            if ((this.PostTravel2RagaArrayCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.PostTravel2RagaArrayCompleted(this, new PostTravel2RagaArrayCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -5595,6 +5831,8 @@ namespace TestSerials.CustodianE {
         
         private string nationalityField;
         
+        private string policyNoField;
+        
         private string statusCodeField;
         
         /// <remarks/>
@@ -5684,6 +5922,16 @@ namespace TestSerials.CustodianE {
             }
             set {
                 this.nationalityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PolicyNo {
+            get {
+                return this.policyNoField;
+            }
+            set {
+                this.policyNoField = value;
             }
         }
         
@@ -7634,6 +7882,504 @@ namespace TestSerials.CustodianE {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class mResponse {
+        
+        private string message_CodeField;
+        
+        private string message_StatusField;
+        
+        private string policyNoField;
+        
+        private string certificateNo1Field;
+        
+        private string certificateNo2Field;
+        
+        /// <remarks/>
+        public string message_Code {
+            get {
+                return this.message_CodeField;
+            }
+            set {
+                this.message_CodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string message_Status {
+            get {
+                return this.message_StatusField;
+            }
+            set {
+                this.message_StatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PolicyNo {
+            get {
+                return this.policyNoField;
+            }
+            set {
+                this.policyNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CertificateNo1 {
+            get {
+                return this.certificateNo1Field;
+            }
+            set {
+                this.certificateNo1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CertificateNo2 {
+            get {
+                return this.certificateNo2Field;
+            }
+            set {
+                this.certificateNo2Field = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class TravelInsuranceArray {
+        
+        private string merchantIDField;
+        
+        private string mpasswordField;
+        
+        private string titleNameField;
+        
+        private string firstNameField;
+        
+        private string lastNameField;
+        
+        private string addressField;
+        
+        private string m_CltAddressField;
+        
+        private string phoneNumberField;
+        
+        private string emailField;
+        
+        private System.DateTime dateOfBirthField;
+        
+        private string occupationField;
+        
+        private string genderField;
+        
+        private string nationalityField;
+        
+        private string travelTypeField;
+        
+        private string travelDestinationField;
+        
+        private string identificationNoField;
+        
+        private string identificationTypeField;
+        
+        private string periodofInsuranceField;
+        
+        private string purposeoftripField;
+        
+        private System.DateTime departureDateField;
+        
+        private System.DateTime returnDateField;
+        
+        private System.DateTime travelerDOBField;
+        
+        private string totalCostField;
+        
+        private string childU18Field;
+        
+        private string groupCountField;
+        
+        private string referenceNoField;
+        
+        private string postSourceField;
+        
+        private string brokerIDField;
+        
+        private string commRateField;
+        
+        private string premRateField;
+        
+        private string otherCountryField;
+        
+        private string branchField;
+        
+        private string isLeadingField;
+        
+        private string packageTypeField;
+        
+        private string isGroupField;
+        
+        /// <remarks/>
+        public string MerchantID {
+            get {
+                return this.merchantIDField;
+            }
+            set {
+                this.merchantIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Mpassword {
+            get {
+                return this.mpasswordField;
+            }
+            set {
+                this.mpasswordField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TitleName {
+            get {
+                return this.titleNameField;
+            }
+            set {
+                this.titleNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LastName {
+            get {
+                return this.lastNameField;
+            }
+            set {
+                this.lastNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Address {
+            get {
+                return this.addressField;
+            }
+            set {
+                this.addressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string m_CltAddress {
+            get {
+                return this.m_CltAddressField;
+            }
+            set {
+                this.m_CltAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PhoneNumber {
+            get {
+                return this.phoneNumberField;
+            }
+            set {
+                this.phoneNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime DateOfBirth {
+            get {
+                return this.dateOfBirthField;
+            }
+            set {
+                this.dateOfBirthField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Occupation {
+            get {
+                return this.occupationField;
+            }
+            set {
+                this.occupationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Gender {
+            get {
+                return this.genderField;
+            }
+            set {
+                this.genderField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Nationality {
+            get {
+                return this.nationalityField;
+            }
+            set {
+                this.nationalityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TravelType {
+            get {
+                return this.travelTypeField;
+            }
+            set {
+                this.travelTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TravelDestination {
+            get {
+                return this.travelDestinationField;
+            }
+            set {
+                this.travelDestinationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IdentificationNo {
+            get {
+                return this.identificationNoField;
+            }
+            set {
+                this.identificationNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IdentificationType {
+            get {
+                return this.identificationTypeField;
+            }
+            set {
+                this.identificationTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PeriodofInsurance {
+            get {
+                return this.periodofInsuranceField;
+            }
+            set {
+                this.periodofInsuranceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Purposeoftrip {
+            get {
+                return this.purposeoftripField;
+            }
+            set {
+                this.purposeoftripField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime DepartureDate {
+            get {
+                return this.departureDateField;
+            }
+            set {
+                this.departureDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime ReturnDate {
+            get {
+                return this.returnDateField;
+            }
+            set {
+                this.returnDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime TravelerDOB {
+            get {
+                return this.travelerDOBField;
+            }
+            set {
+                this.travelerDOBField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TotalCost {
+            get {
+                return this.totalCostField;
+            }
+            set {
+                this.totalCostField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ChildU18 {
+            get {
+                return this.childU18Field;
+            }
+            set {
+                this.childU18Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GroupCount {
+            get {
+                return this.groupCountField;
+            }
+            set {
+                this.groupCountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ReferenceNo {
+            get {
+                return this.referenceNoField;
+            }
+            set {
+                this.referenceNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PostSource {
+            get {
+                return this.postSourceField;
+            }
+            set {
+                this.postSourceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string BrokerID {
+            get {
+                return this.brokerIDField;
+            }
+            set {
+                this.brokerIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CommRate {
+            get {
+                return this.commRateField;
+            }
+            set {
+                this.commRateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PremRate {
+            get {
+                return this.premRateField;
+            }
+            set {
+                this.premRateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string OtherCountry {
+            get {
+                return this.otherCountryField;
+            }
+            set {
+                this.otherCountryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Branch {
+            get {
+                return this.branchField;
+            }
+            set {
+                this.branchField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IsLeading {
+            get {
+                return this.isLeadingField;
+            }
+            set {
+                this.isLeadingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PackageType {
+            get {
+                return this.packageTypeField;
+            }
+            set {
+                this.packageTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IsGroup {
+            get {
+                return this.isGroupField;
+            }
+            set {
+                this.isGroupField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
     public partial class MotorList {
         
         private string mInsurednameField;
@@ -9022,6 +9768,32 @@ namespace TestSerials.CustodianE {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetCitiesCompletedEventHandler(object sender, GetCitiesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCitiesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCitiesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void POSTTravelRecCompletedEventHandler(object sender, POSTTravelRecCompletedEventArgs e);
     
     /// <remarks/>
@@ -9042,6 +9814,32 @@ namespace TestSerials.CustodianE {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void POSTMultipleTravelRecCompletedEventHandler(object sender, POSTMultipleTravelRecCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class POSTMultipleTravelRecCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal POSTMultipleTravelRecCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public mResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((mResponse)(this.results[0]));
             }
         }
     }
@@ -9230,6 +10028,32 @@ namespace TestSerials.CustodianE {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void NotEMAILCompletedEventHandler(object sender, NotEMAILCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NotEMAILCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NotEMAILCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetConfirmTelCompletedEventHandler(object sender, GetConfirmTelCompletedEventArgs e);
     
     /// <remarks/>
@@ -9397,6 +10221,58 @@ namespace TestSerials.CustodianE {
         private object[] results;
         
         internal PostTravel2RagaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public certificate_out Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((certificate_out)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void PostTravelRagaOldCompletedEventHandler(object sender, PostTravelRagaOldCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class PostTravelRagaOldCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal PostTravelRagaOldCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public certificate_out Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((certificate_out)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void PostTravel2RagaArrayCompletedEventHandler(object sender, PostTravel2RagaArrayCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class PostTravel2RagaArrayCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal PostTravel2RagaArrayCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

@@ -229,6 +229,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
                 }
 
+                string channelName = (merchantConfig.merchant_name.ToLower().Contains("agent")) ? "MPOS" : "PAYSTACK";
+               
                 var validate_headers = await util.ValidateHeaders(headerValues, post.merchant_id);
 
                 if (!validate_headers)
@@ -274,7 +276,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     var request = await api.SubmitPaymentRecordAsync(GlobalConstant.merchant_id, GlobalConstant.password, post.policy_number, post.subsidiary.ToString(), post.payment_narrtn, DateTime.Now,
-                        DateTime.Now, post.reference_no, new_trans.issured_name, "", "", "", new_trans.phone_no, new_trans.email_address, "", "", "", post.biz_unit, post.premium, 0, "MPOS", "RW");
+                        DateTime.Now, post.reference_no, new_trans.issured_name, "", "", "", new_trans.phone_no, new_trans.email_address, "", "", "", post.biz_unit, post.premium, 0, channelName, "RW");
                     log.Info($"raw response from api {request.Passing_Payment_PostSourceResult}");
                     if (string.IsNullOrEmpty(request.Passing_Payment_PostSourceResult) || request.Passing_Payment_PostSourceResult != "1")
                     {

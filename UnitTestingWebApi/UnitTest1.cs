@@ -494,7 +494,7 @@ namespace UnitTestingWebApi
             Assert.AreEqual(controller.status, 200);
         }
 
-
+          
         [TestMethod]
         public void SendMail()
         {
@@ -535,6 +535,40 @@ namespace UnitTestingWebApi
                 result = 1;
             }
             var final = (int)result * 100;
+        }
+
+
+        [TestMethod]
+        public void ComfirmTransaction()
+        {
+            string refno = "6587346586487";
+            string hash = "dnbsadgj";
+            string refKey = "46c97c1f-62ac-4e94-96ed-5b3039f3e4d7_637158918256588346";
+            var controller = new TravelQuoteComputationController().ConfirmTransaction(refno, refKey, merchant_id, hash).GetAwaiter().GetResult();
+            Console.WriteLine($"Raw Object from API {Newtonsoft.Json.JsonConvert.SerializeObject(controller)}");
+            Assert.AreEqual(controller.status, 200);
+        }
+
+        [TestMethod]
+        public void PostToRaga()
+        {
+            var push = new RagaRequest
+            {
+                country_destination = "GHANA",
+                country_residence = "NIGERIA",
+                date_birth = Convert.ToDateTime("1989-05-24"),
+                email = "oscardybabaphd@gmail.com",
+                end_date = Convert.ToDateTime("2020-05-24"),
+                first_name = "Oscar",
+                last_name = "Itaba",
+                merchant_id = merchant_id,
+                nationality = "NIGERIAN",
+                num_passport = "A123090",
+                start_date = Convert.ToDateTime("2020-02-10"),
+                zone = "AFRICA"
+            };
+            var controller = new RagaController().PostToRaga(push);
+           // Assert.AreEqual(controller.status, 200);
         }
     }
 }

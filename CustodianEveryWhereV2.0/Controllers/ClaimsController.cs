@@ -87,6 +87,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
                 }
 
+                string swap_claims_type = (claims.claim_request_type.ToLower() == "termination") ? "Surrender" : claims.claim_request_type;
                 var save_claims = new LifeClaims
                 {
                     updated_at = DateTime.Now,
@@ -95,7 +96,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     claimant_name = claims.claimant_name,
                     claimant_relationship = claims.claimant_relationship,
                     claim_amount = (claims.claim_amount.HasValue) ? claims.claim_amount.Value : default(decimal),
-                    claim_request_type = claims.claim_request_type,
+                    claim_request_type = swap_claims_type,//claims.claim_request_type,
                     created_at = DateTime.Now,
                     email_address = claims.email_address,
                     last_residential_address = claims.last_residential_address,
@@ -135,9 +136,15 @@ namespace CustodianEveryWhereV2._0.Controllers
                 // claims
                 claims.claim_number = claim_no;
 
+                //send mail to custodian
                 Task.Factory.StartNew(() =>
                 {
                     util.SendMail(claims, true, template, imagepath);
+                });
+
+                //sending mail to customer
+                Task.Factory.StartNew(() =>
+                {
                     util.SendMail(claims, false, template, imagepath);
                 });
 
@@ -244,7 +251,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 string claim_number = "";
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var submite_claim =  api.SubmitClaimRegister(GlobalConstant.merchant_id, GlobalConstant.password, newClaims.policy_holder_name, "", newClaims.email_address,
+                    var submite_claim = api.SubmitClaimRegister(GlobalConstant.merchant_id, GlobalConstant.password, newClaims.policy_holder_name, "", newClaims.email_address,
                         newClaims.phone_number, newClaims.policy_number, newClaims.incident_description,
                         newClaims.incident_date_time.Value, newClaims.vehicle_reg_number, newClaims.claim_amount.ToString());
                     log.Info($"Response from Claims api {Newtonsoft.Json.JsonConvert.SerializeObject(submite_claim)}");
@@ -386,7 +393,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 {
                     using (var api = new CustodianAPI.PolicyServicesSoapClient())
                     {
-                        var response =  api.GetClaimStatus(claims.claims_number);
+                        var response = api.GetClaimStatus(claims.claims_number);
                         log.Info($"response from ABS {Newtonsoft.Json.JsonConvert.SerializeObject(response)}");
                         if (response.ClPolicyNo == "NULL")
                         {
@@ -430,7 +437,7 @@ namespace CustodianEveryWhereV2._0.Controllers
             try
             {
                 // var properties = details.GetType().GetProperties();
-                 log.Info($"Raw data from backoffice portal: {Newtonsoft.Json.JsonConvert.SerializeObject(details)}");
+                log.Info($"Raw data from backoffice portal: {Newtonsoft.Json.JsonConvert.SerializeObject(details)}");
                 //  log.Info("merchant id: " + (string)properties["merchant_id"]);
                 var check_user_function = await util.CheckForAssignedFunction("GetLifeClaimsDetails", details.merchant_id);
                 if (!check_user_function)
@@ -441,20 +448,14 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Permission denied from accessing this feature"
                     };
                 }
-
+                if (details.p_type.ToLower() == "termination")
+                {
+                    details.p_type = "POLICY_SURRENDERS";
+                }
                 var getdetails = await util.GetLifeClaimsDetails(details);
                 if (getdetails != null && getdetails.code == 200)
                 {
-                    //return new claims_details
-                    //{
-                    //    code = 200,
-                    //    message = getdetails.message,
-                    //    amount = getdetails.amount,
-                    //    claim_no = getdetails.claim_no,
-                    //    policy_no = details.p_policy_no
-                    //};
                     return getdetails;
-
                 }
                 else
                 {

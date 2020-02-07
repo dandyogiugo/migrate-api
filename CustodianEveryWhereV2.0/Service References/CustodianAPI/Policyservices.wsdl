@@ -785,6 +785,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Branch" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="IsLeading" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="PackageType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsGroup" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="Passing_Travel_PostSource_ArrayResponse">
@@ -1246,6 +1247,30 @@
           <s:element minOccurs="0" maxOccurs="1" name="policy_id" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="PostTravel2RagaArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="start_date" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end_date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="first_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="last_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Area_Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="num_passport" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="date_birth" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="nationality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country_residence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country_destination" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostTravel2RagaArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostTravel2RagaArrayResult" type="tns:certificate_out" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Passing_Broker_Motor_PostSource">
         <s:complexType>
           <s:sequence>
@@ -2174,6 +2199,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Occupation" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
         </s:sequence>
       </s:complexType>
@@ -2448,6 +2474,12 @@
   </wsdl:message>
   <wsdl:message name="PostTravel2RagaSoapOut">
     <wsdl:part name="parameters" element="tns:PostTravel2RagaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostTravel2RagaArraySoapIn">
+    <wsdl:part name="parameters" element="tns:PostTravel2RagaArray" />
+  </wsdl:message>
+  <wsdl:message name="PostTravel2RagaArraySoapOut">
+    <wsdl:part name="parameters" element="tns:PostTravel2RagaArrayResponse" />
   </wsdl:message>
   <wsdl:message name="Passing_Broker_Motor_PostSourceSoapIn">
     <wsdl:part name="parameters" element="tns:Passing_Broker_Motor_PostSource" />
@@ -2809,6 +2841,10 @@
     <wsdl:operation name="PostTravel2Raga">
       <wsdl:input message="tns:PostTravel2RagaSoapIn" />
       <wsdl:output message="tns:PostTravel2RagaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostTravel2RagaArray">
+      <wsdl:input message="tns:PostTravel2RagaArraySoapIn" />
+      <wsdl:output message="tns:PostTravel2RagaArraySoapOut" />
     </wsdl:operation>
     <wsdl:operation name="POSTBrokerMotorRec">
       <wsdl:input name="Passing_Broker_Motor_PostSource" message="tns:Passing_Broker_Motor_PostSourceSoapIn" />
@@ -3331,6 +3367,15 @@
     </wsdl:operation>
     <wsdl:operation name="PostTravel2Raga">
       <soap:operation soapAction="http://Custodianservices.com/PostTravel2Raga" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostTravel2RagaArray">
+      <soap:operation soapAction="http://Custodianservices.com/PostTravel2RagaArray" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4009,6 +4054,15 @@
     </wsdl:operation>
     <wsdl:operation name="PostTravel2Raga">
       <soap12:operation soapAction="http://Custodianservices.com/PostTravel2Raga" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostTravel2RagaArray">
+      <soap12:operation soapAction="http://Custodianservices.com/PostTravel2RagaArray" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

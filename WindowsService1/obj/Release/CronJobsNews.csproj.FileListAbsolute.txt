@@ -60,7 +60,6 @@ C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\R
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\Release\GenerateTransactionCodes.dll
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Spire.Pdf.dll
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Spire.License.dll
-C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\Release\SendGrid.dll
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Microsoft.mshtml.dll
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\Release\DataStore.pdb
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\Release\DataStore.dll.config
@@ -77,8 +76,6 @@ C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\R
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Quartz.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Spire.Doc.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Spire.License.xml
-C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\Release\SendGrid.pdb
-C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\bin\Release\SendGrid.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\obj\Release\CronJobsNews.csprojAssemblyReference.cache
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\obj\Release\WindowsService1.ProjectInstaller.resources
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\WindowsService1\obj\Release\CronJobsNews.csproj.GenerateResource.cache

@@ -995,7 +995,7 @@ namespace DataStore.ViewModels
         public string CountryOfOrigin { get; set; }
     }
 
-    public class BuyTravel:CoreModels
+    public class BuyTravel : CoreModels
     {
         public BuyTravel()
         {
@@ -1003,7 +1003,7 @@ namespace DataStore.ViewModels
         }
 
         public List<TravelInsurance2> details { get; set; }
-        public string transaction_ref { get; set; }
+        public string transaction_ref { get; set; } = "";
         /// <summary>
         /// Date format YYY-MM-DD
         /// </summary>
@@ -1023,6 +1023,7 @@ namespace DataStore.ViewModels
         [Required]
         public string type { get; set; }
         public bool isGroup { get; set; }
+        public string referrenceKey { get; set; }
     }
 
 
@@ -1063,6 +1064,87 @@ namespace DataStore.ViewModels
         public bool isGroup { get; set; }
         public decimal TotalCost { get; set; }
         public string BrokerID { get; set; }
+    }
+
+    public class WorkAroundQuote
+    {
+        public WorkAroundQuote()
+        {
+
+        }
+        public string num_code { get; set; }
+        public string alpha_2_code { get; set; }
+        public string alpha_3_code { get; set; }
+        public string en_short_name { get; set; }
+        public string nationality { get; set; }
+        public string region { get; set; }
+    }
+
+
+    public class Raga
+    {
+        public int convention_id { get; set; }
+        public string user_name { get; set; }
+        public string password { get; set; }
+        public string md5 { get; set; }
+        public string start_date { get; set; }
+        public string end_date { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+        public string num_passport { get; set; }
+        public string date_birth { get; set; }
+        public string nationality { get; set; }
+        public string country_residence { get; set; }
+        public string email { get; set; }
+        public string country_destination { get; set; }
+        public string num_police_ass { get; set; }
+        public int program { get; set; }
+        public int area { get; set; }
+        public string num_group { get; set; }
+    }
+
+    public class RagaRequest
+    {
+        [Required]
+        public DateTime start_date { get; set; }
+        [Required]
+        public DateTime end_date { get; set; }
+        [Required]
+        public string first_name { get; set; }
+        [Required]
+        public string last_name { get; set; }
+        [Required]
+        public string num_passport { get; set; }
+        [Required]
+        public DateTime date_birth { get; set; }
+        [Required]
+        public string nationality { get; set; }
+        [Required]
+        public string country_residence { get; set; }
+        [Required]
+        public string email { get; set; }
+        [Required]
+        public string country_destination { get; set; }
+        [Required]
+        public string zone { get; set; }
+        [Required]
+        public  string merchant_id { get; set; }
+    }
+
+    public class RageZone
+    {
+        public string type { get; set; }
+        public int value { get; set; }
+    }
+
+    public class RagaConfig
+    {
+        public int convention_id { get; set; }
+        public List<RageZone> zones { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string hash { get; set; }
+        public int program { get; set; }
     }
 }
 

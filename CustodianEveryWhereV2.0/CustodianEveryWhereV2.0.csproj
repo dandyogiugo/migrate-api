@@ -344,6 +344,8 @@
     <Compile Include="Controllers\NotificationsController.cs" />
     <Compile Include="Controllers\PensionController.cs" />
     <Compile Include="Controllers\PersonalProductionController.cs" />
+    <Compile Include="Controllers\RagaController.cs" />
+    <Compile Include="Controllers\ReferralSystemController.cs" />
     <Compile Include="Controllers\SafetyPlusController.cs" />
     <Compile Include="Controllers\SportController.cs" />
     <Compile Include="Controllers\TravelController.cs" />
@@ -756,12 +758,16 @@
     <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.mResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaArrayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\CustodianAPI\Policyservices.wsdl" />
     <None Include="Service References\CustodianAPI\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\CustodianAPI\Policyservices.disco" />
+    <Content Include="TravelCategoryJSON\RagaSchema.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -780,6 +786,7 @@
     <Content Include="TravelCategoryJSON\Category.json" />
     <Content Include="TravelCategoryJSON\RateTable.json" />
     <Content Include="TravelCategoryJSON\Country.json" />
+    <Content Include="TravelCategoryJSON\RagaConfig.json" />
     <None Include="Web References\RSA\cal.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -54,7 +54,6 @@ C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSell
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Newtonsoft.Json.pdb
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Newtonsoft.Json.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\NLog.xml
-C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\System.Net.Http.Formatting.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\DataStore.pdb
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\DataStore.dll.config
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Release\Dapper.xml

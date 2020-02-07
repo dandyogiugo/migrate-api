@@ -1,7 +1,6 @@
 ﻿using DataStore.Models;
 using DataStore.repository;
 using Newtonsoft.Json;
-using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -33,7 +32,9 @@ namespace TestSerials
             {
                 using (var api = new Cust.PolicyServicesSoapClient())
                 {
-                    var response = api.GetPassportDetails("Custodian", "Custodian@123", "A10429031");
+                    var response = api.PostTravel2Raga(DateTime.Now,Convert.ToDateTime("2020-03-01"),
+                        "Oscar","Oscar","AREA 1","A1234567", Convert.ToDateTime("1989-03-01"),"NIGERIAN NIGERIA",
+                        "NIGERIA","oscardybabaphd@gmail.com","GHANA");
                     var newresponse = response;
                 }
                    

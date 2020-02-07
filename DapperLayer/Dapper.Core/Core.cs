@@ -11,6 +11,8 @@ using System.Dynamic;
 using DataStore.ViewModels;
 using DataStore.Models;
 using NLog;
+using System.IO;
+using System.Configuration;
 
 namespace DapperLayer.Dapper.Core
 {
@@ -167,6 +169,40 @@ namespace DapperLayer.Dapper.Core
             }
         }
 
+        public async Task<bool> BulkUpdate(List<TravelInsurance> buyTravels)
+        {
+            string query = $@"Update TravelInsurance SET policy_number = @policy_number,certificate_number=@certificate_number,transaction_ref=@transaction_ref,status=@status where Id = @Id";
+            var param = buyTravels.Select(x => new
+            {
+                policy_number = x.policy_number,
+                certificate_number = x.certificate_number,
+                transaction_ref = x.transaction_ref,
+                Id = x.Id,
+                status = x.status
+            }).ToList();
+            bool IsSuccessful = false;
+            try
+            {
+                var cnn = new SqlConnection(connectionManager.connectionString("CustApi2"));
+                await cnn.OpenAsync();
+                TransactionState = cnn.BeginTransaction();
+                int affectedRow = await cnn.ExecuteAsync(query, param, TransactionState, commandType: CommandType.Text);
+                if (affectedRow == buyTravels.Count())
+                {
+                    IsSuccessful = true;
+                }
+
+                return IsSuccessful;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException?.ToString());
+                return IsSuccessful;
+
+            }
+        }
         public async Task<bool> BulkInsert(List<TravelBroker> buyTravels)
         {
             var getProps = new TravelInsurance().GetType().GetProperties();
@@ -233,6 +269,60 @@ namespace DapperLayer.Dapper.Core
                 return null;
             }
         }
+        public async Task<dynamic> ValidateReferralCode(string code)
+        {
+            try
+            {
+                string sql = $"SELECT TOP(1) * FROM [AgentRefCode] WHERE AgntRefID = '{code}' OR Agnt_Num = '{code}'";
+                using (var cnn = new SqlConnection(connectionManager.connectionString()))
+                {
+                    var result = await cnn.QueryFirstAsync<dynamic>(sql.Trim());
+                    return result;
+                };
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException?.ToString());
+                return null;
+            }
+        }
 
+        public async Task<bool> DeleteRecord(string referrenceKey)
+        {
+            try
+            {
+                string query = $"DELETE FROM [TravelInsurance] WHERE group_reference = '{referrenceKey}'";
+                var cnn = new SqlConnection(connectionManager.connectionString("CustApi2"));
+                await cnn.OpenAsync();
+                if (TransactionState == null)
+                {
+                    TransactionState = cnn.BeginTransaction();
+                }
+                int affectedRow = await cnn.ExecuteAsync(query, null, TransactionState, commandType: CommandType.Text);
+                string dir = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Travel/{referrenceKey}";
+                if (Directory.Exists(dir))
+                {
+                    Directory.Delete(dir, true);
+                    TransactionState.Commit();
+                    return true;
+                }
+                else
+                {
+                    TransactionState.Commit();
+                    return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException?.ToString());
+                TransactionState.Rollback();
+                return false;
+            }
+        }
     }
 }

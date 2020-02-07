@@ -16,6 +16,9 @@ using System.Configuration;
 using Oracle.DataAccess.Client;
 using System.Data;
 using System.Web.ModelBinding;
+using System.Xml;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace DataStore.Utilities
 {
@@ -776,7 +779,8 @@ namespace DataStore.Utilities
             }
             else if (claim_type.ToLower().Trim() == "termination")
             {
-                return "TEM";
+                //return "TEM";
+                return "SUR";
             }
             else if (claim_type.ToLower().Trim().StartsWith("parmanet"))
             {
@@ -1048,6 +1052,27 @@ namespace DataStore.Utilities
             }
             return (int)result * 100;
         }
+        public string ToXML(Object oObject)
+        {
+            var getProps = oObject.GetType().GetProperties();
+            string xml = "";
+            foreach (var prop in getProps)
+            {
+                xml += $"<{prop.Name}>{prop.GetValue(oObject)}</{prop.Name}>";
+            }
+            return xml;
+            #region
+            //XmlDocument xmlDoc = new XmlDocument();
+            //XmlSerializer xmlSerializer = new XmlSerializer(oObject.GetType());
+            //using (MemoryStream xmlStream = new MemoryStream())
+            //{
+            //    xmlSerializer.Serialize(xmlStream, oObject);
+            //    xmlStream.Position = 0;
+            //    xmlDoc.Load(xmlStream);
+            //    return xmlDoc.InnerXml.;
+            //}
+            #endregion
+        }
     }
 
 
@@ -1076,7 +1101,6 @@ namespace DataStore.Utilities
                 }
             }
         }
-
         public static string Authorization_Header
         {
             get
@@ -1093,8 +1117,6 @@ namespace DataStore.Utilities
 
             }
         }
-
-
         public static int GetID
         {
             get

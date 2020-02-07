@@ -59,10 +59,6 @@ namespace DataStore.Models
         public DateTime return_date { get; set; }
         [Required]
         public decimal premium { get; set; }
-        [MaxLength(100)]
-        [Required]
-        [Key]
-        [Column(Order = 2)]
         public string transaction_ref { get; set; }
         public string multiple_destination { get; set; }
         [MaxLength(100)]

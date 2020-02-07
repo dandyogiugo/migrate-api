@@ -523,6 +523,31 @@
             <param name="hash"></param>
             <returns></returns>
         </member>
+        <member name="T:CustodianEveryWhereV2._0.Controllers.ReferralSystemController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:CustodianEveryWhereV2._0.Controllers.ReferralSystemController.log">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CustodianEveryWhereV2._0.Controllers.ReferralSystemController.ValidateReferralCode(System.String,System.String)">
+            <summary>
+            `
+            </summary>
+            <param name="code"></param>
+            <param name="merchant_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CustodianEveryWhereV2._0.Controllers.ReferralSystemController.UpdatePaymentRecord(DataStore.ViewModels.Referrals)">
+            <summary>
+            
+            </summary>
+            <param name="referrals"></param>
+            <returns></returns>
+        </member>
         <member name="M:CustodianEveryWhereV2._0.Controllers.TravelController.GetTravelQuote(DataStore.ViewModels.TravelQuote)">
             <summary>
             Get quote from custodian every api
