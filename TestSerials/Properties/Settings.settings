@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="TestSerials_CustodianE_PolicyServices" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">https://developers.custodianplc.com.ng/testapi/Policyservices.asmx</Value>
+      <Value Profile="(Default)">http://192.168.10.74/custodin/policyservices.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

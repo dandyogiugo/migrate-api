@@ -79,7 +79,6 @@ C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\NewsAPI.dll
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\Spire.Pdf.dll
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\Spire.License.dll
-C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\SendGrid.dll
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\Common.Logging.Core.dll
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\Common.Logging.dll
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\Microsoft.mshtml.dll
@@ -98,13 +97,10 @@ C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\System.ValueTuple.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\NLog.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\Spire.Doc.xml
-C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\Quartz.pdb
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\Quartz.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\NewsAPI.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\Spire.License.xml
-C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\SendGrid.pdb
-C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\SendGrid.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\Common.Logging.Core.pdb
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\Common.Logging.Core.xml
 C:\Users\User\Documents\Projects\custodianeverywhere2.0new\TestSerials\bin\Debug\Common.Logging.pdb

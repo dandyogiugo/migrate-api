@@ -32,12 +32,22 @@ namespace TestSerials
             {
                 using (var api = new Cust.PolicyServicesSoapClient())
                 {
-                    var response = api.PostTravel2Raga(DateTime.Now,Convert.ToDateTime("2020-03-01"),
-                        "Oscar","Oscar","AREA 1","A1234567", Convert.ToDateTime("1989-03-01"),"NIGERIAN NIGERIA",
-                        "NIGERIA","oscardybabaphd@gmail.com","GHANA");
+                    var response = api.PostTravel2Raga(DateTime.Now, Convert.ToDateTime("2020-03-01"),
+                        "Oscar", "Oscar", "AREA 1", "Akkk34567", Convert.ToDateTime("1989-03-01"), "NIGERIAN NIGERIA",
+                        "NIGERIA", "oscardybabaphd@gmail.com", "GHANA");
                     var newresponse = response;
+                    Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(response));
                 }
-                   
+
+                //Regex test = new Regex(@"^(?=.*[a-z])(?!.*[\s])(?=.*[A-Z])(?=.*\d)(?=.*\W)[\S]{8,}$");//(@"^.*(?=.{8,})(?!.*[\s])(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!*@#$%^&+=]).*$");
+                //Console.WriteLine($"P@55w0rd: {test.IsMatch("P$%55w0rd")}");
+                //Console.WriteLine($"P@55 w0rd: {test.IsMatch("P55 w0rd")}");
+                //Console.WriteLine($"P@55w0rd^736: {test.IsMatch("P@55w0rd^736")}");
+                //Console.WriteLine($"password: {test.IsMatch("password")}");
+                //Console.WriteLine($"PASSWORD: {test.IsMatch("PASSWORD")}");
+                //Console.WriteLine($"vmdmin2$78: {test.IsMatch("vmdmin2$78")}");
+
+                Console.ReadKey();
                 //Core<NextRenewal> dapper_core = new Core<NextRenewal>();
                 //var condition = new helpers();
                 //var query = condition.QueryResolver(new RenewalRatio
@@ -268,14 +278,15 @@ namespace TestSerials
                 //NewsProcessor.GetNews();
                 #endregion
 
-                temp myObj = new temp();
+                //temp myObj = new temp();
 
                 //var test =  myObj.MapToObject(typeof(Viewtemp));
             }
             catch (Exception ex)
             {
-
-                throw;
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.InnerException);
             }
         }
 

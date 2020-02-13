@@ -575,7 +575,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         PackageType = x.zone,
                         ReturnDate = x.return_date,
                         Purposeoftrip = x.purpose_of_trip,
-                        TotalCost = x.premium.ToString(),
+                        TotalCost = (x.IsGroupLeader && x.IsGroup) ? travelList.Sum(y => y.premium).ToString() : x.premium.ToString(),
                         OtherCountry = x.multiple_destination,
                         TravelDestination = x.destination,
                         ReferenceNo = referrenceNo,

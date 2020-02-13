@@ -26,7 +26,7 @@ namespace TestSerials.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://developers.custodianplc.com.ng/testapi/Policyservices.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.10.74/custodin/policyservices.asmx")]
         public string TestSerials_CustodianE_PolicyServices {
             get {
                 return ((string)(this["TestSerials_CustodianE_PolicyServices"]));

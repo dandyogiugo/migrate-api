@@ -115,13 +115,10 @@ namespace CustodianEveryWhereV2._0.Controllers
                 ragaSchema.Replace("#CONTENT#", toxml);
                 log.Info($"Full xml request to raga {ragaSchema.ToString()}");
                 string RagaUrl = ConfigurationManager.AppSettings["RagaUrl"];
-
-                ServicePointManager.Expect100Continue = true;
-                //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
-                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
                 using (var api = new HttpClient())
                 {
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+                    ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
                     var httpContent = new StringContent(ragaSchema.ToString(), Encoding.UTF8, "application/xml");
                     var request = await api.PostAsync(RagaUrl, httpContent);
                     log.Info($"Status code Raga {request.StatusCode}");

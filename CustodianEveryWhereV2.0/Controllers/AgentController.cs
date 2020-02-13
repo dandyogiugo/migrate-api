@@ -228,9 +228,9 @@ namespace CustodianEveryWhereV2._0.Controllers
                         };
                     }
                 }
+                string channelName = "PAYSTACK";
+                channelName = (merchantConfig.merchant_name.ToLower().Contains("agent")) ? "MPOS" : "PAYSTACK";
 
-                string channelName = (merchantConfig.merchant_name.ToLower().Contains("agent")) ? "MPOS" : "PAYSTACK";
-               
                 var validate_headers = await util.ValidateHeaders(headerValues, post.merchant_id);
 
                 if (!validate_headers)

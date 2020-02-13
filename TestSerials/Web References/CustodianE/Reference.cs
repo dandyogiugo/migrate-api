@@ -29,6 +29,24 @@ namespace TestSerials.CustodianE {
     [System.Web.Services.WebServiceBindingAttribute(Name="PolicyServicesSoap", Namespace="http://Custodianservices.com/")]
     public partial class PolicyServices : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback GetCRM_NIIDDataOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetCRM_LapseDetailOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetPPTDetailsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetCRM_Top10OperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetCRM_TopProductlinesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetCRM_TobeRenewedOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetCRM_BrokerOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback POSTBrokerMotorOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetPassportDetailsOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetClaimStatusOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetContactClaimOperationCompleted;
@@ -165,24 +183,6 @@ namespace TestSerials.CustodianE {
         
         private System.Threading.SendOrPostCallback GetCRM_ClaimCountOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetCRM_NIIDDataOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetCRM_LapseDetailOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetPPTDetailsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetCRM_Top10OperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetCRM_TopProductlinesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetCRM_TobeRenewedOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetCRM_BrokerOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback POSTBrokerMotorOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetPassportDetailsOperationCompleted;
-        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -220,6 +220,33 @@ namespace TestSerials.CustodianE {
                 this.useDefaultCredentialsSetExplicitly = true;
             }
         }
+        
+        /// <remarks/>
+        public event GetCRM_NIIDDataCompletedEventHandler GetCRM_NIIDDataCompleted;
+        
+        /// <remarks/>
+        public event GetCRM_LapseDetailCompletedEventHandler GetCRM_LapseDetailCompleted;
+        
+        /// <remarks/>
+        public event GetPPTDetailsCompletedEventHandler GetPPTDetailsCompleted;
+        
+        /// <remarks/>
+        public event GetCRM_Top10CompletedEventHandler GetCRM_Top10Completed;
+        
+        /// <remarks/>
+        public event GetCRM_TopProductlinesCompletedEventHandler GetCRM_TopProductlinesCompleted;
+        
+        /// <remarks/>
+        public event GetCRM_TobeRenewedCompletedEventHandler GetCRM_TobeRenewedCompleted;
+        
+        /// <remarks/>
+        public event GetCRM_BrokerCompletedEventHandler GetCRM_BrokerCompleted;
+        
+        /// <remarks/>
+        public event POSTBrokerMotorCompletedEventHandler POSTBrokerMotorCompleted;
+        
+        /// <remarks/>
+        public event GetPassportDetailsCompletedEventHandler GetPassportDetailsCompleted;
         
         /// <remarks/>
         public event GetClaimStatusCompletedEventHandler GetClaimStatusCompleted;
@@ -426,31 +453,434 @@ namespace TestSerials.CustodianE {
         public event GetCRM_ClaimCountCompletedEventHandler GetCRM_ClaimCountCompleted;
         
         /// <remarks/>
-        public event GetCRM_NIIDDataCompletedEventHandler GetCRM_NIIDDataCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetCRM_NIIDData", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public ABSNIID[] GetCRM_NIIDData(string BusinessUnit, string ABSID, string Pages) {
+            object[] results = this.Invoke("GetCRM_NIIDData", new object[] {
+                        BusinessUnit,
+                        ABSID,
+                        Pages});
+            return ((ABSNIID[])(results[0]));
+        }
         
         /// <remarks/>
-        public event GetCRM_LapseDetailCompletedEventHandler GetCRM_LapseDetailCompleted;
+        public void GetCRM_NIIDDataAsync(string BusinessUnit, string ABSID, string Pages) {
+            this.GetCRM_NIIDDataAsync(BusinessUnit, ABSID, Pages, null);
+        }
         
         /// <remarks/>
-        public event GetPPTDetailsCompletedEventHandler GetPPTDetailsCompleted;
+        public void GetCRM_NIIDDataAsync(string BusinessUnit, string ABSID, string Pages, object userState) {
+            if ((this.GetCRM_NIIDDataOperationCompleted == null)) {
+                this.GetCRM_NIIDDataOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCRM_NIIDDataOperationCompleted);
+            }
+            this.InvokeAsync("GetCRM_NIIDData", new object[] {
+                        BusinessUnit,
+                        ABSID,
+                        Pages}, this.GetCRM_NIIDDataOperationCompleted, userState);
+        }
+        
+        private void OnGetCRM_NIIDDataOperationCompleted(object arg) {
+            if ((this.GetCRM_NIIDDataCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCRM_NIIDDataCompleted(this, new GetCRM_NIIDDataCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event GetCRM_Top10CompletedEventHandler GetCRM_Top10Completed;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetCRM_LapseDetail", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public CRM_ClaimsDetail[] GetCRM_LapseDetail(string Subsidiary, string BusinessUnit, string Pages) {
+            object[] results = this.Invoke("GetCRM_LapseDetail", new object[] {
+                        Subsidiary,
+                        BusinessUnit,
+                        Pages});
+            return ((CRM_ClaimsDetail[])(results[0]));
+        }
         
         /// <remarks/>
-        public event GetCRM_TopProductlinesCompletedEventHandler GetCRM_TopProductlinesCompleted;
+        public void GetCRM_LapseDetailAsync(string Subsidiary, string BusinessUnit, string Pages) {
+            this.GetCRM_LapseDetailAsync(Subsidiary, BusinessUnit, Pages, null);
+        }
         
         /// <remarks/>
-        public event GetCRM_TobeRenewedCompletedEventHandler GetCRM_TobeRenewedCompleted;
+        public void GetCRM_LapseDetailAsync(string Subsidiary, string BusinessUnit, string Pages, object userState) {
+            if ((this.GetCRM_LapseDetailOperationCompleted == null)) {
+                this.GetCRM_LapseDetailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCRM_LapseDetailOperationCompleted);
+            }
+            this.InvokeAsync("GetCRM_LapseDetail", new object[] {
+                        Subsidiary,
+                        BusinessUnit,
+                        Pages}, this.GetCRM_LapseDetailOperationCompleted, userState);
+        }
+        
+        private void OnGetCRM_LapseDetailOperationCompleted(object arg) {
+            if ((this.GetCRM_LapseDetailCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCRM_LapseDetailCompleted(this, new GetCRM_LapseDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event GetCRM_BrokerCompletedEventHandler GetCRM_BrokerCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetPPTDetails", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public ClientData[] GetPPTDetails(string Subsidiary, string PolicyNo) {
+            object[] results = this.Invoke("GetPPTDetails", new object[] {
+                        Subsidiary,
+                        PolicyNo});
+            return ((ClientData[])(results[0]));
+        }
         
         /// <remarks/>
-        public event POSTBrokerMotorCompletedEventHandler POSTBrokerMotorCompleted;
+        public void GetPPTDetailsAsync(string Subsidiary, string PolicyNo) {
+            this.GetPPTDetailsAsync(Subsidiary, PolicyNo, null);
+        }
         
         /// <remarks/>
-        public event GetPassportDetailsCompletedEventHandler GetPassportDetailsCompleted;
+        public void GetPPTDetailsAsync(string Subsidiary, string PolicyNo, object userState) {
+            if ((this.GetPPTDetailsOperationCompleted == null)) {
+                this.GetPPTDetailsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPPTDetailsOperationCompleted);
+            }
+            this.InvokeAsync("GetPPTDetails", new object[] {
+                        Subsidiary,
+                        PolicyNo}, this.GetPPTDetailsOperationCompleted, userState);
+        }
+        
+        private void OnGetPPTDetailsOperationCompleted(object arg) {
+            if ((this.GetPPTDetailsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetPPTDetailsCompleted(this, new GetPPTDetailsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetCRM_Top10", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public CRM_Top10Det[] GetCRM_Top10(string Subsidiary, string BusinessUnit) {
+            object[] results = this.Invoke("GetCRM_Top10", new object[] {
+                        Subsidiary,
+                        BusinessUnit});
+            return ((CRM_Top10Det[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetCRM_Top10Async(string Subsidiary, string BusinessUnit) {
+            this.GetCRM_Top10Async(Subsidiary, BusinessUnit, null);
+        }
+        
+        /// <remarks/>
+        public void GetCRM_Top10Async(string Subsidiary, string BusinessUnit, object userState) {
+            if ((this.GetCRM_Top10OperationCompleted == null)) {
+                this.GetCRM_Top10OperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCRM_Top10OperationCompleted);
+            }
+            this.InvokeAsync("GetCRM_Top10", new object[] {
+                        Subsidiary,
+                        BusinessUnit}, this.GetCRM_Top10OperationCompleted, userState);
+        }
+        
+        private void OnGetCRM_Top10OperationCompleted(object arg) {
+            if ((this.GetCRM_Top10Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCRM_Top10Completed(this, new GetCRM_Top10CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetCRM_TopProductlines", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public CRM_TopProduct[] GetCRM_TopProductlines(string Subsidiary, string Products, string BusinessUnit) {
+            object[] results = this.Invoke("GetCRM_TopProductlines", new object[] {
+                        Subsidiary,
+                        Products,
+                        BusinessUnit});
+            return ((CRM_TopProduct[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetCRM_TopProductlinesAsync(string Subsidiary, string Products, string BusinessUnit) {
+            this.GetCRM_TopProductlinesAsync(Subsidiary, Products, BusinessUnit, null);
+        }
+        
+        /// <remarks/>
+        public void GetCRM_TopProductlinesAsync(string Subsidiary, string Products, string BusinessUnit, object userState) {
+            if ((this.GetCRM_TopProductlinesOperationCompleted == null)) {
+                this.GetCRM_TopProductlinesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCRM_TopProductlinesOperationCompleted);
+            }
+            this.InvokeAsync("GetCRM_TopProductlines", new object[] {
+                        Subsidiary,
+                        Products,
+                        BusinessUnit}, this.GetCRM_TopProductlinesOperationCompleted, userState);
+        }
+        
+        private void OnGetCRM_TopProductlinesOperationCompleted(object arg) {
+            if ((this.GetCRM_TopProductlinesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCRM_TopProductlinesCompleted(this, new GetCRM_TopProductlinesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetCRM_TobeRenewed", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public To_be_renewed[] GetCRM_TobeRenewed(string Subsidiary, string BusinessUnit, string Pages) {
+            object[] results = this.Invoke("GetCRM_TobeRenewed", new object[] {
+                        Subsidiary,
+                        BusinessUnit,
+                        Pages});
+            return ((To_be_renewed[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetCRM_TobeRenewedAsync(string Subsidiary, string BusinessUnit, string Pages) {
+            this.GetCRM_TobeRenewedAsync(Subsidiary, BusinessUnit, Pages, null);
+        }
+        
+        /// <remarks/>
+        public void GetCRM_TobeRenewedAsync(string Subsidiary, string BusinessUnit, string Pages, object userState) {
+            if ((this.GetCRM_TobeRenewedOperationCompleted == null)) {
+                this.GetCRM_TobeRenewedOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCRM_TobeRenewedOperationCompleted);
+            }
+            this.InvokeAsync("GetCRM_TobeRenewed", new object[] {
+                        Subsidiary,
+                        BusinessUnit,
+                        Pages}, this.GetCRM_TobeRenewedOperationCompleted, userState);
+        }
+        
+        private void OnGetCRM_TobeRenewedOperationCompleted(object arg) {
+            if ((this.GetCRM_TobeRenewedCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCRM_TobeRenewedCompleted(this, new GetCRM_TobeRenewedCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetCRM_Broker", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public BrokerData[] GetCRM_Broker(string Pages) {
+            object[] results = this.Invoke("GetCRM_Broker", new object[] {
+                        Pages});
+            return ((BrokerData[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetCRM_BrokerAsync(string Pages) {
+            this.GetCRM_BrokerAsync(Pages, null);
+        }
+        
+        /// <remarks/>
+        public void GetCRM_BrokerAsync(string Pages, object userState) {
+            if ((this.GetCRM_BrokerOperationCompleted == null)) {
+                this.GetCRM_BrokerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCRM_BrokerOperationCompleted);
+            }
+            this.InvokeAsync("GetCRM_Broker", new object[] {
+                        Pages}, this.GetCRM_BrokerOperationCompleted, userState);
+        }
+        
+        private void OnGetCRM_BrokerOperationCompleted(object arg) {
+            if ((this.GetCRM_BrokerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCRM_BrokerCompleted(this, new GetCRM_BrokerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/Passing_Broker_Motor", RequestElementName="Passing_Broker_Motor", RequestNamespace="http://Custodianservices.com/", ResponseElementName="Passing_Broker_MotorResponse", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Passing_Broker_MotorResult")]
+        public string POSTBrokerMotor(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string CustomerName, 
+                    string mAddress, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string EngineNumber, 
+                    string InsuranceType, 
+                    decimal Premium, 
+                    decimal SumInsured, 
+                    string ChassisNumber, 
+                    string RegistrationNumber, 
+                    string VehicleModel, 
+                    string VehicleCategory, 
+                    string VehicleColor, 
+                    string VehicleMake, 
+                    string VehicleType, 
+                    string YearOfMake, 
+                    System.DateTime dateCreated, 
+                    System.DateTime Activedate, 
+                    System.DateTime expiryDate, 
+                    string CreditNote, 
+                    string PrnNo, 
+                    string PostSource, 
+                    string PostType, 
+                    string BrokerID, 
+                    string CommRate, 
+                    string PremRate, 
+                    string RenewPolNo) {
+            object[] results = this.Invoke("POSTBrokerMotor", new object[] {
+                        MerchantID,
+                        Mpassword,
+                        CustomerName,
+                        mAddress,
+                        PhoneNumber,
+                        Email,
+                        EngineNumber,
+                        InsuranceType,
+                        Premium,
+                        SumInsured,
+                        ChassisNumber,
+                        RegistrationNumber,
+                        VehicleModel,
+                        VehicleCategory,
+                        VehicleColor,
+                        VehicleMake,
+                        VehicleType,
+                        YearOfMake,
+                        dateCreated,
+                        Activedate,
+                        expiryDate,
+                        CreditNote,
+                        PrnNo,
+                        PostSource,
+                        PostType,
+                        BrokerID,
+                        CommRate,
+                        PremRate,
+                        RenewPolNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void POSTBrokerMotorAsync(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string CustomerName, 
+                    string mAddress, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string EngineNumber, 
+                    string InsuranceType, 
+                    decimal Premium, 
+                    decimal SumInsured, 
+                    string ChassisNumber, 
+                    string RegistrationNumber, 
+                    string VehicleModel, 
+                    string VehicleCategory, 
+                    string VehicleColor, 
+                    string VehicleMake, 
+                    string VehicleType, 
+                    string YearOfMake, 
+                    System.DateTime dateCreated, 
+                    System.DateTime Activedate, 
+                    System.DateTime expiryDate, 
+                    string CreditNote, 
+                    string PrnNo, 
+                    string PostSource, 
+                    string PostType, 
+                    string BrokerID, 
+                    string CommRate, 
+                    string PremRate, 
+                    string RenewPolNo) {
+            this.POSTBrokerMotorAsync(MerchantID, Mpassword, CustomerName, mAddress, PhoneNumber, Email, EngineNumber, InsuranceType, Premium, SumInsured, ChassisNumber, RegistrationNumber, VehicleModel, VehicleCategory, VehicleColor, VehicleMake, VehicleType, YearOfMake, dateCreated, Activedate, expiryDate, CreditNote, PrnNo, PostSource, PostType, BrokerID, CommRate, PremRate, RenewPolNo, null);
+        }
+        
+        /// <remarks/>
+        public void POSTBrokerMotorAsync(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string CustomerName, 
+                    string mAddress, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string EngineNumber, 
+                    string InsuranceType, 
+                    decimal Premium, 
+                    decimal SumInsured, 
+                    string ChassisNumber, 
+                    string RegistrationNumber, 
+                    string VehicleModel, 
+                    string VehicleCategory, 
+                    string VehicleColor, 
+                    string VehicleMake, 
+                    string VehicleType, 
+                    string YearOfMake, 
+                    System.DateTime dateCreated, 
+                    System.DateTime Activedate, 
+                    System.DateTime expiryDate, 
+                    string CreditNote, 
+                    string PrnNo, 
+                    string PostSource, 
+                    string PostType, 
+                    string BrokerID, 
+                    string CommRate, 
+                    string PremRate, 
+                    string RenewPolNo, 
+                    object userState) {
+            if ((this.POSTBrokerMotorOperationCompleted == null)) {
+                this.POSTBrokerMotorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPOSTBrokerMotorOperationCompleted);
+            }
+            this.InvokeAsync("POSTBrokerMotor", new object[] {
+                        MerchantID,
+                        Mpassword,
+                        CustomerName,
+                        mAddress,
+                        PhoneNumber,
+                        Email,
+                        EngineNumber,
+                        InsuranceType,
+                        Premium,
+                        SumInsured,
+                        ChassisNumber,
+                        RegistrationNumber,
+                        VehicleModel,
+                        VehicleCategory,
+                        VehicleColor,
+                        VehicleMake,
+                        VehicleType,
+                        YearOfMake,
+                        dateCreated,
+                        Activedate,
+                        expiryDate,
+                        CreditNote,
+                        PrnNo,
+                        PostSource,
+                        PostType,
+                        BrokerID,
+                        CommRate,
+                        PremRate,
+                        RenewPolNo}, this.POSTBrokerMotorOperationCompleted, userState);
+        }
+        
+        private void OnPOSTBrokerMotorOperationCompleted(object arg) {
+            if ((this.POSTBrokerMotorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.POSTBrokerMotorCompleted(this, new POSTBrokerMotorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetPassportDetails", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public PassportDetails GetPassportDetails(string MerchantID, string MerchantPWD, string PassportNumber) {
+            object[] results = this.Invoke("GetPassportDetails", new object[] {
+                        MerchantID,
+                        MerchantPWD,
+                        PassportNumber});
+            return ((PassportDetails)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetPassportDetailsAsync(string MerchantID, string MerchantPWD, string PassportNumber) {
+            this.GetPassportDetailsAsync(MerchantID, MerchantPWD, PassportNumber, null);
+        }
+        
+        /// <remarks/>
+        public void GetPassportDetailsAsync(string MerchantID, string MerchantPWD, string PassportNumber, object userState) {
+            if ((this.GetPassportDetailsOperationCompleted == null)) {
+                this.GetPassportDetailsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPassportDetailsOperationCompleted);
+            }
+            this.InvokeAsync("GetPassportDetails", new object[] {
+                        MerchantID,
+                        MerchantPWD,
+                        PassportNumber}, this.GetPassportDetailsOperationCompleted, userState);
+        }
+        
+        private void OnGetPassportDetailsOperationCompleted(object arg) {
+            if ((this.GetPassportDetailsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetPassportDetailsCompleted(this, new GetPassportDetailsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetClaimStatus", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -5300,436 +5730,6 @@ namespace TestSerials.CustodianE {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetCRM_NIIDData", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ABSNIID[] GetCRM_NIIDData(string BusinessUnit, string ABSID, string Pages) {
-            object[] results = this.Invoke("GetCRM_NIIDData", new object[] {
-                        BusinessUnit,
-                        ABSID,
-                        Pages});
-            return ((ABSNIID[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetCRM_NIIDDataAsync(string BusinessUnit, string ABSID, string Pages) {
-            this.GetCRM_NIIDDataAsync(BusinessUnit, ABSID, Pages, null);
-        }
-        
-        /// <remarks/>
-        public void GetCRM_NIIDDataAsync(string BusinessUnit, string ABSID, string Pages, object userState) {
-            if ((this.GetCRM_NIIDDataOperationCompleted == null)) {
-                this.GetCRM_NIIDDataOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCRM_NIIDDataOperationCompleted);
-            }
-            this.InvokeAsync("GetCRM_NIIDData", new object[] {
-                        BusinessUnit,
-                        ABSID,
-                        Pages}, this.GetCRM_NIIDDataOperationCompleted, userState);
-        }
-        
-        private void OnGetCRM_NIIDDataOperationCompleted(object arg) {
-            if ((this.GetCRM_NIIDDataCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetCRM_NIIDDataCompleted(this, new GetCRM_NIIDDataCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetCRM_LapseDetail", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public CRM_ClaimsDetail[] GetCRM_LapseDetail(string Subsidiary, string BusinessUnit, string Pages) {
-            object[] results = this.Invoke("GetCRM_LapseDetail", new object[] {
-                        Subsidiary,
-                        BusinessUnit,
-                        Pages});
-            return ((CRM_ClaimsDetail[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetCRM_LapseDetailAsync(string Subsidiary, string BusinessUnit, string Pages) {
-            this.GetCRM_LapseDetailAsync(Subsidiary, BusinessUnit, Pages, null);
-        }
-        
-        /// <remarks/>
-        public void GetCRM_LapseDetailAsync(string Subsidiary, string BusinessUnit, string Pages, object userState) {
-            if ((this.GetCRM_LapseDetailOperationCompleted == null)) {
-                this.GetCRM_LapseDetailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCRM_LapseDetailOperationCompleted);
-            }
-            this.InvokeAsync("GetCRM_LapseDetail", new object[] {
-                        Subsidiary,
-                        BusinessUnit,
-                        Pages}, this.GetCRM_LapseDetailOperationCompleted, userState);
-        }
-        
-        private void OnGetCRM_LapseDetailOperationCompleted(object arg) {
-            if ((this.GetCRM_LapseDetailCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetCRM_LapseDetailCompleted(this, new GetCRM_LapseDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetPPTDetails", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ClientData[] GetPPTDetails(string Subsidiary, string PolicyNo) {
-            object[] results = this.Invoke("GetPPTDetails", new object[] {
-                        Subsidiary,
-                        PolicyNo});
-            return ((ClientData[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetPPTDetailsAsync(string Subsidiary, string PolicyNo) {
-            this.GetPPTDetailsAsync(Subsidiary, PolicyNo, null);
-        }
-        
-        /// <remarks/>
-        public void GetPPTDetailsAsync(string Subsidiary, string PolicyNo, object userState) {
-            if ((this.GetPPTDetailsOperationCompleted == null)) {
-                this.GetPPTDetailsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPPTDetailsOperationCompleted);
-            }
-            this.InvokeAsync("GetPPTDetails", new object[] {
-                        Subsidiary,
-                        PolicyNo}, this.GetPPTDetailsOperationCompleted, userState);
-        }
-        
-        private void OnGetPPTDetailsOperationCompleted(object arg) {
-            if ((this.GetPPTDetailsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetPPTDetailsCompleted(this, new GetPPTDetailsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetCRM_Top10", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public CRM_Top10Det[] GetCRM_Top10(string Subsidiary, string BusinessUnit) {
-            object[] results = this.Invoke("GetCRM_Top10", new object[] {
-                        Subsidiary,
-                        BusinessUnit});
-            return ((CRM_Top10Det[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetCRM_Top10Async(string Subsidiary, string BusinessUnit) {
-            this.GetCRM_Top10Async(Subsidiary, BusinessUnit, null);
-        }
-        
-        /// <remarks/>
-        public void GetCRM_Top10Async(string Subsidiary, string BusinessUnit, object userState) {
-            if ((this.GetCRM_Top10OperationCompleted == null)) {
-                this.GetCRM_Top10OperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCRM_Top10OperationCompleted);
-            }
-            this.InvokeAsync("GetCRM_Top10", new object[] {
-                        Subsidiary,
-                        BusinessUnit}, this.GetCRM_Top10OperationCompleted, userState);
-        }
-        
-        private void OnGetCRM_Top10OperationCompleted(object arg) {
-            if ((this.GetCRM_Top10Completed != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetCRM_Top10Completed(this, new GetCRM_Top10CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetCRM_TopProductlines", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public CRM_TopProduct[] GetCRM_TopProductlines(string Subsidiary, string Products, string BusinessUnit) {
-            object[] results = this.Invoke("GetCRM_TopProductlines", new object[] {
-                        Subsidiary,
-                        Products,
-                        BusinessUnit});
-            return ((CRM_TopProduct[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetCRM_TopProductlinesAsync(string Subsidiary, string Products, string BusinessUnit) {
-            this.GetCRM_TopProductlinesAsync(Subsidiary, Products, BusinessUnit, null);
-        }
-        
-        /// <remarks/>
-        public void GetCRM_TopProductlinesAsync(string Subsidiary, string Products, string BusinessUnit, object userState) {
-            if ((this.GetCRM_TopProductlinesOperationCompleted == null)) {
-                this.GetCRM_TopProductlinesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCRM_TopProductlinesOperationCompleted);
-            }
-            this.InvokeAsync("GetCRM_TopProductlines", new object[] {
-                        Subsidiary,
-                        Products,
-                        BusinessUnit}, this.GetCRM_TopProductlinesOperationCompleted, userState);
-        }
-        
-        private void OnGetCRM_TopProductlinesOperationCompleted(object arg) {
-            if ((this.GetCRM_TopProductlinesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetCRM_TopProductlinesCompleted(this, new GetCRM_TopProductlinesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetCRM_TobeRenewed", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public To_be_renewed[] GetCRM_TobeRenewed(string Subsidiary, string BusinessUnit, string Pages) {
-            object[] results = this.Invoke("GetCRM_TobeRenewed", new object[] {
-                        Subsidiary,
-                        BusinessUnit,
-                        Pages});
-            return ((To_be_renewed[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetCRM_TobeRenewedAsync(string Subsidiary, string BusinessUnit, string Pages) {
-            this.GetCRM_TobeRenewedAsync(Subsidiary, BusinessUnit, Pages, null);
-        }
-        
-        /// <remarks/>
-        public void GetCRM_TobeRenewedAsync(string Subsidiary, string BusinessUnit, string Pages, object userState) {
-            if ((this.GetCRM_TobeRenewedOperationCompleted == null)) {
-                this.GetCRM_TobeRenewedOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCRM_TobeRenewedOperationCompleted);
-            }
-            this.InvokeAsync("GetCRM_TobeRenewed", new object[] {
-                        Subsidiary,
-                        BusinessUnit,
-                        Pages}, this.GetCRM_TobeRenewedOperationCompleted, userState);
-        }
-        
-        private void OnGetCRM_TobeRenewedOperationCompleted(object arg) {
-            if ((this.GetCRM_TobeRenewedCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetCRM_TobeRenewedCompleted(this, new GetCRM_TobeRenewedCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetCRM_Broker", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public BrokerData[] GetCRM_Broker(string Pages) {
-            object[] results = this.Invoke("GetCRM_Broker", new object[] {
-                        Pages});
-            return ((BrokerData[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetCRM_BrokerAsync(string Pages) {
-            this.GetCRM_BrokerAsync(Pages, null);
-        }
-        
-        /// <remarks/>
-        public void GetCRM_BrokerAsync(string Pages, object userState) {
-            if ((this.GetCRM_BrokerOperationCompleted == null)) {
-                this.GetCRM_BrokerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCRM_BrokerOperationCompleted);
-            }
-            this.InvokeAsync("GetCRM_Broker", new object[] {
-                        Pages}, this.GetCRM_BrokerOperationCompleted, userState);
-        }
-        
-        private void OnGetCRM_BrokerOperationCompleted(object arg) {
-            if ((this.GetCRM_BrokerCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetCRM_BrokerCompleted(this, new GetCRM_BrokerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/Passing_Broker_Motor", RequestElementName="Passing_Broker_Motor", RequestNamespace="http://Custodianservices.com/", ResponseElementName="Passing_Broker_MotorResponse", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("Passing_Broker_MotorResult")]
-        public string POSTBrokerMotor(
-                    string MerchantID, 
-                    string Mpassword, 
-                    string CustomerName, 
-                    string mAddress, 
-                    string PhoneNumber, 
-                    string Email, 
-                    string EngineNumber, 
-                    string InsuranceType, 
-                    decimal Premium, 
-                    decimal SumInsured, 
-                    string ChassisNumber, 
-                    string RegistrationNumber, 
-                    string VehicleModel, 
-                    string VehicleCategory, 
-                    string VehicleColor, 
-                    string VehicleMake, 
-                    string VehicleType, 
-                    string YearOfMake, 
-                    System.DateTime dateCreated, 
-                    System.DateTime Activedate, 
-                    System.DateTime expiryDate, 
-                    string CreditNote, 
-                    string PrnNo, 
-                    string PostSource, 
-                    string PostType, 
-                    string BrokerID, 
-                    string CommRate, 
-                    string PremRate, 
-                    string RenewPolNo) {
-            object[] results = this.Invoke("POSTBrokerMotor", new object[] {
-                        MerchantID,
-                        Mpassword,
-                        CustomerName,
-                        mAddress,
-                        PhoneNumber,
-                        Email,
-                        EngineNumber,
-                        InsuranceType,
-                        Premium,
-                        SumInsured,
-                        ChassisNumber,
-                        RegistrationNumber,
-                        VehicleModel,
-                        VehicleCategory,
-                        VehicleColor,
-                        VehicleMake,
-                        VehicleType,
-                        YearOfMake,
-                        dateCreated,
-                        Activedate,
-                        expiryDate,
-                        CreditNote,
-                        PrnNo,
-                        PostSource,
-                        PostType,
-                        BrokerID,
-                        CommRate,
-                        PremRate,
-                        RenewPolNo});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void POSTBrokerMotorAsync(
-                    string MerchantID, 
-                    string Mpassword, 
-                    string CustomerName, 
-                    string mAddress, 
-                    string PhoneNumber, 
-                    string Email, 
-                    string EngineNumber, 
-                    string InsuranceType, 
-                    decimal Premium, 
-                    decimal SumInsured, 
-                    string ChassisNumber, 
-                    string RegistrationNumber, 
-                    string VehicleModel, 
-                    string VehicleCategory, 
-                    string VehicleColor, 
-                    string VehicleMake, 
-                    string VehicleType, 
-                    string YearOfMake, 
-                    System.DateTime dateCreated, 
-                    System.DateTime Activedate, 
-                    System.DateTime expiryDate, 
-                    string CreditNote, 
-                    string PrnNo, 
-                    string PostSource, 
-                    string PostType, 
-                    string BrokerID, 
-                    string CommRate, 
-                    string PremRate, 
-                    string RenewPolNo) {
-            this.POSTBrokerMotorAsync(MerchantID, Mpassword, CustomerName, mAddress, PhoneNumber, Email, EngineNumber, InsuranceType, Premium, SumInsured, ChassisNumber, RegistrationNumber, VehicleModel, VehicleCategory, VehicleColor, VehicleMake, VehicleType, YearOfMake, dateCreated, Activedate, expiryDate, CreditNote, PrnNo, PostSource, PostType, BrokerID, CommRate, PremRate, RenewPolNo, null);
-        }
-        
-        /// <remarks/>
-        public void POSTBrokerMotorAsync(
-                    string MerchantID, 
-                    string Mpassword, 
-                    string CustomerName, 
-                    string mAddress, 
-                    string PhoneNumber, 
-                    string Email, 
-                    string EngineNumber, 
-                    string InsuranceType, 
-                    decimal Premium, 
-                    decimal SumInsured, 
-                    string ChassisNumber, 
-                    string RegistrationNumber, 
-                    string VehicleModel, 
-                    string VehicleCategory, 
-                    string VehicleColor, 
-                    string VehicleMake, 
-                    string VehicleType, 
-                    string YearOfMake, 
-                    System.DateTime dateCreated, 
-                    System.DateTime Activedate, 
-                    System.DateTime expiryDate, 
-                    string CreditNote, 
-                    string PrnNo, 
-                    string PostSource, 
-                    string PostType, 
-                    string BrokerID, 
-                    string CommRate, 
-                    string PremRate, 
-                    string RenewPolNo, 
-                    object userState) {
-            if ((this.POSTBrokerMotorOperationCompleted == null)) {
-                this.POSTBrokerMotorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPOSTBrokerMotorOperationCompleted);
-            }
-            this.InvokeAsync("POSTBrokerMotor", new object[] {
-                        MerchantID,
-                        Mpassword,
-                        CustomerName,
-                        mAddress,
-                        PhoneNumber,
-                        Email,
-                        EngineNumber,
-                        InsuranceType,
-                        Premium,
-                        SumInsured,
-                        ChassisNumber,
-                        RegistrationNumber,
-                        VehicleModel,
-                        VehicleCategory,
-                        VehicleColor,
-                        VehicleMake,
-                        VehicleType,
-                        YearOfMake,
-                        dateCreated,
-                        Activedate,
-                        expiryDate,
-                        CreditNote,
-                        PrnNo,
-                        PostSource,
-                        PostType,
-                        BrokerID,
-                        CommRate,
-                        PremRate,
-                        RenewPolNo}, this.POSTBrokerMotorOperationCompleted, userState);
-        }
-        
-        private void OnPOSTBrokerMotorOperationCompleted(object arg) {
-            if ((this.POSTBrokerMotorCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.POSTBrokerMotorCompleted(this, new POSTBrokerMotorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Custodianservices.com/GetPassportDetails", RequestNamespace="http://Custodianservices.com/", ResponseNamespace="http://Custodianservices.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public PassportDetails GetPassportDetails(string MerchantID, string MerchantPWD, string PassportNumber) {
-            object[] results = this.Invoke("GetPassportDetails", new object[] {
-                        MerchantID,
-                        MerchantPWD,
-                        PassportNumber});
-            return ((PassportDetails)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetPassportDetailsAsync(string MerchantID, string MerchantPWD, string PassportNumber) {
-            this.GetPassportDetailsAsync(MerchantID, MerchantPWD, PassportNumber, null);
-        }
-        
-        /// <remarks/>
-        public void GetPassportDetailsAsync(string MerchantID, string MerchantPWD, string PassportNumber, object userState) {
-            if ((this.GetPassportDetailsOperationCompleted == null)) {
-                this.GetPassportDetailsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPassportDetailsOperationCompleted);
-            }
-            this.InvokeAsync("GetPassportDetails", new object[] {
-                        MerchantID,
-                        MerchantPWD,
-                        PassportNumber}, this.GetPassportDetailsOperationCompleted, userState);
-        }
-        
-        private void OnGetPassportDetailsOperationCompleted(object arg) {
-            if ((this.GetPassportDetailsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetPassportDetailsCompleted(this, new GetPassportDetailsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -5745,564 +5745,6 @@ namespace TestSerials.CustodianE {
                 return true;
             }
             return false;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class Claimfl {
-        
-        private string claimNoField;
-        
-        private string clPolicyNoField;
-        
-        private string claimStatusField;
-        
-        private string insuredNameField;
-        
-        /// <remarks/>
-        public string ClaimNo {
-            get {
-                return this.claimNoField;
-            }
-            set {
-                this.claimNoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ClPolicyNo {
-            get {
-                return this.clPolicyNoField;
-            }
-            set {
-                this.clPolicyNoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ClaimStatus {
-            get {
-                return this.claimStatusField;
-            }
-            set {
-                this.claimStatusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string InsuredName {
-            get {
-                return this.insuredNameField;
-            }
-            set {
-                this.insuredNameField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class PassportDetails {
-        
-        private string firstNameField;
-        
-        private string lastNameField;
-        
-        private string titleField;
-        
-        private string phoneNumberField;
-        
-        private string emailField;
-        
-        private System.DateTime dateofBirthField;
-        
-        private string occupationField;
-        
-        private string genderField;
-        
-        private string nationalityField;
-        
-        private string policyNoField;
-        
-        private string statusCodeField;
-        
-        /// <remarks/>
-        public string FirstName {
-            get {
-                return this.firstNameField;
-            }
-            set {
-                this.firstNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string LastName {
-            get {
-                return this.lastNameField;
-            }
-            set {
-                this.lastNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Title {
-            get {
-                return this.titleField;
-            }
-            set {
-                this.titleField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string PhoneNumber {
-            get {
-                return this.phoneNumberField;
-            }
-            set {
-                this.phoneNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Email {
-            get {
-                return this.emailField;
-            }
-            set {
-                this.emailField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime DateofBirth {
-            get {
-                return this.dateofBirthField;
-            }
-            set {
-                this.dateofBirthField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Occupation {
-            get {
-                return this.occupationField;
-            }
-            set {
-                this.occupationField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Gender {
-            get {
-                return this.genderField;
-            }
-            set {
-                this.genderField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Nationality {
-            get {
-                return this.nationalityField;
-            }
-            set {
-                this.nationalityField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string PolicyNo {
-            get {
-                return this.policyNoField;
-            }
-            set {
-                this.policyNoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string StatusCode {
-            get {
-                return this.statusCodeField;
-            }
-            set {
-                this.statusCodeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class BrokerData {
-        
-        private string agntNameField;
-        
-        private string agntNumField;
-        
-        private string agntPremField;
-        
-        private string agntClaimPaidAmtField;
-        
-        private string agntNetAmountField;
-        
-        /// <remarks/>
-        public string AgntName {
-            get {
-                return this.agntNameField;
-            }
-            set {
-                this.agntNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string AgntNum {
-            get {
-                return this.agntNumField;
-            }
-            set {
-                this.agntNumField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string AgntPrem {
-            get {
-                return this.agntPremField;
-            }
-            set {
-                this.agntPremField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string AgntClaimPaidAmt {
-            get {
-                return this.agntClaimPaidAmtField;
-            }
-            set {
-                this.agntClaimPaidAmtField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string AgntNetAmount {
-            get {
-                return this.agntNetAmountField;
-            }
-            set {
-                this.agntNetAmountField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class To_be_renewed {
-        
-        private string customerIDField;
-        
-        private string firstNameField;
-        
-        private string lastNameField;
-        
-        private string policy_NoField;
-        
-        private string phoneField;
-        
-        private string emailField;
-        
-        private string producttypeField;
-        
-        private System.DateTime maxdateField;
-        
-        private string unitDescriptionField;
-        
-        private string afterdaysField;
-        
-        /// <remarks/>
-        public string CustomerID {
-            get {
-                return this.customerIDField;
-            }
-            set {
-                this.customerIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string FirstName {
-            get {
-                return this.firstNameField;
-            }
-            set {
-                this.firstNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string LastName {
-            get {
-                return this.lastNameField;
-            }
-            set {
-                this.lastNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Policy_No {
-            get {
-                return this.policy_NoField;
-            }
-            set {
-                this.policy_NoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Phone {
-            get {
-                return this.phoneField;
-            }
-            set {
-                this.phoneField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Email {
-            get {
-                return this.emailField;
-            }
-            set {
-                this.emailField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Producttype {
-            get {
-                return this.producttypeField;
-            }
-            set {
-                this.producttypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Maxdate {
-            get {
-                return this.maxdateField;
-            }
-            set {
-                this.maxdateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string UnitDescription {
-            get {
-                return this.unitDescriptionField;
-            }
-            set {
-                this.unitDescriptionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Afterdays {
-            get {
-                return this.afterdaysField;
-            }
-            set {
-                this.afterdaysField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class CRM_TopProduct {
-        
-        private string companyField;
-        
-        private string mProductField;
-        
-        private string mPremiumField;
-        
-        private string unitsField;
-        
-        /// <remarks/>
-        public string Company {
-            get {
-                return this.companyField;
-            }
-            set {
-                this.companyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string mProduct {
-            get {
-                return this.mProductField;
-            }
-            set {
-                this.mProductField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string mPremium {
-            get {
-                return this.mPremiumField;
-            }
-            set {
-                this.mPremiumField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Units {
-            get {
-                return this.unitsField;
-            }
-            set {
-                this.unitsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class CRM_Top10Det {
-        
-        private string customerIDField;
-        
-        private string firstNameField;
-        
-        private string lastNameField;
-        
-        private string companyField;
-        
-        private string claimAmtField;
-        
-        private string netAmountField;
-        
-        private string mAmountField;
-        
-        private string unitsField;
-        
-        /// <remarks/>
-        public string CustomerID {
-            get {
-                return this.customerIDField;
-            }
-            set {
-                this.customerIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string FirstName {
-            get {
-                return this.firstNameField;
-            }
-            set {
-                this.firstNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string LastName {
-            get {
-                return this.lastNameField;
-            }
-            set {
-                this.lastNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Company {
-            get {
-                return this.companyField;
-            }
-            set {
-                this.companyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ClaimAmt {
-            get {
-                return this.claimAmtField;
-            }
-            set {
-                this.claimAmtField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string NetAmount {
-            get {
-                return this.netAmountField;
-            }
-            set {
-                this.netAmountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string mAmount {
-            get {
-                return this.mAmountField;
-            }
-            set {
-                this.mAmountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Units {
-            get {
-                return this.unitsField;
-            }
-            set {
-                this.unitsField = value;
-            }
         }
     }
     
@@ -6465,123 +5907,6 @@ namespace TestSerials.CustodianE {
             }
             set {
                 this.productsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class CRM_ClaimsDetail {
-        
-        private string customerIDField;
-        
-        private string firstNameField;
-        
-        private string lastNameField;
-        
-        private string claim_NoField;
-        
-        private string phoneField;
-        
-        private string emailField;
-        
-        private string producttypeField;
-        
-        private string claimAmountField;
-        
-        private System.DateTime enddateField;
-        
-        /// <remarks/>
-        public string CustomerID {
-            get {
-                return this.customerIDField;
-            }
-            set {
-                this.customerIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string FirstName {
-            get {
-                return this.firstNameField;
-            }
-            set {
-                this.firstNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string LastName {
-            get {
-                return this.lastNameField;
-            }
-            set {
-                this.lastNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Claim_No {
-            get {
-                return this.claim_NoField;
-            }
-            set {
-                this.claim_NoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Phone {
-            get {
-                return this.phoneField;
-            }
-            set {
-                this.phoneField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Email {
-            get {
-                return this.emailField;
-            }
-            set {
-                this.emailField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Producttype {
-            get {
-                return this.producttypeField;
-            }
-            set {
-                this.producttypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ClaimAmount {
-            get {
-                return this.claimAmountField;
-            }
-            set {
-                this.claimAmountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Enddate {
-            get {
-                return this.enddateField;
-            }
-            set {
-                this.enddateField = value;
             }
         }
     }
@@ -8533,147 +7858,6 @@ namespace TestSerials.CustodianE {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
-    public partial class ClientData {
-        
-        private string insNameField;
-        
-        private string insEmailField;
-        
-        private System.DateTime startdateField;
-        
-        private System.DateTime enddateField;
-        
-        private string policyNoField;
-        
-        private string productNameField;
-        
-        private System.DateTime lastPaidDtField;
-        
-        private decimal outPremiumField;
-        
-        private string totPremiumField;
-        
-        private string statusRecField;
-        
-        private string claimsNoField;
-        
-        /// <remarks/>
-        public string InsName {
-            get {
-                return this.insNameField;
-            }
-            set {
-                this.insNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string InsEmail {
-            get {
-                return this.insEmailField;
-            }
-            set {
-                this.insEmailField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Startdate {
-            get {
-                return this.startdateField;
-            }
-            set {
-                this.startdateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Enddate {
-            get {
-                return this.enddateField;
-            }
-            set {
-                this.enddateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string PolicyNo {
-            get {
-                return this.policyNoField;
-            }
-            set {
-                this.policyNoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ProductName {
-            get {
-                return this.productNameField;
-            }
-            set {
-                this.productNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime LastPaidDt {
-            get {
-                return this.lastPaidDtField;
-            }
-            set {
-                this.lastPaidDtField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public decimal OutPremium {
-            get {
-                return this.outPremiumField;
-            }
-            set {
-                this.outPremiumField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TotPremium {
-            get {
-                return this.totPremiumField;
-            }
-            set {
-                this.totPremiumField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string StatusRec {
-            get {
-                return this.statusRecField;
-            }
-            set {
-                this.statusRecField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ClaimsNo {
-            get {
-                return this.claimsNoField;
-            }
-            set {
-                this.claimsNoField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
     public partial class ClaimRegStatus {
         
         private string regStatusField;
@@ -9060,6 +8244,1056 @@ namespace TestSerials.CustodianE {
             }
             set {
                 this.polStatusField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class Claimfl {
+        
+        private string claimNoField;
+        
+        private string clPolicyNoField;
+        
+        private string claimStatusField;
+        
+        private string insuredNameField;
+        
+        /// <remarks/>
+        public string ClaimNo {
+            get {
+                return this.claimNoField;
+            }
+            set {
+                this.claimNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ClPolicyNo {
+            get {
+                return this.clPolicyNoField;
+            }
+            set {
+                this.clPolicyNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ClaimStatus {
+            get {
+                return this.claimStatusField;
+            }
+            set {
+                this.claimStatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string InsuredName {
+            get {
+                return this.insuredNameField;
+            }
+            set {
+                this.insuredNameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class PassportDetails {
+        
+        private string firstNameField;
+        
+        private string lastNameField;
+        
+        private string titleField;
+        
+        private string phoneNumberField;
+        
+        private string emailField;
+        
+        private System.DateTime dateofBirthField;
+        
+        private string occupationField;
+        
+        private string genderField;
+        
+        private string nationalityField;
+        
+        private string policyNoField;
+        
+        private string statusCodeField;
+        
+        /// <remarks/>
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LastName {
+            get {
+                return this.lastNameField;
+            }
+            set {
+                this.lastNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PhoneNumber {
+            get {
+                return this.phoneNumberField;
+            }
+            set {
+                this.phoneNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime DateofBirth {
+            get {
+                return this.dateofBirthField;
+            }
+            set {
+                this.dateofBirthField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Occupation {
+            get {
+                return this.occupationField;
+            }
+            set {
+                this.occupationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Gender {
+            get {
+                return this.genderField;
+            }
+            set {
+                this.genderField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Nationality {
+            get {
+                return this.nationalityField;
+            }
+            set {
+                this.nationalityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PolicyNo {
+            get {
+                return this.policyNoField;
+            }
+            set {
+                this.policyNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string StatusCode {
+            get {
+                return this.statusCodeField;
+            }
+            set {
+                this.statusCodeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class BrokerData {
+        
+        private string agntNameField;
+        
+        private string agntNumField;
+        
+        private string agntPremField;
+        
+        private string agntClaimPaidAmtField;
+        
+        private string agntNetAmountField;
+        
+        /// <remarks/>
+        public string AgntName {
+            get {
+                return this.agntNameField;
+            }
+            set {
+                this.agntNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string AgntNum {
+            get {
+                return this.agntNumField;
+            }
+            set {
+                this.agntNumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string AgntPrem {
+            get {
+                return this.agntPremField;
+            }
+            set {
+                this.agntPremField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string AgntClaimPaidAmt {
+            get {
+                return this.agntClaimPaidAmtField;
+            }
+            set {
+                this.agntClaimPaidAmtField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string AgntNetAmount {
+            get {
+                return this.agntNetAmountField;
+            }
+            set {
+                this.agntNetAmountField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class To_be_renewed {
+        
+        private string customerIDField;
+        
+        private string firstNameField;
+        
+        private string lastNameField;
+        
+        private string policy_NoField;
+        
+        private string phoneField;
+        
+        private string emailField;
+        
+        private string producttypeField;
+        
+        private System.DateTime maxdateField;
+        
+        private string unitDescriptionField;
+        
+        private string afterdaysField;
+        
+        /// <remarks/>
+        public string CustomerID {
+            get {
+                return this.customerIDField;
+            }
+            set {
+                this.customerIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LastName {
+            get {
+                return this.lastNameField;
+            }
+            set {
+                this.lastNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Policy_No {
+            get {
+                return this.policy_NoField;
+            }
+            set {
+                this.policy_NoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Phone {
+            get {
+                return this.phoneField;
+            }
+            set {
+                this.phoneField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Producttype {
+            get {
+                return this.producttypeField;
+            }
+            set {
+                this.producttypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Maxdate {
+            get {
+                return this.maxdateField;
+            }
+            set {
+                this.maxdateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UnitDescription {
+            get {
+                return this.unitDescriptionField;
+            }
+            set {
+                this.unitDescriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Afterdays {
+            get {
+                return this.afterdaysField;
+            }
+            set {
+                this.afterdaysField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class CRM_TopProduct {
+        
+        private string companyField;
+        
+        private string mProductField;
+        
+        private string mPremiumField;
+        
+        private string unitsField;
+        
+        /// <remarks/>
+        public string Company {
+            get {
+                return this.companyField;
+            }
+            set {
+                this.companyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string mProduct {
+            get {
+                return this.mProductField;
+            }
+            set {
+                this.mProductField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string mPremium {
+            get {
+                return this.mPremiumField;
+            }
+            set {
+                this.mPremiumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Units {
+            get {
+                return this.unitsField;
+            }
+            set {
+                this.unitsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class CRM_Top10Det {
+        
+        private string customerIDField;
+        
+        private string firstNameField;
+        
+        private string lastNameField;
+        
+        private string companyField;
+        
+        private string claimAmtField;
+        
+        private string netAmountField;
+        
+        private string mAmountField;
+        
+        private string unitsField;
+        
+        /// <remarks/>
+        public string CustomerID {
+            get {
+                return this.customerIDField;
+            }
+            set {
+                this.customerIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LastName {
+            get {
+                return this.lastNameField;
+            }
+            set {
+                this.lastNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Company {
+            get {
+                return this.companyField;
+            }
+            set {
+                this.companyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ClaimAmt {
+            get {
+                return this.claimAmtField;
+            }
+            set {
+                this.claimAmtField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NetAmount {
+            get {
+                return this.netAmountField;
+            }
+            set {
+                this.netAmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string mAmount {
+            get {
+                return this.mAmountField;
+            }
+            set {
+                this.mAmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Units {
+            get {
+                return this.unitsField;
+            }
+            set {
+                this.unitsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class ClientData {
+        
+        private string insNameField;
+        
+        private string insEmailField;
+        
+        private System.DateTime startdateField;
+        
+        private System.DateTime enddateField;
+        
+        private string policyNoField;
+        
+        private string productNameField;
+        
+        private System.DateTime lastPaidDtField;
+        
+        private decimal outPremiumField;
+        
+        private string totPremiumField;
+        
+        private string statusRecField;
+        
+        private string claimsNoField;
+        
+        /// <remarks/>
+        public string InsName {
+            get {
+                return this.insNameField;
+            }
+            set {
+                this.insNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string InsEmail {
+            get {
+                return this.insEmailField;
+            }
+            set {
+                this.insEmailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Startdate {
+            get {
+                return this.startdateField;
+            }
+            set {
+                this.startdateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Enddate {
+            get {
+                return this.enddateField;
+            }
+            set {
+                this.enddateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PolicyNo {
+            get {
+                return this.policyNoField;
+            }
+            set {
+                this.policyNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ProductName {
+            get {
+                return this.productNameField;
+            }
+            set {
+                this.productNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime LastPaidDt {
+            get {
+                return this.lastPaidDtField;
+            }
+            set {
+                this.lastPaidDtField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal OutPremium {
+            get {
+                return this.outPremiumField;
+            }
+            set {
+                this.outPremiumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TotPremium {
+            get {
+                return this.totPremiumField;
+            }
+            set {
+                this.totPremiumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string StatusRec {
+            get {
+                return this.statusRecField;
+            }
+            set {
+                this.statusRecField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ClaimsNo {
+            get {
+                return this.claimsNoField;
+            }
+            set {
+                this.claimsNoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class CRM_ClaimsDetail {
+        
+        private string customerIDField;
+        
+        private string firstNameField;
+        
+        private string lastNameField;
+        
+        private string claim_NoField;
+        
+        private string phoneField;
+        
+        private string emailField;
+        
+        private string producttypeField;
+        
+        private string claimAmountField;
+        
+        private System.DateTime enddateField;
+        
+        /// <remarks/>
+        public string CustomerID {
+            get {
+                return this.customerIDField;
+            }
+            set {
+                this.customerIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LastName {
+            get {
+                return this.lastNameField;
+            }
+            set {
+                this.lastNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Claim_No {
+            get {
+                return this.claim_NoField;
+            }
+            set {
+                this.claim_NoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Phone {
+            get {
+                return this.phoneField;
+            }
+            set {
+                this.phoneField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Producttype {
+            get {
+                return this.producttypeField;
+            }
+            set {
+                this.producttypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ClaimAmount {
+            get {
+                return this.claimAmountField;
+            }
+            set {
+                this.claimAmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Enddate {
+            get {
+                return this.enddateField;
+            }
+            set {
+                this.enddateField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetCRM_NIIDDataCompletedEventHandler(object sender, GetCRM_NIIDDataCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCRM_NIIDDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCRM_NIIDDataCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ABSNIID[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ABSNIID[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetCRM_LapseDetailCompletedEventHandler(object sender, GetCRM_LapseDetailCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCRM_LapseDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCRM_LapseDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CRM_ClaimsDetail[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CRM_ClaimsDetail[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetPPTDetailsCompletedEventHandler(object sender, GetPPTDetailsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetPPTDetailsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetPPTDetailsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ClientData[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ClientData[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetCRM_Top10CompletedEventHandler(object sender, GetCRM_Top10CompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCRM_Top10CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCRM_Top10CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CRM_Top10Det[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CRM_Top10Det[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetCRM_TopProductlinesCompletedEventHandler(object sender, GetCRM_TopProductlinesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCRM_TopProductlinesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCRM_TopProductlinesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CRM_TopProduct[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CRM_TopProduct[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetCRM_TobeRenewedCompletedEventHandler(object sender, GetCRM_TobeRenewedCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCRM_TobeRenewedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCRM_TobeRenewedCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public To_be_renewed[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((To_be_renewed[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetCRM_BrokerCompletedEventHandler(object sender, GetCRM_BrokerCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCRM_BrokerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCRM_BrokerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public BrokerData[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((BrokerData[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void POSTBrokerMotorCompletedEventHandler(object sender, POSTBrokerMotorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class POSTBrokerMotorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal POSTBrokerMotorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetPassportDetailsCompletedEventHandler(object sender, GetPassportDetailsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetPassportDetailsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetPassportDetailsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public PassportDetails Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((PassportDetails)(this.results[0]));
             }
         }
     }
@@ -10828,240 +11062,6 @@ namespace TestSerials.CustodianE {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((ClaimCount[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void GetCRM_NIIDDataCompletedEventHandler(object sender, GetCRM_NIIDDataCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCRM_NIIDDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCRM_NIIDDataCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ABSNIID[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ABSNIID[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void GetCRM_LapseDetailCompletedEventHandler(object sender, GetCRM_LapseDetailCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCRM_LapseDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCRM_LapseDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CRM_ClaimsDetail[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CRM_ClaimsDetail[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void GetPPTDetailsCompletedEventHandler(object sender, GetPPTDetailsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetPPTDetailsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetPPTDetailsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ClientData[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ClientData[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void GetCRM_Top10CompletedEventHandler(object sender, GetCRM_Top10CompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCRM_Top10CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCRM_Top10CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CRM_Top10Det[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CRM_Top10Det[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void GetCRM_TopProductlinesCompletedEventHandler(object sender, GetCRM_TopProductlinesCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCRM_TopProductlinesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCRM_TopProductlinesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CRM_TopProduct[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CRM_TopProduct[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void GetCRM_TobeRenewedCompletedEventHandler(object sender, GetCRM_TobeRenewedCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCRM_TobeRenewedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCRM_TobeRenewedCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public To_be_renewed[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((To_be_renewed[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void GetCRM_BrokerCompletedEventHandler(object sender, GetCRM_BrokerCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCRM_BrokerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCRM_BrokerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public BrokerData[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((BrokerData[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void POSTBrokerMotorCompletedEventHandler(object sender, POSTBrokerMotorCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class POSTBrokerMotorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal POSTBrokerMotorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void GetPassportDetailsCompletedEventHandler(object sender, GetPassportDetailsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetPassportDetailsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetPassportDetailsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public PassportDetails Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((PassportDetails)(this.results[0]));
             }
         }
     }

@@ -527,10 +527,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="https://developers.custodianplc.com.ng/testapi/Policyservices.asmx">
+    <WebReferenceUrl Include="http://192.168.10.74/custodin/policyservices.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\CustodianE\</RelPath>
-      <UpdateFromURL>https://developers.custodianplc.com.ng/testapi/Policyservices.asmx</UpdateFromURL>
+      <UpdateFromURL>http://192.168.10.74/custodin/policyservices.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

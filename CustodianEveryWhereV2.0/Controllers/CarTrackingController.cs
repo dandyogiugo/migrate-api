@@ -863,7 +863,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
                 // check if user exist
-                var is_profile_setup = await telematics_user.FindOneByCriteria(x => x.email == user.Email);
+                var is_profile_setup = await telematics_user.FindOneByCriteria(x => x.email.ToLower() == user.Email.ToLower());
                 if (is_profile_setup != null)
                 {
                     log.Info($"user has been setup already {user.Email}");
