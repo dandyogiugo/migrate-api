@@ -23,7 +23,7 @@ namespace DataStore.ViewModels
         [Required]
         public List<DateTime> DateOfBirth { get; set; }
         public double? LoadingRate { get; set; }
-
+        public bool IsFlatLoading { get; set; } = false;
     }
 
     public class RateCategory
@@ -39,8 +39,6 @@ namespace DataStore.ViewModels
         public string days { get; set; }
         public List<RateCategory> category { get; set; }
     }
-
-
 
     public class Package
     {

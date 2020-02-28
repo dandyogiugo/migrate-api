@@ -134,7 +134,7 @@ namespace DataStore.ViewModels
     public enum TravelCategory
     {
         WorldWide = 1,
-        Schenghen = 2,
+        Schengen = 2,
         MiddleAndAsia = 3,
         Africa = 4,
         WorldWide2 = 5

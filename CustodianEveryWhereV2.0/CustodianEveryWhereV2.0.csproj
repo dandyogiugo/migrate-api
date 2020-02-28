@@ -324,6 +324,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AgentController.cs" />
     <Compile Include="Controllers\AirPortSearchController.cs" />
+    <Compile Include="Controllers\AnnuityController.cs" />
     <Compile Include="Controllers\AuthUserDetailsController.cs" />
     <Compile Include="Controllers\AutoInsuranceController.cs" />
     <Compile Include="Controllers\BrokerPortalController.cs" />

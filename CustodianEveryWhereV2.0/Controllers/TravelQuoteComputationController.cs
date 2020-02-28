@@ -126,10 +126,15 @@ namespace CustodianEveryWhereV2._0.Controllers
                             var roundedIndividualPremium = await util.RoundValueToNearst100((1.32 * prem) * exchnageRate);
                             computedPremium += roundedIndividualPremium;
 
-                            if (quote.LoadingRate.HasValue && quote.LoadingRate.Value > 0)
+                            if (quote.LoadingRate.HasValue && quote.LoadingRate.Value > 0 && !quote.IsFlatLoading)
                             {
                                 double loading = (quote.LoadingRate.Value / 100 * ((1.32 * prem) * exchnageRate));
                                 loadedPremium = await util.RoundValueToNearst100(loading + ((1.32 * prem) * exchnageRate));
+                                loadedtotal += loadedPremium;
+                            }
+                            else if (quote.LoadingRate.HasValue && quote.LoadingRate.Value > 0 && quote.IsFlatLoading)
+                            {
+                                loadedPremium = await util.RoundValueToNearst100(quote.LoadingRate.Value + ((1.32 * prem) * exchnageRate));
                                 loadedtotal += loadedPremium;
                             }
 
@@ -275,7 +280,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 };
             }
         }
-
+        [HttpGet]
         public async Task<notification_response> GetDetailsByPassportNumber(string passportNumber)
         {
             try
@@ -659,14 +664,14 @@ namespace CustodianEveryWhereV2._0.Controllers
                                  });
                             }
                             #endregion
-
+                            // string _cert_url = ConfigurationManager.AppSettings["TRAVEL_CERT_URL"];
                             return new notification_response
                             {
                                 status = 200,
                                 message = "Transaction was successful",
                                 data = new
                                 {
-                                    cert_url = (!string.IsNullOrEmpty(cert1) && !string.IsNullOrEmpty(cert2)) ? $"http://192.168.10.74/webportal/travelcert.aspx?muser=ebusiness&mcert={cert1}&mcert2={cert2}" : ""// GlobalConstant.Certificate_url + string.Format("muser=ebusiness&mcert={0}&mcert2={1}", cert_number, cert_number)
+                                    cert_url = (!string.IsNullOrEmpty(cert1) && !string.IsNullOrEmpty(cert2)) ? $"{GlobalConstant.Certificate_url}muser=ebusiness&mcert={cert1}&mcert2={cert2}" : ""// GlobalConstant.Certificate_url + string.Format("muser=ebusiness&mcert={0}&mcert2={1}", cert_number, cert_number)
                                 }
                             };
 

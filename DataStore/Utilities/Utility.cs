@@ -926,7 +926,7 @@ namespace DataStore.Utilities
         {
             try
             {
-                var validate = await _otp.FindOneByCriteria(x => x.is_used == false && x.is_valid == true && (x.mobile_number == emailorphone || x.email.ToLower() == emailorphone.ToLower()) && x.otp == token);
+                var validate = await _otp.FindOneByCriteria(x => x.is_used == false && x.is_valid == true && (x.mobile_number == emailorphone || x.email == emailorphone) && x.otp == token);
                 if (validate != null)
                 {
                     log.Info($"you have provided an valid otp {emailorphone}");
@@ -1072,6 +1072,62 @@ namespace DataStore.Utilities
             //    return xmlDoc.InnerXml.;
             //}
             #endregion
+        }
+        public async Task<Annuity> ValidateBirthDayForLifeProduct(DateTime DateOfBirth, int MinAge, int MaxAge)
+        {
+            try
+            {
+
+                int today = DateTime.Now.Year;
+                int passdate = DateOfBirth.Year;
+                int currentAge = today - passdate;
+                if (currentAge >= MinAge && currentAge <= MaxAge)
+                {
+                    var month = DateTime.Now.Month;
+                    var passedmonth = DateOfBirth.Month;
+                    var day = DateTime.Now.Day;
+                    var passedday = DateOfBirth.Day;
+                    if (passedmonth == month)
+                    {
+                        if (day >= passedday)
+                        {
+                            if (DateOfBirth.Month == DateTime.Now.Month && DateOfBirth.Day >= DateTime.Now.Day)
+                            {
+                                DateOfBirth.AddYears(1);
+                            }
+                        }
+                    }
+                    else if (passedmonth > month)
+                    {
+                        DateOfBirth.AddYears(1);
+                    }
+
+                    return new Annuity
+                    {
+                        status = 200,
+                        dateOfBirth = DateOfBirth,
+                        message = "operation was successful"
+                    };
+                }
+                else
+                {
+                    return new Annuity
+                    {
+                        status = 202,
+                        message = "Your are not eligeable"
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Info(ex.StackTrace);
+                log.Info(ex.Message);
+                return new Annuity
+                {
+                    status = 209,
+                    message = "We could not validate your age"
+                };
+            }
         }
     }
 

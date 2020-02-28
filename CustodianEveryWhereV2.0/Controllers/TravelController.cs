@@ -341,7 +341,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 };
                 log.Info($"Request Quote Object : {Newtonsoft.Json.JsonConvert.SerializeObject(req)}");
                 var q = await controller.GetQuote(req);
-
+                //log.Info($"data = > {Newtonsoft.Json.JsonConvert.SerializeObject(p.d)}");
                 if (q.status != 200)
                 {
                     return new TravelQuoteResponse
@@ -352,6 +352,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 string serialise = Newtonsoft.Json.JsonConvert.SerializeObject(q.data.details);
                 var deserialise = Newtonsoft.Json.JsonConvert.DeserializeObject<List<plans>>(serialise);
+                log.Info($"deserialise = > {Newtonsoft.Json.JsonConvert.SerializeObject(deserialise)}");
+                log.Info($"serialise = > {Newtonsoft.Json.JsonConvert.SerializeObject(serialise)}");
                 if (deserialise == null)
                 {
                     log.Info("Deserialization failed");
@@ -366,6 +368,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 bool isGroupLeader = false;
                 getPackage = (deserialise.Count() == 1) ? deserialise[0] : deserialise.FirstOrDefault(x => x.package.type == "SILVER");
                 decimal sumPrem;
+                log.Info($"{Newtonsoft.Json.JsonConvert.SerializeObject(getPackage)}");
                 if (travel.Passenger.Count() >= 1)
                 {
                     isGroup = true;
@@ -393,6 +396,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     transaction_ref = travel.transaction_ref,
                     hash = hash,
                 };
+
                 var countryname = getCountry.FirstOrDefault(x => x.nationality.ToLower().Trim() == travel.nationality.ToLower().Trim()).en_short_name;
                 passesngerList.Add(new TravelInsurance2
                 {

@@ -117,7 +117,7 @@
     "alpha_3_code": "AUT",
     "en_short_name": "Austria",
     "nationality": "Austrian",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "31",
@@ -173,7 +173,7 @@
     "alpha_3_code": "BEL",
     "en_short_name": "Belgium",
     "nationality": "Belgian",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "84",
@@ -477,7 +477,7 @@
     "alpha_3_code": "CZE",
     "en_short_name": "Czech Republic",
     "nationality": "Czech",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "208",
@@ -485,7 +485,7 @@
     "alpha_3_code": "DNK",
     "en_short_name": "Denmark",
     "nationality": "Danish",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "262",
@@ -557,7 +557,7 @@
     "alpha_3_code": "EST",
     "en_short_name": "Estonia",
     "nationality": "Estonian",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "231",
@@ -597,7 +597,7 @@
     "alpha_3_code": "FIN",
     "en_short_name": "Finland",
     "nationality": "Finnish",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "250",
@@ -661,7 +661,7 @@
     "alpha_3_code": "DEU",
     "en_short_name": "Germany",
     "nationality": "German",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "288",
@@ -685,7 +685,7 @@
     "alpha_3_code": "GRC",
     "en_short_name": "Greece",
     "nationality": "Greek, Hellenic",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "304",
@@ -805,7 +805,7 @@
     "alpha_3_code": "HUN",
     "en_short_name": "Hungary",
     "nationality": "Hungarian, Magyar",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "352",
@@ -813,7 +813,7 @@
     "alpha_3_code": "ISL",
     "en_short_name": "Iceland",
     "nationality": "Icelandic",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "356",
@@ -877,7 +877,7 @@
     "alpha_3_code": "ITA",
     "en_short_name": "Italy",
     "nationality": "Italian",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "388",
@@ -981,7 +981,7 @@
     "alpha_3_code": "LVA",
     "en_short_name": "Latvia",
     "nationality": "Latvian",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "422",
@@ -1021,7 +1021,7 @@
     "alpha_3_code": "LIE",
     "en_short_name": "Liechtenstein",
     "nationality": "Liechtenstein",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "440",
@@ -1029,7 +1029,7 @@
     "alpha_3_code": "LTU",
     "en_short_name": "Lithuania",
     "nationality": "Lithuanian",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "442",
@@ -1037,7 +1037,7 @@
     "alpha_3_code": "LUX",
     "en_short_name": "Luxembourg",
     "nationality": "Luxembourg, Luxembourgish",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "446",
@@ -1101,7 +1101,7 @@
     "alpha_3_code": "MLT",
     "en_short_name": "Malta",
     "nationality": "Maltese",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "584",
@@ -1253,7 +1253,7 @@
     "alpha_3_code": "NLD",
     "en_short_name": "Netherlands",
     "nationality": "Dutch, Netherlandic",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "540",
@@ -1325,7 +1325,7 @@
     "alpha_3_code": "NOR",
     "en_short_name": "Norway",
     "nationality": "Norwegian",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "512",
@@ -1413,7 +1413,7 @@
     "alpha_3_code": "POL",
     "en_short_name": "Poland",
     "nationality": "Polish",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "620",
@@ -1421,7 +1421,7 @@
     "alpha_3_code": "PRT",
     "en_short_name": "Portugal",
     "nationality": "Portuguese",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "630",
@@ -1613,7 +1613,7 @@
     "alpha_3_code": "SVK",
     "en_short_name": "Slovakia",
     "nationality": "Slovak",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "705",
@@ -1621,7 +1621,7 @@
     "alpha_3_code": "SVN",
     "en_short_name": "Slovenia",
     "nationality": "Slovenian, Slovene",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "90",
@@ -1669,7 +1669,7 @@
     "alpha_3_code": "ESP",
     "en_short_name": "Spain",
     "nationality": "Spanish",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "144",
@@ -1717,7 +1717,7 @@
     "alpha_3_code": "SWE",
     "en_short_name": "Sweden",
     "nationality": "Swedish",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "756",
@@ -1725,7 +1725,7 @@
     "alpha_3_code": "CHE",
     "en_short_name": "Switzerland",
     "nationality": "Swiss",
-    "region": "Schenghen"
+    "region": "Schengen"
   },
   {
     "num_code": "760",

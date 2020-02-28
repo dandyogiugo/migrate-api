@@ -19,7 +19,7 @@
         "excluded_rate": 8.0
       },
       {
-        "type": "SCHENGHEN",
+        "type": "SCHENGEN",
         "included_rate": 5.9,
         "excluded_rate": null
       },
@@ -56,7 +56,7 @@
         "excluded_rate": 11.7
       },
       {
-        "type": "SCHENGHEN",
+        "type": "SCHENGEN",
         "included_rate": 8.6,
         "excluded_rate": null
       },
@@ -93,7 +93,7 @@
         "excluded_rate": 17.0
       },
       {
-        "type": "SCHENGHEN",
+        "type": "SCHENGEN",
         "included_rate": 12.5,
         "excluded_rate": null
       },
@@ -130,7 +130,7 @@
         "excluded_rate": 24.9
       },
       {
-        "type": "SCHENGHEN",
+        "type": "SCHENGEN",
         "included_rate": 18.4,
         "excluded_rate": null
       },
@@ -167,7 +167,7 @@
         "excluded_rate": 31.1
       },
       {
-        "type": "SCHENGHEN",
+        "type": "SCHENGEN",
         "included_rate": 23.0,
         "excluded_rate": null
       },
@@ -204,7 +204,7 @@
         "excluded_rate": 38.9
       },
       {
-        "type": "SCHENGHEN",
+        "type": "SCHENGEN",
         "included_rate": 28.7,
         "excluded_rate": null
       },
@@ -241,7 +241,7 @@
         "excluded_rate": 46.6
       },
       {
-        "type": "SCHENGHEN",
+        "type": "SCHENGEN",
         "included_rate": 34.4,
         "excluded_rate": null
       },
