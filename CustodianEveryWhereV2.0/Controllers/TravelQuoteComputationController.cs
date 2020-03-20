@@ -406,7 +406,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     IsGroupLeader = x.isgroupleader,
                     IsGroup = travel.isGroup,
                     status = "PENDING",
-                    type = travel.type
+                    type = travel.type,
+                    referalCode = travel.referalCode
                 }).ToList();
                 // add response
                 var save = await dapper_core.BulkInsert(details);
@@ -559,7 +560,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     {
                         Address = x.address,
                         Branch = "",
-                        BrokerID = "",
+                        BrokerID = x.referalCode ?? "",
                         ChildU18 = "",
                         CommRate = "",
                         DateOfBirth = x.date_of_birth,
@@ -593,7 +594,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         TitleName = "",
                         IsGroup = (x.IsGroup) ? "Y" : "N"
                     }).ToArray();
-                    CustodianAPI.mResponse request;
+                    CustodianAPI.mTravelresponse request;
                     log.Info($"post to abs data {Newtonsoft.Json.JsonConvert.SerializeObject(travelABS)}");
                     try
                     {
@@ -608,19 +609,21 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
                     log.Info($"raw response from apiv1.0 {Newtonsoft.Json.JsonConvert.SerializeObject(request)}");
 
-                    if (request != null && request.message_Code == "200")
+                    if (request != null && request.RespCode == "200")
                     {
-                        cert1 = request.CertificateNo1;
-                        cert2 = request.CertificateNo2;
+                        cert1 = request.RespData[0].Certificate;
+                        cert2 = request.RespData[request.RespData.Count() - 1].Certificate;
                         List<TravelInsurance> _updatedDetails = new List<TravelInsurance>();
+                        int j = 0;
                         foreach (var item in travelList)
                         {
-                            item.policy_number = request.PolicyNo;
-                            item.certificate_number = request.CertificateNo1 + "|" + request.CertificateNo2;
+                            item.policy_number = request.RespData[j].PolicyNo;
+                            item.certificate_number = request.RespData[j].Certificate;
                             item.transaction_ref = referrenceNo;
                             item.Id = item.Id;
                             item.status = "COMPLETED";
                             _updatedDetails.Add(item);
+                            ++j;
                         }
 
                         var update = await dapper_core.BulkUpdate(_updatedDetails);

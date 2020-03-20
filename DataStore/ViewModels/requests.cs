@@ -494,11 +494,11 @@ namespace DataStore.ViewModels
 
         [Required]
         public string customer_name { get; set; }
-        [Required]
+       // [Required]
         public string address { get; set; }
         [Required]
         public string phone_number { get; set; }
-        [Required]
+        //[Required]
         public string email { get; set; }
         [Required]
         public string engine_number { get; set; }
@@ -506,7 +506,7 @@ namespace DataStore.ViewModels
         public TypeOfCover insurance_type { get; set; }
         [Required]
         public decimal premium { get; set; }
-        [Required]
+       // [Required]
         public decimal sum_insured { get; set; }
         [Required]
         public string chassis_number { get; set; }
@@ -523,16 +523,16 @@ namespace DataStore.ViewModels
         public string merchant_id { get; set; }
         [Required]
         public string reference_no { get; set; }
-        [Required]
+       // [Required]
         public string id_type { get; set; }
-        [Required]
+       // [Required]
         public string occupation { get; set; }
-        [Required]
+       // [Required]
         public string id_number { get; set; }
-        public DateTime dob { get; set; }
-        [Required]
+        public DateTime? dob { get; set; }
+       // [Required]
         public string attachment { get; set; }
-        [Required]
+       // [Required]
         public string extension_type { get; set; }
         public string payment_option { get; set; }
         public string excess { get; set; }
@@ -667,6 +667,9 @@ namespace DataStore.ViewModels
         public string merchant_id { get; set; }
         [Required]
         public string hash { get; set; }
+        public string fcm_token { get; set; }
+        public string app_version { get; set; }
+        public string platform { get; set; }
     }
 
 
@@ -1024,6 +1027,7 @@ namespace DataStore.ViewModels
         public string type { get; set; }
         public bool isGroup { get; set; }
         public string referrenceKey { get; set; }
+        public string referalCode { get; set; }
     }
 
 

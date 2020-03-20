@@ -30,5 +30,12 @@ namespace DataStore.Models
         [MaxLength(200)]
         [Required]
         public string UUID { get; set; }
+        public string fcm_token { get; set; }
+        [MaxLength(50)]
+        public string app_version { get; set; }
+        [MaxLength(50)]
+        public string platform { get; set; }
+        public DateTime? updatedAt { get; set; }
+        public DateTime? createdAt { get; set; }
     }
 }

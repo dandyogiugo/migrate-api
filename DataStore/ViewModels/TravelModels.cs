@@ -139,4 +139,17 @@ namespace DataStore.ViewModels
 
         public string TransactionRef { get; set; }
     }
+
+    public class ReferralModel
+    {
+        public ReferralModel()
+        {
+
+        }
+        public int AgntRefID { get; set; }
+        public string Agnt_Name { get; set; }
+        public string Agnt_Status { get; set; }
+        public string Agnt_Num { get; set; }
+        public string Data_Source { get; set; }
+    }
 }

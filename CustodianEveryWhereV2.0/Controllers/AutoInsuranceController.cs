@@ -87,7 +87,6 @@ namespace CustodianEveryWhereV2._0.Controllers
             }
         }
 
-
         [HttpPost]
         public async Task<res> GetAutoQuote(AutoQuoute quote)
         {
@@ -175,7 +174,6 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpPost]
-
         public async Task<res> BuyAutoInsurance(Auto Auto)
         {
             try
@@ -241,14 +239,14 @@ namespace CustodianEveryWhereV2._0.Controllers
                     if (Auto.insurance_type == TypeOfCover.Comprehensive)
                     {
                         request = api.SubmitPaymentRecord(GlobalConstant.merchant_id,
-                            GlobalConstant.password, "", "", "", Auto.dob, DateTime.Now, "",
+                            GlobalConstant.password, "", "", "", Auto.dob ?? DateTime.Now, DateTime.Now, "",
                             Auto.customer_name, "", "", Auto.address, Auto.phone_number, Auto.email, Auto.payment_option, "", "",
-                            Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured, "ADAPT", "NB");
+                            Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured, "ADAPT", "NB", "");
                     }
                     else
                     {
                         request = api.POSTMotorRec(GlobalConstant.merchant_id, GlobalConstant.password,
-                           Auto.customer_name, Auto.address, Auto.phone_number, Auto.email, Auto.engine_number,
+                           Auto.customer_name, Auto.address ?? "", Auto.phone_number, Auto.email ?? "", Auto.engine_number,
                            Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured
                            , Auto.chassis_number, Auto.registration_number, Auto.vehicle_model,
                            Auto.vehicle_model, Auto.vehicle_color, Auto.vehicle_model, Auto.vehicle_type, Auto.vehicle_year,
@@ -267,7 +265,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             chassis_number = Auto.chassis_number,
                             create_at = DateTime.Now,
                             customer_name = Auto.customer_name,
-                            dob = Auto.dob,
+                            dob = Auto.dob ?? null,
                             email = Auto.email,
                             engine_number = Auto.engine_number,
                             extension_type = Auto.extension_type,
@@ -289,7 +287,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             payment_option = Auto.payment_option,
                             flood = Auto.flood,
                             tracking = Auto.tracking,
-                            start_date = Auto.start_date,
+                            start_date = Auto.start_date ?? DateTime.Now,
                             srcc = Auto.srcc,
                             merchant_id = Auto.merchant_id
                         };
@@ -302,12 +300,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                             cert_number = cert_code;
                             cert_url = $"{reciept_base_url}+mUser = CUST_WEB & mCert={cert_code}&mCert2={cert_code}";
                         }
-                        var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{cert_number}.{Auto.extension_type}";
-                        var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Auto/{nameurl}";
-                        byte[] content = Convert.FromBase64String(Auto.attachment);
-                        File.WriteAllBytes(filepath, content);
-                        save_new.attachemt = nameurl;
-                        save_new.extension_type = Auto.extension_type;
+                        if (!string.IsNullOrEmpty(Auto.attachment))
+                        {
+                            var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{cert_number}.{Auto.extension_type}";
+                            var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Auto/{nameurl}";
+                            byte[] content = Convert.FromBase64String(Auto.attachment);
+                            File.WriteAllBytes(filepath, content);
+                            save_new.attachemt = nameurl;
+                            save_new.extension_type = Auto.extension_type;
+                        }
+
                         await auto.Save(save_new);
                         return new res
                         {
@@ -329,6 +331,62 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
                 }
 
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return new res { message = "System error, Try Again", status = 404 };
+            }
+        }
+        [HttpGet]
+        public async Task<dynamic> USSDThridPartyProductCategory(string merchant_id)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("GetUSSDProductCategory", merchant_id);
+                if (!check_user_function)
+                {
+                    return new res
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+
+                return new
+                {
+                    status = 200,
+                    message = "operation successful",
+                    data = new List<dynamic>()
+                    {
+                        new
+                        {
+                            type = "Private car",
+                            premium = 5000,
+                            display = "Private car N5,000"
+                        },
+                         new
+                        {
+                            type = "Own goods and Staff bus",
+                            premium = 7500,
+                            display = "Own goods n Staff bus N7,500"
+                        },
+                           new
+                        {
+                            type = "Trucks and Cartage",
+                            premium = 25000,
+                            display = "Trucks n Cartage N25,000"
+                        },
+                          new
+                        {
+                            type = "Ambulance",
+                            premium = 5000,
+                            display = "Ambulance N5000"
+                        }
+                    }
+                };
             }
             catch (Exception ex)
             {

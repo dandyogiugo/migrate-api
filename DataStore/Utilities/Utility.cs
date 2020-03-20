@@ -1084,24 +1084,25 @@ namespace DataStore.Utilities
                 if (currentAge >= MinAge && currentAge <= MaxAge)
                 {
                     var month = DateTime.Now.Month;
-                    var passedmonth = DateOfBirth.Month;
+                    var dobmonth = DateOfBirth.Month;
                     var day = DateTime.Now.Day;
-                    var passedday = DateOfBirth.Day;
-                    if (passedmonth == month)
+                    var dobday = DateOfBirth.Day;
+                    if (dobmonth == month)
                     {
-                        if (day >= passedday)
+                        if (dobday > day)
                         {
-                            if (DateOfBirth.Month == DateTime.Now.Month && DateOfBirth.Day >= DateTime.Now.Day)
-                            {
-                                DateOfBirth.AddYears(1);
-                            }
+                            DateOfBirth = DateOfBirth.AddYears(-1);
                         }
                     }
-                    else if (passedmonth > month)
+                    else if (month < dobmonth)
                     {
-                        DateOfBirth.AddYears(1);
+                        int ageNext = Math.Abs(month - DateOfBirth.Month);
+                        if (ageNext <= 6)
+                        {
+                            DateOfBirth = DateOfBirth.AddYears(-1);
+                        }
                     }
-
+                    log.Info($"Date of Birth ==>{DateOfBirth}");
                     return new Annuity
                     {
                         status = 200,

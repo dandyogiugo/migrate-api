@@ -76,8 +76,10 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = $"Invalid referral code. '{code}'"
                     };
                 }
-
-                if (validate.Agnt_Status != "ACTIVE")
+                log.Info($"Main data from validate {Newtonsoft.Json.JsonConvert.SerializeObject(validate)}");
+                var active = validate.Where(x => x.Agnt_Status?.Trim() == "ACTIVE");
+                log.Info($"Data from validate {Newtonsoft.Json.JsonConvert.SerializeObject(active)}");
+                if (active.Count() == 0)
                 {
                     return new
                     {
@@ -86,21 +88,35 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                // [AgntRefID]
-                //,[Agnt_Name]
-                //,[Agnt_Status]
-                //,[Agnt_Num]
-                //,[Data_Source]
+                dynamic _life = null;
+                dynamic _general = null;
+                if (validate.Any(x => x.Data_Source?.Trim() == "Turnquest" && x.Agnt_Status?.Trim() == "ACTIVE"))
+                {
+                    _life = new
+                    {
+                        agent_name = validate.FirstOrDefault(x => x.Data_Source?.Trim() == "Turnquest")?.Agnt_Name?.Trim(),
+                        agent_core_system_referral_code = validate.FirstOrDefault(x => x.Data_Source?.Trim() == "Turnquest")?.Agnt_Num?.Trim(),
+                    };
+                }
+
+                if (validate.Any(x => x.Data_Source?.Trim() == "ABS" && x.Agnt_Status?.Trim() == "ACTIVE"))
+                {
+                    _general = new
+                    {
+                        agent_name = validate.FirstOrDefault(x => x.Data_Source?.Trim() == "ABS")?.Agnt_Name?.Trim(),
+                        agent_core_system_referral_code = validate.FirstOrDefault(x => x.Data_Source?.Trim() == "ABS")?.Agnt_Num?.Trim(),
+                    };
+                }
+
                 return new
                 {
                     status = 200,
                     message = "Referral code is valid",
                     data = new
                     {
-                        agent_name = validate.Agnt_Name,
-                        agent_status = validate.Agnt_Status,
-                        agent_referral_code = validate.AgntRefID,
-                        agent_core_system_referral_code = validate.Agnt_Num
+                        agent_referral_code = validate.First().AgntRefID,
+                        life = _life,
+                        general = _general
                     }
                 };
 
@@ -169,7 +185,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = $"Invalid referral code. '{referrals.AgentCode}'"
                     };
                 }
-                if (validate.Agnt_Status != "ACTIVE")
+                var active = validate.Where(x => x.Agnt_Status?.Trim() == "ACTIVE");
+                if (active.Count() == 0)
                 {
                     return new
                     {
@@ -177,6 +194,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = $"Referral code not active. '{referrals.AgentCode}'"
                     };
                 }
+
                 #endregion
 
                 var add_new = new ReferralCodeLookUp

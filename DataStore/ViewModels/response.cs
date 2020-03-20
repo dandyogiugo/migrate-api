@@ -388,4 +388,12 @@ namespace DataStore.ViewModels
         public int OverAllCount { get; set; }
         public List<NextRenewal> Results { get; set; }
     }
+
+    public class Annuity
+    {
+        public int status { get; set; }
+        public DateTime dateOfBirth { get; set; }
+        public string message { get; set; }
+        public double quote { get; set; }
+    }
 }

@@ -1713,27 +1713,21 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="mResponse", Namespace="http://Custodianservices.com/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="mTravelresponse", Namespace="http://Custodianservices.com/")]
     [System.SerializableAttribute()]
-    public partial class mResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class mTravelresponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string message_CodeField;
+        private string RespCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string message_StatusField;
+        private string RespCommentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CertificateNo1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CertificateNo2Field;
+        private CustodianEveryWhereV2._0.CustodianAPI.ArrayOfMResponseTravel RespDataField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1746,32 +1740,90 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string message_Code {
+        public string RespCode {
             get {
-                return this.message_CodeField;
+                return this.RespCodeField;
             }
             set {
-                if ((object.ReferenceEquals(this.message_CodeField, value) != true)) {
-                    this.message_CodeField = value;
-                    this.RaisePropertyChanged("message_Code");
+                if ((object.ReferenceEquals(this.RespCodeField, value) != true)) {
+                    this.RespCodeField = value;
+                    this.RaisePropertyChanged("RespCode");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string message_Status {
+        public string RespComment {
             get {
-                return this.message_StatusField;
+                return this.RespCommentField;
             }
             set {
-                if ((object.ReferenceEquals(this.message_StatusField, value) != true)) {
-                    this.message_StatusField = value;
-                    this.RaisePropertyChanged("message_Status");
+                if ((object.ReferenceEquals(this.RespCommentField, value) != true)) {
+                    this.RespCommentField = value;
+                    this.RaisePropertyChanged("RespComment");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public CustodianEveryWhereV2._0.CustodianAPI.ArrayOfMResponseTravel RespData {
+            get {
+                return this.RespDataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RespDataField, value) != true)) {
+                    this.RespDataField = value;
+                    this.RaisePropertyChanged("RespData");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfMResponseTravel", Namespace="http://Custodianservices.com/", ItemName="mResponseTravel")]
+    [System.SerializableAttribute()]
+    public class ArrayOfMResponseTravel : System.Collections.Generic.List<CustodianEveryWhereV2._0.CustodianAPI.mResponseTravel> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="mResponseTravel", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class mResponseTravel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolicyNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CertificateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PassportNoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string PolicyNo {
             get {
                 return this.PolicyNoField;
@@ -1784,28 +1836,28 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string CertificateNo1 {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Certificate {
             get {
-                return this.CertificateNo1Field;
+                return this.CertificateField;
             }
             set {
-                if ((object.ReferenceEquals(this.CertificateNo1Field, value) != true)) {
-                    this.CertificateNo1Field = value;
-                    this.RaisePropertyChanged("CertificateNo1");
+                if ((object.ReferenceEquals(this.CertificateField, value) != true)) {
+                    this.CertificateField = value;
+                    this.RaisePropertyChanged("Certificate");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string CertificateNo2 {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string PassportNo {
             get {
-                return this.CertificateNo2Field;
+                return this.PassportNoField;
             }
             set {
-                if ((object.ReferenceEquals(this.CertificateNo2Field, value) != true)) {
-                    this.CertificateNo2Field = value;
-                    this.RaisePropertyChanged("CertificateNo2");
+                if ((object.ReferenceEquals(this.PassportNoField, value) != true)) {
+                    this.PassportNoField = value;
+                    this.RaisePropertyChanged("PassportNo");
                 }
             }
         }
@@ -5180,6 +5232,13 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaResponse> PostTravel2RagaAsync(CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest request);
         
         // CODEGEN: Generating message contract since element name first_name from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostTravelRagaOld", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldResponse PostTravelRagaOld(CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostTravelRagaOld", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldResponse> PostTravelRagaOldAsync(CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldRequest request);
+        
+        // CODEGEN: Generating message contract since element name first_name from namespace http://Custodianservices.com/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostTravel2RagaArray", ReplyAction="*")]
         CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaArrayResponse PostTravel2RagaArray(CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaArrayRequest request);
         
@@ -5395,6 +5454,20 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPassportDetails", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsResponse> GetPassportDetailsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPassportDetailsRequest request);
+        
+        // CODEGEN: Generating message contract since element name Premium from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetOnlineLifeQuote", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteResponse GetOnlineLifeQuote(CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetOnlineLifeQuote", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteResponse> GetOnlineLifeQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteRequest request);
+        
+        // CODEGEN: Generating message contract since element name Premium from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetAnnuityQuote", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteResponse GetAnnuityQuote(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetAnnuityQuote", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteResponse> GetAnnuityQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6332,6 +6405,9 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=21)]
         public string PostType;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=22)]
+        public string BrokerCode;
+        
         public Passing_Payment_PostSource() {
         }
         
@@ -6357,7 +6433,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     decimal Premium, 
                     decimal SumInsured, 
                     string PostSource, 
-                    string PostType) {
+                    string PostType, 
+                    string BrokerCode) {
             this.MerchantID = MerchantID;
             this.Mpassword = Mpassword;
             this.PolicyNo = PolicyNo;
@@ -6380,6 +6457,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             this.SumInsured = SumInsured;
             this.PostSource = PostSource;
             this.PostType = PostType;
+            this.BrokerCode = BrokerCode;
         }
     }
     
@@ -8158,12 +8236,12 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
     public partial class Passing_Travel_PostSource_Array1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=0)]
-        public CustodianEveryWhereV2._0.CustodianAPI.mResponse Passing_Travel_PostSource_ArrayResult;
+        public CustodianEveryWhereV2._0.CustodianAPI.mTravelresponse Passing_Travel_PostSource_ArrayResult;
         
         public Passing_Travel_PostSource_Array1() {
         }
         
-        public Passing_Travel_PostSource_Array1(CustodianEveryWhereV2._0.CustodianAPI.mResponse Passing_Travel_PostSource_ArrayResult) {
+        public Passing_Travel_PostSource_Array1(CustodianEveryWhereV2._0.CustodianAPI.mTravelresponse Passing_Travel_PostSource_ArrayResult) {
             this.Passing_Travel_PostSource_ArrayResult = Passing_Travel_PostSource_ArrayResult;
         }
     }
@@ -9297,6 +9375,9 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
         public decimal SumAssured;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
+        public string BrokerCode;
+        
         public PostTQSyncRequestBody() {
         }
         
@@ -9321,7 +9402,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string ProductType, 
                     string PaySource, 
                     decimal Premium, 
-                    decimal SumAssured) {
+                    decimal SumAssured, 
+                    string BrokerCode) {
             this.MerchantID = MerchantID;
             this.Mpassword = Mpassword;
             this.PolicyNo = PolicyNo;
@@ -9343,6 +9425,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             this.PaySource = PaySource;
             this.Premium = Premium;
             this.SumAssured = SumAssured;
+            this.BrokerCode = BrokerCode;
         }
     }
     
@@ -10028,6 +10111,114 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         public PostTravel2RagaResponseBody(CustodianEveryWhereV2._0.CustodianAPI.certificate_out PostTravel2RagaResult) {
             this.PostTravel2RagaResult = PostTravel2RagaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class PostTravelRagaOldRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="PostTravelRagaOld", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldRequestBody Body;
+        
+        public PostTravelRagaOldRequest() {
+        }
+        
+        public PostTravelRagaOldRequest(CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class PostTravelRagaOldRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public System.DateTime start_date;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public System.DateTime end_date;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string first_name;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string last_name;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Area_Type;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string num_passport;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public System.DateTime date_birth;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string nationality;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string country_residence;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string country_destination;
+        
+        public PostTravelRagaOldRequestBody() {
+        }
+        
+        public PostTravelRagaOldRequestBody(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+            this.start_date = start_date;
+            this.end_date = end_date;
+            this.first_name = first_name;
+            this.last_name = last_name;
+            this.Area_Type = Area_Type;
+            this.num_passport = num_passport;
+            this.date_birth = date_birth;
+            this.nationality = nationality;
+            this.country_residence = country_residence;
+            this.email = email;
+            this.country_destination = country_destination;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class PostTravelRagaOldResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="PostTravelRagaOldResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldResponseBody Body;
+        
+        public PostTravelRagaOldResponse() {
+        }
+        
+        public PostTravelRagaOldResponse(CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class PostTravelRagaOldResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.certificate_out PostTravelRagaOldResult;
+        
+        public PostTravelRagaOldResponseBody() {
+        }
+        
+        public PostTravelRagaOldResponseBody(CustodianEveryWhereV2._0.CustodianAPI.certificate_out PostTravelRagaOldResult) {
+            this.PostTravelRagaOldResult = PostTravelRagaOldResult;
         }
     }
     
@@ -13145,6 +13336,150 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetOnlineLifeQuoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOnlineLifeQuote", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteRequestBody Body;
+        
+        public GetOnlineLifeQuoteRequest() {
+        }
+        
+        public GetOnlineLifeQuoteRequest(CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetOnlineLifeQuoteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public System.DateTime DateofBirth;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Premium;
+        
+        public GetOnlineLifeQuoteRequestBody() {
+        }
+        
+        public GetOnlineLifeQuoteRequestBody(System.DateTime DateofBirth, string Premium) {
+            this.DateofBirth = DateofBirth;
+            this.Premium = Premium;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetOnlineLifeQuoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOnlineLifeQuoteResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteResponseBody Body;
+        
+        public GetOnlineLifeQuoteResponse() {
+        }
+        
+        public GetOnlineLifeQuoteResponse(CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetOnlineLifeQuoteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetOnlineLifeQuoteResult;
+        
+        public GetOnlineLifeQuoteResponseBody() {
+        }
+        
+        public GetOnlineLifeQuoteResponseBody(string GetOnlineLifeQuoteResult) {
+            this.GetOnlineLifeQuoteResult = GetOnlineLifeQuoteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAnnuityQuoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAnnuityQuote", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteRequestBody Body;
+        
+        public GetAnnuityQuoteRequest() {
+        }
+        
+        public GetAnnuityQuoteRequest(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetAnnuityQuoteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int clntCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Premium;
+        
+        public GetAnnuityQuoteRequestBody() {
+        }
+        
+        public GetAnnuityQuoteRequestBody(int clntCode, string Premium) {
+            this.clntCode = clntCode;
+            this.Premium = Premium;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAnnuityQuoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAnnuityQuoteResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteResponseBody Body;
+        
+        public GetAnnuityQuoteResponse() {
+        }
+        
+        public GetAnnuityQuoteResponse(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetAnnuityQuoteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetAnnuityQuoteResult;
+        
+        public GetAnnuityQuoteResponseBody() {
+        }
+        
+        public GetAnnuityQuoteResponseBody(string GetAnnuityQuoteResult) {
+            this.GetAnnuityQuoteResult = GetAnnuityQuoteResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PolicyServicesSoapChannel : CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap, System.ServiceModel.IClientChannel {
     }
@@ -13539,7 +13874,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     decimal Premium, 
                     decimal SumInsured, 
                     string PostSource, 
-                    string PostType) {
+                    string PostType, 
+                    string BrokerCode) {
             CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource inValue = new CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource();
             inValue.MerchantID = MerchantID;
             inValue.Mpassword = Mpassword;
@@ -13563,6 +13899,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.SumInsured = SumInsured;
             inValue.PostSource = PostSource;
             inValue.PostType = PostType;
+            inValue.BrokerCode = BrokerCode;
             CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).SubmitPaymentRecord(inValue);
             return retVal.Passing_Payment_PostSourceResult;
         }
@@ -13594,7 +13931,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     decimal Premium, 
                     decimal SumInsured, 
                     string PostSource, 
-                    string PostType) {
+                    string PostType, 
+                    string BrokerCode) {
             CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource inValue = new CustodianEveryWhereV2._0.CustodianAPI.Passing_Payment_PostSource();
             inValue.MerchantID = MerchantID;
             inValue.Mpassword = Mpassword;
@@ -13618,6 +13956,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.SumInsured = SumInsured;
             inValue.PostSource = PostSource;
             inValue.PostType = PostType;
+            inValue.BrokerCode = BrokerCode;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).SubmitPaymentRecordAsync(inValue);
         }
         
@@ -14730,7 +15069,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             return base.Channel.POSTMultipleTravelRec(request);
         }
         
-        public CustodianEveryWhereV2._0.CustodianAPI.mResponse POSTMultipleTravelRec(CustodianEveryWhereV2._0.CustodianAPI.TravelInsuranceArray[] TravelDetails) {
+        public CustodianEveryWhereV2._0.CustodianAPI.mTravelresponse POSTMultipleTravelRec(CustodianEveryWhereV2._0.CustodianAPI.TravelInsuranceArray[] TravelDetails) {
             CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource_Array inValue = new CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource_Array();
             inValue.TravelDetails = TravelDetails;
             CustodianEveryWhereV2._0.CustodianAPI.Passing_Travel_PostSource_Array1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTMultipleTravelRec(inValue);
@@ -15336,7 +15675,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string ProductType, 
                     string PaySource, 
                     decimal Premium, 
-                    decimal SumAssured) {
+                    decimal SumAssured, 
+                    string BrokerCode) {
             CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequest();
             inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -15360,6 +15700,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.PaySource = PaySource;
             inValue.Body.Premium = Premium;
             inValue.Body.SumAssured = SumAssured;
+            inValue.Body.BrokerCode = BrokerCode;
             CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostTQSync(inValue);
             return retVal.Body.PostTQSyncResult;
         }
@@ -15390,7 +15731,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string ProductType, 
                     string PaySource, 
                     decimal Premium, 
-                    decimal SumAssured) {
+                    decimal SumAssured, 
+                    string BrokerCode) {
             CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequest();
             inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostTQSyncRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -15414,6 +15756,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.PaySource = PaySource;
             inValue.Body.Premium = Premium;
             inValue.Body.SumAssured = SumAssured;
+            inValue.Body.BrokerCode = BrokerCode;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostTQSyncAsync(inValue);
         }
         
@@ -15835,6 +16178,51 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.email = email;
             inValue.Body.country_destination = country_destination;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostTravel2RagaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostTravelRagaOld(CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldRequest request) {
+            return base.Channel.PostTravelRagaOld(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.certificate_out PostTravelRagaOld(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+            CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldRequestBody();
+            inValue.Body.start_date = start_date;
+            inValue.Body.end_date = end_date;
+            inValue.Body.first_name = first_name;
+            inValue.Body.last_name = last_name;
+            inValue.Body.Area_Type = Area_Type;
+            inValue.Body.num_passport = num_passport;
+            inValue.Body.date_birth = date_birth;
+            inValue.Body.nationality = nationality;
+            inValue.Body.country_residence = country_residence;
+            inValue.Body.email = email;
+            inValue.Body.country_destination = country_destination;
+            CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostTravelRagaOld(inValue);
+            return retVal.Body.PostTravelRagaOldResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostTravelRagaOldAsync(CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldRequest request) {
+            return base.Channel.PostTravelRagaOldAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldResponse> PostTravelRagaOldAsync(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+            CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldRequestBody();
+            inValue.Body.start_date = start_date;
+            inValue.Body.end_date = end_date;
+            inValue.Body.first_name = first_name;
+            inValue.Body.last_name = last_name;
+            inValue.Body.Area_Type = Area_Type;
+            inValue.Body.num_passport = num_passport;
+            inValue.Body.date_birth = date_birth;
+            inValue.Body.nationality = nationality;
+            inValue.Body.country_residence = country_residence;
+            inValue.Body.email = email;
+            inValue.Body.country_destination = country_destination;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostTravelRagaOldAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -17464,6 +17852,60 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.MerchantPWD = MerchantPWD;
             inValue.Body.PassportNumber = PassportNumber;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPassportDetailsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetOnlineLifeQuote(CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteRequest request) {
+            return base.Channel.GetOnlineLifeQuote(request);
+        }
+        
+        public string GetOnlineLifeQuote(System.DateTime DateofBirth, string Premium) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteRequestBody();
+            inValue.Body.DateofBirth = DateofBirth;
+            inValue.Body.Premium = Premium;
+            CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetOnlineLifeQuote(inValue);
+            return retVal.Body.GetOnlineLifeQuoteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetOnlineLifeQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteRequest request) {
+            return base.Channel.GetOnlineLifeQuoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteResponse> GetOnlineLifeQuoteAsync(System.DateTime DateofBirth, string Premium) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteRequestBody();
+            inValue.Body.DateofBirth = DateofBirth;
+            inValue.Body.Premium = Premium;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetOnlineLifeQuoteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetAnnuityQuote(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteRequest request) {
+            return base.Channel.GetAnnuityQuote(request);
+        }
+        
+        public string GetAnnuityQuote(int clntCode, string Premium) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteRequestBody();
+            inValue.Body.clntCode = clntCode;
+            inValue.Body.Premium = Premium;
+            CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetAnnuityQuote(inValue);
+            return retVal.Body.GetAnnuityQuoteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetAnnuityQuoteAsync(CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteRequest request) {
+            return base.Channel.GetAnnuityQuoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteResponse> GetAnnuityQuoteAsync(int clntCode, string Premium) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteRequestBody();
+            inValue.Body.clntCode = clntCode;
+            inValue.Body.Premium = Premium;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetAnnuityQuoteAsync(inValue);
         }
     }
 }

@@ -83,5 +83,6 @@ namespace DataStore.Models
         public string status { get; set; }
         public bool IsGroupLeader { get; set; }
         public bool IsGroup { get; set; }
+        public string referalCode { get; set; }
     }
 }

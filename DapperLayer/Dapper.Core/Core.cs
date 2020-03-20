@@ -269,14 +269,15 @@ namespace DapperLayer.Dapper.Core
                 return null;
             }
         }
-        public async Task<dynamic> ValidateReferralCode(string code)
+        public async Task<IEnumerable<ReferralModel>> ValidateReferralCode(string code)
         {
             try
             {
-                string sql = $"SELECT TOP(1) * FROM [AgentRefCode] WHERE AgntRefID = '{code}' OR Agnt_Num = '{code}'";
+                string sql = $@"SELECT * FROM [AgentRefCode]  where AgntRefID = (select TOP(1) AgntRefID from [AgentRefCode]  WHERE LTRIM(RTRIM(AgntRefID)) = '{code}' OR LTRIM(RTRIM(Agnt_Num)) = '{code}')";
+                log.Info($"query to exe {sql}");
                 using (var cnn = new SqlConnection(connectionManager.connectionString()))
                 {
-                    var result = await cnn.QueryFirstAsync<dynamic>(sql.Trim());
+                    var result = await cnn.QueryAsync<ReferralModel>(sql.Trim());
                     return result;
                 };
             }

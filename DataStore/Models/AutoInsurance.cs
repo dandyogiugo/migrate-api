@@ -32,7 +32,7 @@ namespace DataStore.Models
         public TypeOfCover insurance_type { get; set; }
         [Required]
         public decimal premium { get; set; }
-        [Required]
+       // [Required]
         public decimal sum_insured { get; set; }
         [Required]
         public string chassis_number { get; set; }
@@ -59,7 +59,7 @@ namespace DataStore.Models
         [MaxLength(200)]
         public string id_number { get; set; }
         public DateTime create_at { get; set; }
-        public DateTime dob { get; set; }
+        public DateTime? dob { get; set; }
         public string attachemt { get; set; }
         [MaxLength(200)]
         public string extension_type { get; set; }

@@ -15,8 +15,7 @@ namespace DapperLayer.utilities
             if (string.IsNullOrEmpty(name))
                 return ConfigurationManager.ConnectionStrings["Dapper"].ConnectionString;
             else
-                return ConfigurationManager.ConnectionStrings[name].ConnectionString; ;
-
+                return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
 
 

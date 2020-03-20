@@ -282,6 +282,7 @@
             <s:element minOccurs="1" maxOccurs="1" name="SumInsured" type="s:decimal" />
             <s:element minOccurs="0" maxOccurs="1" name="PostSource" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="PostType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrokerCode" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -791,17 +792,27 @@
       <s:element name="Passing_Travel_PostSource_ArrayResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Passing_Travel_PostSource_ArrayResult" type="tns:mResponse" />
+            <s:element minOccurs="0" maxOccurs="1" name="Passing_Travel_PostSource_ArrayResult" type="tns:mTravelresponse" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="mResponse">
+      <s:complexType name="mTravelresponse">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="message_Code" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="message_Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RespCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RespComment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RespData" type="tns:ArrayOfMResponseTravel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMResponseTravel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="mResponseTravel" nillable="true" type="tns:mResponseTravel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="mResponseTravel">
+        <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="CertificateNo1" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="CertificateNo2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Certificate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassportNo" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="POSTTravelRec">
@@ -1088,6 +1099,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="PaySource" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="Premium" type="s:decimal" />
             <s:element minOccurs="1" maxOccurs="1" name="SumAssured" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrokerCode" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1247,6 +1259,30 @@
           <s:element minOccurs="0" maxOccurs="1" name="policy_id" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="PostTravelRagaOld">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="start_date" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end_date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="first_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="last_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Area_Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="num_passport" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="date_birth" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="nationality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country_residence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country_destination" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostTravelRagaOldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostTravelRagaOldResult" type="tns:certificate_out" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="PostTravel2RagaArray">
         <s:complexType>
           <s:sequence>
@@ -2203,6 +2239,36 @@
           <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetOnlineLifeQuote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DateofBirth" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Premium" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOnlineLifeQuoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOnlineLifeQuoteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnnuityQuote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clntCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Premium" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnnuityQuoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnnuityQuoteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetClaimStatusSoapIn">
@@ -2475,6 +2541,12 @@
   <wsdl:message name="PostTravel2RagaSoapOut">
     <wsdl:part name="parameters" element="tns:PostTravel2RagaResponse" />
   </wsdl:message>
+  <wsdl:message name="PostTravelRagaOldSoapIn">
+    <wsdl:part name="parameters" element="tns:PostTravelRagaOld" />
+  </wsdl:message>
+  <wsdl:message name="PostTravelRagaOldSoapOut">
+    <wsdl:part name="parameters" element="tns:PostTravelRagaOldResponse" />
+  </wsdl:message>
   <wsdl:message name="PostTravel2RagaArraySoapIn">
     <wsdl:part name="parameters" element="tns:PostTravel2RagaArray" />
   </wsdl:message>
@@ -2661,6 +2733,18 @@
   <wsdl:message name="GetPassportDetailsSoapOut">
     <wsdl:part name="parameters" element="tns:GetPassportDetailsResponse" />
   </wsdl:message>
+  <wsdl:message name="GetOnlineLifeQuoteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOnlineLifeQuote" />
+  </wsdl:message>
+  <wsdl:message name="GetOnlineLifeQuoteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOnlineLifeQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnnuityQuoteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnnuityQuote" />
+  </wsdl:message>
+  <wsdl:message name="GetAnnuityQuoteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnnuityQuoteResponse" />
+  </wsdl:message>
   <wsdl:portType name="PolicyServicesSoap">
     <wsdl:operation name="GetClaimStatus">
       <wsdl:input message="tns:GetClaimStatusSoapIn" />
@@ -2842,6 +2926,10 @@
       <wsdl:input message="tns:PostTravel2RagaSoapIn" />
       <wsdl:output message="tns:PostTravel2RagaSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="PostTravelRagaOld">
+      <wsdl:input message="tns:PostTravelRagaOldSoapIn" />
+      <wsdl:output message="tns:PostTravelRagaOldSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="PostTravel2RagaArray">
       <wsdl:input message="tns:PostTravel2RagaArraySoapIn" />
       <wsdl:output message="tns:PostTravel2RagaArraySoapOut" />
@@ -2965,6 +3053,14 @@
     <wsdl:operation name="GetPassportDetails">
       <wsdl:input message="tns:GetPassportDetailsSoapIn" />
       <wsdl:output message="tns:GetPassportDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineLifeQuote">
+      <wsdl:input message="tns:GetOnlineLifeQuoteSoapIn" />
+      <wsdl:output message="tns:GetOnlineLifeQuoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnuityQuote">
+      <wsdl:input message="tns:GetAnnuityQuoteSoapIn" />
+      <wsdl:output message="tns:GetAnnuityQuoteSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="PolicyServicesSoap" type="tns:PolicyServicesSoap">
@@ -3374,6 +3470,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="PostTravelRagaOld">
+      <soap:operation soapAction="http://Custodianservices.com/PostTravelRagaOld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PostTravel2RagaArray">
       <soap:operation soapAction="http://Custodianservices.com/PostTravel2RagaArray" style="document" />
       <wsdl:input>
@@ -3646,6 +3751,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetPassportDetails">
       <soap:operation soapAction="http://Custodianservices.com/GetPassportDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineLifeQuote">
+      <soap:operation soapAction="http://Custodianservices.com/GetOnlineLifeQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnuityQuote">
+      <soap:operation soapAction="http://Custodianservices.com/GetAnnuityQuote" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4061,6 +4184,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="PostTravelRagaOld">
+      <soap12:operation soapAction="http://Custodianservices.com/PostTravelRagaOld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PostTravel2RagaArray">
       <soap12:operation soapAction="http://Custodianservices.com/PostTravel2RagaArray" style="document" />
       <wsdl:input>
@@ -4333,6 +4465,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetPassportDetails">
       <soap12:operation soapAction="http://Custodianservices.com/GetPassportDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineLifeQuote">
+      <soap12:operation soapAction="http://Custodianservices.com/GetOnlineLifeQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnuityQuote">
+      <soap12:operation soapAction="http://Custodianservices.com/GetAnnuityQuote" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
