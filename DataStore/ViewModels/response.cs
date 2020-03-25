@@ -58,6 +58,7 @@ namespace DataStore.ViewModels
         public string reciept_url { get; set; }
         public decimal sum_insured { get; set; }
         public bool can_buy_comprehensive { get; set; }
+        public dynamic app_updates { get; set; }
     }
 
     public class LifeClaimStatus
@@ -395,5 +396,18 @@ namespace DataStore.ViewModels
         public DateTime dateOfBirth { get; set; }
         public string message { get; set; }
         public double quote { get; set; }
+    }
+
+    public class updates
+    {
+        public bool app_update { get; set; }
+        public string android { get; set; }
+        public string ios { get; set; }
+        public string android_version { get; set; }
+        public string ios_version { get; set; }
+        public string ios_updates { get; set; }
+        public string android_updates { get; set; }
+        public bool ios_is_major { get; set; }
+        public bool android_is_major { get; set; }
     }
 }

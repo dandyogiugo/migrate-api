@@ -797,6 +797,7 @@
     <Content Include="TravelCategoryJSON\RateTable.json" />
     <Content Include="TravelCategoryJSON\Country.json" />
     <Content Include="TravelCategoryJSON\RagaConfig.json" />
+    <Content Include="TravelCategoryJSON\AppUpdate.json" />
     <None Include="Web References\RSA\cal.xsd">
       <SubType>Designer</SubType>
     </None>

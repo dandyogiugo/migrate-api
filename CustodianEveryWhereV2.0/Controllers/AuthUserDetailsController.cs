@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 
 namespace CustodianEveryWhereV2._0.Controllers
@@ -75,9 +76,9 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
 
                 var check_for_existence = await auth_user.FindOneByCriteria(x => x.email.ToLower() == auth_deatils.email.ToLower());
-               
+
                 bool dontpass = false;
-                if (check_for_existence != null && (string.IsNullOrEmpty(check_for_existence.app_version) || string.IsNullOrEmpty(check_for_existence.fcm_token) 
+                if (check_for_existence != null && (string.IsNullOrEmpty(check_for_existence.app_version) || string.IsNullOrEmpty(check_for_existence.fcm_token)
                     || string.IsNullOrEmpty(check_for_existence.platform)))
                 {
                     check_for_existence.platform = auth_deatils.platform;
@@ -87,7 +88,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     await auth_user.Update(check_for_existence);
                     dontpass = true;
                 }
-                
+
                 if (!dontpass && check_for_existence != null && (!auth_deatils.fcm_token.Trim().Equals(check_for_existence.fcm_token)
                     || auth_deatils.UUID.Trim().Equals(check_for_existence.UUID)))
                 {
@@ -98,6 +99,19 @@ namespace CustodianEveryWhereV2._0.Controllers
                     await auth_user.Update(check_for_existence);
                 }
 
+                updates update = null;
+                try
+                {
+                    string getFile = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/TravelCategoryJSON/AppUpdate.json"));
+                    update = Newtonsoft.Json.JsonConvert.DeserializeObject<updates>(getFile);
+                }
+                catch (Exception ex)
+                {
+                    log.Error(ex.Message);
+                    log.Error(ex.InnerException);
+                    log.Error(ex.StackTrace);
+                }
+
                 if (check_for_existence != null && !string.IsNullOrEmpty(check_for_existence.app_version) && !string.IsNullOrEmpty(check_for_existence.fcm_token) && !string.IsNullOrEmpty(check_for_existence.platform))
                 {
                     log.Info($"User profile already exist {auth_deatils.email}");
@@ -105,9 +119,11 @@ namespace CustodianEveryWhereV2._0.Controllers
                     {
                         status = 200,
                         message = "User profile is active",
-                        data = check_for_existence
+                        data = check_for_existence,
+                        app_updates = update
                     };
                 }
+
 
                 if (check_for_existence == null)
                 {
@@ -125,15 +141,15 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                     await auth_user.Save(new_user);
                 }
-
-
+               
 
                 log.Info($"User profile hash been saved {auth_deatils.email}");
                 return new notification_response
                 {
                     status = 200,
                     message = $"User profile has been created for '{auth_deatils.email}'",
-                    data = auth_deatils
+                    data = auth_deatils,
+                    app_updates = update
                 };
             }
             catch (Exception ex)
