@@ -238,10 +238,21 @@ namespace CustodianEveryWhereV2._0.Controllers
                     string request = null;
                     if (Auto.insurance_type == TypeOfCover.Comprehensive)
                     {
-                        request = api.SubmitPaymentRecord(GlobalConstant.merchant_id,
-                            GlobalConstant.password, "", "", "", Auto.dob ?? DateTime.Now, DateTime.Now, "",
-                            Auto.customer_name, "", "", Auto.address, Auto.phone_number, Auto.email, Auto.payment_option, "", "",
-                            Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured, "ADAPT", "NB", "");
+                        //request = api.SubmitPaymentRecord(GlobalConstant.merchant_id,
+                        //    GlobalConstant.password, "", "", "", Auto.dob ?? DateTime.Now, DateTime.Now, "",
+                        //    Auto.customer_name, "", "", Auto.address, Auto.phone_number, Auto.email, Auto.payment_option, "", "",
+                        //    Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured, "ADAPT", "NB", "");
+                        var count = await auto.GetAll();
+                        var resp = await util.SendQuote(Auto, count.Count() + 1);
+                        if (resp.status == 200)
+                        {
+                            request = "success";
+                        }
+                        else
+                        {
+                            request = "failed";
+                        }
+
                     }
                     else
                     {

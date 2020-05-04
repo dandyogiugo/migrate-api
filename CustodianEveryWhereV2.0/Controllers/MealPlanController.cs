@@ -71,8 +71,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
-
-                var getMeal = await MealPlan.FindMany(x => x.target == meal.target.ToString() && x.preference == meal.preference.ToString());
+                List<MealPlan> getMeal = null;
+                getMeal = await MealPlan.FindMany(x => x.target == meal.target.ToString() && x.preference == meal.preference.ToString());
                 if (getMeal != null && getMeal.Count > 0)
                 {
                     var group_plan = getMeal.GroupBy(x => x.daysOfWeek);
@@ -103,7 +103,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     var newMyMeal = new MyMealPlan
                     {
                         ageRange = meal.ageRange,
-                        email = meal.email,
+                        email = meal.email.ToLower(),
                         gender = meal.gender,
                         givenBirth = meal.givenBirth,
                         maritalStatus = meal.maritalStatus,
@@ -111,6 +111,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         preference = meal.preference,
                         target = meal.target,
                         datecreated = DateTime.Now,
+                        IsCancelled = false,
                         SelectedMealPlan = getMeal.Select(x => new SelectedMealPlan
                         {
                             dateCreated = DateTime.Now,
@@ -186,7 +187,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
-                var getMyMeal = await myMealPlan.FindMany(x => x.email.ToUpper().Trim() == emailOrphone.ToUpper().Trim());
+                var getMyMeal = await myMealPlan.FindMany(x => x.email.ToUpper().Trim() == emailOrphone.ToUpper().Trim() && x.IsCancelled == false);
                 if (getMyMeal != null && getMyMeal.Count > 0)
                 {
                     var final = new List<object>();
@@ -213,7 +214,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 }).ToList());
                             }
                             dic.Add(item.First().MealPlan.daysOfWeek.Trim(), day);
-                           //final.Add(dic);
+                            //final.Add(dic);
                         }
                         temphistory.Add(new Dictionary<string, object>
                         {
@@ -244,6 +245,67 @@ namespace CustodianEveryWhereV2._0.Controllers
                 log.Error(ex.StackTrace);
                 log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
                 return new notification_response { message = "Something happend while loading your meal plan", status = 404 };
+            }
+        }
+        /// <summary>
+        ///  Cancel meal plan
+        /// </summary>
+        /// <param name="emailOrphone"></param>
+        /// <param name="merchant_id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<notification_response> CancelMealPlan(string emailOrphone, string merchant_id)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("CancelMealPlan", merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                        type = DataStore.ViewModels.Type.SMS.ToString()
+                    };
+                }
+
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                var _myMealPlan = await myMealPlan.FindOneByCriteria(x => x.email?.ToLower() == emailOrphone?.ToLower());
+                if (_myMealPlan == null)
+                {
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "User email not tied to any meal plan"
+                    };
+                }
+
+                _myMealPlan.IsCancelled = true;
+                _myMealPlan.CancelledDate = DateTime.Now;
+                await myMealPlan.Update(_myMealPlan);
+                return new notification_response
+                {
+                    status = 200,
+                    message = "You've cancelled your meal plan"
+                };
+            }
+            catch (Exception ex)
+            {
+
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException?.ToString());
+                return new notification_response { message = "Something happend while deleting your meal plan", status = 404 };
             }
         }
     }

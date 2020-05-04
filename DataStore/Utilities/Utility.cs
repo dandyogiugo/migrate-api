@@ -350,6 +350,51 @@ namespace DataStore.Utilities
                 log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
             }
         }
+
+        public void SendQuotationEmail(Auto sendmail, string temp, string Imagepath, string cert_path, string temp2, string quotation_number)
+        {
+            try
+            {
+                StringBuilder template = new StringBuilder(temp);
+                string body = $"Dear {sendmail.customer_name},<br/><br/>Please find attached your quotation.<br/><br/> Thank you.<br/><br/>";
+                template.Replace("#CONTENT#", body);
+                template.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
+                List<string> attach = new List<string>();
+                attach.Add(cert_path);
+                var send = new SendEmail().Send_Email(sendmail.email, $"{sendmail.insurance_type.ToString()}-QUOTATION", template.ToString(), $"Custodian", true, Imagepath, null, null, attach);
+                if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings["Notification"]))
+                {
+                    var emailList = ConfigurationManager.AppSettings["Notification"].Split('|');
+                    var newlist = emailList;
+                    if (emailList.Length > 1)
+                    {
+                        StringBuilder template2 = new StringBuilder(temp2);
+                        string body2 = $"Dear Team,<br/><br/>A customer just requested for a quote, find attached for follow-up<br/><br/> Thank you.<br/><br/>";
+                        template2.Replace("#CONTENT#", body2);
+                        template2.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
+                        List<string> cc = new List<string>();
+                        int i = 1;
+                        foreach (var item in newlist)
+                        {
+                            if (i != 1)
+                            {
+                                cc.Add(item);
+                            }
+                            ++i;
+                        }
+                        var send2 = new SendEmail().Send_Email(emailList[0], $"{sendmail.insurance_type.ToString()}-QUOTATION--No.{quotation_number}", template2.ToString(), $"{sendmail.insurance_type.ToString()}-QUOTATION--No.{quotation_number}", true, Imagepath, cc, null, attach);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+            }
+        }
+
         public async Task<string> GeneratePolicyNO(int val)
         {
             string final = "";
@@ -1129,6 +1174,94 @@ namespace DataStore.Utilities
                     message = "We could not validate your age"
                 };
             }
+        }
+        public async Task<req_response> SendQuote(Auto cert, int quote_number)
+        {
+            req_response response = new req_response();
+            try
+            {
+                Document doc = new Document();
+                string newrtfPath = HttpContext.Current.Server.MapPath("~/Cert/QuoteTemplate.rtf");
+                doc.LoadFromFile(newrtfPath, FileFormat.Rtf);
+                string excess = (cert.excess?.ToLower() == "y") ? "Excess" : "";
+                string tracking = (cert.tracking?.ToLower() == "y") ? "Tracking" : "";
+                string flood = (cert.flood?.ToLower() == "y") ? "Flood" : "";
+                string srcc = (cert.srcc?.ToLower() == "y") ? "SRCC" : "";
+                string quote_no = await GenerateQuoteNumber(quote_number);
+                doc.Replace("#customer_name#", cert.customer_name, false, true);
+                doc.Replace("#address#", cert.address, false, true);
+                doc.Replace("#phone_number#", cert.phone_number, false, true);
+                doc.Replace("#email#", cert.email, false, true);
+                doc.Replace("#insurance_type#", cert.insurance_type.ToString(), false, true);
+                doc.Replace("#occupation#", cert.occupation?.ToString().Trim(), false, true);
+                doc.Replace("#vehicle_category#", cert.vehicle_category?.ToString().Trim(), false, true);
+                doc.Replace("#vehicle_model#", cert.vehicle_model?.ToString().Trim(), false, true);
+                doc.Replace("#vehicle_year#", cert.vehicle_year?.ToString().Trim(), false, true);
+                doc.Replace("#vehicle_color#", cert.vehicle_color, false, true);
+                doc.Replace("#registration_number#", cert.registration_number, false, true);//#SERIAL_NUMBER#
+                doc.Replace("#engine_number#", cert.engine_number, false, true);
+                doc.Replace("#chassis_number#", cert.chassis_number, false, true);
+                doc.Replace("#sum_insured#", string.Format("N{0:N}", cert.sum_insured), false, true);
+                doc.Replace("#premium#", string.Format("N{0:N}", cert.premium), false, true);
+                doc.Replace("#payment_option#", cert.payment_option, false, true);
+                doc.Replace("#extensions#", $"{excess} {tracking} {flood} {srcc}", false, true);
+                doc.Replace("#quotation_number#", quote_no, false, true);
+                doc.Replace("#create_at#", DateTime.Now.ToString(), false, true);
+                string pdfPath = HttpContext.Current.Server.MapPath($"~/Cert/GeneratedCert/{quote_no}.pdf");
+                if (System.IO.File.Exists(pdfPath))
+                {
+                    System.IO.File.Delete(pdfPath);
+                    doc.SaveToFile(pdfPath, FileFormat.PDF);
+                }
+                else
+                {
+                    doc.SaveToFile(pdfPath, FileFormat.PDF);
+                }
+                //dont wait for certificate to send continue process and let ths OS thread do the sending without slowing down the application
+                var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
+                string imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
+                Task.Factory.StartNew(() =>
+                {
+                    this.SendQuotationEmail(cert, template, imagepath, pdfPath, template, quote_no);
+                });
+
+                response.status = 200;
+            }
+            catch (Exception ex)
+            {
+                response.status = 401;
+                response.message = $"System malfunction";
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+            }
+
+            return response;
+        }
+
+        public async Task<string> GenerateQuoteNumber(int val)
+        {
+            string final = "";
+            if (val <= 9)
+            {
+                final = "000000" + val;
+            }
+            else if (val.ToString().Length < 7)
+            {
+                int loop = 7 - val.ToString().Length;
+                string zeros = "";
+                for (int i = 0; i < loop; i++)
+                {
+                    zeros += "0";
+                }
+                final = zeros + val;
+            }
+            else
+            {
+                final = val.ToString();
+            }
+
+            return final;
         }
     }
 

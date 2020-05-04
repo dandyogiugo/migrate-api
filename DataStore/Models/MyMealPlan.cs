@@ -29,5 +29,7 @@ namespace DataStore.Models
         public string phoneNumber { get; set; }
         public virtual List<SelectedMealPlan> SelectedMealPlan { get; set; }
         public DateTime datecreated { get; set; }
+        public bool IsCancelled { get; set; } = false;
+        public DateTime? CancelledDate { get; set; }
     }
 }

@@ -14,9 +14,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace CustodianEveryWhereV2._0.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AgentController : ApiController
     {
         private static Logger log = LogManager.GetCurrentClassLogger();
@@ -139,7 +141,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             insOccupField = request.InsOccup?.Trim(),
                             insStateField = request.InsState?.Trim(),
                             instPremiumField = request.InstPremium,
-                            insuredEmailField = request.InsuredEmail?.Trim(),
+                            insuredEmailField = (request.InsuredEmail?.Trim() == null || string.IsNullOrEmpty(request.InsuredEmail?.Trim()) || request.InsuredEmail?.Trim() == "NULL") ? $"{Guid.NewGuid().ToString().Split('-')[0]}@gmail.com" : request.InsuredEmail?.Trim(),
                             insuredNameField = request.InsuredName?.Trim(),
                             insuredNumField = request.InsuredNum?.Trim(),
                             insuredOthNameField = request.InsuredOthName?.Trim(),
@@ -151,7 +153,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                             startdateField = request.Startdate,
                             sumInsField = request.SumIns,
                             telNumField = request.TelNum?.Trim()
-
                         },
                         hash = new
                         {
@@ -276,7 +277,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     var request = await api.SubmitPaymentRecordAsync(GlobalConstant.merchant_id, GlobalConstant.password, post.policy_number, post.subsidiary.ToString(), post.payment_narrtn, DateTime.Now,
-                        DateTime.Now, post.reference_no, new_trans.issured_name, "", "", "", new_trans.phone_no, new_trans.email_address, "", "", "", post.biz_unit, post.premium, 0, channelName, "RW","");
+                        DateTime.Now, post.reference_no, new_trans.issured_name, "", "", "", new_trans.phone_no, new_trans.email_address, "", "", "", post.biz_unit, post.premium, 0, channelName, "RW", "");
                     log.Info($"raw response from api {request.Passing_Payment_PostSourceResult}");
                     if (string.IsNullOrEmpty(request.Passing_Payment_PostSourceResult) || request.Passing_Payment_PostSourceResult != "1")
                     {

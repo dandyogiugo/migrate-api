@@ -58,7 +58,8 @@ namespace DataStore.ViewModels
     {
         GainWeight = 1,
         LoseWeight = 2,
-        MaintainWeight = 3
+        MaintainWeight = 3,
+        ImmuneBoost = 4
     }
 
     public enum Preference
@@ -67,7 +68,8 @@ namespace DataStore.ViewModels
         Meat = 2,
         Fish = 3,
         SeaFood = 4,
-        Pork = 5
+        Pork = 5,
+        None = 6
     }
 
     public enum DaysInWeeks

@@ -426,6 +426,7 @@
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <Content Include="Cert\json.json" />
     <Content Include="Cert\config.json" />
+    <Content Include="Cert\QuoteTemplate.rtf" />
     <None Include="Properties\PublishProfiles\Api.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
