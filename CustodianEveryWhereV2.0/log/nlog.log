@@ -210,3 +210,117 @@ The statement has been terminated.
    at CustodianEveryWhereV2._0.Controllers.AgentController.<GetPolicyDetails>d__4.MoveNext() in C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\CustodianEveryWhereV2.0\Controllers\AgentController.cs:line 82
 2019-02-12 14:41:49.5766|ERROR|CustodianEveryWhereV2._0.Controllers.AgentController|
 2019-02-12 14:45:52.5967|INFO|CustodianEveryWhereV2._0.Controllers.AgentController|raw api response  {"PolicyNo":"HO/V/29/B0001235         ","PolicyEBusiness":"NULL","AgenctNum":"B1002/HO  ","AgenctName":"STANBIC IBTC INSURANCE BROKERS LIMITED                                                              ","InsuredNum":"00027754  ","InsuredName":"IYOHA                                                                           ","InsuredOthName":"OLAJUMOKE (MRS.)                                  ","InsAddr1":"C/O STANBIC IBTC INSURANCE                        ","InsAddr2":"WEALTHHOUSE, PLOT 1678 OLAKUNL                    ","InsAddr3":"                                                  ","TelNum":"08033340710                                       ","InsuredTelNum":"08033340710                                       ","InsuredEmail":"insurancesolution@stanbicibtc.com                                                         ","DOB":"0001-01-01T00:00:00","InsState":"Lagos State                                       ","InsLGA":"Eti-Osa                                           ","BizUnit":"PRIVATE CAR INSURANCE                                       ","InsOccup":"BANKING                                           ","BizBranch":"HO  ","Startdate":"2017-04-07T00:00:00","Enddate":"2018-04-06T00:00:00","SumIns":2000000.00,"mPremium":40000.00,"OutPremium":40000.00,"InstPremium":40000.00}
+2020-05-15 16:47:04.6256|INFO|DataStore.Utilities.Utility|Passed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 16:47:04.6746|INFO|DataStore.Utilities.Utility|my hash partten oscardybabaphd@gmail.comTest_vkMqq$%ww
+2020-05-15 16:47:04.6746|INFO|DataStore.Utilities.Utility|Computed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 16:48:22.4177|ERROR|CustodianEveryWhereV2._0.Controllers.MealPlanController|An error occurred while executing the command definition. See the inner exception for details.
+2020-05-15 16:48:23.3521|ERROR|CustodianEveryWhereV2._0.Controllers.MealPlanController|   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   at System.Data.Entity.Core.Objects.DataClasses.EntityReference`1.Load(MergeOption mergeOption)
+   at System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   at System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   at System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__2(TProxy proxy, TItem item)
+   at System.Data.Entity.DynamicProxies.SelectedMealPlan_82A26D11E512CBF377F01A45AE9971AA8BD9ACC0E716736A78DD9F5734F103C5.get_MealPlan()
+   at CustodianEveryWhereV2._0.Controllers.MealPlanController.<>c.<GetMyMealPlan>b__7_3(SelectedMealPlan x) in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\CustodianEveryWhereV2.0\Controllers\MealPlanController.cs:line 210
+   at System.Linq.Lookup`2.Create[TSource](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at System.Linq.GroupedEnumerable`3.GetEnumerator()
+   at CustodianEveryWhereV2._0.Controllers.MealPlanController.<GetMyMealPlan>d__7.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\CustodianEveryWhereV2.0\Controllers\MealPlanController.cs:line 211
+2020-05-15 16:48:27.3139|ERROR|CustodianEveryWhereV2._0.Controllers.MealPlanController|System.InvalidOperationException: ExecuteReader requires an open and available Connection. The connection's current state is closed.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+2020-05-15 16:49:02.2749|INFO|DataStore.Utilities.Utility|Passed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 16:49:02.3019|INFO|DataStore.Utilities.Utility|my hash partten oscardybabaphd@gmail.comTest_vkMqq$%ww
+2020-05-15 16:49:02.3019|INFO|DataStore.Utilities.Utility|Computed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 16:49:31.5272|ERROR|CustodianEveryWhereV2._0.Controllers.MealPlanController|An error occurred while executing the command definition. See the inner exception for details.
+2020-05-15 16:49:35.2821|ERROR|CustodianEveryWhereV2._0.Controllers.MealPlanController|   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   at System.Data.Entity.Core.Objects.DataClasses.EntityReference`1.Load(MergeOption mergeOption)
+   at System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   at System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   at System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__2(TProxy proxy, TItem item)
+   at System.Data.Entity.DynamicProxies.SelectedMealPlan_82A26D11E512CBF377F01A45AE9971AA8BD9ACC0E716736A78DD9F5734F103C5.get_MealPlan()
+   at CustodianEveryWhereV2._0.Controllers.MealPlanController.<>c.<GetMyMealPlan>b__7_3(SelectedMealPlan x) in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\CustodianEveryWhereV2.0\Controllers\MealPlanController.cs:line 210
+   at System.Linq.Lookup`2.Create[TSource](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at System.Linq.GroupedEnumerable`3.GetEnumerator()
+   at CustodianEveryWhereV2._0.Controllers.MealPlanController.<GetMyMealPlan>d__7.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\CustodianEveryWhereV2.0\Controllers\MealPlanController.cs:line 211
+2020-05-15 16:49:35.2821|ERROR|CustodianEveryWhereV2._0.Controllers.MealPlanController|System.InvalidOperationException: ExecuteReader requires an open and available Connection. The connection's current state is closed.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+2020-05-15 16:49:50.0000|INFO|DataStore.Utilities.Utility|Passed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 16:49:50.0000|INFO|DataStore.Utilities.Utility|my hash partten oscardybabaphd@gmail.comTest_vkMqq$%ww
+2020-05-15 16:49:50.0000|INFO|DataStore.Utilities.Utility|Computed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 16:56:58.7774|INFO|DataStore.Utilities.Utility|Passed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 16:56:58.8084|INFO|DataStore.Utilities.Utility|my hash partten oscardybabaphd@gmail.comTest_vkMqq$%ww
+2020-05-15 16:56:58.8114|INFO|DataStore.Utilities.Utility|Computed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 16:57:37.2495|INFO|DataStore.Utilities.Utility|Passed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 16:57:37.2495|INFO|DataStore.Utilities.Utility|my hash partten oscardybabaphd@gmail.comTest_vkMqq$%ww
+2020-05-15 16:57:37.2495|INFO|DataStore.Utilities.Utility|Computed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 17:04:35.3427|INFO|DataStore.Utilities.Utility|Passed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 17:04:35.3857|INFO|DataStore.Utilities.Utility|my hash partten oscardybabaphd@gmail.comTest_vkMqq$%ww
+2020-05-15 17:04:35.3857|INFO|DataStore.Utilities.Utility|Computed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 17:11:47.0761|INFO|DataStore.Utilities.Utility|Passed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 17:11:47.1181|INFO|DataStore.Utilities.Utility|my hash partten oscardybabaphd@gmail.comTest_vkMqq$%ww
+2020-05-15 17:11:47.1181|INFO|DataStore.Utilities.Utility|Computed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 17:16:50.6445|ERROR|CustodianEveryWhereV2._0.Controllers.MealPlanController|An item with the same key has already been added.
+2020-05-15 17:16:50.6655|ERROR|CustodianEveryWhereV2._0.Controllers.MealPlanController|   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at CustodianEveryWhereV2._0.Controllers.MealPlanController.<GetMyMealPlan>d__7.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\CustodianEveryWhereV2.0\Controllers\MealPlanController.cs:line 229
+2020-05-15 17:16:50.6655|ERROR|CustodianEveryWhereV2._0.Controllers.MealPlanController|
+2020-05-15 17:16:51.0542|ERROR|DataStore.repository.store`1|The underlying provider failed on Open.
+2020-05-15 17:16:51.0692|ERROR|DataStore.repository.store`1|   at System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   at System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at DataStore.repository.store`1.<>c__DisplayClass6_0.<FindOneByCriteria>b__0() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DataStore\repository\store.cs:line 64
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DataStore.repository.store`1.<FindOneByCriteria>d__6.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DataStore\repository\store.cs:line 62
+2020-05-15 17:17:37.7452|INFO|DataStore.Utilities.Utility|Passed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 17:17:37.7572|INFO|DataStore.Utilities.Utility|my hash partten oscardybabaphd@gmail.comTest_vkMqq$%ww
+2020-05-15 17:17:37.7572|INFO|DataStore.Utilities.Utility|Computed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 17:27:22.6778|INFO|DataStore.Utilities.Utility|Passed hash F37C94F20665755B8264AB6845C10882
+2020-05-15 17:27:22.7198|INFO|DataStore.Utilities.Utility|my hash partten oscardybabaphd@gmail.comTest_vkMqq$%ww
+2020-05-15 17:27:22.7198|INFO|DataStore.Utilities.Utility|Computed hash F37C94F20665755B8264AB6845C10882

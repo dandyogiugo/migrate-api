@@ -71,6 +71,15 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
+                var check_if_meal_plan_exist = await myMealPlan.FindOneByCriteria(x => x.email.ToUpper().Trim() == meal.email.ToUpper().Trim() && x.IsCancelled == false);
+                if (check_if_meal_plan_exist != null)
+                {
+                    return new notification_response
+                    {
+                        status = 407,
+                        message = $"Meal plan already exist for email '{meal.email}'"
+                    };
+                }
                 List<MealPlan> getMeal = null;
                 getMeal = await MealPlan.FindMany(x => x.target == meal.target.ToString() && x.preference == meal.preference.ToString());
                 if (getMeal != null && getMeal.Count > 0)
@@ -187,16 +196,19 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
-                var getMyMeal = await myMealPlan.FindMany(x => x.email.ToUpper().Trim() == emailOrphone.ToUpper().Trim() && x.IsCancelled == false);
-                if (getMyMeal != null && getMyMeal.Count > 0)
+                var getMyMeal = await myMealPlan.FindOneByCriteria(x => x.email.ToUpper().Trim() == emailOrphone.ToUpper().Trim() && x.IsCancelled == false);
+                if (getMyMeal != null)
                 {
                     var final = new List<object>();
-                    var mealhistory = new List<List<Dictionary<string, object>>>();
+                    // var mealhistory = new List<List<Dictionary<string, object>>>();
                     var temphistory = new List<Dictionary<string, object>>();
-                    foreach (var item_in_my_meal in getMyMeal.OrderByDescending(x => x.Id))
+                    var dicWeek = new List<Dictionary<string, Dictionary<string, List<temp>>>>();
+                    //var groupByWeek = item_in_my_meal.SelectedMealPlan.GroupBy(x=>x.)
+                    var groupByWeek = getMyMeal.SelectedMealPlan.GroupBy(x => x.MealPlan.mealPlanCategory);
+                    foreach (var itemWeek in groupByWeek)
                     {
-                        var group_plan = item_in_my_meal.SelectedMealPlan.GroupBy(x => x.MealPlan.daysOfWeek);
                         var dic = new Dictionary<string, Dictionary<string, List<temp>>>();
+                        var group_plan = itemWeek.GroupBy(x => x.MealPlan.daysOfWeek);
                         foreach (var item in group_plan)
                         {
                             var list_meal = new List<temp>();
@@ -214,18 +226,20 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 }).ToList());
                             }
                             dic.Add(item.First().MealPlan.daysOfWeek.Trim(), day);
-                            //final.Add(dic);
                         }
-                        temphistory.Add(new Dictionary<string, object>
+                        dicWeek.Add(dic);
+                    }
+
+                    temphistory.Add(new Dictionary<string, object>
                         {
-                            { "preference", item_in_my_meal.preference.ToString() },
-                            { "target", item_in_my_meal.target.ToString() },
-                            { "emailorphone", item_in_my_meal.email.ToString() },
-                            { "datecreated", (item_in_my_meal.datecreated != null)?item_in_my_meal.datecreated.ToShortDateString(): null },
-                            { "mealhistory",dic }
+                            { "preference", getMyMeal.preference.ToString() },
+                            { "target", getMyMeal.target.ToString() },
+                            { "emailorphone", getMyMeal.email.ToString() },
+                            { "datecreated", (getMyMeal.datecreated != null)?getMyMeal.datecreated.ToShortDateString(): null },
+                            { "mealhistory",dicWeek }
                         });
 
-                    }
+
                     // mealhistory.Add(temphistory);
                     return new notification_response
                     {
@@ -280,7 +294,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var _myMealPlan = await myMealPlan.FindOneByCriteria(x => x.email?.ToLower() == emailOrphone?.ToLower());
+                var _myMealPlan = await myMealPlan.FindOneByCriteria(x => x.email?.ToLower().Trim() == emailOrphone?.ToLower().Trim() && x.IsCancelled == false);
                 if (_myMealPlan == null)
                 {
                     return new notification_response
