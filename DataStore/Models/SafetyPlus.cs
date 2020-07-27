@@ -51,11 +51,11 @@ namespace DataStore.Models
         public DateTime BeneficiaryDOB { get; set; }
         [Required]
         public string BeneficiaryRelatn { get; set; }
-        [Required]
+        //[Required]
         public string ImagePath { get; set; }
-        [Required]
+        //[Required]
         public string IdentificationType { get; set; }
-        [Required]
+       // [Required]
         public string IndetificationNUmber { get; set; }
         public string Merchant_Id { get; set; }
     }

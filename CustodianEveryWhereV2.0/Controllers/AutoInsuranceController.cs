@@ -236,13 +236,15 @@ namespace CustodianEveryWhereV2._0.Controllers
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     string request = null;
+                    var source = (config.merchant_name.ToLower().Contains("adapt")) ? "ADAPT" : "API";
                     if (Auto.insurance_type == TypeOfCover.Comprehensive)
                     {
                         //request = api.SubmitPaymentRecord(GlobalConstant.merchant_id,
                         //    GlobalConstant.password, "", "", "", Auto.dob ?? DateTime.Now, DateTime.Now, "",
                         //    Auto.customer_name, "", "", Auto.address, Auto.phone_number, Auto.email, Auto.payment_option, "", "",
                         //    Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured, "ADAPT", "NB", "");
-                        var count = await auto.GetAll();
+                      
+                        var count = await auto.GetAll();//TODO: this is not scaleable , just get count only instead of loading the entire record to get count 
                         var resp = await util.SendQuote(Auto, count.Count() + 1);
                         if (resp.status == 200)
                         {
@@ -261,7 +263,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                            Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured
                            , Auto.chassis_number, Auto.registration_number, Auto.vehicle_model,
                            Auto.vehicle_model, Auto.vehicle_color, Auto.vehicle_model, Auto.vehicle_type, Auto.vehicle_year,
-                           DateTime.Now, DateTime.Now, DateTime.Now.AddMonths(12), Auto.reference_no, "", "ADAPT", "", "", "");
+                           DateTime.Now, DateTime.Now, DateTime.Now.AddMonths(12), Auto.reference_no, "", source, "", "", "");
                     }
 
                     log.Info($"Response from Api {request}");
@@ -309,7 +311,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             var cert_code = request.Replace("**", "|").Split('|')[1];
                             var reciept_base_url = ConfigurationManager.AppSettings["Reciept_Base_Url"];
                             cert_number = cert_code;
-                            cert_url = $"{reciept_base_url}+mUser = CUST_WEB & mCert={cert_code}&mCert2={cert_code}";
+                            cert_url = $"{reciept_base_url}+mUser=CUST_WEB & mCert={cert_code}&mCert2={cert_code}";
                         }
                         if (!string.IsNullOrEmpty(Auto.attachment))
                         {

@@ -77,7 +77,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     string request = api.GetSafetyplusQuote(NoOfUnits);
                     if (!string.IsNullOrEmpty(request))
                     {
-                        if(config.merchant_name.ToLower() != "adapt")
+                        if (config.merchant_name.ToLower() != "adapt")
                         {
                             return new notification_response
                             {
@@ -186,7 +186,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         GlobalConstant.password, safe.CustomerName, safe.Address,
                         safe.PhoneNumber, safe.Email, safe.Occupation, safe.Premium, safe.NoOfUnit, DateTime.Now, DateTime.Now,
                         DateTime.Now.AddMonths(12), safe.Reference, safe.Description,
-                        safe.BeneficiaryName, safe.BeneficiarySex.ToString(), safe.BeneficiaryDOB, safe.BeneficiaryRelatn, "ADAPT");
+                        safe.BeneficiaryName, safe.BeneficiarySex.ToString(), safe.BeneficiaryDOB, safe.BeneficiaryRelatn, "API", "", "", "");
 
                     log.Info($"Response from api {request}");
                     if (!string.IsNullOrEmpty(request))
@@ -215,11 +215,14 @@ namespace CustodianEveryWhereV2._0.Controllers
                         };
                         var cert_code = request.Replace("**", "|").Split('|')[1];
                         var reciept_base_url = ConfigurationManager.AppSettings["Reciept_Base_Url"];
-                        var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{safe.Reference}.{safe.ImageFormat}";
-                        var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/General/{nameurl}";
-                        byte[] content = Convert.FromBase64String(safe.ImageBase64);
-                        File.WriteAllBytes(filepath, content);
-                        safety_plus.ImagePath = nameurl;
+                        if (!string.IsNullOrEmpty(safe.ImageBase64))
+                        {
+                            var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{safe.Reference}.{safe.ImageFormat}";
+                            var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/General/{nameurl}";
+                            byte[] content = Convert.FromBase64String(safe.ImageBase64);
+                            File.WriteAllBytes(filepath, content);
+                            safety_plus.ImagePath = nameurl;
+                        }
                         //log.Info($"Raw data from safety plus {Newtonsoft.Json.JsonConvert.SerializeObject(safety_plus)}");
                         await safetyplus.Save(safety_plus);
                         return new notification_response

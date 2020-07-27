@@ -48,4 +48,14 @@ namespace UpSellingAndCrossSelling.Config
         public string Phone { get; set; }
         public List<string> ProductList { get; set; }
     }
+
+    public class DateMode {
+        public DateMode()
+        {
+
+        }
+
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
+    }
 }

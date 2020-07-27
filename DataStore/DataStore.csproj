@@ -110,6 +110,7 @@
     <Compile Include="Models\LifeDocument.cs" />
     <Compile Include="Models\LifeInsurance.cs" />
     <Compile Include="Models\ListOfGyms.cs" />
+    <Compile Include="Models\LocalTravel.cs" />
     <Compile Include="Models\MealPlan.cs" />
     <Compile Include="Models\MyMealPlan.cs" />
     <Compile Include="Models\MyPreference.cs" />

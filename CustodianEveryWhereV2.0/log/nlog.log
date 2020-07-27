@@ -324,3 +324,25 @@ The statement has been terminated.
 2020-05-15 17:27:22.6778|INFO|DataStore.Utilities.Utility|Passed hash F37C94F20665755B8264AB6845C10882
 2020-05-15 17:27:22.7198|INFO|DataStore.Utilities.Utility|my hash partten oscardybabaphd@gmail.comTest_vkMqq$%ww
 2020-05-15 17:27:22.7198|INFO|DataStore.Utilities.Utility|Computed hash F37C94F20665755B8264AB6845C10882
+2020-05-18 13:09:35.8150|INFO|DataStore.Utilities.Utility|Passed hash ADB9E5D03643109464034C1B944FD429
+2020-05-18 13:09:35.8630|INFO|DataStore.Utilities.Utility|my hash partten NoMaleMarriedTest_vkMqq$%ww
+2020-05-18 13:09:35.8630|INFO|DataStore.Utilities.Utility|Computed hash ADB9E5D03643109464034C1B944FD429
+2020-06-16 10:35:40.6531|INFO|CustodianEveryWhereV2._0.Controllers.AgentController|Object from page {"policy_number":"YB/V/29/T0000024C","subsidiary":2,"payment_narrtn":"payment for 3rd party","reference_no":"573490065786t","biz_unit":"THIRD PARTY","premium":600000.0,"merchant_id":"CUST_TEST_00011","description":"payment for 3rd party","issured_name":"Omolara Ogunyemi","phone_no":"080123456789","email_address":"johndoeng@gmail.com","checksum":null,"status":"SUCCESS","vehicle_reg_no":"LSR792BU"}
+2020-06-16 10:36:15.0816|INFO|CustodianEveryWhereV2._0.Controllers.AgentController|raw response from api 0
+2020-06-16 10:36:16.3928|INFO|CustodianEveryWhereV2._0.Controllers.AgentController|Something went wrong while processing your transaction search(PostTransaction)  YB/V/29/T0000024C
+2020-06-16 10:36:27.0789|INFO|CustodianEveryWhereV2._0.Controllers.AgentController|Object from page {"policy_number":"YB/V/29/T0000024C","subsidiary":2,"payment_narrtn":"payment for 3rd party","reference_no":"57349011115786t","biz_unit":"THIRD PARTY","premium":600000.0,"merchant_id":"CUST_TEST_00011","description":"payment for 3rd party","issured_name":"Omolara Ogunyemi","phone_no":"080123456789","email_address":"johndoeng@gmail.com","checksum":null,"status":"SUCCESS","vehicle_reg_no":"LSR792BU"}
+2020-06-16 10:37:17.5607|INFO|CustodianEveryWhereV2._0.Controllers.AgentController|raw response from api 1
+2020-06-16 10:37:39.4701|ERROR|DataStore.repository.store`1|Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-06-16 10:37:40.6544|ERROR|DataStore.repository.store`1|   at System.Data.Entity.Internal.InternalContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.DbContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.DbContext.SaveChangesAsync()
+   at DataStore.repository.store`1.<Save>d__8.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DataStore\repository\store.cs:line 105
+2020-06-16 10:40:41.9864|ERROR|CustodianEveryWhereV2._0.Controllers.AgentController|Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-06-16 10:40:42.0024|ERROR|CustodianEveryWhereV2._0.Controllers.AgentController|   at DataStore.repository.store`1.<Save>d__8.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DataStore\repository\store.cs:line 112
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at CustodianEveryWhereV2._0.Controllers.AgentController.<PostTransaction>d__6.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\CustodianEveryWhereV2.0\Controllers\AgentController.cs:line 433
+2020-06-16 10:40:42.0024|ERROR|CustodianEveryWhereV2._0.Controllers.AgentController|

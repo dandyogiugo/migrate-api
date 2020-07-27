@@ -51,19 +51,19 @@ namespace DataStore.ViewModels
         public string insured_name { get; set; }
         [Required]
         public string address { get; set; }
-        [Required]
+        //[Required]
         public string base64Image { get; set; }
-        [Required]
+        //[Required]
         public string base64ImageFormat { get; set; }
         [Required]
         public Gender gender { get; set; }
-        [Required]
+       // [Required]
         public string indentity_type { get; set; }
         [Required]
         public string emailaddress { get; set; }
         [Required]
         public string phonenumber { get; set; }
-        [Required]
+       // [Required]
         public string occupation { get; set; }
         [Required]
         public string hash { get; set; }
@@ -73,7 +73,7 @@ namespace DataStore.ViewModels
         public PolicyType policytype { get; set; }
         [Required]
         public string payment_reference { get; set; }
-        [Required]
+       // [Required]
         public string id_number { get; set; }
 
     }

@@ -30,14 +30,16 @@ namespace TestSerials
 
             try
             {
-                using (var api = new Cust.PolicyServicesSoapClient())
-                {
-                    var response = api.PostTravel2Raga(DateTime.Now, Convert.ToDateTime("2020-03-01"),
-                        "Oscar", "Oscar", "AREA 1", "Akkk34567", Convert.ToDateTime("1989-03-01"), "NIGERIAN NIGERIA",
-                        "NIGERIA", "oscardybabaphd@gmail.com", "GHANA");
-                    var newresponse = response;
-                    Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(response));
-                }
+                var t = new CrossSellingEngine();
+                t.EngineProcessor();
+                // using (var api = new Cust.PolicyServicesSoapClient())
+                // {
+                //var response = api.PostTravel2Raga(DateTime.Now, Convert.ToDateTime("2020-03-01"),
+                //    "Oscar", "Oscar", "AREA 1", "Akkk34567", Convert.ToDateTime("1989-03-01"), "NIGERIAN NIGERIA",
+                //    "NIGERIA", "oscardybabaphd@gmail.com", "GHANA");
+                //var newresponse = response;
+                //Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(response));
+                // }
 
                 //Regex test = new Regex(@"^(?=.*[a-z])(?!.*[\s])(?=.*[A-Z])(?=.*\d)(?=.*\W)[\S]{8,}$");//(@"^.*(?=.{8,})(?!.*[\s])(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!*@#$%^&+=]).*$");
                 //Console.WriteLine($"P@55w0rd: {test.IsMatch("P$%55w0rd")}");
@@ -47,7 +49,7 @@ namespace TestSerials
                 //Console.WriteLine($"PASSWORD: {test.IsMatch("PASSWORD")}");
                 //Console.WriteLine($"vmdmin2$78: {test.IsMatch("vmdmin2$78")}");
 
-                Console.ReadKey();
+                // Console.ReadKey();
                 //Core<NextRenewal> dapper_core = new Core<NextRenewal>();
                 //var condition = new helpers();
                 //var query = condition.QueryResolver(new RenewalRatio
@@ -68,8 +70,7 @@ namespace TestSerials
                 //var test = format;
                 //GetAllLeague.GetLeague();
                 //Console.ReadKey();
-                //var t = new CrossSellingEngine();
-                // t.EngineProcessor();
+
                 #region
                 //var a = new { name = "oscar  ", age = 30, sex = 'M', amount = 345.66, isActive = true };
                 //dynamic expando = new ExpandoObject();

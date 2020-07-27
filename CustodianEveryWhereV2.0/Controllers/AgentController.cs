@@ -1,4 +1,5 @@
 ﻿using CustodianEmailSMSGateway.SMS;
+using DataStore.ExtensionMethods;
 using DataStore.Models;
 using DataStore.repository;
 using DataStore.Utilities;
@@ -7,10 +8,8 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Globalization;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
@@ -37,7 +36,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
+                if (!ModelState.IsValid && !pol_detials.use_vehicle_reg_only)
                 {
                     log.Info($"All request parameters are mandatory for policy search {pol_detials.policy_number}");
                     return new policy_data
@@ -46,7 +45,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "All request parameters are mandatory"
                     };
                 }
-
                 var headerValues = HttpContext.Current.Request.Headers.Get("Authorization");
 
                 if (string.IsNullOrEmpty(headerValues))
@@ -70,7 +68,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Authorisation failed"
                     };
                 }
-
                 var check_user_function = await util.CheckForAssignedFunction("GetPolicyDetails", pol_detials.merchant_id);
                 if (!check_user_function)
                 {
@@ -106,62 +103,210 @@ namespace CustodianEveryWhereV2._0.Controllers
                         };
                     }
                 }
-
-                using (var api = new CustodianAPI.PolicyServicesSoapClient())
+                if (!pol_detials.use_vehicle_reg_only)
                 {
-                    var request = api.GetMorePolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.subsidiary.ToString(), pol_detials.policy_number);
-                    log.Info($"raw api response  {Newtonsoft.Json.JsonConvert.SerializeObject(request)}");
-                    if (request == null || request.PolicyNo == "NULL")
+                    using (var api = new CustodianAPI.PolicyServicesSoapClient())
                     {
+                        var request = api.GetMorePolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.subsidiary.ToString(), pol_detials.policy_number);
+                        log.Info($"raw api response  {Newtonsoft.Json.JsonConvert.SerializeObject(request)}");
+                        if (request == null || request.PolicyNo == "NULL")
+                        {
 
-                        log.Info($"Invalid policy number for policy search {pol_detials.policy_number}");
-                        return new policy_data
-                        {
-                            status = 202,
-                            message = "Invalid policy number"
-                        };
-                    }
-
-                    return new policy_data
-                    {
-                        status = 200,
-                        message = "policy number is valid",
-                        data = new TransPoseGetPolicyDetails
-                        {
-                            agenctNameField = request.AgenctName?.Trim(),
-                            bizBranchField = request.BizBranch?.Trim(),
-                            dOBField = request.DOB,
-                            agenctNumField = request.AgenctNum?.Trim(),
-                            bizUnitField = request.BizUnit?.Trim(),
-                            enddateField = request.Enddate,
-                            insAddr1Field = request.InsAddr1?.Trim(),
-                            insAddr2Field = request.InsAddr2?.Trim(),
-                            insAddr3Field = request.InsAddr3?.Trim(),
-                            insLGAField = request.InsLGA?.Trim(),
-                            insOccupField = request.InsOccup?.Trim(),
-                            insStateField = request.InsState?.Trim(),
-                            instPremiumField = request.InstPremium,
-                            insuredEmailField = (request.InsuredEmail?.Trim() == null || string.IsNullOrEmpty(request.InsuredEmail?.Trim()) || request.InsuredEmail?.Trim() == "NULL") ? $"{Guid.NewGuid().ToString().Split('-')[0]}@gmail.com" : request.InsuredEmail?.Trim(),
-                            insuredNameField = request.InsuredName?.Trim(),
-                            insuredNumField = request.InsuredNum?.Trim(),
-                            insuredOthNameField = request.InsuredOthName?.Trim(),
-                            insuredTelNumField = request.InsuredTelNum?.Trim(),
-                            mPremiumField = request.mPremium,
-                            outPremiumField = request.OutPremium,
-                            policyEBusinessField = request.PolicyEBusiness?.Trim(),
-                            policyNoField = request.PolicyNo?.Trim(),
-                            startdateField = request.Startdate,
-                            sumInsField = request.SumIns,
-                            telNumField = request.TelNum?.Trim()
-                        },
-                        hash = new
-                        {
-                            checksum = await util.Sha512(merchantConfig.merchant_id + request.SumIns + request.PolicyNo?.Trim() + merchantConfig.secret_key),
-                            message = $"checksum created on {DateTime.Now}"
+                            log.Info($"Invalid policy number for policy search {pol_detials.policy_number}");
+                            return new policy_data
+                            {
+                                status = 202,
+                                message = "Invalid policy number"
+                            };
                         }
 
-                    };
+                        if (pol_detials.vehicle_regs != null && pol_detials.vehicle_regs.Count() > 0)
+                        {
+                            var motoRequest = api.GetMotorPolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.policy_number);
+                            if (motoRequest.Length == 0)
+                            {
+                                return new policy_data
+                                {
+                                    status = 202,
+                                    message = $"Unable to fetch vehicles for {pol_detials.policy_number}"
+                                };
+                            }
+                            var filter = motoRequest.Where(x => pol_detials.vehicle_regs.Any(y => y.ToUpper().RemoveWhiteSpaces() == x.mVehReg?.Trim()?.ToUpper()?.RemoveWhiteSpaces())).ToList();
+                            var transposed = filter.Select(x => new
+                            {
+                                RegNumber = x.mVehReg?.Trim(),
+                                ChasisNumber = x.mChasisNum?.Trim(),
+                                EngineNumber = x.mENGINENUM?.Trim(),
+                                ExpiryDate = Convert.ToDateTime(x.mEnddate?.Trim()).ToString("dd-MMM-yyyy"),
+                                StartDate = Convert.ToDateTime(x.mStartdate?.Trim()).ToString("dd-MMM-yyyy"),
+                                Color = x.mVEHCOLOR?.Trim(),
+                                Make = x.mVEHMAKE?.Trim(),
+                                Premium = Convert.ToDouble(x.mVEHPREMIUM?.Trim()),
+                                Value = Convert.ToDouble(x.mVEHVALUE?.Trim()),
+                                InsuredName = x.mInsuredname?.Trim(),
+                                Status = x.Status?.Trim(),
+                                EngineCapacity = x.mHPCAPACITY?.Trim()
 
+                            }).ToList();
+
+                            return new policy_data
+                            {
+                                status = 200,
+                                message = "policy number is valid",
+                                data = new TransPoseGetPolicyDetails
+                                {
+                                    agenctNameField = request.AgenctName?.Trim(),
+                                    bizBranchField = request.BizBranch?.Trim(),
+                                    agenctNumField = request.AgenctNum?.Trim(),
+                                    bizUnitField = request.BizUnit?.Trim(),
+                                    enddateField = request.Enddate,
+                                    insAddr1Field = request.InsAddr1?.Trim(),
+                                    insAddr2Field = request.InsAddr2?.Trim(),
+                                    insAddr3Field = request.InsAddr3?.Trim(),
+                                    insLGAField = request.InsLGA?.Trim(),
+                                    insOccupField = request.InsOccup?.Trim(),
+                                    insStateField = request.InsState?.Trim(),
+                                    instPremiumField = request.InstPremium,
+                                    insuredEmailField = (request.InsuredEmail?.Trim() == null || string.IsNullOrEmpty(request.InsuredEmail?.Trim()) || request.InsuredEmail?.Trim() == "NULL") ? $"{Guid.NewGuid().ToString().Split('-')[0]}@gmail.com" : request.InsuredEmail?.Trim(),
+                                    insuredNameField = request.InsuredName?.Trim(),
+                                    insuredNumField = request.InsuredNum?.Trim(),
+                                    insuredOthNameField = request.InsuredOthName?.Trim(),
+                                    insuredTelNumField = request.InsuredTelNum?.Trim(),
+                                    policyEBusinessField = request.PolicyEBusiness?.Trim(),
+                                    policyNoField = request.PolicyNo?.Trim(),
+                                    startdateField = request.Startdate,
+                                    sumInsField = request.SumIns,
+                                    telNumField = request.TelNum?.Trim()
+                                },
+                                hash = new
+                                {
+                                    checksum = await util.Sha512(merchantConfig.merchant_id + request.SumIns + request.PolicyNo?.Trim() + merchantConfig.secret_key),
+                                    message = $"checksum created on {DateTime.Now}"
+                                },
+                                vehiclelist = transposed
+
+                            };
+                        }
+                        else
+                        {
+                            dynamic transposed = null;
+                            if (pol_detials.subsidiary == subsidiary.General)
+                            {
+                                var motoRequest = api.GetMotorPolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.policy_number);
+                                if (motoRequest.Length == 0)
+                                {
+                                    return new policy_data
+                                    {
+                                        status = 202,
+                                        message = $"Unable to fetch vehicles for {pol_detials.policy_number}"
+                                    };
+                                }
+
+                                transposed = motoRequest.Select(x => new
+                                {
+                                    RegNumber = x.mVehReg?.Trim(),
+                                    ChasisNumber = x.mChasisNum?.Trim(),
+                                    EngineNumber = x.mENGINENUM?.Trim(),
+                                    ExpiryDate = Convert.ToDateTime(x.mEnddate?.Trim()).ToString("dd-MMM-yyyy"),
+                                    StartDate = Convert.ToDateTime(x.mStartdate?.Trim()).ToString("dd-MMM-yyyy"),
+                                    Color = x.mVEHCOLOR?.Trim(),
+                                    Make = x.mVEHMAKE?.Trim(),
+                                    Premium = Convert.ToDouble(x.mVEHPREMIUM?.Trim()),
+                                    Value = Convert.ToDouble(x.mVEHVALUE?.Trim()),
+                                    InsuredName = x.mInsuredname?.Trim(),
+                                    Status = x.Status?.Trim(),
+                                    EngineCapacity = x.mHPCAPACITY?.Trim()
+                                }).ToList();
+                            }
+                            return new policy_data
+                            {
+                                status = 200,
+                                message = "policy number is valid",
+                                data = new TransPoseGetPolicyDetails
+                                {
+                                    agenctNameField = request.AgenctName?.Trim(),
+                                    bizBranchField = request.BizBranch?.Trim(),
+                                    dOBField = request.DOB,
+                                    agenctNumField = request.AgenctNum?.Trim(),
+                                    bizUnitField = request.BizUnit?.Trim(),
+                                    enddateField = request.Enddate,
+                                    insAddr1Field = request.InsAddr1?.Trim(),
+                                    insAddr2Field = request.InsAddr2?.Trim(),
+                                    insAddr3Field = request.InsAddr3?.Trim(),
+                                    insLGAField = request.InsLGA?.Trim(),
+                                    insOccupField = request.InsOccup?.Trim(),
+                                    insStateField = request.InsState?.Trim(),
+                                    instPremiumField = request.InstPremium,
+                                    insuredEmailField = (request.InsuredEmail?.Trim() == null || string.IsNullOrEmpty(request.InsuredEmail?.Trim()) || request.InsuredEmail?.Trim() == "NULL") ? $"{Guid.NewGuid().ToString().Split('-')[0]}@gmail.com" : request.InsuredEmail?.Trim(),
+                                    insuredNameField = request.InsuredName?.Trim(),
+                                    insuredNumField = request.InsuredNum?.Trim(),
+                                    insuredOthNameField = request.InsuredOthName?.Trim(),
+                                    insuredTelNumField = request.InsuredTelNum?.Trim(),
+                                    mPremiumField = request.mPremium,
+                                    outPremiumField = request.OutPremium,
+                                    policyEBusinessField = request.PolicyEBusiness?.Trim(),
+                                    policyNoField = request.PolicyNo?.Trim(),
+                                    startdateField = request.Startdate,
+                                    sumInsField = request.SumIns,
+                                    telNumField = request.TelNum?.Trim()
+                                },
+                                hash = new
+                                {
+                                    checksum = await util.Sha512(merchantConfig.merchant_id + request.SumIns + request.PolicyNo?.Trim() + merchantConfig.secret_key),
+                                    message = $"checksum created on {DateTime.Now}"
+                                },
+                                vehiclelist = transposed
+
+                            };
+                        }
+                    }
+                }
+                else
+                {
+                    if (pol_detials.vehicle_regs.Count() > 1)
+                    {
+                        return new policy_data
+                        {
+                            status = 402,
+                            message = "Only one vehicle reg is expected when 'use_vehicle_reg_only' is set to true"
+                        };
+                    }
+                    using (var api = new CustodianAPI.PolicyServicesSoapClient())
+                    {
+                        var motoRequest = api.GetMotorDetailsByRegNum(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.vehicle_regs[0]);
+                        if (motoRequest.Status != "200")
+                        {
+                            return new policy_data
+                            {
+                                status = 402,
+                                message = $"Unable to fetech vehicle information for Reg '{pol_detials.vehicle_regs[0]}'"
+                            };
+                        }
+
+                        var transposed = new
+                        {
+                            RegNumber = motoRequest.mVehReg?.Trim(),
+                            ChasisNumber = motoRequest.mChasisNum?.Trim(),
+                            EngineNumber = motoRequest.mENGINENUM?.Trim(),
+                            ExpiryDate = Convert.ToDateTime(motoRequest.mEnddate?.Trim()).ToString("dd-MMM-yyyy"),
+                            StartDate = Convert.ToDateTime(motoRequest.mStartdate?.Trim()).ToString("dd-MMM-yyyy"),
+                            Color = motoRequest.mVEHCOLOR?.Trim(),
+                            Make = motoRequest.mVEHMAKE?.Trim(),
+                            Premium = Convert.ToDouble(motoRequest.mVEHPREMIUM?.Trim()),
+                            Value = Convert.ToDouble(motoRequest.mVEHVALUE?.Trim()),
+                            InsuredName = motoRequest.mInsuredname?.Trim(),
+                            Status = motoRequest.Status?.Trim(),
+                            EngineCapacity = motoRequest.mHPCAPACITY?.Trim(),
+                            PolicyNumber = motoRequest.mPolicyNumber?.Trim()
+                        };
+
+                        return new policy_data
+                        {
+                            status = 200,
+                            message = "Vehicle reg is valid",
+                            data = transposed
+                        };
+                    }
                 }
             }
             catch (Exception ex)
@@ -258,7 +403,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     email_address = post.email_address,
                     issured_name = post.issured_name,
                     phone_no = post.phone_no,
-                    merchant_id = post.merchant_id
+                    merchant_id = post.merchant_id,
+                    vehicle_reg_no = post.vehicle_reg_no ?? ""
                 };
 
                 if (post.payment_narrtn?.ToLower() == "failed" || post.status?.ToLower() == "failed")
@@ -271,13 +417,12 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = post.description
                     };
                 }
-
-
-
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var request = await api.SubmitPaymentRecordAsync(GlobalConstant.merchant_id, GlobalConstant.password, post.policy_number, post.subsidiary.ToString(), post.payment_narrtn, DateTime.Now,
-                        DateTime.Now, post.reference_no, new_trans.issured_name, "", "", "", new_trans.phone_no, new_trans.email_address, "", "", "", post.biz_unit, post.premium, 0, channelName, "RW", "");
+                    var request = await api.SubmitPaymentRecordAsync(GlobalConstant.merchant_id, GlobalConstant.password, post.policy_number, 
+                        post.subsidiary.ToString(), post.payment_narrtn, DateTime.Now,
+                        DateTime.Now, post.reference_no, new_trans.issured_name, "", "", "", new_trans.phone_no, new_trans.email_address,
+                        "", "", "", post.biz_unit, post.premium, 0, channelName, "RW", "", new_trans.vehicle_reg_no ?? "");
                     log.Info($"raw response from api {request.Passing_Payment_PostSourceResult}");
                     if (string.IsNullOrEmpty(request.Passing_Payment_PostSourceResult) || request.Passing_Payment_PostSourceResult != "1")
                     {
@@ -446,6 +591,5 @@ namespace CustodianEveryWhereV2._0.Controllers
                 };
             }
         }
-
     }
 }

@@ -351,6 +351,7 @@
     <Compile Include="Controllers\SportController.cs" />
     <Compile Include="Controllers\TravelController.cs" />
     <Compile Include="Controllers\TravelQuoteComputationController.cs" />
+    <Compile Include="Controllers\USSDConfigController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -427,6 +428,8 @@
     <Content Include="Cert\json.json" />
     <Content Include="Cert\config.json" />
     <Content Include="Cert\QuoteTemplate.rtf" />
+    <Content Include="Cert\productdescription.json" />
+    <Content Include="Cert\NigeriaStates.json" />
     <None Include="Properties\PublishProfiles\Api.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
@@ -763,13 +766,19 @@
     <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.GetAnnuityQuoteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.GetOnlineLifeQuoteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.PostTravelRagaOldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.mTravelresponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.GetMotorDetailsByRegNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.mResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.PostTQScheduledSyncResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\CustodianAPI\Policyservices.wsdl" />

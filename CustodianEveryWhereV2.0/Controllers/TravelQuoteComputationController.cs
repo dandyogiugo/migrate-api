@@ -24,6 +24,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         private static Logger log = LogManager.GetCurrentClassLogger();
         private store<ApiConfiguration> _apiconfig = null;
         private store<TravelInsurance> _travel = null;
+        private store<LocalTravel> localtrav = null;
         private Utility util = null;
         private Core<dynamic> dapper_core = null;
         public TravelQuoteComputationController()
@@ -32,6 +33,7 @@ namespace CustodianEveryWhereV2._0.Controllers
             util = new Utility();
             dapper_core = new Core<dynamic>();
             _travel = new store<TravelInsurance>();
+            localtrav = new store<LocalTravel>();
         }
         /// <summary>
         /// Get Travel quote
@@ -728,5 +730,244 @@ namespace CustodianEveryWhereV2._0.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<notification_response> GetLocalTravelQuote(LocalTravelView localTravel)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid params from payload",
+                    };
+                }
+
+                var check_user_function = await util.CheckForAssignedFunction("GetLocalTravelQuote", localTravel.merchant_id);
+                if (!check_user_function)
+                {
+                    log.Info($"Permission denied from accessing this feature");
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == localTravel.merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                var checkhash = await util.ValidateHash2(localTravel.from + localTravel.to, config.secret_key, localTravel.hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {localTravel.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                string getFile = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/NigeriaStates.json"));
+                var state = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(getFile);
+                string from = state.FirstOrDefault(x => x.ToLower().StartsWith(localTravel.from.ToLower()));
+                if (string.IsNullOrEmpty(from))
+                {
+                    return new notification_response
+                    {
+                        status = 203,
+                        message = "Invalid 'from' location. Hint(Please enter the first three latter of the state)"
+                    };
+                }
+
+                string to = state.FirstOrDefault(x => x.ToLower().StartsWith(localTravel.to.ToLower()));
+                if (string.IsNullOrEmpty(to))
+                {
+                    return new notification_response
+                    {
+                        status = 203,
+                        message = "Invalid 'to' location. Hint(Please enter the first three latter of the state)"
+                    };
+                }
+
+                if (from.ToLower() == to.ToLower())
+                {
+                    return new notification_response
+                    {
+                        status = 207,
+                        message = "Oops!! Only inter-state traveller's can buy this policy"
+                    };
+                }
+                return new notification_response
+                {
+                    status = 200,
+                    message = "operation was successful",
+                    data = new
+                    {
+                        fromDestination = from,
+                        toDestination = to,
+                        premium = 350
+                    }
+                };
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return new notification_response
+                {
+                    status = 404,
+                    message = "System malfunction, try again",
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<notification_response> BuyLocalTravel(LocalTravelRequest localTravel)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Params missing from payload",
+                    };
+                }
+
+
+                log.Info("raw request object: " + Newtonsoft.Json.JsonConvert.SerializeObject(localTravel));
+                var check_user_function = await util.CheckForAssignedFunction("BuyLocalTravel", localTravel.merchant_id);
+                if (!check_user_function)
+                {
+                    log.Info($"Permission denied from accessing this feature");
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == localTravel.merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+                var checkhash = await util.ValidateHash2(localTravel.FromDestination + localTravel.ToDestionation + localTravel.Premium, config.secret_key, localTravel.hash);
+                // This is for testing purpose remove before going to production
+                //checkhash = true;
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+
+                var checkme = await localtrav.FindOneByCriteria(x => x.TransactionReference.ToLower() == localTravel.TransactionReference.ToLower());
+                if (checkme != null)
+                {
+                    log.Info($"duplicate request {localTravel.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 300,
+                        message = "Duplicate request"
+                    };
+                }
+                var save_trnx = new LocalTravel
+                {
+                    DepartureDate = DateTime.Now,
+                    Address = localTravel.Address,
+                    DOB = localTravel.DOB,
+                    FromDestination = localTravel.FromDestination,
+                    Gender = localTravel.Gender,
+                    Fullname = localTravel.Fullname,
+                    Narration = localTravel.Narration,
+                    merchant_Id = localTravel.merchant_id,
+                    NextofKinMoble = localTravel.NextofKinMobile,
+                    Premium = localTravel.Premium,
+                    Status = localTravel.Status,
+                    ToDestionation = localTravel.ToDestionation,
+                    TransactionDate = DateTime.Now,
+                    TransactionReference = localTravel.TransactionReference,
+                    VehicleReg = localTravel.VehicleReg,
+                    MobileNumber = localTravel.MobileNumber,
+                    Email = localTravel.Email
+                };
+
+                var isSave = await localtrav.Save(save_trnx);
+                if (isSave)
+                {
+                    using (var api = new CustodianAPI.PolicyServicesSoapClient())
+                    {
+                        var postToABS = api.PostSafetyPlus(GlobalConstant.merchant_id, GlobalConstant.password,
+                            localTravel.Fullname, localTravel.Address, localTravel.MobileNumber,
+                            localTravel.Email, "NA",
+                            localTravel.Premium, 1, DateTime.Now, DateTime.Now, DateTime.Now.AddHours(12), "",
+                            localTravel.Narration, localTravel.NextofKinMobile,
+                            "NA", DateTime.Now, "NA", "API", "", "", "");
+                        //Send SMS leta
+                        log.Info($"Response from api {postToABS}");
+                        if (!string.IsNullOrEmpty(postToABS))
+                        {
+                            return new notification_response
+                            {
+                                status = 200,
+                                message = "Operation was successful",
+                                data = new
+                                {
+                                    extraMessage = "You'll recieve am sms containing your policy number"
+                                }
+                            };
+                        }
+                        else
+                        {
+                            return new notification_response
+                            {
+                                status = 205,
+                                message = "Payment processing failed",
+                            };
+                        }
+                    }
+                }
+                else
+                {
+                    return new notification_response
+                    {
+                        status = 209,
+                        message = "Error processing request",
+                    };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return new notification_response
+                {
+                    status = 404,
+                    message = "System malfunction, try again",
+                };
+            }
+        }
     }
 }

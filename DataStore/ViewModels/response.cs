@@ -216,6 +216,7 @@ namespace DataStore.ViewModels
         public string message { get; set; }
         public object data { get; set; }
         public object hash { get; set; }
+        public dynamic vehiclelist { get; set; }
     }
 
     public class joke

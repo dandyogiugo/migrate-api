@@ -4,6 +4,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
@@ -21,12 +22,12 @@ namespace UpSellingAndCrossSelling.CrossSelling
         {
             _getRecords = new Core<DbModels>();
         }
-        public  void EngineProcessor()
+        public void EngineProcessor()
         {
             List<RecommendationList> peopleToRecommend = new List<RecommendationList>();
 
-            var getRecords =  GetCustomerRecords().GetAwaiter().GetResult();
-            getRecords = getRecords?.Take(5).ToList();
+            var getRecords = GetCustomerRecords().GetAwaiter().GetResult();
+            getRecords = getRecords?.Take(10).ToList();
             if (getRecords != null && getRecords.Count() > 0)
             {
                 foreach (var record in getRecords)
@@ -36,7 +37,7 @@ namespace UpSellingAndCrossSelling.CrossSelling
                         if (!string.IsNullOrEmpty(record.currentProds))
                         {
                             var currentProducts = record.currentProds.Split(',').Where(x => !string.IsNullOrEmpty(x?.Trim())).ToList();
-                         
+
                             if (Apiconfig._configSettings != null)
                             {
                                 var postParams = SetPostParams(new RequestModel
@@ -52,22 +53,24 @@ namespace UpSellingAndCrossSelling.CrossSelling
                                 reco.Email = record.Email;
                                 reco.CustomerName = record.CustomerName;
                                 List<string> recommendedProd = new List<string>();
-                                Console.WriteLine($"====================Start=========================");
-                                Console.WriteLine($"Call for :{Newtonsoft.Json.JsonConvert.SerializeObject(myProduct.Select(x => new { Prod = x.ProductName }).ToArray())}");
-                                Console.WriteLine($"Current Product {Newtonsoft.Json.JsonConvert.SerializeObject(currentProducts)}");
+                                _log.Info($"====================Start=========================");
+                                _log.Info($"Call for :{Newtonsoft.Json.JsonConvert.SerializeObject(myProduct.Select(x => new { Prod = x.ProductName }).ToArray())}");
+                                _log.Info($"Current Product {Newtonsoft.Json.JsonConvert.SerializeObject(currentProducts)}");
+                                //ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
+                                ServicePointManager.SecurityProtocol = ServicePointManager.SecurityProtocol | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls;
                                 foreach (var item in myProduct)
                                 {
-
+                                    _log.Info($"Product End point: {Newtonsoft.Json.JsonConvert.SerializeObject(item)}");
                                     try
                                     {
                                         using (var client = new HttpClient())
                                         {
                                             client.BaseAddress = new Uri(item.EndPoint);
                                             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", item.Key);
-                                            var request =  client.PostAsJsonAsync<object>("", postParams).GetAwaiter().GetResult();
+                                            var request = client.PostAsJsonAsync<object>("", postParams).GetAwaiter().GetResult();
                                             if (request.IsSuccessStatusCode)
                                             {
-                                                var response =  request.Content.ReadAsAsync<Dictionary<object, Dictionary<string, List<object>>>>().GetAwaiter().GetResult();
+                                                var response = request.Content.ReadAsAsync<Dictionary<object, Dictionary<string, List<object>>>>().GetAwaiter().GetResult();
                                                 var res = (dynamic)response["Results"]["output1"][0];
                                                 int value = (int)res["Scored Labels"];
                                                 Console.WriteLine($"Prod:{item.ProductName}: IsRecommended: {value}");
@@ -89,7 +92,7 @@ namespace UpSellingAndCrossSelling.CrossSelling
                                         _log.Error(ex.Message);
                                         _log.Error(ex.StackTrace);
                                         _log.Error(ex.InnerException);
-                                        Console.WriteLine(ex.Message + "Stack====>" + ex.StackTrace);
+                                        _log.Info(ex.Message + "Stack====>" + ex.StackTrace);
                                     }
                                 }
                                 Console.WriteLine($"======================End=======================");
@@ -185,8 +188,13 @@ namespace UpSellingAndCrossSelling.CrossSelling
         {
             try
             {
-                DateTime end_date = DateTime.Now;
-                DateTime start_date = DateTime.Now.AddDays(-600);
+                DateTime start_date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                DateTime end_date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
+                if (Apiconfig.GetDateFromConfig != null)
+                {
+                    end_date = Apiconfig.GetDateFromConfig.EndDate.Value;
+                    start_date = Apiconfig.GetDateFromConfig.StartDate.Value;
+                }
                 var getRecords = await _getRecords.GetNewCustomerDetails(start_date, end_date);
                 return getRecords?.ToList();
             }
@@ -220,8 +228,9 @@ namespace UpSellingAndCrossSelling.CrossSelling
                         }
                         template.Replace("#PRODUCTS#", html);
                         string Body = template.ToString();
-                        item.Email = "oscardybabaphd@gmail.com";
-                        new SendEmail().Send_Email(item.Email, "Recommended Products", Body, "Product Recommendation");
+                        item.Email = "oscardybabaphd@gmail.com"; //item.Email
+                
+                        new SendEmail().Send_Email(item.Email, "Recommended Products", Body, "Product Recommendation", false, "", Apiconfig.ccMail, null, null, true);
                         //Send SMS here
                     }
 

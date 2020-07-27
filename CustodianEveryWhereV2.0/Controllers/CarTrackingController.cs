@@ -907,7 +907,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                             message = "Invalid OTP provided"
                         };
                     }
-
                     //var request2 = await apicall.PostAsJsonAsync(GlobalConstant.base_url + "SetNewPwd",
                     //    new Dictionary<string, string>()
                     //    {

@@ -383,7 +383,6 @@ namespace DataStore.ViewModels
         {
 
         }
-
         [Required]
         public string policy_number { get; set; }
         [Required]
@@ -391,6 +390,24 @@ namespace DataStore.ViewModels
         [Required]
         public subsidiary subsidiary { get; set; }
         public string checksum { get; set; }
+        public List<string> vehicle_regs { get; set; }
+        public bool use_vehicle_reg_only { get; set; } = false;
+    }
+
+    public class policymotodetails
+    {
+        public policymotodetails()
+        {
+
+        }
+
+        [Required]
+        public string policy_number { get; set; }
+        [Required]
+        public string merchant_id { get; set; }
+        public string checksum { get; set; }
+        [Required]
+        public List<string> vehicle_regs { get; set; }
 
     }
 
@@ -420,6 +437,7 @@ namespace DataStore.ViewModels
         public string email_address { get; set; }
         public string checksum { get; set; }
         public string status { get; set; }
+        public string vehicle_reg_no { get; set; }
     }
 
 
@@ -494,7 +512,7 @@ namespace DataStore.ViewModels
 
         [Required]
         public string customer_name { get; set; }
-       // [Required]
+        // [Required]
         public string address { get; set; }
         [Required]
         public string phone_number { get; set; }
@@ -506,7 +524,7 @@ namespace DataStore.ViewModels
         public TypeOfCover insurance_type { get; set; }
         [Required]
         public decimal premium { get; set; }
-       // [Required]
+        // [Required]
         public decimal sum_insured { get; set; }
         [Required]
         public string chassis_number { get; set; }
@@ -523,16 +541,16 @@ namespace DataStore.ViewModels
         public string merchant_id { get; set; }
         [Required]
         public string reference_no { get; set; }
-       // [Required]
+        // [Required]
         public string id_type { get; set; }
-       // [Required]
+        // [Required]
         public string occupation { get; set; }
-       // [Required]
+        // [Required]
         public string id_number { get; set; }
         public DateTime? dob { get; set; }
-       // [Required]
+        // [Required]
         public string attachment { get; set; }
-       // [Required]
+        // [Required]
         public string extension_type { get; set; }
         public string payment_option { get; set; }
         public string excess { get; set; }
@@ -832,16 +850,13 @@ namespace DataStore.ViewModels
 
 
 
-    public class SafetyRequest
+    public class SafetyRequest :CoreModels
     {
         public SafetyRequest()
         {
 
         }
-        [Required]
-        public string hash { get; set; }
-        [Required]
-        public string merchant_id { get; set; }
+       
         [Required]
         public string Address { get; set; }
         [Required]
@@ -852,7 +867,7 @@ namespace DataStore.ViewModels
         public string PhoneNumber { get; set; }
         [Required]
         public string Email { get; set; }
-        [Required]
+        //[Required]
         public string Occupation { get; set; }
         [Required]
         public decimal Premium { get; set; }
@@ -862,22 +877,21 @@ namespace DataStore.ViewModels
         public string Reference { get; set; }
         [Required]
         public string Description { get; set; }
-        [Required]
+        //[Required]
         public string BeneficiaryName { get; set; }
-        [Required]
+        // [Required]
         public Gender BeneficiarySex { get; set; }
-        [Required]
+       // [Required]
         public DateTime BeneficiaryDOB { get; set; }
-        [Required]
+        //[Required]
         public string BeneficiaryRelatn { get; set; }
-        [Required]
+        //[Required]
         public string ImageBase64 { get; set; }
-        [Required]
+        //[Required]
         public string ImageFormat { get; set; }
-        [Required]
+        //[Required]
         public string IdentificationType { get; set; }
-
-        [Required]
+        //[Required]
         public string IdentificationNumber { get; set; }
     }
 
@@ -1107,6 +1121,54 @@ namespace DataStore.ViewModels
         public string num_group { get; set; }
     }
 
+    public class LocalTravelView : CoreModels
+    {
+        public LocalTravelView()
+        {
+
+        }
+        [Required]
+        public string from { get; set; }
+        [Required]
+        public string to { get; set; }
+    }
+
+    public class LocalTravelRequest : CoreModels
+    {
+        public LocalTravelRequest()
+        {
+
+        }
+        [Required]
+        public string Fullname { get; set; }
+        [Required]
+        public string MobileNumber { get; set; }
+        [Required]
+        public string Gender { get; set; }
+        [Required]
+        public DateTime DOB { get; set; }
+        [Required]
+        public string Address { get; set; }
+        [Required]
+        public string FromDestination { get; set; }
+        [Required]
+        public string ToDestionation { get; set; }
+        [Required]
+        public string VehicleReg { get; set; }
+        [Required]
+        public string NextofKinMobile { get; set; }
+        [Required]
+        public decimal Premium { get; set; }
+        [Required]
+        public string TransactionReference { get; set; }
+        [Required]
+        public string Status { get; set; }
+        [Required]
+        public string Narration { get; set; }
+
+        public string Email { get; set; }
+    }
+
     public class RagaRequest
     {
         [Required]
@@ -1132,7 +1194,7 @@ namespace DataStore.ViewModels
         [Required]
         public string zone { get; set; }
         [Required]
-        public  string merchant_id { get; set; }
+        public string merchant_id { get; set; }
     }
 
     public class RageZone

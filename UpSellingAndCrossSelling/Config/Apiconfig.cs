@@ -64,5 +64,60 @@ namespace UpSellingAndCrossSelling.Config
                 }
             }
         }
+
+        public static DateMode GetDateFromConfig
+        {
+            get
+            {
+                try
+                {
+                    if (IsDateMode)
+                    {
+                        var config = ConfigurationManager.AppSettings["DateRange"].Split('|');
+                        return new DateMode
+                        {
+                            StartDate = Convert.ToDateTime(config[0]),
+                            EndDate = Convert.ToDateTime(config[1])
+                        };
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _log.Info("Faild to get config from appSettings");
+                    _log.Error(ex.Message);
+                    _log.Error(ex.StackTrace);
+                    _log.Error(ex.InnerException);
+                    return null;
+                }
+            }
+        }
+
+        public static bool IsDateMode
+        {
+            get
+            {
+                bool mode = Convert.ToBoolean(ConfigurationManager.AppSettings["IsDateMode"]);
+                return mode;
+            }
+        }
+
+        public static List<string> ccMail
+        {
+            get
+            {
+                var ccmails = ConfigurationManager.AppSettings["ccmails"];
+                if (!string.IsNullOrEmpty(ccmails))
+                {
+                    return ccmails.Split('|').ToList();
+                }
+                return null;
+            }
+        }
     }
+
+
 }

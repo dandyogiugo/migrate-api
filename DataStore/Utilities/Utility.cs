@@ -971,7 +971,7 @@ namespace DataStore.Utilities
         {
             try
             {
-                var validate = await _otp.FindOneByCriteria(x => x.is_used == false && x.is_valid == true && (x.mobile_number == emailorphone || x.email == emailorphone) && x.otp == token);
+                var validate = await _otp.FindOneByCriteria(x => x.is_used == false && x.is_valid == true && (x.mobile_number == emailorphone?.ToLower().Trim() || x.email == emailorphone?.ToLower().Trim()) && x.otp == token);
                 if (validate != null)
                 {
                     log.Info($"you have provided an valid otp {emailorphone}");

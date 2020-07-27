@@ -81,11 +81,21 @@ namespace DapperLayer.Dapper.Core
 
         public async Task<IEnumerable<T>> GetNewCustomerDetails(DateTime start_date, DateTime end_date)
         {
-            var p = new { start_date = start_date, end_date = end_date };
-            using (var cnn = new SqlConnection(connectionManager.connectionString()))
+            try
             {
-                var result = await cnn.QueryAsync<T>(connectionManager._getNewCustomerSP, p, null, null, CommandType.StoredProcedure);
-                return result;
+                var p = new { start_date = start_date, end_date = end_date };
+                using (var cnn = new SqlConnection(connectionManager.connectionString("CustApi2")))
+                {
+                    var result = await cnn.QueryAsync<T>(connectionManager._getNewCustomerSP, p, null, null, CommandType.StoredProcedure);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException?.ToString());
+                return null;
             }
         }
 
@@ -275,7 +285,7 @@ namespace DapperLayer.Dapper.Core
             {
                 string sql = $@"SELECT * FROM [AgentRefCode]  where AgntRefID = (select TOP(1) AgntRefID from [AgentRefCode]  WHERE LTRIM(RTRIM(AgntRefID)) = '{code}' OR LTRIM(RTRIM(Agnt_Num)) = '{code}')";
                 log.Info($"query to exe {sql}");
-                using (var cnn = new SqlConnection(connectionManager.connectionString()))
+                using (var cnn = new SqlConnection(connectionManager.connectionString("ReferralDB")))
                 {
                     var result = await cnn.QueryAsync<ReferralModel>(sql.Trim());
                     return result;

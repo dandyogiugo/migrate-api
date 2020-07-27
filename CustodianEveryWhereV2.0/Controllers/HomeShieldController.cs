@@ -167,7 +167,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
                     request = api.PostHomeShield(GlobalConstant.merchant_id, GlobalConstant.password,
                        homeShield.CustomerFullName, homeShield.Address, homeShield.PhoneNumber, homeShield.Email,
-                       homeShield.Occupation, homeShield.Premium, homeShield.NoOfUnit, DateTime.Now, homeShield.ActivationDate, homeShield.ActivationDate.AddMonths(12), "", items, "API");
+                       homeShield.Occupation, homeShield.Premium, homeShield.NoOfUnit, DateTime.Now, homeShield.ActivationDate, homeShield.ActivationDate.AddMonths(12), "", items, "API","","","");
 
                 }
 

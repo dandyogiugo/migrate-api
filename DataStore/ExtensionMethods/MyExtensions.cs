@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DataStore.ExtensionMethods
@@ -20,6 +21,10 @@ namespace DataStore.ExtensionMethods
                 list[k] = list[n];
                 list[n] = value;
             }
+        }
+        public static string RemoveWhiteSpaces(this string str)
+        {
+            return Regex.Replace(str, @"\s+", string.Empty);
         }
     }
 }

@@ -283,6 +283,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="PostSource" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="PostType" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="BrokerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Interest" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -344,6 +345,9 @@
             <s:element minOccurs="0" maxOccurs="1" name="CreditNote" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="mDescription" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="PostSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrokerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CommRate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PremRate" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -403,6 +407,9 @@
             <s:element minOccurs="1" maxOccurs="1" name="BeneficiaryDOB" type="s:dateTime" />
             <s:element minOccurs="0" maxOccurs="1" name="BeneficiaryRelatn" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="PostSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrokerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CommRate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PremRate" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -593,6 +600,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="mVEHMAKE" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="mVEHCOLOR" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="mENGINENUM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetLifeProductFrequency">
@@ -1106,10 +1114,19 @@
       <s:element name="PostTQSyncResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="PostTQSyncResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostTQSyncResult" type="tns:mResponse" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="mResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="message_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="message_Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateNo1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateNo2" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="PostABSSync">
         <s:complexType>
           <s:sequence>
@@ -1150,7 +1167,7 @@
       <s:element name="PostABSSyncResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="PostABSSyncResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostABSSyncResult" type="tns:mResponse" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2239,21 +2256,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:element name="GetOnlineLifeQuote">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="DateofBirth" type="s:dateTime" />
-            <s:element minOccurs="0" maxOccurs="1" name="Premium" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetOnlineLifeQuoteResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetOnlineLifeQuoteResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="GetAnnuityQuote">
         <s:complexType>
           <s:sequence>
@@ -2266,6 +2268,57 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="GetAnnuityQuoteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMotorDetailsByRegNum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantPWD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMotorDetailsByRegNumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMotorDetailsByRegNumResult" type="tns:MotorList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostTQScheduledSync">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mpassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateOfBirth" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="startdate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReferenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyTerm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentFreq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentPayOutFreq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaySource" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Premium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="SumAssured" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrokerCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostTQScheduledSyncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostTQScheduledSyncResult" type="tns:mResponse" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2733,17 +2786,23 @@
   <wsdl:message name="GetPassportDetailsSoapOut">
     <wsdl:part name="parameters" element="tns:GetPassportDetailsResponse" />
   </wsdl:message>
-  <wsdl:message name="GetOnlineLifeQuoteSoapIn">
-    <wsdl:part name="parameters" element="tns:GetOnlineLifeQuote" />
-  </wsdl:message>
-  <wsdl:message name="GetOnlineLifeQuoteSoapOut">
-    <wsdl:part name="parameters" element="tns:GetOnlineLifeQuoteResponse" />
-  </wsdl:message>
   <wsdl:message name="GetAnnuityQuoteSoapIn">
     <wsdl:part name="parameters" element="tns:GetAnnuityQuote" />
   </wsdl:message>
   <wsdl:message name="GetAnnuityQuoteSoapOut">
     <wsdl:part name="parameters" element="tns:GetAnnuityQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMotorDetailsByRegNumSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMotorDetailsByRegNum" />
+  </wsdl:message>
+  <wsdl:message name="GetMotorDetailsByRegNumSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMotorDetailsByRegNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostTQScheduledSyncSoapIn">
+    <wsdl:part name="parameters" element="tns:PostTQScheduledSync" />
+  </wsdl:message>
+  <wsdl:message name="PostTQScheduledSyncSoapOut">
+    <wsdl:part name="parameters" element="tns:PostTQScheduledSyncResponse" />
   </wsdl:message>
   <wsdl:portType name="PolicyServicesSoap">
     <wsdl:operation name="GetClaimStatus">
@@ -3054,13 +3113,17 @@
       <wsdl:input message="tns:GetPassportDetailsSoapIn" />
       <wsdl:output message="tns:GetPassportDetailsSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetOnlineLifeQuote">
-      <wsdl:input message="tns:GetOnlineLifeQuoteSoapIn" />
-      <wsdl:output message="tns:GetOnlineLifeQuoteSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="GetAnnuityQuote">
       <wsdl:input message="tns:GetAnnuityQuoteSoapIn" />
       <wsdl:output message="tns:GetAnnuityQuoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMotorDetailsByRegNum">
+      <wsdl:input message="tns:GetMotorDetailsByRegNumSoapIn" />
+      <wsdl:output message="tns:GetMotorDetailsByRegNumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostTQScheduledSync">
+      <wsdl:input message="tns:PostTQScheduledSyncSoapIn" />
+      <wsdl:output message="tns:PostTQScheduledSyncSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="PolicyServicesSoap" type="tns:PolicyServicesSoap">
@@ -3758,8 +3821,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetOnlineLifeQuote">
-      <soap:operation soapAction="http://Custodianservices.com/GetOnlineLifeQuote" style="document" />
+    <wsdl:operation name="GetAnnuityQuote">
+      <soap:operation soapAction="http://Custodianservices.com/GetAnnuityQuote" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3767,8 +3830,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAnnuityQuote">
-      <soap:operation soapAction="http://Custodianservices.com/GetAnnuityQuote" style="document" />
+    <wsdl:operation name="GetMotorDetailsByRegNum">
+      <soap:operation soapAction="http://Custodianservices.com/GetMotorDetailsByRegNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostTQScheduledSync">
+      <soap:operation soapAction="http://Custodianservices.com/PostTQScheduledSync" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4472,8 +4544,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetOnlineLifeQuote">
-      <soap12:operation soapAction="http://Custodianservices.com/GetOnlineLifeQuote" style="document" />
+    <wsdl:operation name="GetAnnuityQuote">
+      <soap12:operation soapAction="http://Custodianservices.com/GetAnnuityQuote" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4481,8 +4553,17 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAnnuityQuote">
-      <soap12:operation soapAction="http://Custodianservices.com/GetAnnuityQuote" style="document" />
+    <wsdl:operation name="GetMotorDetailsByRegNum">
+      <soap12:operation soapAction="http://Custodianservices.com/GetMotorDetailsByRegNum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostTQScheduledSync">
+      <soap12:operation soapAction="http://Custodianservices.com/PostTQScheduledSync" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

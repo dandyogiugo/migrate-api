@@ -1,0 +1,716 @@
+2020-06-19 14:09:19.7439 INFO about to get records from GetCustomerRecords
+2020-06-19 14:09:19.8228 ERROR Invalid object name 'ABS_MEMO.dbo.Dim_Customers'.
+2020-06-19 14:09:19.8828 ERROR    at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__180_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<QueryAsync>d__33`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at DapperLayer.Dapper.Core.Core`1.<GetNewCustomerDetails>d__6.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DapperLayer\Dapper.Core\Core.cs:line 87
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at UpSellingAndCrossSelling.CrossSelling.CrossSellingEngine.<GetCustomerRecords>d__5.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\CrossSelling\CrossSellingEngine.cs:line 198
+2020-06-19 14:09:19.8828 ERROR 
+2020-06-19 14:09:51.2926 INFO about to get records from GetCustomerRecords
+2020-06-19 14:09:51.2926 ERROR Invalid object name 'ABS_MEMO.dbo.Dim_Customers'.
+2020-06-19 14:09:51.2926 ERROR    at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__180_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<QueryAsync>d__33`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at DapperLayer.Dapper.Core.Core`1.<GetNewCustomerDetails>d__6.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DapperLayer\Dapper.Core\Core.cs:line 87
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at UpSellingAndCrossSelling.CrossSelling.CrossSellingEngine.<GetCustomerRecords>d__5.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\CrossSelling\CrossSellingEngine.cs:line 198
+2020-06-19 14:09:51.2926 ERROR 
+2020-06-19 14:09:51.2926 INFO No new customer from MDM database
+2020-06-19 14:10:21.3524 INFO about to get records from GetCustomerRecords
+2020-06-19 14:10:21.3973 ERROR Invalid object name 'ABS_MEMO.dbo.Dim_Customers'.
+2020-06-19 14:10:21.4183 ERROR    at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__180_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<QueryAsync>d__33`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at DapperLayer.Dapper.Core.Core`1.<GetNewCustomerDetails>d__6.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DapperLayer\Dapper.Core\Core.cs:line 87
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at UpSellingAndCrossSelling.CrossSelling.CrossSellingEngine.<GetCustomerRecords>d__5.MoveNext() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\CrossSelling\CrossSellingEngine.cs:line 198
+2020-06-19 14:10:21.4183 ERROR 
+2020-06-19 14:10:21.4363 INFO No new customer from MDM database
+2020-06-19 15:03:45.4181 INFO Faild to get config from appSettings
+2020-06-19 15:03:45.4600 ERROR Object reference not set to an instance of an object.
+2020-06-19 15:03:45.4860 ERROR    at UpSellingAndCrossSelling.Config.Apiconfig.get_GetDateFromConfig() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 76
+2020-06-19 15:03:45.4860 ERROR 
+2020-06-19 15:04:30.3189 INFO Faild to get config from appSettings
+2020-06-19 15:04:30.3669 ERROR Object reference not set to an instance of an object.
+2020-06-19 15:04:30.3669 ERROR    at UpSellingAndCrossSelling.Config.Apiconfig.get_GetDateFromConfig() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 76
+2020-06-19 15:04:30.3669 ERROR 
+2020-06-19 15:05:20.1963 INFO No new customer from MDM database
+2020-06-19 15:12:34.4291 INFO Faild to get config from appSettings
+2020-06-19 15:12:34.4631 ERROR String was not recognized as a valid DateTime.
+2020-06-19 15:12:34.4631 ERROR    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get_GetDateFromConfig() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 77
+2020-06-19 15:12:34.4631 ERROR 
+2020-06-19 15:41:26.9815 INFO Faild to get config from appSettings
+2020-06-19 15:41:27.0445 ERROR String was not recognized as a valid DateTime.
+2020-06-19 15:41:27.1286 ERROR    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get_GetDateFromConfig() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 77
+2020-06-19 15:41:27.1811 ERROR 
+2020-06-19 15:53:13.6425 INFO Faild to get config from appSettings
+2020-06-19 15:53:13.6785 ERROR String was not recognized as a valid DateTime.
+2020-06-19 15:53:13.7005 ERROR    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get_GetDateFromConfig() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 77
+2020-06-19 15:53:13.7005 ERROR 
+2020-06-19 15:54:41.6800 INFO Faild to get config from appSettings
+2020-06-19 15:54:41.7489 ERROR String was not recognized as a valid DateTime.
+2020-06-19 15:54:41.7669 ERROR    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get_GetDateFromConfig() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 77
+2020-06-19 15:54:41.7749 ERROR 
+2020-06-19 15:54:49.6145 INFO about to read from API_SETTINGS.json
+2020-06-19 15:54:49.6604 INFO Reading file failed from API_SETTINGS.json
+2020-06-19 15:54:49.6604 ERROR Could not find a part of the path 'C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\Config\API_SETTINGS.json'.
+2020-06-19 15:54:49.6604 ERROR    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at System.IO.File.ReadAllText(String path)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get__configSettings() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 27
+2020-06-19 15:54:49.6604 ERROR 
+2020-06-19 15:54:49.6644 INFO Configuration settings is null from API_SETTINGS.json
+2020-06-19 15:54:49.6644 INFO about to read from API_SETTINGS.json
+2020-06-19 15:54:49.6794 INFO Reading file failed from API_SETTINGS.json
+2020-06-19 15:54:49.6794 ERROR Could not find a part of the path 'C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\Config\API_SETTINGS.json'.
+2020-06-19 15:54:49.6794 ERROR    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at System.IO.File.ReadAllText(String path)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get__configSettings() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 27
+2020-06-19 15:54:49.6794 ERROR 
+2020-06-19 15:54:49.6794 INFO Configuration settings is null from API_SETTINGS.json
+2020-06-19 15:54:49.6794 INFO about to read from API_SETTINGS.json
+2020-06-19 15:54:49.6954 INFO Reading file failed from API_SETTINGS.json
+2020-06-19 15:54:49.6954 ERROR Could not find a part of the path 'C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\Config\API_SETTINGS.json'.
+2020-06-19 15:54:49.6954 ERROR    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at System.IO.File.ReadAllText(String path)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get__configSettings() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 27
+2020-06-19 15:54:49.6954 ERROR 
+2020-06-19 15:54:49.6954 INFO Configuration settings is null from API_SETTINGS.json
+2020-06-19 15:54:49.6954 INFO about to read from API_SETTINGS.json
+2020-06-19 15:54:49.6954 INFO Reading file failed from API_SETTINGS.json
+2020-06-19 15:54:49.6954 ERROR Could not find a part of the path 'C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\Config\API_SETTINGS.json'.
+2020-06-19 15:54:49.6954 ERROR    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at System.IO.File.ReadAllText(String path)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get__configSettings() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 27
+2020-06-19 15:54:49.7114 ERROR 
+2020-06-19 15:54:49.7114 INFO Configuration settings is null from API_SETTINGS.json
+2020-06-19 15:54:49.7114 INFO about to read from API_SETTINGS.json
+2020-06-19 15:54:49.7304 INFO Reading file failed from API_SETTINGS.json
+2020-06-19 15:54:49.7304 ERROR Could not find a part of the path 'C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\Config\API_SETTINGS.json'.
+2020-06-19 15:54:49.7304 ERROR    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at System.IO.File.ReadAllText(String path)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get__configSettings() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 27
+2020-06-19 15:54:49.7304 ERROR 
+2020-06-19 15:54:49.7304 INFO Configuration settings is null from API_SETTINGS.json
+2020-06-19 15:55:21.8345 INFO Faild to get config from appSettings
+2020-06-19 15:55:21.8685 ERROR String was not recognized as a valid DateTime.
+2020-06-19 15:55:21.8685 ERROR    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get_GetDateFromConfig() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 77
+2020-06-19 15:55:21.8855 ERROR 
+2020-06-19 15:55:45.0555 INFO about to read from API_SETTINGS.json
+2020-06-19 15:55:45.0805 INFO Reading file failed from API_SETTINGS.json
+2020-06-19 15:55:45.0805 ERROR Could not find a part of the path 'C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\Config\API_SETTINGS.json'.
+2020-06-19 15:55:45.0805 ERROR    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at System.IO.File.ReadAllText(String path)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get__configSettings() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 27
+2020-06-19 15:55:45.0805 ERROR 
+2020-06-19 15:56:28.3456 INFO Faild to get config from appSettings
+2020-06-19 15:56:28.4215 ERROR String was not recognized as a valid DateTime.
+2020-06-19 15:56:28.4795 ERROR    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get_GetDateFromConfig() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 77
+2020-06-19 15:56:28.5055 ERROR 
+2020-06-19 15:56:46.6166 INFO about to read from API_SETTINGS.json
+2020-06-19 15:56:46.6536 INFO Reading file failed from API_SETTINGS.json
+2020-06-19 15:56:46.6536 ERROR Could not find a part of the path 'C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\Config\API_SETTINGS.json'.
+2020-06-19 15:56:46.6536 ERROR    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at System.IO.File.ReadAllText(String path)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get__configSettings() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 27
+2020-06-19 15:56:46.6536 ERROR 
+2020-06-19 16:33:25.5488 INFO Faild to get config from appSettings
+2020-06-19 16:33:25.6192 ERROR String was not recognized as a valid DateTime.
+2020-06-19 16:33:25.6352 ERROR    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get_GetDateFromConfig() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 77
+2020-06-19 16:33:25.6352 ERROR 
+2020-06-19 16:33:43.8665 INFO about to read from API_SETTINGS.json
+2020-06-19 16:33:44.2628 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:33:45.8503 INFO about to read from API_SETTINGS.json
+2020-06-19 16:33:45.8513 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:33:49.7042 INFO about to read from API_SETTINGS.json
+2020-06-19 16:33:49.7042 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:33:52.8959 INFO ====================Start=========================
+2020-06-19 16:33:53.3627 INFO Call for :[{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:33:53.7974 INFO Current Product ["MOTOR","CUSTODIAN ESUSU SHIELD","CUSTODIAN LIFE TIME HARVEST"]
+2020-06-19 16:33:57.1809 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:34:05.8228 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:34:07.1494 INFO No recommendation for customer with name   probability0
+2020-06-19 16:34:07.1494 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:34:08.4145 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:34:09.6606 INFO No recommendation for customer with name   probability0.462643517903145
+2020-06-19 16:34:09.6606 INFO about to read from API_SETTINGS.json
+2020-06-19 16:34:09.6636 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:34:09.6636 INFO about to read from API_SETTINGS.json
+2020-06-19 16:34:09.6636 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:34:09.6636 INFO ====================Start=========================
+2020-06-19 16:34:09.6636 INFO Call for :[{"Prod":"CUSTODIAN ESUSU SHIELD"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:34:09.6636 INFO Current Product ["CUSTODIAN LIFE TIME HARVEST"]
+2020-06-19 16:34:09.6636 INFO Product End point: {"Key":"e4qExmsfmjbjiXNDHEXD4ljch4UgxF6K3pPey+JjAyQKFZsdbDHKZXy+2nlklj3B1sSkcHSTCITxCKQO9tz05g==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/9f85cc86e44d4518ad53cf8fcc31a4b4/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN ESUSU SHIELD","IsActive":true,"ProductDescription":"Esusu Shield uniquely combines features of Ajo, Esusu, Thrift and Mutual financing to meet the savings and financing needs, limited life assurance and personal accident benefits of policyholders.","HyperLink":"https://custodianplc.com.ng/esusu-shield"}
+2020-06-19 16:34:10.9209 INFO No recommendation for customer with name   probability0.460268112576839
+2020-06-19 16:34:10.9209 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:34:12.1783 INFO No recommendation for customer with name   probability0.240746838858818
+2020-06-19 16:34:12.1793 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:34:17.7420 INFO No recommendation for customer with name   probability0.0533837056504599
+2020-06-19 16:34:17.7420 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:34:19.1541 INFO No recommendation for customer with name   probability0
+2020-06-19 16:34:19.1541 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:34:20.4059 INFO No recommendation for customer with name   probability0.255482456140351
+2020-06-19 16:34:20.4059 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:34:21.7600 INFO No recommendation for customer with name   probability0.0863039302216915
+2020-06-19 16:34:21.7600 INFO about to read from API_SETTINGS.json
+2020-06-19 16:34:21.7600 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:34:21.7600 INFO about to read from API_SETTINGS.json
+2020-06-19 16:34:21.7600 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:34:21.7600 INFO ====================Start=========================
+2020-06-19 16:34:21.7600 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:34:21.7600 INFO Current Product ["CUSTODIAN ESUSU SHIELD","CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:34:21.7600 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:34:23.0198 INFO No recommendation for customer with name   probability0.354723773577466
+2020-06-19 16:34:23.0198 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:34:24.2966 INFO No recommendation for customer with name   probability0.472596631592575
+2020-06-19 16:34:24.2966 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:34:26.6171 INFO No recommendation for customer with name   probability0.325966059290208
+2020-06-19 16:34:26.6171 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:34:28.0123 INFO No recommendation for customer with name   probability0
+2020-06-19 16:34:28.0123 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:34:29.2484 INFO No recommendation for customer with name   probability0.345352564102564
+2020-06-19 16:34:29.2484 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:34:30.4861 INFO No recommendation for customer with name   probability0
+2020-06-19 16:34:30.4861 INFO about to read from API_SETTINGS.json
+2020-06-19 16:34:30.4861 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:34:30.4861 INFO about to read from API_SETTINGS.json
+2020-06-19 16:34:30.4861 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:34:30.4921 INFO ====================Start=========================
+2020-06-19 16:34:30.4921 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:34:30.4921 INFO Current Product ["CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:34:30.4921 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:34:32.0198 INFO No recommendation for customer with name   probability0.13899387700163
+2020-06-19 16:34:32.0198 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:34:33.4638 INFO No recommendation for customer with name   probability0.304739318446611
+2020-06-19 16:34:33.4638 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:34:35.0113 INFO No recommendation for customer with name   probability0.0613117870722433
+2020-06-19 16:34:35.0113 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:34:36.3485 INFO No recommendation for customer with name   probability0
+2020-06-19 16:34:36.3485 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:34:37.4554 INFO No recommendation for customer with name   probability0.485119047619048
+2020-06-19 16:34:37.4554 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:34:38.7057 INFO No recommendation for customer with name   probability0.10715403678101
+2020-06-19 16:34:38.7057 INFO about to read from API_SETTINGS.json
+2020-06-19 16:34:38.7057 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:34:38.7057 INFO about to read from API_SETTINGS.json
+2020-06-19 16:34:38.7057 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:34:38.7107 INFO ====================Start=========================
+2020-06-19 16:34:38.7107 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:34:38.7107 INFO Current Product ["CUSTODIAN ESUSU SHIELD","CUSTODIAN ESUSU SHIELD","CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:34:38.7107 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:34:39.9853 INFO No recommendation for customer with name   probability0.155240216749293
+2020-06-19 16:34:39.9853 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:34:41.3525 INFO No recommendation for customer with name   probability0.330814500680009
+2020-06-19 16:34:41.3525 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:34:42.7587 INFO No recommendation for customer with name   probability0.352091637459377
+2020-06-19 16:34:42.7587 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:34:44.0473 INFO No recommendation for customer with name   probability0.25
+2020-06-19 16:34:44.0473 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:34:45.3301 INFO No recommendation for customer with name   probability0.237351190476191
+2020-06-19 16:34:45.3301 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:34:46.5629 INFO No recommendation for customer with name   probability0
+2020-06-19 16:34:46.5899 INFO about to read email template EMAIL_TEMPLATE.html
+2020-06-19 16:34:46.6199 INFO Reading file failed from EMAIL_TEMPLATE.html
+2020-06-19 16:34:46.6199 ERROR Could not find a part of the path 'C:\Users\OItaba\Documents\Visual Studio 2015\Projects\CustodianEveryWhereV2.0\UpSellingAndCrossSelling\Config\EmailTemplate.html'.
+2020-06-19 16:34:46.6199 ERROR    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at System.IO.File.ReadAllText(String path)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get__emailTemplate() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 53
+2020-06-19 16:34:46.6199 ERROR 
+2020-06-19 16:34:46.6199 INFO about to read from API_SETTINGS.json
+2020-06-19 16:34:46.6199 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:34:46.6199 INFO about to read from API_SETTINGS.json
+2020-06-19 16:34:46.6199 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:36:41.3138 INFO Faild to get config from appSettings
+2020-06-19 16:36:41.3718 ERROR String was not recognized as a valid DateTime.
+2020-06-19 16:36:41.3867 ERROR    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get_GetDateFromConfig() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 77
+2020-06-19 16:36:41.3867 ERROR 
+2020-06-19 16:36:48.8344 INFO about to read from API_SETTINGS.json
+2020-06-19 16:36:49.3503 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:36:49.3738 INFO about to read from API_SETTINGS.json
+2020-06-19 16:36:49.3888 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:36:49.3888 INFO ====================Start=========================
+2020-06-19 16:36:49.5507 INFO Call for :[{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:36:49.6052 INFO Current Product ["MOTOR","CUSTODIAN ESUSU SHIELD","CUSTODIAN LIFE TIME HARVEST"]
+2020-06-19 16:36:49.6207 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:36:52.0153 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:36:53.7794 INFO No recommendation for customer with name   probability0
+2020-06-19 16:36:53.7794 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:36:55.0259 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:36:56.2803 INFO No recommendation for customer with name   probability0.462643517903145
+2020-06-19 16:36:56.2803 INFO about to read from API_SETTINGS.json
+2020-06-19 16:36:56.2803 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:36:56.2803 INFO about to read from API_SETTINGS.json
+2020-06-19 16:36:56.2803 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:36:56.2803 INFO ====================Start=========================
+2020-06-19 16:36:56.2803 INFO Call for :[{"Prod":"CUSTODIAN ESUSU SHIELD"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:36:56.2803 INFO Current Product ["CUSTODIAN LIFE TIME HARVEST"]
+2020-06-19 16:36:56.2803 INFO Product End point: {"Key":"e4qExmsfmjbjiXNDHEXD4ljch4UgxF6K3pPey+JjAyQKFZsdbDHKZXy+2nlklj3B1sSkcHSTCITxCKQO9tz05g==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/9f85cc86e44d4518ad53cf8fcc31a4b4/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN ESUSU SHIELD","IsActive":true,"ProductDescription":"Esusu Shield uniquely combines features of Ajo, Esusu, Thrift and Mutual financing to meet the savings and financing needs, limited life assurance and personal accident benefits of policyholders.","HyperLink":"https://custodianplc.com.ng/esusu-shield"}
+2020-06-19 16:36:57.6899 INFO No recommendation for customer with name   probability0.460268112576839
+2020-06-19 16:36:57.6899 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:36:58.9972 INFO No recommendation for customer with name   probability0.240746838858818
+2020-06-19 16:36:58.9972 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:37:00.0599 INFO No recommendation for customer with name   probability0.0533837056504599
+2020-06-19 16:37:00.0599 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:37:01.3120 INFO No recommendation for customer with name   probability0
+2020-06-19 16:37:01.3120 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:37:02.5766 INFO No recommendation for customer with name   probability0.255482456140351
+2020-06-19 16:37:02.5766 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:37:04.7251 INFO No recommendation for customer with name   probability0.0863039302216915
+2020-06-19 16:37:04.7271 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:04.7271 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:04.7271 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:04.7271 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:04.7271 INFO ====================Start=========================
+2020-06-19 16:37:04.7271 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:37:04.7271 INFO Current Product ["CUSTODIAN ESUSU SHIELD","CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:37:04.7271 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:37:06.0173 INFO No recommendation for customer with name   probability0.354723773577466
+2020-06-19 16:37:06.0173 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:37:07.2506 INFO No recommendation for customer with name   probability0.472596631592575
+2020-06-19 16:37:07.2506 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:37:08.5053 INFO No recommendation for customer with name   probability0.325966059290208
+2020-06-19 16:37:08.5073 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:37:09.7619 INFO No recommendation for customer with name   probability0
+2020-06-19 16:37:09.7619 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:37:10.7843 INFO No recommendation for customer with name   probability0.345352564102564
+2020-06-19 16:37:10.7843 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:37:12.0485 INFO No recommendation for customer with name   probability0
+2020-06-19 16:37:12.0485 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:12.0485 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:12.0485 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:12.0485 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:12.0545 INFO ====================Start=========================
+2020-06-19 16:37:12.0545 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:37:12.0545 INFO Current Product ["CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:37:12.0545 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:37:13.0899 INFO No recommendation for customer with name   probability0.13899387700163
+2020-06-19 16:37:13.0899 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:37:14.9640 INFO No recommendation for customer with name   probability0.304739318446611
+2020-06-19 16:37:14.9640 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:37:16.3028 INFO No recommendation for customer with name   probability0.0613117870722433
+2020-06-19 16:37:16.3048 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:37:18.0450 INFO No recommendation for customer with name   probability0
+2020-06-19 16:37:18.0450 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:37:19.3398 INFO No recommendation for customer with name   probability0.485119047619048
+2020-06-19 16:37:19.3398 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:37:20.3243 INFO No recommendation for customer with name   probability0.10715403678101
+2020-06-19 16:37:20.3243 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:20.3243 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:20.3243 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:20.3243 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:20.3243 INFO ====================Start=========================
+2020-06-19 16:37:20.3243 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:37:20.3243 INFO Current Product ["CUSTODIAN ESUSU SHIELD","CUSTODIAN ESUSU SHIELD","CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:37:20.3243 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:37:21.5836 INFO No recommendation for customer with name   probability0.155240216749293
+2020-06-19 16:37:21.5836 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:37:22.8428 INFO No recommendation for customer with name   probability0.330814500680009
+2020-06-19 16:37:22.8428 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:37:24.1541 INFO No recommendation for customer with name   probability0.352091637459377
+2020-06-19 16:37:24.1541 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:37:25.4469 INFO No recommendation for customer with name   probability0.25
+2020-06-19 16:37:25.4469 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:37:26.7779 INFO No recommendation for customer with name   probability0.237351190476191
+2020-06-19 16:37:26.7779 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:37:28.0237 INFO No recommendation for customer with name   probability0
+2020-06-19 16:37:28.0237 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:28.0237 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:28.0237 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:28.0237 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:28.0237 INFO ====================Start=========================
+2020-06-19 16:37:28.0237 INFO Call for :[{"Prod":"CUSTODIAN ESUSU SHIELD"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:37:28.0237 INFO Current Product ["CUSTODIAN LIFE TIME HARVEST"]
+2020-06-19 16:37:28.0237 INFO Product End point: {"Key":"e4qExmsfmjbjiXNDHEXD4ljch4UgxF6K3pPey+JjAyQKFZsdbDHKZXy+2nlklj3B1sSkcHSTCITxCKQO9tz05g==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/9f85cc86e44d4518ad53cf8fcc31a4b4/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN ESUSU SHIELD","IsActive":true,"ProductDescription":"Esusu Shield uniquely combines features of Ajo, Esusu, Thrift and Mutual financing to meet the savings and financing needs, limited life assurance and personal accident benefits of policyholders.","HyperLink":"https://custodianplc.com.ng/esusu-shield"}
+2020-06-19 16:37:29.2904 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:37:30.5428 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:37:31.8493 INFO No recommendation for customer with name   probability0.0325834879406308
+2020-06-19 16:37:31.8553 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:37:33.2145 INFO No recommendation for customer with name   probability0
+2020-06-19 16:37:33.2145 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:37:34.5708 INFO No recommendation for customer with name   probability0.0679824561403509
+2020-06-19 16:37:34.5708 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:37:35.8209 INFO No recommendation for customer with name   probability0
+2020-06-19 16:37:35.8209 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:35.8209 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:35.8209 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:35.8209 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:35.8209 INFO ====================Start=========================
+2020-06-19 16:37:35.8209 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:37:35.8209 INFO Current Product ["CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:37:35.8209 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:37:37.0672 INFO No recommendation for customer with name   probability0.11250341877143
+2020-06-19 16:37:37.0672 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:37:38.3730 INFO No recommendation for customer with name   probability0.369045845253138
+2020-06-19 16:37:38.3730 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:37:39.6758 INFO No recommendation for customer with name   probability0.0613117870722433
+2020-06-19 16:37:39.6758 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:37:40.9595 INFO No recommendation for customer with name   probability0
+2020-06-19 16:37:40.9645 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:37:42.2089 INFO No recommendation for customer with name   probability0.315156115814011
+2020-06-19 16:37:42.2129 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:37:43.2170 INFO No recommendation for customer with name   probability0.286073123527383
+2020-06-19 16:37:43.2170 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:43.2170 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:43.2170 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:43.2170 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:43.2170 INFO ====================Start=========================
+2020-06-19 16:37:43.2170 INFO Call for :[{"Prod":"CUSTODIAN ESUSU SHIELD"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:37:43.2170 INFO Current Product ["CUSTODIAN LIFE TIME HARVEST"]
+2020-06-19 16:37:43.2270 INFO Product End point: {"Key":"e4qExmsfmjbjiXNDHEXD4ljch4UgxF6K3pPey+JjAyQKFZsdbDHKZXy+2nlklj3B1sSkcHSTCITxCKQO9tz05g==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/9f85cc86e44d4518ad53cf8fcc31a4b4/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN ESUSU SHIELD","IsActive":true,"ProductDescription":"Esusu Shield uniquely combines features of Ajo, Esusu, Thrift and Mutual financing to meet the savings and financing needs, limited life assurance and personal accident benefits of policyholders.","HyperLink":"https://custodianplc.com.ng/esusu-shield"}
+2020-06-19 16:37:44.4903 INFO No recommendation for customer with name   probability0.460268112576839
+2020-06-19 16:37:44.4903 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:37:45.7311 INFO No recommendation for customer with name   probability0.325380408598771
+2020-06-19 16:37:45.7311 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:37:46.9690 INFO No recommendation for customer with name   probability0
+2020-06-19 16:37:46.9690 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:37:48.2723 INFO No recommendation for customer with name   probability0
+2020-06-19 16:37:48.2743 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:37:49.5837 INFO No recommendation for customer with name   probability0.204045004702899
+2020-06-19 16:37:49.5867 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:37:50.8558 INFO No recommendation for customer with name   probability0.189749505696412
+2020-06-19 16:37:50.8558 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:50.8558 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:50.8558 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:50.8558 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:50.8558 INFO ====================Start=========================
+2020-06-19 16:37:50.8558 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:37:50.8558 INFO Current Product ["CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:37:50.8558 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:37:52.4449 INFO No recommendation for customer with name   probability0.0904050817336822
+2020-06-19 16:37:52.4449 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:37:54.0521 INFO No recommendation for customer with name   probability0.369045845253138
+2020-06-19 16:37:54.0581 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:37:55.4739 INFO No recommendation for customer with name   probability0.0613117870722433
+2020-06-19 16:37:55.4739 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:37:56.9141 INFO No recommendation for customer with name   probability0
+2020-06-19 16:37:56.9141 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:37:58.1659 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:37:59.4672 INFO No recommendation for customer with name   probability0.171633563667426
+2020-06-19 16:37:59.4672 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:59.4672 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:59.4672 INFO about to read from API_SETTINGS.json
+2020-06-19 16:37:59.4672 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:37:59.4672 INFO ====================Start=========================
+2020-06-19 16:37:59.4672 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:37:59.4762 INFO Current Product ["CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:37:59.4762 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:38:00.7267 INFO No recommendation for customer with name   probability0.13899387700163
+2020-06-19 16:38:00.7267 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:38:01.9654 INFO No recommendation for customer with name   probability0.304739318446611
+2020-06-19 16:38:01.9654 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:38:04.3935 INFO No recommendation for customer with name   probability0.0613117870722433
+2020-06-19 16:38:04.3935 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:38:05.6981 INFO No recommendation for customer with name   probability0
+2020-06-19 16:38:05.6981 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:38:07.0292 INFO No recommendation for customer with name   probability0.485119047619048
+2020-06-19 16:38:07.0292 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:38:08.2973 INFO No recommendation for customer with name   probability0.10715403678101
+2020-06-19 16:38:08.3722 INFO about to read email template EMAIL_TEMPLATE.html
+2020-06-19 16:38:08.3722 INFO Read was successful from  EMAIL_TEMPLATE.html
+2020-06-19 16:38:08.3722 INFO about to read from API_SETTINGS.json
+2020-06-19 16:38:08.3722 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:38:08.3722 INFO about to read from API_SETTINGS.json
+2020-06-19 16:38:08.3832 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:38:11.7874 INFO about to read email template EMAIL_TEMPLATE.html
+2020-06-19 16:38:11.7874 INFO Read was successful from  EMAIL_TEMPLATE.html
+2020-06-19 16:38:11.7894 INFO about to read from API_SETTINGS.json
+2020-06-19 16:38:11.7894 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:38:11.7894 INFO about to read from API_SETTINGS.json
+2020-06-19 16:38:11.7894 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:38:15.3762 INFO about to read email template EMAIL_TEMPLATE.html
+2020-06-19 16:38:15.3762 INFO Read was successful from  EMAIL_TEMPLATE.html
+2020-06-19 16:38:15.3762 INFO about to read from API_SETTINGS.json
+2020-06-19 16:38:15.3762 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:41:34.7984 INFO Faild to get config from appSettings
+2020-06-19 16:41:34.8463 ERROR String was not recognized as a valid DateTime.
+2020-06-19 16:41:34.8818 ERROR    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get_GetDateFromConfig() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 77
+2020-06-19 16:41:34.8857 ERROR 
+2020-06-19 16:41:52.7765 INFO Faild to get config from appSettings
+2020-06-19 16:41:52.7765 ERROR String was not recognized as a valid DateTime.
+2020-06-19 16:41:52.7765 ERROR    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at UpSellingAndCrossSelling.Config.Apiconfig.get_GetDateFromConfig() in C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\UpSellingAndCrossSelling\Config\Apiconfig.cs:line 77
+2020-06-19 16:41:52.7765 ERROR 
+2020-06-19 16:41:56.0725 INFO about to read from API_SETTINGS.json
+2020-06-19 16:41:56.2744 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:41:56.2744 INFO about to read from API_SETTINGS.json
+2020-06-19 16:41:56.2744 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:41:56.2744 INFO ====================Start=========================
+2020-06-19 16:41:56.3453 INFO Call for :[{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:41:56.3453 INFO Current Product ["MOTOR","CUSTODIAN ESUSU SHIELD","CUSTODIAN LIFE TIME HARVEST"]
+2020-06-19 16:41:56.3593 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:41:58.3608 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:41:59.5976 INFO No recommendation for customer with name   probability0
+2020-06-19 16:41:59.5976 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:42:01.8813 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:42:03.2590 INFO No recommendation for customer with name   probability0.462643517903145
+2020-06-19 16:42:03.2590 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:03.2590 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:03.2590 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:03.2590 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:03.2735 INFO ====================Start=========================
+2020-06-19 16:42:03.2735 INFO Call for :[{"Prod":"CUSTODIAN ESUSU SHIELD"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:42:03.2735 INFO Current Product ["CUSTODIAN LIFE TIME HARVEST"]
+2020-06-19 16:42:03.2735 INFO Product End point: {"Key":"e4qExmsfmjbjiXNDHEXD4ljch4UgxF6K3pPey+JjAyQKFZsdbDHKZXy+2nlklj3B1sSkcHSTCITxCKQO9tz05g==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/9f85cc86e44d4518ad53cf8fcc31a4b4/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN ESUSU SHIELD","IsActive":true,"ProductDescription":"Esusu Shield uniquely combines features of Ajo, Esusu, Thrift and Mutual financing to meet the savings and financing needs, limited life assurance and personal accident benefits of policyholders.","HyperLink":"https://custodianplc.com.ng/esusu-shield"}
+2020-06-19 16:42:04.5486 INFO No recommendation for customer with name   probability0.460268112576839
+2020-06-19 16:42:04.5486 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:42:05.8105 INFO No recommendation for customer with name   probability0.240746838858818
+2020-06-19 16:42:05.8105 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:42:07.0725 INFO No recommendation for customer with name   probability0.0533837056504599
+2020-06-19 16:42:07.0725 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:42:08.1394 INFO No recommendation for customer with name   probability0
+2020-06-19 16:42:08.1394 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:42:09.7785 INFO No recommendation for customer with name   probability0.255482456140351
+2020-06-19 16:42:09.7785 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:42:11.0195 INFO No recommendation for customer with name   probability0.0863039302216915
+2020-06-19 16:42:11.0565 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:11.0565 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:11.0565 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:11.0565 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:11.0565 INFO ====================Start=========================
+2020-06-19 16:42:11.0565 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:42:11.0924 INFO Current Product ["CUSTODIAN ESUSU SHIELD","CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:42:11.0924 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:42:12.3662 INFO No recommendation for customer with name   probability0.354723773577466
+2020-06-19 16:42:12.3672 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:42:13.7160 INFO No recommendation for customer with name   probability0.472596631592575
+2020-06-19 16:42:13.7160 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:42:14.9980 INFO No recommendation for customer with name   probability0.325966059290208
+2020-06-19 16:42:14.9980 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:42:16.3401 INFO No recommendation for customer with name   probability0
+2020-06-19 16:42:16.3401 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:42:17.5995 INFO No recommendation for customer with name   probability0.345352564102564
+2020-06-19 16:42:17.6015 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:42:18.7227 INFO No recommendation for customer with name   probability0
+2020-06-19 16:42:18.7227 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:18.7267 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:18.7267 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:18.7267 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:18.7267 INFO ====================Start=========================
+2020-06-19 16:42:18.7267 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:42:18.7267 INFO Current Product ["CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:42:18.7267 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:42:19.8605 INFO No recommendation for customer with name   probability0.13899387700163
+2020-06-19 16:42:19.8605 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:42:21.1128 INFO No recommendation for customer with name   probability0.304739318446611
+2020-06-19 16:42:21.1128 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:42:22.4892 INFO No recommendation for customer with name   probability0.0613117870722433
+2020-06-19 16:42:22.4892 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:42:23.6341 INFO No recommendation for customer with name   probability0
+2020-06-19 16:42:23.6341 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:42:25.9388 INFO No recommendation for customer with name   probability0.485119047619048
+2020-06-19 16:42:25.9388 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:42:26.9732 INFO No recommendation for customer with name   probability0.10715403678101
+2020-06-19 16:42:26.9732 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:26.9762 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:26.9762 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:26.9762 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:26.9762 INFO ====================Start=========================
+2020-06-19 16:42:26.9762 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:42:26.9762 INFO Current Product ["CUSTODIAN ESUSU SHIELD","CUSTODIAN ESUSU SHIELD","CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:42:26.9762 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:42:28.3198 INFO No recommendation for customer with name   probability0.155240216749293
+2020-06-19 16:42:28.3218 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:42:29.6070 INFO No recommendation for customer with name   probability0.330814500680009
+2020-06-19 16:42:29.6070 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:42:30.9157 INFO No recommendation for customer with name   probability0.352091637459377
+2020-06-19 16:42:30.9157 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:42:32.2531 INFO No recommendation for customer with name   probability0.25
+2020-06-19 16:42:32.2531 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:42:33.4999 INFO No recommendation for customer with name   probability0.237351190476191
+2020-06-19 16:42:33.4999 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:42:34.7907 INFO No recommendation for customer with name   probability0
+2020-06-19 16:42:34.7907 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:34.7907 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:34.7907 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:34.7907 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:34.7907 INFO ====================Start=========================
+2020-06-19 16:42:34.7907 INFO Call for :[{"Prod":"CUSTODIAN ESUSU SHIELD"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:42:34.7907 INFO Current Product ["CUSTODIAN LIFE TIME HARVEST"]
+2020-06-19 16:42:34.8136 INFO Product End point: {"Key":"e4qExmsfmjbjiXNDHEXD4ljch4UgxF6K3pPey+JjAyQKFZsdbDHKZXy+2nlklj3B1sSkcHSTCITxCKQO9tz05g==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/9f85cc86e44d4518ad53cf8fcc31a4b4/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN ESUSU SHIELD","IsActive":true,"ProductDescription":"Esusu Shield uniquely combines features of Ajo, Esusu, Thrift and Mutual financing to meet the savings and financing needs, limited life assurance and personal accident benefits of policyholders.","HyperLink":"https://custodianplc.com.ng/esusu-shield"}
+2020-06-19 16:42:36.0671 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:42:37.3543 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:42:38.6581 INFO No recommendation for customer with name   probability0.0325834879406308
+2020-06-19 16:42:38.6581 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:42:39.9660 INFO No recommendation for customer with name   probability0
+2020-06-19 16:42:39.9660 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:42:41.2603 INFO No recommendation for customer with name   probability0.0679824561403509
+2020-06-19 16:42:41.2603 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:42:42.2721 INFO No recommendation for customer with name   probability0
+2020-06-19 16:42:42.2741 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:42.2741 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:42.2741 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:42.2741 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:42.2741 INFO ====================Start=========================
+2020-06-19 16:42:42.2741 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:42:42.2741 INFO Current Product ["CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:42:42.2741 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:42:43.5229 INFO No recommendation for customer with name   probability0.11250341877143
+2020-06-19 16:42:43.5249 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:42:44.7762 INFO No recommendation for customer with name   probability0.369045845253138
+2020-06-19 16:42:44.7762 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:42:46.0595 INFO No recommendation for customer with name   probability0.0613117870722433
+2020-06-19 16:42:46.0595 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:42:47.3603 INFO No recommendation for customer with name   probability0
+2020-06-19 16:42:47.3603 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:42:48.3627 INFO No recommendation for customer with name   probability0.315156115814011
+2020-06-19 16:42:48.3627 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:42:49.6026 INFO No recommendation for customer with name   probability0.286073123527383
+2020-06-19 16:42:49.6026 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:49.6026 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:49.6026 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:49.6026 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:49.6026 INFO ====================Start=========================
+2020-06-19 16:42:49.6026 INFO Call for :[{"Prod":"CUSTODIAN ESUSU SHIELD"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:42:49.6026 INFO Current Product ["CUSTODIAN LIFE TIME HARVEST"]
+2020-06-19 16:42:49.6026 INFO Product End point: {"Key":"e4qExmsfmjbjiXNDHEXD4ljch4UgxF6K3pPey+JjAyQKFZsdbDHKZXy+2nlklj3B1sSkcHSTCITxCKQO9tz05g==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/9f85cc86e44d4518ad53cf8fcc31a4b4/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN ESUSU SHIELD","IsActive":true,"ProductDescription":"Esusu Shield uniquely combines features of Ajo, Esusu, Thrift and Mutual financing to meet the savings and financing needs, limited life assurance and personal accident benefits of policyholders.","HyperLink":"https://custodianplc.com.ng/esusu-shield"}
+2020-06-19 16:42:50.9134 INFO No recommendation for customer with name   probability0.460268112576839
+2020-06-19 16:42:50.9154 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:42:52.1758 INFO No recommendation for customer with name   probability0.325380408598771
+2020-06-19 16:42:52.1798 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:42:53.4590 INFO No recommendation for customer with name   probability0
+2020-06-19 16:42:53.4610 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:42:54.7608 INFO No recommendation for customer with name   probability0
+2020-06-19 16:42:54.7608 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:42:56.1027 INFO No recommendation for customer with name   probability0.204045004702899
+2020-06-19 16:42:56.1027 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:42:57.3570 INFO No recommendation for customer with name   probability0.189749505696412
+2020-06-19 16:42:57.3570 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:57.3570 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:57.3570 INFO about to read from API_SETTINGS.json
+2020-06-19 16:42:57.3570 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:42:57.3570 INFO ====================Start=========================
+2020-06-19 16:42:57.3570 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:42:57.3670 INFO Current Product ["CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:42:57.3670 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:42:58.6031 INFO No recommendation for customer with name   probability0.0904050817336822
+2020-06-19 16:42:58.6031 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:42:59.8596 INFO No recommendation for customer with name   probability0.369045845253138
+2020-06-19 16:42:59.8596 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:43:01.3276 INFO No recommendation for customer with name   probability0.0613117870722433
+2020-06-19 16:43:01.3276 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:43:02.5810 INFO No recommendation for customer with name   probability0
+2020-06-19 16:43:02.5810 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:43:03.8315 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:43:05.1238 INFO No recommendation for customer with name   probability0.171633563667426
+2020-06-19 16:43:05.1428 INFO about to read from API_SETTINGS.json
+2020-06-19 16:43:05.1428 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:43:05.1428 INFO about to read from API_SETTINGS.json
+2020-06-19 16:43:05.1428 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:43:05.1428 INFO ====================Start=========================
+2020-06-19 16:43:05.1488 INFO Call for :[{"Prod":"CUSTODIAN LIFE TIME HARVEST"},{"Prod":"CUSTODIAN CAPITAL BUILDER"},{"Prod":"MOTOR"},{"Prod":"FIRE"},{"Prod":"ACCIDENT"},{"Prod":"WILLS AND TRUST"}]
+2020-06-19 16:43:05.1488 INFO Current Product ["CUSTODIAN ESUSU SHIELD"]
+2020-06-19 16:43:05.1488 INFO Product End point: {"Key":"Y0F303plRvjXVSgaY/30yfWcROhNmlb4Qvxu2DdFXJnAssgHr9OXKj00kSDVM8vcnl4xfv4Z71py8o/teSvwgg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/6af55398afd04b80aabf814ce6e32c2a/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN LIFE TIME HARVEST","IsActive":true,"ProductDescription":"The policy is an endowment assurance plan that pays out a percentage of the sum assured after a predetermined number of years has been completed.","HyperLink":"https://custodianplc.com.ng/life-time-harvest"}
+2020-06-19 16:43:06.3929 INFO No recommendation for customer with name   probability0.13899387700163
+2020-06-19 16:43:06.3929 INFO Product End point: {"Key":"e9433GS0R4kWPll1VuYVLCjBI2TEmu+q4nk1LsTYWG1gBw6/THr0vrMSq9AgBJrLx+/jnjigPpICnGNOZhz/zw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/037451386c894f03a9f4bec161b06e1e/execute?api-version=2.0&format=swagger","ProductName":"CUSTODIAN CAPITAL BUILDER","IsActive":true,"ProductDescription":"The Custodian Capital Builder Plan is an investment product that allows the policyholder to determine the amount of regular contribution he wishes to periodically make.","HyperLink":"https://custodianplc.com.ng/capital-builder"}
+2020-06-19 16:43:07.7158 INFO No recommendation for customer with name   probability0.304739318446611
+2020-06-19 16:43:07.7158 INFO Product End point: {"Key":"ya7Qba+iIkWEXCh2bv3ejKEPfxAr9ZYOZ/TS5RsCpLAnxaei0jQhcyHtDlNuW7lydbkH1VUvY6qnDn2UXR4DRg==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/cb93d4f90d354e4ab44b26a02fe8c947/execute?api-version=2.0&format=swagger","ProductName":"MOTOR","IsActive":true,"ProductDescription":"The Custodian Motor Insurance policy covers you for repairs or replacement costs in the event of accidents, fire or theft of your vehicle, including medical expenses.","HyperLink":"https://custodianplc.com.ng/car-insurance"}
+2020-06-19 16:43:09.2378 INFO No recommendation for customer with name   probability0.0613117870722433
+2020-06-19 16:43:09.2378 INFO Product End point: {"Key":"lhnrOBOYSxAcg3jlVW3khL0LuWdabSPm8eXlGfziukM5pqPkxvU+0CBhIOLRlTsaoKmco0uPcuwvjbeamc2CTw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/5b79a8f1a5f74972a2b72286a2464701/execute?api-version=2.0&format=swagger","ProductName":"FIRE","IsActive":true,"ProductDescription":"","HyperLink":""}
+2020-06-19 16:43:10.5668 INFO No recommendation for customer with name   probability0
+2020-06-19 16:43:10.5698 INFO Product End point: {"Key":"vLVXq88zhB9KwDYL4O0p1+ccl44yUXLYEismmcJks+KUwFX33X4DW/fHsVHVJ+vIp2LS998paWc+ysXP+NZtpw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/648ca57ba0a24fcb89da6f0709d89b32/execute?api-version=2.0&format=swagger","ProductName":"ACCIDENT","IsActive":true,"ProductDescription":"Custodian Safety Plus Plan is a Personal Accident Insurance policy that provides financial assistance to the Insured in the event of an accident.","HyperLink":"https://custodianplc.com.ng/safety-plus-plan"}
+2020-06-19 16:43:11.5822 INFO No recommendation for customer with name   probability0.485119047619048
+2020-06-19 16:43:11.5822 INFO Product End point: {"Key":"hykDnqJRUW/YptAY206YSj6zFCwu6aOd4GkwaLL/5WfAEsdUy+oW38gct6QBPSOXgcMg8Qf35NAq4Ah3D7cFuw==","EndPoint":"https://ussouthcentral.services.azureml.net/workspaces/dd8eaf48f85f4d729407beb92b805d3c/services/a0088772dac14a60b576af472afbbefc/execute?api-version=2.0&format=swagger","ProductName":"WILLS AND TRUST","IsActive":true,"ProductDescription":"We provide a range of private, corporate and public trust services as well as customized wealth management services designed to preserve wealth and provide financial legacies for generations.","HyperLink":"https://custodianplc.com.ng/trustees-limited"}
+2020-06-19 16:43:12.8170 INFO No recommendation for customer with name   probability0.10715403678101
+2020-06-19 16:43:12.8410 INFO about to read email template EMAIL_TEMPLATE.html
+2020-06-19 16:43:12.8550 INFO Read was successful from  EMAIL_TEMPLATE.html
+2020-06-19 16:43:12.8550 INFO about to read from API_SETTINGS.json
+2020-06-19 16:43:12.8550 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:43:12.8550 INFO about to read from API_SETTINGS.json
+2020-06-19 16:43:12.8550 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:43:16.5171 INFO about to read email template EMAIL_TEMPLATE.html
+2020-06-19 16:43:16.5171 INFO Read was successful from  EMAIL_TEMPLATE.html
+2020-06-19 16:43:16.5171 INFO about to read from API_SETTINGS.json
+2020-06-19 16:43:16.5171 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:43:16.5171 INFO about to read from API_SETTINGS.json
+2020-06-19 16:43:16.5231 INFO Read was successful from  API_SETTINGS.json
+2020-06-19 16:43:20.0101 INFO about to read email template EMAIL_TEMPLATE.html
+2020-06-19 16:43:20.0101 INFO Read was successful from  EMAIL_TEMPLATE.html
+2020-06-19 16:43:20.0101 INFO about to read from API_SETTINGS.json
+2020-06-19 16:43:20.0101 INFO Read was successful from  API_SETTINGS.json

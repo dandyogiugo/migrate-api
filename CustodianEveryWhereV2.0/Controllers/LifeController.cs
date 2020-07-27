@@ -431,17 +431,20 @@ namespace CustodianEveryWhereV2._0.Controllers
                 {
                     var request = api.SubmitPaymentRecord(GlobalConstant.merchant_id, GlobalConstant.password, "NA",
                         "Life", $"NewBusniness|{BuyLife.payment_reference}", Convert.ToDateTime(BuyLife.date_of_birth), DateTime.Now, BuyLife.payment_reference, BuyLife.insured_name, "", "", BuyLife.address, BuyLife.phonenumber,
-                        BuyLife.emailaddress, BuyLife.terms.ToString(), BuyLife.frequency.ToString().Replace("_", "-"), "", PlaceHolder, BuyLife.premium, BuyLife.computed_premium, "ADAPT", "NB","");
+                        BuyLife.emailaddress, BuyLife.terms.ToString(), BuyLife.frequency.ToString().Replace("_", "-"), "", PlaceHolder, BuyLife.premium, BuyLife.computed_premium, "ADAPT", "NB", "","");
                     log.Info("RAW Response from api" + request);
                     if (!string.IsNullOrEmpty(request))
                     {
-                        var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{BuyLife.payment_reference}.{BuyLife.base64ImageFormat}";
-                        var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Life/{nameurl}";
-                        byte[] content = Convert.FromBase64String(BuyLife.base64Image);
-                        File.WriteAllBytes(filepath, content);
-                        newBuyer.pathname = nameurl;
-                        newBuyer.base64ImageFormat = BuyLife.base64ImageFormat;
-                        log.Info($"Raw object {Newtonsoft.Json.JsonConvert.SerializeObject(newBuyer)}");
+                        if (!string.IsNullOrEmpty(BuyLife.base64Image))
+                        {
+                            var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{BuyLife.payment_reference}.{BuyLife.base64ImageFormat}";
+                            var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Life/{nameurl}";
+                            byte[] content = Convert.FromBase64String(BuyLife.base64Image);
+                            File.WriteAllBytes(filepath, content);
+                            newBuyer.pathname = nameurl;
+                            newBuyer.base64ImageFormat = BuyLife.base64ImageFormat;
+                            log.Info($"Raw object {Newtonsoft.Json.JsonConvert.SerializeObject(newBuyer)}");
+                        }
                         await _Buy.Save(newBuyer);
                         var shorturl = (GlobalConstant.Reciept_url + $"FinalReceipt.aspx?mUser=CUST_WEB&mCert={BuyLife.payment_reference}&mCert2={BuyLife.payment_reference}");
                         return new notification_response
