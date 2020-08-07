@@ -850,13 +850,13 @@ namespace DataStore.ViewModels
 
 
 
-    public class SafetyRequest :CoreModels
+    public class SafetyRequest : CoreModels
     {
         public SafetyRequest()
         {
 
         }
-       
+
         [Required]
         public string Address { get; set; }
         [Required]
@@ -881,7 +881,7 @@ namespace DataStore.ViewModels
         public string BeneficiaryName { get; set; }
         // [Required]
         public Gender BeneficiarySex { get; set; }
-       // [Required]
+        // [Required]
         public DateTime BeneficiaryDOB { get; set; }
         //[Required]
         public string BeneficiaryRelatn { get; set; }
@@ -1211,6 +1211,43 @@ namespace DataStore.ViewModels
         public string password { get; set; }
         public string hash { get; set; }
         public int program { get; set; }
+    }
+
+    public class PaystackCharges : CoreModels
+    {
+        [Required]
+        public string authorization_code { get; set; }
+        [Required]
+        public string card_type { get; set; }
+        [Required]
+        public string last4 { get; set; }
+        [Required]
+        public string exp_month { get; set; }
+        [Required]
+        public string exp_year { get; set; }
+        [Required]
+        public string bin { get; set; }
+        [Required]
+        public string bank { get; set; }
+        [Required]
+        public string channel { get; set; }
+        [Required]
+        public string signature { get; set; }
+        [Required]
+        public bool reusable { get; set; }
+        [Required]
+        public string country_code { get; set; }
+        [Required]
+        public string policy_number { get; set; }
+        [Required]
+        public string product_name { get; set; }
+        [Required]
+        public Frequency recurring_freqency { get; set; }
+        public int recurring_day_in_month { get; set; }
+        [Required]
+        public string customer_email { get; set; }
+        [Required]
+        public string customer_name { get; set; }
     }
 }
 

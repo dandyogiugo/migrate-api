@@ -343,6 +343,7 @@
     <Compile Include="Controllers\MealPlanController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\NotificationsController.cs" />
+    <Compile Include="Controllers\PaystackRecurringChargesController.cs" />
     <Compile Include="Controllers\PensionController.cs" />
     <Compile Include="Controllers\PersonalProductionController.cs" />
     <Compile Include="Controllers\RagaController.cs" />

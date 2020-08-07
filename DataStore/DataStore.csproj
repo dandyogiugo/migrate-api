@@ -116,6 +116,7 @@
     <Compile Include="Models\MyPreference.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\NonLifeClaimsDocument.cs" />
+    <Compile Include="Models\PaystackRecurringCharges.cs" />
     <Compile Include="Models\PinnedNews.cs" />
     <Compile Include="Models\PremiumCalculatorMapping.cs" />
     <Compile Include="Models\ReferralCodeLookUp.cs" />

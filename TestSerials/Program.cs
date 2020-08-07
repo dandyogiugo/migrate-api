@@ -30,8 +30,9 @@ namespace TestSerials
 
             try
             {
-                var t = new CrossSellingEngine();
-                t.EngineProcessor();
+                var test = breakPalindrome("bab");
+                //var t = new CrossSellingEngine();
+                //t.EngineProcessor();
                 // using (var api = new Cust.PolicyServicesSoapClient())
                 // {
                 //var response = api.PostTravel2Raga(DateTime.Now, Convert.ToDateTime("2020-03-01"),
@@ -291,6 +292,62 @@ namespace TestSerials
             }
         }
 
+        public void GetAPI()
+        {
+            var api = "https://jsonmock.hackerrank.com/api/articles?author=epaga&page=1";
+            List<dynamic> arr = new List<dynamic>();
+            using (var http = new  HttpClient())
+            {
+                var reponse = http.GetAsync(api).GetAwaiter().GetResult();
+                if (reponse.IsSuccessStatusCode)
+                {
+                    string content = reponse.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                    var obj = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(content);
+                    arr.Add(obj.data);
+                    if(obj)
+                }
+            }
+        }
+        public static string breakPalindrome(string palindromeStr)
+        {
+            var arr = palindromeStr.ToCharArray().ToArray();
+            Console.WriteLine(arr);
+            // bool containtOtherApha = Regex.IsMatch(palindromeStr,@"/(^a)/");
+            //Console.WriteLine(containtOtherApha);
+            // if(containtOtherApha){
+            // bool isPossible = false;
+            for (int i = 0; i < arr.Length; ++i)
+            {
+                if (arr[i] != 'a')
+                {
+                    arr[i] = 'a';
+                    var pal = string.Join(" ", arr);
+                    Console.WriteLine(pal);
+                    var reverse = string.Join(" ", arr.Reverse());
+                    Console.WriteLine(reverse);
+                    if (pal != reverse)
+                    {
+                        // isPossible = true;
+                        return pal;
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                else
+                {
+                    continue;
+                }
+
+            }
+            return "IMPOSSIBLE";
+            //}else{
+            //  return "IMPOSSIBLE";
+            //}
+
+        }
         public List<string> popularNFeatures(int numFeatures,
                                         int topFeatures,
                                         List<string> possibleFeatures,
