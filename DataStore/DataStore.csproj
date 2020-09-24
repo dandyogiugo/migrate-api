@@ -44,6 +44,12 @@
     <Reference Include="GenerateTransactionCodes">
       <HintPath>..\..\..\..\..\..\..\ProjectNotification\RobApi\bin\GenerateTransactionCodes.dll</HintPath>
     </Reference>
+    <Reference Include="Hangfire.Console, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Console.1.4.2\lib\net45\Hangfire.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.7.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.7.12\lib\net45\Hangfire.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -58,6 +64,9 @@
     <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\TestSerials\bin\Debug\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="Spire.Doc, Version=6.3.0.41040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
       <HintPath>..\packages\FreeSpire.Doc.6.3\lib\net40\Spire.Doc.dll</HintPath>
@@ -92,6 +101,10 @@
     <Compile Include="context\dbcontext.cs" />
     <Compile Include="ExtensionMethods\MyExtensions.cs" />
     <Compile Include="Irepository\Istore.cs" />
+    <Compile Include="Migrations\202009221314020_First Migration.cs" />
+    <Compile Include="Migrations\202009221314020_First Migration.Designer.cs">
+      <DependentUpon>202009221314020_First Migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdaptLeads.cs" />
     <Compile Include="Models\AdaptTravelInsurance.cs" />
@@ -118,6 +131,7 @@
     <Compile Include="Models\NonLifeClaimsDocument.cs" />
     <Compile Include="Models\PaystackRecurringCharges.cs" />
     <Compile Include="Models\PinnedNews.cs" />
+    <Compile Include="Models\PolicyServicesDetails.cs" />
     <Compile Include="Models\PremiumCalculatorMapping.cs" />
     <Compile Include="Models\ReferralCodeLookUp.cs" />
     <Compile Include="Models\SafetyPlus.cs" />
@@ -135,6 +149,7 @@
     <Compile Include="ViewModels\GlobalConstant.cs" />
     <Compile Include="ViewModels\HomeShieldViewModel.cs" />
     <Compile Include="ViewModels\LifeQuoteObject.cs" />
+    <Compile Include="ViewModels\Policyservices.cs" />
     <Compile Include="ViewModels\Referrals.cs" />
     <Compile Include="ViewModels\requests.cs" />
     <Compile Include="ViewModels\response.cs" />
@@ -147,6 +162,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202009221314020_First Migration.resx">
+      <DependentUpon>202009221314020_First Migration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

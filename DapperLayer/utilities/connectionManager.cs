@@ -103,5 +103,7 @@ namespace DapperLayer.utilities
                                                         where {4}
                                                         {5}";
 
+        public static string GetPolicy { get; } = "GetPolicies";
+
     }
 }

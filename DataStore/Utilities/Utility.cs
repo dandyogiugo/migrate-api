@@ -19,6 +19,9 @@ using System.Web.ModelBinding;
 using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
+using Hangfire.Server;
+using Hangfire.Console;
+using System.Net.Mail;
 
 namespace DataStore.Utilities
 {
@@ -1238,7 +1241,6 @@ namespace DataStore.Utilities
 
             return response;
         }
-
         public async Task<string> GenerateQuoteNumber(int val)
         {
             string final = "";
@@ -1262,6 +1264,46 @@ namespace DataStore.Utilities
             }
 
             return final;
+        }
+
+        public bool IsValid(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+        public bool isValidPhone(string phone)
+        {
+            if (phone?.Trim().Length == 11)
+            {
+                return true;
+            }
+            if (phone?.Trim().Length == 14)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public string numberin234(string number)
+        {
+            if (string.IsNullOrEmpty(number))
+                return null;
+
+            if (number.StartsWith("+"))
+                return number.Remove(0, 1);
+            else if (number.StartsWith("0"))
+                return $"234{number.Remove(0, 1)}";
+
+            return number;
         }
     }
 
@@ -1321,6 +1363,19 @@ namespace DataStore.Utilities
                     return 3;
                 }
             }
+        }
+    }
+
+    public class cron
+    {
+        public cron()
+        {
+
+        }
+
+        public void logTimer(PerformContext log)
+        {
+            log.WriteLine($"Log me time ==================== {DateTime.Now} ===========================");
         }
     }
 }

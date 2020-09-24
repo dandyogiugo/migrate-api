@@ -17,6 +17,7 @@ namespace CustodianEveryWhereV2._0
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
+
             // Web API routes
             config.MapHttpAttributeRoutes();
             config.EnableCors();

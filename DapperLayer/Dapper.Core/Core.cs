@@ -335,5 +335,26 @@ namespace DapperLayer.Dapper.Core
                 return false;
             }
         }
+
+
+        public async Task<IEnumerable<T>> GetPolicyServices(string policynumber)
+        {
+            try
+            {
+                var p = new { policy = policynumber };
+                using (var cnn = new SqlConnection(connectionManager.connectionString("CustApi2")))
+                {
+                    var result = await cnn.QueryAsync<T>(connectionManager.GetPolicy, param: p, commandType: CommandType.StoredProcedure);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException?.ToString());
+                return null;
+            }
+        }
     }
 }

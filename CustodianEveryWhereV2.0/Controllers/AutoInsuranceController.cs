@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Xml.Serialization;
@@ -49,32 +50,56 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Permission denied from accessing this feature"
                     };
                 }
-
-                var reg = new AutoReg.VehicleCheckSoapClient();
-                var resp = await reg.WS_LicenseInfoByRegNoAsync(regno, "", "", "", "", "", "6492CUS15");
-                if (resp.Contains("</LicenseInfo>"))
+                #region old api version-- depricated by auto reg
+                //var reg = new AutoReg.VehicleCheckSoapClient();
+                //var resp = await reg.WS_LicenseInfoByRegNoAsync(regno, "", "", "", "", "", "6492CUS15");
+                //if (resp.Contains("</LicenseInfo>"))
+                //{
+                //    var index = resp.IndexOf("<Response>");
+                //    var remove = resp.Remove(index, resp.Length - resp.Substring(0, index).Length);
+                //    XmlSerializer serializer = new XmlSerializer(typeof(LicenseInfo), new XmlRootAttribute("LicenseInfo"));
+                //    StringReader stringReader = new StringReader(remove);
+                //    LicenseInfo details = (LicenseInfo)serializer.Deserialize(stringReader);
+                //    return new res
+                //    {
+                //        message = "Registration Number Is Valid",
+                //        status = 200,
+                //        data = details
+                //    };
+                //}
+                //else
+                //{
+                //    XmlSerializer serializer = new XmlSerializer(typeof(response), new XmlRootAttribute("Response"));
+                //    StringReader stringReader = new StringReader(resp);
+                //    response details = (response)serializer.Deserialize(stringReader);
+                //    return new res
+                //    {
+                //        message = details.ResponseMessage,
+                //        status = 402
+                //    };
+                //}
+                #endregion
+                using (var api = new HttpClient())
                 {
-                    var index = resp.IndexOf("<Response>");
-                    var remove = resp.Remove(index, resp.Length - resp.Substring(0, index).Length);
-                    XmlSerializer serializer = new XmlSerializer(typeof(LicenseInfo), new XmlRootAttribute("LicenseInfo"));
-                    StringReader stringReader = new StringReader(remove);
-                    LicenseInfo details = (LicenseInfo)serializer.Deserialize(stringReader);
+                    regno = Regex.Replace(regno, @"\s", "");// remove spaces between text
+                    var api_key = ConfigurationManager.AppSettings["AutoRegAPIKey"];
+                    var url = ConfigurationManager.AppSettings["AutoRegAPIUrl"];
+                    var request = await api.GetAsync($"{url}/{regno}/{api_key}");
+                    if (!request.IsSuccessStatusCode)
+                    {
+                        return new res
+                        {
+                            message = "Unable to fetch vehicle information",
+                            status = (int)request.StatusCode
+                        };
+                    }
+                    var response = await request.Content.ReadAsStringAsync();
+                    var details = Newtonsoft.Json.JsonConvert.DeserializeObject<LicenseInfo>(response);
                     return new res
                     {
                         message = "Registration Number Is Valid",
                         status = 200,
                         data = details
-                    };
-                }
-                else
-                {
-                    XmlSerializer serializer = new XmlSerializer(typeof(response), new XmlRootAttribute("Response"));
-                    StringReader stringReader = new StringReader(resp);
-                    response details = (response)serializer.Deserialize(stringReader);
-                    return new res
-                    {
-                        message = details.ResponseMessage,
-                        status = 402
                     };
                 }
             }
@@ -243,7 +268,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         //    GlobalConstant.password, "", "", "", Auto.dob ?? DateTime.Now, DateTime.Now, "",
                         //    Auto.customer_name, "", "", Auto.address, Auto.phone_number, Auto.email, Auto.payment_option, "", "",
                         //    Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured, "ADAPT", "NB", "");
-                      
+
                         var count = await auto.GetAll();//TODO: this is not scaleable , just get count only instead of loading the entire record to get count 
                         var resp = await util.SendQuote(Auto, count.Count() + 1);
                         if (resp.status == 200)

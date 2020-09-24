@@ -103,6 +103,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         };
                     }
                 }
+
                 if (!pol_detials.use_vehicle_reg_only)
                 {
                     using (var api = new CustodianAPI.PolicyServicesSoapClient())
@@ -111,7 +112,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                         log.Info($"raw api response  {Newtonsoft.Json.JsonConvert.SerializeObject(request)}");
                         if (request == null || request.PolicyNo == "NULL")
                         {
-
                             log.Info($"Invalid policy number for policy search {pol_detials.policy_number}");
                             return new policy_data
                             {
@@ -189,35 +189,39 @@ namespace CustodianEveryWhereV2._0.Controllers
                         }
                         else
                         {
-                            dynamic transposed = null;
-                            if (pol_detials.subsidiary == subsidiary.General)
-                            {
-                                var motoRequest = api.GetMotorPolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.policy_number);
-                                if (motoRequest.Length == 0)
-                                {
-                                    return new policy_data
-                                    {
-                                        status = 202,
-                                        message = $"Unable to fetch vehicles for {pol_detials.policy_number}"
-                                    };
-                                }
+                            #region - commented out
+                            //dynamic transposed = null;
+                            //if (pol_detials.subsidiary == subsidiary.General)
+                            //{
+                            //    var motoRequest = api.GetMotorPolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.policy_number);
+                            //    if (motoRequest.Length == 0)
+                            //    {
+                            //        return new policy_data
+                            //        {
+                            //            status = 202,
+                            //            message = $"Unable to fetch vehicles for {pol_detials.policy_number}"
+                            //        };
+                            //    }
 
-                                transposed = motoRequest.Select(x => new
-                                {
-                                    RegNumber = x.mVehReg?.Trim(),
-                                    ChasisNumber = x.mChasisNum?.Trim(),
-                                    EngineNumber = x.mENGINENUM?.Trim(),
-                                    ExpiryDate = Convert.ToDateTime(x.mEnddate?.Trim()).ToString("dd-MMM-yyyy"),
-                                    StartDate = Convert.ToDateTime(x.mStartdate?.Trim()).ToString("dd-MMM-yyyy"),
-                                    Color = x.mVEHCOLOR?.Trim(),
-                                    Make = x.mVEHMAKE?.Trim(),
-                                    Premium = Convert.ToDouble(x.mVEHPREMIUM?.Trim()),
-                                    Value = Convert.ToDouble(x.mVEHVALUE?.Trim()),
-                                    InsuredName = x.mInsuredname?.Trim(),
-                                    Status = x.Status?.Trim(),
-                                    EngineCapacity = x.mHPCAPACITY?.Trim()
-                                }).ToList();
-                            }
+                            //    transposed = motoRequest.Select(x => new
+                            //    {
+                            //        RegNumber = x.mVehReg?.Trim(),
+                            //        ChasisNumber = x.mChasisNum?.Trim(),
+                            //        EngineNumber = x.mENGINENUM?.Trim(),
+                            //        ExpiryDate = Convert.ToDateTime(x.mEnddate?.Trim()).ToString("dd-MMM-yyyy"),
+                            //        StartDate = Convert.ToDateTime(x.mStartdate?.Trim()).ToString("dd-MMM-yyyy"),
+                            //        Color = x.mVEHCOLOR?.Trim(),
+                            //        Make = x.mVEHMAKE?.Trim(),
+                            //        Premium = Convert.ToDouble(x.mVEHPREMIUM?.Trim()),
+                            //        Value = Convert.ToDouble(x.mVEHVALUE?.Trim()),
+                            //        InsuredName = x.mInsuredname?.Trim(),
+                            //        Status = x.Status?.Trim(),
+                            //        EngineCapacity = x.mHPCAPACITY?.Trim()
+                            //    }).ToList();
+                            //}
+
+                            #endregion
+
                             return new policy_data
                             {
                                 status = 200,
@@ -255,7 +259,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                                     checksum = await util.Sha512(merchantConfig.merchant_id + request.SumIns + request.PolicyNo?.Trim() + merchantConfig.secret_key),
                                     message = $"checksum created on {DateTime.Now}"
                                 },
-                                vehiclelist = transposed
 
                             };
                         }
@@ -282,7 +285,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 message = $"Unable to fetech vehicle information for Reg '{pol_detials.vehicle_regs[0]}'"
                             };
                         }
-
+                        var request2 = api.GetMorePolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, pol_detials.subsidiary.ToString(), motoRequest.mPolicyNumber?.Trim());
+                        log.Info($"raw api response business unit  {Newtonsoft.Json.JsonConvert.SerializeObject(request2)}");
                         var transposed = new
                         {
                             RegNumber = motoRequest.mVehReg?.Trim(),
@@ -297,7 +301,10 @@ namespace CustodianEveryWhereV2._0.Controllers
                             InsuredName = motoRequest.mInsuredname?.Trim(),
                             Status = motoRequest.Status?.Trim(),
                             EngineCapacity = motoRequest.mHPCAPACITY?.Trim(),
-                            PolicyNumber = motoRequest.mPolicyNumber?.Trim()
+                            PolicyNumber = motoRequest.mPolicyNumber?.Trim(),
+                            BusinessUnit = request2?.BizUnit?.Trim(),
+                            Email = request2?.InsuredEmail?.Trim(),
+                            PhoneNumber = request2?.InsuredNum?.Trim()
                         };
 
                         return new policy_data
@@ -352,6 +359,9 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                 var merchantConfig = await _apiconfig.FindOneByCriteria(x => x.merchant_id == post.merchant_id);
                 //check if request is from GT Bank and apply sha512
+
+                string channelName = "PAYSTACK";
+                channelName = (merchantConfig.merchant_name.ToLower().Contains("agent")) ? "MPOS" : "PAYSTACK";
                 if (merchantConfig != null && merchantConfig.merchant_name == GlobalConstant.GTBANK)
                 {
                     if (string.IsNullOrEmpty(post.checksum))
@@ -373,9 +383,9 @@ namespace CustodianEveryWhereV2._0.Controllers
                             message = "Invalid checksum"
                         };
                     }
+                    channelName = merchantConfig.merchant_name.ToUpper();
                 }
-                string channelName = "PAYSTACK";
-                channelName = (merchantConfig.merchant_name.ToLower().Contains("agent")) ? "MPOS" : "PAYSTACK";
+
 
                 var validate_headers = await util.ValidateHeaders(headerValues, post.merchant_id);
 
@@ -419,8 +429,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
-                    var request = await api.SubmitPaymentRecordAsync(GlobalConstant.merchant_id, GlobalConstant.password, post.policy_number, 
-                        post.subsidiary.ToString(), post.payment_narrtn, DateTime.Now,
+                    var request = await api.SubmitPaymentRecordAsync(GlobalConstant.merchant_id, GlobalConstant.password, post.policy_number,
+                        post.subsidiary.ToString(), post.payment_narrtn ?? new_trans.description, DateTime.Now,
                         DateTime.Now, post.reference_no, new_trans.issured_name, "", "", "", new_trans.phone_no, new_trans.email_address,
                         "", "", "", post.biz_unit, post.premium, 0, channelName, "RW", "", new_trans.vehicle_reg_no ?? "");
                     log.Info($"raw response from api {request.Passing_Payment_PostSourceResult}");

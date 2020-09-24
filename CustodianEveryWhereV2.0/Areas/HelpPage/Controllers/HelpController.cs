@@ -27,8 +27,9 @@ namespace CustodianEveryWhereV2._0.Areas.HelpPage.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.DocumentationProvider = Configuration.Services.GetDocumentationProvider();
-            return View(Configuration.Services.GetApiExplorer().ApiDescriptions);
+            //ViewBag.DocumentationProvider = Configuration.Services.GetDocumentationProvider();
+            //return View(Configuration.Services.GetApiExplorer().ApiDescriptions);
+            return Redirect("/swagger");
         }
 
         public ActionResult Api(string apiId)

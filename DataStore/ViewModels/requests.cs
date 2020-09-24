@@ -453,9 +453,9 @@ namespace DataStore.ViewModels
     }
 
 
-    public class LicenseInfo
+    public class LicenseInfo2
     {
-        public LicenseInfo()
+        public LicenseInfo2()
         {
 
         }
@@ -466,6 +466,25 @@ namespace DataStore.ViewModels
         public string Name { get; set; }
         public string RegistrationNo { get; set; }
         public string VehicleStatus { get; set; }
+    }
+    public class LicenseInfo
+    {
+        public LicenseInfo()
+        {
+
+        }
+        public object message { get; set; }
+        public string vehicleMake { get; set; }
+        public string vehicleModel { get; set; }
+        public string engineNumber { get; set; }
+        public string chassisNumber { get; set; }
+        public string ownerName { get; set; }
+        public string ownerAddress { get; set; }
+        public string vehicleStatus { get; set; }
+        public string vehicleColor { get; set; }
+        public string stateOfRegistration { get; set; }
+        public string expiryDate { get; set; }
+        public object validityPeriod { get; set; }
     }
 
     public class response
