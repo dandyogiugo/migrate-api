@@ -105,6 +105,10 @@
     <Compile Include="Migrations\202009221314020_First Migration.Designer.cs">
       <DependentUpon>202009221314020_First Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009300935110_second mirgration.cs" />
+    <Compile Include="Migrations\202009300935110_second mirgration.Designer.cs">
+      <DependentUpon>202009300935110_second mirgration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdaptLeads.cs" />
     <Compile Include="Models\AdaptTravelInsurance.cs" />
@@ -166,6 +170,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202009221314020_First Migration.resx">
       <DependentUpon>202009221314020_First Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009300935110_second mirgration.resx">
+      <DependentUpon>202009300935110_second mirgration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

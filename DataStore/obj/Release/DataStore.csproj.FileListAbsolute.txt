@@ -106,3 +106,43 @@ C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DataStore\bin
 C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DataStore\bin\Release\pt-PT\Hangfire.Core.resources.dll
 C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DataStore\bin\Release\zh\Hangfire.Core.resources.dll
 C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DataStore\bin\Release\zh-TW\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\DataStore.dll.config
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\DataStore.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\DataStore.pdb
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\EntityFramework.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Hangfire.Console.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Hangfire.Core.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Newtonsoft.Json.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\NLog.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Oracle.DataAccess.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Owin.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Spire.Doc.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Spire.License.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Spire.Pdf.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Microsoft.mshtml.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\EntityFramework.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Hangfire.Console.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Hangfire.Core.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Newtonsoft.Json.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\NLog.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Spire.Doc.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Spire.License.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\es\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\fa\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\fr\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\nl\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\pt\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\pt-BR\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\pt-PT\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\zh\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\zh-TW\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csprojAssemblyReference.cache
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.Migrations.FirstMigration.resources
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.Migrations.secondmirgration.resources
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csproj.GenerateResource.cache
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csproj.CoreCompileInputs.cache
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csproj.CopyComplete
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.pdb

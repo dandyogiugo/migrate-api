@@ -30,9 +30,9 @@ namespace TestSerials
 
             try
             {
-                var test = breakPalindrome("bab");
-                //var t = new CrossSellingEngine();
-                //t.EngineProcessor();
+                //var test = breakPalindrome("bab");
+                var t = new CrossSellingEngine();
+                t.EngineProcessor();
                 // using (var api = new Cust.PolicyServicesSoapClient())
                 // {
                 //var response = api.PostTravel2Raga(DateTime.Now, Convert.ToDateTime("2020-03-01"),
@@ -304,7 +304,7 @@ namespace TestSerials
                     string content = reponse.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                     var obj = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(content);
                     arr.Add(obj.data);
-                    if(obj)
+                    if (obj) { }
                 }
             }
         }

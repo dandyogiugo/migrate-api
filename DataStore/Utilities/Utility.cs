@@ -353,7 +353,6 @@ namespace DataStore.Utilities
                 log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
             }
         }
-
         public void SendQuotationEmail(Auto sendmail, string temp, string Imagepath, string cert_path, string temp2, string quotation_number)
         {
             try
@@ -397,7 +396,6 @@ namespace DataStore.Utilities
                 log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
             }
         }
-
         public async Task<string> GeneratePolicyNO(int val)
         {
             string final = "";
@@ -1265,7 +1263,6 @@ namespace DataStore.Utilities
 
             return final;
         }
-
         public bool IsValid(string emailaddress)
         {
             try
@@ -1292,7 +1289,6 @@ namespace DataStore.Utilities
 
             return false;
         }
-
         public string numberin234(string number)
         {
             if (string.IsNullOrEmpty(number))
@@ -1306,8 +1302,6 @@ namespace DataStore.Utilities
             return number;
         }
     }
-
-
     public static class Config
     {
         public const string DEFAULT_BASE_URL = "https://api-football-v1.p.rapidapi.com/v2";
@@ -1365,7 +1359,6 @@ namespace DataStore.Utilities
             }
         }
     }
-
     public class cron
     {
         public cron()

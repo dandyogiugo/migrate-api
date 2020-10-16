@@ -79,14 +79,14 @@ namespace DapperLayer.Dapper.Core
             return obj;
         }
 
-        public async Task<IEnumerable<T>> GetNewCustomerDetails(DateTime start_date, DateTime end_date)
+        public async Task<IEnumerable<T>> GetNewCustomerDetails()
         {
             try
             {
-                var p = new { start_date = start_date, end_date = end_date };
+                //var p = new { start_date = start_date, end_date = end_date };
                 using (var cnn = new SqlConnection(connectionManager.connectionString("CustApi2")))
                 {
-                    var result = await cnn.QueryAsync<T>(connectionManager._getNewCustomerSP, p, null, null, CommandType.StoredProcedure);
+                    var result = await cnn.QueryAsync<T>(connectionManager._getNewCustomerSP, commandType: CommandType.StoredProcedure);
                     return result;
                 }
             }

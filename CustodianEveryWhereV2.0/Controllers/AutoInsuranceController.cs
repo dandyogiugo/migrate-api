@@ -13,10 +13,12 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Xml.Serialization;
 
 namespace CustodianEveryWhereV2._0.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AutoInsuranceController : ApiController
     {
 

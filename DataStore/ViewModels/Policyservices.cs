@@ -23,6 +23,8 @@ namespace DataStore.ViewModels
         public string imei { get; set; }
         [Required]
         public string email { get; set; }
+        public string devicename { get; set; }
+        public string os { get; set; }
     }
 
     public class policyInfo
@@ -43,5 +45,19 @@ namespace DataStore.ViewModels
         public string productdesc { get; set; }
         public string productsubdesc { get; set; }
         public string status { get; set; }
+    }
+
+    public class ValidatePolicy
+    {
+        public ValidatePolicy()
+        {
+
+        }
+        public string merchant_id { get; set; }
+        public string email { get; set; } 
+        public string token { get; set; }
+        public string hash { get; set; }
+        public string pin { get; set; }
+        public string customerid { get; set; }
     }
 }

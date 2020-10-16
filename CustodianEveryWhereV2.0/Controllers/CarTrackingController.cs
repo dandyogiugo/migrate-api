@@ -12,9 +12,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace CustodianEveryWhereV2._0.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CarTrackingController : ApiController
     {
         private static Logger log = LogManager.GetCurrentClassLogger();

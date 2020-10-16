@@ -7,6 +7,7 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
+using UpSellingAndCrossSelling.Quartz;
 
 namespace UpSellingAndCrossSelling
 {
@@ -19,10 +20,12 @@ namespace UpSellingAndCrossSelling
 
         protected override void OnStart(string[] args)
         {
+            JobScheduler.Start();
         }
 
         protected override void OnStop()
         {
+            JobScheduler.Stop();
         }
     }
 }

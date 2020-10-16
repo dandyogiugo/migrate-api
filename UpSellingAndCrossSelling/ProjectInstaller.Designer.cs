@@ -39,7 +39,8 @@
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.DisplayName = "Custodian Cross Selling And Up-Selling";
+            this.serviceInstaller1.Description = "Product Recommendation service";
+            this.serviceInstaller1.DisplayName = "Custodian Product Recommendation Engine";
             this.serviceInstaller1.ServiceName = "UpSellingAndCrossSelling";
             // 
             // ProjectInstaller

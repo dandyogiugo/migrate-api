@@ -17,9 +17,11 @@ using System.Text;
 using CustodianEmailSMSGateway.Email;
 using System.IO;
 using DataStore.ExtensionMethods;
+using System.Web.Http.Cors;
 
 namespace CustodianEveryWhereV2._0.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class FitfamPlusController : ApiController
     {
         private static Logger log = LogManager.GetCurrentClassLogger();

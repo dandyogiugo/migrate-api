@@ -14,12 +14,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace CustodianEveryWhereV2._0.Controllers
 {
     /// <summary>
     /// Post to raga end api
     /// </summary>
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class RagaController : ApiController
     {
         private static Logger log = LogManager.GetCurrentClassLogger();

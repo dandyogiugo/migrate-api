@@ -121,3 +121,45 @@ C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DapperLayer\b
 C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DapperLayer\bin\Release\pt-PT\Hangfire.Core.resources.dll
 C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DapperLayer\bin\Release\zh\Hangfire.Core.resources.dll
 C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\DapperLayer\bin\Release\zh-TW\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\DapperLayer.dll.config
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\DapperLayer.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\DapperLayer.pdb
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Dapper.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\DataStore.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\NLog.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Spire.Doc.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Oracle.DataAccess.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Hangfire.Core.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\EntityFramework.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\CustodianEmailSMSGateway.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Newtonsoft.Json.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Hangfire.Console.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\GenerateTransactionCodes.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Spire.Pdf.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Spire.License.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Owin.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Microsoft.mshtml.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\DataStore.pdb
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\DataStore.dll.config
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Dapper.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\NLog.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Spire.Doc.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Hangfire.Core.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\EntityFramework.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Newtonsoft.Json.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Hangfire.Console.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Spire.License.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\es\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\fa\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\fr\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\nl\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\pt\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\pt-BR\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\pt-PT\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\zh\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\zh-TW\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\obj\Release\DapperLayer.csprojAssemblyReference.cache
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\obj\Release\DapperLayer.csproj.CoreCompileInputs.cache
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\obj\Release\DapperLayer.csproj.CopyComplete
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\obj\Release\DapperLayer.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\obj\Release\DapperLayer.pdb

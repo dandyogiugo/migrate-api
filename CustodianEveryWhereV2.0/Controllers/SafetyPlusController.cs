@@ -9,9 +9,11 @@ using System.Configuration;
 using System.IO;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace CustodianEveryWhereV2._0.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SafetyPlusController : ApiController
     {
         private static Logger log = LogManager.GetCurrentClassLogger();

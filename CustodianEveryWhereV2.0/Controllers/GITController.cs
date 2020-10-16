@@ -11,12 +11,14 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Diagnostics;
+using System.Web.Http.Cors;
 
 namespace CustodianEveryWhereV2._0.Controllers
 {
     /// <summary>
     /// The Controller manages all GIT insurance
     /// </summary>
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class GITController : ApiController
     {
         private static Logger log = LogManager.GetCurrentClassLogger();

@@ -25,9 +25,8 @@ namespace UpSellingAndCrossSelling.CrossSelling
         public void EngineProcessor()
         {
             List<RecommendationList> peopleToRecommend = new List<RecommendationList>();
-
             var getRecords = GetCustomerRecords().GetAwaiter().GetResult();
-            getRecords = getRecords?.Take(10).ToList();
+            //getRecords = getRecords?.Take(10).ToList();
             if (getRecords != null && getRecords.Count() > 0)
             {
                 foreach (var record in getRecords)
@@ -81,7 +80,7 @@ namespace UpSellingAndCrossSelling.CrossSelling
                                                 }
                                                 else
                                                 {
-                                                    _log.Info($"No recommendation for customer with name {record.CustomerName}  probability{probability}");
+                                                    _log.Info($"No recommendation for customer with name {record.CustomerName}  probability {probability}");
                                                 }
                                             }
                                         }
@@ -134,7 +133,7 @@ namespace UpSellingAndCrossSelling.CrossSelling
                 SendMailAndSMS(peopleToRecommend);
             }
         }
-        public object SetPostParams(RequestModel model)
+        private object SetPostParams(RequestModel model)
         {
             if (model == null)
                 return null;
@@ -184,18 +183,18 @@ namespace UpSellingAndCrossSelling.CrossSelling
 
             return (object)scoreRequest;
         }
-        public async Task<List<DbModels>> GetCustomerRecords()
+        private async Task<List<DbModels>> GetCustomerRecords()
         {
             try
             {
-                DateTime start_date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-                DateTime end_date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
-                if (Apiconfig.GetDateFromConfig != null)
-                {
-                    end_date = Apiconfig.GetDateFromConfig.EndDate.Value;
-                    start_date = Apiconfig.GetDateFromConfig.StartDate.Value;
-                }
-                var getRecords = await _getRecords.GetNewCustomerDetails(start_date, end_date);
+                //DateTime start_date = Convert.ToDateTime(""); //new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                //DateTime end_date = DateTime.Now; //new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
+                //if (Apiconfig.GetDateFromConfig != null)
+                //{
+                //    end_date = Apiconfig.GetDateFromConfig.EndDate.Value;
+                //    start_date = Apiconfig.GetDateFromConfig.StartDate.Value;
+                //}
+                var getRecords = await _getRecords.GetNewCustomerDetails();
                 return getRecords?.ToList();
             }
             catch (Exception ex)
@@ -207,13 +206,13 @@ namespace UpSellingAndCrossSelling.CrossSelling
                 return null;
             }
         }
-
-        public async void SendMailAndSMS(List<RecommendationList> ItemList)
+        private async void SendMailAndSMS(List<RecommendationList> ItemList)
         {
             try
             {
                 if (ItemList.Count() > 0)
                 {
+                    int i = 0;
                     foreach (var item in ItemList)
                     {
                         StringBuilder template = new StringBuilder(Apiconfig._emailTemplate);
@@ -228,9 +227,23 @@ namespace UpSellingAndCrossSelling.CrossSelling
                         }
                         template.Replace("#PRODUCTS#", html);
                         string Body = template.ToString();
-                        item.Email = "oscardybabaphd@gmail.com"; //item.Email
-                
-                        new SendEmail().Send_Email(item.Email, "Recommended Products", Body, "Product Recommendation", false, "", Apiconfig.ccMail, null, null, true);
+                        //item.Email = "oscardybabaphd@gmail.com"; //item.Email
+                        if (IsValidEmail(item.Email))
+                        {
+                            var bcc = Apiconfig.ccMail;
+                            if (i > 5)
+                            {
+                                bcc = null;
+                            }
+                            new SendEmail().Send_Email(item.Email, "Designed For You", Body, "Designed For You", false, "", null, bcc, null, true);
+                            _log.Info($"recommendation email was sent successfully to {item.Email}");
+                            ++i;
+                        }
+                        else
+                        {
+                            _log.Info($"recommendation email was not sent to {item.Email} Invalid email address");
+                        }
+
                         //Send SMS here
                     }
 
@@ -246,6 +259,18 @@ namespace UpSellingAndCrossSelling.CrossSelling
                 _log.Error(ex.Message);
                 _log.Error(ex.StackTrace);
                 _log.Error(ex.InnerException);
+            }
+        }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

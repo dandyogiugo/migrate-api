@@ -14,9 +14,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace CustodianEveryWhereV2._0.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SportController : ApiController
     {
         private static Logger log = LogManager.GetCurrentClassLogger();

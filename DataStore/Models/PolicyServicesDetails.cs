@@ -27,5 +27,8 @@ namespace DataStore.Models
         public string devicename { get; set; }
         public string deviceimei { get; set; }
         public string pin { get; set; }
+        public bool is_setup_completed { get; set; }
+
+        public string policynumber { get; set; }
     }
 }
