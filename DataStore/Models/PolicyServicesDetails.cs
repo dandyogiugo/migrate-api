@@ -22,13 +22,12 @@ namespace DataStore.Models
         public string phonenumber { get; set; }
         public string customerid { get; set; }
         public DateTime createdat { get; set; }
-        public DateTime updatedat { get; set; }
+        public DateTime? updatedat { get; set; }
         public string os { get; set; }
         public string devicename { get; set; }
         public string deviceimei { get; set; }
         public string pin { get; set; }
         public bool is_setup_completed { get; set; }
-
         public string policynumber { get; set; }
     }
 }

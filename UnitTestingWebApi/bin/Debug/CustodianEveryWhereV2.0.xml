@@ -507,6 +507,30 @@
             <param name="BuyGIT"></param>
             <returns></returns>
         </member>
+        <member name="M:CustodianEveryWhereV2._0.Controllers.MealPlanController.CreateMealPlanNew(DataStore.ViewModels._MealPlan)">
+            <summary>
+            
+            </summary>
+            <param name="meal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CustodianEveryWhereV2._0.Controllers.MealPlanController.GetMyMealPlanNew(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="emailOrphone"></param>
+            <param name="merchant_id"></param>
+            <param name="hash"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CustodianEveryWhereV2._0.Controllers.MealPlanController.CancelMealPlan(System.String,System.String)">
+            <summary>
+             Cancel meal plan
+            </summary>
+            <param name="emailOrphone"></param>
+            <param name="merchant_id"></param>
+            <returns></returns>
+        </member>
         <member name="M:CustodianEveryWhereV2._0.Controllers.MealPlanController.CreateMealPlan(DataStore.ViewModels._MealPlan)">
             <summary>
             

@@ -954,7 +954,7 @@ namespace DataStore.Utilities
                     mobile_number = (isSms) ? toaddress : null,
                     platform = source,
                     email = (!isSms) ? toaddress : null,
-                    otp = Security.Transactions.UID.Codes.TransactionCodes.GenTransactionCodes(6)
+                    otp = (Config.isDemo) ? "123456" : Security.Transactions.UID.Codes.TransactionCodes.GenTransactionCodes(6)
                 };
                 await _otp.Save(new_otp);
 
@@ -1355,6 +1355,22 @@ namespace DataStore.Utilities
                 else
                 {
                     return 3;
+                }
+            }
+        }
+
+        public static bool isDemo
+        {
+            get
+            {
+                string demo = ConfigurationManager.AppSettings["IsDemo"];
+                if (bool.TryParse(demo, out bool result))
+                {
+                    return result;
+                }
+                else
+                {
+                    return false;
                 }
             }
         }

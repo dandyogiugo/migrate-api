@@ -19,7 +19,7 @@ namespace DataStore.ViewModels
         public string policynumber { get; set; }
         [Required]
         public string hash { get; set; }
-        [Required]
+ 
         public string imei { get; set; }
         [Required]
         public string email { get; set; }
@@ -37,7 +37,7 @@ namespace DataStore.ViewModels
         public string fullname { get; set; }
         public string policyno { get; set; }
         public DateTime startdate { get; set; }
-        public DateTime endtdate { get; set; }
+        public DateTime enddate { get; set; }
         public string phone { get; set; }
         public string email { get; set; }
         public string datasource { get; set; }
@@ -55,7 +55,7 @@ namespace DataStore.ViewModels
         }
         public string merchant_id { get; set; }
         public string email { get; set; } 
-        public string token { get; set; }
+        public string otp { get; set; }
         public string hash { get; set; }
         public string pin { get; set; }
         public string customerid { get; set; }

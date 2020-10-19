@@ -342,7 +342,7 @@ namespace DapperLayer.Dapper.Core
             try
             {
                 var p = new { policy = policynumber };
-                using (var cnn = new SqlConnection(connectionManager.connectionString("CustApi2")))
+                using (var cnn = new SqlConnection(connectionManager.connectionString("ReferralDB")))
                 {
                     var result = await cnn.QueryAsync<T>(connectionManager.GetPolicy, param: p, commandType: CommandType.StoredProcedure);
                     return result;

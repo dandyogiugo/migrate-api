@@ -123,4 +123,5 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.Migrations.secondmirgration.resources
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.Migrations.UpdatdModel.resources
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.csprojAssemblyReference.cache

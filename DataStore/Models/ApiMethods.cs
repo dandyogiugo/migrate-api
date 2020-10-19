@@ -18,7 +18,7 @@ namespace DataStore.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [MaxLength(30)]
+        [MaxLength(300)]
         public string method_name { get; set; }
         public bool is_active { get; set; }
     }

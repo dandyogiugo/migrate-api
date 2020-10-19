@@ -146,3 +146,4 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csproj.CopyComplete
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.pdb
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.Migrations.UpdatdModel.resources
