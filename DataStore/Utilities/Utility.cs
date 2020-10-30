@@ -22,6 +22,7 @@ using System.IO;
 using Hangfire.Server;
 using Hangfire.Console;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 
 namespace DataStore.Utilities
 {
@@ -1301,90 +1302,365 @@ namespace DataStore.Utilities
 
             return number;
         }
+
+        public string ClaimType(string policy_number)
+        {
+            string policy_type = "";
+
+            if (new Regex(@"(\/V\/29\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "PRIVATE CAR INSURANCE";
+            }
+            else if (new Regex(@"(\/V\/29A\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "PRIVATE CAR INSURANCE (E-PLATEFORM)";
+            }
+            else if (new Regex(@"(\/V\/30\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "COMMERCIAL VEHICLE (OWN GOODS)";
+            }
+            else if (new Regex(@"(\/ V\/ 30A\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "COMMERCIAL VEHICLE (E-PLATEFORM)";
+            }
+            else if (new Regex(@"(\/ V\/ 31\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "MOTORCYCLE INSURANCE";
+            }
+            else if (new Regex(@"(\/ V\/ 32\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "MOTOR TRADE INSURANCE (COMBINED)";
+            }
+            else if (new Regex(@"(\/ V\/ 33\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "MOTOR TRADE (ROAD RISKS)";
+            }
+            else if (new Regex(@"(\/ V\/ 34\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "MOTOR TRADE (INTERNAL RISK)";
+            }
+            else if (new Regex(@"(\/ V\/ 59\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "COMMERCIAL VEHICLE (GENERAL CARTAGE)";
+            }
+            else if (new Regex(@"(\/ V\/ 60\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "COMMERCIAL VEHICLE  (SPECIAL TYPE)";
+            }
+            else if (new Regex(@"(\/ V\/ 61\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "COMMERCIAL VEHICLE  (STAFF BUS)";
+            }
+            else if (new Regex(@"(\/ M\/ 27\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "MARINE CARGO";
+            }
+            else if (new Regex(@"(\/ M\/ 28\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "MARINE HULL";
+            }
+            else if (new Regex(@"(\/ F\/ 01\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "FIRE/SPECIAL PERILS";
+            }
+            else if (new Regex(@"(\/ F\/ 01A\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "TERRORISM & POLITICAL RISKS";
+            }
+            else if (new Regex(@"(\/ F\/ 02\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "CONSEQUENTIAL LOSS";
+            }
+
+
+
+            return policy_type;
+
+            //            case / (\/ E\/ 24\/){ 1}/.test(policy_number):
+            //policy_type = "ELECTRONICS EQUIPMENT INSURANCE";
+            //                break;
+
+            //            case / (\/ E\/ 25\/){ 1}/.test(policy_number):
+            //policy_type = "MACHINERY BREAKDOWN INSURANCE";
+            //                break;
+
+            //            case / (\/ E\/ 26\/){ 1}/.test(policy_number):
+            //policy_type = "BOILER & PRESSURE VESSEL INSURANCE";
+            //                break;
+
+            //            case / (\/ E\/ 36\/){ 1}/.test(policy_number):
+            //policy_type = "BOILER";
+            //                break;
+
+            //            case / (\/ E\/ 40\/){ 1}/.test(policy_number):
+            //policy_type = "MACHINERY BREAKDOWN CONSEQUENTIAL LOSS INSURANCE";
+            //                break;
+
+            //            case / (\/ E\/ 41\/){ 1}/.test(policy_number):
+            //policy_type = "ADVANCE PROFIT INSURANCE POLICY";
+            //                break;
+
+            //            case / (\/ E\/ 21\/){ 1}/.test(policy_number):
+            //policy_type = "CONTRACTORS ALL RISKS";
+            //                break;
+
+            //            case / (\/ E\/ 22\/){ 1}/.test(policy_number):
+            //policy_type = "ERECTION ALL RISKS";
+            //                break;
+
+            //            case / (\/ E\/ 23\/){ 1}/.test(policy_number):
+            //policy_type = "PLANT ALL RISKS";
+            //                break;
+
+            //            case / (\/ B\/ 38\/){ 1}/.test(policy_number):
+            //policy_type = "CREDIT BOND";
+            //                break;
+
+            //            case / (\/ B\/ 17\/){ 1}/.test(policy_number):
+            //policy_type = "TENDER BOND";
+            //                break;
+
+            //            case / (\/ B\/ 18\/){ 1}/.test(policy_number):
+            //policy_type = "PERFORMANCE BOND";
+            //                break;
+
+            //            case / (\/ B\/ 19\/){ 1}/.test(policy_number):
+            //policy_type = "ADVANCE PAYMENT BOND";
+            //                break;
+
+            //            case / (\/ B\/ 20\/){ 1}/.test(policy_number):
+            //policy_type = "CUSTOM BOND";
+            //                break;
+
+            //            case / (\/ H\/ 39\/){ 1}/.test(policy_number):
+            //policy_type = "AVIATION INSURANCE (HULL - ALL - RISKS)";
+            //                break;
+
+            //            case / (\/ Z\/ 46\/){ 1}/.test(policy_number):
+            //policy_type = "OIL AND ENERGY(OPERATIONAL RISK)";
+            //                break;
+
+            //            case / (\/ Z\/ 47\/){ 1}/.test(policy_number):
+            //policy_type = "OIL AND ENERGY (CONSTRUCTION RISK)";
+            //                break;
+
+            //            case / (\/ Z\/ 49\/){ 1}/.test(policy_number):
+            //policy_type = "OIL AND ENERGY(OPER. RISK) - THIRD PARY LIABILITY";
+            //                break;
+
+            //            case / (\/ Z\/ 50\/){ 1}/.test(policy_number):
+            //policy_type = "OIL AND ENERGY (CON RISK) - THIRD PARTY LIABILITY";
+            //                break;
+
+            //            case / (\/ Z\/ 52\/){ 1}/.test(policy_number):
+            //policy_type = "OIL AND ENERGY(OPERATIONAL RISK)";
+            //                break;
+
+            //            case / (\/ Z\/ 53\/){ 1}/.test(policy_number):
+            //policy_type = "OIL AND ENERGY (CONSTRUCTION RISK)";
+            //                break;
+
+            //            case / (\/ Z\/ 54\/){ 1}/.test(policy_number):
+            //policy_type = "OIL AND ENERGY(OPER. RISK) - THIRD PARY LIABILITY";
+            //                break;
+
+            //            case / (\/ Z\/ 55\/){ 1}/.test(policy_number):
+            //policy_type = "OIL AND ENERGY (CON RISK) - THIRD PARTY LIABILITY";
+            //                break;
+
+            //            case / (\/ P\/ 62\/){ 1}/.test(policy_number):
+            //policy_type = "PACKAGE/COMBINED/IAR";
+            //                break;
+
+            //            case / (\/ S\/ 48\/){ 1}/.test(policy_number):
+            //policy_type = "WARRANTY INSURANCE";
+            //                break;
+
+            //            case / (\/ A\/ 03\/){ 1}/.test(policy_number):
+            //policy_type = "BURGLARY BUSINESS PREMISES";
+            //                break;
+
+            //            case / (\/ A\/ 04\/){ 1}/.test(policy_number):
+            //policy_type = "BURGLARY PRIVATE PREMISES";
+            //                break;
+
+            //            case / (\/ A\/ 044\/){ 1}/.test(policy_number):
+            //policy_type = "DIRECTORS LIABILITY INSURANCE";
+            //                break;
+
+            //            case / (\/ A\/ 05\/){ 1}/.test(policy_number):
+            //policy_type = "CASH-IN-TRANSIT/MONEY";
+            //                break;
+
+            //            case / (\/ A\/ 06\/){ 1}/.test(policy_number):
+            //policy_type = "CASH-IN-SAFE";
+            //                break;
+
+            //            case / (\/ A\/ 07\/){ 1}/.test(policy_number):
+            //policy_type = "GOODS IN TRANSIT";
+            //                break;
+
+            //            case / (\/ A\/ 08\/){ 1}/.test(policy_number):
+            //policy_type = "PROFESSIONAL INDEMNITY";
+            //                break;
+
+            //            case / (\/ A\/ 09\/){ 1}/.test(policy_number):
+            //policy_type = "GROUP PERSONAL ACCIDENT";
+            //                break;
+
+            //            case / (\/ A\/ 10\/){ 1}/.test(policy_number):
+            //policy_type = "PERSONAL ACCIDENT";
+            //                break;
+
+            //            case / (\/ A\/ 11\/){ 1}/.test(policy_number):
+            //policy_type = "PUBLIC LIABILITY";
+            //                break;
+
+            //            case / (\/ A\/ 12\/){ 1}/.test(policy_number):
+            //policy_type = "PRODUCT LIABILITY";
+            //                break;
+
+            //            case / (\/ A\/ 13\/){ 1}/.test(policy_number):
+            //policy_type = "ALL RISKS";
+            //                break;
+
+            //            case / (\/ A\/ 14\/){ 1}/.test(policy_number):
+            //policy_type = "FIDELITY GUARANTEE";
+            //                break;
+
+            //            case / (\/ A\/ 15\/){ 1}/.test(policy_number):
+            //policy_type = "EMPLOYEES' ACCIDENT BENEFIT INSURANCE POLICY";
+            //                break;
+
+            //            case / (\/ A\/ 16\/){ 1}/.test(policy_number):
+            //policy_type = "COMBINED HOUSEHOLDERS & HOUSEOWNERS";
+            //                break;
+
+            //            case / (\/ A\/ 35\/){ 1}/.test(policy_number):
+            //policy_type = "GOLFERS POLICY";
+            //                break;
+
+            //            case / (\/ A\/ 37\/){ 1}/.test(policy_number):
+            //policy_type = "COMBINED ASSETS INSURANCE";
+            //                break;
+
+            //            case / (\/ A\/ 42\/){ 1}/.test(policy_number):
+            //policy_type = "GLASS INSURANCE";
+            //                break;
+
+            //            case / (\/ A\/ 43\/){ 1}/.test(policy_number):
+            //policy_type = "MOBILE PHONE INSURANCE";
+            //                break;
+
+            //            case / (\/ A\/ 44\/){ 1}/.test(policy_number):
+            //policy_type = "TRAVEL INSURANCE";
+            //                break;
+
+            //            case / (\/ A\/ 45\/){ 1}/.test(policy_number):
+            //policy_type = "AIRPORT OWNERS AND OPERATORS LIABILITY INSURANCE";
+            //                break;
+
+            //            case / (\/ A\/ 51\/){ 1}/.test(policy_number):
+            //policy_type = "BUSINESS OWNERS POLICY";
+            //                break;
+
+            //            case / (\/ A\/ 57\/){ 1}/.test(policy_number):
+            //policy_type = "OCCUPIERS LIABILITY INSURANCE";
+            //                break;
+
+            //            case / (\/ A\/ 58\/){ 1}/.test(policy_number):
+            //policy_type = "HEALTH CARE PROFESSIONAL INDEMNITY INS.";
+            //                break;
+
+            //            default:
+            //                policy_type = "";
+            //                break;
+       // }
     }
-    public static class Config
+}
+public static class Config
+{
+    public const string DEFAULT_BASE_URL = "https://api-football-v1.p.rapidapi.com/v2";
+    public static string BASE_URL
     {
-        public const string DEFAULT_BASE_URL = "https://api-football-v1.p.rapidapi.com/v2";
-        public static string BASE_URL
+        get
         {
-            get
+            string base_url = ConfigurationManager.AppSettings["BASE_URL"];
+            if (!string.IsNullOrEmpty(base_url?.Trim()))
             {
-                string base_url = ConfigurationManager.AppSettings["BASE_URL"];
-                if (!string.IsNullOrEmpty(base_url?.Trim()))
+                if (!base_url.Trim().EndsWith("/"))
                 {
-                    if (!base_url.Trim().EndsWith("/"))
-                    {
-                        return base_url;
-                    }
-                    else
-                    {
-                        return base_url.Remove(base_url.Length - 1, 1);
-                    }
+                    return base_url;
                 }
                 else
                 {
-                    return DEFAULT_BASE_URL;
+                    return base_url.Remove(base_url.Length - 1, 1);
                 }
             }
-        }
-        public static string Authorization_Header
-        {
-            get
+            else
             {
-                string header = ConfigurationManager.AppSettings["AUTH_HEADER"];
-                if (!string.IsNullOrEmpty(header))
-                {
-                    return header;
-                }
-                else
-                {
-                    return null;
-                }
-
-            }
-        }
-        public static int GetID
-        {
-            get
-            {
-                string Id = ConfigurationManager.AppSettings["LeagueID"];
-                if (!string.IsNullOrEmpty(Id))
-                {
-                    return Convert.ToInt32(Id);
-                }
-                else
-                {
-                    return 3;
-                }
-            }
-        }
-
-        public static bool isDemo
-        {
-            get
-            {
-                string demo = ConfigurationManager.AppSettings["IsDemo"];
-                if (bool.TryParse(demo, out bool result))
-                {
-                    return result;
-                }
-                else
-                {
-                    return false;
-                }
+                return DEFAULT_BASE_URL;
             }
         }
     }
-    public class cron
+    public static string Authorization_Header
     {
-        public cron()
+        get
         {
+            string header = ConfigurationManager.AppSettings["AUTH_HEADER"];
+            if (!string.IsNullOrEmpty(header))
+            {
+                return header;
+            }
+            else
+            {
+                return null;
+            }
 
-        }
-
-        public void logTimer(PerformContext log)
-        {
-            log.WriteLine($"Log me time ==================== {DateTime.Now} ===========================");
         }
     }
+    public static int GetID
+    {
+        get
+        {
+            string Id = ConfigurationManager.AppSettings["LeagueID"];
+            if (!string.IsNullOrEmpty(Id))
+            {
+                return Convert.ToInt32(Id);
+            }
+            else
+            {
+                return 3;
+            }
+        }
+    }
+
+    public static bool isDemo
+    {
+        get
+        {
+            string demo = ConfigurationManager.AppSettings["IsDemo"];
+            if (bool.TryParse(demo, out bool result))
+            {
+                return result;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+}
+public class cron
+{
+    public cron()
+    {
+
+    }
+
+    public void logTimer(PerformContext log)
+    {
+        log.WriteLine($"Log me time ==================== {DateTime.Now} ===========================");
+    }
+}
 }

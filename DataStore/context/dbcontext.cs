@@ -46,6 +46,7 @@ namespace DataStore.context
         public DbSet<ReferralCodeLookUp> ReferralCodeLookUp { get; set; }
         public DbSet<LocalTravel> LocalTravel { get; set; }
         public DbSet<PolicyServicesDetails> PolicyServicesDetails { get; set; }
+        public DbSet<TempClaimData> TempClaimData { get; set; }
         public DbSet<PaystackRecurringCharges> PaystackRecurringCharges { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

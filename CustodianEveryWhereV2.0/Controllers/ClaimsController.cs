@@ -1,4 +1,5 @@
-﻿using DataStore.Models;
+﻿using CustodianEveryWhereV2._0.ActionFilters;
+using DataStore.Models;
 using DataStore.repository;
 using DataStore.Utilities;
 using DataStore.ViewModels;
@@ -27,6 +28,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         private store<LifeClaims> _claims = null;
         private Utility util = null;
         private store<GeneralClaims> __nonlifeclaim = null;
+        private store<TempClaimData> tempStore = null;
         public ClaimsController()
         {
             _apiconfig = new store<ApiConfiguration>();
@@ -471,6 +473,276 @@ namespace CustodianEveryWhereV2._0.Controllers
             }
             catch (Exception ex)
             {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new claims_details
+                {
+                    code = 404,
+                    message = "system malfunction"
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<claims_details> TempSaveLifeClaims([FromBody] Life_Claims claims, [FromUri] string reference = null)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return new claims_details
+                    {
+                        code = 405,
+                        message = "Some required fields are missing"
+                    };
+                }
+
+                var check_user_function = await util.CheckForAssignedFunction("TempSaveLifeClaims", claims.merchant_id);
+                if (!check_user_function)
+                {
+                    return new claims_details
+                    {
+                        code = 401,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+
+
+                tempStore = new store<TempClaimData>();
+                if (string.IsNullOrEmpty(reference))
+                {
+                    var data = new TempClaimData
+                    {
+                        createdat = DateTime.UtcNow,
+                        data = Newtonsoft.Json.JsonConvert.SerializeObject(claims),
+                        reference_id = claims.policy_number,
+                        status = "NOT_COMPLETED",
+                        updatedat = DateTime.UtcNow
+                    };
+                    if (await tempStore.Save(data))
+                    {
+                        return new claims_details
+                        {
+                            code = 200,
+                            message = "Saved to continue later",
+                            date = new
+                            {
+                                reference_number = claims.policy_number,
+                                status = "NOT_COMPLETED",
+                                createdat = DateTime.UtcNow,
+                                updatedat = DateTime.UtcNow
+                            }
+                        };
+                    }
+                    else
+                    {
+                        return new claims_details
+                        {
+                            code = 201,
+                            message = "Unable to save"
+                        };
+                    }
+                }
+                else
+                {
+                    var getByReference = await tempStore.FindOneByCriteria(x => x.reference_id == reference && x.status == "NOT_COMPLETED");
+                    if (getByReference == null)
+                    {
+                        return new claims_details
+                        {
+                            code = 205,
+                            message = $"Unable to retrieve pending claims with policy number '{reference}'"
+                        };
+                    }
+
+                    getByReference.data = Newtonsoft.Json.JsonConvert.SerializeObject(claims);
+                    getByReference.updatedat = DateTime.UtcNow;
+                    if (await tempStore.Update(getByReference))
+                    {
+                        return new claims_details
+                        {
+                            code = 200,
+                            message = "Updates to continue later",
+                            date = new
+                            {
+                                reference_number = claims.policy_number,
+                                status = "NOT_COMPLETED",
+                                createdat = DateTime.UtcNow,
+                                updatedat = DateTime.UtcNow
+                            }
+                        };
+                    }
+                    else
+                    {
+                        return new claims_details
+                        {
+                            code = 201,
+                            message = "Unable to update"
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new claims_details
+                {
+                    code = 404,
+                    message = "system malfunction"
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<claims_details> TempSaveGeneralClaims([FromBody] ViewModelNonLife claims, [FromUri] string reference = null)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return new claims_details
+                    {
+                        code = 405,
+                        message = "Some required fields are missing"
+                    };
+                }
+
+                var check_user_function = await util.CheckForAssignedFunction("TempSaveGeneralClaims", claims.merchant_id);
+                if (!check_user_function)
+                {
+                    return new claims_details
+                    {
+                        code = 401,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+
+                tempStore = new store<TempClaimData>();
+                if (string.IsNullOrEmpty(reference))
+                {
+                    var data = new TempClaimData
+                    {
+                        createdat = DateTime.UtcNow,
+                        data = Newtonsoft.Json.JsonConvert.SerializeObject(claims),
+                        reference_id = claims.policy_number,
+                        status = "NOT_COMPLETED",
+                        updatedat = DateTime.UtcNow
+                    };
+                    if (await tempStore.Save(data))
+                    {
+                        return new claims_details
+                        {
+                            code = 200,
+                            message = "Saved to continue later",
+                            date = new
+                            {
+                                reference_number = claims.policy_number,
+                                status = "NOT_COMPLETED",
+                                createdat = DateTime.UtcNow,
+                                updatedat = DateTime.UtcNow
+                            }
+                        };
+                    }
+                    else
+                    {
+                        return new claims_details
+                        {
+                            code = 201,
+                            message = "Unable to save"
+                        };
+                    }
+                }
+                else
+                {
+                    var getByReference = await tempStore.FindOneByCriteria(x => x.reference_id == reference && x.status == "NOT_COMPLETED");
+                    if (getByReference == null)
+                    {
+                        return new claims_details
+                        {
+                            code = 205,
+                            message = $"Unable to retrieve pending claims with policy number '{reference}'"
+                        };
+                    }
+
+                    getByReference.data = Newtonsoft.Json.JsonConvert.SerializeObject(claims);
+                    getByReference.updatedat = DateTime.UtcNow;
+                    if (await tempStore.Update(getByReference))
+                    {
+                        return new claims_details
+                        {
+                            code = 200,
+                            message = "Updates to continue later",
+                            date = new
+                            {
+                                reference_number = claims.policy_number,
+                                status = "NOT_COMPLETED",
+                                createdat = DateTime.UtcNow,
+                                updatedat = DateTime.UtcNow
+                            }
+                        };
+                    }
+                    else
+                    {
+                        return new claims_details
+                        {
+                            code = 201,
+                            message = "Unable to update"
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new claims_details
+                {
+                    code = 404,
+                    message = "system malfunction"
+                };
+            }
+        }
+
+        [HttpGet]
+        [GzipCompression]
+        public async Task<claims_details> GetTempSaveClaim(string merchant_id, string policy_number)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("GetTempSaveClaim", merchant_id);
+                if (!check_user_function)
+                {
+                    return new claims_details
+                    {
+                        code = 401,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+                tempStore = new store<TempClaimData>();
+                var getdata = await tempStore.FindOneByCriteria(x => x.reference_id?.ToUpper().Trim() == policy_number?.ToUpper().Trim() && x.status == "NOT_COMPLETED");
+                if (getdata == null)
+                {
+                    return new claims_details
+                    {
+                        code = 205,
+                        message = $"No claim pending for policy number '{policy_number}'"
+                    };
+                }
+
+                return new claims_details
+                {
+                    code = 200,
+                    message = "Data retrieved successfully",
+                    date = getdata
+                };
+            }
+            catch (Exception ex)
+            {
+
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
                 log.Error(ex.InnerException);

@@ -28,269 +28,327 @@ namespace TestSerials
         static void Main(string[] args)
         {
 
-            try
+            //declare the array.
+            //used this instead of a list, it is simpler to handle
+
+            List<int> xx = new List<int>()
             {
-                //var test = breakPalindrome("bab");
-                var t = new CrossSellingEngine();
-                t.EngineProcessor();
-                // using (var api = new Cust.PolicyServicesSoapClient())
-                // {
-                //var response = api.PostTravel2Raga(DateTime.Now, Convert.ToDateTime("2020-03-01"),
-                //    "Oscar", "Oscar", "AREA 1", "Akkk34567", Convert.ToDateTime("1989-03-01"), "NIGERIAN NIGERIA",
-                //    "NIGERIA", "oscardybabaphd@gmail.com", "GHANA");
-                //var newresponse = response;
-                //Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(response));
-                // }
-
-                //Regex test = new Regex(@"^(?=.*[a-z])(?!.*[\s])(?=.*[A-Z])(?=.*\d)(?=.*\W)[\S]{8,}$");//(@"^.*(?=.{8,})(?!.*[\s])(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!*@#$%^&+=]).*$");
-                //Console.WriteLine($"P@55w0rd: {test.IsMatch("P$%55w0rd")}");
-                //Console.WriteLine($"P@55 w0rd: {test.IsMatch("P55 w0rd")}");
-                //Console.WriteLine($"P@55w0rd^736: {test.IsMatch("P@55w0rd^736")}");
-                //Console.WriteLine($"password: {test.IsMatch("password")}");
-                //Console.WriteLine($"PASSWORD: {test.IsMatch("PASSWORD")}");
-                //Console.WriteLine($"vmdmin2$78: {test.IsMatch("vmdmin2$78")}");
-
-                // Console.ReadKey();
-                //Core<NextRenewal> dapper_core = new Core<NextRenewal>();
-                //var condition = new helpers();
-                //var query = condition.QueryResolver(new RenewalRatio
-                //{
-                //    merchant_id = "Test",
-                //    is_MD = true,
-                //    subsidary = subsidiary.Life
-
-                //});
-                //var result = dapper_core.GetRenewalRatio(string.Format(connectionManager.NexRenewal, query)).GetAwaiter().GetResult();
-                //var grouped_item = new helpers().Grouper2(result);
-                //var test = Newtonsoft.Json.JsonConvert.SerializeObject(grouped_item);
-                //Console.WriteLine(test);
-                //NumberFormatInfo setPrecision = new NumberFormatInfo();
-                //setPrecision.NumberDecimalDigits = 1;
-                //var premium = 5000.00;
-                //var format = string.Format("{0:1}", premium);
-                //var test = format;
-                //GetAllLeague.GetLeague();
-                //Console.ReadKey();
-
-                #region
-                //var a = new { name = "oscar  ", age = 30, sex = 'M', amount = 345.66, isActive = true };
-                //dynamic expando = new ExpandoObject();
-                //expando.obj = a;
-                //Console.WriteLine(((string)expando.obj.name).Trim());
-                //if (expando.obj.amount is decimal)
-                //{
-                //    Console.WriteLine(true);
-                //}
-                //else
-                //{
-                //    Console.WriteLine(false);
-                //}
-                //Console.ReadKey();
-                //int[] arr = { 5, 4, 8, 2, 6, 7, 1, 3, 7 };
-                //var test = arr.ToList().OrderBy(x=>x);
-
-                //int sum = 0;
-                //for (var i = 0; i < arr.Length; ++i)
-                //{
-                //    sum += arr[i];
-                //}
-                //var d = (arr.Length * (arr.Length + 1)) / 2;
-                //var dif = d - sum;
-                //var dup = arr[dif];
-                //var dp = dup;
-
-                //List<int> h = new List<int>() { 4, 5, 67, 8 };
-                //h.Min();
-                // var test = new Core<dynamic>();
-                // var l = test.GetPredictionByCustomerID(100049357, connectionManager.recomendation).GetAwaiter().GetResult();
-
-                //var str = "2 3 1 4";
-                //var arr = str.Split(' ').Select(x => Convert.ToInt32(x)).ToList();
-                //List<int> newlist = new List<int>();
-                //for (int i = 0; i < arr.Count(); i++)
-                //{
-                //    for (int k = 1 + i; k < arr.Count(); k++)
-                //    {
-                //        newlist.Add(arr[i] * arr[k]);
-                //    }
-                //    //  arr.RemoveAt(i + 1);
-                //}
-
-                //int min = newlist.Min();
-
-                //int T = Convert.ToInt32(Console.ReadLine());
-                //string cases = Console.ReadLine();
-                //string[] all = cases.Split(' ');
-
-                //if (T >= 1 && T <= 10)
-                //{
-                //    int count_test = all.Length;
-                //    for (int i = 0; i < count_test; ++i)
-                //    {
-                //        int item = Convert.ToInt32(all[0]);
-                //        for (int k = 1; k <= item; ++k)
-                //        {
-                //            if (k % 3 == 0)
-                //            {
-                //                Console.WriteLine("Fizz");
-                //            }
-                //            else if (k % 5 == 0)
-                //            {
-                //                Console.WriteLine("Buzz");
-                //            }
-                //            else if ((k % 3 == 0) && (k % 5 == 0))
-                //            {
-                //                Console.WriteLine("FizzBuzz");
-                //            }
-                //            else
-                //            {
-                //                Console.WriteLine("{0}", k);
-                //            }
-                //        }
-                //    }
-                //}
+               3,6,1,7,3,9,1,12
+            };
 
 
+            int[] array = xx.ToArray();
 
 
-                // using (OracleConnection cn = new OracleConnection("Data Source=TESTDB;User id=TQ_LMS; Password=TQ_LMS; enlist=false; pooling=false"))
-                //{
-                //OracleCommand cmd = new OracleCommand();
-                //cmd.Connection = cn;
-                //cn.Open();
-                //cmd.CommandText = "cust_max_mgt.create_claim";
-                //cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.Add("p_policy_no", OracleDbType.Varchar2).Value = "170200001709";
-                //cmd.Parameters.Add("p_type_code", OracleDbType.Varchar2).Value = "DTH";
-                //cmd.Parameters.Add("v_data", OracleDbType.Varchar2, 300).Direction = ParameterDirection.Output;
-                //cmd.ExecuteNonQuery();
-                //string resposne = cmd.Parameters["v_data"].Value.ToString();
+            int sortedIndex = 0;
 
-                //OracleCommand cmd = new OracleCommand();
-                //cmd.Connection = cn;
-                //cn.Open();
-                //cmd.CommandText = "cust_max_mgt.get_claim_policy_info";
-                //cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.Add("p_policy_no", OracleDbType.Varchar2).Value = "P/2/FP/000035";
-                //cmd.Parameters.Add("p_type", OracleDbType.Varchar2).Value = "CLAIMS";
-                //cmd.Parameters.Add("v_data", OracleDbType.Varchar2, 300).Direction = ParameterDirection.Output;
-                //cmd.Parameters.Add("p_claim_type", OracleDbType.Varchar2).Value = "DTH";
-                //cmd.ExecuteNonQuery();
-                //string response = cmd.Parameters["v_data"].Value.ToString();
-                //}
-                //string username = "Aladdin";
-                //string password = "openSesame";
-
-                //byte[] concatenated = System.Text.ASCIIEncoding.ASCII.GetBytes(username + ":" + password);
-                //string header = System.Convert.ToBase64String(concatenated);
-                //HttpClient client = new HttpClient();
-                //client.BaseAddress = new Uri("https://{base_url}/");
-                //client.DefaultRequestHeaders.Accept.Clear();
-                //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "QWxhZGRpbjpvcGVuIHNlc2FtZQ==");
-                //var request = new MultipartFormDataContent();
-                //request.Add(new StringContent("Jane Doe <jane.doe@mail.custodianplc.com.ng>"), "from");
-                //request.Add(new StringContent("john.smith@somedomain.com"), "to");
-                //request.Add(new StringContent("Mail subject text"), "subject");
-                //request.Add(new StringContent("Rich HTML message body."), "text");
-                //var response = client.PostAsync("email/1/send", request).Result;
-                //if (response.IsSuccessStatusCode)
-                //{
-                //    var responseContent = response.Content;
-                //    string responseString = responseContent.ReadAsStringAsync().Result;
-                //    Console.WriteLine(responseString);
-                //}
-
-                //var payload = System.IO.File.ReadAllText(@"C:\Users\OItaba\Desktop\MF'B\payload.txt");
-                //using (var api = new TravelApi.wsLowFarePlusSoapClient())
-                //{
-
-                //    var result = api.wmLowFarePlusXml(payload);
-                //    XmlDocument doc = new XmlDocument();
-                //    doc.LoadXml(result);
-
-                //    string jsonText = JsonConvert.SerializeXmlNode(doc).Replace("@","_");
-                //    var obj = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(jsonText);
-                //    var test = obj.OTA_AirLowFareSearchPlusRS._Version.ToString();
-
-                //}
-                //var mealPlan = new store<MealPlan>();
-                //List<MealPlan> plan = mealPlan.FindMany(x => x.target == "WeightGain" && x.preference == "Poultry").GetAwaiter().GetResult();
-                //var group_plan = plan.GroupBy(x => x.daysOfWeek);
-                //var final = new List<object>();
-                //foreach (var item in group_plan)
-                //{
-                //    var dic = new Dictionary<string, Dictionary<string, List<temp>>>();
-                //    var list_meal = new List<temp>();
-                //    var meal = item.GroupBy(x => x.mealType);
-                //    var day = new Dictionary<string, List<temp>>();
-                //    foreach (var subitem in meal)
-                //    {
-                //        day.Add(subitem.First().mealType, subitem.Select(x => new temp
-                //        {
-                //            food = x.food,
-                //            quantity = x.quantity,
-                //            time = x.time,
-                //            youtubeurl = x.youTubeUrl
-                //        }).ToList());
-                //    }
-
-                //    dic.Add(item.First().daysOfWeek, day);
-                //    final.Add(dic);
-                //}
-                //var net = Newtonsoft.Json.JsonConvert.SerializeObject(final);
-
-                //int A = 10;
-                //int B = 20;
-                //decimal test = Convert.ToDecimal(98)/ Convert.ToDecimal(10);
-                //decimal b = Math.Ceiling(test);
-                //double b = Math.Floor(Math.Sqrt(B));
-                //List<int> arry = new List<int>();
-                //if(A >= 2 && B <= 1000000000)
-                //{
-                //    for (double i = a; i <= b; ++i)
-                //    {
-                //        double sqr = Math.Pow(i, Convert.ToDouble(2));
-                //        if (sqr >= A && sqr <= B)
-                //        {
-                //            //double sqr = Math.Sqrt(sqrt);
-                //           int count =  Cal(sqr, 0);
-                //            arry.Add(count);
-                //        }
-                //    }
-
-                //    return arry.Min.Max();
-                //}
-
-                // int value = 8;
-                //List<int> binary = Convert.ToString(161, 2).ToCharArray().Select(x => Convert.ToInt32(x)).ToList();
-                //int count = 0;
-                //List<int> index = new List<int>();
-                //int i = 0;
-                //foreach (var item in binary)
-                //{
-                //    if(item % 2 != 0)
-                //    {
-                //        count++;
-                //        index.Add(i + 1);
-                //    }
-                //    ++i;
-                //}
-                //index.Insert(0, count);
-                //NewsProcessor.GetNews();
-                #endregion
-
-                //temp myObj = new temp();
-
-                //var test =  myObj.MapToObject(typeof(Viewtemp));
-            }
-            catch (Exception ex)
+            Console.Write("Sorting started  with : ");
+            foreach (int i in array)
             {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
-                Console.WriteLine(ex.InnerException);
+                Console.Write(i);
             }
+
+            Console.WriteLine("");
+
+            //while(sortedIndex < (array.Length - 1))
+            for (int topindex = 0; topindex < (array.Length - 1); topindex++)
+            {
+                for (int index = 0; index < (array.Length - 1); index++)
+                {
+                    //1,3,2,5
+                    if (array.ElementAt(index) > array.ElementAt(index + 1))
+                    {
+                        int currentIndex = array.ElementAt(index);
+                        int nextIndex = array.ElementAt(index + 1);
+
+                        array[index] = nextIndex;
+                        array[index + 1] = currentIndex;
+
+                        sortedIndex = index;
+
+                        //Console.WriteLine(index + "/"+ (array.Length -1));
+                    }
+                }
+                // Console.WriteLine(sortedIndex);
+            }
+
+
+            Console.Write("Output : ");
+            foreach (int i in array)
+            {
+                Console.Write(i);
+            }
+
+            Console.ReadLine();
+
+
         }
+        //static void Main(string[] args)
+        //{
+
+        //    try
+        //    {
+        //        //var test = breakPalindrome("bab");
+        //        var t = new CrossSellingEngine();
+        //        t.EngineProcessor();
+        //        // using (var api = new Cust.PolicyServicesSoapClient())
+        //        // {
+        //        //var response = api.PostTravel2Raga(DateTime.Now, Convert.ToDateTime("2020-03-01"),
+        //        //    "Oscar", "Oscar", "AREA 1", "Akkk34567", Convert.ToDateTime("1989-03-01"), "NIGERIAN NIGERIA",
+        //        //    "NIGERIA", "oscardybabaphd@gmail.com", "GHANA");
+        //        //var newresponse = response;
+        //        //Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(response));
+        //        // }
+
+        //        //Regex test = new Regex(@"^(?=.*[a-z])(?!.*[\s])(?=.*[A-Z])(?=.*\d)(?=.*\W)[\S]{8,}$");//(@"^.*(?=.{8,})(?!.*[\s])(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!*@#$%^&+=]).*$");
+        //        //Console.WriteLine($"P@55w0rd: {test.IsMatch("P$%55w0rd")}");
+        //        //Console.WriteLine($"P@55 w0rd: {test.IsMatch("P55 w0rd")}");
+        //        //Console.WriteLine($"P@55w0rd^736: {test.IsMatch("P@55w0rd^736")}");
+        //        //Console.WriteLine($"password: {test.IsMatch("password")}");
+        //        //Console.WriteLine($"PASSWORD: {test.IsMatch("PASSWORD")}");
+        //        //Console.WriteLine($"vmdmin2$78: {test.IsMatch("vmdmin2$78")}");
+
+        //        // Console.ReadKey();
+        //        //Core<NextRenewal> dapper_core = new Core<NextRenewal>();
+        //        //var condition = new helpers();
+        //        //var query = condition.QueryResolver(new RenewalRatio
+        //        //{
+        //        //    merchant_id = "Test",
+        //        //    is_MD = true,
+        //        //    subsidary = subsidiary.Life
+
+        //        //});
+        //        //var result = dapper_core.GetRenewalRatio(string.Format(connectionManager.NexRenewal, query)).GetAwaiter().GetResult();
+        //        //var grouped_item = new helpers().Grouper2(result);
+        //        //var test = Newtonsoft.Json.JsonConvert.SerializeObject(grouped_item);
+        //        //Console.WriteLine(test);
+        //        //NumberFormatInfo setPrecision = new NumberFormatInfo();
+        //        //setPrecision.NumberDecimalDigits = 1;
+        //        //var premium = 5000.00;
+        //        //var format = string.Format("{0:1}", premium);
+        //        //var test = format;
+        //        //GetAllLeague.GetLeague();
+        //        //Console.ReadKey();
+
+        //        #region
+        //        //var a = new { name = "oscar  ", age = 30, sex = 'M', amount = 345.66, isActive = true };
+        //        //dynamic expando = new ExpandoObject();
+        //        //expando.obj = a;
+        //        //Console.WriteLine(((string)expando.obj.name).Trim());
+        //        //if (expando.obj.amount is decimal)
+        //        //{
+        //        //    Console.WriteLine(true);
+        //        //}
+        //        //else
+        //        //{
+        //        //    Console.WriteLine(false);
+        //        //}
+        //        //Console.ReadKey();
+        //        //int[] arr = { 5, 4, 8, 2, 6, 7, 1, 3, 7 };
+        //        //var test = arr.ToList().OrderBy(x=>x);
+
+        //        //int sum = 0;
+        //        //for (var i = 0; i < arr.Length; ++i)
+        //        //{
+        //        //    sum += arr[i];
+        //        //}
+        //        //var d = (arr.Length * (arr.Length + 1)) / 2;
+        //        //var dif = d - sum;
+        //        //var dup = arr[dif];
+        //        //var dp = dup;
+
+        //        //List<int> h = new List<int>() { 4, 5, 67, 8 };
+        //        //h.Min();
+        //        // var test = new Core<dynamic>();
+        //        // var l = test.GetPredictionByCustomerID(100049357, connectionManager.recomendation).GetAwaiter().GetResult();
+
+        //        //var str = "2 3 1 4";
+        //        //var arr = str.Split(' ').Select(x => Convert.ToInt32(x)).ToList();
+        //        //List<int> newlist = new List<int>();
+        //        //for (int i = 0; i < arr.Count(); i++)
+        //        //{
+        //        //    for (int k = 1 + i; k < arr.Count(); k++)
+        //        //    {
+        //        //        newlist.Add(arr[i] * arr[k]);
+        //        //    }
+        //        //    //  arr.RemoveAt(i + 1);
+        //        //}
+
+        //        //int min = newlist.Min();
+
+        //        //int T = Convert.ToInt32(Console.ReadLine());
+        //        //string cases = Console.ReadLine();
+        //        //string[] all = cases.Split(' ');
+
+        //        //if (T >= 1 && T <= 10)
+        //        //{
+        //        //    int count_test = all.Length;
+        //        //    for (int i = 0; i < count_test; ++i)
+        //        //    {
+        //        //        int item = Convert.ToInt32(all[0]);
+        //        //        for (int k = 1; k <= item; ++k)
+        //        //        {
+        //        //            if (k % 3 == 0)
+        //        //            {
+        //        //                Console.WriteLine("Fizz");
+        //        //            }
+        //        //            else if (k % 5 == 0)
+        //        //            {
+        //        //                Console.WriteLine("Buzz");
+        //        //            }
+        //        //            else if ((k % 3 == 0) && (k % 5 == 0))
+        //        //            {
+        //        //                Console.WriteLine("FizzBuzz");
+        //        //            }
+        //        //            else
+        //        //            {
+        //        //                Console.WriteLine("{0}", k);
+        //        //            }
+        //        //        }
+        //        //    }
+        //        //}
+
+
+
+
+        //        // using (OracleConnection cn = new OracleConnection("Data Source=TESTDB;User id=TQ_LMS; Password=TQ_LMS; enlist=false; pooling=false"))
+        //        //{
+        //        //OracleCommand cmd = new OracleCommand();
+        //        //cmd.Connection = cn;
+        //        //cn.Open();
+        //        //cmd.CommandText = "cust_max_mgt.create_claim";
+        //        //cmd.CommandType = CommandType.StoredProcedure;
+        //        //cmd.Parameters.Add("p_policy_no", OracleDbType.Varchar2).Value = "170200001709";
+        //        //cmd.Parameters.Add("p_type_code", OracleDbType.Varchar2).Value = "DTH";
+        //        //cmd.Parameters.Add("v_data", OracleDbType.Varchar2, 300).Direction = ParameterDirection.Output;
+        //        //cmd.ExecuteNonQuery();
+        //        //string resposne = cmd.Parameters["v_data"].Value.ToString();
+
+        //        //OracleCommand cmd = new OracleCommand();
+        //        //cmd.Connection = cn;
+        //        //cn.Open();
+        //        //cmd.CommandText = "cust_max_mgt.get_claim_policy_info";
+        //        //cmd.CommandType = CommandType.StoredProcedure;
+        //        //cmd.Parameters.Add("p_policy_no", OracleDbType.Varchar2).Value = "P/2/FP/000035";
+        //        //cmd.Parameters.Add("p_type", OracleDbType.Varchar2).Value = "CLAIMS";
+        //        //cmd.Parameters.Add("v_data", OracleDbType.Varchar2, 300).Direction = ParameterDirection.Output;
+        //        //cmd.Parameters.Add("p_claim_type", OracleDbType.Varchar2).Value = "DTH";
+        //        //cmd.ExecuteNonQuery();
+        //        //string response = cmd.Parameters["v_data"].Value.ToString();
+        //        //}
+        //        //string username = "Aladdin";
+        //        //string password = "openSesame";
+
+        //        //byte[] concatenated = System.Text.ASCIIEncoding.ASCII.GetBytes(username + ":" + password);
+        //        //string header = System.Convert.ToBase64String(concatenated);
+        //        //HttpClient client = new HttpClient();
+        //        //client.BaseAddress = new Uri("https://{base_url}/");
+        //        //client.DefaultRequestHeaders.Accept.Clear();
+        //        //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //        //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "QWxhZGRpbjpvcGVuIHNlc2FtZQ==");
+        //        //var request = new MultipartFormDataContent();
+        //        //request.Add(new StringContent("Jane Doe <jane.doe@mail.custodianplc.com.ng>"), "from");
+        //        //request.Add(new StringContent("john.smith@somedomain.com"), "to");
+        //        //request.Add(new StringContent("Mail subject text"), "subject");
+        //        //request.Add(new StringContent("Rich HTML message body."), "text");
+        //        //var response = client.PostAsync("email/1/send", request).Result;
+        //        //if (response.IsSuccessStatusCode)
+        //        //{
+        //        //    var responseContent = response.Content;
+        //        //    string responseString = responseContent.ReadAsStringAsync().Result;
+        //        //    Console.WriteLine(responseString);
+        //        //}
+
+        //        //var payload = System.IO.File.ReadAllText(@"C:\Users\OItaba\Desktop\MF'B\payload.txt");
+        //        //using (var api = new TravelApi.wsLowFarePlusSoapClient())
+        //        //{
+
+        //        //    var result = api.wmLowFarePlusXml(payload);
+        //        //    XmlDocument doc = new XmlDocument();
+        //        //    doc.LoadXml(result);
+
+        //        //    string jsonText = JsonConvert.SerializeXmlNode(doc).Replace("@","_");
+        //        //    var obj = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(jsonText);
+        //        //    var test = obj.OTA_AirLowFareSearchPlusRS._Version.ToString();
+
+        //        //}
+        //        //var mealPlan = new store<MealPlan>();
+        //        //List<MealPlan> plan = mealPlan.FindMany(x => x.target == "WeightGain" && x.preference == "Poultry").GetAwaiter().GetResult();
+        //        //var group_plan = plan.GroupBy(x => x.daysOfWeek);
+        //        //var final = new List<object>();
+        //        //foreach (var item in group_plan)
+        //        //{
+        //        //    var dic = new Dictionary<string, Dictionary<string, List<temp>>>();
+        //        //    var list_meal = new List<temp>();
+        //        //    var meal = item.GroupBy(x => x.mealType);
+        //        //    var day = new Dictionary<string, List<temp>>();
+        //        //    foreach (var subitem in meal)
+        //        //    {
+        //        //        day.Add(subitem.First().mealType, subitem.Select(x => new temp
+        //        //        {
+        //        //            food = x.food,
+        //        //            quantity = x.quantity,
+        //        //            time = x.time,
+        //        //            youtubeurl = x.youTubeUrl
+        //        //        }).ToList());
+        //        //    }
+
+        //        //    dic.Add(item.First().daysOfWeek, day);
+        //        //    final.Add(dic);
+        //        //}
+        //        //var net = Newtonsoft.Json.JsonConvert.SerializeObject(final);
+
+        //        //int A = 10;
+        //        //int B = 20;
+        //        //decimal test = Convert.ToDecimal(98)/ Convert.ToDecimal(10);
+        //        //decimal b = Math.Ceiling(test);
+        //        //double b = Math.Floor(Math.Sqrt(B));
+        //        //List<int> arry = new List<int>();
+        //        //if(A >= 2 && B <= 1000000000)
+        //        //{
+        //        //    for (double i = a; i <= b; ++i)
+        //        //    {
+        //        //        double sqr = Math.Pow(i, Convert.ToDouble(2));
+        //        //        if (sqr >= A && sqr <= B)
+        //        //        {
+        //        //            //double sqr = Math.Sqrt(sqrt);
+        //        //           int count =  Cal(sqr, 0);
+        //        //            arry.Add(count);
+        //        //        }
+        //        //    }
+
+        //        //    return arry.Min.Max();
+        //        //}
+
+        //        // int value = 8;
+        //        //List<int> binary = Convert.ToString(161, 2).ToCharArray().Select(x => Convert.ToInt32(x)).ToList();
+        //        //int count = 0;
+        //        //List<int> index = new List<int>();
+        //        //int i = 0;
+        //        //foreach (var item in binary)
+        //        //{
+        //        //    if(item % 2 != 0)
+        //        //    {
+        //        //        count++;
+        //        //        index.Add(i + 1);
+        //        //    }
+        //        //    ++i;
+        //        //}
+        //        //index.Insert(0, count);
+        //        //NewsProcessor.GetNews();
+        //        #endregion
+
+        //        //temp myObj = new temp();
+
+        //        //var test =  myObj.MapToObject(typeof(Viewtemp));
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //        Console.WriteLine(ex.StackTrace);
+        //        Console.WriteLine(ex.InnerException);
+        //    }
+        //}
 
         public void GetAPI()
         {

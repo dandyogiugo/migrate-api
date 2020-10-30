@@ -152,3 +152,9 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSelling
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Debug\UpSellingAndCrossSelling.application
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\obj\Debug\UpSellingAndCrossSelling.exe.manifest
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\obj\Debug\UpSellingAndCrossSelling.application
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Debug\CustodianEmailSMSGateway.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Debug\SendGrid.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Debug\CustodianEmailSMSGateway.pdb
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Debug\CustodianEmailSMSGateway.dll.config
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Debug\SendGrid.pdb
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Debug\SendGrid.xml

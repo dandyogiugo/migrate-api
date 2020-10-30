@@ -97,19 +97,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3ahjUSAYDT/0gDKqdwp0IbBLTowSdGo0AQRfZijP494=</dsig:DigestValue>
+        <dsig:DigestValue>+6SPo7kJgbYTeT1QU8ZJ0vJ72tOY0Ek5sGj8v7Nx3pA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataStore.dll" size="359424">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataStore.dll" size="382976">
       <assemblyIdentity name="DataStore" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zUkPbWekiKJo/mQhcnTInj8BoKWQNciU2x2k4wtRSwo=</dsig:DigestValue>
+        <dsig:DigestValue>SqPQVyE67ENsKgUksDh77e8zD/BeYFJTCb4RqFULsVg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -342,6 +342,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SendGrid.dll" size="39936">
+      <assemblyIdentity name="SendGrid" version="9.8.0.0" publicKeyToken="4F047E93159395CA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>EUTJsF5eUWFvXvHXVYmDnR/eO0BTczWSEcCWCn7DlG4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Spire.Doc.dll" size="7200768">
       <assemblyIdentity name="Spire.Doc" version="6.3.0.41040" publicKeyToken="663F351905198CB3" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -397,7 +409,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>brHVeYcTKqZKrRNp68c+m7Kid3OnlIvFH/qEJQDgtqI=</dsig:DigestValue>
+        <dsig:DigestValue>kEIzeexWy7xZ2nhOSvKGVqHbJ8j80khdF06cTVIlTW8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

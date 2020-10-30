@@ -145,6 +145,7 @@
     <Compile Include="Models\SafetyPlus.cs" />
     <Compile Include="Models\SelectedMealPlan.cs" />
     <Compile Include="Models\TelematicsUsers.cs" />
+    <Compile Include="Models\TempClaimData.cs" />
     <Compile Include="Models\Token.cs" />
     <Compile Include="Models\TravelInsurance.cs" />
     <Compile Include="Models\WatchedJokes.cs" />

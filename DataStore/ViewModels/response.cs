@@ -151,6 +151,7 @@ namespace DataStore.ViewModels
         public decimal amount { get; set; }
         public string policy_no { get; set; }
         public int code { get; set; }
+        public object date { get; set; }
     }
 
 
