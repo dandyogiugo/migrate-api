@@ -76,5 +76,7 @@ namespace DataStore.ViewModels
        // [Required]
         public string id_number { get; set; }
 
+        public string referralCode { get; set; }
+
     }
 }

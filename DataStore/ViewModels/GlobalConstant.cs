@@ -95,5 +95,38 @@ namespace DataStore.ViewModels
                 }
             }
         }
+
+        public static string GetWeatherAPIKey
+        {
+            get
+            {
+                string apikey = ConfigurationManager.AppSettings["WEATHER_API_KEY"];
+                if (string.IsNullOrEmpty(apikey))
+                    return null;
+                return apikey;
+            }
+        }
+
+        public static string WeatherIconBaseURL
+        {
+            get
+            {
+                string baseurl = ConfigurationManager.AppSettings["WEATHER_API_ICON_URL"];
+                if (string.IsNullOrEmpty(baseurl))
+                    return null;
+                return baseurl;
+            }
+        }
+
+        public static string WeatherBaseURL
+        {
+            get
+            {
+                string baseurl = ConfigurationManager.AppSettings["WEATHER_API_BASE_URL"];
+                if (string.IsNullOrEmpty(baseurl))
+                    return null;
+                return baseurl;
+            }
+        }
     }
 }

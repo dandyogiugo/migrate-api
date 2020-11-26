@@ -871,6 +871,48 @@ namespace DataStore.Utilities
                 return null;
             }
         }
+
+        public async Task<dynamic> GetTransactionFromTQ(string policynumber)
+        {
+            try
+            {
+                string ConnectionString = ConfigurationManager.ConnectionStrings["OracleConnectionString"].ConnectionString;
+                string query = $@"SELECT DECODE(OPR_DRCR,'D',-1,1)*OPR_AMT OPR_AMT,TO_CHAR(OPR_RECEIPT_DATE,'DD/MM/RRRR')OPR_DATE,OPR_RECEIPT_NO,OPR_DRCR
+                                FROM LMS_ORD_PREM_RECEIPTS WHERE OPR_POL_POLICY_NO = '{policynumber}' ORDER BY OPR_RECEIPT_DATE ASC";
+                using (OracleConnection cn = new OracleConnection(ConnectionString))
+                {
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.Connection = cn;
+                    cn.Open();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    var rows = await cmd.ExecuteReaderAsync();
+                    List<dynamic> tranx = new List<dynamic>();
+                    while (await rows.ReadAsync())
+                    {
+                        var single = new
+                        {
+                            Amount = Convert.ToDecimal(rows["OPR_AMT"]?.ToString()),
+                            TransactionDate = rows["OPR_DATE"]?.ToString(),
+                            RecieptNumber = rows["OPR_RECEIPT_NO"]?.ToString(),
+                            Status = (rows["OPR_DRCR"]?.ToString().ToUpper() == "D") ? "DR" : "CR",
+                        };
+
+                        tranx.Add(single);
+                    }
+
+                    return tranx;
+                }
+            }
+            catch (Exception ex)
+            {
+                //log.Info("Exception was throwed")
+                //log.Error(ex.Message);
+                //log.Error(ex.StackTrace);
+                //log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                throw ex;
+            }
+        }
         public async Task<claims_details> GetLifeClaimsDetails(ClaimsDetails claim_detail)
         {
             try
@@ -973,7 +1015,7 @@ namespace DataStore.Utilities
         {
             try
             {
-                var validate = await _otp.FindOneByCriteria(x => x.is_used == false && x.is_valid == true && (x.mobile_number == emailorphone?.ToLower().Trim() || x.email == emailorphone?.ToLower().Trim()) && x.otp == token);
+                var validate = await _otp.FindOneByCriteria(x => x.is_used == false && x.is_valid == true && (x.mobile_number == emailorphone?.ToLower().Trim() || x.email?.ToLower().Trim() == emailorphone?.ToLower().Trim()) && x.otp == token);
                 if (validate != null)
                 {
                     log.Info($"you have provided an valid otp {emailorphone}");
@@ -1371,70 +1413,73 @@ namespace DataStore.Utilities
             {
                 policy_type = "CONSEQUENTIAL LOSS";
             }
+            else if (new Regex(@"(\/ E\/ 24\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "ELECTRONICS EQUIPMENT INSURANCE";
+            }
+            else if (new Regex(@"(\/ E\/ 25\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "MACHINERY BREAKDOWN INSURANCE";
+            }
+            else if (new Regex(@"(\/ E\/ 26\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "BOILER & PRESSURE VESSEL INSURANCE";
+            }
+            else if (new Regex(@"(\/ E\/ 36\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "BOILER";
+            }
+            else if (new Regex(@"(\/ E\/ 40\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "MACHINERY BREAKDOWN CONSEQUENTIAL LOSS INSURANCE";
+            }
+            else if (new Regex(@"(\/ E\/ 41\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "ADVANCE PROFIT INSURANCE POLICY";
+            }
+            else if (new Regex(@"(\/ E\/ 21\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "CONTRACTORS ALL RISKS";
+            }
+            else if (new Regex(@"(\/ E\/ 22\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "ERECTION ALL RISKS";
+            }
+            else if (new Regex(@"(\/ E\/ 23\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "PLANT ALL RISKS";
+            }
+            else if (new Regex(@"(\/ B\/ 38\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "CREDIT BOND";
+            }
+            else if (new Regex(@"(\/ B\/ 17\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "TENDER BOND";
+            }
+            else if (new Regex(@"(\/ B\/ 18\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "PERFORMANCE BOND";
+            }
+            else if (new Regex(@"(\/ B\/ 19\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "ADVANCE PAYMENT BOND";
+            }
+            else if (new Regex(@"(\/ B\/ 20\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "CUSTOM BOND";
+            }
+            else if (new Regex(@"(\/ H\/ 39\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "AVIATION INSURANCE (HULL - ALL - RISKS)";
+            }
+
 
 
 
             return policy_type;
 
-            //            case / (\/ E\/ 24\/){ 1}/.test(policy_number):
-            //policy_type = "ELECTRONICS EQUIPMENT INSURANCE";
-            //                break;
 
-            //            case / (\/ E\/ 25\/){ 1}/.test(policy_number):
-            //policy_type = "MACHINERY BREAKDOWN INSURANCE";
-            //                break;
-
-            //            case / (\/ E\/ 26\/){ 1}/.test(policy_number):
-            //policy_type = "BOILER & PRESSURE VESSEL INSURANCE";
-            //                break;
-
-            //            case / (\/ E\/ 36\/){ 1}/.test(policy_number):
-            //policy_type = "BOILER";
-            //                break;
-
-            //            case / (\/ E\/ 40\/){ 1}/.test(policy_number):
-            //policy_type = "MACHINERY BREAKDOWN CONSEQUENTIAL LOSS INSURANCE";
-            //                break;
-
-            //            case / (\/ E\/ 41\/){ 1}/.test(policy_number):
-            //policy_type = "ADVANCE PROFIT INSURANCE POLICY";
-            //                break;
-
-            //            case / (\/ E\/ 21\/){ 1}/.test(policy_number):
-            //policy_type = "CONTRACTORS ALL RISKS";
-            //                break;
-
-            //            case / (\/ E\/ 22\/){ 1}/.test(policy_number):
-            //policy_type = "ERECTION ALL RISKS";
-            //                break;
-
-            //            case / (\/ E\/ 23\/){ 1}/.test(policy_number):
-            //policy_type = "PLANT ALL RISKS";
-            //                break;
-
-            //            case / (\/ B\/ 38\/){ 1}/.test(policy_number):
-            //policy_type = "CREDIT BOND";
-            //                break;
-
-            //            case / (\/ B\/ 17\/){ 1}/.test(policy_number):
-            //policy_type = "TENDER BOND";
-            //                break;
-
-            //            case / (\/ B\/ 18\/){ 1}/.test(policy_number):
-            //policy_type = "PERFORMANCE BOND";
-            //                break;
-
-            //            case / (\/ B\/ 19\/){ 1}/.test(policy_number):
-            //policy_type = "ADVANCE PAYMENT BOND";
-            //                break;
-
-            //            case / (\/ B\/ 20\/){ 1}/.test(policy_number):
-            //policy_type = "CUSTOM BOND";
-            //                break;
-
-            //            case / (\/ H\/ 39\/){ 1}/.test(policy_number):
-            //policy_type = "AVIATION INSURANCE (HULL - ALL - RISKS)";
-            //                break;
 
             //            case / (\/ Z\/ 46\/){ 1}/.test(policy_number):
             //policy_type = "OIL AND ENERGY(OPERATIONAL RISK)";
@@ -1575,92 +1620,92 @@ namespace DataStore.Utilities
             //            default:
             //                policy_type = "";
             //                break;
-       // }
+            // }
+        }
     }
-}
-public static class Config
-{
-    public const string DEFAULT_BASE_URL = "https://api-football-v1.p.rapidapi.com/v2";
-    public static string BASE_URL
+    public static class Config
     {
-        get
+        public const string DEFAULT_BASE_URL = "https://api-football-v1.p.rapidapi.com/v2";
+        public static string BASE_URL
         {
-            string base_url = ConfigurationManager.AppSettings["BASE_URL"];
-            if (!string.IsNullOrEmpty(base_url?.Trim()))
+            get
             {
-                if (!base_url.Trim().EndsWith("/"))
+                string base_url = ConfigurationManager.AppSettings["BASE_URL"];
+                if (!string.IsNullOrEmpty(base_url?.Trim()))
                 {
-                    return base_url;
+                    if (!base_url.Trim().EndsWith("/"))
+                    {
+                        return base_url;
+                    }
+                    else
+                    {
+                        return base_url.Remove(base_url.Length - 1, 1);
+                    }
                 }
                 else
                 {
-                    return base_url.Remove(base_url.Length - 1, 1);
+                    return DEFAULT_BASE_URL;
                 }
             }
-            else
-            {
-                return DEFAULT_BASE_URL;
-            }
         }
-    }
-    public static string Authorization_Header
-    {
-        get
+        public static string Authorization_Header
         {
-            string header = ConfigurationManager.AppSettings["AUTH_HEADER"];
-            if (!string.IsNullOrEmpty(header))
+            get
             {
-                return header;
-            }
-            else
-            {
-                return null;
-            }
+                string header = ConfigurationManager.AppSettings["AUTH_HEADER"];
+                if (!string.IsNullOrEmpty(header))
+                {
+                    return header;
+                }
+                else
+                {
+                    return null;
+                }
 
+            }
         }
-    }
-    public static int GetID
-    {
-        get
+        public static int GetID
         {
-            string Id = ConfigurationManager.AppSettings["LeagueID"];
-            if (!string.IsNullOrEmpty(Id))
+            get
             {
-                return Convert.ToInt32(Id);
-            }
-            else
-            {
-                return 3;
+                string Id = ConfigurationManager.AppSettings["LeagueID"];
+                if (!string.IsNullOrEmpty(Id))
+                {
+                    return Convert.ToInt32(Id);
+                }
+                else
+                {
+                    return 3;
+                }
             }
         }
-    }
 
-    public static bool isDemo
-    {
-        get
+        public static bool isDemo
         {
-            string demo = ConfigurationManager.AppSettings["IsDemo"];
-            if (bool.TryParse(demo, out bool result))
+            get
             {
-                return result;
-            }
-            else
-            {
-                return false;
+                string demo = ConfigurationManager.AppSettings["IsDemo"];
+                if (bool.TryParse(demo, out bool result))
+                {
+                    return result;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
     }
-}
-public class cron
-{
-    public cron()
+    public class cron
     {
+        public cron()
+        {
 
-    }
+        }
 
-    public void logTimer(PerformContext log)
-    {
-        log.WriteLine($"Log me time ==================== {DateTime.Now} ===========================");
+        public void logTimer(PerformContext log)
+        {
+            log.WriteLine($"Log me time ==================== {DateTime.Now} ===========================");
+        }
     }
-}
 }

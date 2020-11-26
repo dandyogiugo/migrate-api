@@ -34,5 +34,6 @@ namespace DataStore.Models
         public DateTime TransactionDate { get; set; } = DateTime.Now;
         public string merchant_Id { get; set; }
         public string Email { get; set; }
+        public string referralCode { get; set; }
     }
 }

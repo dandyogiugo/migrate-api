@@ -68,6 +68,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Authorisation failed"
                     };
                 }
+
                 var check_user_function = await util.CheckForAssignedFunction("GetPolicyDetails", pol_detials.merchant_id);
                 if (!check_user_function)
                 {
@@ -386,6 +387,10 @@ namespace CustodianEveryWhereV2._0.Controllers
                     channelName = merchantConfig.merchant_name.ToUpper();
                 }
 
+                if (!merchantConfig.merchant_name.ToLower().Contains("adapt"))
+                {
+                    channelName = merchantConfig.merchant_name.ToUpper();
+                }
 
                 var validate_headers = await util.ValidateHeaders(headerValues, post.merchant_id);
 

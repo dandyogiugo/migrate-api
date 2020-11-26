@@ -14,8 +14,8 @@ namespace WindowsService1.Models
         public string country { get; set; }
         public string country_code { get; set; }
         public int season { get; set; }
-        public DateTime season_start { get; set; }
-        public DateTime season_end { get; set; }
+        public DateTime? season_start { get; set; }
+        public DateTime? season_end { get; set; }
         public string logo { get; set; }
         public string flag { get; set; }
         public bool standings { get; set; }

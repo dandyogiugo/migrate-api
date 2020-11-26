@@ -41,6 +41,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         {
             try
             {
+
                 if (!ModelState.IsValid)
                 {
                     return new res { message = "provide poilcy number", status = (int)HttpStatusCode.ExpectationFailed };
@@ -115,7 +116,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var generate_otp = await util.GenerateOTP(false, policy.email.ToLower(), "POLICYSERVICE", Platforms.ADAPT);
+                var generate_otp = await util.GenerateOTP(false, email?.Trim(), "POLICYSERVICE", Platforms.ADAPT);
                 string messageBody = $"Adapt Policy Services authentication code <br/><br/><h2><strong>{generate_otp}</strong></h2>";
                 var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Adapt.html"));
                 StringBuilder sb = new StringBuilder(template);
@@ -246,8 +247,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     log.Info($"valid merchant Id {validate.merchant_id} setup completed");
                     return new res
                     {
-                        status = (int)HttpStatusCode.Forbidden,
-                        message = "User has finish setting up profile kindly login to access your policy"
+                        status = 201,
+                        message = "User has finished setting up profile kindly login to access your policy services"
                     };
                 }
 
@@ -345,7 +346,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     return new res
                     {
                         status = 405,
-                        message = "Invalid customer id"
+                        message = "Invalid customer PIN"
                     };
                 }
 
@@ -432,7 +433,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
-                
+
 
                 var getCustomer = await policyService.FindOneByCriteria(x => x.customerid == customer_id);
 
@@ -489,7 +490,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
-        public async Task<res> GetPolicyDetails(string merchant_id, string source, string pin, string policynumber, string hash)
+        public async Task<res> GetPolicyDetails(string merchant_id, string source, string pin, string policynumber, string customer_id, string hash)
         {
             try
             {
@@ -526,7 +527,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
 
                 var encryptPin = util.Sha256(pin);
-                var checkuser = await policyService.FindOneByCriteria(x => x.pin == encryptPin && x.policynumber == policynumber);
+                var checkuser = await policyService.FindOneByCriteria(x => x.pin == encryptPin && x.customerid == customer_id?.Trim());
                 if (checkuser == null)
                 {
                     log.Info($"Pin authentication failed {policynumber}");
@@ -554,7 +555,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     return new res
                     {
                         status = 200,
-                        message = "Dfetch was successful",
+                        message = "fetch was successful",
                         data = request
                     };
                 }
@@ -650,6 +651,157 @@ namespace CustodianEveryWhereV2._0.Controllers
                     message = $"OTP has been sent to email {checkuser.email} and phone { checkuser.phonenumber} attached to your policy",
                     status = (int)HttpStatusCode.OK,
                 };
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return new res { message = "System error, Try Again", status = (int)HttpStatusCode.NotFound };
+            }
+        }
+
+        [HttpGet]
+        public async Task<res> GetLifeTransactions(string merchant_id, string policy_number, string hash)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("GetLifeTransactions", merchant_id);
+                if (!check_user_function)
+                {
+                    return new res
+                    {
+                        status = (int)HttpStatusCode.Unauthorized,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new res
+                    {
+                        status = (int)HttpStatusCode.Forbidden,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                var checkhash = await util.ValidateHash2(policy_number, config.secret_key, hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {policy_number}");
+                    return new res
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                var getTranscation = await util.GetTransactionFromTQ(policy_number);
+                if (getTranscation == null)
+                {
+                    return new res
+                    {
+                        status = 200,
+                        message = "No record found"
+                    };
+                }
+
+                return new res
+                {
+                    status = 200,
+                    message = "Transaction Fetched successfully",
+                    data = getTranscation
+                };
+
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return new res { message = "System error, Try Again", status = (int)HttpStatusCode.NotFound };
+            }
+        }
+
+        [HttpGet]
+        public async Task<res> GetVehicleList(string merchant_id, string policy_number, string hash)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("GetVehicleList", merchant_id);
+                if (!check_user_function)
+                {
+                    return new res
+                    {
+                        status = (int)HttpStatusCode.Unauthorized,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new res
+                    {
+                        status = (int)HttpStatusCode.Forbidden,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                var checkhash = await util.ValidateHash2(policy_number, config.secret_key, hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {policy_number}");
+                    return new res
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                using (var api = new CustodianAPI.PolicyServicesSoapClient())
+                {
+                    var request = api.GetMotorPolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, policy_number);
+                    if (request == null || request.Length == 0)
+                    {
+                        return new res
+                        {
+                            status = (int)HttpStatusCode.Forbidden,
+                            message = "Unable to fetch vehicle(s) details"
+                        };
+                    }
+
+                    var response = request.Select(x => new
+                    {
+                        RegNumber = x.mVehReg?.Trim(),
+                        ChasisNumber = x.mChasisNum?.Trim(),
+                        EngineNumber = x.mENGINENUM?.Trim(),
+                        ExpiryDate = Convert.ToDateTime(x.mEnddate?.Trim()).ToString("dd-MMM-yyyy"),
+                        StartDate = Convert.ToDateTime(x.mStartdate?.Trim()).ToString("dd-MMM-yyyy"),
+                        Color = x.mVEHCOLOR?.Trim(),
+                        Make = x.mVEHMAKE?.Trim(),
+                        Premium = Convert.ToDouble(x.mVEHPREMIUM?.Trim()),
+                        Value = Convert.ToDouble(x.mVEHVALUE?.Trim()),
+                        InsuredName = x.mInsuredname?.Trim(),
+                        Status = x.Status?.Trim(),
+                        EngineCapacity = x.mHPCAPACITY?.Trim()
+
+                    }).ToList();
+
+                    return new res
+                    {
+                        status = (int)HttpStatusCode.OK,
+                        message = "Vehicle(s) details fetch successfully",
+                        data = response
+                    };
+
+                }
+
+
             }
             catch (Exception ex)
             {

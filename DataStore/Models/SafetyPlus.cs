@@ -58,5 +58,8 @@ namespace DataStore.Models
        // [Required]
         public string IndetificationNUmber { get; set; }
         public string Merchant_Id { get; set; }
+        public string referralCode { get; set; }
+
+        public string policyNumber { get; set; }
     }
 }

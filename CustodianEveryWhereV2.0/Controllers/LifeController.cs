@@ -426,14 +426,15 @@ namespace CustodianEveryWhereV2._0.Controllers
                     policytype = PlaceHolder,
                     id_number = BuyLife.id_number,
                     reference = BuyLife.payment_reference,
-                    merchant_id = BuyLife.merchant_id
+                    merchant_id = BuyLife.merchant_id,
+                    referralCode = BuyLife.referralCode
                 };
 
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     var request = api.SubmitPaymentRecord(GlobalConstant.merchant_id, GlobalConstant.password, "NA",
                         "Life", $"NewBusniness|{BuyLife.payment_reference}", Convert.ToDateTime(BuyLife.date_of_birth), DateTime.Now, BuyLife.payment_reference, BuyLife.insured_name, "", "", BuyLife.address, BuyLife.phonenumber,
-                        BuyLife.emailaddress, BuyLife.terms.ToString(), BuyLife.frequency.ToString().Replace("_", "-"), "", PlaceHolder, BuyLife.premium, BuyLife.computed_premium, "ADAPT", "NB", "","");
+                        BuyLife.emailaddress, BuyLife.terms.ToString(), BuyLife.frequency.ToString().Replace("_", "-"), "", PlaceHolder, BuyLife.premium, BuyLife.computed_premium, "ADAPT", "NB", BuyLife.referralCode ?? "", "");
                     log.Info("RAW Response from api" + request);
                     if (!string.IsNullOrEmpty(request))
                     {

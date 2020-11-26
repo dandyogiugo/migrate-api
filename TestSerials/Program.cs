@@ -30,54 +30,54 @@ namespace TestSerials
 
             //declare the array.
             //used this instead of a list, it is simpler to handle
-
-            List<int> xx = new List<int>()
-            {
-               3,6,1,7,3,9,1,12
-            };
-
-
-            int[] array = xx.ToArray();
+            GetAllLeague.GetLeague();
+            //List<int> xx = new List<int>()
+            //{
+            //   3,6,1,7,3,9,1,12
+            //};
 
 
-            int sortedIndex = 0;
+            //int[] array = xx.ToArray();
 
-            Console.Write("Sorting started  with : ");
-            foreach (int i in array)
-            {
-                Console.Write(i);
-            }
 
-            Console.WriteLine("");
+            //int sortedIndex = 0;
+
+            //Console.Write("Sorting started  with : ");
+            //foreach (int i in array)
+            //{
+            //    Console.Write(i);
+            //}
+
+            //Console.WriteLine("");
 
             //while(sortedIndex < (array.Length - 1))
-            for (int topindex = 0; topindex < (array.Length - 1); topindex++)
-            {
-                for (int index = 0; index < (array.Length - 1); index++)
-                {
-                    //1,3,2,5
-                    if (array.ElementAt(index) > array.ElementAt(index + 1))
-                    {
-                        int currentIndex = array.ElementAt(index);
-                        int nextIndex = array.ElementAt(index + 1);
+            //for (int topindex = 0; topindex < (array.Length - 1); topindex++)
+            //{
+            //    for (int index = 0; index < (array.Length - 1); index++)
+            //    {
+            //        //1,3,2,5
+            //        if (array.ElementAt(index) > array.ElementAt(index + 1))
+            //        {
+            //            int currentIndex = array.ElementAt(index);
+            //            int nextIndex = array.ElementAt(index + 1);
 
-                        array[index] = nextIndex;
-                        array[index + 1] = currentIndex;
+            //            array[index] = nextIndex;
+            //            array[index + 1] = currentIndex;
 
-                        sortedIndex = index;
+            //            sortedIndex = index;
 
-                        //Console.WriteLine(index + "/"+ (array.Length -1));
-                    }
-                }
-                // Console.WriteLine(sortedIndex);
-            }
+            //            //Console.WriteLine(index + "/"+ (array.Length -1));
+            //        }
+            //    }
+            //    // Console.WriteLine(sortedIndex);
+            //}
 
 
-            Console.Write("Output : ");
-            foreach (int i in array)
-            {
-                Console.Write(i);
-            }
+            //Console.Write("Output : ");
+            //foreach (int i in array)
+            //{
+            //    Console.Write(i);
+            //}
 
             Console.ReadLine();
 
@@ -127,7 +127,7 @@ namespace TestSerials
         //        //var premium = 5000.00;
         //        //var format = string.Format("{0:1}", premium);
         //        //var test = format;
-        //        //GetAllLeague.GetLeague();
+       
         //        //Console.ReadKey();
 
         //        #region

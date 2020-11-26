@@ -338,6 +338,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AddonsController.cs" />
     <Compile Include="Controllers\AgentController.cs" />
     <Compile Include="Controllers\AirPortSearchController.cs" />
     <Compile Include="Controllers\AnnuityController.cs" />
@@ -827,6 +828,7 @@
     <Content Include="TravelCategoryJSON\Country.json" />
     <Content Include="TravelCategoryJSON\RagaConfig.json" />
     <Content Include="TravelCategoryJSON\AppUpdate.json" />
+    <Content Include="TravelCategoryJSON\adds.json" />
     <None Include="Web References\RSA\cal.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -1,13 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TestSerials
 {
-    class Human
+    public class Human
     {
+       protected internal class os
+        {
+        }
+         protected class osoo
+        {
+        }
+        public Human()
+        {
+          //  var worker = new BackgroundWorker();
+          //  worker.WorkerSupportsCancellation = true;
+          //  System.Diagnostics.PerformanceCounterCategory[] GetCategories
+
+          //     // var hh = PerformanceCounterCategoryType.
+          //var b =   new System.Diagnostics.PerformanceCounter("Processor", "% Processor Time", "_Total");
+          //  b.NextValue()
+
+        }
+
     }
     public class Kehinde
     {

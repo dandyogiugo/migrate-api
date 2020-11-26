@@ -42,7 +42,6 @@ namespace DapperLayer.Dapper.Core
             ret.count = count[0];
             return ret;
         }
-
         public async Task<dynamic> SearchPager(int page, int skip, string terms, string sql)
         {
             IList<T> results = null;
@@ -58,7 +57,6 @@ namespace DapperLayer.Dapper.Core
             obj.results = results;
             return obj;
         }
-
         public async Task<dynamic> GetPredictionByCustomerID(int customer_id, string sql)
         {
             IList<T> current = null;
@@ -78,7 +76,6 @@ namespace DapperLayer.Dapper.Core
             obj.recommended = recommended;
             return obj;
         }
-
         public async Task<IEnumerable<T>> GetNewCustomerDetails()
         {
             try
@@ -98,7 +95,6 @@ namespace DapperLayer.Dapper.Core
                 return null;
             }
         }
-
         public async Task<List<T>> GetRenewalRatio(string sql)
         {
 
@@ -108,7 +104,6 @@ namespace DapperLayer.Dapper.Core
                 return multiple?.ToList();
             };
         }
-
         public async Task<NextRenewalResult> GetRenewalNext(string query, string query_filter, string condition = "", string condition_where = "", int offset = 0, int next = 100)
         {
             IList<int> count = null;
@@ -178,7 +173,6 @@ namespace DapperLayer.Dapper.Core
 
             }
         }
-
         public async Task<bool> BulkUpdate(List<TravelInsurance> buyTravels)
         {
             string query = $@"Update TravelInsurance SET policy_number = @policy_number,certificate_number=@certificate_number,transaction_ref=@transaction_ref,status=@status where Id = @Id";
@@ -299,7 +293,6 @@ namespace DapperLayer.Dapper.Core
                 return null;
             }
         }
-
         public async Task<bool> DeleteRecord(string referrenceKey)
         {
             try
@@ -335,8 +328,6 @@ namespace DapperLayer.Dapper.Core
                 return false;
             }
         }
-
-
         public async Task<IEnumerable<T>> GetPolicyServices(string policynumber)
         {
             try

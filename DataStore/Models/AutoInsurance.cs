@@ -70,5 +70,7 @@ namespace DataStore.Models
         public string srcc { get; set; }
         public DateTime? start_date { get; set; }
         public string merchant_id { get; set; }
+        public string referralCode { get; set; }
+        public string policyNumber { get; set; }
     }
 }

@@ -188,7 +188,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         GlobalConstant.password, safe.CustomerName, safe.Address,
                         safe.PhoneNumber, safe.Email, safe.Occupation, safe.Premium, safe.NoOfUnit, DateTime.Now, DateTime.Now,
                         DateTime.Now.AddMonths(12), safe.Reference, safe.Description,
-                        safe.BeneficiaryName, safe.BeneficiarySex.ToString(), safe.BeneficiaryDOB, safe.BeneficiaryRelatn, "API", "", "", "");
+                        safe.BeneficiaryName, safe.BeneficiarySex.ToString(), safe.BeneficiaryDOB, safe.BeneficiaryRelatn, "API", safe.referralCode ?? "", "", "");
 
                     log.Info($"Response from api {request}");
                     if (!string.IsNullOrEmpty(request))
@@ -213,9 +213,12 @@ namespace CustodianEveryWhereV2._0.Controllers
                             Premium = safe.Premium,
                             CustomerDOB = safe.CustomerDOB,
                             IndetificationNUmber = safe.IdentificationNumber,
-                            Merchant_Id = safe.merchant_id
+                            Merchant_Id = safe.merchant_id,
+                            referralCode = safe.referralCode
                         };
-                        var cert_code = request.Replace("**", "|").Split('|')[1];
+                        var cert_code = request.Replace("**", "|")?.Split('|')[1];
+                        var policy_number = request.Replace("**", "|")?.Split('|')[0];
+                        safety_plus.policyNumber = policy_number;
                         var reciept_base_url = ConfigurationManager.AppSettings["Reciept_Base_Url"];
                         if (!string.IsNullOrEmpty(safe.ImageBase64))
                         {
@@ -233,7 +236,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                             message = "Payment processing was successful",
                             data = new Dictionary<string, string>
                             {
-                                {"cert_url",reciept_base_url+$"mUser=CUST_WEB&mCert={cert_code}&mCert2={cert_code}" }
+                                {"cert_url",reciept_base_url+$"mUser=CUST_WEB&mCert={cert_code}&mCert2={cert_code}" },
+                                {"policy_number",safety_plus.policyNumber }
                             }
                         };
 

@@ -21,7 +21,6 @@ namespace CustodianEveryWhereV2._0.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AutoInsuranceController : ApiController
     {
-
         private static Logger log = LogManager.GetCurrentClassLogger();
         private Utility util = null;
         private store<ApiConfiguration> _apiconfig = null;
@@ -290,7 +289,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                            Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured
                            , Auto.chassis_number, Auto.registration_number, Auto.vehicle_model,
                            Auto.vehicle_model, Auto.vehicle_color, Auto.vehicle_model, Auto.vehicle_type, Auto.vehicle_year,
-                           DateTime.Now, DateTime.Now, DateTime.Now.AddMonths(12), Auto.reference_no, "", source, "", "", "");
+                           DateTime.Now, DateTime.Now, DateTime.Now.AddMonths(12), Auto.reference_no, "", source, Auto.referralCode ?? "", "", "");
                     }
 
                     log.Info($"Response from Api {request}");
@@ -329,15 +328,19 @@ namespace CustodianEveryWhereV2._0.Controllers
                             tracking = Auto.tracking,
                             start_date = Auto.start_date ?? DateTime.Now,
                             srcc = Auto.srcc,
-                            merchant_id = Auto.merchant_id
+                            merchant_id = Auto.merchant_id,
+                            referralCode = Auto.referralCode
+
                         };
                         string cert_url = "";
                         string cert_number = Guid.NewGuid().ToString();
                         if (Auto.insurance_type != TypeOfCover.Comprehensive)
                         {
-                            var cert_code = request.Replace("**", "|").Split('|')[1];
+                            var cert_code = request.Replace("**", "|")?.Split('|')[1];
+                            var policy_number = request.Replace("**", "|")?.Split('|')[0];
                             var reciept_base_url = ConfigurationManager.AppSettings["Reciept_Base_Url"];
                             cert_number = cert_code;
+                            save_new.policyNumber = policy_number;
                             cert_url = $"{reciept_base_url}+mUser=CUST_WEB & mCert={cert_code}&mCert2={cert_code}";
                         }
                         if (!string.IsNullOrEmpty(Auto.attachment))
@@ -357,7 +360,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                             message = "Transaction was successful",
                             data = new Dictionary<string, string>
                             {
-                                {"cert_url", cert_url}
+                                {"cert_url", cert_url},
+                                {"policyNo",save_new.policyNumber }
                             }
                         };
                     }

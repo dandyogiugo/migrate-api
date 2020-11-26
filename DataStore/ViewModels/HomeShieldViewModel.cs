@@ -34,6 +34,7 @@ namespace DataStore.ViewModels
         public IndetificationTypes IdentificationType { get; set; }
         [Required]
         public string TransactionReference { get; set; }
+        public string referralCode { get; set; }
     }
 
     public enum IndetificationTypes

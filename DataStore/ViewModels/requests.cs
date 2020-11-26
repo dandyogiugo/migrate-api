@@ -577,6 +577,7 @@ namespace DataStore.ViewModels
         public string flood { get; set; }
         public string srcc { get; set; }
         public DateTime? start_date { get; set; }
+        public string referralCode { get; set; }
     }
 
     public class user_otp
@@ -912,6 +913,8 @@ namespace DataStore.ViewModels
         public string IdentificationType { get; set; }
         //[Required]
         public string IdentificationNumber { get; set; }
+
+        public string referralCode { get; set; }
     }
 
     public class League
@@ -1186,6 +1189,7 @@ namespace DataStore.ViewModels
         public string Narration { get; set; }
 
         public string Email { get; set; }
+        public string referralCode { get; set; }
     }
 
     public class RagaRequest
@@ -1267,6 +1271,8 @@ namespace DataStore.ViewModels
         public string customer_email { get; set; }
         [Required]
         public string customer_name { get; set; }
+        [Required]
+        public decimal amount { get; set; }
     }
 }
 

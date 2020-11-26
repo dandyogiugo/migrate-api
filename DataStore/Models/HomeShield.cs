@@ -33,6 +33,8 @@ namespace DataStore.Models
         public string TransactionReeference { get; set; }
         public string FileFormat { get; set; }
         public string ResponseFromAPI { get; set; }
-        
+
+        public string referralCode { get; set; }
+
     }
 }

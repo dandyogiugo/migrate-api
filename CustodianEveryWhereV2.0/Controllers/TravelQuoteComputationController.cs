@@ -909,7 +909,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     TransactionReference = localTravel.TransactionReference,
                     VehicleReg = localTravel.VehicleReg,
                     MobileNumber = localTravel.MobileNumber,
-                    Email = localTravel.Email
+                    Email = localTravel.Email,
+                    referralCode = localTravel.referralCode
                 };
 
                 var isSave = await localtrav.Save(save_trnx);
@@ -922,8 +923,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                             localTravel.Email, "NA",
                             localTravel.Premium, 1, DateTime.Now, DateTime.Now, DateTime.Now.AddHours(12), "",
                             localTravel.Narration, localTravel.NextofKinMobile,
-                            "NA", DateTime.Now, "NA", "API", "", "", "");
-                        //Send SMS leta
+                            "NA", DateTime.Now, "NA", "API", localTravel.referralCode ?? "", "", "");
+                        //TODO: Send SMS at this point to notify customer with policy number
                         log.Info($"Response from api {postToABS}");
                         if (!string.IsNullOrEmpty(postToABS))
                         {

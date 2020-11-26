@@ -57,5 +57,7 @@ namespace DataStore.Models
         public string reference { get; set; }
 
         public string merchant_id { get; set; }
+
+        public string referralCode { get; set; }
     }
 }
