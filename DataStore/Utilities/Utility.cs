@@ -1344,11 +1344,11 @@ namespace DataStore.Utilities
 
             return number;
         }
-
-        public string ClaimType(string policy_number)
+        public string PolicyType(string policy_number)
         {
             string policy_type = "";
 
+            #region -- Regex matching for policy numbers
             if (new Regex(@"(\/V\/29\/){ 1}").IsMatch(policy_number))
             {
                 policy_type = "PRIVATE CAR INSURANCE";
@@ -1473,154 +1473,399 @@ namespace DataStore.Utilities
             {
                 policy_type = "AVIATION INSURANCE (HULL - ALL - RISKS)";
             }
-
-
-
+            else if (new Regex(@"(\/ Z\/ 46\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "OIL AND ENERGY(OPERATIONAL RISK)";
+            }
+            else if (new Regex(@"(\/ Z\/ 47\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "OIL AND ENERGY (CONSTRUCTION RISK)";
+            }
+            else if (new Regex(@"(\/ Z\/ 49\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "OIL AND ENERGY(OPER. RISK) - THIRD PARY LIABILITY";
+            }
+            else if (new Regex(@"(\/ Z\/ 50\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "OIL AND ENERGY(OPER. RISK) - THIRD PARY LIABILITY";
+            }
+            else if (new Regex(@"(\/ Z\/ 52\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "OIL AND ENERGY(OPER. RISK)";
+            }
+            else if (new Regex(@"(\/ Z\/ 53\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "OIL AND ENERGY (CONSTRUCTION RISK)";
+            }
+            else if (new Regex(@"(\/ Z\/ 54\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "OIL AND ENERGY(OPER. RISK) - THIRD PARY LIABILITY";
+            }
+            else if (new Regex(@"(\/ Z\/ 55\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "OIL AND ENERGY(OPER. RISK) - THIRD PARY LIABILITY";
+            }
+            else if (new Regex(@"(\/ P\/ 62\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "PACKAGE/COMBINED/IAR";
+            }
+            else if (new Regex(@"(\/ S\/ 48\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "WARRANTY INSURANCE";
+            }
+            else if (new Regex(@"(\/ A\/ 03\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "BURGLARY BUSINESS PREMISES";
+            }
+            else if (new Regex(@"(\/ A\/ 04\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "BURGLARY PRIVATE PREMISES";
+            }
+            else if (new Regex(@"(\/ A\/ 04\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "BURGLARY PRIVATE PREMISES";
+            }
+            else if (new Regex(@"(\/ A\/ 044\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "DIRECTORS LIABILITY INSURANCE";
+            }
+            else if (new Regex(@"(\/ A\/ 05\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "CASH-IN-TRANSIT/MONEY";
+            }
+            else if (new Regex(@"(\/ A\/ 06\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "CASH-IN-SAFE";
+            }
+            else if (new Regex(@"(\/ A\/ 07\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "GOODS IN TRANSIT";
+            }
+            else if (new Regex(@"(\/ A\/ 08\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "PROFESSIONAL INDEMNITY";
+            }
+            else if (new Regex(@"(\/ A\/ 09\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "GROUP PERSONAL ACCIDENT";
+            }
+            else if (new Regex(@"(\/ A\/ 10\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "PERSONAL ACCIDENT";
+            }
+            else if (new Regex(@"(\/ A\/ 11\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "PUBLIC LIABILITY";
+            }
+            else if (new Regex(@"(\/ A\/ 12\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "PRODUCT LIABILITY";
+            }
+            else if (new Regex(@"(\/ A\/ 13\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "ALL RISKS";
+            }
+            else if (new Regex(@"(\/ A\/ 14\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "FIDELITY GUARANTEE";
+            }
+            else if (new Regex(@"(\/ A\/ 15\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "EMPLOYEES' ACCIDENT BENEFIT INSURANCE POLICY";
+            }
+            else if (new Regex(@"(\/ A\/ 16\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "COMBINED HOUSEHOLDERS & HOUSEOWNERS";
+            }
+            else if (new Regex(@"(\/ A\/ 35\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "GOLFERS POLICY";
+            }
+            else if (new Regex(@"(\/ A\/ 37\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "COMBINED ASSETS INSURANCE";
+            }
+            else if (new Regex(@"(\/ A\/ 42\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "GLASS INSURANCE";
+            }
+            else if (new Regex(@"(\/ A\/ 43\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "MOBILE PHONE INSURANCE";
+            }
+            else if (new Regex(@"(\/ A\/ 44\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "TRAVEL INSURANCE";
+            }
+            else if (new Regex(@"(\/ A\/ 45\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "AIRPORT OWNERS AND OPERATORS LIABILITY INSURANCE";
+            }
+            else if (new Regex(@"(\/ A\/ 51\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "BUSINESS OWNERS POLICY";
+            }
+            else if (new Regex(@"(\/ A\/ 57\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "OCCUPIERS LIABILITY INSURANCE";
+            }
+            else if (new Regex(@"(\/ A\/ 58\/){ 1}").IsMatch(policy_number))
+            {
+                policy_type = "HEALTH CARE PROFESSIONAL INDEMNITY INS.";
+            }
+            #endregion
 
             return policy_type;
+        }
+        public List<string> GeneralClaimType(string policy_number)
+        {
+            List<string> claimType = new List<string>();
+            var loss = new List<string>() { "V/29", "V/30", "V/31" };
+            foreach (var item in loss)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Partial Loss");
+                    claimType.Add("Total Loss");
+                    claimType.Add("Theft");
+                    claimType.Add("Vandalization");
+                }
+            }
+            var accidental = new List<string>() { "A/16", "A/15", "P/62" };
+            foreach (var item in accidental)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Accidental Injury");
 
+                }
+            }
 
+            var death = new List<string>() { "F/01", "P/62", "A/09", "A/15", "V/29", "V/30", "V/31" };
+            foreach (var item in death)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Death");
 
-            //            case / (\/ Z\/ 46\/){ 1}/.test(policy_number):
-            //policy_type = "OIL AND ENERGY(OPERATIONAL RISK)";
-            //                break;
+                }
+            }
 
-            //            case / (\/ Z\/ 47\/){ 1}/.test(policy_number):
-            //policy_type = "OIL AND ENERGY (CONSTRUCTION RISK)";
-            //                break;
+            var burglary = new List<string>() { "A/03", "F/01", "P/62", "A/16" };
+            foreach (var item in burglary)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Burglary");
 
-            //            case / (\/ Z\/ 49\/){ 1}/.test(policy_number):
-            //policy_type = "OIL AND ENERGY(OPER. RISK) - THIRD PARY LIABILITY";
-            //                break;
+                }
+            }
 
-            //            case / (\/ Z\/ 50\/){ 1}/.test(policy_number):
-            //policy_type = "OIL AND ENERGY (CON RISK) - THIRD PARTY LIABILITY";
-            //                break;
+            var theft = new List<string>() { "A/03", "F/01", "P/62", "A/16" };
+            foreach (var item in theft)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Theft");
 
-            //            case / (\/ Z\/ 52\/){ 1}/.test(policy_number):
-            //policy_type = "OIL AND ENERGY(OPERATIONAL RISK)";
-            //                break;
+                }
+            }
 
-            //            case / (\/ Z\/ 53\/){ 1}/.test(policy_number):
-            //policy_type = "OIL AND ENERGY (CONSTRUCTION RISK)";
-            //                break;
+            var flood = new List<string>() { "F/01", "P/62", "A/16", "V/29", "V/30", "V/31" };
+            foreach (var item in flood)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Flood");
+                    claimType.Add("Fire");
 
-            //            case / (\/ Z\/ 54\/){ 1}/.test(policy_number):
-            //policy_type = "OIL AND ENERGY(OPER. RISK) - THIRD PARY LIABILITY";
-            //                break;
+                }
+            }
 
-            //            case / (\/ Z\/ 55\/){ 1}/.test(policy_number):
-            //policy_type = "OIL AND ENERGY (CON RISK) - THIRD PARTY LIABILITY";
-            //                break;
+            var damageofgoods = new List<string>() { "F/01", "P/62", "A/07" };
+            foreach (var item in damageofgoods)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Damage to goods");
+                }
+            }
 
-            //            case / (\/ P\/ 62\/){ 1}/.test(policy_number):
-            //policy_type = "PACKAGE/COMBINED/IAR";
-            //                break;
+            var guarantee = new List<string>() { "F/01", "A/14", "P/62" };
+            foreach (var item in guarantee)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Fidelity guarantee");
+                }
+            }
 
-            //            case / (\/ S\/ 48\/){ 1}/.test(policy_number):
-            //policy_type = "WARRANTY INSURANCE";
-            //                break;
+            var money = new List<string>() { "F/01", "P/62", "A/05" };
+            foreach (var item in money)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Money");
+                }
+            }
 
-            //            case / (\/ A\/ 03\/){ 1}/.test(policy_number):
-            //policy_type = "BURGLARY BUSINESS PREMISES";
-            //                break;
+            var liability = new List<string>() { "F/01", "P/62", "A/11" };
+            foreach (var item in liability)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Liability");
+                }
+            }
 
-            //            case / (\/ A\/ 04\/){ 1}/.test(policy_number):
-            //policy_type = "BURGLARY PRIVATE PREMISES";
-            //                break;
+            var employee = new List<string>() { "F/01", "P/62", "A/15" };
+            foreach (var item in employee)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Employee accident");
+                }
+            }
 
-            //            case / (\/ A\/ 044\/){ 1}/.test(policy_number):
-            //policy_type = "DIRECTORS LIABILITY INSURANCE";
-            //                break;
+            return claimType;
+        }
+        public List<string> LifeClaimTypes(string productName)
+        {
+            var termination = new List<string>() { "esusu", "capital",
+                "provident",
+                "investment", "ordinary", "education", "harvest","dignity","funeral",
+                "tuition","assurance","whole","mortgage","credit"};
+            var fullmaturity = new List<string>() { "esusu", "capital", "provident", "investment", "ordinary", "education", "harvest" };
+            var surender = new List<string>() { "esusu", "capital", "provident", "investment", "ordinary", "education", "harvest", "deferred" };
+            var personalaccident = new List<string>() { "esusu" };
+            var maturityAndMedical = new List<string>() { "harvest" };
+            var loan = new List<string>() { "esusu", "capital", "provident", "investment", "ordinary", "education", "harvest" };
+            var death = new List<string>() { "esusu", "capital", "provident" };
+            List<string> claimsType = new List<string>();
+            if (termination.Any(x => productName.Contains(x)))
+            {
+                claimsType.Add("Termination");
+            }
 
-            //            case / (\/ A\/ 05\/){ 1}/.test(policy_number):
-            //policy_type = "CASH-IN-TRANSIT/MONEY";
-            //                break;
+            if (fullmaturity.Any(x => productName.Contains(x)))
+            {
+                claimsType.Add("Full Maturity");
+            }
 
-            //            case / (\/ A\/ 06\/){ 1}/.test(policy_number):
-            //policy_type = "CASH-IN-SAFE";
-            //                break;
+            if (surender.Any(x => productName.Contains(x)))
+            {
+                claimsType.Add("Surrender");
+            }
 
-            //            case / (\/ A\/ 07\/){ 1}/.test(policy_number):
-            //policy_type = "GOODS IN TRANSIT";
-            //                break;
+            if (personalaccident.Any(x => productName.Contains(x)))
+            {
+                claimsType.Add("Personal Accident");
+            }
 
-            //            case / (\/ A\/ 08\/){ 1}/.test(policy_number):
-            //policy_type = "PROFESSIONAL INDEMNITY";
-            //                break;
+            if (maturityAndMedical.Any(x => productName.Contains(x)))
+            {
+                claimsType.Add("Partial Maturity");
+                claimsType.Add("Medical Expenses");
+            }
 
-            //            case / (\/ A\/ 09\/){ 1}/.test(policy_number):
-            //policy_type = "GROUP PERSONAL ACCIDENT";
-            //                break;
+            if (loan.Any(x => productName.Contains(x)))
+            {
+                claimsType.Add("Loan");
+            }
 
-            //            case / (\/ A\/ 10\/){ 1}/.test(policy_number):
-            //policy_type = "PERSONAL ACCIDENT";
-            //                break;
+            if (death.Any(x => productName.Contains(x)))
+            {
+                claimsType.Add("Death");
+            }
 
-            //            case / (\/ A\/ 11\/){ 1}/.test(policy_number):
-            //policy_type = "PUBLIC LIABILITY";
-            //                break;
+            return claimsType;
+        }
+        public dynamic GetGeneralDivision(string policy_number)
+        {
+            dynamic division;
+            string code = policy_number?.Trim().Split('/')[0]?.ToUpper();
 
-            //            case / (\/ A\/ 12\/){ 1}/.test(policy_number):
-            //policy_type = "PRODUCT LIABILITY";
-            //                break;
-
-            //            case / (\/ A\/ 13\/){ 1}/.test(policy_number):
-            //policy_type = "ALL RISKS";
-            //                break;
-
-            //            case / (\/ A\/ 14\/){ 1}/.test(policy_number):
-            //policy_type = "FIDELITY GUARANTEE";
-            //                break;
-
-            //            case / (\/ A\/ 15\/){ 1}/.test(policy_number):
-            //policy_type = "EMPLOYEES' ACCIDENT BENEFIT INSURANCE POLICY";
-            //                break;
-
-            //            case / (\/ A\/ 16\/){ 1}/.test(policy_number):
-            //policy_type = "COMBINED HOUSEHOLDERS & HOUSEOWNERS";
-            //                break;
-
-            //            case / (\/ A\/ 35\/){ 1}/.test(policy_number):
-            //policy_type = "GOLFERS POLICY";
-            //                break;
-
-            //            case / (\/ A\/ 37\/){ 1}/.test(policy_number):
-            //policy_type = "COMBINED ASSETS INSURANCE";
-            //                break;
-
-            //            case / (\/ A\/ 42\/){ 1}/.test(policy_number):
-            //policy_type = "GLASS INSURANCE";
-            //                break;
-
-            //            case / (\/ A\/ 43\/){ 1}/.test(policy_number):
-            //policy_type = "MOBILE PHONE INSURANCE";
-            //                break;
-
-            //            case / (\/ A\/ 44\/){ 1}/.test(policy_number):
-            //policy_type = "TRAVEL INSURANCE";
-            //                break;
-
-            //            case / (\/ A\/ 45\/){ 1}/.test(policy_number):
-            //policy_type = "AIRPORT OWNERS AND OPERATORS LIABILITY INSURANCE";
-            //                break;
-
-            //            case / (\/ A\/ 51\/){ 1}/.test(policy_number):
-            //policy_type = "BUSINESS OWNERS POLICY";
-            //                break;
-
-            //            case / (\/ A\/ 57\/){ 1}/.test(policy_number):
-            //policy_type = "OCCUPIERS LIABILITY INSURANCE";
-            //                break;
-
-            //            case / (\/ A\/ 58\/){ 1}/.test(policy_number):
-            //policy_type = "HEALTH CARE PROFESSIONAL INDEMNITY INS.";
-            //                break;
-
-            //            default:
-            //                policy_type = "";
-            //                break;
-            // }
+            if (new Regex($@".t").IsMatch(policy_number))
+            {
+                division = new
+                {
+                    name = "TRADING",
+                    code = code
+                };
+            }
+            else if (new Regex($@".b").IsMatch(policy_number))
+            {
+                division = new
+                {
+                    name = "RETAILBANCASSURANCE",
+                    code = code
+                };
+            }
+            else if (new Regex($@".g").IsMatch(policy_number))
+            {
+                division = new
+                {
+                    name = "PERSONALLINES",
+                    code = code
+                };
+            }
+            else if (new Regex($@".f").IsMatch(policy_number))
+            {
+                division = new
+                {
+                    name = "FINANCIALINSTITUTIONS",
+                    code = code
+                };
+            }
+            else if (new Regex($@".m").IsMatch(policy_number))
+            {
+                division = new
+                {
+                    name = "MANUFACTURING",
+                    code = code
+                };
+            }
+            else if (new Regex($@".e").IsMatch(policy_number))
+            {
+                division = new
+                {
+                    name = "ENGINEERINGTELECOMS",
+                    code = code
+                };
+            }
+            else if (new Regex($@".p").IsMatch(policy_number))
+            {
+                division = new
+                {
+                    name = "PUBLICSECTOR",
+                    code = code
+                };
+            }
+            else if (new Regex($@"[asz]").IsMatch(policy_number))
+            {
+                division = new
+                {
+                    name = "OILANDGAS",
+                    code = code
+                };
+            }
+            else if (new Regex($@".l").IsMatch(policy_number))
+            {
+                division = new
+                {
+                    name = "EBUSINESS",
+                    code = code
+                };
+            }
+            else
+            {
+                division = new
+                {
+                    name = "BRANCH",
+                    code = code
+                };
+            }
+            return division;
         }
     }
     public static class Config

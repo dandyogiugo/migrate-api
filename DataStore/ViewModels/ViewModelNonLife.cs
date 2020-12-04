@@ -98,6 +98,8 @@ namespace DataStore.ViewModels
         public string claims_number { get; set; }
         public string division { get; set; }
         public string branch { get; set; }
+
+        public string logon_email { get; set; }
     }
 
 

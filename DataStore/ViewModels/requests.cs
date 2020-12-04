@@ -109,6 +109,7 @@ namespace DataStore.ViewModels
         public string serial_number { get; set; }
         public string email_address { get; set; }
         public string cert_path { get; set; }
+        public string logon_email { get; set; }
     }
     public class Life_Claims
     {
@@ -143,6 +144,8 @@ namespace DataStore.ViewModels
         public string claim_number { get; set; }
         public string division { get; set; }
         public string branch { get; set; }
+
+        public string logon_email { get; set; }
 
     }
 

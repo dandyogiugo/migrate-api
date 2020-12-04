@@ -366,9 +366,18 @@ namespace CustodianEveryWhereV2._0.Controllers
                     EndDate = x.enddate.ToShortDateString(),
                     Source = (x.datasource == "ABS") ? "General" : "Life",
                     ProductName = x.productdesc,
-                    ProductType = x.productsubdesc,
+                    ProductType = x.productsubdesc ?? x.productdesc,
                     PolicyNumber = x.policyno?.Trim(),
-                    Status = x.status?.Trim().ToUpper()
+                    Status = x.status?.Trim().ToUpper(),
+                    PolicyType = (x.datasource == "ABS") ? util.PolicyType(x.policyno?.Trim().ToUpper()) : "Life",
+                    ClaimTypes = (x.datasource == "ABS") ? util.GeneralClaimType(x.policyno?.Trim().ToUpper()) : util.LifeClaimTypes(x.productdesc?.Trim().ToLower()),
+                    Division = (x.datasource == "ABS") ? util.GetGeneralDivision(x.policyno?.Trim().ToLower()) :
+                    new
+                    {
+                        name = "Retail Life",
+                        code = "Life"
+                    }
+
                 }).ToList();
 
                 dynamic pol = new ExpandoObject();

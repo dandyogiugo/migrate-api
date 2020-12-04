@@ -18,8 +18,9 @@ using DapperLayer.utilities;
 using System.Dynamic;
 using System.Reflection;
 using UpSellingAndCrossSelling.CrossSelling;
-using DataStore.ViewModels;
+using DataStore;
 using System.Text.RegularExpressions;
+using DataStore.Utilities;
 
 namespace TestSerials
 {
@@ -28,9 +29,12 @@ namespace TestSerials
         static void Main(string[] args)
         {
 
+            var test = new Utility().LifeClaimTypes("CUSTODIAN ESUSU SHIELD".ToLower());
+
+            var t = test;
             //declare the array.
             //used this instead of a list, it is simpler to handle
-            GetAllLeague.GetLeague();
+            //GetAllLeague.GetLeague();
             //List<int> xx = new List<int>()
             //{
             //   3,6,1,7,3,9,1,12

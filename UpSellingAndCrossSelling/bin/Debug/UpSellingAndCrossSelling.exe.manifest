@@ -97,19 +97,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2PPnZNhk8G9Xdav3h4PJWtJCxfIfIyaFupPS43BwUV0=</dsig:DigestValue>
+        <dsig:DigestValue>yxMofR/DE6QiOPWw+PeAmTWeRSwDbA4qCx8ZUh1GWMg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataStore.dll" size="386560">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataStore.dll" size="400384">
       <assemblyIdentity name="DataStore" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>S4i/tYDCIv/giTeVVAx+YUywJDhAXNdbwmavMXrfQ3s=</dsig:DigestValue>
+        <dsig:DigestValue>sc/z+H+nyQ5caiVp+HXimjUuyYfJx27K05hWPQTLnX4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -409,7 +409,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Nem7Y/sKWPYxK+RQStHUg0tArgBftw7Mcgp0lP+iBHo=</dsig:DigestValue>
+        <dsig:DigestValue>+xqBfyuEqaIZujYKK8MQJrduIMu86z7l9skw7/nkCP0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

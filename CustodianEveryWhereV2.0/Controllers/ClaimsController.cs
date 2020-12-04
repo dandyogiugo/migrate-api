@@ -518,7 +518,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                         data = Newtonsoft.Json.JsonConvert.SerializeObject(claims),
                         reference_id = claims.policy_number,
                         status = "NOT_COMPLETED",
-                        updatedat = DateTime.UtcNow
+                        updatedat = DateTime.UtcNow,
+                        email = claims.logon_email?.Trim().ToUpper()
                     };
                     if (await tempStore.Save(data))
                     {
@@ -629,7 +630,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                         data = Newtonsoft.Json.JsonConvert.SerializeObject(claims),
                         reference_id = claims.policy_number,
                         status = "NOT_COMPLETED",
-                        updatedat = DateTime.UtcNow
+                        updatedat = DateTime.UtcNow,
+                        email = claims.logon_email?.Trim().ToUpper()
                     };
                     if (await tempStore.Save(data))
                     {
@@ -743,6 +745,51 @@ namespace CustodianEveryWhereV2._0.Controllers
             catch (Exception ex)
             {
 
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new claims_details
+                {
+                    code = 404,
+                    message = "system malfunction"
+                };
+            }
+        }
+
+        [HttpGet]
+        public async Task<claims_details> GetAllPendingClaims(string merchant_id, string logon_email)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("GetAllPendingClaims", merchant_id);
+                if (!check_user_function)
+                {
+                    return new claims_details
+                    {
+                        code = 401,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+                tempStore = new store<TempClaimData>();
+                var getdata = await tempStore.FindMany(x => x.email == logon_email?.ToUpper().Trim() && x.status == "NOT_COMPLETED");
+                if (getdata == null || getdata.Count() <= 0)
+                {
+                    return new claims_details
+                    {
+                        code = 205,
+                        message = $"No claim pending for logon email '{logon_email}'"
+                    };
+                }
+
+                return new claims_details
+                {
+                    code = 200,
+                    message = "Data retrieved successfully",
+                    date = getdata
+                };
+            }
+            catch (Exception ex)
+            {
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
                 log.Error(ex.InnerException);

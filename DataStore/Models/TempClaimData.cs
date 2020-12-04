@@ -18,5 +18,6 @@ namespace DataStore.Models
         public string reference_id { get; set; }
         public string status { get; set; }
         public DateTime updatedat { get; set; } 
+        public string email { get; set; }
     }
 }
