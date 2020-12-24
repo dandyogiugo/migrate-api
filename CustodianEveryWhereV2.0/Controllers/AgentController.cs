@@ -168,7 +168,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                                     insOccupField = request.InsOccup?.Trim(),
                                     insStateField = request.InsState?.Trim(),
                                     instPremiumField = request.InstPremium,
-                                    insuredEmailField = (request.InsuredEmail?.Trim() == null || string.IsNullOrEmpty(request.InsuredEmail?.Trim()) || request.InsuredEmail?.Trim() == "NULL") ? $"{Guid.NewGuid().ToString().Split('-')[0]}@gmail.com" : request.InsuredEmail?.Trim(),
+                                    insuredEmailField = (Config.isDemo) ? "CustodianDirect@gmail.com" : (request.InsuredEmail?.Trim() == null || string.IsNullOrEmpty(request.InsuredEmail?.Trim()) || request.InsuredEmail?.Trim() == "NULL") ? $"{Guid.NewGuid().ToString().Split('-')[0]}@gmail.com" : request.InsuredEmail?.Trim(),
                                     insuredNameField = request.InsuredName?.Trim(),
                                     insuredNumField = request.InsuredNum?.Trim(),
                                     insuredOthNameField = request.InsuredOthName?.Trim(),
@@ -177,7 +177,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                                     policyNoField = request.PolicyNo?.Trim(),
                                     startdateField = request.Startdate,
                                     sumInsField = request.SumIns,
-                                    telNumField = request.TelNum?.Trim()
+                                    telNumField = request.TelNum?.Trim(),
+                                    outPremiumField = request.OutPremium
                                 },
                                 hash = new
                                 {
@@ -407,19 +408,19 @@ namespace CustodianEveryWhereV2._0.Controllers
                 //setPrecision.NumberDecimalDigits = 1;
                 var new_trans = new AgentTransactionLogs
                 {
-                    biz_unit = post.biz_unit,
+                    biz_unit = post.biz_unit?.Trim(),
                     createdat = DateTime.Now,
-                    description = post.description,
-                    policy_number = post.policy_number.ToUpper(),
+                    description = post.description?.Trim(),
+                    policy_number = post.policy_number?.Trim().ToUpper(),
                     premium = post.premium,
-                    reference_no = post.reference_no,
+                    reference_no = post.reference_no?.Trim(),
                     status = !string.IsNullOrEmpty(post.payment_narrtn) ? post.payment_narrtn : post.status,
                     subsidiary = ((subsidiary)post.subsidiary).ToString(),
-                    email_address = post.email_address,
-                    issured_name = post.issured_name,
-                    phone_no = post.phone_no,
+                    email_address = post.email_address?.Trim(),
+                    issured_name = post.issured_name?.Trim(),
+                    phone_no = post.phone_no?.Trim(),
                     merchant_id = post.merchant_id,
-                    vehicle_reg_no = post.vehicle_reg_no ?? ""
+                    vehicle_reg_no = post.vehicle_reg_no?.Trim() ?? ""
                 };
 
                 if (post.payment_narrtn?.ToLower() == "failed" || post.status?.ToLower() == "failed")

@@ -98,8 +98,8 @@ namespace DataStore.ViewModels
         public string claims_number { get; set; }
         public string division { get; set; }
         public string branch { get; set; }
-
         public string logon_email { get; set; }
+        public int? tempId { get; set; }
     }
 
 
@@ -111,7 +111,7 @@ namespace DataStore.ViewModels
         }
         [MaxLength(30)]
         public string extension { get; set; }
-        [MaxLength(40)]
+        [MaxLength(100)]
         public string name { get; set; }
         public string data { get; set; }
     }

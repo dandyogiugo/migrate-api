@@ -48,6 +48,7 @@ namespace DataStore.context
         public DbSet<PolicyServicesDetails> PolicyServicesDetails { get; set; }
         public DbSet<TempClaimData> TempClaimData { get; set; }
         public DbSet<PaystackRecurringCharges> PaystackRecurringCharges { get; set; }
+        public DbSet<Chaka> Chaka { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

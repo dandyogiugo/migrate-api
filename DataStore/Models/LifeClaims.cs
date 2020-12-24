@@ -53,5 +53,7 @@ namespace DataStore.Models
         public string BranchCode { get; set; }
         [MaxLength(10)]
         public string State { get; set; }
+        [MaxLength(100)]
+        public string merchant_id { get; set; }
     }
 }

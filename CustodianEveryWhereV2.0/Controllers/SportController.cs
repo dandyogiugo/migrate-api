@@ -72,16 +72,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+                //var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
 
-                if (checkIfUserIsLoginIn == null)
-                {
-                    return new notification_response
-                    {
-                        status = 306,
-                        message = "Please login with your email to use this feature"
-                    };
-                }
+                //if (checkIfUserIsLoginIn == null)
+                //{
+                //    return new notification_response
+                //    {
+                //        status = 306,
+                //        message = "Please login with your email to use this feature"
+                //    };
+                //}
 
                 List<League> filtered = null;
                 var getAllLeagues = await leagues.FindOneByCriteria(x => x.Id == Config.GetID);
@@ -182,16 +182,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == preference.email?.ToLower().Trim());
+                //var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == preference.email?.ToLower().Trim());
 
-                if (checkIfUserIsLoginIn == null)
-                {
-                    return new notification_response
-                    {
-                        status = 306,
-                        message = "Please login with your email to use this feature"
-                    };
-                }
+                //if (checkIfUserIsLoginIn == null)
+                //{
+                //    return new notification_response
+                //    {
+                //        status = 306,
+                //        message = "Please login with your email to use this feature"
+                //    };
+                //}
 
                 if (preference.leagues.Count() < 1)
                 {
@@ -276,16 +276,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+                //var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
 
-                if (checkIfUserIsLoginIn == null)
-                {
-                    return new notification_response
-                    {
-                        status = 306,
-                        message = "Please login with your email to use this feature"
-                    };
-                }
+                //if (checkIfUserIsLoginIn == null)
+                //{
+                //    return new notification_response
+                //    {
+                //        status = 306,
+                //        message = "Please login with your email to use this feature"
+                //    };
+                //}
 
 
                 using (var api = new HttpClient())
@@ -375,16 +375,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+                //var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
 
-                if (checkIfUserIsLoginIn == null)
-                {
-                    return new notification_response
-                    {
-                        status = 306,
-                        message = "Please login with your email to use this feature"
-                    };
-                }
+                //if (checkIfUserIsLoginIn == null)
+                //{
+                //    return new notification_response
+                //    {
+                //        status = 306,
+                //        message = "Please login with your email to use this feature"
+                //    };
+                //}
 
                 var preference = await _MyPeference.FindOneByCriteria(x => x.Email?.ToLower() == email?.ToLower());
                 if (preference == null)
@@ -457,16 +457,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+                //var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
 
-                if (checkIfUserIsLoginIn == null)
-                {
-                    return new notification_response
-                    {
-                        status = 306,
-                        message = "Please login with your email to use this feature"
-                    };
-                }
+                //if (checkIfUserIsLoginIn == null)
+                //{
+                //    return new notification_response
+                //    {
+                //        status = 306,
+                //        message = "Please login with your email to use this feature"
+                //    };
+                //}
 
 
                 using (var api = new HttpClient())
@@ -551,16 +551,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+                //var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
 
-                if (checkIfUserIsLoginIn == null)
-                {
-                    return new notification_response
-                    {
-                        status = 306,
-                        message = "Please login with your email to use this feature"
-                    };
-                }
+                //if (checkIfUserIsLoginIn == null)
+                //{
+                //    return new notification_response
+                //    {
+                //        status = 306,
+                //        message = "Please login with your email to use this feature"
+                //    };
+                //}
 
 
                 using (var api = new HttpClient())
@@ -654,16 +654,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+                //var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
 
-                if (checkIfUserIsLoginIn == null)
-                {
-                    return new notification_response
-                    {
-                        status = 306,
-                        message = "Please login with your email to use this feature"
-                    };
-                }
+                //if (checkIfUserIsLoginIn == null)
+                //{
+                //    return new notification_response
+                //    {
+                //        status = 306,
+                //        message = "Please login with your email to use this feature"
+                //    };
+                //}
 
 
                 using (var api = new HttpClient())
@@ -758,16 +758,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+                //var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
 
-                if (checkIfUserIsLoginIn == null)
-                {
-                    return new notification_response
-                    {
-                        status = 306,
-                        message = "Please login with your email to use this feature"
-                    };
-                }
+                //if (checkIfUserIsLoginIn == null)
+                //{
+                //    return new notification_response
+                //    {
+                //        status = 306,
+                //        message = "Please login with your email to use this feature"
+                //    };
+                //}
 
 
                 using (var api = new HttpClient())
@@ -859,16 +859,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
+                //var checkIfUserIsLoginIn = await auth.FindOneByCriteria(x => x.email.ToLower() == email?.ToLower().Trim());
 
-                if (checkIfUserIsLoginIn == null)
-                {
-                    return new notification_response
-                    {
-                        status = 306,
-                        message = "Please login with your email to use this feature"
-                    };
-                }
+                //if (checkIfUserIsLoginIn == null)
+                //{
+                //    return new notification_response
+                //    {
+                //        status = 306,
+                //        message = "Please login with your email to use this feature"
+                //    };
+                //}
 
 
                 using (var api = new HttpClient())

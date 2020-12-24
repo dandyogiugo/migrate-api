@@ -31,7 +31,7 @@ namespace DapperLayer.Dapper.Core
             using (var cnn = new SqlConnection(connectionManager.connectionString()))
             {
                 var p = new { limit = limit };
-                using (var multiple = await cnn.QueryMultipleAsync(sql.Trim(), p))
+                using (var multiple = await cnn.QueryMultipleAsync(sql.Trim(), p, commandTimeout: 120))
                 {
                     count = multiple.Read<int>().ToList();
                     results = multiple.Read<T>().ToList();
@@ -65,7 +65,7 @@ namespace DapperLayer.Dapper.Core
             using (var cnn = new SqlConnection(connectionManager.connectionString()))
             {
                 var p = new { customer_id = customer_id };
-                using (var multiple = await cnn.QueryMultipleAsync(sql.Trim(), p))
+                using (var multiple = await cnn.QueryMultipleAsync(sql.Trim(), p, commandTimeout: 120))
                 {
                     recommended = multiple.Read<T>().ToList();
                     current = multiple.Read<T>().ToList();
@@ -83,7 +83,7 @@ namespace DapperLayer.Dapper.Core
                 //var p = new { start_date = start_date, end_date = end_date };
                 using (var cnn = new SqlConnection(connectionManager.connectionString("CustApi2")))
                 {
-                    var result = await cnn.QueryAsync<T>(connectionManager._getNewCustomerSP, commandType: CommandType.StoredProcedure);
+                    var result = await cnn.QueryAsync<T>(connectionManager._getNewCustomerSP, commandType: CommandType.StoredProcedure, commandTimeout: 120);
                     return result;
                 }
             }
@@ -100,17 +100,20 @@ namespace DapperLayer.Dapper.Core
 
             using (var cnn = new SqlConnection(connectionManager.connectionString()))
             {
-                var multiple = await cnn.QueryAsync<T>(sql.Trim(), commandTimeout: 60);
+                var multiple = await cnn.QueryAsync<T>(sql.Trim(), commandTimeout: 120);
                 return multiple?.ToList();
             };
         }
         public async Task<NextRenewalResult> GetRenewalNext(string query, string query_filter, string condition = "", string condition_where = "", int offset = 0, int next = 100)
         {
-            IList<int> count = null;
-            IList<int> overallcount = null;
-            IList<NextRenewal> results = null;
-            var result = new NextRenewalResult();
-            var new_query = $@"SELECT * FROM [dbo].[Renewals_staging] where {query_filter}  {condition}
+            try
+            {
+                log.Info("I got here from GetRenewalNext");
+                IList<int> count = null;
+                IList<int> overallcount = null;
+                IList<NextRenewal> results = null;
+                var result = new NextRenewalResult();
+                var new_query = $@"SELECT * FROM [dbo].[Renewals_staging] where {query_filter}  {condition}
                             ORDER BY EndDate
                             OFFSET {offset} ROWS FETCH NEXT {next} ROWS ONLY OPTION(RECOMPILE);
 
@@ -121,20 +124,29 @@ namespace DapperLayer.Dapper.Core
                             where  {query_filter}  {condition};";
 
 
-            // var new_query = string.Format(query_filter,query, condition, offset, query_filter, next, condition_where);
-            using (var cnn = new SqlConnection(connectionManager.connectionString()))
-            {
-                using (var multiple = await cnn.QueryMultipleAsync(new_query))
+                // var new_query = string.Format(query_filter,query, condition, offset, query_filter, next, condition_where);
+                log.Info($"Query to get Record: {new_query}");
+                using (var cnn = new SqlConnection(connectionManager.connectionString()))
                 {
-                    results = (await multiple.ReadAsync<NextRenewal>()).ToList();
-                    count = (await multiple.ReadAsync<int>()).ToList();
-                    overallcount = (await multiple.ReadAsync<int>()).ToList();
-                    result.TotalPages = count[0];
-                    result.OverAllCount = overallcount[0];
-                    result.Results = results.ToList();
-                }
-            };
-            return result;
+                    using (var multiple = await cnn.QueryMultipleAsync(new_query, commandTimeout: 240))
+                    {
+                        results = (await multiple.ReadAsync<NextRenewal>()).ToList();
+                        count = (await multiple.ReadAsync<int>()).ToList();
+                        overallcount = (await multiple.ReadAsync<int>()).ToList();
+                        result.TotalPages = count[0];
+                        result.OverAllCount = overallcount[0];
+                        result.Results = results.ToList();
+                    }
+                };
+                return result;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                throw;
+            }
         }
         public async Task<bool> BulkInsert(List<TravelInsurance> buyTravels)
         {

@@ -346,6 +346,7 @@
     <Compile Include="Controllers\AutoInsuranceController.cs" />
     <Compile Include="Controllers\BrokerPortalController.cs" />
     <Compile Include="Controllers\CarTrackingController.cs" />
+    <Compile Include="Controllers\ChakaController.cs" />
     <Compile Include="Controllers\ClaimsController.cs" />
     <Compile Include="Controllers\CRMController.cs" />
     <Compile Include="Controllers\EnquiryController.cs" />
@@ -355,6 +356,7 @@
     <Compile Include="Controllers\GoogleNewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeShieldController.cs" />
+    <Compile Include="Controllers\InterstateController.cs" />
     <Compile Include="Controllers\JokesController.cs" />
     <Compile Include="Controllers\LifeController.cs" />
     <Compile Include="Controllers\MealPlanController.cs" />
@@ -371,6 +373,7 @@
     <Compile Include="Controllers\TravelController.cs" />
     <Compile Include="Controllers\TravelQuoteComputationController.cs" />
     <Compile Include="Controllers\USSDConfigController.cs" />
+    <Compile Include="Controllers\WealthManagementController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -829,6 +832,7 @@
     <Content Include="TravelCategoryJSON\RagaConfig.json" />
     <Content Include="TravelCategoryJSON\AppUpdate.json" />
     <Content Include="TravelCategoryJSON\adds.json" />
+    <Content Include="TravelCategoryJSON\countryPhoneCode.json" />
     <None Include="Web References\RSA\cal.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -328,7 +328,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 return new notification_response
                 {
                     status = 404,
-                    message = "Oops!, something happend while caculating premium"
+                    message = "Oops!, something happened while calculating premium"
                 };
             }
         }
@@ -462,7 +462,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         return new notification_response
                         {
                             status = 407,
-                            message = "Oops!, something happend while processing request"
+                            message = "Oops!, something happened while processing request"
                         };
                     }
                 }
@@ -476,7 +476,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 return new notification_response
                 {
                     status = 404,
-                    message = "Oops!, something happend while caculating premium"
+                    message = "Oops!, something happened while calculating premium"
                 };
             }
         }

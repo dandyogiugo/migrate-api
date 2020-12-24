@@ -405,7 +405,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             return new notification_response
                             {
                                 status = 402,
-                                message = "Unable to push deal to gym. Try Agin"
+                                message = "Unable to push deal to gym. Try Again"
                             };
                         }
                     }

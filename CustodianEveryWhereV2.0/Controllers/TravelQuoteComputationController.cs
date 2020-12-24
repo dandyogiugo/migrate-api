@@ -181,11 +181,26 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Premium computation was skiped. Operation aborted",
                     };
                 }
+                // remove benefit with x
+
+                //var benefitsVal = plans[0].package.values;
+                //List<int> getIndexes = new List<int>();
+                //foreach (var item in benefitsVal)
+                //{
+                //    if (item.ToLower() == "x")
+                //    {
+                //        getIndexes.Add(benefitsVal.IndexOf(item));
+                //    }
+                //}
 
                 return new notification_response
                 {
                     status = 200,
                     message = "Premium computed successfully",
+
+
+
+
 
                     data = new
                     {
@@ -348,6 +363,17 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Permission denied from accessing this feature"
                     };
                 }
+
+
+                if (travel.return_date <= travel.departure_date)
+                {
+                    return new notification_response
+                    {
+                        status = 406,
+                        message = "Travel return date cannot be less than departure date"
+                    };
+                }
+
                 var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == travel.merchant_id.Trim());
                 if (config == null)
                 {
@@ -409,7 +435,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     IsGroup = travel.isGroup,
                     status = "PENDING",
                     type = travel.type,
-                    referalCode = travel.referalCode
+                    referalCode = travel.referalCode,
+
                 }).ToList();
                 // add response
                 var save = await dapper_core.BulkInsert(details);
@@ -583,7 +610,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         PackageType = x.zone,
                         ReturnDate = x.return_date,
                         Purposeoftrip = x.purpose_of_trip,
-                        TotalCost = (x.IsGroupLeader && x.IsGroup) ? travelList.Sum(y => y.premium).ToString() : x.premium.ToString(),
+                        TotalCost = x.premium.ToString(),//(x.IsGroupLeader && x.IsGroup) ? travelList.Sum(y => y.premium).ToString() : x.premium.ToString(),
                         OtherCountry = x.multiple_destination,
                         TravelDestination = x.destination,
                         ReferenceNo = referrenceNo,

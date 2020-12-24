@@ -97,19 +97,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yxMofR/DE6QiOPWw+PeAmTWeRSwDbA4qCx8ZUh1GWMg=</dsig:DigestValue>
+        <dsig:DigestValue>3yvytS/3Dfu3QMWKETt6cm2EMeji26k05yTgocUAy+E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataStore.dll" size="400384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataStore.dll" size="417280">
       <assemblyIdentity name="DataStore" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sc/z+H+nyQ5caiVp+HXimjUuyYfJx27K05hWPQTLnX4=</dsig:DigestValue>
+        <dsig:DigestValue>jvPUg615SIO6Elz+05NPWXtdwfXfZre90tH1krwxnb4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -409,7 +409,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+xqBfyuEqaIZujYKK8MQJrduIMu86z7l9skw7/nkCP0=</dsig:DigestValue>
+        <dsig:DigestValue>kJrGtp7liBnLGOu8DEXiWH8JAX4xtrTAhKa3hpMs7Rg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -431,13 +431,13 @@
       <dsig:DigestValue>o1+i5ZLMXytHo86zGv9SamZ3WbzMRDYcSbsMuLjR7ck=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="UpSellingAndCrossSelling.exe.config" size="2752">
+  <file name="UpSellingAndCrossSelling.exe.config" size="2754">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4unj2+xembwPmplA0w9M2Y7fCouJd9SZxIKQ0jLZucA=</dsig:DigestValue>
+      <dsig:DigestValue>EFrKgWHAMXJeCYSHNNdijqtY2dc8fL0S7LV2TeDtmrA=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

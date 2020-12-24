@@ -124,4 +124,8 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.Migrations.secondmirgration.resources
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.Migrations.UpdatdModel.resources
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\RijndaelEncryptDecrypt.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.csprojAssemblyReference.cache

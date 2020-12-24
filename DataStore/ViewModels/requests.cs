@@ -144,8 +144,8 @@ namespace DataStore.ViewModels
         public string claim_number { get; set; }
         public string division { get; set; }
         public string branch { get; set; }
-
         public string logon_email { get; set; }
+        public int tempId { get; set; }
 
     }
 
@@ -1276,6 +1276,29 @@ namespace DataStore.ViewModels
         public string customer_name { get; set; }
         [Required]
         public decimal amount { get; set; }
+    }
+
+    public class ChakaSignUp : CoreModels
+    {
+        public ChakaSignUp()
+        {
+
+        }
+        [Required]
+        [DataType(DataType.Password)]
+        public string password { get; set; }
+        [Required]
+        public string username { get; set; }
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        public string email { get; set; }
+        [Required]
+        public string otp { get; set; }
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        public string mobileno { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
     }
 }
 

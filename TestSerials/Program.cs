@@ -29,9 +29,11 @@ namespace TestSerials
         static void Main(string[] args)
         {
 
-            var test = new Utility().LifeClaimTypes("CUSTODIAN ESUSU SHIELD".ToLower());
-
-            var t = test;
+            //var test = new Utility().RoundValueToNearst100(5227.20);
+            //var test1 = new Utility().RoundValueToNearst100(7597.26);
+            //var test2 = new Utility().RoundValueToNearst100(8624.88);
+            var encrypt = new Utility().Encrypt("Amagashi".ToUpper() + "amagashi.pat@mail.com".ToLower() + "001");
+            var t = encrypt;
             //declare the array.
             //used this instead of a list, it is simpler to handle
             //GetAllLeague.GetLeague();

@@ -23,6 +23,9 @@ using Hangfire.Server;
 using Hangfire.Console;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Formatting;
 
 namespace DataStore.Utilities
 {
@@ -32,11 +35,13 @@ namespace DataStore.Utilities
         private store<ApiConfiguration> _apiconfig = null;
         private store<PremiumCalculatorMapping> _premium_map = null;
         private store<Token> _otp = null;
+        private store<Chaka> chaka = null;
         public Utility()
         {
             _apiconfig = new store<ApiConfiguration>();
             _premium_map = new store<PremiumCalculatorMapping>();
             _otp = new store<Token>();
+            chaka = new store<Chaka>();
         }
         public async Task<bool> ValidateHash(decimal value_of_goods, string secret, string _hash)
         {
@@ -811,7 +816,7 @@ namespace DataStore.Utilities
                 log.Error(ex.Message);
                 log.Error(ex.StackTrace);
                 log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
-                return null;
+                throw ex;
             }
         }
         public async Task<string> ClaimCode(string claim_type)
@@ -871,7 +876,6 @@ namespace DataStore.Utilities
                 return null;
             }
         }
-
         public async Task<dynamic> GetTransactionFromTQ(string policynumber)
         {
             try
@@ -1134,7 +1138,7 @@ namespace DataStore.Utilities
         }
         public async Task<int> RoundValueToNearst100(double value)
         {
-            int result = (int)Math.Round(value / 100) + 1;
+            int result = (int)Math.Ceiling(value / 100);// + 1;
             if (value > 0 && result == 0)
             {
                 result = 1;
@@ -1310,6 +1314,10 @@ namespace DataStore.Utilities
         {
             try
             {
+                if (string.IsNullOrEmpty(emailaddress))
+                {
+                    return false;
+                }
                 MailAddress m = new MailAddress(emailaddress);
 
                 return true;
@@ -1321,6 +1329,10 @@ namespace DataStore.Utilities
         }
         public bool isValidPhone(string phone)
         {
+            if (string.IsNullOrEmpty(phone))
+            {
+                return false;
+            }
             if (phone?.Trim().Length == 11)
             {
                 return true;
@@ -1733,18 +1745,35 @@ namespace DataStore.Utilities
         {
             var termination = new List<string>() { "esusu", "capital",
                 "provident",
-                "investment", "ordinary", "education", "harvest","dignity","funeral",
+                "investment", "ordinary", "educational", "harvest","dignity","funeral",
                 "tuition","assurance","whole","mortgage","credit"};
-            var fullmaturity = new List<string>() { "esusu", "capital", "provident", "investment", "ordinary", "education", "harvest" };
-            var surender = new List<string>() { "esusu", "capital", "provident", "investment", "ordinary", "education", "harvest", "deferred" };
+            var fullmaturity = new List<string>() { "esusu", "capital", "provident", "investment", "ordinary", "educational", "harvest" };
+            var surender = new List<string>() { "esusu", "capital", "provident", "investment", "ordinary", "educational", "harvest", "deferred" };
             var personalaccident = new List<string>() { "esusu" };
             var maturityAndMedical = new List<string>() { "harvest" };
-            var loan = new List<string>() { "esusu", "capital", "provident", "investment", "ordinary", "education", "harvest" };
-            var death = new List<string>() { "esusu", "capital", "provident" };
+            var loan = new List<string>() { "esusu", "capital", "provident", "investment", "ordinary", "educational", "harvest" };
+            var death = new List<string>() { "esusu", "capital",
+                "provident",
+                "investment", "ordinary", "educational", "harvest","dignity","funeral",
+                "tuition","assurance","whole","mortgage","credit","Immediate","Retiree","laspec","despeb","tuition" };
+            var permanentDisability = new List<string>() { "dignity", "funeral", "tuition", "assurance", "whole" };
+
+            var critical_illness = new List<string>() { "critical" };
+
             List<string> claimsType = new List<string>();
             if (termination.Any(x => productName.Contains(x)))
             {
                 claimsType.Add("Termination");
+            }
+            if (permanentDisability.Any(x => productName.Contains(x)))
+            {
+                claimsType.Add("Permanent Disability");
+            }
+
+            if (critical_illness.Any(x => productName.Contains(x)))
+            {
+                claimsType.Add("Diagnosis");
+                claimsType.Add("Death with Diagnosis");
             }
 
             if (fullmaturity.Any(x => productName.Contains(x)))
@@ -1867,10 +1896,261 @@ namespace DataStore.Utilities
             }
             return division;
         }
+        public async Task<dynamic> GetChakaOauthToken(string userId)
+        {
+            try
+            {
+                string url = $"{Config.CHAKA_BASE_URL}/oauth/token";
+                var basicAuth = Convert.ToBase64String(Encoding.UTF8.GetBytes(Config.CHAKA_BASIC_AUTH));
+                log.Info($"About to get token from chaka for userId: {userId}");
+                using (var http = new HttpClient())
+                {
+                    http.DefaultRequestHeaders.Clear();
+                    http.DefaultRequestHeaders.Add("Authorization", $"Basic {basicAuth}");
+                    http.DefaultRequestHeaders.Add("Content-Type", "application/x-www-form-urlencoded");
+                    var forms = new List<KeyValuePair<string, string>>();
+                    forms.Add(new KeyValuePair<string, string>("scope", "profile"));
+                    forms.Add(new KeyValuePair<string, string>("grant_type", "client_credentails"));
+                    var request = new HttpRequestMessage(HttpMethod.Post, url)
+                    {
+                        Content = new FormUrlEncodedContent(forms)
+                    };
+
+                    var response = await http.SendAsync(request);
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        log.Info($"Session is invalid. Please login again {userId}:{response.StatusCode}: => {await response.Content.ReadAsStringAsync()}");
+                        return new
+                        {
+                            status = (int)response.StatusCode,
+                            message = "Session is invalid. Please login again"
+                        };
+                    }
+                    log.Info($"Session loaded successfully {userId}");
+                    var processResponse = await response.Content.ReadAsStringAsync();
+                    log.Info($"Session loaded successfully data: {processResponse}");
+                    return new
+                    {
+                        status = 200,
+                        data = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(processResponse)
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+        public async Task<dynamic> ChakaSignUp(ChakaSignUp signUp)
+        {
+            try
+            {
+                var checkformail = await chaka.FindOneByCriteria(x => x.email.ToLower() == signUp.email.ToLower() && x.isActive == true);
+                if (checkformail != null)
+                {
+                    return new
+                    {
+                        status = 204,
+                        message = "Account already exist. please login to access your profile"
+                    };
+                }
+
+                var validOTP = await ValidateOTP(signUp.otp, signUp.email);
+                if (!validOTP)
+                {
+                    return new
+                    {
+                        status = 202,
+                        message = "Invalid OTP"
+                    };
+                }
+                var getToken = await GetChakaOauthToken(signUp.email);
+                if (getToken.status != 200)
+                {
+                    return new
+                    {
+                        status = getToken.status,
+                        message = getToken.message
+                    };
+                }
+                else
+                {
+                    using (var http = new HttpClient())
+                    {
+                        string url = $"{Config.CHAKA_BASE_URL}/api/v1/users/signup";
+                        http.DefaultRequestHeaders.Clear();
+                        http.DefaultRequestHeaders.Add("Authorization", $"Bearer {getToken.data.access_token}");
+                        http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                        var request = await http.PostAsJsonAsync<ChakaSignUp>(url, signUp);
+                        if (!request.IsSuccessStatusCode)
+                        {
+                            var response = await request.Content.ReadAsAsync<dynamic>();
+                            return new
+                            {
+                                status = 409,
+                                message = response.message
+                            };
+                        }
+                        else
+                        {
+                            var response = await request.Content.ReadAsAsync<dynamic>();
+                            var saveData = new Chaka
+                            {
+                                admin = response.data.admin,
+                                chakaId = response.data.chakaId,
+                                clientId = response.data.clientId,
+                                createdAt = DateTime.Now,
+                                email = response.data.email,
+                                firstName = signUp.firstName,
+                                isActive = true,
+                                lastName = signUp.lastName,
+                                mobileNumber = signUp.mobileno,
+                                password = await Sha512(signUp.password),
+                                role = response.data.role,
+                                superAdmin = response.superAdmin,
+                                userId = response.data.userId,
+                                username = response.data.username,
+                                modifiedAt = DateTime.Now,
+                                verified = response.data.verified
+                            };
+                            if (!await chaka.Save(saveData))
+                            {
+                                return new
+                                {
+                                    status = 207,
+                                    data = "Unable to finish operation"
+                                };
+                            }
+                            return new
+                            {
+                                status = 200,
+                                data = "Onboarding successful"
+                            };
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public async Task<dynamic> AuthenticateChakaUser(string email, string password)
+        {
+            try
+            {
+                string passwordHash = await Sha512(password);
+                var authenticateUser = await chaka.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.password == passwordHash && x.isActive == true);
+                if (authenticateUser == null)
+                {
+                    return new
+                    {
+                        status = 204,
+                        message = "Invalid username/password"
+                    };
+                }
+                string url = $"{Config.CHAKA_BASE_URL}/oauth/token";
+                var basicAuth = base64Decode(Config.CHAKA_BASIC_AUTH);
+                log.Info($"About to get token from chaka for userId: {email}");
+                using (var http = new HttpClient())
+                {
+                    http.DefaultRequestHeaders.Clear();
+                    http.DefaultRequestHeaders.Add("Authorization", $"Basic {basicAuth}");
+                    http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
+                    http.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/x-www-form-urlencoded");
+                    var forms = new List<KeyValuePair<string, string>>();
+                    forms.Add(new KeyValuePair<string, string>("scope", "profile"));
+                    forms.Add(new KeyValuePair<string, string>("grant_type", "client_credentails"));
+                    forms.Add(new KeyValuePair<string, string>("userId", authenticateUser.userId));
+                    var request = new HttpRequestMessage(HttpMethod.Post, url)
+                    {
+                        Content = new FormUrlEncodedContent(forms)
+                    };
+
+                    var response = await http.SendAsync(request);
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        log.Info($"Session is invalid. Please login again {email}");
+                        return new
+                        {
+                            status = 203,
+                            message = "Session is invalid. Please login again"
+                        };
+                    }
+                    log.Info($"Session loaded successfully {email}");
+                    var processResponse = await response.Content.ReadAsAsync<dynamic>();
+                    log.Info($"Session loaded successfully data: {processResponse}");
+                    string mode = Config.isDemo ? "Test" : "Live";
+                    return new
+                    {
+                        status = 200,
+                        chaka_url = $"{Config.CHAKA_APP_URL}/${mode}/{processResponse.access_token}"
+                    };
+
+                    //http://sdk.chakaent.com/${mode}/${token} `
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public async Task<dynamic> ChakaResetPassword(string email, string password, string otp)
+        {
+            try
+            {
+                var checkformail = await chaka.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.isActive == true);
+                if (checkformail == null)
+                {
+                    return new
+                    {
+                        status = 204,
+                        message = "User does not exist"
+                    };
+                }
+
+                var validOTP = await ValidateOTP(otp, email);
+                if (!validOTP)
+                {
+                    return new
+                    {
+                        status = 202,
+                        message = "Invalid OTP"
+                    };
+                }
+                checkformail.password = await Sha512(password);
+                checkformail.modifiedAt = DateTime.Now;
+                if (!await chaka.Update(checkformail))
+                {
+                    return new
+                    {
+                        status = 209,
+                        message = "Password change was not successful"
+                    };
+                }
+
+                return new
+                {
+                    status = 200,
+                    message = "Operation was successful"
+                };
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
+
     public static class Config
     {
-        public const string DEFAULT_BASE_URL = "https://api-football-v1.p.rapidapi.com/v2";
+        private const string DEFAULT_BASE_URL = "https://api-football-v1.p.rapidapi.com/v2";
         public static string BASE_URL
         {
             get
@@ -1924,7 +2204,6 @@ namespace DataStore.Utilities
                 }
             }
         }
-
         public static bool isDemo
         {
             get
@@ -1940,6 +2219,58 @@ namespace DataStore.Utilities
                 }
             }
         }
+
+        private const string DEFAULT_CHAKA_URL = "http://auth.chakaent.com";
+        public static string CHAKA_BASE_URL
+        {
+            get
+            {
+                string base_url = ConfigurationManager.AppSettings["CHAKA_BASE_URL"];
+                if (!string.IsNullOrEmpty(base_url?.Trim()))
+                {
+                    if (!base_url.Trim().EndsWith("/"))
+                    {
+                        return base_url;
+                    }
+                    else
+                    {
+                        return base_url.Remove(base_url.Length - 1, 1);
+                    }
+                }
+                else
+                {
+                    return DEFAULT_BASE_URL;
+                }
+            }
+        }
+
+        public static string CHAKA_BASIC_AUTH
+        {
+            get
+            {
+                string base_url = ConfigurationManager.AppSettings["CHAKA_BASIC_AUTH"];
+                if (string.IsNullOrEmpty(base_url))
+                    return null;
+                return base_url;
+            }
+        }
+
+        public static string CHAKA_APP_URL
+        {
+            get
+            {
+                string base_url = ConfigurationManager.AppSettings["CHAKA_APP_URL"];
+                if (!string.IsNullOrEmpty(base_url))
+                {
+                    return base_url;
+                }
+                else
+                {
+                    return "http://sdk.chakaent.com";
+                }
+            }
+        }
+
     }
     public class cron
     {

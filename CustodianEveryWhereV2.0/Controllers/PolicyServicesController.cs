@@ -78,21 +78,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
-                var validate = await policyService.FindOneByCriteria(x => x.policynumber == policy.policynumber && x.is_setup_completed == true);
-                if (validate != null)
-                {
-                    return new res
-                    {
-                        status = 201,
-                        message = "User has already been setup",
-                        data = new
-                        {
-                            customer_id = validate.customerid,
-                            email = validate.email,
-                            phonenumber = validate.phonenumber
-                        }
-                    };
-                }
 
                 var lookup = await _policyinfo.GetPolicyServices(policy.policynumber);
                 if (lookup == null || lookup.Count() <= 0)
@@ -112,7 +97,24 @@ namespace CustodianEveryWhereV2._0.Controllers
                     return new res
                     {
                         status = (int)HttpStatusCode.BadRequest,
-                        message = "No valid phonenumber or email attached to provided policy (Please contact custodain care centre)"
+                        message = "No valid phone number or email attached to provided policy (Please contact custodain care centre to update your record)"
+                    };
+                }
+                var obj = lookup.First();
+
+                var validate = await policyService.FindOneByCriteria(x => x.customerid == obj.customerid.ToString() && x.is_setup_completed == true);
+                if (validate != null)
+                {
+                    return new res
+                    {
+                        status = 201,
+                        message = "User has already been setup",
+                        data = new
+                        {
+                            customer_id = validate.customerid,
+                            email = validate.email,
+                            phonenumber = validate.phonenumber
+                        }
                     };
                 }
 
@@ -146,7 +148,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
                 }
                 dynamic pol = new ExpandoObject();
-                var obj = lookup.First();
+
 
                 //save record and set status inactive
                 var check_setup_has_started = await policyService.FindOneByCriteria(x => x.customerid == obj.customerid.ToString().Trim());
@@ -191,6 +193,21 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 else
                 {
+                    //var savePolicy = new PolicyServicesDetails
+                    //{
+                    //    createdat = DateTime.UtcNow,
+                    //    customerid = obj.customerid.ToString().Trim(),
+                    //    deviceimei = policy.imei,
+                    //    devicename = policy.devicename,
+                    //    email = obj.email?.ToLower(),
+                    //    is_setup_completed = false,
+                    //    phonenumber = obj.phone,
+                    //    policynumber = obj.policyno?.Trim().ToUpper(),
+                    //    os = policy.os,
+
+                    //};
+
+                    //if(check_setup_has_started.email !=)
                     return new res
                     {
 
@@ -565,7 +582,33 @@ namespace CustodianEveryWhereV2._0.Controllers
                     {
                         status = 200,
                         message = "fetch was successful",
-                        data = request
+                        data = new
+                        {
+                            AgenctName = request.AgenctName?.Trim(),
+                            BizBranch = request.BizBranch?.Trim(),
+                            AgenctNum = request.AgenctNum?.Trim(),
+                            BizUnit = request.BizUnit?.Trim(),
+                            Enddate = request.Enddate,
+                            InsAddr1 = request.InsAddr1?.Trim(),
+                            InsAddr2 = request.InsAddr2?.Trim(),
+                            InsAddr3 = request.InsAddr3?.Trim(),
+                            InsLGA = request.InsLGA?.Trim(),
+                            InsOccup = request.InsOccup?.Trim(),
+                            InsState = request.InsState?.Trim(),
+                            InstPremium = request.InstPremium,
+                            InsuredEmail = (Config.isDemo) ? "CustodianDirect@gmail.com" : (request.InsuredEmail?.Trim() == null || string.IsNullOrEmpty(request.InsuredEmail?.Trim()) || request.InsuredEmail?.Trim() == "NULL") ? $"{Guid.NewGuid().ToString().Split('-')[0]}@gmail.com" : request.InsuredEmail?.Trim(),
+                            InsuredName = request.InsuredName?.Trim(),
+                            InsuredNum = request.InsuredNum?.Trim(),
+                            InsuredOthName = request.InsuredOthName?.Trim(),
+                            InsuredTelNum = request.InsuredTelNum?.Trim(),
+                            PolicyEBusiness = request.PolicyEBusiness?.Trim(),
+                            PolicyNo = request.PolicyNo?.Trim(),
+                            Startdate = request.Startdate,
+                            SumIns = request.SumIns,
+                            TelNum = request.TelNum?.Trim(),
+                            OutPremium = request.OutPremium,
+                            mPremium = request.mPremium
+                        },
                     };
                 }
             }

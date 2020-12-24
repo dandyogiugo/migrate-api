@@ -138,7 +138,6 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\pt-PT\Hangfire.Core.resources.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\zh\Hangfire.Core.resources.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\zh-TW\Hangfire.Core.resources.dll
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csprojAssemblyReference.cache
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.Migrations.FirstMigration.resources
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.Migrations.secondmirgration.resources
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csproj.GenerateResource.cache
@@ -147,3 +146,8 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.Migrations.UpdatdModel.resources
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csprojAssemblyReference.cache
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\System.Net.Http.Extensions.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\System.Net.Http.Primitives.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\RijndaelEncryptDecrypt.dll

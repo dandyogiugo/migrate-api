@@ -110,5 +110,7 @@ namespace DataStore.Models
         public decimal adjustedamount { get; set; }
         [MaxLength(10)]
         public string Status { get; set; }
+        [MaxLength(100)]
+        public string merchant_id { get; set; }
     }
 }

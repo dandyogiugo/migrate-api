@@ -111,7 +111,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     status = true,
                     Claim_No = claim_no,
                     division = claims.division,
-                    BranchCode = claims.branch
+                    BranchCode = claims.branch,
+                    merchant_id = claims.merchant_id
                 };
 
                 if (claims.documents != null && claims.documents.Count() > 0)
@@ -140,6 +141,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                 // claims
                 claims.claim_number = claim_no;
 
+                if (claims.tempId > 0)
+                {
+                    tempStore = new store<TempClaimData>();
+                    var getdata = await tempStore.FindOneByCriteria(x => x.Id == claims.tempId && x.status == "NOT_COMPLETED");
+                    if (getdata != null)
+                    {
+                        getdata.status = "COMPLETED";
+                        await tempStore.Update(getdata);
+                    }
+                }
                 //send mail to custodian
                 Task.Factory.StartNew(() =>
                 {
@@ -147,10 +158,15 @@ namespace CustodianEveryWhereV2._0.Controllers
                 });
 
                 //sending mail to customer
-                Task.Factory.StartNew(() =>
+
+                if (!Config.isDemo)
                 {
-                    util.SendMail(claims, false, template, imagepath);
-                });
+                    Task.Factory.StartNew(() =>
+                    {
+                        util.SendMail(claims, false, template, imagepath);
+                    });
+                }
+
 
                 return new claims_response
                 {
@@ -248,7 +264,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     witness_name = claims.witness_name,
                     datecreated = DateTime.Now,
                     division = claims.division,
-                    BranchCode = claims.branch
+                    BranchCode = claims.branch,
+                    merchant_id = claims.merchant_id
                 };
                 //var merchant_id = ConfigurationManager.AppSettings["Merchant_ID"];
                 //var password = ConfigurationManager.AppSettings["Password"];
@@ -278,7 +295,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     foreach (var item in claims.documents)
                     {
                         var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{newClaims.policy_number.Replace('/', '-')}_{item.name}.{item.extension}";
-                        var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/General/{nameurl}";
+                        var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/General/{nameurl?.Replace('/', '-')}";
                         var newdocs = new NonLifeClaimsDocument
                         {
                             path = nameurl,
@@ -310,11 +327,31 @@ namespace CustodianEveryWhereV2._0.Controllers
                     email_division = divisionn_obj.FirstOrDefault(x => x.Code.ToUpper() == claims.division.ToUpper().Trim()).Email;
                 }
 
+                if (claims.tempId > 0)
+                {
+                    tempStore = new store<TempClaimData>();
+                    var getdata = await tempStore.FindOneByCriteria(x => x.Id == claims.tempId && x.status == "NOT_COMPLETED");
+                    if (getdata != null)
+                    {
+                        getdata.status = "COMPLETED";
+                        await tempStore.Update(getdata);
+                    }
+                }
+
                 Task.Factory.StartNew(() =>
                 {
                     util.SendMail(claims, true, template, imagepath, email_division);
-                    util.SendMail(claims, false, template, imagepath);
                 });
+
+                if (!Config.isDemo)
+                {
+                    Task.Factory.StartNew(() =>
+                    {
+
+                        util.SendMail(claims, false, template, imagepath);
+                    });
+                }
+
 
                 return new claims_response
                 {
