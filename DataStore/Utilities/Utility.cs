@@ -1905,21 +1905,15 @@ namespace DataStore.Utilities
                 log.Info($"About to get token from chaka for userId: {userId}");
                 using (var http = new HttpClient())
                 {
-                    http.DefaultRequestHeaders.Clear();
-                    http.DefaultRequestHeaders.Add("Authorization", $"Basic {basicAuth}");
-                    http.DefaultRequestHeaders.Add("Content-Type", "application/x-www-form-urlencoded");
-                    var forms = new List<KeyValuePair<string, string>>();
-                    forms.Add(new KeyValuePair<string, string>("scope", "profile"));
-                    forms.Add(new KeyValuePair<string, string>("grant_type", "client_credentails"));
-                    var request = new HttpRequestMessage(HttpMethod.Post, url)
-                    {
-                        Content = new FormUrlEncodedContent(forms)
-                    };
 
-                    var response = await http.SendAsync(request);
+                    http.DefaultRequestHeaders.Add("Authorization", $"Basic {basicAuth}");
+                    StringContent content = new StringContent("data=scope=profile&grant_type=client_credentials",
+                        Encoding.UTF8, "application/x-www-form-urlencoded");
+                    HttpResponseMessage response = await http.PostAsync(url, content);
                     if (!response.IsSuccessStatusCode)
                     {
-                        log.Info($"Session is invalid. Please login again {userId}:{response.StatusCode}: => {await response.Content.ReadAsStringAsync()}");
+                        var msg = await response.Content.ReadAsStringAsync();
+                        log.Info($"Session is invalid. Please login again {userId}:{response.StatusCode}: => {msg}");
                         return new
                         {
                             status = (int)response.StatusCode,
@@ -2010,7 +2004,7 @@ namespace DataStore.Utilities
                                 password = await Sha512(signUp.password),
                                 role = response.data.role,
                                 superAdmin = response.superAdmin,
-                                userId = response.data.userId,
+                                userId = response.data.id,
                                 username = response.data.username,
                                 modifiedAt = DateTime.Now,
                                 verified = response.data.verified
@@ -2053,24 +2047,16 @@ namespace DataStore.Utilities
                     };
                 }
                 string url = $"{Config.CHAKA_BASE_URL}/oauth/token";
-                var basicAuth = base64Decode(Config.CHAKA_BASIC_AUTH);
+                //var basicAuth = base64Decode(Config.CHAKA_BASIC_AUTH);
+                var basicAuth = Convert.ToBase64String(Encoding.UTF8.GetBytes(Config.CHAKA_BASIC_AUTH));
                 log.Info($"About to get token from chaka for userId: {email}");
                 using (var http = new HttpClient())
                 {
                     http.DefaultRequestHeaders.Clear();
                     http.DefaultRequestHeaders.Add("Authorization", $"Basic {basicAuth}");
-                    http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
-                    http.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/x-www-form-urlencoded");
-                    var forms = new List<KeyValuePair<string, string>>();
-                    forms.Add(new KeyValuePair<string, string>("scope", "profile"));
-                    forms.Add(new KeyValuePair<string, string>("grant_type", "client_credentails"));
-                    forms.Add(new KeyValuePair<string, string>("userId", authenticateUser.userId));
-                    var request = new HttpRequestMessage(HttpMethod.Post, url)
-                    {
-                        Content = new FormUrlEncodedContent(forms)
-                    };
-
-                    var response = await http.SendAsync(request);
+                    StringContent content = new StringContent($"data=scope=profile&grant_type=client_credentials&userId={authenticateUser.userId}",
+                        Encoding.UTF8, "application/x-www-form-urlencoded");
+                    HttpResponseMessage response = await http.PostAsync(url, content);
                     if (!response.IsSuccessStatusCode)
                     {
                         log.Info($"Session is invalid. Please login again {email}");
@@ -2087,7 +2073,7 @@ namespace DataStore.Utilities
                     return new
                     {
                         status = 200,
-                        chaka_url = $"{Config.CHAKA_APP_URL}/${mode}/{processResponse.access_token}"
+                        chaka_url = $"{Config.CHAKA_APP_URL}/{mode}/{processResponse.access_token}"
                     };
 
                     //http://sdk.chakaent.com/${mode}/${token} `
@@ -2145,7 +2131,6 @@ namespace DataStore.Utilities
                 throw ex;
             }
         }
-
     }
 
     public static class Config

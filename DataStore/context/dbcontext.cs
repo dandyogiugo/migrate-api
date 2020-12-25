@@ -49,6 +49,10 @@ namespace DataStore.context
         public DbSet<TempClaimData> TempClaimData { get; set; }
         public DbSet<PaystackRecurringCharges> PaystackRecurringCharges { get; set; }
         public DbSet<Chaka> Chaka { get; set; }
+
+        public DbSet<InterStateStocks> InterStateStocks { get; set; }
+
+        public DbSet<TempSaveData> TempSaveData { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
