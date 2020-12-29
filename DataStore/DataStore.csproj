@@ -199,6 +199,7 @@
     <Compile Include="Models\PolicyServicesDetails.cs" />
     <Compile Include="Models\PremiumCalculatorMapping.cs" />
     <Compile Include="Models\ReferralCodeLookUp.cs" />
+    <Compile Include="Models\RequestDocument.cs" />
     <Compile Include="Models\SafetyPlus.cs" />
     <Compile Include="Models\SelectedMealPlan.cs" />
     <Compile Include="Models\TelematicsUsers.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Utilities\TravelUtility.cs" />
     <Compile Include="Utilities\Utility.cs" />
     <Compile Include="ViewModels\CoreModels.cs" />
+    <Compile Include="ViewModels\Documents.cs" />
     <Compile Include="ViewModels\enums.cs" />
     <Compile Include="ViewModels\GlobalConstant.cs" />
     <Compile Include="ViewModels\HomeShieldViewModel.cs" />

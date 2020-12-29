@@ -591,7 +591,7 @@ namespace DataStore.ViewModels
         }
         [Required]
         public Platforms platform { get; set; }
-        [Required]
+     
         public string mobile { get; set; }
         [Required]
         public string fullname { get; set; }
@@ -599,6 +599,7 @@ namespace DataStore.ViewModels
         public string hash { get; set; }
         [Required]
         public string merchant_id { get; set; }
+     
     }
 
     public class Rate

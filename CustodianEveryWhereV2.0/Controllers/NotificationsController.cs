@@ -7,6 +7,7 @@ using DataStore.ViewModels;
 using NLog;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -25,11 +26,13 @@ namespace CustodianEveryWhereV2._0.Controllers
         private store<ApiConfiguration> _apiconfig = null;
         private Utility util = null;
         private store<Token> _otp = null;
+        private store<RequestDocument> document = null;
         public NotificationsController()
         {
             _apiconfig = new store<ApiConfiguration>();
             util = new Utility();
             _otp = new store<Token>();
+            document = new store<RequestDocument>();
         }
 
         [HttpPost]
@@ -363,6 +366,141 @@ namespace CustodianEveryWhereV2._0.Controllers
                 {
                     message = "Error validating token",
                     status = 203,
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<notification_response> RequestForDocuments(Documents documents)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return new notification_response
+                    {
+                        message = "Parameters missing from payload",
+                        status = 201,
+                    };
+                }
+
+                var check_user_function = await util.CheckForAssignedFunction("RequestForDocuments", documents.merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                        type = DataStore.ViewModels.Type.SMS.ToString()
+                    };
+                }
+
+                //check api config
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == documents.merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {documents.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                // validate hash
+                var checkhash = await util.ValidateHash2(documents.docType + documents.email, config.secret_key, documents.hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {documents.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+                var get_division = util.GetGeneralDivision(documents.policyNumber?.Trim().ToLower());
+                log.Info($"return val {Newtonsoft.Json.JsonConvert.SerializeObject(get_division)}");
+                if (get_division == null)
+                {
+                    return new notification_response
+                    {
+                        status = 408,
+                        message = "Unable to fetch policy division. Please contact custodian care centre"
+                    };
+                }
+                DivisionEmail email_division = null;
+                var divisionn_obj = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DivisionEmail>>(System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/json.json")));
+                if (documents.subsidiary == subsidiary.General)
+                {
+                    if (get_division.name == "BRANCH")
+                    {
+                        email_division = divisionn_obj.FirstOrDefault(x => x.Key.ToUpper() == get_division.code);
+                    }
+                    else
+                    {
+                        email_division = divisionn_obj.FirstOrDefault(x => x.Code.ToUpper() == get_division.name);
+                    }
+                }
+                else
+                {
+                    email_division = divisionn_obj.FirstOrDefault(x => x.Code.ToUpper() == "LIFE");
+                }
+                var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
+                StringBuilder sb = new StringBuilder(template);
+                StringBuilder table = new StringBuilder();
+                table.Append("<table>");
+                table.Append($"<tr><td>Request Type</td><td>{documents.docType}</td></tr>");
+                table.Append($"<tr><td>Policy Number</td><td>{documents.policyNumber.ToUpper()}</td></tr>");
+                if (documents.from.HasValue)
+                {
+                    if (!documents.to.HasValue)
+                    {
+                        documents.to = documents.from;
+                    }
+                    table.Append($"<tr><td>Start Date</td><td>{documents.from.Value.ToShortDateString()}</td></tr>");
+                }
+
+                if (documents.to.HasValue)
+                {
+                    if (!documents.from.HasValue)
+                    {
+                        documents.from = documents.to;
+                    }
+                    table.Append($"<tr><td>End Date</td><td>{documents.to.Value.ToShortDateString()}</td></tr>");
+                }
+                table.Append($"<tr><td>Email Address</td><td>{documents.email}</td></tr>");
+                table.Append("</table>");
+                sb.Replace("#CONTENT#", table.ToString());
+                sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
+                var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
+                var cc = ConfigurationManager.AppSettings["Notification"]?.Split('|')?.ToList();
+                new SendEmail().Send_Email(email_division.Email, $"Request for {documents.docType} doucument", sb.ToString(), $"Request for {documents.docType} doucument", true, imagepath, cc, null, null);
+                var save = new RequestDocument
+                {
+                    DateRequested = DateTime.Now,
+                    DocType = documents.docType,
+                    Email = documents.email,
+                    Division = email_division.Code,
+                    DivisionEmail = email_division.Email,
+                    From = documents.from,
+                    PolicyNumber = documents.policyNumber,
+                    To = documents.to
+                };
+                await document.Save(save);
+                return new notification_response
+                {
+                    status = 200,
+                    message = "Request was sent successfully"
+                };
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                return new notification_response
+                {
+                    message = "System malfunction",
+                    status = 404,
                 };
             }
         }

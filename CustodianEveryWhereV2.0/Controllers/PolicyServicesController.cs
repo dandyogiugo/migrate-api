@@ -389,7 +389,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     PolicyType = (x.datasource == "ABS") ? util.PolicyType(x.policyno?.Trim().ToUpper()) : "Life",
                     ClaimTypes = (x.datasource == "ABS") ? util.GeneralClaimType(x.policyno?.Trim().ToUpper()) : util.LifeClaimTypes(x.productdesc?.Trim().ToLower()),
                     Division = (x.datasource == "ABS") ? util.GetGeneralDivision(x.policyno?.Trim().ToLower()) :
-                    new
+                    new DivisonsCode
                     {
                         name = "Retail Life",
                         code = "Life"

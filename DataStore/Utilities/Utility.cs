@@ -1809,14 +1809,14 @@ namespace DataStore.Utilities
 
             return claimsType;
         }
-        public dynamic GetGeneralDivision(string policy_number)
+        public DivisonsCode GetGeneralDivision(string policy_number)
         {
-            dynamic division;
+            DivisonsCode division;
             string code = policy_number?.Trim().Split('/')[0]?.ToUpper();
 
             if (new Regex($@".t").IsMatch(policy_number))
             {
-                division = new
+                division = new DivisonsCode
                 {
                     name = "TRADING",
                     code = code
@@ -1824,7 +1824,7 @@ namespace DataStore.Utilities
             }
             else if (new Regex($@".b").IsMatch(policy_number))
             {
-                division = new
+                division = new DivisonsCode
                 {
                     name = "RETAILBANCASSURANCE",
                     code = code
@@ -1832,7 +1832,7 @@ namespace DataStore.Utilities
             }
             else if (new Regex($@".g").IsMatch(policy_number))
             {
-                division = new
+                division = new DivisonsCode
                 {
                     name = "PERSONALLINES",
                     code = code
@@ -1840,7 +1840,7 @@ namespace DataStore.Utilities
             }
             else if (new Regex($@".f").IsMatch(policy_number))
             {
-                division = new
+                division = new DivisonsCode
                 {
                     name = "FINANCIALINSTITUTIONS",
                     code = code
@@ -1848,7 +1848,7 @@ namespace DataStore.Utilities
             }
             else if (new Regex($@".m").IsMatch(policy_number))
             {
-                division = new
+                division = new DivisonsCode
                 {
                     name = "MANUFACTURING",
                     code = code
@@ -1856,7 +1856,7 @@ namespace DataStore.Utilities
             }
             else if (new Regex($@".e").IsMatch(policy_number))
             {
-                division = new
+                division = new DivisonsCode
                 {
                     name = "ENGINEERINGTELECOMS",
                     code = code
@@ -1864,7 +1864,7 @@ namespace DataStore.Utilities
             }
             else if (new Regex($@".p").IsMatch(policy_number))
             {
-                division = new
+                division = new DivisonsCode
                 {
                     name = "PUBLICSECTOR",
                     code = code
@@ -1872,7 +1872,7 @@ namespace DataStore.Utilities
             }
             else if (new Regex($@"[asz]").IsMatch(policy_number))
             {
-                division = new
+                division = new DivisonsCode
                 {
                     name = "OILANDGAS",
                     code = code
@@ -1880,7 +1880,7 @@ namespace DataStore.Utilities
             }
             else if (new Regex($@".l").IsMatch(policy_number))
             {
-                division = new
+                division = new DivisonsCode
                 {
                     name = "EBUSINESS",
                     code = code
@@ -1888,7 +1888,7 @@ namespace DataStore.Utilities
             }
             else
             {
-                division = new
+                division = new DivisonsCode
                 {
                     name = "BRANCH",
                     code = code
@@ -1951,7 +1951,7 @@ namespace DataStore.Utilities
                     };
                 }
 
-                var validOTP = await ValidateOTP(signUp.otp, signUp.email);
+                var validOTP = await ValidateOTP(signUp.otp, signUp.mobileno);
                 if (!validOTP)
                 {
                     return new
@@ -2099,7 +2099,7 @@ namespace DataStore.Utilities
                     };
                 }
 
-                var validOTP = await ValidateOTP(otp, email);
+                var validOTP = await ValidateOTP(otp, checkformail.mobileNumber);
                 if (!validOTP)
                 {
                     return new

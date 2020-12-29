@@ -22,8 +22,8 @@ namespace DataStore.Models
         public string username { get; set; }
         public string email { get; set; }
         public string clientId { get; set; }
-        public object mobileNumber { get; set; }
-        public object firstName { get; set; }
+        public string mobileNumber { get; set; }
+        public string firstName { get; set; }
         public string chakaId { get; set; }
         public string lastName { get; set; }
         public string role { get; set; }
