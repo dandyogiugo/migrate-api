@@ -5160,12 +5160,19 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_SafetyPlus_PostSource", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource1> PostSafetyPlusAsync(CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource request);
         
-        // CODEGEN: Generating message contract since the wrapper name (PostSafetyPlus) of message PostSafetyPlusRequest does not match the default value (PostSafetyPlus1)
+        // CODEGEN: Generating message contract since the wrapper name (Passing_SafetyPlus_PostSource_Destionation_From_To) of message Passing_SafetyPlus_PostSource_Destionation_From_To does not match the default value (PostSafetyPlus1)
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_SafetyPlus_PostSource_Destionation_From_To", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To1 PostSafetyPlus1(CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_SafetyPlus_PostSource_Destionation_From_To", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To1> PostSafetyPlus1Async(CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (PostSafetyPlus) of message PostSafetyPlusRequest does not match the default value (PostSafetyPlus2)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostSafetyPlus", ReplyAction="*")]
-        CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse PostSafetyPlus1(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request);
+        CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse PostSafetyPlus2(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostSafetyPlus", ReplyAction="*")]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse> PostSafetyPlus1Async(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request);
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse> PostSafetyPlus2Async(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (Passing_Motor_PostSource) of message Passing_Motor_PostSource does not match the default value (POSTMotorRec)
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Passing_Motor_PostSource", ReplyAction="*")]
@@ -5600,6 +5607,13 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/PostTQScheduledSync", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTQScheduledSyncResponse> PostTQScheduledSyncAsync(CustodianEveryWhereV2._0.CustodianAPI.PostTQScheduledSyncRequest request);
+        
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPolicyNumber", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberResponse GetPolicyNumber(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPolicyNumber", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberResponse> GetPolicyNumberAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7088,6 +7102,156 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         public Passing_SafetyPlus_PostSource1(string Passing_SafetyPlus_PostSourceResult) {
             this.Passing_SafetyPlus_PostSourceResult = Passing_SafetyPlus_PostSourceResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Passing_SafetyPlus_PostSource_Destionation_From_To", WrapperNamespace="http://Custodianservices.com/", IsWrapped=true)]
+    public partial class Passing_SafetyPlus_PostSource_Destionation_From_To {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=0)]
+        public string UserName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=1)]
+        public string Mpassword;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=2)]
+        public string CustomerName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=3)]
+        public string Address;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=4)]
+        public string PhoneNumber;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=5)]
+        public string Email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=6)]
+        public string Occupation;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=7)]
+        public decimal Premium;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=8)]
+        public decimal NoOfUnit;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=9)]
+        public System.DateTime dateCreated;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=10)]
+        public System.DateTime Activedate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=11)]
+        public System.DateTime expiryDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=12)]
+        public string CreditNote;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=13)]
+        public string mDescription;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=14)]
+        public string BeneficiaryName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=15)]
+        public string BeneficiarySex;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=16)]
+        public System.DateTime BeneficiaryDOB;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=17)]
+        public string BeneficiaryRelatn;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=18)]
+        public string PostSource;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=19)]
+        public string BrokerID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=20)]
+        public string CommRate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=21)]
+        public string PremRate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=22)]
+        public string DestinationFrom;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=23)]
+        public string DestinationTo;
+        
+        public Passing_SafetyPlus_PostSource_Destionation_From_To() {
+        }
+        
+        public Passing_SafetyPlus_PostSource_Destionation_From_To(
+                    string UserName, 
+                    string Mpassword, 
+                    string CustomerName, 
+                    string Address, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string Occupation, 
+                    decimal Premium, 
+                    decimal NoOfUnit, 
+                    System.DateTime dateCreated, 
+                    System.DateTime Activedate, 
+                    System.DateTime expiryDate, 
+                    string CreditNote, 
+                    string mDescription, 
+                    string BeneficiaryName, 
+                    string BeneficiarySex, 
+                    System.DateTime BeneficiaryDOB, 
+                    string BeneficiaryRelatn, 
+                    string PostSource, 
+                    string BrokerID, 
+                    string CommRate, 
+                    string PremRate, 
+                    string DestinationFrom, 
+                    string DestinationTo) {
+            this.UserName = UserName;
+            this.Mpassword = Mpassword;
+            this.CustomerName = CustomerName;
+            this.Address = Address;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
+            this.Occupation = Occupation;
+            this.Premium = Premium;
+            this.NoOfUnit = NoOfUnit;
+            this.dateCreated = dateCreated;
+            this.Activedate = Activedate;
+            this.expiryDate = expiryDate;
+            this.CreditNote = CreditNote;
+            this.mDescription = mDescription;
+            this.BeneficiaryName = BeneficiaryName;
+            this.BeneficiarySex = BeneficiarySex;
+            this.BeneficiaryDOB = BeneficiaryDOB;
+            this.BeneficiaryRelatn = BeneficiaryRelatn;
+            this.PostSource = PostSource;
+            this.BrokerID = BrokerID;
+            this.CommRate = CommRate;
+            this.PremRate = PremRate;
+            this.DestinationFrom = DestinationFrom;
+            this.DestinationTo = DestinationTo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Passing_SafetyPlus_PostSource_Destionation_From_ToResponse", WrapperNamespace="http://Custodianservices.com/", IsWrapped=true)]
+    public partial class Passing_SafetyPlus_PostSource_Destionation_From_To1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=0)]
+        public string Passing_SafetyPlus_PostSource_Destionation_From_ToResult;
+        
+        public Passing_SafetyPlus_PostSource_Destionation_From_To1() {
+        }
+        
+        public Passing_SafetyPlus_PostSource_Destionation_From_To1(string Passing_SafetyPlus_PostSource_Destionation_From_ToResult) {
+            this.Passing_SafetyPlus_PostSource_Destionation_From_ToResult = Passing_SafetyPlus_PostSource_Destionation_From_ToResult;
         }
     }
     
@@ -9054,6 +9218,9 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
         public string PremiumBalance;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
+        public string Pol_Interest;
+        
         public POSTNotificationDetRequestBody() {
         }
         
@@ -9077,7 +9244,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string Narration, 
                     string EmailResponse, 
                     string smsResponse, 
-                    string PremiumBalance) {
+                    string PremiumBalance, 
+                    string Pol_Interest) {
             this.MerchantID = MerchantID;
             this.Mpassword = Mpassword;
             this.Product = Product;
@@ -9098,6 +9266,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             this.EmailResponse = EmailResponse;
             this.smsResponse = smsResponse;
             this.PremiumBalance = PremiumBalance;
+            this.Pol_Interest = Pol_Interest;
         }
     }
     
@@ -9200,10 +9369,13 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
         public string PremiumBal;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string Pol_Interest;
+        
         public NotEMAILRequestBody() {
         }
         
-        public NotEMAILRequestBody(string FirstName, string LastName, string ToAddress, string PolicyNo, string NotifyID, decimal Amount, string Oustdprem, System.DateTime PaymentDate, System.DateTime RenewalDate, string Product, string Narration, string Receipt, string RenUrl, string PremiumBal) {
+        public NotEMAILRequestBody(string FirstName, string LastName, string ToAddress, string PolicyNo, string NotifyID, decimal Amount, string Oustdprem, System.DateTime PaymentDate, System.DateTime RenewalDate, string Product, string Narration, string Receipt, string RenUrl, string PremiumBal, string Pol_Interest) {
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.ToAddress = ToAddress;
@@ -9218,6 +9390,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             this.Receipt = Receipt;
             this.RenUrl = RenUrl;
             this.PremiumBal = PremiumBal;
+            this.Pol_Interest = Pol_Interest;
         }
     }
     
@@ -9761,6 +9934,9 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=30)]
         public string Gender;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=31)]
+        public string Pol_Interest;
+        
         public PostABSSyncRequestBody() {
         }
         
@@ -9795,7 +9971,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string BrokerID, 
                     decimal CommRate, 
                     decimal PremRate, 
-                    string Gender) {
+                    string Gender, 
+                    string Pol_Interest) {
             this.MerchantID = MerchantID;
             this.Mpassword = Mpassword;
             this.PolicyNo = PolicyNo;
@@ -9827,6 +10004,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             this.CommRate = CommRate;
             this.PremRate = PremRate;
             this.Gender = Gender;
+            this.Pol_Interest = Pol_Interest;
         }
     }
     
@@ -13840,6 +14018,175 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPolicyNumberRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPolicyNumber", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequestBody Body;
+        
+        public GetPolicyNumberRequest() {
+        }
+        
+        public GetPolicyNumberRequest(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetPolicyNumberRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Mpassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.DateTime DateOfBirth;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public System.DateTime startdate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.DateTime enddate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string FirstName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string LastName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Title;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string mAddress;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string PhoneNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string Email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string UnitEmail;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        public string ProductType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        public string CoverType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string PaySource;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string Occupation;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        public decimal Premium;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+        public decimal SumAssured;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
+        public string BrokerID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        public decimal CommRate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
+        public string Gender;
+        
+        public GetPolicyNumberRequestBody() {
+        }
+        
+        public GetPolicyNumberRequestBody(
+                    string MerchantID, 
+                    string Mpassword, 
+                    System.DateTime DateOfBirth, 
+                    System.DateTime startdate, 
+                    System.DateTime enddate, 
+                    string FirstName, 
+                    string LastName, 
+                    string Title, 
+                    string mAddress, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string UnitEmail, 
+                    string ProductType, 
+                    string CoverType, 
+                    string PaySource, 
+                    string Occupation, 
+                    decimal Premium, 
+                    decimal SumAssured, 
+                    string BrokerID, 
+                    decimal CommRate, 
+                    string Gender) {
+            this.MerchantID = MerchantID;
+            this.Mpassword = Mpassword;
+            this.DateOfBirth = DateOfBirth;
+            this.startdate = startdate;
+            this.enddate = enddate;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Title = Title;
+            this.mAddress = mAddress;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
+            this.UnitEmail = UnitEmail;
+            this.ProductType = ProductType;
+            this.CoverType = CoverType;
+            this.PaySource = PaySource;
+            this.Occupation = Occupation;
+            this.Premium = Premium;
+            this.SumAssured = SumAssured;
+            this.BrokerID = BrokerID;
+            this.CommRate = CommRate;
+            this.Gender = Gender;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPolicyNumberResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPolicyNumberResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberResponseBody Body;
+        
+        public GetPolicyNumberResponse() {
+        }
+        
+        public GetPolicyNumberResponse(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class GetPolicyNumberResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.mResponse GetPolicyNumberResult;
+        
+        public GetPolicyNumberResponseBody() {
+        }
+        
+        public GetPolicyNumberResponseBody(CustodianEveryWhereV2._0.CustodianAPI.mResponse GetPolicyNumberResult) {
+            this.GetPolicyNumberResult = GetPolicyNumberResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PolicyServicesSoapChannel : CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap, System.ServiceModel.IClientChannel {
     }
@@ -14677,7 +15024,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostSafetyPlus1(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request) {
+        CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To1 CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostSafetyPlus1(CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To request) {
             return base.Channel.PostSafetyPlus1(request);
         }
         
@@ -14699,8 +15046,14 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string BeneficiaryName, 
                     string BeneficiarySex, 
                     System.DateTime BeneficiaryDOB, 
-                    string BeneficiaryRelatn) {
-            CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest();
+                    string BeneficiaryRelatn, 
+                    string PostSource, 
+                    string BrokerID, 
+                    string CommRate, 
+                    string PremRate, 
+                    string DestinationFrom, 
+                    string DestinationTo) {
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To inValue = new CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To();
             inValue.UserName = UserName;
             inValue.Mpassword = Mpassword;
             inValue.CustomerName = CustomerName;
@@ -14719,16 +15072,80 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.BeneficiarySex = BeneficiarySex;
             inValue.BeneficiaryDOB = BeneficiaryDOB;
             inValue.BeneficiaryRelatn = BeneficiaryRelatn;
-            CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostSafetyPlus1(inValue);
-            return retVal.PostSafetyPlusResult;
+            inValue.PostSource = PostSource;
+            inValue.BrokerID = BrokerID;
+            inValue.CommRate = CommRate;
+            inValue.PremRate = PremRate;
+            inValue.DestinationFrom = DestinationFrom;
+            inValue.DestinationTo = DestinationTo;
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To1 retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostSafetyPlus1(inValue);
+            return retVal.Passing_SafetyPlus_PostSource_Destionation_From_ToResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostSafetyPlus1Async(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request) {
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To1> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostSafetyPlus1Async(CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To request) {
             return base.Channel.PostSafetyPlus1Async(request);
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse> PostSafetyPlus1Async(
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To1> PostSafetyPlus1Async(
+                    string UserName, 
+                    string Mpassword, 
+                    string CustomerName, 
+                    string Address, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string Occupation, 
+                    decimal Premium, 
+                    decimal NoOfUnit, 
+                    System.DateTime dateCreated, 
+                    System.DateTime Activedate, 
+                    System.DateTime expiryDate, 
+                    string CreditNote, 
+                    string mDescription, 
+                    string BeneficiaryName, 
+                    string BeneficiarySex, 
+                    System.DateTime BeneficiaryDOB, 
+                    string BeneficiaryRelatn, 
+                    string PostSource, 
+                    string BrokerID, 
+                    string CommRate, 
+                    string PremRate, 
+                    string DestinationFrom, 
+                    string DestinationTo) {
+            CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To inValue = new CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To();
+            inValue.UserName = UserName;
+            inValue.Mpassword = Mpassword;
+            inValue.CustomerName = CustomerName;
+            inValue.Address = Address;
+            inValue.PhoneNumber = PhoneNumber;
+            inValue.Email = Email;
+            inValue.Occupation = Occupation;
+            inValue.Premium = Premium;
+            inValue.NoOfUnit = NoOfUnit;
+            inValue.dateCreated = dateCreated;
+            inValue.Activedate = Activedate;
+            inValue.expiryDate = expiryDate;
+            inValue.CreditNote = CreditNote;
+            inValue.mDescription = mDescription;
+            inValue.BeneficiaryName = BeneficiaryName;
+            inValue.BeneficiarySex = BeneficiarySex;
+            inValue.BeneficiaryDOB = BeneficiaryDOB;
+            inValue.BeneficiaryRelatn = BeneficiaryRelatn;
+            inValue.PostSource = PostSource;
+            inValue.BrokerID = BrokerID;
+            inValue.CommRate = CommRate;
+            inValue.PremRate = PremRate;
+            inValue.DestinationFrom = DestinationFrom;
+            inValue.DestinationTo = DestinationTo;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostSafetyPlus1Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostSafetyPlus2(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request) {
+            return base.Channel.PostSafetyPlus2(request);
+        }
+        
+        public string PostSafetyPlus2(
                     string UserName, 
                     string Mpassword, 
                     string CustomerName, 
@@ -14766,7 +15183,54 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.BeneficiarySex = BeneficiarySex;
             inValue.BeneficiaryDOB = BeneficiaryDOB;
             inValue.BeneficiaryRelatn = BeneficiaryRelatn;
-            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostSafetyPlus1Async(inValue);
+            CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostSafetyPlus2(inValue);
+            return retVal.PostSafetyPlusResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.PostSafetyPlus2Async(CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest request) {
+            return base.Channel.PostSafetyPlus2Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusResponse> PostSafetyPlus2Async(
+                    string UserName, 
+                    string Mpassword, 
+                    string CustomerName, 
+                    string Address, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string Occupation, 
+                    decimal Premium, 
+                    decimal NoOfUnit, 
+                    System.DateTime dateCreated, 
+                    System.DateTime Activedate, 
+                    System.DateTime expiryDate, 
+                    string CreditNote, 
+                    string mDescription, 
+                    string BeneficiaryName, 
+                    string BeneficiarySex, 
+                    System.DateTime BeneficiaryDOB, 
+                    string BeneficiaryRelatn) {
+            CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostSafetyPlusRequest();
+            inValue.UserName = UserName;
+            inValue.Mpassword = Mpassword;
+            inValue.CustomerName = CustomerName;
+            inValue.Address = Address;
+            inValue.PhoneNumber = PhoneNumber;
+            inValue.Email = Email;
+            inValue.Occupation = Occupation;
+            inValue.Premium = Premium;
+            inValue.NoOfUnit = NoOfUnit;
+            inValue.dateCreated = dateCreated;
+            inValue.Activedate = Activedate;
+            inValue.expiryDate = expiryDate;
+            inValue.CreditNote = CreditNote;
+            inValue.mDescription = mDescription;
+            inValue.BeneficiaryName = BeneficiaryName;
+            inValue.BeneficiarySex = BeneficiarySex;
+            inValue.BeneficiaryDOB = BeneficiaryDOB;
+            inValue.BeneficiaryRelatn = BeneficiaryRelatn;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostSafetyPlus2Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -15800,7 +16264,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string Narration, 
                     string EmailResponse, 
                     string smsResponse, 
-                    string PremiumBalance) {
+                    string PremiumBalance, 
+                    string Pol_Interest) {
             CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequest();
             inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -15823,6 +16288,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.EmailResponse = EmailResponse;
             inValue.Body.smsResponse = smsResponse;
             inValue.Body.PremiumBalance = PremiumBalance;
+            inValue.Body.Pol_Interest = Pol_Interest;
             CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTNotificationDet(inValue);
             return retVal.Body.POSTNotificationDetResult;
         }
@@ -15852,7 +16318,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string Narration, 
                     string EmailResponse, 
                     string smsResponse, 
-                    string PremiumBalance) {
+                    string PremiumBalance, 
+                    string Pol_Interest) {
             CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequest();
             inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.POSTNotificationDetRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -15875,6 +16342,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.EmailResponse = EmailResponse;
             inValue.Body.smsResponse = smsResponse;
             inValue.Body.PremiumBalance = PremiumBalance;
+            inValue.Body.Pol_Interest = Pol_Interest;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POSTNotificationDetAsync(inValue);
         }
         
@@ -15883,7 +16351,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             return base.Channel.NotEMAIL(request);
         }
         
-        public string NotEMAIL(string FirstName, string LastName, string ToAddress, string PolicyNo, string NotifyID, decimal Amount, string Oustdprem, System.DateTime PaymentDate, System.DateTime RenewalDate, string Product, string Narration, string Receipt, string RenUrl, string PremiumBal) {
+        public string NotEMAIL(string FirstName, string LastName, string ToAddress, string PolicyNo, string NotifyID, decimal Amount, string Oustdprem, System.DateTime PaymentDate, System.DateTime RenewalDate, string Product, string Narration, string Receipt, string RenUrl, string PremiumBal, string Pol_Interest) {
             CustodianEveryWhereV2._0.CustodianAPI.NotEMAILRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.NotEMAILRequest();
             inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.NotEMAILRequestBody();
             inValue.Body.FirstName = FirstName;
@@ -15900,6 +16368,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.Receipt = Receipt;
             inValue.Body.RenUrl = RenUrl;
             inValue.Body.PremiumBal = PremiumBal;
+            inValue.Body.Pol_Interest = Pol_Interest;
             CustodianEveryWhereV2._0.CustodianAPI.NotEMAILResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).NotEMAIL(inValue);
             return retVal.Body.NotEMAILResult;
         }
@@ -15909,7 +16378,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             return base.Channel.NotEMAILAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.NotEMAILResponse> NotEMAILAsync(string FirstName, string LastName, string ToAddress, string PolicyNo, string NotifyID, decimal Amount, string Oustdprem, System.DateTime PaymentDate, System.DateTime RenewalDate, string Product, string Narration, string Receipt, string RenUrl, string PremiumBal) {
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.NotEMAILResponse> NotEMAILAsync(string FirstName, string LastName, string ToAddress, string PolicyNo, string NotifyID, decimal Amount, string Oustdprem, System.DateTime PaymentDate, System.DateTime RenewalDate, string Product, string Narration, string Receipt, string RenUrl, string PremiumBal, string Pol_Interest) {
             CustodianEveryWhereV2._0.CustodianAPI.NotEMAILRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.NotEMAILRequest();
             inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.NotEMAILRequestBody();
             inValue.Body.FirstName = FirstName;
@@ -15926,6 +16395,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.Receipt = Receipt;
             inValue.Body.RenUrl = RenUrl;
             inValue.Body.PremiumBal = PremiumBal;
+            inValue.Body.Pol_Interest = Pol_Interest;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).NotEMAILAsync(inValue);
         }
         
@@ -16214,7 +16684,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string BrokerID, 
                     decimal CommRate, 
                     decimal PremRate, 
-                    string Gender) {
+                    string Gender, 
+                    string Pol_Interest) {
             CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequest();
             inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -16248,6 +16719,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.CommRate = CommRate;
             inValue.Body.PremRate = PremRate;
             inValue.Body.Gender = Gender;
+            inValue.Body.Pol_Interest = Pol_Interest;
             CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostABSSync(inValue);
             return retVal.Body.PostABSSyncResult;
         }
@@ -16288,7 +16760,8 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
                     string BrokerID, 
                     decimal CommRate, 
                     decimal PremRate, 
-                    string Gender) {
+                    string Gender, 
+                    string Pol_Interest) {
             CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequest();
             inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostABSSyncRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -16322,6 +16795,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.CommRate = CommRate;
             inValue.Body.PremRate = PremRate;
             inValue.Body.Gender = Gender;
+            inValue.Body.Pol_Interest = Pol_Interest;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostABSSyncAsync(inValue);
         }
         
@@ -18437,6 +18911,113 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.SumAssured = SumAssured;
             inValue.Body.BrokerCode = BrokerCode;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostTQScheduledSyncAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetPolicyNumber(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequest request) {
+            return base.Channel.GetPolicyNumber(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.mResponse GetPolicyNumber(
+                    string MerchantID, 
+                    string Mpassword, 
+                    System.DateTime DateOfBirth, 
+                    System.DateTime startdate, 
+                    System.DateTime enddate, 
+                    string FirstName, 
+                    string LastName, 
+                    string Title, 
+                    string mAddress, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string UnitEmail, 
+                    string ProductType, 
+                    string CoverType, 
+                    string PaySource, 
+                    string Occupation, 
+                    decimal Premium, 
+                    decimal SumAssured, 
+                    string BrokerID, 
+                    decimal CommRate, 
+                    string Gender) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.DateOfBirth = DateOfBirth;
+            inValue.Body.startdate = startdate;
+            inValue.Body.enddate = enddate;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.Title = Title;
+            inValue.Body.mAddress = mAddress;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Email = Email;
+            inValue.Body.UnitEmail = UnitEmail;
+            inValue.Body.ProductType = ProductType;
+            inValue.Body.CoverType = CoverType;
+            inValue.Body.PaySource = PaySource;
+            inValue.Body.Occupation = Occupation;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SumAssured = SumAssured;
+            inValue.Body.BrokerID = BrokerID;
+            inValue.Body.CommRate = CommRate;
+            inValue.Body.Gender = Gender;
+            CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPolicyNumber(inValue);
+            return retVal.Body.GetPolicyNumberResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.GetPolicyNumberAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequest request) {
+            return base.Channel.GetPolicyNumberAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberResponse> GetPolicyNumberAsync(
+                    string MerchantID, 
+                    string Mpassword, 
+                    System.DateTime DateOfBirth, 
+                    System.DateTime startdate, 
+                    System.DateTime enddate, 
+                    string FirstName, 
+                    string LastName, 
+                    string Title, 
+                    string mAddress, 
+                    string PhoneNumber, 
+                    string Email, 
+                    string UnitEmail, 
+                    string ProductType, 
+                    string CoverType, 
+                    string PaySource, 
+                    string Occupation, 
+                    decimal Premium, 
+                    decimal SumAssured, 
+                    string BrokerID, 
+                    decimal CommRate, 
+                    string Gender) {
+            CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.DateOfBirth = DateOfBirth;
+            inValue.Body.startdate = startdate;
+            inValue.Body.enddate = enddate;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.Title = Title;
+            inValue.Body.mAddress = mAddress;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Email = Email;
+            inValue.Body.UnitEmail = UnitEmail;
+            inValue.Body.ProductType = ProductType;
+            inValue.Body.CoverType = CoverType;
+            inValue.Body.PaySource = PaySource;
+            inValue.Body.Occupation = Occupation;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SumAssured = SumAssured;
+            inValue.Body.BrokerID = BrokerID;
+            inValue.Body.CommRate = CommRate;
+            inValue.Body.Gender = Gender;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPolicyNumberAsync(inValue);
         }
     }
 }

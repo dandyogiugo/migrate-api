@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="kD/01Gs9MJ80hko3GwsHFgBFcZA=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Yf46RWPZQpIqpUSE14jCwovhSO8ikw9yQqy1RZsDx3o=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="PolicyServicesSoap">
       <properties>

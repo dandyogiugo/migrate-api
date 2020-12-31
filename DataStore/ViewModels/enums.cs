@@ -142,6 +142,11 @@ namespace DataStore.ViewModels
         WorldWide2 = 5
     }
 
+    public enum AppPlatform
+    {
+        Andriod = 1,
+        IOS = 2
+    }
 
     //World Wide => 1
     // Schengen => 2

@@ -143,7 +143,7 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                     await auth_user.Save(new_user);
                 }
-               
+
 
                 log.Info($"User profile hash been saved {auth_deatils.email}");
                 return new notification_response
@@ -153,6 +153,86 @@ namespace CustodianEveryWhereV2._0.Controllers
                     data = auth_deatils,
                     app_updates = update
                 };
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "oops!, something happend while saving authentication details"
+                };
+            }
+        }
+
+        [HttpGet]
+        public async Task<notification_response> CheckForAppUpdate(string Appverion, AppPlatform platforms, string merchant_id)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("CheckForAppUpdate", merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+                string getFile = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/TravelCategoryJSON/AppUpdate.json"));
+                var update = Newtonsoft.Json.JsonConvert.DeserializeObject<updates>(getFile);
+                if (platforms == AppPlatform.Andriod)
+                {
+                    if (!update.android_version.Trim().Equals(Appverion.Trim(), StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        return new notification_response
+                        {
+                            app_updates = update,
+                            status = 200,
+                            message = "Update avaliable"
+                        };
+                    }
+                    else
+                    {
+                        return new notification_response
+                        {
+                            status = 201,
+                            message = "Your application is upto date"
+                        };
+                    }
+                }
+                else
+                {
+                    if (!update.ios_version.Trim().Equals(Appverion.Trim(), StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        return new notification_response
+                        {
+                            app_updates = update,
+                            status = 200,
+                            message = "Update avaliable"
+                        };
+                    }
+                    else
+                    {
+                        return new notification_response
+                        {
+                            status = 201,
+                            message = "Your application is upto date"
+                        };
+                    }
+                }
             }
             catch (Exception ex)
             {

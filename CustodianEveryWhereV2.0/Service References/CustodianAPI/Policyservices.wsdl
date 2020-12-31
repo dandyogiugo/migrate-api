@@ -420,6 +420,43 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Passing_SafetyPlus_PostSource_Destionation_From_To">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mpassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Occupation" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Premium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="NoOfUnit" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateCreated" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Activedate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="expiryDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreditNote" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BeneficiaryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BeneficiarySex" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BeneficiaryDOB" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="BeneficiaryRelatn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrokerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CommRate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PremRate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationTo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Passing_SafetyPlus_PostSource_Destionation_From_ToResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Passing_SafetyPlus_PostSource_Destionation_From_ToResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="PostSafetyPlus">
         <s:complexType>
           <s:sequence>
@@ -973,6 +1010,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="EmailResponse" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="smsResponse" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="PremiumBalance" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pol_Interest" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1022,6 +1060,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="Receipt" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="RenUrl" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="PremiumBal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pol_Interest" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1161,6 +1200,7 @@
             <s:element minOccurs="1" maxOccurs="1" name="CommRate" type="s:decimal" />
             <s:element minOccurs="1" maxOccurs="1" name="PremRate" type="s:decimal" />
             <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pol_Interest" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2322,6 +2362,40 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetPolicyNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mpassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateOfBirth" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="startdate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="enddate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UnitEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CoverType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaySource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Occupation" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Premium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="SumAssured" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrokerID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CommRate" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPolicyNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPolicyNumberResult" type="tns:mResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetClaimStatusSoapIn">
@@ -2425,6 +2499,12 @@
   </wsdl:message>
   <wsdl:message name="Passing_SafetyPlus_PostSourceSoapOut">
     <wsdl:part name="parameters" element="tns:Passing_SafetyPlus_PostSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Passing_SafetyPlus_PostSource_Destionation_From_ToSoapIn">
+    <wsdl:part name="parameters" element="tns:Passing_SafetyPlus_PostSource_Destionation_From_To" />
+  </wsdl:message>
+  <wsdl:message name="Passing_SafetyPlus_PostSource_Destionation_From_ToSoapOut">
+    <wsdl:part name="parameters" element="tns:Passing_SafetyPlus_PostSource_Destionation_From_ToResponse" />
   </wsdl:message>
   <wsdl:message name="PostSafetyPlusSoapIn">
     <wsdl:part name="parameters" element="tns:PostSafetyPlus" />
@@ -2804,6 +2884,12 @@
   <wsdl:message name="PostTQScheduledSyncSoapOut">
     <wsdl:part name="parameters" element="tns:PostTQScheduledSyncResponse" />
   </wsdl:message>
+  <wsdl:message name="GetPolicyNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPolicyNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetPolicyNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPolicyNumberResponse" />
+  </wsdl:message>
   <wsdl:portType name="PolicyServicesSoap">
     <wsdl:operation name="GetClaimStatus">
       <wsdl:input message="tns:GetClaimStatusSoapIn" />
@@ -2872,6 +2958,10 @@
     <wsdl:operation name="PostSafetyPlus">
       <wsdl:input name="Passing_SafetyPlus_PostSource" message="tns:Passing_SafetyPlus_PostSourceSoapIn" />
       <wsdl:output name="Passing_SafetyPlus_PostSource" message="tns:Passing_SafetyPlus_PostSourceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostSafetyPlus">
+      <wsdl:input name="Passing_SafetyPlus_PostSource_Destionation_From_To" message="tns:Passing_SafetyPlus_PostSource_Destionation_From_ToSoapIn" />
+      <wsdl:output name="Passing_SafetyPlus_PostSource_Destionation_From_To" message="tns:Passing_SafetyPlus_PostSource_Destionation_From_ToSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="PostSafetyPlus">
       <wsdl:input message="tns:PostSafetyPlusSoapIn" />
@@ -3125,6 +3215,10 @@
       <wsdl:input message="tns:PostTQScheduledSyncSoapIn" />
       <wsdl:output message="tns:PostTQScheduledSyncSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetPolicyNumber">
+      <wsdl:input message="tns:GetPolicyNumberSoapIn" />
+      <wsdl:output message="tns:GetPolicyNumberSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="PolicyServicesSoap" type="tns:PolicyServicesSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -3278,6 +3372,15 @@
         <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output name="Passing_SafetyPlus_PostSource">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSafetyPlus">
+      <soap:operation soapAction="http://Custodianservices.com/Passing_SafetyPlus_PostSource_Destionation_From_To" style="document" />
+      <wsdl:input name="Passing_SafetyPlus_PostSource_Destionation_From_To">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Passing_SafetyPlus_PostSource_Destionation_From_To">
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -3848,6 +3951,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetPolicyNumber">
+      <soap:operation soapAction="http://Custodianservices.com/GetPolicyNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="PolicyServicesSoap12" type="tns:PolicyServicesSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -4001,6 +4113,15 @@
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output name="Passing_SafetyPlus_PostSource">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSafetyPlus">
+      <soap12:operation soapAction="http://Custodianservices.com/Passing_SafetyPlus_PostSource_Destionation_From_To" style="document" />
+      <wsdl:input name="Passing_SafetyPlus_PostSource_Destionation_From_To">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Passing_SafetyPlus_PostSource_Destionation_From_To">
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -4564,6 +4685,15 @@
     </wsdl:operation>
     <wsdl:operation name="PostTQScheduledSync">
       <soap12:operation soapAction="http://Custodianservices.com/PostTQScheduledSync" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyNumber">
+      <soap12:operation soapAction="http://Custodianservices.com/GetPolicyNumber" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

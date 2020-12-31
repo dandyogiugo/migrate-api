@@ -804,6 +804,12 @@
     <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.PostTQScheduledSyncResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\CustodianAPI\Policyservices.wsdl" />
     <None Include="Service References\CustodianAPI\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
