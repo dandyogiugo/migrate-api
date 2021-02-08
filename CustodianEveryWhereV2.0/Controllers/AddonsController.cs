@@ -136,6 +136,51 @@ namespace CustodianEveryWhereV2._0.Controllers
                 return new res { message = "System error, Try Again", status = (int)HttpStatusCode.NotFound };
             }
         }
+
+        public async Task<res> GetDisplayProduct(string merchant_id)
+        {
+            try
+            {
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    Log.Info($"Invalid merchant Id {merchant_id}");
+                    return new res
+                    {
+                        status = (int)HttpStatusCode.Forbidden,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                var check_user_function = await util.CheckForAssignedFunction("GetDisplayProduct", merchant_id);
+                if (!check_user_function)
+                {
+                    Log.Info($"Permission denied from accessing this feature for policy search {merchant_id}");
+                    return new res
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+
+                string getFile = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/TravelCategoryJSON/product.json"));
+                var adds = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(getFile);
+                return new res
+                {
+                    status = (int)HttpStatusCode.OK,
+                    message = "fetch was successful",
+                    data = adds
+                };
+            }
+            catch (Exception ex)
+            {
+
+                Log.Error(ex.Message);
+                Log.Error(ex.StackTrace);
+                Log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return new res { message = "System error, Try Again", status = (int)HttpStatusCode.NotFound };
+            }
+        }
     }
 
 }

@@ -341,7 +341,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             var reciept_base_url = ConfigurationManager.AppSettings["Reciept_Base_Url"];
                             cert_number = cert_code;
                             save_new.policyNumber = policy_number;
-                            cert_url = $"{reciept_base_url}+mUser=CUST_WEB & mCert={cert_code}&mCert2={cert_code}";
+                            cert_url = $"{reciept_base_url}mUser=CUST_WEB&mCert={cert_code}&mCert2={cert_code}";
                         }
                         if (!string.IsNullOrEmpty(Auto.attachment))
                         {

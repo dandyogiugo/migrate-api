@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataStore.ViewModels
 {
-    public class Documents : CoreModels
+    public class fDocuments : CoreModels
     {
         [Required]
         public string docType { get; set; }

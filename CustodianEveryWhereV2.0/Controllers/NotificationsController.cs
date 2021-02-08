@@ -371,7 +371,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpPost]
-        public async Task<notification_response> RequestForDocuments(Documents documents)
+        public async Task<notification_response> RequestForDocuments(fDocuments documents)
         {
             try
             {

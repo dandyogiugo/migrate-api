@@ -839,6 +839,7 @@
     <Content Include="TravelCategoryJSON\AppUpdate.json" />
     <Content Include="TravelCategoryJSON\adds.json" />
     <Content Include="TravelCategoryJSON\countryPhoneCode.json" />
+    <Content Include="TravelCategoryJSON\product.json" />
     <None Include="Web References\RSA\cal.xsd">
       <SubType>Designer</SubType>
     </None>

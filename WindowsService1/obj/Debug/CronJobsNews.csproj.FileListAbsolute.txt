@@ -177,3 +177,5 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsSe
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\obj\Debug\CronJobsNews.csproj.CopyComplete
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\obj\Debug\WindowsService1.exe
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\obj\Debug\WindowsService1.pdb
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Debug\BouncyCastle.Crypto.dll

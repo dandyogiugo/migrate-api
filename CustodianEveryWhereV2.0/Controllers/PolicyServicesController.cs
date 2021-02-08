@@ -118,7 +118,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var generate_otp = await util.GenerateOTP(false, email?.Trim(), "POLICYSERVICE", Platforms.ADAPT);
+                var generate_otp = await util.GenerateOTP(false, email?.Trim() ?? phone?.Trim(), "POLICYSERVICE", Platforms.ADAPT);
                 string messageBody = $"Adapt Policy Services authentication code <br/><br/><h2><strong>{generate_otp}</strong></h2>";
                 var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Adapt.html"));
                 StringBuilder sb = new StringBuilder(template);
@@ -162,7 +162,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         devicename = policy.devicename,
                         email = obj.email?.ToLower(),
                         is_setup_completed = false,
-                        phonenumber = obj.phone,
+                        phonenumber = util.numberin234(obj.phone?.Trim()),
                         policynumber = obj.policyno?.Trim().ToUpper(),
                         os = policy.os,
 
@@ -178,7 +178,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             {
                                 customer_id = obj.customerid,
                                 email = obj.email?.Trim(),
-                                phonenumber = obj.phone?.Trim()
+                                phonenumber = util.numberin234(obj.phone?.Trim())
                             }
                         };
                     }
@@ -217,7 +217,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         {
                             customer_id = check_setup_has_started.customerid,
                             email = check_setup_has_started.email,
-                            phonenumber = check_setup_has_started.phonenumber
+                            phonenumber = util.numberin234(check_setup_has_started.phonenumber)
                         }
                     };
                 }

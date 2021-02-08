@@ -156,6 +156,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         {
             try
             {
+                log.Info($"Data:::  {email}, {otp}");
                 var check_user_function = await util.CheckForAssignedFunction("ResetChakaPassword", merchant_id);
                 if (!check_user_function)
                 {

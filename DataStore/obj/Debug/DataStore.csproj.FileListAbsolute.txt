@@ -153,4 +153,7 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\Microsoft.Extensions.Primitives.xml
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.ValueTuple.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.ValueTuple.xml
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.csprojAssemblyReference.cache

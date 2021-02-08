@@ -21,6 +21,9 @@ using UpSellingAndCrossSelling.CrossSelling;
 using DataStore;
 using System.Text.RegularExpressions;
 using DataStore.Utilities;
+using System.Security.Cryptography;
+using System.Xml.Serialization;
+using System.Numerics;
 
 namespace TestSerials
 {
@@ -28,12 +31,26 @@ namespace TestSerials
     {
         static void Main(string[] args)
         {
+            string v = "duEseTcL6KhNoUksJlUtd50c5ToaYMff/a/ho3sPbnrFQ3IASGcziYcW+q+Qs5EyK65Lcp6GOm10G9AagRt+k2c5gGRPCh52cqsUchLcwAsL+0oqbVxQ6OQ90jlmLFhHipWWee0SRUp2mGya+8d7HQ18nLPOijq84sfkkGohFVxjtwvLRJFv4PCCOk1Jh1p7lpoVW6wTLnPYQSFZFRvvfde4/iOygU5Jzad878jxs+cIwYyIdOdfjRSvArAJhB+FjqJuLoWs4+RB/WUJfswWtoiQPv4OZcHGnAiTJigbwKHh8v1lcQwM1YLN2SAuWKnh7MYo/dDzo0yDz8AOsnJaUg==";
+            var signature = InterStateEncryption.GetSignature("AMAGASHIamagashi.pat@mail.com001");
+            var verify = InterStateEncryption.VerifySignature("AMAGASHIamagashi.pat@mail.com001", signature);
+            var _key = verify;
+            //RSA();
+            //byte[] data = Encoding.Unicode.GetBytes("AMAGASHIamagashi.pat@mail.com001");
+            //RSACryptoServiceProvider csp = new RSACryptoServiceProvider();//make a new csp with a new keypair
+            //var pub_key = csp.ExportParameters(false); // export public key
+            //var priv_key = csp.ExportParameters(true); // export private key
+
+            //var encData = csp.Encrypt(data, false); // encrypt with PKCS#1_V1.5 Padding
+            //var output = Convert.ToBase64String(encData);
+            //var decBytes = MyRSAImpl.plainDecryptPriv(encData, priv_key); //decrypt with own BigInteger based implementation
+            //var decData = decBytes.SkipWhile(x => x != 0).Skip(1).ToArray();//strip PKCS#1_V1.5 padding
 
             //var test = new Utility().RoundValueToNearst100(5227.20);
             //var test1 = new Utility().RoundValueToNearst100(7597.26);
             //var test2 = new Utility().RoundValueToNearst100(8624.88);
             //var encrypt = new Utility().Encrypt("Amagashi".ToUpper() + "amagashi.pat@mail.com".ToLower() + "001");
-           // var t = encrypt;
+            // var t = encrypt;
             //declare the array.
             //used this instead of a list, it is simpler to handle
             //GetAllLeague.GetLeague();
@@ -133,7 +150,7 @@ namespace TestSerials
         //        //var premium = 5000.00;
         //        //var format = string.Format("{0:1}", premium);
         //        //var test = format;
-       
+
         //        //Console.ReadKey();
 
         //        #region
@@ -355,12 +372,82 @@ namespace TestSerials
         //        Console.WriteLine(ex.InnerException);
         //    }
         //}
+        public static void RSA()
+        {
+            //lets take a new CSP with a new 2048 bit rsa key pair
+            var csp = new RSACryptoServiceProvider(2048);
 
+            //how to get the private key
+            var privKey = csp.ExportParameters(true);
+
+            //and the public key ...
+            var pubKey = csp.ExportParameters(false);
+
+            //converting the public key into a string representation
+            string pubKeyString;
+            {
+                //we need some buffer
+                var sw = new StringWriter();
+                //we need a serializer
+                var xs = new XmlSerializer(typeof(RSAParameters));
+                //serialize the key into the stream
+                xs.Serialize(sw, pubKey);
+                //get the string from the stream
+                pubKeyString = sw.ToString();
+            }
+
+            //converting it back
+            {
+                //get a stream from the string
+                var sr = new System.IO.StringReader(pubKeyString);
+                //we need a deserializer
+                var xs = new System.Xml.Serialization.XmlSerializer(typeof(RSAParameters));
+                //get the object back from the stream
+                pubKey = (RSAParameters)xs.Deserialize(sr);
+            }
+
+            //conversion for the private key is no black magic either ... omitted
+
+            //we have a public key ... let's get a new csp and load that key
+            csp = new RSACryptoServiceProvider();
+            csp.ImportParameters(pubKey);
+
+            //we need some data to encrypt
+            var plainTextData = "AMAGASHIamagashi.pat@mail.com001";
+
+            //for encryption, always handle bytes...
+            var bytesPlainTextData = System.Text.Encoding.Unicode.GetBytes(plainTextData);
+
+            //apply pkcs#1.5 padding and encrypt our data 
+            var bytesCypherText = csp.Encrypt(bytesPlainTextData, false);
+
+            //we might want a string representation of our cypher text... base64 will do
+            var cypherText = Convert.ToBase64String(bytesCypherText);
+
+            /*
+             * some transmission / storage / retrieval
+             * 
+             * and we want to decrypt our cypherText
+             */
+
+            //first, get our bytes back from the base64 string ...
+            bytesCypherText = Convert.FromBase64String(cypherText);
+
+            //we want to decrypt, therefore we need a csp and load our private key
+            csp = new RSACryptoServiceProvider();
+            csp.ImportParameters(privKey);
+
+            //decrypt and strip pkcs#1.5 padding
+            bytesPlainTextData = csp.Decrypt(bytesCypherText, false);
+
+            //get our original plainText back...
+            plainTextData = Encoding.Unicode.GetString(bytesPlainTextData);
+        }
         public void GetAPI()
         {
             var api = "https://jsonmock.hackerrank.com/api/articles?author=epaga&page=1";
             List<dynamic> arr = new List<dynamic>();
-            using (var http = new  HttpClient())
+            using (var http = new HttpClient())
             {
                 var reponse = http.GetAsync(api).GetAwaiter().GetResult();
                 if (reponse.IsSuccessStatusCode)
@@ -739,6 +826,71 @@ namespace TestSerials
         public DateTime MyDate { get; set; }
     }
 
+
+    public class MyRSAImpl
+    {
+
+        private static byte[] rsaOperation(byte[] data, BigInteger exp, BigInteger mod)
+        {
+            BigInteger bData = new BigInteger(
+                data    //our data block
+                .Reverse()  //BigInteger has another byte order
+                .Concat(new byte[] { 0 }) // append 0 so we are allways handling positive numbers
+                .ToArray() // constructor wants an array
+            );
+            return
+                BigInteger.ModPow(bData, exp, mod) // the RSA operation itself
+                .ToByteArray() //make bytes from BigInteger
+                .Reverse() // back to "normal" byte order
+                .ToArray(); // return as byte array
+
+            /*
+             * 
+             * A few words on Padding:
+             * 
+             * you will want to strip padding after decryption or apply before encryption 
+             * 
+             */
+        }
+
+        public static byte[] plainEncryptPriv(byte[] data, RSAParameters key)
+        {
+            MyRSAParams myKey = MyRSAParams.fromRSAParameters(key);
+            return rsaOperation(data, myKey.privExponent, myKey.Modulus);
+        }
+        public static byte[] plainEncryptPub(byte[] data, RSAParameters key)
+        {
+            MyRSAParams myKey = MyRSAParams.fromRSAParameters(key);
+            return rsaOperation(data, myKey.pubExponent, myKey.Modulus);
+        }
+        public static byte[] plainDecryptPriv(byte[] data, RSAParameters key)
+        {
+            MyRSAParams myKey = MyRSAParams.fromRSAParameters(key);
+            return rsaOperation(data, myKey.privExponent, myKey.Modulus);
+        }
+        public static byte[] plainDecryptPub(byte[] data, RSAParameters key)
+        {
+            MyRSAParams myKey = MyRSAParams.fromRSAParameters(key);
+            return rsaOperation(data, myKey.pubExponent, myKey.Modulus);
+        }
+
+    }
+
+    public class MyRSAParams
+    {
+        public static MyRSAParams fromRSAParameters(RSAParameters key)
+        {
+            var ret = new MyRSAParams();
+            ret.Modulus = new BigInteger(key.Modulus.Reverse().Concat(new byte[] { 0 }).ToArray());
+            ret.privExponent = new BigInteger(key.D.Reverse().Concat(new byte[] { 0 }).ToArray());
+            ret.pubExponent = new BigInteger(key.Exponent.Reverse().Concat(new byte[] { 0 }).ToArray());
+
+            return ret;
+        }
+        public BigInteger Modulus;
+        public BigInteger privExponent;
+        public BigInteger pubExponent;
+    }
     public static class SimpleObjectMapper
     {
 

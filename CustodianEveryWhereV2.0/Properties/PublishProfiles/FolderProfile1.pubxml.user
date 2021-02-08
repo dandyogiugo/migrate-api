@@ -82,6 +82,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/ApplicationInsights.config">
       <publishTime>09/24/2020 11:56:36</publishTime>
     </File>
+    <File Include="bin/BouncyCastle.Crypto.dll">
+      <publishTime>12/08/2020 18:05:32</publishTime>
+    </File>
     <File Include="bin/CommonServiceLocator.dll">
       <publishTime>09/24/2020 11:57:15</publishTime>
     </File>
@@ -92,34 +95,34 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/24/2020 11:56:38</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.dll">
-      <publishTime>12/31/2020 11:09:23</publishTime>
+      <publishTime>02/08/2021 20:38:28</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.pdb">
-      <publishTime>12/31/2020 11:09:23</publishTime>
+      <publishTime>02/08/2021 20:38:28</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.XmlSerializers.dll">
-      <publishTime>12/31/2020 11:09:26</publishTime>
+      <publishTime>02/08/2021 20:38:30</publishTime>
     </File>
     <File Include="bin/Dapper.dll">
       <publishTime>09/24/2020 11:57:03</publishTime>
     </File>
     <File Include="bin/DapperLayer.dll">
-      <publishTime>12/31/2020 10:57:43</publishTime>
+      <publishTime>02/08/2021 20:22:10</publishTime>
     </File>
     <File Include="bin/DapperLayer.dll.config">
-      <publishTime>12/25/2020 02:44:24</publishTime>
+      <publishTime>01/22/2021 10:27:17</publishTime>
     </File>
     <File Include="bin/DapperLayer.pdb">
-      <publishTime>12/31/2020 10:57:43</publishTime>
+      <publishTime>02/08/2021 20:22:10</publishTime>
     </File>
     <File Include="bin/DataStore.dll">
-      <publishTime>12/31/2020 10:57:41</publishTime>
+      <publishTime>02/08/2021 20:22:10</publishTime>
     </File>
     <File Include="bin/DataStore.dll.config">
-      <publishTime>12/25/2020 02:44:23</publishTime>
+      <publishTime>01/22/2021 10:27:16</publishTime>
     </File>
     <File Include="bin/DataStore.pdb">
-      <publishTime>12/31/2020 10:57:41</publishTime>
+      <publishTime>02/08/2021 20:22:10</publishTime>
     </File>
     <File Include="bin/DotNetZip.dll">
       <publishTime>09/24/2020 11:57:03</publishTime>
@@ -300,6 +303,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>09/24/2020 11:57:09</publishTime>
+    </File>
+    <File Include="bin/System.ValueTuple.dll">
+      <publishTime>09/24/2020 11:57:15</publishTime>
     </File>
     <File Include="bin/System.Web.Cors.dll">
       <publishTime>09/24/2020 11:57:09</publishTime>
@@ -853,6 +859,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="TravelCategoryJSON/countryPhoneCode.json">
       <publishTime>12/22/2020 14:28:04</publishTime>
     </File>
+    <File Include="TravelCategoryJSON/product.json">
+      <publishTime>01/04/2021 09:27:58</publishTime>
+    </File>
     <File Include="TravelCategoryJSON/RagaConfig.json">
       <publishTime>09/24/2020 11:56:38</publishTime>
     </File>
@@ -884,7 +893,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/24/2020 11:56:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/31/2020 10:58:04</publishTime>
+      <publishTime>02/04/2021 23:11:53</publishTime>
     </File>
   </ItemGroup>
 </Project>

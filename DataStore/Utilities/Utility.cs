@@ -527,7 +527,7 @@ namespace DataStore.Utilities
                     }
 
                     var divisionn_obj = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DivisionEmail>>(System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/json.json")));
-                    var div_email = divisionn_obj.FirstOrDefault(x => x.Code.ToUpper() == "Life").Email;
+                    var div_email = divisionn_obj.FirstOrDefault(x => x.Code.ToUpper() == "LIFE").Email;
                     if (!string.IsNullOrEmpty(div_email))
                     {
                         emailaddress = div_email;
@@ -2054,7 +2054,8 @@ namespace DataStore.Utilities
                 {
                     http.DefaultRequestHeaders.Clear();
                     http.DefaultRequestHeaders.Add("Authorization", $"Basic {basicAuth}");
-                    StringContent content = new StringContent($"data=scope=profile&grant_type=client_credentials&userId={authenticateUser.userId}",
+                    http.DefaultRequestHeaders.Add("userId", authenticateUser.userId);
+                    StringContent content = new StringContent($"data=scope=profile&grant_type=client_credentials",
                         Encoding.UTF8, "application/x-www-form-urlencoded");
                     HttpResponseMessage response = await http.PostAsync(url, content);
                     if (!response.IsSuccessStatusCode)
@@ -2069,11 +2070,14 @@ namespace DataStore.Utilities
                     log.Info($"Session loaded successfully {email}");
                     var processResponse = await response.Content.ReadAsAsync<dynamic>();
                     log.Info($"Session loaded successfully data: {processResponse}");
-                    string mode = Config.isDemo ? "Test" : "Live";
+                    string mode = Config.isDemo ? "TEST" : "LIVE";
                     return new
                     {
                         status = 200,
-                        chaka_url = $"{Config.CHAKA_APP_URL}/{mode}/{processResponse.access_token}"
+                        // chaka_url = $"{Config.CHAKA_APP_URL}/{mode}/{processResponse.access_token}",
+                        token = processResponse.access_token,
+                        mode = mode,
+                        script_url = Config.CHAKA_SCRIPT_URL
                     };
 
                     //http://sdk.chakaent.com/${mode}/${token} `
@@ -2089,7 +2093,7 @@ namespace DataStore.Utilities
         {
             try
             {
-                var checkformail = await chaka.FindOneByCriteria(x => x.email.ToLower() == email.ToLower() && x.isActive == true);
+                var checkformail = await chaka.FindOneByCriteria(x => x.email.Trim().ToLower() == email.Trim().ToLower() && x.isActive == true);
                 if (checkformail == null)
                 {
                     return new
@@ -2099,7 +2103,7 @@ namespace DataStore.Utilities
                     };
                 }
 
-                var validOTP = await ValidateOTP(otp, checkformail.mobileNumber);
+                var validOTP = await ValidateOTP(otp, checkformail.mobileNumber.Trim());
                 if (!validOTP)
                 {
                     return new
@@ -2256,6 +2260,22 @@ namespace DataStore.Utilities
             }
         }
 
+
+        public static string CHAKA_SCRIPT_URL
+        {
+            get
+            {
+                string script_url = ConfigurationManager.AppSettings["CHAKA_SCRIPT_URL"];
+                if (!string.IsNullOrEmpty(script_url))
+                {
+                    return script_url;
+                }
+                else
+                {
+                    return "https://self.chakaent.com/assets/js/chakasdk.js";
+                }
+            }
+        }
     }
     public class cron
     {

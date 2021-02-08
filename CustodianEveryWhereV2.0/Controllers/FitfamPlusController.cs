@@ -114,7 +114,22 @@ namespace CustodianEveryWhereV2._0.Controllers
                 if (dy_deals != null && dy_deals.Count > 0)
                 {
                     var ordered_list = dy_deals.OrderByDescending(x => Convert.ToDecimal(x.discounted_pric)).ToList();
-                    deals.Add("deals", ordered_list);
+                    var addHttpstTourl = ordered_list.Select(x => new
+                    {
+                        package_id = x.package_id,
+                        package = x.package,
+                        price = x.price,
+                        status = x.status,
+                        discounted_price = x.discounted_price,
+                        discounted_percent = x.discounted_percent,
+                        description = x.description,
+                        duration = x.duration,
+                        gym = x.gym,
+                        image_url = ($"{x.image_url}".StartsWith("http")) ? $"{x.image_url}".Replace("http", "https") : x.image_url,
+                        membership_id = x.membership_id,
+                        period = x.period
+                    }).ToList<dynamic>();
+                    deals.Add("deals", addHttpstTourl);
                     return new notification_response
                     {
                         status = 200,

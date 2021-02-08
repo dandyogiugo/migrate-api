@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="CustodianEmailSMSGateway">
       <HintPath>..\..\..\..\..\..\..\ProjectNotification\CustodianEmailSMSGateway\bin\Debug\CustodianEmailSMSGateway.dll</HintPath>
     </Reference>
@@ -145,6 +148,9 @@
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -210,10 +216,16 @@
     <Compile Include="Models\WatchedJokes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repository\store.cs" />
+    <Compile Include="Utilities\AsymmetricKeyParameterExtensions.cs" />
+    <Compile Include="Utilities\InterStateEncryption.cs" />
+    <Compile Include="Utilities\RsaKeyParameters.cs" />
+    <Compile Include="Utilities\RSAParametersExtensions.cs" />
+    <Compile Include="Utilities\RsaPrivateKeyParametersExtensions.cs" />
+    <Compile Include="Utilities\RsaPublicKeyParametersExtensions.cs" />
     <Compile Include="Utilities\TravelUtility.cs" />
     <Compile Include="Utilities\Utility.cs" />
     <Compile Include="ViewModels\CoreModels.cs" />
-    <Compile Include="ViewModels\Documents.cs" />
+    <Compile Include="ViewModels\fDocuments.cs" />
     <Compile Include="ViewModels\enums.cs" />
     <Compile Include="ViewModels\GlobalConstant.cs" />
     <Compile Include="ViewModels\HomeShieldViewModel.cs" />
