@@ -21,6 +21,7 @@ namespace DataStore.ViewModels
         public static string LabelHalogen { get; } = ConfigurationManager.AppSettings["LabelHalogen"];
         public static string LoadingPrice { get; } = ConfigurationManager.AppSettings["LoadingPrice"];
         public static string GTBANK { get; } = ConfigurationManager.AppSettings["GTBANK"];
+        public static string CONTACT { get; } =  ConfigurationManager.AppSettings["contact"];
         public static bool IsDemoMode
         {
             get

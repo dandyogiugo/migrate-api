@@ -562,4 +562,3 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\Custodian
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\zh\Hangfire.Core.resources.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\zh-TW\Hangfire.Core.resources.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.csproj.CopyComplete
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\BouncyCastle.Crypto.dll

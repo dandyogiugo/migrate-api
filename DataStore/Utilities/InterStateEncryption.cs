@@ -1,13 +1,6 @@
-﻿using Newtonsoft.Json;
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Generators;
-using Org.BouncyCastle.Security;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStore.Utilities
 {
@@ -16,9 +9,9 @@ namespace DataStore.Utilities
         private static int PROVIDER_RSA_FULL = 1;
         private static string KEY_CONTAINER_NAME = "FolioAPIKeyContainer";
         private static int KEY_SIZE = 2048;
-        public static string GetSignature(string text)
+        public static string GetSignature(string text, string pubKeyPath)
         {
-            GenerateKeyPair();
+            GenerateKeyPair(pubKeyPath);
             byte[] signatureBytes = SignText(text);
             if (signatureBytes != null)
             {
@@ -55,34 +48,57 @@ namespace DataStore.Utilities
             try
             {
                 RSACryptoServiceProvider rsa = GetRSACryptoServiceProviderFromContainer();
-
                 // Verify the signed text using the signature. Pass a new instance of SHA512
                 // to specify the hashing algorithm.
                 return rsa.VerifyData(text, SHA512.Create(), signature);
             }
             catch (CryptographicException e)
             {
-               // Console.WriteLine(e.Message);
-
+                // Console.WriteLine(e.Message);
                 return false;
             }
         }
-
-        private static void GenerateKeyPair()
+        public static dynamic GenerateKeys()
         {
             CspParameters cspParams = new CspParameters(PROVIDER_RSA_FULL);
             cspParams.KeyContainerName = KEY_CONTAINER_NAME;
             cspParams.Flags = CspProviderFlags.UseMachineKeyStore;
             cspParams.ProviderName = "Microsoft Strong Cryptographic Provider";
             RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(KEY_SIZE, cspParams);
-
             // Console.WriteLine("The RSA key pair with a key size of {0} bits was added to the container: \"{1}\".", rsa.KeySize, KEY_CONTAINER_NAME);
             // Important! The key pair needs to be loaded from the key container
             // for the correct key information that was stored to be displayed.
-
+            // rsa.ImportParameters();
+            //string privateKey = System.IO.File.ReadAllText(pubKeyPath);
+            //rsa.FromXmlString(privateKey.Trim());
             rsa = GetRSACryptoServiceProviderFromContainer();
-            var pub_key = rsa.ToXmlString(false); // export public key
-            var priv_key = rsa.ToXmlString(true); // export private key
+            return new
+            {
+                publickey = rsa.ToXmlString(false),
+                privatekey = rsa.ToXmlString(true)
+            };
+            //var pub_key = rsa.ToXmlString(false); // export public key
+            //var priv_key = rsa.ToXmlString(true); // export private key
+            // Display the key information to the console.
+            //Console.WriteLine($"Key information retrieved from container : \n {rsa.ToXmlString(true)}");
+        }
+
+        private static void GenerateKeyPair(string pubKeyPath)
+        {
+            CspParameters cspParams = new CspParameters(PROVIDER_RSA_FULL);
+            cspParams.KeyContainerName = KEY_CONTAINER_NAME;
+            cspParams.Flags = CspProviderFlags.UseMachineKeyStore;
+            cspParams.ProviderName = "Microsoft Strong Cryptographic Provider";
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(KEY_SIZE, cspParams);
+            // Console.WriteLine("The RSA key pair with a key size of {0} bits was added to the container: \"{1}\".", rsa.KeySize, KEY_CONTAINER_NAME);
+            // Important! The key pair needs to be loaded from the key container
+            // for the correct key information that was stored to be displayed.
+            // rsa.ImportParameters();
+            string privateKey = System.IO.File.ReadAllText(pubKeyPath);
+            rsa.FromXmlString(privateKey.Trim());
+            rsa = GetRSACryptoServiceProviderFromContainer();
+            //var pub_key = rsa.ToXmlString(false); // export public key
+            //var priv_key = rsa.ToXmlString(true); // export private key
             // Display the key information to the console.
             //Console.WriteLine($"Key information retrieved from container : \n {rsa.ToXmlString(true)}");
         }

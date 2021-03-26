@@ -26,6 +26,8 @@ using System.Text.RegularExpressions;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Formatting;
+using System.Net;
+using System.Security.Authentication;
 
 namespace DataStore.Utilities
 {
@@ -476,10 +478,11 @@ namespace DataStore.Utilities
             }
             return null;
         }
-        public void SendMail(Life_Claims mail, bool IsCustodian, string template, string imagepath)
+        public void SendMail(Life_Claims mail, bool IsCustodian, string template, string imagepath, string division_email = null)
         {
             try
             {
+                string test = Config.isDemo ? "Test" : "";
                 log.Info($"About to send email to {mail.email_address}");
                 StringBuilder sb = new StringBuilder(template);
                 log.Info($"About to send temp to here");
@@ -526,14 +529,12 @@ namespace DataStore.Utilities
                         emailaddress = list[0];
                     }
 
-                    var divisionn_obj = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DivisionEmail>>(System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/json.json")));
-                    var div_email = divisionn_obj.FirstOrDefault(x => x.Code.ToUpper() == "LIFE").Email;
-                    if (!string.IsNullOrEmpty(div_email))
+                    if (!string.IsNullOrEmpty(division_email))
                     {
-                        emailaddress = div_email;
+                        emailaddress = division_email;
                         cc.Add(list[0]);
                     }
-                    var send = new SendEmail().Send_Email(emailaddress, "Claim Request", sb.ToString(), "Claims Request", true, image_path, cc, null, null);
+                    var send = new SendEmail().Send_Email(emailaddress, $"Claim Request {test}", sb.ToString(), $"Claim Request {test}", true, image_path, cc, null, null);
                 }
                 else
                 {
@@ -542,7 +543,7 @@ namespace DataStore.Utilities
                                 You can check your claim status on our website or call(+234)12774000 - 9";
                     sb.Replace("#CONTENT#", msg_1);
                     sb.Replace("#FOOTER#", "");
-                    var send = new SendEmail().Send_Email(mail.email_address, "Claim Request", sb.ToString(), "Claims Request", true, image_path, null, null, null);
+                    var send = new SendEmail().Send_Email(mail.email_address, $"Claim Request {test}", sb.ToString(), $"Claim Request {test}", true, image_path, null, null, null);
                 }
             }
             catch (Exception ex)
@@ -556,6 +557,7 @@ namespace DataStore.Utilities
         {
             try
             {
+                string test = Config.isDemo ? "Test" : "";
                 log.Info($"About to send email to {mail.email_address}");
                 StringBuilder sb = new StringBuilder(template);
                 log.Info($"About to send temp to here");
@@ -625,7 +627,7 @@ namespace DataStore.Utilities
                             emailaddress = list[0];
                         }
                     }
-                    var send = new SendEmail().Send_Email(emailaddress, "Claim Request", sb.ToString(), "Claims Request", true, image_path, cc, null, null);
+                    var send = new SendEmail().Send_Email(emailaddress, $"Claim Request {test}", sb.ToString(), $"Claim Request {test}", true, image_path, cc, null, null);
                 }
                 else
                 {
@@ -633,7 +635,7 @@ namespace DataStore.Utilities
                                     If you did not initiate this process, please contact us on (+234)12774008-9 or carecentre@custodianinsurance.com");
                     string msg_1 = @"Dear Valued Customer,<br/><br/>Your claim with the below details has been submitted successfully.";
                     sb.Replace("#CONTENT#", msg_1);
-                    var send = new SendEmail().Send_Email(mail.email_address, "Claim Request", sb.ToString(), "Claims Request", true, image_path, null, null, null);
+                    var send = new SendEmail().Send_Email(mail.email_address, $"Claim Request {test}", sb.ToString(), $"Claim Request {test}", true, image_path, null, null, null);
                 }
             }
             catch (Exception ex)
@@ -1903,9 +1905,13 @@ namespace DataStore.Utilities
                 string url = $"{Config.CHAKA_BASE_URL}/oauth/token";
                 var basicAuth = Convert.ToBase64String(Encoding.UTF8.GetBytes(Config.CHAKA_BASIC_AUTH));
                 log.Info($"About to get token from chaka for userId: {userId}");
+
+
                 using (var http = new HttpClient())
                 {
-
+                    ServicePointManager.Expect100Continue = true;
+                    ServicePointManager.DefaultConnectionLimit = 9999;
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                     http.DefaultRequestHeaders.Add("Authorization", $"Basic {basicAuth}");
                     StringContent content = new StringContent("data=scope=profile&grant_type=client_credentials",
                         Encoding.UTF8, "application/x-www-form-urlencoded");
@@ -1971,12 +1977,17 @@ namespace DataStore.Utilities
                 }
                 else
                 {
+
                     using (var http = new HttpClient())
                     {
+                        ServicePointManager.Expect100Continue = true;
+                        ServicePointManager.DefaultConnectionLimit = 9999;
+                        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                         string url = $"{Config.CHAKA_BASE_URL}/api/v1/users/signup";
                         http.DefaultRequestHeaders.Clear();
                         http.DefaultRequestHeaders.Add("Authorization", $"Bearer {getToken.data.access_token}");
                         http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                       
                         var request = await http.PostAsJsonAsync<ChakaSignUp>(url, signUp);
                         if (!request.IsSuccessStatusCode)
                         {
@@ -2050,8 +2061,12 @@ namespace DataStore.Utilities
                 //var basicAuth = base64Decode(Config.CHAKA_BASIC_AUTH);
                 var basicAuth = Convert.ToBase64String(Encoding.UTF8.GetBytes(Config.CHAKA_BASIC_AUTH));
                 log.Info($"About to get token from chaka for userId: {email}");
+
                 using (var http = new HttpClient())
                 {
+                    ServicePointManager.Expect100Continue = true;
+                    ServicePointManager.DefaultConnectionLimit = 9999;
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                     http.DefaultRequestHeaders.Clear();
                     http.DefaultRequestHeaders.Add("Authorization", $"Basic {basicAuth}");
                     http.DefaultRequestHeaders.Add("userId", authenticateUser.userId);
@@ -2133,6 +2148,107 @@ namespace DataStore.Utilities
             {
 
                 throw ex;
+            }
+        }
+
+        public void SendWealthPlusMail(WealthPlusView mail, bool IsCustodian, string template, string imagepath, string attachmentpath, string divisionemail = "")
+        {
+            try
+            {
+                string test = Config.isDemo ? "Test" : "";
+                log.Info($"About to send email to {mail.Email}");
+                StringBuilder sb = new StringBuilder(template);
+                log.Info($"About to send temp to here");
+                sb.Replace("#NAME#", $"{mail.Title} {mail.Surname} {mail.MiddleName}  {mail.FirstName}");
+                sb.Replace("#EMAILADDRESS#", mail.Email?.ToLower());
+                sb.Replace("#PHONENUMBER#", mail.MobileNo);
+                sb.Replace("#ADDRESS#", mail.address);
+                sb.Replace("#DOB#", mail.DOB.ToShortDateString());
+                sb.Replace("#GENDER#", mail.Gender);
+                sb.Replace("#TERM#", mail.PolicyTerm.ToString());
+                sb.Replace("#FREQUENCY#", mail.Frequency);
+                sb.Replace("#AMOUNT#", string.Format("{0:N}", mail.AmountToSave));
+                sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
+                log.Info($"About to send param to all");
+                var image_path = imagepath;
+                if (IsCustodian)
+                {
+                    sb.Replace("#FOOTER#", "");
+                    string msg_1 = @"Dear Team,<br/><br/> A customer with details below requested for quotation";
+                    sb.Replace("#CONTENT#", msg_1);
+                    var email = ConfigurationManager.AppSettings["Notification"];
+                    var list = email.Split('|');
+                    string emailaddress = "";
+                    List<string> cc = new List<string>();
+                    if (list.Count() > 1)
+                    {
+                        int i = 0;
+                        if (!string.IsNullOrEmpty(divisionemail))
+                        {
+                            emailaddress = divisionemail;
+                        }
+                        else
+                        {
+                            emailaddress = list[0];
+                        }
+
+                        foreach (var item in list)
+                        {
+                            if (!string.IsNullOrEmpty(divisionemail))
+                            {
+                                cc.Add(item);
+                                ++i;
+                            }
+                            else
+                            {
+                                if (i == 0)
+                                {
+                                    ++i;
+                                    continue;
+                                }
+                                else
+                                {
+                                    cc.Add(item);
+                                    ++i;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //emailaddress = list[0];
+                        if (!string.IsNullOrEmpty(divisionemail))
+                        {
+                            emailaddress = divisionemail;
+                            cc.Add(list[0]);
+                        }
+                        else
+                        {
+                            emailaddress = list[0];
+                        }
+                    }
+                    List<string> attach = null;
+                    if (!string.IsNullOrEmpty(attachmentpath))
+                    {
+                        attach = new List<string>();
+                        attach.Add(attachmentpath);
+                    }
+                    var send = new SendEmail().Send_Email(emailaddress, $"Quote Request Custodian WealthPlus {test}", sb.ToString(), $"Quote Request Custodian WealthPlus {test}", true, image_path, cc, null, attach);
+                }
+                else
+                {
+                    //sb.Replace("#FOOTER#", @"Please visit our website to confirm the status of your claim.<br /><br />
+                    //                If you did not initiate this process, please contact us on (+234)12774008-9 or carecentre@custodianinsurance.com");
+                    //string msg_1 = @"Dear Valued Customer,<br/><br/>Your claim with the below details has been submitted successfully.";
+                    //sb.Replace("#CONTENT#", msg_1);
+                    //var send = new SendEmail().Send_Email(mail.email_address, $"Claim Request {test}", sb.ToString(), $"Claim Request {test}", true, image_path, null, null, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
             }
         }
     }
@@ -2259,8 +2375,6 @@ namespace DataStore.Utilities
                 }
             }
         }
-
-
         public static string CHAKA_SCRIPT_URL
         {
             get
@@ -2276,6 +2390,24 @@ namespace DataStore.Utilities
                 }
             }
         }
+
+        private const string DEFAULT_INTER_STATE_URL = "https://online.interstatesecurities.com/customers/signup/api";
+        public static string INTER_STATE_URL
+        {
+            get
+            {
+                string url = ConfigurationManager.AppSettings["INTER_STATE_URL"];
+                if (!string.IsNullOrEmpty(url))
+                {
+                    return url;
+                }
+                else
+                {
+                    return INTER_STATE_URL;
+                }
+            }
+        }
+        public static string INTER_STATE_TERMINALID { get; } = ConfigurationManager.AppSettings["INTER_STATE_TERMINALID"];
     }
     public class cron
     {

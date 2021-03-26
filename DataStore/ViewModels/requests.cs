@@ -591,7 +591,7 @@ namespace DataStore.ViewModels
         }
         [Required]
         public Platforms platform { get; set; }
-     
+
         public string mobile { get; set; }
         [Required]
         public string fullname { get; set; }
@@ -599,7 +599,7 @@ namespace DataStore.ViewModels
         public string hash { get; set; }
         [Required]
         public string merchant_id { get; set; }
-     
+
     }
 
     public class Rate
@@ -1300,6 +1300,70 @@ namespace DataStore.ViewModels
         public string mobileno { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
+    }
+
+    public class AgentModel : CoreModels
+    {
+        public AgentModel()
+        {
+
+        }
+
+        [Required]
+        public string AgentCode { get; set; }
+        public string Os { get; set; }
+    }
+
+    public class AgentData
+    {
+        public AgentData()
+        {
+
+        }
+
+        public string AgntRefID { get; set; }
+        public string Agnt_Name { get; set; }
+        public string Agnt_Address { get; set; }
+        public string Agnt_Email { get; set; }
+        public string Agnt_Phone { get; set; }
+        public string Agnt_Phone2 { get; set; }
+        public string Agnt_Status { get; set; }
+    }
+
+    public class AgentPolicies
+    {
+        public AgentPolicies()
+        {
+
+        }
+        public string policy_no { get; set; }
+        public string FullName { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Product_lng_descr { get; set; }
+        public string Sub_prod_lng_descr { get; set; }
+        public string Policy_status { get; set; }
+        public string Data_source { get; set; }
+    }
+
+    public class AgentPoliciesView
+    {
+        public AgentPoliciesView()
+        {
+
+        }
+        public string policy_no { get; set; }
+        public string FullName { get; set; }
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Product_lng_descr { get; set; }
+        public string Sub_prod_lng_descr { get; set; }
+        public string Policy_status { get; set; }
+        public string Data_source { get; set; }
     }
 }
 

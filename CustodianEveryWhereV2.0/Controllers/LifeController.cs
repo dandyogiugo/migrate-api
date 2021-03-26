@@ -171,9 +171,19 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 #endregion
 
-
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
+                    if (quote.policy_type != PolicyType.TermAssurance)
+                    {
+                        if (quote.amount < 2000)
+                        {
+                            return new notification_response
+                            {
+                                message = "Minimum amount to save for this policy type is (N2,000)",
+                                status = 203
+                            };
+                        }
+                    }
                     var clientCode = api.CreateLifeClient("None", "None", "None", "None", dob, "None", "none@gmail.com", "0800000000001");
                     log.Info($"create client response from api {clientCode}");
                     if (string.IsNullOrEmpty(clientCode))
@@ -188,17 +198,27 @@ namespace CustodianEveryWhereV2._0.Controllers
                     var clientobj = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(clientCode);
                     if (quote.policy_type.ToString().ToUpper() == PolicyType.CapitalBuilder.ToString().ToUpper())
                     {
+                        if (quote.terms < 5 || quote.terms > 25)
+                        {
+                            return new notification_response
+                            {
+                                message = "Invalid policy term: the number of term for this policy ranges from 5years  to 25years",
+                                status = 203
+                            };
+                        }
                         var capital = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), "", 1, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
                         if (!string.IsNullOrEmpty(capital))
                         {
                             var quot = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(capital);
+
                             log.Info($"Success computing(CapitalBuilder) premium from service response {capital}");
                             return new notification_response
                             {
                                 status = 200,
                                 message = "operation was successful",
                                 data = quot,
-                                sum_insured = Convert.ToDecimal(quot.sumInsured)
+                                sum_insured = Convert.ToDecimal(quot.sumInsured),
+                                policyterms = Enumerable.Range(5, 21).ToList()
                             };
                             //sumassured = quote.sumInsured.ToString();
 
@@ -217,6 +237,16 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                     else if (quote.policy_type.ToString().ToUpper() == PolicyType.LifeTimeHarvest.ToString().ToUpper())
                     {
+                        int[] terms = { 6, 9, 12, 15, 18, 21, 24 };
+                        if (!terms.Any(x => x == Convert.ToInt32(quote.terms)))
+                        {
+
+                            return new notification_response
+                            {
+                                message = "Invalid policy term: the number of terms for this policy are( 6, 9, 12, 15, 18, 21, 24 ) years",
+                                status = 203
+                            };
+                        }
                         var lifetime = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), "", 24, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
                         if (!string.IsNullOrEmpty(lifetime))
                         {
@@ -238,7 +268,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 status = 200,
                                 message = "operation was successful",
                                 data = quot,
-                                sum_insured = suminsured
+                                sum_insured = suminsured,
+                                policyterms = terms
                             };
                             // placeholder = "CUSTODIAN LIFE TIME HARVEST";
                         }
@@ -254,6 +285,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
                     else if (quote.policy_type.ToString().ToUpper() == PolicyType.EsusuShield.ToString().ToUpper())
                     {
+                        var terms = new List<int>() { 1, 2, 3, 4, 5 };
+                        if (!terms.Any(x => x == Convert.ToInt32(quote.terms)))
+                        {
+
+                            return new notification_response
+                            {
+                                message = "Invalid policy term: the number of terms for this policy are(1, 2, 3, 4, 5) years",
+                                status = 203
+                            };
+                        }
                         var esusushiled = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), "", 14, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
                         if (!string.IsNullOrEmpty(esusushiled))
                         {
@@ -261,12 +302,14 @@ namespace CustodianEveryWhereV2._0.Controllers
                             //sumassured = quote.sumInsured.ToString();
                             log.Info($"Success computing(Esusu Shield) premium from service response{Newtonsoft.Json.JsonConvert.SerializeObject(esusushiled)}");
                             //placeholder = "CUSTODIAN ESUSU SHIELD";
+
                             return new notification_response
                             {
                                 status = 200,
                                 message = "operation was successful",
                                 data = quot,
-                                sum_insured = Convert.ToDecimal(quot.sumInsured)
+                                sum_insured = Convert.ToDecimal(quot.sumInsured),
+                                policyterms = terms
                             };
                         }
                         else
@@ -304,6 +347,42 @@ namespace CustodianEveryWhereV2._0.Controllers
                         else
                         {
                             log.Info($"Error computing(Term Assurance) premium from service response{Newtonsoft.Json.JsonConvert.SerializeObject(TermAssurance)}");
+                            return new notification_response
+                            {
+                                status = 204,
+                                message = "Sorry, something went wrong while computing premium. Try again",
+                            };
+                        }
+                    }
+                    else if (quote.policy_type.ToString().ToUpper() == PolicyType.WealthPlus.ToString().ToUpper())
+                    {
+                        if ((today - passdate) > 60)
+                        {
+                            return new notification_response
+                            {
+                                status = 204,
+                                message = "Sorry, you are ineligible to buy this policy min age: 18 max age: 60",
+                            };
+                        }
+
+                        var wealthplus = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), "", 41, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
+
+                        if (!string.IsNullOrEmpty(wealthplus))
+                        {
+                            var _quote = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(wealthplus);
+                            // var parseHtml = new HtmlDocument();
+
+                            return new notification_response
+                            {
+                                status = 200,
+                                message = "operation was successful",
+                                data = _quote,
+                                sum_insured = Convert.ToDecimal(_quote.sumInsured)
+                            };
+                        }
+                        else
+                        {
+                            log.Info($"Error computing(wealthplus) premium from service response{Newtonsoft.Json.JsonConvert.SerializeObject(wealthplus)}");
                             return new notification_response
                             {
                                 status = 204,
@@ -393,11 +472,14 @@ namespace CustodianEveryWhereV2._0.Controllers
                 {
                     PlaceHolder = "CUSTODIAN LIFE TIME HARVEST";
                 }
-                else
+                else if (BuyLife.policytype.ToString().ToUpper() == PolicyType.TermAssurance.ToString().ToUpper())
                 {
                     PlaceHolder = "CUSTODIAN TERM ASSURANCE";
                 }
-
+                else if (BuyLife.policytype.ToString().ToUpper() == PolicyType.WealthPlus.ToString().ToUpper())
+                {
+                    PlaceHolder = "CUSTODIAN WEALTH PLUS";
+                }
                 var checkme = await _Buy.FindOneByCriteria(x => x.reference.ToLower() == BuyLife.payment_reference.ToLower());
                 if (checkme != null)
                 {

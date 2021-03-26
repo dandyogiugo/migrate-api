@@ -443,7 +443,12 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 else
                 {
-                    email_division = divisionn_obj.FirstOrDefault(x => x.Code.ToUpper() == "LIFE");
+                    return new notification_response
+                    {
+                        message = "Sorry, this service temporarily unavaible. Please visit https://life.custodianplc.com.ng to download your policy document",
+                        status = 204,
+                    };
+                    // email_division = divisionn_obj.FirstOrDefault(x => x.Code.ToUpper() == "LIFE");
                 }
                 var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Notification.html"));
                 StringBuilder sb = new StringBuilder(template);
@@ -474,7 +479,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
                 var imagepath = HttpContext.Current.Server.MapPath("~/Images/logo-white.png");
                 var cc = ConfigurationManager.AppSettings["Notification"]?.Split('|')?.ToList();
-                new SendEmail().Send_Email(email_division.Email, $"Request for {documents.docType} doucument", sb.ToString(), $"Request for {documents.docType} doucument", true, imagepath, cc, null, null);
+                new SendEmail().Send_Email(email_division.Email, $"Request for {documents.docType}", sb.ToString(), $"Request for {documents.docType}", true, imagepath, cc, null, null);
                 var save = new RequestDocument
                 {
                     DateRequested = DateTime.Now,

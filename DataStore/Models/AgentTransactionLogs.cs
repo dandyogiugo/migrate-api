@@ -41,5 +41,7 @@ namespace DataStore.Models
         public string merchant_id { get; set; }
         [MaxLength(20)]
         public string vehicle_reg_no { get; set; }
+        public string reference_key { get; set; }
+        public DateTime? pushDate { get; set; }
     }
 }

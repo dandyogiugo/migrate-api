@@ -11,6 +11,7 @@
     <AssemblyName>DataStore</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -177,6 +178,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdaptLeads.cs" />
     <Compile Include="Models\AdaptTravelInsurance.cs" />
+    <Compile Include="Models\AgentServices.cs" />
     <Compile Include="Models\AgentTransactionLogs.cs" />
     <Compile Include="Models\ApiConfiguration.cs" />
     <Compile Include="Models\ApiMethods.cs" />
@@ -214,14 +216,10 @@
     <Compile Include="Models\Token.cs" />
     <Compile Include="Models\TravelInsurance.cs" />
     <Compile Include="Models\WatchedJokes.cs" />
+    <Compile Include="Models\WealthPlus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repository\store.cs" />
-    <Compile Include="Utilities\AsymmetricKeyParameterExtensions.cs" />
     <Compile Include="Utilities\InterStateEncryption.cs" />
-    <Compile Include="Utilities\RsaKeyParameters.cs" />
-    <Compile Include="Utilities\RSAParametersExtensions.cs" />
-    <Compile Include="Utilities\RsaPrivateKeyParametersExtensions.cs" />
-    <Compile Include="Utilities\RsaPublicKeyParametersExtensions.cs" />
     <Compile Include="Utilities\TravelUtility.cs" />
     <Compile Include="Utilities\Utility.cs" />
     <Compile Include="ViewModels\CoreModels.cs" />
@@ -237,6 +235,7 @@
     <Compile Include="ViewModels\response.cs" />
     <Compile Include="ViewModels\TravelModels.cs" />
     <Compile Include="ViewModels\ViewModelNonLife.cs" />
+    <Compile Include="ViewModels\WealthPlusView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

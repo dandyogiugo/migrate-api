@@ -43,7 +43,7 @@ namespace CustodianEveryWhereV2._0.Controllers
             try
             {
                 log.Info("about to validate request params for ProcessClaims()");
-                //log.Info(Newtonsoft.Json.JsonConvert.SerializeObject(claims));
+                log.Info(Newtonsoft.Json.JsonConvert.SerializeObject(claims));
                 if (!ModelState.IsValid)
                 {
                     return new claims_response
@@ -151,10 +151,14 @@ namespace CustodianEveryWhereV2._0.Controllers
                         await tempStore.Update(getdata);
                     }
                 }
+
+                var divisionn_obj = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DivisionEmail>>(File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/json.json")));
+                var div_email = divisionn_obj.FirstOrDefault(x => x.Code.ToUpper() == "LIFE").Email;
+                log.Info($"about to send mail to division {div_email}");
                 //send mail to custodian
                 Task.Factory.StartNew(() =>
                 {
-                    util.SendMail(claims, true, template, imagepath);
+                    util.SendMail(claims, true, template, imagepath, div_email);
                 });
 
                 //sending mail to customer

@@ -42,18 +42,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BouncyCastle.Crypto.dll" size="2609152">
-      <assemblyIdentity name="BouncyCastle.Crypto" version="1.8.9.0" publicKeyToken="0E99375E54769942" language="neutral" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MzkDx9IqJwmORfxkt3omSqIgYFz70+MpwgDX5LQsiBw=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Common.Logging.dll" size="44544">
       <assemblyIdentity name="Common.Logging" version="3.3.1.0" publicKeyToken="AF08829B84F0328E" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -85,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>daNARfbsNwVipJN9jxGhpYcK+Xqkdb8Rt6C8tu1rMiE=</dsig:DigestValue>
+        <dsig:DigestValue>z2uG1s92PzLFKtkwcrSsq3q7ESbe6ELrmm9O3k+7bRM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -102,26 +90,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DapperLayer.dll" size="64512">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DapperLayer.dll" size="68608">
       <assemblyIdentity name="DapperLayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EZt50BydlBIPSlVoNNeKW1XsTwLF79E5Fi+RYWswveQ=</dsig:DigestValue>
+        <dsig:DigestValue>5olXtXUzHQ6RLdeh/4s9pxLPQbLr5ygwMyWepLduBxA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataStore.dll" size="439808">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataStore.dll" size="455680">
       <assemblyIdentity name="DataStore" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DZKWB80qM7oPlZLVGsyVnsHR//ihtzs7sl1jtl+UwFA=</dsig:DigestValue>
+        <dsig:DigestValue>fKGo53BVfCBXM2p0YJ6j0xgKANIam6vc4esCO4+RJtw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -421,7 +409,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xO3pWqShQibIy1YWJ+vwp3w9tve5jlnRfosm75k31k8=</dsig:DigestValue>
+        <dsig:DigestValue>IVihEWaT7+Q/oGDbJ3YYaQrde08MnlGV6SjL9KyAXcY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>daNARfbsNwVipJN9jxGhpYcK+Xqkdb8Rt6C8tu1rMiE=</dsig:DigestValue>
+        <dsig:DigestValue>z2uG1s92PzLFKtkwcrSsq3q7ESbe6ELrmm9O3k+7bRM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -90,26 +90,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DapperLayer.dll" size="59904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DapperLayer.dll" size="63488">
       <assemblyIdentity name="DapperLayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OGWwxT6LJWwxBNzY3kbLac/AG8FS3Zi8vEmjdFgZuGg=</dsig:DigestValue>
+        <dsig:DigestValue>8ynZrYE4wEl85vuK178184Xr4hAmUXsCq6EqTBd5PRM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataStore.dll" size="380416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataStore.dll" size="428544">
       <assemblyIdentity name="DataStore" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>D2Xa3SA4+RSEGM6V7QClx8px6HKBlZKyojxqATxkF0k=</dsig:DigestValue>
+        <dsig:DigestValue>UPyxILxe7+L5FUJeoIrSwlaZB8uAI36rFU1YNcC7Kcs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -409,7 +409,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wo+7aJMZ9S5RqgisnJMEYrfY67prU/jWU5P7+5MtqZc=</dsig:DigestValue>
+        <dsig:DigestValue>B1aFQai3IyZ2OQivHg5trWe+3WVcwyl/EM071cHoacc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -431,13 +431,13 @@
       <dsig:DigestValue>o1+i5ZLMXytHo86zGv9SamZ3WbzMRDYcSbsMuLjR7ck=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="UpSellingAndCrossSelling.exe.config" size="2752">
+  <file name="UpSellingAndCrossSelling.exe.config" size="2754">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4unj2+xembwPmplA0w9M2Y7fCouJd9SZxIKQ0jLZucA=</dsig:DigestValue>
+      <dsig:DigestValue>EFrKgWHAMXJeCYSHNNdijqtY2dc8fL0S7LV2TeDtmrA=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

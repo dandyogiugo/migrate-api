@@ -125,7 +125,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     return new res
                     {
                         status = 409,
-                        message = "Some required parameters missing from request"
+                        message = string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage))
                     };
                 }
                 // check if user has access to function
@@ -210,7 +210,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     return new res
                     {
                         status = 409,
-                        message = "Some required parameters missing from request"
+                        message = "Some required parameters missing from request =>" + string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage))
                     };
                 }
                 // check if user has access to function
@@ -262,23 +262,24 @@ namespace CustodianEveryWhereV2._0.Controllers
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     string request = null;
+                    string request2 = null;
                     var source = (config.merchant_name.ToLower().Contains("adapt")) ? "ADAPT" : "API";
                     if (Auto.insurance_type == TypeOfCover.Comprehensive)
                     {
-                        //request = api.SubmitPaymentRecord(GlobalConstant.merchant_id,
-                        //    GlobalConstant.password, "", "", "", Auto.dob ?? DateTime.Now, DateTime.Now, "",
-                        //    Auto.customer_name, "", "", Auto.address, Auto.phone_number, Auto.email, Auto.payment_option, "", "",
-                        //    Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured, "ADAPT", "NB", "");
-
                         var count = await auto.GetAll();//TODO: this is not scaleable , just get count only instead of loading the entire record to get count 
                         var resp = await util.SendQuote(Auto, count.Count() + 1);
+                        request = api.SubmitPaymentRecord(GlobalConstant.merchant_id,
+                            GlobalConstant.password, "", "", "", Auto.dob ?? DateTime.Now, DateTime.Now, "",
+                            Auto.customer_name, "", "", Auto.address, Auto.phone_number, Auto.email, Auto.payment_option, "", "",
+                            Auto.insurance_type.ToString().Replace("_", " ").Replace("And", "&"), Auto.premium, Auto.sum_insured, "ADAPT", "NB", Auto.referralCode, Auto.registration_number);
+
                         if (resp.status == 200)
                         {
-                            request = "success";
+                            request2 = "success";
                         }
                         else
                         {
-                            request = "failed";
+                            request2 = "failed";
                         }
 
                     }
@@ -295,7 +296,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     log.Info($"Response from Api {request}");
 
                     //HO/V/29/G0000529E|17294
-                    if (!string.IsNullOrEmpty(request) || request.ToLower() == "success")
+                    if (!string.IsNullOrEmpty(request) || request.ToLower() == "success" || request2 == "success")
                     {
 
                         var save_new = new AutoInsurance
@@ -345,12 +346,28 @@ namespace CustodianEveryWhereV2._0.Controllers
                         }
                         if (!string.IsNullOrEmpty(Auto.attachment))
                         {
-                            var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{cert_number}.{Auto.extension_type}";
-                            var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Auto/{nameurl}";
-                            byte[] content = Convert.FromBase64String(Auto.attachment);
-                            File.WriteAllBytes(filepath, content);
-                            save_new.attachemt = nameurl;
-                            save_new.extension_type = Auto.extension_type;
+
+                            try
+                            {
+                                var nameurl = $"{await new Utility().GetSerialNumber()}_{DateTime.Now.ToFileTimeUtc().ToString()}_{cert_number}.{Auto.extension_type}";
+                                var filepath = $"{ConfigurationManager.AppSettings["DOC_PATH"]}/Documents/Auto/{nameurl}";
+                                byte[] content = Convert.FromBase64String(Auto.attachment);
+                                File.WriteAllBytes(filepath, content);
+                                save_new.attachemt = nameurl;
+                                save_new.extension_type = Auto.extension_type;
+                            }
+                            catch (Exception ex)
+                            {
+                                log.Error(ex.Message);
+                                log.Error(ex.StackTrace);
+                                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                                return new res
+                                {
+                                    status = 308,
+                                    message = "Unable to decode attachment"
+                                };
+                            }
+
                         }
 
                         await auto.Save(save_new);

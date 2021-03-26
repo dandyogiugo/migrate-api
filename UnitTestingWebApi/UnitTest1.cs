@@ -494,7 +494,7 @@ namespace UnitTestingWebApi
             Assert.AreEqual(controller.status, 200);
         }
 
-          
+
         [TestMethod]
         public void SendMail()
         {
@@ -568,7 +568,15 @@ namespace UnitTestingWebApi
                 zone = "AFRICA"
             };
             var controller = new RagaController().PostToRaga(push);
-           // Assert.AreEqual(controller.status, 200);
+            // Assert.AreEqual(controller.status, 200);
+        }
+
+        [TestMethod]
+        public void ChakaAuth()
+        {
+            var prep = new Utility();
+            var response =  prep.GetChakaOauthToken("U123467").GetAwaiter().GetResult();
+            Assert.AreEqual(response.status, 200);
         }
     }
 }

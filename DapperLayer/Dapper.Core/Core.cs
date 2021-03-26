@@ -359,5 +359,44 @@ namespace DapperLayer.Dapper.Core
                 return null;
             }
         }
+
+        public async Task<AgentData> ConfirmAgentCode(string agentCode)
+        {
+            try
+            {
+                var p = new { Agnt_Num = agentCode };
+                using (var cnn = new SqlConnection(connectionManager.connectionString("ReferralDB")))
+                {
+                    var result = await cnn.QueryFirstAsync<AgentData>(connectionManager.ConfirmAgent, param: p, commandType: CommandType.StoredProcedure);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException?.ToString());
+                return null;
+            }
+        }
+        public async Task<IEnumerable<AgentPolicies>> GetAgentPolicies(string agent_ref_id)
+        {
+            try
+            {
+                var p = new { AgntRefID = agent_ref_id };
+                using (var cnn = new SqlConnection(connectionManager.connectionString("ReferralDB")))
+                {
+                    var result = await cnn.QueryAsync<AgentPolicies>(connectionManager.GetAgentPolicies, param: p, commandType: CommandType.StoredProcedure);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException?.ToString());
+                return null;
+            }
+        }
     }
 }

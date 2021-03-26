@@ -85,7 +85,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     return new res
                     {
                         status = 207,
-                        message = "Policy not found (Please contact custodain care centre)"
+                        message = "Policy not found (Please contact custodian carecentre)"
                     };
                 }
 
@@ -133,7 +133,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     string test_email = "oscardybabaphd@gmail.com";
                     //email.email
                     var test = Config.isDemo ? "Test" : null;
-                    new SendEmail().Send_Email(test_email,
+                    var _email = Config.isDemo ? test_email : email;
+                    new SendEmail().Send_Email(_email,
                                $"Adapt-PolicyServices Authentication {test}",
                                sb.ToString(), $"PolicyServices Authentication {test}",
                                true, imagepath, cc, null, null);
@@ -391,8 +392,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     Division = (x.datasource == "ABS") ? util.GetGeneralDivision(x.policyno?.Trim().ToLower()) :
                     new DivisonsCode
                     {
-                        name = "Retail Life",
-                        code = "Life"
+                        name = "LIFE",
+                        code = "LIFE"
                     }
 
                 }).ToList();
@@ -474,7 +475,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var validateOTP = await util.ValidateOTP(otp, getCustomer.email.ToLower());
+                var validateOTP = await util.ValidateOTP(otp, getCustomer.email?.ToLower() ?? getCustomer.phonenumber);
                 if (!validateOTP)
                 {
                     log.Info($"Invalid customer Id {customer_id}");
@@ -668,7 +669,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var generate_otp = await util.GenerateOTP(false, checkuser.email?.ToLower(), "POLICYSERVICE", Platforms.ADAPT);
+                var generate_otp = await util.GenerateOTP(false, checkuser.email?.ToLower() ?? checkuser.phonenumber, "POLICYSERVICE", Platforms.ADAPT);
                 string messageBody = $"Adapt Policy Services authentication code <br/><br/><h2><strong>{generate_otp}</strong></h2>";
                 var template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/Adapt.html"));
                 StringBuilder sb = new StringBuilder(template);
@@ -683,7 +684,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     string test_email = "oscardybabaphd@gmail.com";
                     //email.email
                     var test = Config.isDemo ? "Test" : null;
-                    new SendEmail().Send_Email(test_email,
+                    var email = Config.isDemo ? test_email : checkuser.email;
+                    new SendEmail().Send_Email(email,
                           $"Adapt-PolicyServices PIN Reset {test}",
                           sb.ToString(), $"Adapt-PolicyServices PIN Reset {test}",
                           true, imagepath, null, bcc, null);

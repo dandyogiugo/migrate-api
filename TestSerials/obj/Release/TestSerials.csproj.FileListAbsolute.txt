@@ -237,3 +237,4 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSeria
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\obj\Release\TestSerials.exe
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\obj\Release\TestSerials.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\obj\Release\TestSerials.XmlSerializers.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\obj\Release\TestSerials.exe.config

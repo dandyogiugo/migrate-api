@@ -104,6 +104,7 @@ namespace DapperLayer.utilities
                                                         {5}";
 
         public static string GetPolicy { get; } = "GetPolicies";
-
+        public static string ConfirmAgent { get; } = "Get_Agents";
+        public static string GetAgentPolicies { get; } = "GetPolicies_Agents";
     }
 }

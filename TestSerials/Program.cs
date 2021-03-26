@@ -24,28 +24,106 @@ using DataStore.Utilities;
 using System.Security.Cryptography;
 using System.Xml.Serialization;
 using System.Numerics;
+using DataStore.ViewModels;
 
 namespace TestSerials
 {
     class Program
     {
+        public static void Grouper()
+        {
+            Core<policyInfo> _policyinfo = new Core<policyInfo>();
+            var getPolicies = _policyinfo.GetAgentPolicies("103574").GetAwaiter().GetResult();
+            var groupBy = getPolicies.Select(x => new AgentPoliciesView
+            {
+                Data_source = (x.Data_source == "ABS") ? "General" : "Life",
+                Email = x.Email,
+                EndDate = x.EndDate?.ToShortDateString(),
+                FullName = x.FullName?.Trim().ToUpper(),
+                Phone = x.Phone?.Trim(),
+                policy_no = x.policy_no?.Trim(),
+                Policy_status = x.Policy_status?.Trim().ToUpper(),
+                Product_lng_descr = x.Product_lng_descr?.Trim(),
+                StartDate = x.StartDate?.ToShortDateString(),
+                Sub_prod_lng_descr = x.Sub_prod_lng_descr
+            }).GroupBy(x => x.Data_source);
+
+            Dictionary<string, List<AgentPoliciesView>> groupKey = new Dictionary<string, List<AgentPoliciesView>>();
+            foreach (var item in groupBy)
+            {
+                groupKey.Add(item.Key, item.ToList());
+            }
+
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(groupKey);
+        }
+
+        private static string alphanums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789";
+        private const int codeLen = 15; //Length of coded string. Must be at least 4
+
+        public static string EncodeNumber(int num)
+        {
+            if (num < 1 || num > 999999) //or throw an exception
+                return "";
+            int[] nums = new int[codeLen];
+            int pos = 0;
+
+            while (!(num == 0))
+            {
+                nums[pos] = num % alphanums.Length;
+                num /= alphanums.Length;
+                pos += 1;
+            }
+
+            string result = "";
+            foreach (int numIndex in nums)
+                result = alphanums[numIndex].ToString() + result;
+
+            return result;
+        }
+
+        public static string DecodeNumber(string str)
+        {
+            //Check for invalid string
+            if (str.Length != codeLen) //Or throw an exception
+                return "Error";
+            long num = 0;
+
+            foreach (char ch in str)
+            {
+                num *= alphanums.Length;
+                num += alphanums.IndexOf(ch);
+            }
+
+            //Check for invalid number
+            if (num < 1 || num > 999999) //or throw exception
+                return "Error";
+            return num.ToString();
+        }
+
+
         static void Main(string[] args)
         {
-            string v = "duEseTcL6KhNoUksJlUtd50c5ToaYMff/a/ho3sPbnrFQ3IASGcziYcW+q+Qs5EyK65Lcp6GOm10G9AagRt+k2c5gGRPCh52cqsUchLcwAsL+0oqbVxQ6OQ90jlmLFhHipWWee0SRUp2mGya+8d7HQ18nLPOijq84sfkkGohFVxjtwvLRJFv4PCCOk1Jh1p7lpoVW6wTLnPYQSFZFRvvfde4/iOygU5Jzad878jxs+cIwYyIdOdfjRSvArAJhB+FjqJuLoWs4+RB/WUJfswWtoiQPv4OZcHGnAiTJigbwKHh8v1lcQwM1YLN2SAuWKnh7MYo/dDzo0yDz8AOsnJaUg==";
-            var signature = InterStateEncryption.GetSignature("AMAGASHIamagashi.pat@mail.com001");
-            var verify = InterStateEncryption.VerifySignature("AMAGASHIamagashi.pat@mail.com001", signature);
-            var _key = verify;
+            var encode = EncodeNumber(16318);
+            var decode = DecodeNumber(encode);
+
+           // Grouper();
+           //var uti = new Utility().GetChakaOauthToken("Godreigns2").GetAwaiter().GetResult();
+           //string v = "1TzfOhvNJUcr6u8vZlBHa8cp1yKNauO24jyWP008d2RhNi5uac4Rj9U+sUdicEpARJ8+HqvRSNmuFR/tz0bKmINquT2BDgbFwFRl2nMwRAtz1CFzZrpKznDeoKtKIavNRyUo47NLoUNKuXF18T4uMWYQk+lhpnHwYp1se10hZfjyja4bpEZLgMbLcwH6Yn26BFnjjDfkEYDJ6Vf69ltu58JKg78HTUAwQ01UZwjb2zBBajX+y0WjdskBnbHVB5j0GyIxDM3HgdrShnku4wPICyhG0kPMgJNIQHfLsBOO73N2bP6mWo0PUjj7HrOvRjOeIcDk9m3+XPSIOyuBUb1Pzw=="
+           // var path = $"{AppDomain.CurrentDomain.BaseDirectory}/Config/InterStatePrivateKey.txt";
+           // var signature = InterStateEncryption.GetSignature("OJOdammie365@gmail.comC7N1", path);
+           // var verify = InterStateEncryption.VerifySignature("AMAGASHIamagashi.pat@mail.com001", signature);
+            //var _key = verify;
             //RSA();
             //byte[] data = Encoding.Unicode.GetBytes("AMAGASHIamagashi.pat@mail.com001");
             //RSACryptoServiceProvider csp = new RSACryptoServiceProvider();//make a new csp with a new keypair
             //var pub_key = csp.ExportParameters(false); // export public key
             //var priv_key = csp.ExportParameters(true); // export private key
-
+            //
             //var encData = csp.Encrypt(data, false); // encrypt with PKCS#1_V1.5 Padding
             //var output = Convert.ToBase64String(encData);
             //var decBytes = MyRSAImpl.plainDecryptPriv(encData, priv_key); //decrypt with own BigInteger based implementation
             //var decData = decBytes.SkipWhile(x => x != 0).Skip(1).ToArray();//strip PKCS#1_V1.5 padding
-
+            // 
             //var test = new Utility().RoundValueToNearst100(5227.20);
             //var test1 = new Utility().RoundValueToNearst100(7597.26);
             //var test2 = new Utility().RoundValueToNearst100(8624.88);
@@ -103,12 +181,9 @@ namespace TestSerials
             //}
 
             Console.ReadLine();
-
-
         }
         //static void Main(string[] args)
         //{
-
         //    try
         //    {
         //        //var test = breakPalindrome("bab");

@@ -146,7 +146,6 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.Migrations.UpdatdModel.resources
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csprojAssemblyReference.cache
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\System.Net.Http.Extensions.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\System.Net.Http.Formatting.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\System.Net.Http.Primitives.dll
@@ -163,7 +162,6 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Microsoft.Extensions.Logging.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Microsoft.Extensions.Primitives.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Microsoft.Extensions.Configuration.xml
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Microsoft.Extensions.Configuration.Abstractions.xml
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\Microsoft.Extensions.Configuration.FileExtensions.xml
@@ -179,3 +177,5 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\BouncyCastle.Crypto.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\System.ValueTuple.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\System.ValueTuple.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Release\DataStore.csprojAssemblyReference.cache
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll

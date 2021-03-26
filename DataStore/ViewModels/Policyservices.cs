@@ -60,4 +60,19 @@ namespace DataStore.ViewModels
         public string pin { get; set; }
         public string customerid { get; set; }
     }
+
+    public class ValidateAgent
+    {
+        public ValidateAgent()
+        {
+
+        }
+        public string merchant_id { get; set; }
+        public string validationValue { get; set; }
+        public string otp { get; set; }
+        public string hash { get; set; }
+        public string pin { get; set; }
+        public string agent_ref_id { get; set; }
+        public string validationKey { get; set; }
+    }
 }

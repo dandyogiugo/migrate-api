@@ -59,6 +59,7 @@ namespace DataStore.ViewModels
         public decimal sum_insured { get; set; }
         public bool can_buy_comprehensive { get; set; }
         public dynamic app_updates { get; set; }
+        public dynamic policyterms { get; set; }
     }
 
     public class LifeClaimStatus

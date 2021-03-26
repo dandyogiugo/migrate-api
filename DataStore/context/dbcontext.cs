@@ -52,6 +52,8 @@ namespace DataStore.context
         public DbSet<InterStateStocks> InterStateStocks { get; set; }
         public DbSet<RequestDocument> RequestDocument { get; set; }
         public DbSet<TempSaveData> TempSaveData { get; set; }
+        public DbSet<AgentServices> AgentServices { get; set; }
+        public DbSet<WealthPlus> WealthPlus { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

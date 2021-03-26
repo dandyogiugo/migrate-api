@@ -158,4 +158,3 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSelling
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Debug\CustodianEmailSMSGateway.dll.config
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Debug\SendGrid.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Debug\SendGrid.xml
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\UpSellingAndCrossSelling\bin\Debug\BouncyCastle.Crypto.dll

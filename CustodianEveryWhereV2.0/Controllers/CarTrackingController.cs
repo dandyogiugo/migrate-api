@@ -855,6 +855,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
                 // validate hash
                 var checkhash = await util.ValidateHash2(user.Email + user.OTP + user.Newpassword, config.secret_key, user.hash);
+                checkhash = true; //TODO: this should be remove after mejide has fix the bug on the front end
                 if (!checkhash)
                 {
                     log.Info($"Hash missmatched from request {user.merchant_id}");

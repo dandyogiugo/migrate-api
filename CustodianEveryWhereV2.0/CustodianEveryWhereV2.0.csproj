@@ -374,6 +374,7 @@
     <Compile Include="Controllers\TravelQuoteComputationController.cs" />
     <Compile Include="Controllers\USSDConfigController.cs" />
     <Compile Include="Controllers\WealthManagementController.cs" />
+    <Compile Include="Controllers\WealthPlusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -407,8 +408,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Cert\InterStatePrivateKey.txt" />
+    <Content Include="Cert\wealthplus.html" />
     <Content Include="Cert\claims.html" />
     <Content Include="Cert\Gitnotification.html" />
+    <Content Include="Cert\Adaptbk.html" />
     <Content Include="Cert\Adapt.html" />
     <Content Include="Cert\Notification.html" />
     <Content Include="Content\bootstrap.css" />
@@ -840,6 +844,7 @@
     <Content Include="TravelCategoryJSON\adds.json" />
     <Content Include="TravelCategoryJSON\countryPhoneCode.json" />
     <Content Include="TravelCategoryJSON\product.json" />
+    <Content Include="TravelCategoryJSON\WealthPlusDetails.json" />
     <None Include="Web References\RSA\cal.xsd">
       <SubType>Designer</SubType>
     </None>

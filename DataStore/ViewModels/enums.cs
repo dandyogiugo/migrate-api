@@ -124,7 +124,8 @@ namespace DataStore.ViewModels
         EsusuShield = 1,
         CapitalBuilder = 2,
         LifeTimeHarvest = 3,
-        TermAssurance = 4
+        TermAssurance = 4,
+        WealthPlus = 5
     }
 
     public enum Car

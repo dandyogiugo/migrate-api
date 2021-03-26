@@ -202,7 +202,7 @@ namespace CustodianEveryWhereV2._0.Controllers
 
                 var endpoint = ConfigurationManager.AppSettings["ENDPOINTS"].Split('|');
                 //var geturl = Newtonsoft.Json.JsonConvert.DeserializeObject<List<dynamic>>(File.ReadAllText(HttpContext.Current.Server.MapPath("~/Cert/config.json")));
-                Dictionary<string, List<dynamic>> deals = new Dictionary<string, List<dynamic>>();
+                Dictionary<string, List<Dictionary<string, dynamic>>> deals = new Dictionary<string, List<Dictionary<string, dynamic>>>();
                 List<dynamic> dy_deals = new List<dynamic>();
                 using (var api = new HttpClient())
                 {
@@ -232,7 +232,27 @@ namespace CustodianEveryWhereV2._0.Controllers
                 if (dy_deals != null && dy_deals.Count > 0)
                 {
                     var ordered_list = dy_deals.OrderByDescending(x => Convert.ToDecimal(x.discounted_pric)).ToList();
-                    deals.Add("membership", ordered_list);
+                    var addHttpstTourl = ordered_list.Select(x => new Dictionary<string, dynamic>
+                    {
+                        { "id",x.id },
+                        { "firstname", x.firstname },
+                        { "lastname",x.lastname },
+                        { "dob",x.dob },
+                        { "gender", x.gender },
+                        { "email",x.email },
+                        { "address", x.address },
+                        { "mobile",x.mobile },
+                        { "joindate",x.joindate },
+                        { "image_url" , ($"{x.image_url}".StartsWith("http")) ? $"{x.image_url}".Replace("http", "https") : x.image_url },
+                        { "weight", x.weight },
+                        { "height", x.height },
+                        { "maritalstatus",  x.maritalstatus },
+                        { "anniversary", x.anniversary },
+                        { "gym" , x.gym },
+                        { "memberships", x.memberships },
+                        { "check-in", x["check-in"] }
+                    }).ToList();
+                    deals.Add("membership", addHttpstTourl);
                     return new notification_response
                     {
                         status = 200,

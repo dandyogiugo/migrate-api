@@ -22,5 +22,8 @@ namespace DataStore.Models
         public bool pushStatus { get; set; }
         public string data { get; set; }
         public DateTime? updatedAt { get; set; }
+        public int stage { get; set; }
+        public string accountId { get; set; }
+        public string requestId { get; set; }
     }
 }

@@ -36,6 +36,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         {
             try
             {
+                log.Info(Newtonsoft.Json.JsonConvert.SerializeObject(interState));
                 if (!ModelState.IsValid)
                 {
                     //log.Error(Newtonsoft.Json.JsonConvert.SerializeObject(ModelState.Values));
@@ -94,12 +95,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
                 var updateTempRecord = await _tempSaveData.FindOneByCriteria(x => x.email.ToLower() == interState.email.ToLower());
-                if (updateTempRecord != null)
-                {
-                    updateTempRecord.isCompleted = true;
-                    updateTempRecord.updatedAt = DateTime.Now;
-                    await _tempSaveData.Update(updateTempRecord);
-                }
+
 
                 var data = new InterStateStocks
                 {
@@ -109,14 +105,121 @@ namespace CustodianEveryWhereV2._0.Controllers
                     pushStatus = false
                 };
                 // call inter state api here
-                if (!await interstate.Save(data))
+                var getPrivateKeyPath = HttpContext.Current.Server.MapPath("~/Cert/InterStatePrivateKey.txt");
+                string hashPattern = interState.name.last.Trim().ToUpper() + interState.email.Trim().ToLower() + Config.INTER_STATE_TERMINALID;
+                InterStatePost prepare = new InterStatePost
                 {
-                    return new res
+                    name = new Name
                     {
-                        status = 409,
-                        message = "Operation failed"
-                    };
+                        first = interState.name.first,
+                        last = interState.name.last,
+                        middle = interState.name.middle,
+                        title = interState.name.title
+                    },
+                    personal = new Personal2
+                    {
+                        dateOfBirth = interState.personal.dateOfBirth.ToString("yyyy-MM-dd"),
+                        idExpDate = interState.personal.idExpDate.ToString("yyyy-MM-dd"),
+                        idNo = interState.personal.idNo,
+                        idType = interState.personal.idType,
+                        localGA = interState.personal.localGA,
+                        motherMaidenName = interState.personal.motherMaidenName,
+                        nationality = interState.personal.nationality,
+                        sex = interState.personal.sex,
+                        state = interState.personal.state
+                    },
+                    contact = new Contact
+                    {
+                        address1 = interState.contact.address1,
+                        state = interState.contact.state,
+                        address2 = interState.contact.address2,
+                        city = interState.contact.city,
+                        country = interState.contact.country,
+                        phone = "+" + util.numberin234(interState.contact.phone),
+                        postalCode = interState.contact.postalCode
+                    },
+                    nextOfKin = new NextOfKin
+                    {
+                        address1 = interState.nextOfKin.address1,
+                        address2 = interState.nextOfKin.address2,
+                        phone = "+" + util.numberin234(interState.nextOfKin.phone),
+                        name = interState.nextOfKin.name,
+                        relationship = interState.nextOfKin.relationship
+                    },
+                    account = new Account
+                    {
+                        clearingHouseNo = ""
+                    },
+                    bank = new Bank2
+                    {
+                        bvn = interState.bank.bvn,
+                        code = interState.bank.code,
+                        date = interState.bank.date.ToString("yyyy-MM-dd"),
+                        nuban = interState.bank.nuban
+                    },
+                    images = new Images
+                    {
+                        address = interState.images.address,
+                        id = interState.images.id,
+                        photo = interState.images.photo
+                    },
+                    email = interState.email,
+                    terminalId = Config.INTER_STATE_TERMINALID,
+                    requestId = Guid.NewGuid().ToString(),
+                    hash = InterStateEncryption.GetSignature(hashPattern, getPrivateKeyPath)
+                };
+
+                log.Info($"inter-state prepared data {Newtonsoft.Json.JsonConvert.SerializeObject(prepare)}");
+                log.Info($"verify hash: {InterStateEncryption.VerifySignature(hashPattern, prepare.hash)}");
+                log.Info($"hash generated {prepare.hash}");
+                log.Info($"pattern {hashPattern}");
+
+                using (var api = new HttpClient())
+                {
+                    var request = await api.PostAsJsonAsync(Config.INTER_STATE_URL, prepare);
+                    if (request.IsSuccessStatusCode)
+                    {
+                        var response = await request.Content.ReadAsAsync<InterstateResponse>();
+                        log.Info($"response from interstate {Newtonsoft.Json.JsonConvert.SerializeObject(response)}");
+                        if (!response.success)
+                        {
+                            return new res
+                            {
+                                status = 407,
+                                message = response.msg
+                            };
+                        }
+                        data.updatedAt = DateTime.Now;
+                        data.pushStatus = true;
+                        data.stage = response.stage;
+                        data.accountId = response.accountId;
+                        data.requestId = response.requestId;
+                        if (!await interstate.Save(data))
+                        {
+                            return new res
+                            {
+                                status = 409,
+                                message = "Operation failed"
+                            };
+                        }
+
+                        if (updateTempRecord != null)
+                        {
+                            updateTempRecord.isCompleted = true;
+                            updateTempRecord.updatedAt = DateTime.Now;
+                            await _tempSaveData.Update(updateTempRecord);
+                        }
+                    }
+                    else
+                    {
+                        return new res
+                        {
+                            status = 402,
+                            message = "Request failed"
+                        };
+                    }
                 }
+
 
                 return new res
                 {
@@ -159,7 +262,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == interState.merchant_id.Trim());
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == interState.merchant_id?.Trim());
                 if (config == null)
                 {
                     log.Info($"Invalid merchant Id {interState.merchant_id}");
@@ -251,7 +354,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id?.Trim());
                 if (config == null)
                 {
                     log.Info($"Invalid merchant Id {merchant_id}");
@@ -273,13 +376,13 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
-                var result = await _tempSaveData.FindOneByCriteria(x => x.isCompleted == false && x.email.ToLower() == email.ToLower());
+                var result = await _tempSaveData.FindOneByCriteria(x => x.isCompleted == false && x.email?.ToLower() == email?.ToLower());
                 if (result == null)
                 {
                     return new res
                     {
                         status = 406,
-                        message = $"No record found wiht emai '{email}'"
+                        message = $"No record found wiht email '{email}'"
                     };
                 }
 
@@ -305,7 +408,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         {
             try
             {
-                var title = new List<string>() { "Alh", "Chief", "Dr", "Engr", "Miss", "Mr", "Prof" };
+                var title = new List<string>() { "Alh", "Chief", "Dr", "Engr", "Miss","Mrs", "Mr", "Prof" };
                 var gender = new List<string>() { "M", "F" };
                 var idtypes = new List<dynamic>()
                 {
@@ -501,6 +604,35 @@ namespace CustodianEveryWhereV2._0.Controllers
                         bankCods
                     }
                 };
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return new res { message = "System error, Try Again", status = 404 };
+            }
+        }
+
+        [HttpGet]
+        public async Task<dynamic> GenerateKey(string passphrase)
+        {
+            try
+            {
+                if (passphrase == "NethaN_")//This is only known by the developer and nobody else 
+                {
+                    return InterStateEncryption.GenerateKeys();
+                }
+                else
+                {
+                    return new res
+                    {
+                        status = 209,
+                        message = "Wrong Passphrase"
+                    };
+                }
+
+
             }
             catch (Exception ex)
             {

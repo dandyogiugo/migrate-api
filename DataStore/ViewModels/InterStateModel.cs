@@ -39,6 +39,27 @@ namespace DataStore.ViewModels
         public DateTime idExpDate { get; set; }
     }
 
+    public class Personal2
+    {
+        [Required]
+        public string sex { get; set; }
+        [Required]
+        public string dateOfBirth { get; set; }
+        [Required]
+        public string motherMaidenName { get; set; }
+        [Required]
+        public string nationality { get; set; }
+        [Required]
+        public string state { get; set; }
+        [Required]
+        public string localGA { get; set; }
+        [Required]
+        public string idType { get; set; }
+        [Required]
+        public string idNo { get; set; }
+        [Required]
+        public string idExpDate { get; set; }
+    }
     public class Contact
     {
         [Required]
@@ -85,6 +106,17 @@ namespace DataStore.ViewModels
         public DateTime date { get; set; }
     }
 
+    public class Bank2
+    {
+        [Required]
+        public string code { get; set; }
+        [Required]
+        public string nuban { get; set; }
+        [Required]
+        public string bvn { get; set; }
+        [Required]
+        public string date { get; set; }
+    }
     public class Images
     {
         [Required]
@@ -110,5 +142,35 @@ namespace DataStore.ViewModels
         public string merchant_id { get; set; }
         [Required]
         public string hash { get; set; }
+    }
+
+    public class InterStatePost
+    {
+        public Name name { get; set; }
+        public string email { get; set; }
+        public Personal2 personal { get; set; }
+        public Contact contact { get; set; }
+        public NextOfKin nextOfKin { get; set; }
+        public Account account { get; set; }
+        public Bank2 bank { get; set; }
+        public Images images { get; set; }
+        public string terminalId { get; set; }
+        public string requestId { get; set; }
+        public string hash { get; set; }
+    }
+
+    public class InterstateResponse
+    {
+        public InterstateResponse()
+        {
+
+        }
+
+        public bool success { get; set; }
+        public int stage { get; set; }
+        public string status { get; set; }
+        public string accountId { get; set; }
+        public string requestId { get; set; }
+        public string msg { get; set; }
     }
 }

@@ -547,6 +547,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Data mismatched"
                     };
                 }
+
                 System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
 
                 using (var api = new HttpClient())
