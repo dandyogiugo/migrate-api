@@ -13,7 +13,6 @@ using NLog;
 using Spire.Doc;
 using CustodianEmailSMSGateway.Email;
 using System.Configuration;
-using Oracle.DataAccess.Client;
 using System.Data;
 using System.Web.ModelBinding;
 using System.Xml;
@@ -28,6 +27,7 @@ using System.Net.Http.Headers;
 using System.Net.Http.Formatting;
 using System.Net;
 using System.Security.Authentication;
+using Oracle.ManagedDataAccess.Client;
 
 namespace DataStore.Utilities
 {
@@ -888,8 +888,8 @@ namespace DataStore.Utilities
                 using (OracleConnection cn = new OracleConnection(ConnectionString))
                 {
                     OracleCommand cmd = new OracleCommand();
+                    await cn.OpenAsync();
                     cmd.Connection = cn;
-                    cn.Open();
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = query;
                     var rows = await cmd.ExecuteReaderAsync();
@@ -912,10 +912,10 @@ namespace DataStore.Utilities
             }
             catch (Exception ex)
             {
-                //log.Info("Exception was throwed")
-                //log.Error(ex.Message);
-                //log.Error(ex.StackTrace);
-                //log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                log.Info("Exception was throwed");
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
                 throw ex;
             }
         }
@@ -1987,7 +1987,7 @@ namespace DataStore.Utilities
                         http.DefaultRequestHeaders.Clear();
                         http.DefaultRequestHeaders.Add("Authorization", $"Bearer {getToken.data.access_token}");
                         http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                       
+
                         var request = await http.PostAsJsonAsync<ChakaSignUp>(url, signUp);
                         if (!request.IsSuccessStatusCode)
                         {
@@ -2251,6 +2251,59 @@ namespace DataStore.Utilities
                 log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
             }
         }
+        public async Task<dynamic> SendFirebaseNotification(string title, string body, string email)
+        {
+            try
+            {
+                var context = new store<AdaptLeads>();
+                var get_fcm_token = await context.FindOneByCriteria(x => x.email?.ToLower().Trim() == email?.ToLower().Trim());
+                if (get_fcm_token == null)
+                {
+                    return new
+                    {
+                        status = 206,
+                        message = "Customer Adapt email not tied to policy"
+                    };
+                }
+                using (var api = new HttpClient())
+                {
+                    api.DefaultRequestHeaders.Add("Authorization", $"key={Config.FIREBASE_AUTHORIZATION}");
+                    api.DefaultRequestHeaders.Add("Content-Type", "application/json");
+                    var payload = new Firebase
+                    {
+                        to = get_fcm_token.fcm_token,
+                        notification = new fNotification
+                        {
+                            badge = 1,
+                            body = body,
+                            title = title
+                        }
+                    };
+
+                    var request = await api.PostAsJsonAsync(Config.FIREBASE_URL, payload);
+                    if(!request.IsSuccessStatusCode)
+                    {
+                        return new
+                        {
+                            status = 209,
+                            message = "Unable to send push notification to Adapt"
+                        };
+                    }
+
+                    var response = await request.Content.ReadAsAsync<dynamic>();
+                    return new
+                    {
+                        status = 200,
+                        data = response
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 
     public static class Config
@@ -2408,6 +2461,16 @@ namespace DataStore.Utilities
             }
         }
         public static string INTER_STATE_TERMINALID { get; } = ConfigurationManager.AppSettings["INTER_STATE_TERMINALID"];
+        public static string FIREBASE_AUTHORIZATION { get; } = ConfigurationManager.AppSettings["FIREBASE_AUTHORIZATION"];
+
+        public static string FIREBASE_URL
+        {
+            get
+            {
+                string base_url = ConfigurationManager.AppSettings["FIREBASE_URL"];
+                return base_url?.Trim();
+            }
+        }
     }
     public class cron
     {

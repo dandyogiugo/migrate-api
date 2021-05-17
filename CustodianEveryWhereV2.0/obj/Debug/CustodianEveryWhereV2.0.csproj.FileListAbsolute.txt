@@ -410,10 +410,6 @@ C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\CustodianEver
 C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Hangfire.Console.dll
 C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\DapperLayer.dll.config
 C:\Users\USER\Documents\CustodianProject\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Hangfire.Console.xml
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.csprojAssemblyReference.cache
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.csproj.CoreCompileInputs.cache
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.dll
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\ApplicationInsights.config
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\roslyn\csc.exe
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -466,6 +462,7 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\Custodian
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Newtonsoft.Json.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\NLog.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Oracle.ManagedDataAccess.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Owin.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Spire.Doc.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Spire.License.dll
@@ -493,7 +490,6 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\Custodian
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Unity.ServiceLocation.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\WebActivatorEx.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\WebGrease.dll
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Oracle.DataAccess.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Microsoft.mshtml.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\DapperLayer.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\DapperLayer.dll.config
@@ -561,4 +557,8 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\Custodian
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\pt-PT\Hangfire.Core.resources.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\zh\Hangfire.Core.resources.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\zh-TW\Hangfire.Core.resources.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.csprojAssemblyReference.cache
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.csproj.CoreCompileInputs.cache
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.csproj.CopyComplete
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Debug\CustodianEveryWhereV2.0.pdb

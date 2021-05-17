@@ -102,7 +102,7 @@ namespace DapperLayer.utilities
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
 
@@ -171,7 +171,7 @@ namespace DapperLayer.utilities
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
 

@@ -246,5 +246,120 @@ namespace CustodianEveryWhereV2._0.Controllers
                 };
             }
         }
+
+        [HttpPost]
+        public async Task<notification_response> ADAuthenticate(AzureAD azureAD)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("ADAuthenticate", azureAD.merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == azureAD.merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {azureAD.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                var checkhash = await util.ValidateHash2(azureAD.merchant_id, config.secret_key, azureAD.hash);
+                checkhash = true;// remove before pushing to production
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {azureAD.merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                string user_email = "";
+                using (var api = new HttpClient())
+                {
+                    var param = new Dictionary<string, string>
+                    {
+                        {"client_id", config.AD_client_id},
+                        {"client_secret", config.AD_client_secret},
+                        {"grant_type", "authorization_code"},
+                        {"redirect_uri", config.AD_redirect_uri},
+                        {"code", azureAD.AzureAuthCode},
+                        {"scope", "User.Read" }
+                    };
+
+                    HttpContent content = new FormUrlEncodedContent(param);
+                    content.Headers.Clear();
+                    content.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+                    var request = await api.PostAsync(GlobalConstant.AD_AUTHENTICATE, content);
+                    if (request.IsSuccessStatusCode)
+                    {
+                        var response = await request.Content.ReadAsAsync<Dictionary<string, string>>();
+                        using (var api2 = new HttpClient())
+                        {
+                            log.Info($"Resposne from Azure authentication {response}");
+                            api2.DefaultRequestHeaders.Add("Authorization", $"Bearer  {response["access_token"]}");
+                            var request2 = await api2.GetAsync(GlobalConstant.AD_GRAPH);
+                            if (request2.IsSuccessStatusCode)
+                            {
+                                var response2 = await request2.Content.ReadAsAsync<dynamic>();
+                                user_email = response2["mail"];
+                                return new notification_response
+                                {
+                                    status = 200,
+                                    message = "AUthentication was successful",
+                                    data = new
+                                    {
+                                        user_email = user_email,
+                                        access_token = response["access_token"],
+                                        profileData = response2
+                                    }
+                                };
+                            }
+                            else
+                            {
+                                return new notification_response
+                                {
+                                    status = 406,
+                                    message = "Unable to read user information from AD"
+                                };
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        var response = await request.Content.ReadAsAsync<dynamic>();
+                        return new notification_response
+                        {
+                            status = 406,
+                            message = "Authentication failed",
+                            data = response
+                        };
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "Oops!, Unable to authenticate user with active directory"
+                };
+            }
+        }
     }
 }

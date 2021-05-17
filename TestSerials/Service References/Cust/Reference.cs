@@ -9,4139 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace TestSerials.Cust {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Claimfl", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class Claimfl : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ClaimNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ClPolicyNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ClaimStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsuredNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string ClaimNo {
-            get {
-                return this.ClaimNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClaimNoField, value) != true)) {
-                    this.ClaimNoField = value;
-                    this.RaisePropertyChanged("ClaimNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string ClPolicyNo {
-            get {
-                return this.ClPolicyNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClPolicyNoField, value) != true)) {
-                    this.ClPolicyNoField = value;
-                    this.RaisePropertyChanged("ClPolicyNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string ClaimStatus {
-            get {
-                return this.ClaimStatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClaimStatusField, value) != true)) {
-                    this.ClaimStatusField = value;
-                    this.RaisePropertyChanged("ClaimStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string InsuredName {
-            get {
-                return this.InsuredNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuredNameField, value) != true)) {
-                    this.InsuredNameField = value;
-                    this.RaisePropertyChanged("InsuredName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PolValidation", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class PolValidation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolStatusField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string PolicyNo {
-            get {
-                return this.PolicyNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
-                    this.PolicyNoField = value;
-                    this.RaisePropertyChanged("PolicyNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string PolStatus {
-            get {
-                return this.PolStatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolStatusField, value) != true)) {
-                    this.PolStatusField = value;
-                    this.RaisePropertyChanged("PolStatus");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PolExpDate", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class PolExpDate : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolExpirydateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolInsuredField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string PolicyNo {
-            get {
-                return this.PolicyNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
-                    this.PolicyNoField = value;
-                    this.RaisePropertyChanged("PolicyNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string PolExpirydate {
-            get {
-                return this.PolExpirydateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolExpirydateField, value) != true)) {
-                    this.PolExpirydateField = value;
-                    this.RaisePropertyChanged("PolExpirydate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string PolInsured {
-            get {
-                return this.PolInsuredField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolInsuredField, value) != true)) {
-                    this.PolInsuredField = value;
-                    this.RaisePropertyChanged("PolInsured");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PolicyDet", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class PolicyDet : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyEBusinessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AgenctNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AgenctNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsuredNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsuredNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsuredOthNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsAddr1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsAddr2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsAddr3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TelNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsuredTelNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsuredEmailField;
-        
-        private System.DateTime DOBField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsStateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsLGAField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BizUnitField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsOccupField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BizBranchField;
-        
-        private System.DateTime StartdateField;
-        
-        private System.DateTime EnddateField;
-        
-        private decimal SumInsField;
-        
-        private decimal mPremiumField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string PolicyNo {
-            get {
-                return this.PolicyNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
-                    this.PolicyNoField = value;
-                    this.RaisePropertyChanged("PolicyNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string PolicyEBusiness {
-            get {
-                return this.PolicyEBusinessField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyEBusinessField, value) != true)) {
-                    this.PolicyEBusinessField = value;
-                    this.RaisePropertyChanged("PolicyEBusiness");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string AgenctNum {
-            get {
-                return this.AgenctNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AgenctNumField, value) != true)) {
-                    this.AgenctNumField = value;
-                    this.RaisePropertyChanged("AgenctNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string AgenctName {
-            get {
-                return this.AgenctNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AgenctNameField, value) != true)) {
-                    this.AgenctNameField = value;
-                    this.RaisePropertyChanged("AgenctName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string InsuredNum {
-            get {
-                return this.InsuredNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuredNumField, value) != true)) {
-                    this.InsuredNumField = value;
-                    this.RaisePropertyChanged("InsuredNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string InsuredName {
-            get {
-                return this.InsuredNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuredNameField, value) != true)) {
-                    this.InsuredNameField = value;
-                    this.RaisePropertyChanged("InsuredName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string InsuredOthName {
-            get {
-                return this.InsuredOthNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuredOthNameField, value) != true)) {
-                    this.InsuredOthNameField = value;
-                    this.RaisePropertyChanged("InsuredOthName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string InsAddr1 {
-            get {
-                return this.InsAddr1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsAddr1Field, value) != true)) {
-                    this.InsAddr1Field = value;
-                    this.RaisePropertyChanged("InsAddr1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string InsAddr2 {
-            get {
-                return this.InsAddr2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsAddr2Field, value) != true)) {
-                    this.InsAddr2Field = value;
-                    this.RaisePropertyChanged("InsAddr2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string InsAddr3 {
-            get {
-                return this.InsAddr3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsAddr3Field, value) != true)) {
-                    this.InsAddr3Field = value;
-                    this.RaisePropertyChanged("InsAddr3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public string TelNum {
-            get {
-                return this.TelNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TelNumField, value) != true)) {
-                    this.TelNumField = value;
-                    this.RaisePropertyChanged("TelNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
-        public string InsuredTelNum {
-            get {
-                return this.InsuredTelNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuredTelNumField, value) != true)) {
-                    this.InsuredTelNumField = value;
-                    this.RaisePropertyChanged("InsuredTelNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
-        public string InsuredEmail {
-            get {
-                return this.InsuredEmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuredEmailField, value) != true)) {
-                    this.InsuredEmailField = value;
-                    this.RaisePropertyChanged("InsuredEmail");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public System.DateTime DOB {
-            get {
-                return this.DOBField;
-            }
-            set {
-                if ((this.DOBField.Equals(value) != true)) {
-                    this.DOBField = value;
-                    this.RaisePropertyChanged("DOB");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
-        public string InsState {
-            get {
-                return this.InsStateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsStateField, value) != true)) {
-                    this.InsStateField = value;
-                    this.RaisePropertyChanged("InsState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
-        public string InsLGA {
-            get {
-                return this.InsLGAField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsLGAField, value) != true)) {
-                    this.InsLGAField = value;
-                    this.RaisePropertyChanged("InsLGA");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
-        public string BizUnit {
-            get {
-                return this.BizUnitField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BizUnitField, value) != true)) {
-                    this.BizUnitField = value;
-                    this.RaisePropertyChanged("BizUnit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
-        public string InsOccup {
-            get {
-                return this.InsOccupField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsOccupField, value) != true)) {
-                    this.InsOccupField = value;
-                    this.RaisePropertyChanged("InsOccup");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
-        public string BizBranch {
-            get {
-                return this.BizBranchField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BizBranchField, value) != true)) {
-                    this.BizBranchField = value;
-                    this.RaisePropertyChanged("BizBranch");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
-        public System.DateTime Startdate {
-            get {
-                return this.StartdateField;
-            }
-            set {
-                if ((this.StartdateField.Equals(value) != true)) {
-                    this.StartdateField = value;
-                    this.RaisePropertyChanged("Startdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
-        public System.DateTime Enddate {
-            get {
-                return this.EnddateField;
-            }
-            set {
-                if ((this.EnddateField.Equals(value) != true)) {
-                    this.EnddateField = value;
-                    this.RaisePropertyChanged("Enddate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
-        public decimal SumIns {
-            get {
-                return this.SumInsField;
-            }
-            set {
-                if ((this.SumInsField.Equals(value) != true)) {
-                    this.SumInsField = value;
-                    this.RaisePropertyChanged("SumIns");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
-        public decimal mPremium {
-            get {
-                return this.mPremiumField;
-            }
-            set {
-                if ((this.mPremiumField.Equals(value) != true)) {
-                    this.mPremiumField = value;
-                    this.RaisePropertyChanged("mPremium");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ClaimRegStatus", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class ClaimRegStatus : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RegStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RegStatusCodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RegStatus {
-            get {
-                return this.RegStatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RegStatusField, value) != true)) {
-                    this.RegStatusField = value;
-                    this.RaisePropertyChanged("RegStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RegStatusCode {
-            get {
-                return this.RegStatusCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RegStatusCodeField, value) != true)) {
-                    this.RegStatusCodeField = value;
-                    this.RaisePropertyChanged("RegStatusCode");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ClientData", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class ClientData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsEmailField;
-        
-        private System.DateTime StartdateField;
-        
-        private System.DateTime EnddateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductNameField;
-        
-        private System.DateTime LastPaidDtField;
-        
-        private decimal OutPremiumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TotPremiumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StatusRecField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ClaimsNoField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string InsName {
-            get {
-                return this.InsNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsNameField, value) != true)) {
-                    this.InsNameField = value;
-                    this.RaisePropertyChanged("InsName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string InsEmail {
-            get {
-                return this.InsEmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsEmailField, value) != true)) {
-                    this.InsEmailField = value;
-                    this.RaisePropertyChanged("InsEmail");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.DateTime Startdate {
-            get {
-                return this.StartdateField;
-            }
-            set {
-                if ((this.StartdateField.Equals(value) != true)) {
-                    this.StartdateField = value;
-                    this.RaisePropertyChanged("Startdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.DateTime Enddate {
-            get {
-                return this.EnddateField;
-            }
-            set {
-                if ((this.EnddateField.Equals(value) != true)) {
-                    this.EnddateField = value;
-                    this.RaisePropertyChanged("Enddate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string PolicyNo {
-            get {
-                return this.PolicyNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
-                    this.PolicyNoField = value;
-                    this.RaisePropertyChanged("PolicyNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string ProductName {
-            get {
-                return this.ProductNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
-                    this.ProductNameField = value;
-                    this.RaisePropertyChanged("ProductName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public System.DateTime LastPaidDt {
-            get {
-                return this.LastPaidDtField;
-            }
-            set {
-                if ((this.LastPaidDtField.Equals(value) != true)) {
-                    this.LastPaidDtField = value;
-                    this.RaisePropertyChanged("LastPaidDt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal OutPremium {
-            get {
-                return this.OutPremiumField;
-            }
-            set {
-                if ((this.OutPremiumField.Equals(value) != true)) {
-                    this.OutPremiumField = value;
-                    this.RaisePropertyChanged("OutPremium");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string TotPremium {
-            get {
-                return this.TotPremiumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TotPremiumField, value) != true)) {
-                    this.TotPremiumField = value;
-                    this.RaisePropertyChanged("TotPremium");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string StatusRec {
-            get {
-                return this.StatusRecField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StatusRecField, value) != true)) {
-                    this.StatusRecField = value;
-                    this.RaisePropertyChanged("StatusRec");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public string ClaimsNo {
-            get {
-                return this.ClaimsNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClaimsNoField, value) != true)) {
-                    this.ClaimsNoField = value;
-                    this.RaisePropertyChanged("ClaimsNo");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MotorList", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class MotorList : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mInsurednameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mPolicyNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mVehRegField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mChasisNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mStartdateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mEnddateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mHPCAPACITYField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mVEHVALUEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mVEHPREMIUMField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mVEHMAKEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mVEHCOLORField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mENGINENUMField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string mInsuredname {
-            get {
-                return this.mInsurednameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mInsurednameField, value) != true)) {
-                    this.mInsurednameField = value;
-                    this.RaisePropertyChanged("mInsuredname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string mPolicyNumber {
-            get {
-                return this.mPolicyNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mPolicyNumberField, value) != true)) {
-                    this.mPolicyNumberField = value;
-                    this.RaisePropertyChanged("mPolicyNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string mVehReg {
-            get {
-                return this.mVehRegField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mVehRegField, value) != true)) {
-                    this.mVehRegField = value;
-                    this.RaisePropertyChanged("mVehReg");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string mChasisNum {
-            get {
-                return this.mChasisNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mChasisNumField, value) != true)) {
-                    this.mChasisNumField = value;
-                    this.RaisePropertyChanged("mChasisNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string mStartdate {
-            get {
-                return this.mStartdateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mStartdateField, value) != true)) {
-                    this.mStartdateField = value;
-                    this.RaisePropertyChanged("mStartdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string mEnddate {
-            get {
-                return this.mEnddateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mEnddateField, value) != true)) {
-                    this.mEnddateField = value;
-                    this.RaisePropertyChanged("mEnddate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string mHPCAPACITY {
-            get {
-                return this.mHPCAPACITYField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mHPCAPACITYField, value) != true)) {
-                    this.mHPCAPACITYField = value;
-                    this.RaisePropertyChanged("mHPCAPACITY");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string mVEHVALUE {
-            get {
-                return this.mVEHVALUEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mVEHVALUEField, value) != true)) {
-                    this.mVEHVALUEField = value;
-                    this.RaisePropertyChanged("mVEHVALUE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string mVEHPREMIUM {
-            get {
-                return this.mVEHPREMIUMField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mVEHPREMIUMField, value) != true)) {
-                    this.mVEHPREMIUMField = value;
-                    this.RaisePropertyChanged("mVEHPREMIUM");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string mVEHMAKE {
-            get {
-                return this.mVEHMAKEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mVEHMAKEField, value) != true)) {
-                    this.mVEHMAKEField = value;
-                    this.RaisePropertyChanged("mVEHMAKE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public string mVEHCOLOR {
-            get {
-                return this.mVEHCOLORField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mVEHCOLORField, value) != true)) {
-                    this.mVEHCOLORField = value;
-                    this.RaisePropertyChanged("mVEHCOLOR");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
-        public string mENGINENUM {
-            get {
-                return this.mENGINENUMField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mENGINENUMField, value) != true)) {
-                    this.mENGINENUMField = value;
-                    this.RaisePropertyChanged("mENGINENUM");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PolBalances", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class PolBalances : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyNoField;
-        
-        private decimal PolOutStandBalField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolInsuredField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string PolicyNo {
-            get {
-                return this.PolicyNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
-                    this.PolicyNoField = value;
-                    this.RaisePropertyChanged("PolicyNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public decimal PolOutStandBal {
-            get {
-                return this.PolOutStandBalField;
-            }
-            set {
-                if ((this.PolOutStandBalField.Equals(value) != true)) {
-                    this.PolOutStandBalField = value;
-                    this.RaisePropertyChanged("PolOutStandBal");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string PolInsured {
-            get {
-                return this.PolInsuredField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolInsuredField, value) != true)) {
-                    this.PolInsuredField = value;
-                    this.RaisePropertyChanged("PolInsured");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NotificationsDetails", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class NotificationsDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MerchantIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MpasswordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NotifyIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        private System.DateTime DOBField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        private System.DateTime RenewalDateField;
-        
-        private System.DateTime PaymentDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ReceiptNoField;
-        
-        private decimal ReceiptAmtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NarrationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RenUrlField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailResponseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string smsResponseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PremiumBalanceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string MerchantID {
-            get {
-                return this.MerchantIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MerchantIDField, value) != true)) {
-                    this.MerchantIDField = value;
-                    this.RaisePropertyChanged("MerchantID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Mpassword {
-            get {
-                return this.MpasswordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MpasswordField, value) != true)) {
-                    this.MpasswordField = value;
-                    this.RaisePropertyChanged("Mpassword");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string NotifyID {
-            get {
-                return this.NotifyIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotifyIDField, value) != true)) {
-                    this.NotifyIDField = value;
-                    this.RaisePropertyChanged("NotifyID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string PolicyNo {
-            get {
-                return this.PolicyNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
-                    this.PolicyNoField = value;
-                    this.RaisePropertyChanged("PolicyNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public System.DateTime DOB {
-            get {
-                return this.DOBField;
-            }
-            set {
-                if ((this.DOBField.Equals(value) != true)) {
-                    this.DOBField = value;
-                    this.RaisePropertyChanged("DOB");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string PhoneNumber {
-            get {
-                return this.PhoneNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneNumberField, value) != true)) {
-                    this.PhoneNumberField = value;
-                    this.RaisePropertyChanged("PhoneNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public System.DateTime RenewalDate {
-            get {
-                return this.RenewalDateField;
-            }
-            set {
-                if ((this.RenewalDateField.Equals(value) != true)) {
-                    this.RenewalDateField = value;
-                    this.RaisePropertyChanged("RenewalDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public System.DateTime PaymentDate {
-            get {
-                return this.PaymentDateField;
-            }
-            set {
-                if ((this.PaymentDateField.Equals(value) != true)) {
-                    this.PaymentDateField = value;
-                    this.RaisePropertyChanged("PaymentDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
-        public string ReceiptNo {
-            get {
-                return this.ReceiptNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReceiptNoField, value) != true)) {
-                    this.ReceiptNoField = value;
-                    this.RaisePropertyChanged("ReceiptNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public decimal ReceiptAmt {
-            get {
-                return this.ReceiptAmtField;
-            }
-            set {
-                if ((this.ReceiptAmtField.Equals(value) != true)) {
-                    this.ReceiptAmtField = value;
-                    this.RaisePropertyChanged("ReceiptAmt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
-        public string Narration {
-            get {
-                return this.NarrationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NarrationField, value) != true)) {
-                    this.NarrationField = value;
-                    this.RaisePropertyChanged("Narration");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
-        public string RenUrl {
-            get {
-                return this.RenUrlField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RenUrlField, value) != true)) {
-                    this.RenUrlField = value;
-                    this.RaisePropertyChanged("RenUrl");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
-        public string EmailResponse {
-            get {
-                return this.EmailResponseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailResponseField, value) != true)) {
-                    this.EmailResponseField = value;
-                    this.RaisePropertyChanged("EmailResponse");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
-        public string smsResponse {
-            get {
-                return this.smsResponseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.smsResponseField, value) != true)) {
-                    this.smsResponseField = value;
-                    this.RaisePropertyChanged("smsResponse");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
-        public string PremiumBalance {
-            get {
-                return this.PremiumBalanceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PremiumBalanceField, value) != true)) {
-                    this.PremiumBalanceField = value;
-                    this.RaisePropertyChanged("PremiumBalance");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="certificate_out", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class certificate_out : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string error_codeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string error_messageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string file_nameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string file_contentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string policy_idField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string error_code {
-            get {
-                return this.error_codeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.error_codeField, value) != true)) {
-                    this.error_codeField = value;
-                    this.RaisePropertyChanged("error_code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string error_message {
-            get {
-                return this.error_messageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.error_messageField, value) != true)) {
-                    this.error_messageField = value;
-                    this.RaisePropertyChanged("error_message");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string file_name {
-            get {
-                return this.file_nameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.file_nameField, value) != true)) {
-                    this.file_nameField = value;
-                    this.RaisePropertyChanged("file_name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string file_content {
-            get {
-                return this.file_contentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.file_contentField, value) != true)) {
-                    this.file_contentField = value;
-                    this.RaisePropertyChanged("file_content");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string policy_id {
-            get {
-                return this.policy_idField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.policy_idField, value) != true)) {
-                    this.policy_idField = value;
-                    this.RaisePropertyChanged("policy_id");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MorePolicyDetails", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class MorePolicyDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyEBusinessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AgenctNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AgenctNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsuredNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsuredNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsuredOthNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsAddr1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsAddr2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsAddr3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TelNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsuredTelNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsuredEmailField;
-        
-        private System.DateTime DOBField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsStateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsLGAField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BizUnitField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InsOccupField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BizBranchField;
-        
-        private System.DateTime StartdateField;
-        
-        private System.DateTime EnddateField;
-        
-        private decimal SumInsField;
-        
-        private decimal mPremiumField;
-        
-        private decimal OutPremiumField;
-        
-        private decimal InstPremiumField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string PolicyNo {
-            get {
-                return this.PolicyNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
-                    this.PolicyNoField = value;
-                    this.RaisePropertyChanged("PolicyNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string PolicyEBusiness {
-            get {
-                return this.PolicyEBusinessField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyEBusinessField, value) != true)) {
-                    this.PolicyEBusinessField = value;
-                    this.RaisePropertyChanged("PolicyEBusiness");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string AgenctNum {
-            get {
-                return this.AgenctNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AgenctNumField, value) != true)) {
-                    this.AgenctNumField = value;
-                    this.RaisePropertyChanged("AgenctNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string AgenctName {
-            get {
-                return this.AgenctNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AgenctNameField, value) != true)) {
-                    this.AgenctNameField = value;
-                    this.RaisePropertyChanged("AgenctName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string InsuredNum {
-            get {
-                return this.InsuredNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuredNumField, value) != true)) {
-                    this.InsuredNumField = value;
-                    this.RaisePropertyChanged("InsuredNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string InsuredName {
-            get {
-                return this.InsuredNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuredNameField, value) != true)) {
-                    this.InsuredNameField = value;
-                    this.RaisePropertyChanged("InsuredName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string InsuredOthName {
-            get {
-                return this.InsuredOthNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuredOthNameField, value) != true)) {
-                    this.InsuredOthNameField = value;
-                    this.RaisePropertyChanged("InsuredOthName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string InsAddr1 {
-            get {
-                return this.InsAddr1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsAddr1Field, value) != true)) {
-                    this.InsAddr1Field = value;
-                    this.RaisePropertyChanged("InsAddr1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string InsAddr2 {
-            get {
-                return this.InsAddr2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsAddr2Field, value) != true)) {
-                    this.InsAddr2Field = value;
-                    this.RaisePropertyChanged("InsAddr2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string InsAddr3 {
-            get {
-                return this.InsAddr3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsAddr3Field, value) != true)) {
-                    this.InsAddr3Field = value;
-                    this.RaisePropertyChanged("InsAddr3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public string TelNum {
-            get {
-                return this.TelNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TelNumField, value) != true)) {
-                    this.TelNumField = value;
-                    this.RaisePropertyChanged("TelNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
-        public string InsuredTelNum {
-            get {
-                return this.InsuredTelNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuredTelNumField, value) != true)) {
-                    this.InsuredTelNumField = value;
-                    this.RaisePropertyChanged("InsuredTelNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
-        public string InsuredEmail {
-            get {
-                return this.InsuredEmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuredEmailField, value) != true)) {
-                    this.InsuredEmailField = value;
-                    this.RaisePropertyChanged("InsuredEmail");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public System.DateTime DOB {
-            get {
-                return this.DOBField;
-            }
-            set {
-                if ((this.DOBField.Equals(value) != true)) {
-                    this.DOBField = value;
-                    this.RaisePropertyChanged("DOB");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
-        public string InsState {
-            get {
-                return this.InsStateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsStateField, value) != true)) {
-                    this.InsStateField = value;
-                    this.RaisePropertyChanged("InsState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
-        public string InsLGA {
-            get {
-                return this.InsLGAField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsLGAField, value) != true)) {
-                    this.InsLGAField = value;
-                    this.RaisePropertyChanged("InsLGA");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
-        public string BizUnit {
-            get {
-                return this.BizUnitField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BizUnitField, value) != true)) {
-                    this.BizUnitField = value;
-                    this.RaisePropertyChanged("BizUnit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
-        public string InsOccup {
-            get {
-                return this.InsOccupField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsOccupField, value) != true)) {
-                    this.InsOccupField = value;
-                    this.RaisePropertyChanged("InsOccup");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
-        public string BizBranch {
-            get {
-                return this.BizBranchField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BizBranchField, value) != true)) {
-                    this.BizBranchField = value;
-                    this.RaisePropertyChanged("BizBranch");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
-        public System.DateTime Startdate {
-            get {
-                return this.StartdateField;
-            }
-            set {
-                if ((this.StartdateField.Equals(value) != true)) {
-                    this.StartdateField = value;
-                    this.RaisePropertyChanged("Startdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
-        public System.DateTime Enddate {
-            get {
-                return this.EnddateField;
-            }
-            set {
-                if ((this.EnddateField.Equals(value) != true)) {
-                    this.EnddateField = value;
-                    this.RaisePropertyChanged("Enddate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
-        public decimal SumIns {
-            get {
-                return this.SumInsField;
-            }
-            set {
-                if ((this.SumInsField.Equals(value) != true)) {
-                    this.SumInsField = value;
-                    this.RaisePropertyChanged("SumIns");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
-        public decimal mPremium {
-            get {
-                return this.mPremiumField;
-            }
-            set {
-                if ((this.mPremiumField.Equals(value) != true)) {
-                    this.mPremiumField = value;
-                    this.RaisePropertyChanged("mPremium");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
-        public decimal OutPremium {
-            get {
-                return this.OutPremiumField;
-            }
-            set {
-                if ((this.OutPremiumField.Equals(value) != true)) {
-                    this.OutPremiumField = value;
-                    this.RaisePropertyChanged("OutPremium");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=24)]
-        public decimal InstPremium {
-            get {
-                return this.InstPremiumField;
-            }
-            set {
-                if ((this.InstPremiumField.Equals(value) != true)) {
-                    this.InstPremiumField = value;
-                    this.RaisePropertyChanged("InstPremium");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Crm_PolicyInfo", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class Crm_PolicyInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Policy_NoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string CustomerID {
-            get {
-                return this.CustomerIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
-                    this.CustomerIDField = value;
-                    this.RaisePropertyChanged("CustomerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Policy_No {
-            get {
-                return this.Policy_NoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Policy_NoField, value) != true)) {
-                    this.Policy_NoField = value;
-                    this.RaisePropertyChanged("Policy_No");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string Phone {
-            get {
-                return this.PhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Crm_Renewal", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class Crm_Renewal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Pol_NoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string daysLeftField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RenwDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Gross_PremiumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Sum_InsuredField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string CustomerID {
-            get {
-                return this.CustomerIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
-                    this.CustomerIDField = value;
-                    this.RaisePropertyChanged("CustomerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Pol_No {
-            get {
-                return this.Pol_NoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Pol_NoField, value) != true)) {
-                    this.Pol_NoField = value;
-                    this.RaisePropertyChanged("Pol_No");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Products {
-            get {
-                return this.ProductsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
-                    this.ProductsField = value;
-                    this.RaisePropertyChanged("Products");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string daysLeft {
-            get {
-                return this.daysLeftField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.daysLeftField, value) != true)) {
-                    this.daysLeftField = value;
-                    this.RaisePropertyChanged("daysLeft");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string RenwDate {
-            get {
-                return this.RenwDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RenwDateField, value) != true)) {
-                    this.RenwDateField = value;
-                    this.RaisePropertyChanged("RenwDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Gross_Premium {
-            get {
-                return this.Gross_PremiumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Gross_PremiumField, value) != true)) {
-                    this.Gross_PremiumField = value;
-                    this.RaisePropertyChanged("Gross_Premium");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string Sum_Insured {
-            get {
-                return this.Sum_InsuredField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Sum_InsuredField, value) != true)) {
-                    this.Sum_InsuredField = value;
-                    this.RaisePropertyChanged("Sum_Insured");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Crm_Birthday", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class Crm_Birthday : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DOBField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string CustomerID {
-            get {
-                return this.CustomerIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
-                    this.CustomerIDField = value;
-                    this.RaisePropertyChanged("CustomerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string DOB {
-            get {
-                return this.DOBField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DOBField, value) != true)) {
-                    this.DOBField = value;
-                    this.RaisePropertyChanged("DOB");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string Phone {
-            get {
-                return this.PhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_Claims", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class CRM_Claims : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ClaimsNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductsField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string CustomerID {
-            get {
-                return this.CustomerIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
-                    this.CustomerIDField = value;
-                    this.RaisePropertyChanged("CustomerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string PolicyNo {
-            get {
-                return this.PolicyNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
-                    this.PolicyNoField = value;
-                    this.RaisePropertyChanged("PolicyNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string ClaimsNo {
-            get {
-                return this.ClaimsNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClaimsNoField, value) != true)) {
-                    this.ClaimsNoField = value;
-                    this.RaisePropertyChanged("ClaimsNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Phone {
-            get {
-                return this.PhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Products {
-            get {
-                return this.ProductsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
-                    this.ProductsField = value;
-                    this.RaisePropertyChanged("Products");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_Dashboard", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class CRM_Dashboard : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int CntActivePoliciesField;
-        
-        private int CountCustomersField;
-        
-        private int ActiveCustomersField;
-        
-        private int CustomerPolicyField;
-        
-        private int PolicyRenewalField;
-        
-        private int BirthdayField;
-        
-        private int ClaimsField;
-        
-        private int LapsePolField;
-        
-        private int NiidPolField;
-        
-        private int To_berenewedField;
-        
-        private int broker_productionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int CntActivePolicies {
-            get {
-                return this.CntActivePoliciesField;
-            }
-            set {
-                if ((this.CntActivePoliciesField.Equals(value) != true)) {
-                    this.CntActivePoliciesField = value;
-                    this.RaisePropertyChanged("CntActivePolicies");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int CountCustomers {
-            get {
-                return this.CountCustomersField;
-            }
-            set {
-                if ((this.CountCustomersField.Equals(value) != true)) {
-                    this.CountCustomersField = value;
-                    this.RaisePropertyChanged("CountCustomers");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int ActiveCustomers {
-            get {
-                return this.ActiveCustomersField;
-            }
-            set {
-                if ((this.ActiveCustomersField.Equals(value) != true)) {
-                    this.ActiveCustomersField = value;
-                    this.RaisePropertyChanged("ActiveCustomers");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int CustomerPolicy {
-            get {
-                return this.CustomerPolicyField;
-            }
-            set {
-                if ((this.CustomerPolicyField.Equals(value) != true)) {
-                    this.CustomerPolicyField = value;
-                    this.RaisePropertyChanged("CustomerPolicy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int PolicyRenewal {
-            get {
-                return this.PolicyRenewalField;
-            }
-            set {
-                if ((this.PolicyRenewalField.Equals(value) != true)) {
-                    this.PolicyRenewalField = value;
-                    this.RaisePropertyChanged("PolicyRenewal");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int Birthday {
-            get {
-                return this.BirthdayField;
-            }
-            set {
-                if ((this.BirthdayField.Equals(value) != true)) {
-                    this.BirthdayField = value;
-                    this.RaisePropertyChanged("Birthday");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int Claims {
-            get {
-                return this.ClaimsField;
-            }
-            set {
-                if ((this.ClaimsField.Equals(value) != true)) {
-                    this.ClaimsField = value;
-                    this.RaisePropertyChanged("Claims");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int LapsePol {
-            get {
-                return this.LapsePolField;
-            }
-            set {
-                if ((this.LapsePolField.Equals(value) != true)) {
-                    this.LapsePolField = value;
-                    this.RaisePropertyChanged("LapsePol");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public int NiidPol {
-            get {
-                return this.NiidPolField;
-            }
-            set {
-                if ((this.NiidPolField.Equals(value) != true)) {
-                    this.NiidPolField = value;
-                    this.RaisePropertyChanged("NiidPol");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public int To_berenewed {
-            get {
-                return this.To_berenewedField;
-            }
-            set {
-                if ((this.To_berenewedField.Equals(value) != true)) {
-                    this.To_berenewedField = value;
-                    this.RaisePropertyChanged("To_berenewed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public int broker_production {
-            get {
-                return this.broker_productionField;
-            }
-            set {
-                if ((this.broker_productionField.Equals(value) != true)) {
-                    this.broker_productionField = value;
-                    this.RaisePropertyChanged("broker_production");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_PolicyDetail", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class CRM_PolicyDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Policy_NoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProducttypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SumInsuredField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PremiumField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string CustomerID {
-            get {
-                return this.CustomerIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
-                    this.CustomerIDField = value;
-                    this.RaisePropertyChanged("CustomerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Policy_No {
-            get {
-                return this.Policy_NoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Policy_NoField, value) != true)) {
-                    this.Policy_NoField = value;
-                    this.RaisePropertyChanged("Policy_No");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string Phone {
-            get {
-                return this.PhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Producttype {
-            get {
-                return this.ProducttypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProducttypeField, value) != true)) {
-                    this.ProducttypeField = value;
-                    this.RaisePropertyChanged("Producttype");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string SumInsured {
-            get {
-                return this.SumInsuredField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SumInsuredField, value) != true)) {
-                    this.SumInsuredField = value;
-                    this.RaisePropertyChanged("SumInsured");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string Premium {
-            get {
-                return this.PremiumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PremiumField, value) != true)) {
-                    this.PremiumField = value;
-                    this.RaisePropertyChanged("Premium");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_ClaimsDetail", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class CRM_ClaimsDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Claim_NoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProducttypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ClaimAmountField;
-        
-        private System.DateTime EnddateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string CustomerID {
-            get {
-                return this.CustomerIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
-                    this.CustomerIDField = value;
-                    this.RaisePropertyChanged("CustomerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Claim_No {
-            get {
-                return this.Claim_NoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Claim_NoField, value) != true)) {
-                    this.Claim_NoField = value;
-                    this.RaisePropertyChanged("Claim_No");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string Phone {
-            get {
-                return this.PhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Producttype {
-            get {
-                return this.ProducttypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProducttypeField, value) != true)) {
-                    this.ProducttypeField = value;
-                    this.RaisePropertyChanged("Producttype");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string ClaimAmount {
-            get {
-                return this.ClaimAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClaimAmountField, value) != true)) {
-                    this.ClaimAmountField = value;
-                    this.RaisePropertyChanged("ClaimAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public System.DateTime Enddate {
-            get {
-                return this.EnddateField;
-            }
-            set {
-                if ((this.EnddateField.Equals(value) != true)) {
-                    this.EnddateField = value;
-                    this.RaisePropertyChanged("Enddate");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ClaimCount", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class ClaimCount : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ClaimCountMemberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UnitsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductsField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="ClaimCount", EmitDefaultValue=false)]
-        public string ClaimCountMember {
-            get {
-                return this.ClaimCountMemberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClaimCountMemberField, value) != true)) {
-                    this.ClaimCountMemberField = value;
-                    this.RaisePropertyChanged("ClaimCountMember");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Units {
-            get {
-                return this.UnitsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UnitsField, value) != true)) {
-                    this.UnitsField = value;
-                    this.RaisePropertyChanged("Units");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Products {
-            get {
-                return this.ProductsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
-                    this.ProductsField = value;
-                    this.RaisePropertyChanged("Products");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ABSNIID", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class ABSNIID : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EngineNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChasisNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CoverTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string VehMakeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RegNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mAnalysisField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mUnitsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mUserField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string PolicyNo {
-            get {
-                return this.PolicyNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyNoField, value) != true)) {
-                    this.PolicyNoField = value;
-                    this.RaisePropertyChanged("PolicyNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string EngineNo {
-            get {
-                return this.EngineNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EngineNoField, value) != true)) {
-                    this.EngineNoField = value;
-                    this.RaisePropertyChanged("EngineNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string ChasisNo {
-            get {
-                return this.ChasisNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChasisNoField, value) != true)) {
-                    this.ChasisNoField = value;
-                    this.RaisePropertyChanged("ChasisNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string CoverType {
-            get {
-                return this.CoverTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CoverTypeField, value) != true)) {
-                    this.CoverTypeField = value;
-                    this.RaisePropertyChanged("CoverType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string VehMake {
-            get {
-                return this.VehMakeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.VehMakeField, value) != true)) {
-                    this.VehMakeField = value;
-                    this.RaisePropertyChanged("VehMake");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string RegNum {
-            get {
-                return this.RegNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RegNumField, value) != true)) {
-                    this.RegNumField = value;
-                    this.RaisePropertyChanged("RegNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string mAnalysis {
-            get {
-                return this.mAnalysisField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mAnalysisField, value) != true)) {
-                    this.mAnalysisField = value;
-                    this.RaisePropertyChanged("mAnalysis");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string mUnits {
-            get {
-                return this.mUnitsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mUnitsField, value) != true)) {
-                    this.mUnitsField = value;
-                    this.RaisePropertyChanged("mUnits");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string mUser {
-            get {
-                return this.mUserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mUserField, value) != true)) {
-                    this.mUserField = value;
-                    this.RaisePropertyChanged("mUser");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_Top10Det", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class CRM_Top10Det : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompanyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ClaimAmtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NetAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UnitsField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string CustomerID {
-            get {
-                return this.CustomerIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
-                    this.CustomerIDField = value;
-                    this.RaisePropertyChanged("CustomerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Company {
-            get {
-                return this.CompanyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
-                    this.CompanyField = value;
-                    this.RaisePropertyChanged("Company");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string ClaimAmt {
-            get {
-                return this.ClaimAmtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClaimAmtField, value) != true)) {
-                    this.ClaimAmtField = value;
-                    this.RaisePropertyChanged("ClaimAmt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string NetAmount {
-            get {
-                return this.NetAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NetAmountField, value) != true)) {
-                    this.NetAmountField = value;
-                    this.RaisePropertyChanged("NetAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string mAmount {
-            get {
-                return this.mAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mAmountField, value) != true)) {
-                    this.mAmountField = value;
-                    this.RaisePropertyChanged("mAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Units {
-            get {
-                return this.UnitsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UnitsField, value) != true)) {
-                    this.UnitsField = value;
-                    this.RaisePropertyChanged("Units");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_TopProduct", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class CRM_TopProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompanyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mProductField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mPremiumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UnitsField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Company {
-            get {
-                return this.CompanyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
-                    this.CompanyField = value;
-                    this.RaisePropertyChanged("Company");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string mProduct {
-            get {
-                return this.mProductField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mProductField, value) != true)) {
-                    this.mProductField = value;
-                    this.RaisePropertyChanged("mProduct");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string mPremium {
-            get {
-                return this.mPremiumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mPremiumField, value) != true)) {
-                    this.mPremiumField = value;
-                    this.RaisePropertyChanged("mPremium");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Units {
-            get {
-                return this.UnitsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UnitsField, value) != true)) {
-                    this.UnitsField = value;
-                    this.RaisePropertyChanged("Units");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="To_be_renewed", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class To_be_renewed : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Policy_NoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProducttypeField;
-        
-        private System.DateTime MaxdateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UnitDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AfterdaysField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string CustomerID {
-            get {
-                return this.CustomerIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerIDField, value) != true)) {
-                    this.CustomerIDField = value;
-                    this.RaisePropertyChanged("CustomerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Policy_No {
-            get {
-                return this.Policy_NoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Policy_NoField, value) != true)) {
-                    this.Policy_NoField = value;
-                    this.RaisePropertyChanged("Policy_No");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string Phone {
-            get {
-                return this.PhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Producttype {
-            get {
-                return this.ProducttypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProducttypeField, value) != true)) {
-                    this.ProducttypeField = value;
-                    this.RaisePropertyChanged("Producttype");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public System.DateTime Maxdate {
-            get {
-                return this.MaxdateField;
-            }
-            set {
-                if ((this.MaxdateField.Equals(value) != true)) {
-                    this.MaxdateField = value;
-                    this.RaisePropertyChanged("Maxdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string UnitDescription {
-            get {
-                return this.UnitDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UnitDescriptionField, value) != true)) {
-                    this.UnitDescriptionField = value;
-                    this.RaisePropertyChanged("UnitDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string Afterdays {
-            get {
-                return this.AfterdaysField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AfterdaysField, value) != true)) {
-                    this.AfterdaysField = value;
-                    this.RaisePropertyChanged("Afterdays");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BrokerData", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class BrokerData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AgntNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AgntNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AgntPremField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AgntClaimPaidAmtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AgntNetAmountField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string AgntName {
-            get {
-                return this.AgntNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AgntNameField, value) != true)) {
-                    this.AgntNameField = value;
-                    this.RaisePropertyChanged("AgntName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string AgntNum {
-            get {
-                return this.AgntNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AgntNumField, value) != true)) {
-                    this.AgntNumField = value;
-                    this.RaisePropertyChanged("AgntNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string AgntPrem {
-            get {
-                return this.AgntPremField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AgntPremField, value) != true)) {
-                    this.AgntPremField = value;
-                    this.RaisePropertyChanged("AgntPrem");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string AgntClaimPaidAmt {
-            get {
-                return this.AgntClaimPaidAmtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AgntClaimPaidAmtField, value) != true)) {
-                    this.AgntClaimPaidAmtField = value;
-                    this.RaisePropertyChanged("AgntClaimPaidAmt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string AgntNetAmount {
-            get {
-                return this.AgntNetAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AgntNetAmountField, value) != true)) {
-                    this.AgntNetAmountField = value;
-                    this.RaisePropertyChanged("AgntNetAmount");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PassportDetails", Namespace="http://Custodianservices.com/")]
-    [System.SerializableAttribute()]
-    public partial class PassportDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TitleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        private System.DateTime DateofBirthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OccupationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string GenderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NationalityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StatusCodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Title {
-            get {
-                return this.TitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
-                    this.TitleField = value;
-                    this.RaisePropertyChanged("Title");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string PhoneNumber {
-            get {
-                return this.PhoneNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneNumberField, value) != true)) {
-                    this.PhoneNumberField = value;
-                    this.RaisePropertyChanged("PhoneNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime DateofBirth {
-            get {
-                return this.DateofBirthField;
-            }
-            set {
-                if ((this.DateofBirthField.Equals(value) != true)) {
-                    this.DateofBirthField = value;
-                    this.RaisePropertyChanged("DateofBirth");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Occupation {
-            get {
-                return this.OccupationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OccupationField, value) != true)) {
-                    this.OccupationField = value;
-                    this.RaisePropertyChanged("Occupation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Gender {
-            get {
-                return this.GenderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GenderField, value) != true)) {
-                    this.GenderField = value;
-                    this.RaisePropertyChanged("Gender");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string Nationality {
-            get {
-                return this.NationalityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NationalityField, value) != true)) {
-                    this.NationalityField = value;
-                    this.RaisePropertyChanged("Nationality");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string StatusCode {
-            get {
-                return this.StatusCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StatusCodeField, value) != true)) {
-                    this.StatusCodeField = value;
-                    this.RaisePropertyChanged("StatusCode");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Custodianservices.com/", ConfigurationName="Cust.PolicyServicesSoap")]
@@ -4710,12 +578,12 @@ namespace TestSerials.Cust {
     public partial class GetClaimStatusResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.Claimfl GetClaimStatusResult;
+        public RecurringDebitService.InternalAPI.Claimfl GetClaimStatusResult;
         
         public GetClaimStatusResponseBody() {
         }
         
-        public GetClaimStatusResponseBody(TestSerials.Cust.Claimfl GetClaimStatusResult) {
+        public GetClaimStatusResponseBody(RecurringDebitService.InternalAPI.Claimfl GetClaimStatusResult) {
             this.GetClaimStatusResult = GetClaimStatusResult;
         }
     }
@@ -4782,12 +650,12 @@ namespace TestSerials.Cust {
     public partial class GetContactClaimResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.Claimfl GetContactClaimResult;
+        public RecurringDebitService.InternalAPI.Claimfl GetContactClaimResult;
         
         public GetContactClaimResponseBody() {
         }
         
-        public GetContactClaimResponseBody(TestSerials.Cust.Claimfl GetContactClaimResult) {
+        public GetContactClaimResponseBody(RecurringDebitService.InternalAPI.Claimfl GetContactClaimResult) {
             this.GetContactClaimResult = GetContactClaimResult;
         }
     }
@@ -4850,12 +718,12 @@ namespace TestSerials.Cust {
     public partial class GetPolicyValidationResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.PolValidation GetPolicyValidationResult;
+        public RecurringDebitService.InternalAPI.PolValidation GetPolicyValidationResult;
         
         public GetPolicyValidationResponseBody() {
         }
         
-        public GetPolicyValidationResponseBody(TestSerials.Cust.PolValidation GetPolicyValidationResult) {
+        public GetPolicyValidationResponseBody(RecurringDebitService.InternalAPI.PolValidation GetPolicyValidationResult) {
             this.GetPolicyValidationResult = GetPolicyValidationResult;
         }
     }
@@ -4930,12 +798,12 @@ namespace TestSerials.Cust {
     public partial class GetPolicyExpiryDateResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.PolExpDate GetPolicyExpiryDateResult;
+        public RecurringDebitService.InternalAPI.PolExpDate GetPolicyExpiryDateResult;
         
         public GetPolicyExpiryDateResponseBody() {
         }
         
-        public GetPolicyExpiryDateResponseBody(TestSerials.Cust.PolExpDate GetPolicyExpiryDateResult) {
+        public GetPolicyExpiryDateResponseBody(RecurringDebitService.InternalAPI.PolExpDate GetPolicyExpiryDateResult) {
             this.GetPolicyExpiryDateResult = GetPolicyExpiryDateResult;
         }
     }
@@ -5010,12 +878,12 @@ namespace TestSerials.Cust {
     public partial class GetPolicyDetailsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.PolicyDet GetPolicyDetailsResult;
+        public RecurringDebitService.InternalAPI.PolicyDet GetPolicyDetailsResult;
         
         public GetPolicyDetailsResponseBody() {
         }
         
-        public GetPolicyDetailsResponseBody(TestSerials.Cust.PolicyDet GetPolicyDetailsResult) {
+        public GetPolicyDetailsResponseBody(RecurringDebitService.InternalAPI.PolicyDet GetPolicyDetailsResult) {
             this.GetPolicyDetailsResult = GetPolicyDetailsResult;
         }
     }
@@ -5084,12 +952,12 @@ namespace TestSerials.Cust {
     public partial class Generating_Claims_Number1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=0)]
-        public TestSerials.Cust.ClaimRegStatus Generating_Claims_NumberResult;
+        public RecurringDebitService.InternalAPI.ClaimRegStatus Generating_Claims_NumberResult;
         
         public Generating_Claims_Number1() {
         }
         
-        public Generating_Claims_Number1(TestSerials.Cust.ClaimRegStatus Generating_Claims_NumberResult) {
+        public Generating_Claims_Number1(RecurringDebitService.InternalAPI.ClaimRegStatus Generating_Claims_NumberResult) {
             this.Generating_Claims_NumberResult = Generating_Claims_NumberResult;
         }
     }
@@ -5505,12 +1373,12 @@ namespace TestSerials.Cust {
     public partial class GetClientDetailsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.ClientData GetClientDetailsResult;
+        public RecurringDebitService.InternalAPI.ClientData GetClientDetailsResult;
         
         public GetClientDetailsResponseBody() {
         }
         
-        public GetClientDetailsResponseBody(TestSerials.Cust.ClientData GetClientDetailsResult) {
+        public GetClientDetailsResponseBody(RecurringDebitService.InternalAPI.ClientData GetClientDetailsResult) {
             this.GetClientDetailsResult = GetClientDetailsResult;
         }
     }
@@ -6771,12 +2639,12 @@ namespace TestSerials.Cust {
     public partial class GetMotorPolicyDetailsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.MotorList[] GetMotorPolicyDetailsResult;
+        public RecurringDebitService.InternalAPI.MotorList[] GetMotorPolicyDetailsResult;
         
         public GetMotorPolicyDetailsResponseBody() {
         }
         
-        public GetMotorPolicyDetailsResponseBody(TestSerials.Cust.MotorList[] GetMotorPolicyDetailsResult) {
+        public GetMotorPolicyDetailsResponseBody(RecurringDebitService.InternalAPI.MotorList[] GetMotorPolicyDetailsResult) {
             this.GetMotorPolicyDetailsResult = GetMotorPolicyDetailsResult;
         }
     }
@@ -7583,12 +3451,12 @@ namespace TestSerials.Cust {
     public partial class GetlifePolicyBalancesResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.PolBalances GetlifePolicyBalancesResult;
+        public RecurringDebitService.InternalAPI.PolBalances GetlifePolicyBalancesResult;
         
         public GetlifePolicyBalancesResponseBody() {
         }
         
-        public GetlifePolicyBalancesResponseBody(TestSerials.Cust.PolBalances GetlifePolicyBalancesResult) {
+        public GetlifePolicyBalancesResponseBody(RecurringDebitService.InternalAPI.PolBalances GetlifePolicyBalancesResult) {
             this.GetlifePolicyBalancesResult = GetlifePolicyBalancesResult;
         }
     }
@@ -8059,12 +3927,12 @@ namespace TestSerials.Cust {
     public partial class POSTNotificationDetResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.NotificationsDetails POSTNotificationDetResult;
+        public RecurringDebitService.InternalAPI.NotificationsDetails POSTNotificationDetResult;
         
         public POSTNotificationDetResponseBody() {
         }
         
-        public POSTNotificationDetResponseBody(TestSerials.Cust.NotificationsDetails POSTNotificationDetResult) {
+        public POSTNotificationDetResponseBody(RecurringDebitService.InternalAPI.NotificationsDetails POSTNotificationDetResult) {
             this.POSTNotificationDetResult = POSTNotificationDetResult;
         }
     }
@@ -9095,12 +4963,12 @@ namespace TestSerials.Cust {
     public partial class PostTravel2RagaResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.certificate_out PostTravel2RagaResult;
+        public RecurringDebitService.InternalAPI.certificate_out PostTravel2RagaResult;
         
         public PostTravel2RagaResponseBody() {
         }
         
-        public PostTravel2RagaResponseBody(TestSerials.Cust.certificate_out PostTravel2RagaResult) {
+        public PostTravel2RagaResponseBody(RecurringDebitService.InternalAPI.certificate_out PostTravel2RagaResult) {
             this.PostTravel2RagaResult = PostTravel2RagaResult;
         }
     }
@@ -9876,12 +5744,12 @@ namespace TestSerials.Cust {
     public partial class SubmitClaimRegisterResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Custodianservices.com/", Order=0)]
-        public TestSerials.Cust.ClaimRegStatus SubmitClaimRegisterResult;
+        public RecurringDebitService.InternalAPI.ClaimRegStatus SubmitClaimRegisterResult;
         
         public SubmitClaimRegisterResponse() {
         }
         
-        public SubmitClaimRegisterResponse(TestSerials.Cust.ClaimRegStatus SubmitClaimRegisterResult) {
+        public SubmitClaimRegisterResponse(RecurringDebitService.InternalAPI.ClaimRegStatus SubmitClaimRegisterResult) {
             this.SubmitClaimRegisterResult = SubmitClaimRegisterResult;
         }
     }
@@ -9956,12 +5824,12 @@ namespace TestSerials.Cust {
     public partial class PostClaimsUpdateResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.ClaimRegStatus PostClaimsUpdateResult;
+        public RecurringDebitService.InternalAPI.ClaimRegStatus PostClaimsUpdateResult;
         
         public PostClaimsUpdateResponseBody() {
         }
         
-        public PostClaimsUpdateResponseBody(TestSerials.Cust.ClaimRegStatus PostClaimsUpdateResult) {
+        public PostClaimsUpdateResponseBody(RecurringDebitService.InternalAPI.ClaimRegStatus PostClaimsUpdateResult) {
             this.PostClaimsUpdateResult = PostClaimsUpdateResult;
         }
     }
@@ -10036,12 +5904,12 @@ namespace TestSerials.Cust {
     public partial class GetMorePolicyDetailsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.MorePolicyDetails GetMorePolicyDetailsResult;
+        public RecurringDebitService.InternalAPI.MorePolicyDetails GetMorePolicyDetailsResult;
         
         public GetMorePolicyDetailsResponseBody() {
         }
         
-        public GetMorePolicyDetailsResponseBody(TestSerials.Cust.MorePolicyDetails GetMorePolicyDetailsResult) {
+        public GetMorePolicyDetailsResponseBody(RecurringDebitService.InternalAPI.MorePolicyDetails GetMorePolicyDetailsResult) {
             this.GetMorePolicyDetailsResult = GetMorePolicyDetailsResult;
         }
     }
@@ -10120,12 +5988,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_ActivePoliciesResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.Crm_PolicyInfo[] GetCRM_ActivePoliciesResult;
+        public RecurringDebitService.InternalAPI.Crm_PolicyInfo[] GetCRM_ActivePoliciesResult;
         
         public GetCRM_ActivePoliciesResponseBody() {
         }
         
-        public GetCRM_ActivePoliciesResponseBody(TestSerials.Cust.Crm_PolicyInfo[] GetCRM_ActivePoliciesResult) {
+        public GetCRM_ActivePoliciesResponseBody(RecurringDebitService.InternalAPI.Crm_PolicyInfo[] GetCRM_ActivePoliciesResult) {
             this.GetCRM_ActivePoliciesResult = GetCRM_ActivePoliciesResult;
         }
     }
@@ -10204,12 +6072,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_CustomersResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.Crm_PolicyInfo[] GetCRM_CustomersResult;
+        public RecurringDebitService.InternalAPI.Crm_PolicyInfo[] GetCRM_CustomersResult;
         
         public GetCRM_CustomersResponseBody() {
         }
         
-        public GetCRM_CustomersResponseBody(TestSerials.Cust.Crm_PolicyInfo[] GetCRM_CustomersResult) {
+        public GetCRM_CustomersResponseBody(RecurringDebitService.InternalAPI.Crm_PolicyInfo[] GetCRM_CustomersResult) {
             this.GetCRM_CustomersResult = GetCRM_CustomersResult;
         }
     }
@@ -10288,12 +6156,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_ActiveCustomersResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.Crm_PolicyInfo[] GetCRM_ActiveCustomersResult;
+        public RecurringDebitService.InternalAPI.Crm_PolicyInfo[] GetCRM_ActiveCustomersResult;
         
         public GetCRM_ActiveCustomersResponseBody() {
         }
         
-        public GetCRM_ActiveCustomersResponseBody(TestSerials.Cust.Crm_PolicyInfo[] GetCRM_ActiveCustomersResult) {
+        public GetCRM_ActiveCustomersResponseBody(RecurringDebitService.InternalAPI.Crm_PolicyInfo[] GetCRM_ActiveCustomersResult) {
             this.GetCRM_ActiveCustomersResult = GetCRM_ActiveCustomersResult;
         }
     }
@@ -10372,12 +6240,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_AllPoliciesResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.Crm_PolicyInfo[] GetCRM_AllPoliciesResult;
+        public RecurringDebitService.InternalAPI.Crm_PolicyInfo[] GetCRM_AllPoliciesResult;
         
         public GetCRM_AllPoliciesResponseBody() {
         }
         
-        public GetCRM_AllPoliciesResponseBody(TestSerials.Cust.Crm_PolicyInfo[] GetCRM_AllPoliciesResult) {
+        public GetCRM_AllPoliciesResponseBody(RecurringDebitService.InternalAPI.Crm_PolicyInfo[] GetCRM_AllPoliciesResult) {
             this.GetCRM_AllPoliciesResult = GetCRM_AllPoliciesResult;
         }
     }
@@ -10456,12 +6324,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_PolicyRenewalResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.Crm_Renewal[] GetCRM_PolicyRenewalResult;
+        public RecurringDebitService.InternalAPI.Crm_Renewal[] GetCRM_PolicyRenewalResult;
         
         public GetCRM_PolicyRenewalResponseBody() {
         }
         
-        public GetCRM_PolicyRenewalResponseBody(TestSerials.Cust.Crm_Renewal[] GetCRM_PolicyRenewalResult) {
+        public GetCRM_PolicyRenewalResponseBody(RecurringDebitService.InternalAPI.Crm_Renewal[] GetCRM_PolicyRenewalResult) {
             this.GetCRM_PolicyRenewalResult = GetCRM_PolicyRenewalResult;
         }
     }
@@ -10540,12 +6408,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_BirthdayResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.Crm_Birthday[] GetCRM_BirthdayResult;
+        public RecurringDebitService.InternalAPI.Crm_Birthday[] GetCRM_BirthdayResult;
         
         public GetCRM_BirthdayResponseBody() {
         }
         
-        public GetCRM_BirthdayResponseBody(TestSerials.Cust.Crm_Birthday[] GetCRM_BirthdayResult) {
+        public GetCRM_BirthdayResponseBody(RecurringDebitService.InternalAPI.Crm_Birthday[] GetCRM_BirthdayResult) {
             this.GetCRM_BirthdayResult = GetCRM_BirthdayResult;
         }
     }
@@ -10624,12 +6492,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_ClaimsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.CRM_Claims[] GetCRM_ClaimsResult;
+        public RecurringDebitService.InternalAPI.CRM_Claims[] GetCRM_ClaimsResult;
         
         public GetCRM_ClaimsResponseBody() {
         }
         
-        public GetCRM_ClaimsResponseBody(TestSerials.Cust.CRM_Claims[] GetCRM_ClaimsResult) {
+        public GetCRM_ClaimsResponseBody(RecurringDebitService.InternalAPI.CRM_Claims[] GetCRM_ClaimsResult) {
             this.GetCRM_ClaimsResult = GetCRM_ClaimsResult;
         }
     }
@@ -10704,12 +6572,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_DashBoardResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.CRM_Dashboard[] GetCRM_DashBoardResult;
+        public RecurringDebitService.InternalAPI.CRM_Dashboard[] GetCRM_DashBoardResult;
         
         public GetCRM_DashBoardResponseBody() {
         }
         
-        public GetCRM_DashBoardResponseBody(TestSerials.Cust.CRM_Dashboard[] GetCRM_DashBoardResult) {
+        public GetCRM_DashBoardResponseBody(RecurringDebitService.InternalAPI.CRM_Dashboard[] GetCRM_DashBoardResult) {
             this.GetCRM_DashBoardResult = GetCRM_DashBoardResult;
         }
     }
@@ -10784,12 +6652,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_PolicyDetailResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.CRM_PolicyDetail[] GetCRM_PolicyDetailResult;
+        public RecurringDebitService.InternalAPI.CRM_PolicyDetail[] GetCRM_PolicyDetailResult;
         
         public GetCRM_PolicyDetailResponseBody() {
         }
         
-        public GetCRM_PolicyDetailResponseBody(TestSerials.Cust.CRM_PolicyDetail[] GetCRM_PolicyDetailResult) {
+        public GetCRM_PolicyDetailResponseBody(RecurringDebitService.InternalAPI.CRM_PolicyDetail[] GetCRM_PolicyDetailResult) {
             this.GetCRM_PolicyDetailResult = GetCRM_PolicyDetailResult;
         }
     }
@@ -10864,12 +6732,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_ClaimsDetailResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.CRM_ClaimsDetail[] GetCRM_ClaimsDetailResult;
+        public RecurringDebitService.InternalAPI.CRM_ClaimsDetail[] GetCRM_ClaimsDetailResult;
         
         public GetCRM_ClaimsDetailResponseBody() {
         }
         
-        public GetCRM_ClaimsDetailResponseBody(TestSerials.Cust.CRM_ClaimsDetail[] GetCRM_ClaimsDetailResult) {
+        public GetCRM_ClaimsDetailResponseBody(RecurringDebitService.InternalAPI.CRM_ClaimsDetail[] GetCRM_ClaimsDetailResult) {
             this.GetCRM_ClaimsDetailResult = GetCRM_ClaimsDetailResult;
         }
     }
@@ -11334,12 +7202,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_ClaimCountResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.ClaimCount[] GetCRM_ClaimCountResult;
+        public RecurringDebitService.InternalAPI.ClaimCount[] GetCRM_ClaimCountResult;
         
         public GetCRM_ClaimCountResponseBody() {
         }
         
-        public GetCRM_ClaimCountResponseBody(TestSerials.Cust.ClaimCount[] GetCRM_ClaimCountResult) {
+        public GetCRM_ClaimCountResponseBody(RecurringDebitService.InternalAPI.ClaimCount[] GetCRM_ClaimCountResult) {
             this.GetCRM_ClaimCountResult = GetCRM_ClaimCountResult;
         }
     }
@@ -11410,12 +7278,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_NIIDDataResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.ABSNIID[] GetCRM_NIIDDataResult;
+        public RecurringDebitService.InternalAPI.ABSNIID[] GetCRM_NIIDDataResult;
         
         public GetCRM_NIIDDataResponseBody() {
         }
         
-        public GetCRM_NIIDDataResponseBody(TestSerials.Cust.ABSNIID[] GetCRM_NIIDDataResult) {
+        public GetCRM_NIIDDataResponseBody(RecurringDebitService.InternalAPI.ABSNIID[] GetCRM_NIIDDataResult) {
             this.GetCRM_NIIDDataResult = GetCRM_NIIDDataResult;
         }
     }
@@ -11486,12 +7354,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_LapseDetailResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.CRM_ClaimsDetail[] GetCRM_LapseDetailResult;
+        public RecurringDebitService.InternalAPI.CRM_ClaimsDetail[] GetCRM_LapseDetailResult;
         
         public GetCRM_LapseDetailResponseBody() {
         }
         
-        public GetCRM_LapseDetailResponseBody(TestSerials.Cust.CRM_ClaimsDetail[] GetCRM_LapseDetailResult) {
+        public GetCRM_LapseDetailResponseBody(RecurringDebitService.InternalAPI.CRM_ClaimsDetail[] GetCRM_LapseDetailResult) {
             this.GetCRM_LapseDetailResult = GetCRM_LapseDetailResult;
         }
     }
@@ -11558,12 +7426,12 @@ namespace TestSerials.Cust {
     public partial class GetPPTDetailsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.ClientData[] GetPPTDetailsResult;
+        public RecurringDebitService.InternalAPI.ClientData[] GetPPTDetailsResult;
         
         public GetPPTDetailsResponseBody() {
         }
         
-        public GetPPTDetailsResponseBody(TestSerials.Cust.ClientData[] GetPPTDetailsResult) {
+        public GetPPTDetailsResponseBody(RecurringDebitService.InternalAPI.ClientData[] GetPPTDetailsResult) {
             this.GetPPTDetailsResult = GetPPTDetailsResult;
         }
     }
@@ -11630,12 +7498,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_Top10ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.CRM_Top10Det[] GetCRM_Top10Result;
+        public RecurringDebitService.InternalAPI.CRM_Top10Det[] GetCRM_Top10Result;
         
         public GetCRM_Top10ResponseBody() {
         }
         
-        public GetCRM_Top10ResponseBody(TestSerials.Cust.CRM_Top10Det[] GetCRM_Top10Result) {
+        public GetCRM_Top10ResponseBody(RecurringDebitService.InternalAPI.CRM_Top10Det[] GetCRM_Top10Result) {
             this.GetCRM_Top10Result = GetCRM_Top10Result;
         }
     }
@@ -11706,12 +7574,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_TopProductlinesResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.CRM_TopProduct[] GetCRM_TopProductlinesResult;
+        public RecurringDebitService.InternalAPI.CRM_TopProduct[] GetCRM_TopProductlinesResult;
         
         public GetCRM_TopProductlinesResponseBody() {
         }
         
-        public GetCRM_TopProductlinesResponseBody(TestSerials.Cust.CRM_TopProduct[] GetCRM_TopProductlinesResult) {
+        public GetCRM_TopProductlinesResponseBody(RecurringDebitService.InternalAPI.CRM_TopProduct[] GetCRM_TopProductlinesResult) {
             this.GetCRM_TopProductlinesResult = GetCRM_TopProductlinesResult;
         }
     }
@@ -11782,12 +7650,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_TobeRenewedResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.To_be_renewed[] GetCRM_TobeRenewedResult;
+        public RecurringDebitService.InternalAPI.To_be_renewed[] GetCRM_TobeRenewedResult;
         
         public GetCRM_TobeRenewedResponseBody() {
         }
         
-        public GetCRM_TobeRenewedResponseBody(TestSerials.Cust.To_be_renewed[] GetCRM_TobeRenewedResult) {
+        public GetCRM_TobeRenewedResponseBody(RecurringDebitService.InternalAPI.To_be_renewed[] GetCRM_TobeRenewedResult) {
             this.GetCRM_TobeRenewedResult = GetCRM_TobeRenewedResult;
         }
     }
@@ -11850,12 +7718,12 @@ namespace TestSerials.Cust {
     public partial class GetCRM_BrokerResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.BrokerData[] GetCRM_BrokerResult;
+        public RecurringDebitService.InternalAPI.BrokerData[] GetCRM_BrokerResult;
         
         public GetCRM_BrokerResponseBody() {
         }
         
-        public GetCRM_BrokerResponseBody(TestSerials.Cust.BrokerData[] GetCRM_BrokerResult) {
+        public GetCRM_BrokerResponseBody(RecurringDebitService.InternalAPI.BrokerData[] GetCRM_BrokerResult) {
             this.GetCRM_BrokerResult = GetCRM_BrokerResult;
         }
     }
@@ -12101,12 +7969,12 @@ namespace TestSerials.Cust {
     public partial class GetPassportDetailsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public TestSerials.Cust.PassportDetails GetPassportDetailsResult;
+        public RecurringDebitService.InternalAPI.PassportDetails GetPassportDetailsResult;
         
         public GetPassportDetailsResponseBody() {
         }
         
-        public GetPassportDetailsResponseBody(TestSerials.Cust.PassportDetails GetPassportDetailsResult) {
+        public GetPassportDetailsResponseBody(RecurringDebitService.InternalAPI.PassportDetails GetPassportDetailsResult) {
             this.GetPassportDetailsResult = GetPassportDetailsResult;
         }
     }
@@ -12143,7 +8011,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetClaimStatus(request);
         }
         
-        public TestSerials.Cust.Claimfl GetClaimStatus(string ClaimsNumb) {
+        public RecurringDebitService.InternalAPI.Claimfl GetClaimStatus(string ClaimsNumb) {
             TestSerials.Cust.GetClaimStatusRequest inValue = new TestSerials.Cust.GetClaimStatusRequest();
             inValue.Body = new TestSerials.Cust.GetClaimStatusRequestBody();
             inValue.Body.ClaimsNumb = ClaimsNumb;
@@ -12168,7 +8036,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetContactClaim(request);
         }
         
-        public TestSerials.Cust.Claimfl GetContactClaim(string ClaimsNumb, string TelNumber) {
+        public RecurringDebitService.InternalAPI.Claimfl GetContactClaim(string ClaimsNumb, string TelNumber) {
             TestSerials.Cust.GetContactClaimRequest inValue = new TestSerials.Cust.GetContactClaimRequest();
             inValue.Body = new TestSerials.Cust.GetContactClaimRequestBody();
             inValue.Body.ClaimsNumb = ClaimsNumb;
@@ -12195,7 +8063,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetPolicyValidation(request);
         }
         
-        public TestSerials.Cust.PolValidation GetPolicyValidation(string polcode) {
+        public RecurringDebitService.InternalAPI.PolValidation GetPolicyValidation(string polcode) {
             TestSerials.Cust.GetPolicyValidationRequest inValue = new TestSerials.Cust.GetPolicyValidationRequest();
             inValue.Body = new TestSerials.Cust.GetPolicyValidationRequestBody();
             inValue.Body.polcode = polcode;
@@ -12220,7 +8088,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetPolicyExpiryDate(request);
         }
         
-        public TestSerials.Cust.PolExpDate GetPolicyExpiryDate(string MerchantID, string MerchantPWD, string Subsidiary, string policyNo) {
+        public RecurringDebitService.InternalAPI.PolExpDate GetPolicyExpiryDate(string MerchantID, string MerchantPWD, string Subsidiary, string policyNo) {
             TestSerials.Cust.GetPolicyExpiryDateRequest inValue = new TestSerials.Cust.GetPolicyExpiryDateRequest();
             inValue.Body = new TestSerials.Cust.GetPolicyExpiryDateRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -12251,7 +8119,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetPolicyDetails(request);
         }
         
-        public TestSerials.Cust.PolicyDet GetPolicyDetails(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
+        public RecurringDebitService.InternalAPI.PolicyDet GetPolicyDetails(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
             TestSerials.Cust.GetPolicyDetailsRequest inValue = new TestSerials.Cust.GetPolicyDetailsRequest();
             inValue.Body = new TestSerials.Cust.GetPolicyDetailsRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -12282,7 +8150,7 @@ namespace TestSerials.Cust {
             return base.Channel.SubmitClaimRegister(request);
         }
         
-        public TestSerials.Cust.ClaimRegStatus SubmitClaimRegister(string MerchantID, string MerchantPWD, string Fullname, string Address, string Email, string Telephone, string PolicyNo, string lossDescription, System.DateTime DateofLoss, string VehicleReg, string ClaimsAmt) {
+        public RecurringDebitService.InternalAPI.ClaimRegStatus SubmitClaimRegister(string MerchantID, string MerchantPWD, string Fullname, string Address, string Email, string Telephone, string PolicyNo, string lossDescription, System.DateTime DateofLoss, string VehicleReg, string ClaimsAmt) {
             TestSerials.Cust.Generating_Claims_Number inValue = new TestSerials.Cust.Generating_Claims_Number();
             inValue.MerchantID = MerchantID;
             inValue.MerchantPWD = MerchantPWD;
@@ -12452,7 +8320,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetClientDetails(request);
         }
         
-        public TestSerials.Cust.ClientData GetClientDetails(string MerchantID, string MerchantPWD, string Telephone, string PolicyNo) {
+        public RecurringDebitService.InternalAPI.ClientData GetClientDetails(string MerchantID, string MerchantPWD, string Telephone, string PolicyNo) {
             TestSerials.Cust.GetClientDetailsRequest inValue = new TestSerials.Cust.GetClientDetailsRequest();
             inValue.Body = new TestSerials.Cust.GetClientDetailsRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -13348,7 +9216,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetMotorPolicyDetails(request);
         }
         
-        public TestSerials.Cust.MotorList[] GetMotorPolicyDetails(string MerchantID, string MerchantPWD, string PolicyNumber) {
+        public RecurringDebitService.InternalAPI.MotorList[] GetMotorPolicyDetails(string MerchantID, string MerchantPWD, string PolicyNumber) {
             TestSerials.Cust.GetMotorPolicyDetailsRequest inValue = new TestSerials.Cust.GetMotorPolicyDetailsRequest();
             inValue.Body = new TestSerials.Cust.GetMotorPolicyDetailsRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -13796,7 +9664,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetlifePolicyBalances(request);
         }
         
-        public TestSerials.Cust.PolBalances GetlifePolicyBalances(string MerchantID, string MerchantPWD, string policyNo) {
+        public RecurringDebitService.InternalAPI.PolBalances GetlifePolicyBalances(string MerchantID, string MerchantPWD, string policyNo) {
             TestSerials.Cust.GetlifePolicyBalancesRequest inValue = new TestSerials.Cust.GetlifePolicyBalancesRequest();
             inValue.Body = new TestSerials.Cust.GetlifePolicyBalancesRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -13945,7 +9813,7 @@ namespace TestSerials.Cust {
             return base.Channel.POSTNotificationDet(request);
         }
         
-        public TestSerials.Cust.NotificationsDetails POSTNotificationDet(
+        public RecurringDebitService.InternalAPI.NotificationsDetails POSTNotificationDet(
                     string MerchantID, 
                     string Mpassword, 
                     string Product, 
@@ -14668,7 +10536,7 @@ namespace TestSerials.Cust {
             return base.Channel.PostTravel2Raga(request);
         }
         
-        public TestSerials.Cust.certificate_out PostTravel2Raga(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+        public RecurringDebitService.InternalAPI.certificate_out PostTravel2Raga(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
             TestSerials.Cust.PostTravel2RagaRequest inValue = new TestSerials.Cust.PostTravel2RagaRequest();
             inValue.Body = new TestSerials.Cust.PostTravel2RagaRequestBody();
             inValue.Body.start_date = start_date;
@@ -15198,7 +11066,7 @@ namespace TestSerials.Cust {
             return base.Channel.SubmitClaimRegister1(request);
         }
         
-        public TestSerials.Cust.ClaimRegStatus SubmitClaimRegister1(string MerchantID, string MerchantPWD, string Fullname, string Address, string Email, string Telephone, string PolicyNo, string lossDescription, System.DateTime DateofLoss) {
+        public RecurringDebitService.InternalAPI.ClaimRegStatus SubmitClaimRegister1(string MerchantID, string MerchantPWD, string Fullname, string Address, string Email, string Telephone, string PolicyNo, string lossDescription, System.DateTime DateofLoss) {
             TestSerials.Cust.SubmitClaimRegisterRequest inValue = new TestSerials.Cust.SubmitClaimRegisterRequest();
             inValue.MerchantID = MerchantID;
             inValue.MerchantPWD = MerchantPWD;
@@ -15237,7 +11105,7 @@ namespace TestSerials.Cust {
             return base.Channel.PostClaimsUpdate(request);
         }
         
-        public TestSerials.Cust.ClaimRegStatus PostClaimsUpdate(string MerchantID, string MerchantPWD, string ClaimNo, string ClaimStatusCode) {
+        public RecurringDebitService.InternalAPI.ClaimRegStatus PostClaimsUpdate(string MerchantID, string MerchantPWD, string ClaimNo, string ClaimStatusCode) {
             TestSerials.Cust.PostClaimsUpdateRequest inValue = new TestSerials.Cust.PostClaimsUpdateRequest();
             inValue.Body = new TestSerials.Cust.PostClaimsUpdateRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -15268,7 +11136,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetMorePolicyDetails(request);
         }
         
-        public TestSerials.Cust.MorePolicyDetails GetMorePolicyDetails(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
+        public RecurringDebitService.InternalAPI.MorePolicyDetails GetMorePolicyDetails(string MerchantID, string MerchantPWD, string Subsidiary, string PolicyNumber) {
             TestSerials.Cust.GetMorePolicyDetailsRequest inValue = new TestSerials.Cust.GetMorePolicyDetailsRequest();
             inValue.Body = new TestSerials.Cust.GetMorePolicyDetailsRequestBody();
             inValue.Body.MerchantID = MerchantID;
@@ -15299,7 +11167,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_ActivePolicies(request);
         }
         
-        public TestSerials.Cust.Crm_PolicyInfo[] GetCRM_ActivePolicies(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+        public RecurringDebitService.InternalAPI.Crm_PolicyInfo[] GetCRM_ActivePolicies(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
             TestSerials.Cust.GetCRM_ActivePoliciesRequest inValue = new TestSerials.Cust.GetCRM_ActivePoliciesRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_ActivePoliciesRequestBody();
             inValue.Body.MDescription = MDescription;
@@ -15332,7 +11200,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_Customers(request);
         }
         
-        public TestSerials.Cust.Crm_PolicyInfo[] GetCRM_Customers(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+        public RecurringDebitService.InternalAPI.Crm_PolicyInfo[] GetCRM_Customers(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
             TestSerials.Cust.GetCRM_CustomersRequest inValue = new TestSerials.Cust.GetCRM_CustomersRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_CustomersRequestBody();
             inValue.Body.MDescription = MDescription;
@@ -15365,7 +11233,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_ActiveCustomers(request);
         }
         
-        public TestSerials.Cust.Crm_PolicyInfo[] GetCRM_ActiveCustomers(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+        public RecurringDebitService.InternalAPI.Crm_PolicyInfo[] GetCRM_ActiveCustomers(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
             TestSerials.Cust.GetCRM_ActiveCustomersRequest inValue = new TestSerials.Cust.GetCRM_ActiveCustomersRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_ActiveCustomersRequestBody();
             inValue.Body.MDescription = MDescription;
@@ -15398,7 +11266,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_AllPolicies(request);
         }
         
-        public TestSerials.Cust.Crm_PolicyInfo[] GetCRM_AllPolicies(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+        public RecurringDebitService.InternalAPI.Crm_PolicyInfo[] GetCRM_AllPolicies(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
             TestSerials.Cust.GetCRM_AllPoliciesRequest inValue = new TestSerials.Cust.GetCRM_AllPoliciesRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_AllPoliciesRequestBody();
             inValue.Body.MDescription = MDescription;
@@ -15431,7 +11299,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_PolicyRenewal(request);
         }
         
-        public TestSerials.Cust.Crm_Renewal[] GetCRM_PolicyRenewal(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+        public RecurringDebitService.InternalAPI.Crm_Renewal[] GetCRM_PolicyRenewal(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
             TestSerials.Cust.GetCRM_PolicyRenewalRequest inValue = new TestSerials.Cust.GetCRM_PolicyRenewalRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_PolicyRenewalRequestBody();
             inValue.Body.MDescription = MDescription;
@@ -15464,7 +11332,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_Birthday(request);
         }
         
-        public TestSerials.Cust.Crm_Birthday[] GetCRM_Birthday(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+        public RecurringDebitService.InternalAPI.Crm_Birthday[] GetCRM_Birthday(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
             TestSerials.Cust.GetCRM_BirthdayRequest inValue = new TestSerials.Cust.GetCRM_BirthdayRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_BirthdayRequestBody();
             inValue.Body.MDescription = MDescription;
@@ -15497,7 +11365,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_Claims(request);
         }
         
-        public TestSerials.Cust.CRM_Claims[] GetCRM_Claims(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
+        public RecurringDebitService.InternalAPI.CRM_Claims[] GetCRM_Claims(string MDescription, string userid, string Subsidiary, string BusinessUnit, string Pages) {
             TestSerials.Cust.GetCRM_ClaimsRequest inValue = new TestSerials.Cust.GetCRM_ClaimsRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_ClaimsRequestBody();
             inValue.Body.MDescription = MDescription;
@@ -15530,7 +11398,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_DashBoard(request);
         }
         
-        public TestSerials.Cust.CRM_Dashboard[] GetCRM_DashBoard(string MDescription, string userid, string Subsidiary, string BusinessUnit) {
+        public RecurringDebitService.InternalAPI.CRM_Dashboard[] GetCRM_DashBoard(string MDescription, string userid, string Subsidiary, string BusinessUnit) {
             TestSerials.Cust.GetCRM_DashBoardRequest inValue = new TestSerials.Cust.GetCRM_DashBoardRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_DashBoardRequestBody();
             inValue.Body.MDescription = MDescription;
@@ -15561,7 +11429,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_PolicyDetail(request);
         }
         
-        public TestSerials.Cust.CRM_PolicyDetail[] GetCRM_PolicyDetail(string CustomerID, string Subsidiary, string BusinessUnit, string Pages) {
+        public RecurringDebitService.InternalAPI.CRM_PolicyDetail[] GetCRM_PolicyDetail(string CustomerID, string Subsidiary, string BusinessUnit, string Pages) {
             TestSerials.Cust.GetCRM_PolicyDetailRequest inValue = new TestSerials.Cust.GetCRM_PolicyDetailRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_PolicyDetailRequestBody();
             inValue.Body.CustomerID = CustomerID;
@@ -15592,7 +11460,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_ClaimsDetail(request);
         }
         
-        public TestSerials.Cust.CRM_ClaimsDetail[] GetCRM_ClaimsDetail(string CustomerID, string Subsidiary, string BusinessUnit, string Pages) {
+        public RecurringDebitService.InternalAPI.CRM_ClaimsDetail[] GetCRM_ClaimsDetail(string CustomerID, string Subsidiary, string BusinessUnit, string Pages) {
             TestSerials.Cust.GetCRM_ClaimsDetailRequest inValue = new TestSerials.Cust.GetCRM_ClaimsDetailRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_ClaimsDetailRequestBody();
             inValue.Body.CustomerID = CustomerID;
@@ -15907,7 +11775,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_ClaimCount(request);
         }
         
-        public TestSerials.Cust.ClaimCount[] GetCRM_ClaimCount(string MDescription, string ProductType, string BusinessUnit) {
+        public RecurringDebitService.InternalAPI.ClaimCount[] GetCRM_ClaimCount(string MDescription, string ProductType, string BusinessUnit) {
             TestSerials.Cust.GetCRM_ClaimCountRequest inValue = new TestSerials.Cust.GetCRM_ClaimCountRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_ClaimCountRequestBody();
             inValue.Body.MDescription = MDescription;
@@ -15936,7 +11804,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_NIIDData(request);
         }
         
-        public TestSerials.Cust.ABSNIID[] GetCRM_NIIDData(string BusinessUnit, string ABSID, string Pages) {
+        public RecurringDebitService.InternalAPI.ABSNIID[] GetCRM_NIIDData(string BusinessUnit, string ABSID, string Pages) {
             TestSerials.Cust.GetCRM_NIIDDataRequest inValue = new TestSerials.Cust.GetCRM_NIIDDataRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_NIIDDataRequestBody();
             inValue.Body.BusinessUnit = BusinessUnit;
@@ -15965,7 +11833,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_LapseDetail(request);
         }
         
-        public TestSerials.Cust.CRM_ClaimsDetail[] GetCRM_LapseDetail(string Subsidiary, string BusinessUnit, string Pages) {
+        public RecurringDebitService.InternalAPI.CRM_ClaimsDetail[] GetCRM_LapseDetail(string Subsidiary, string BusinessUnit, string Pages) {
             TestSerials.Cust.GetCRM_LapseDetailRequest inValue = new TestSerials.Cust.GetCRM_LapseDetailRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_LapseDetailRequestBody();
             inValue.Body.Subsidiary = Subsidiary;
@@ -15994,7 +11862,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetPPTDetails(request);
         }
         
-        public TestSerials.Cust.ClientData[] GetPPTDetails(string Subsidiary, string PolicyNo) {
+        public RecurringDebitService.InternalAPI.ClientData[] GetPPTDetails(string Subsidiary, string PolicyNo) {
             TestSerials.Cust.GetPPTDetailsRequest inValue = new TestSerials.Cust.GetPPTDetailsRequest();
             inValue.Body = new TestSerials.Cust.GetPPTDetailsRequestBody();
             inValue.Body.Subsidiary = Subsidiary;
@@ -16021,7 +11889,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_Top10(request);
         }
         
-        public TestSerials.Cust.CRM_Top10Det[] GetCRM_Top10(string Subsidiary, string BusinessUnit) {
+        public RecurringDebitService.InternalAPI.CRM_Top10Det[] GetCRM_Top10(string Subsidiary, string BusinessUnit) {
             TestSerials.Cust.GetCRM_Top10Request inValue = new TestSerials.Cust.GetCRM_Top10Request();
             inValue.Body = new TestSerials.Cust.GetCRM_Top10RequestBody();
             inValue.Body.Subsidiary = Subsidiary;
@@ -16048,7 +11916,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_TopProductlines(request);
         }
         
-        public TestSerials.Cust.CRM_TopProduct[] GetCRM_TopProductlines(string Subsidiary, string Products, string BusinessUnit) {
+        public RecurringDebitService.InternalAPI.CRM_TopProduct[] GetCRM_TopProductlines(string Subsidiary, string Products, string BusinessUnit) {
             TestSerials.Cust.GetCRM_TopProductlinesRequest inValue = new TestSerials.Cust.GetCRM_TopProductlinesRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_TopProductlinesRequestBody();
             inValue.Body.Subsidiary = Subsidiary;
@@ -16077,7 +11945,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_TobeRenewed(request);
         }
         
-        public TestSerials.Cust.To_be_renewed[] GetCRM_TobeRenewed(string Subsidiary, string BusinessUnit, string Pages) {
+        public RecurringDebitService.InternalAPI.To_be_renewed[] GetCRM_TobeRenewed(string Subsidiary, string BusinessUnit, string Pages) {
             TestSerials.Cust.GetCRM_TobeRenewedRequest inValue = new TestSerials.Cust.GetCRM_TobeRenewedRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_TobeRenewedRequestBody();
             inValue.Body.Subsidiary = Subsidiary;
@@ -16106,7 +11974,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetCRM_Broker(request);
         }
         
-        public TestSerials.Cust.BrokerData[] GetCRM_Broker(string Pages) {
+        public RecurringDebitService.InternalAPI.BrokerData[] GetCRM_Broker(string Pages) {
             TestSerials.Cust.GetCRM_BrokerRequest inValue = new TestSerials.Cust.GetCRM_BrokerRequest();
             inValue.Body = new TestSerials.Cust.GetCRM_BrokerRequestBody();
             inValue.Body.Pages = Pages;
@@ -16268,7 +12136,7 @@ namespace TestSerials.Cust {
             return base.Channel.GetPassportDetails(request);
         }
         
-        public TestSerials.Cust.PassportDetails GetPassportDetails(string MerchantID, string MerchantPWD, string PassportNumber) {
+        public RecurringDebitService.InternalAPI.PassportDetails GetPassportDetails(string MerchantID, string MerchantPWD, string PassportNumber) {
             TestSerials.Cust.GetPassportDetailsRequest inValue = new TestSerials.Cust.GetPassportDetailsRequest();
             inValue.Body = new TestSerials.Cust.GetPassportDetailsRequestBody();
             inValue.Body.MerchantID = MerchantID;

@@ -98,9 +98,8 @@
       <HintPath>..\packages\NLog.4.5.10\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\TestSerials\bin\Debug\Oracle.DataAccess.dll</HintPath>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.19.11.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -203,6 +202,7 @@
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\NonLifeClaimsDocument.cs" />
     <Compile Include="Models\PaystackRecurringCharges.cs" />
+    <Compile Include="Models\PaystackRecurringDump.cs" />
     <Compile Include="Models\PinnedNews.cs" />
     <Compile Include="Models\PolicyServicesDetails.cs" />
     <Compile Include="Models\PremiumCalculatorMapping.cs" />
@@ -222,6 +222,7 @@
     <Compile Include="Utilities\InterStateEncryption.cs" />
     <Compile Include="Utilities\TravelUtility.cs" />
     <Compile Include="Utilities\Utility.cs" />
+    <Compile Include="ViewModels\AzureAD.cs" />
     <Compile Include="ViewModels\CoreModels.cs" />
     <Compile Include="ViewModels\fDocuments.cs" />
     <Compile Include="ViewModels\enums.cs" />

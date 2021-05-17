@@ -119,6 +119,13 @@ namespace DataStore.ViewModels
         Single = 5
     }
 
+    public enum ReOccurranceState
+    {
+        SCHEDULED = 1,
+        COMPLETED = 2,
+        CANCELLED = 3
+    }
+
     public enum PolicyType
     {
         EsusuShield = 1,

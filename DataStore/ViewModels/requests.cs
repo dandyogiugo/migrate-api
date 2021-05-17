@@ -1268,15 +1268,45 @@ namespace DataStore.ViewModels
         public string policy_number { get; set; }
         [Required]
         public string product_name { get; set; }
+
+        [Required]
+        public string brand { get; set; }
         [Required]
         public Frequency recurring_freqency { get; set; }
-        public int recurring_day_in_month { get; set; }
+
+        [Required]
+        public DateTime recurring_start_month { get; set; }
         [Required]
         public string customer_email { get; set; }
         [Required]
         public string customer_name { get; set; }
         [Required]
         public decimal amount { get; set; }
+        [Required]
+        public DateTime recurring_end_month { get; set; }
+        [Required]
+        public string subsidiary { get; set; }
+
+        public string vehicle_reg { get; set; }
+
+    }
+
+    public class CardUpdate: CoreModels
+    {
+        public CardUpdate()
+        {
+
+        }
+
+        [Required]
+        public DateTime recurring_end_month { get; set; }
+        [Required]
+        public Frequency recurring_freqency { get; set; }
+
+        [Required]
+        public DateTime recurring_start_month { get; set; }
+        [Required]
+        public string card_unique_token { get; set; }
     }
 
     public class ChakaSignUp : CoreModels
@@ -1364,6 +1394,19 @@ namespace DataStore.ViewModels
         public string Sub_prod_lng_descr { get; set; }
         public string Policy_status { get; set; }
         public string Data_source { get; set; }
+    }
+
+    public class fNotification
+    {
+        public string title { get; set; }
+        public string body { get; set; }
+        public int badge { get; set; }
+    }
+
+    public class Firebase
+    {
+        public fNotification notification { get; set; }
+        public string to { get; set; }
     }
 }
 

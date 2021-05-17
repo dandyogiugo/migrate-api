@@ -627,7 +627,6 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\Custodian
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Unity.ServiceLocation.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\WebActivatorEx.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\WebGrease.dll
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Oracle.DataAccess.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Microsoft.mshtml.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\DapperLayer.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\DapperLayer.dll.config
@@ -701,3 +700,4 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\Custodian
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.XmlSerializers.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Oracle.ManagedDataAccess.dll

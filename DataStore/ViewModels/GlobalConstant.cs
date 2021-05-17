@@ -129,5 +129,29 @@ namespace DataStore.ViewModels
                 return baseurl;
             }
         }
+
+        public static string AD_AUTHENTICATE
+        {
+            get
+            {
+                string baseurl = ConfigurationManager.AppSettings["AD_AUTHENTICATE"];
+                if (string.IsNullOrEmpty(baseurl))
+                    return null;
+                return baseurl;
+            }
+        }
+
+        public static string AD_GRAPH
+        {
+            get
+            {
+                string baseurl = ConfigurationManager.AppSettings["AD_GRAPH"];
+                if (string.IsNullOrEmpty(baseurl))
+                    return null;
+                return baseurl;
+            }
+        }
     }
+
+   
 }

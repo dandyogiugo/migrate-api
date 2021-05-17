@@ -131,6 +131,9 @@
       <HintPath>..\packages\NLog.4.5.10\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.19.11.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="Spire.Doc, Version=6.3.0.41040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
       <HintPath>..\packages\FreeSpire.Doc.6.3\lib\net40\Spire.Doc.dll</HintPath>
       <Private>True</Private>
@@ -370,6 +373,7 @@
     <Compile Include="Controllers\ReferralSystemController.cs" />
     <Compile Include="Controllers\SafetyPlusController.cs" />
     <Compile Include="Controllers\SportController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\TravelController.cs" />
     <Compile Include="Controllers\TravelQuoteComputationController.cs" />
     <Compile Include="Controllers\USSDConfigController.cs" />

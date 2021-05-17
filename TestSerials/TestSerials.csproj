@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TestSerials</RootNamespace>
     <AssemblyName>TestSerials</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,10 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -45,18 +42,23 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.10\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
@@ -97,6 +99,31 @@
     <None Include="App.config" />
     <None Include="Config\API_SETTINGS.json" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.ABSNIID.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.BrokerData.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.certificate_out.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.ClaimCount.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.Claimfl.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.ClaimRegStatus.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.ClientData.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.Crm_Birthday.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.CRM_Claims.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.CRM_ClaimsDetail.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.CRM_Dashboard.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.CRM_PolicyDetail.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.Crm_PolicyInfo.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.Crm_Renewal.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.CRM_Top10Det.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.CRM_TopProduct.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.MorePolicyDetails.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.MotorList.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.NotificationsDetails.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.PassportDetails.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.PolBalances.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.PolExpDate.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.PolicyDet.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.PolValidation.datasource" />
+    <None Include="Properties\DataSources\RecurringDebitService.InternalAPI.To_be_renewed.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,55 +132,7 @@
     <None Include="Service References\Cust\TestSerials.Cust.ABSMotorInterestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Cust\TestSerials.Cust.ABSNIID.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.BrokerData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.certificate_out.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.ClaimCount.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.Claimfl.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.ClaimRegStatus.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.ClientData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\Cust\TestSerials.Cust.CreateLifeClientResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.Crm_Birthday.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.CRM_Claims.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.CRM_ClaimsDetail.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.CRM_Dashboard.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.CRM_PolicyDetail.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.Crm_PolicyInfo.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.Crm_Renewal.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.CRM_Top10Det.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.CRM_TopProduct.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Cust\TestSerials.Cust.Generating_Claims_Number1.datasource">
@@ -294,15 +273,6 @@
     <None Include="Service References\Cust\TestSerials.Cust.GetTravelQuoteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Cust\TestSerials.Cust.MorePolicyDetails.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.MotorList.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.NotificationsDetails.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\Cust\TestSerials.Cust.Passing_Broker_HouseHolder_PostSource1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -339,21 +309,6 @@
     <None Include="Service References\Cust\TestSerials.Cust.Passing_Travel_PostSource1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Cust\TestSerials.Cust.PassportDetails.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.PolBalances.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.PolExpDate.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.PolicyDet.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.PolValidation.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\Cust\TestSerials.Cust.PostABSSyncResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -388,9 +343,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Cust\TestSerials.Cust.SubmitPaymentRecordResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Cust\TestSerials.Cust.To_be_renewed.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TravelApi\TestSerials.TravelApi.OTA_AirLowFareSearchPlusRS.datasource">
@@ -507,17 +459,13 @@
     <None Include="Service References\TravelApi\wsLowFarePlus1.disco" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DapperLayer\DapperLayer.csproj">
-      <Project>{665a828c-98a3-4417-8721-bc3a9225429b}</Project>
-      <Name>DapperLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataStore\DataStore.csproj">
       <Project>{84FC4D85-940B-4A62-BDCE-A9C61C2C463D}</Project>
       <Name>DataStore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UpSellingAndCrossSelling\UpSellingAndCrossSelling.csproj">
-      <Project>{eeed8eb9-4843-4a0e-a532-5326a9464281}</Project>
-      <Name>UpSellingAndCrossSelling</Name>
+    <ProjectReference Include="..\RecurringDebitService\RecurringDebitService.csproj">
+      <Project>{2cceee34-52ec-47f6-ad30-6576a52b35b8}</Project>
+      <Name>RecurringDebitService</Name>
     </ProjectReference>
     <ProjectReference Include="..\WindowsService1\CronJobsNews.csproj">
       <Project>{C56F099C-E7E7-46A1-8A86-9B9B3CDC4037}</Project>
@@ -558,6 +506,11 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="EmailTemplate\Email.html" />
+    <Content Include="Image\logo-white.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

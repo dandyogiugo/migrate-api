@@ -27,5 +27,12 @@ namespace DataStore.Models
         public DateTime datecreated { get; set; }
         public bool is_active { get; set; }
         public string assigned_function { get; set; }
+        public string AD_client_secret { get; set; }
+        public string AD_client_id { get; set; }
+        public string AD_redirect_uri { get; set; }
     }
 }
+
+//AD_client_secret
+//AD_client_id
+//AD_redirect_uri

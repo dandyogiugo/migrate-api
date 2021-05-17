@@ -80,13 +80,14 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLay
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\DataStore.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\NLog.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Spire.Doc.dll
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Oracle.DataAccess.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Oracle.ManagedDataAccess.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Hangfire.Core.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\EntityFramework.dll
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\CustodianEmailSMSGateway.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\CustodianEmailSMSGateway.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Hangfire.Console.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\GenerateTransactionCodes.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Spire.Pdf.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Spire.License.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\Owin.dll
@@ -115,4 +116,3 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLay
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\obj\Debug\DapperLayer.csproj.CopyComplete
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\obj\Debug\DapperLayer.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\obj\Debug\DapperLayer.pdb
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\System.Net.Http.Formatting.dll

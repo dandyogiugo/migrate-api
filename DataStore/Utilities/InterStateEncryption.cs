@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -90,6 +91,9 @@ namespace DataStore.Utilities
             cspParams.Flags = CspProviderFlags.UseMachineKeyStore;
             cspParams.ProviderName = "Microsoft Strong Cryptographic Provider";
             RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(KEY_SIZE, cspParams);
+            CryptoKeyAccessRule rule = new CryptoKeyAccessRule("everyone", CryptoKeyRights.FullControl, AccessControlType.Allow);
+            cspParams.CryptoKeySecurity = new CryptoKeySecurity();
+            cspParams.CryptoKeySecurity.SetAccessRule(rule);
             // Console.WriteLine("The RSA key pair with a key size of {0} bits was added to the container: \"{1}\".", rsa.KeySize, KEY_CONTAINER_NAME);
             // Important! The key pair needs to be loaded from the key container
             // for the correct key information that was stored to be displayed.
@@ -102,7 +106,7 @@ namespace DataStore.Utilities
             // Display the key information to the console.
             //Console.WriteLine($"Key information retrieved from container : \n {rsa.ToXmlString(true)}");
         }
-        private static void DeleteKeyPairFromContainer()
+        public static void DeleteKeyPairFromContainer()
         {
             RSACryptoServiceProvider rsa = GetRSACryptoServiceProviderFromContainer();
             rsa.PersistKeyInCsp = false;

@@ -168,12 +168,11 @@ namespace CustodianEveryWhereV2._0.Controllers
                     requestId = Guid.NewGuid().ToString(),
                     hash = InterStateEncryption.GetSignature(hashPattern, getPrivateKeyPath)
                 };
-
                 log.Info($"inter-state prepared data {Newtonsoft.Json.JsonConvert.SerializeObject(prepare)}");
                 log.Info($"verify hash: {InterStateEncryption.VerifySignature(hashPattern, prepare.hash)}");
                 log.Info($"hash generated {prepare.hash}");
                 log.Info($"pattern {hashPattern}");
-
+               // InterStateEncryption.DeleteKeyPairFromContainer();
                 using (var api = new HttpClient())
                 {
                     var request = await api.PostAsJsonAsync(Config.INTER_STATE_URL, prepare);

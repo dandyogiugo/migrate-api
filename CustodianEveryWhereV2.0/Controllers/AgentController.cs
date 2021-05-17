@@ -1360,6 +1360,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                         }
                     }
 
+                    //send firebase notification
+
                     return new policy_data
                     {
                         status = 200,

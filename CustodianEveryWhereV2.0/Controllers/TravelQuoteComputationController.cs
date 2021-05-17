@@ -93,7 +93,16 @@ namespace CustodianEveryWhereV2._0.Controllers
                 }
 
                 double exchnageRate = Convert.ToDouble(ConfigurationManager.AppSettings["TRAVEL_EXCHANGE_RATE"]);
-                int numbersOfDays = (int)quote.ReturnDate.Subtract(quote.DepartureDate).TotalDays;
+                int numbersOfDays = (int)quote.ReturnDate.Subtract(quote.DepartureDate).TotalDays + 1;
+                if (numbersOfDays > 365)
+                {
+
+                    return new notification_response
+                    {
+                        status = 302,
+                        message = "Sorry, Date out of range. We only provide cover for one year"
+                    };
+                }
                 var rateList = await util.GetTravelRate(numbersOfDays, quote.Region);
                 var myPackage = util.GetPackageDetails(quote.Region, out benefits);
                 //basepremium = 1.32x where x is the base premium
@@ -197,11 +206,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                 {
                     status = 200,
                     message = "Premium computed successfully",
-
-
-
-
-
                     data = new
                     {
                         details = plans,
@@ -363,7 +367,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Permission denied from accessing this feature"
                     };
                 }
-
 
                 if (travel.return_date <= travel.departure_date)
                 {
@@ -581,8 +584,35 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Invalid referrence key"
                     };
                 }
+
+                var thirdcheck_security = travelList.First();
+                int days = (int)thirdcheck_security.return_date.Subtract(thirdcheck_security.depature_date).TotalDays;
+                if (days > 365)
+                {
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Sorry, Information validation failed. Travel date out range. Transaction not confirmed"
+                    };
+                }
+
+                foreach (var item in travelList)
+                {
+                    int age = DateTime.Now.Year - item.date_of_birth.Year;
+                    if (age > 76)
+                    {
+                        return new notification_response
+                        {
+                            status = 302,
+                            message = "Sorry, Information validation failed. Travel DOB is more than 76years. Transaction not confirmed"
+                        };
+                    }
+                }
+
+
                 log.Info($"post to abs data {Newtonsoft.Json.JsonConvert.SerializeObject(travelList)}");
                 string cert1 = "", cert2 = "";
+                var policynumeber = new List<string>();
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     var travelABS = travelList.Select(x => new CustodianAPI.TravelInsuranceArray
@@ -642,6 +672,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     {
                         cert1 = request.RespData[0].Certificate;
                         cert2 = request.RespData[request.RespData.Count() - 1].Certificate;
+                        policynumeber = request.RespData?.Select(x => x.PolicyNo).ToList();
                         List<TravelInsurance> _updatedDetails = new List<TravelInsurance>();
                         int j = 0;
                         foreach (var item in travelList)
@@ -703,7 +734,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 message = "Transaction was successful",
                                 data = new
                                 {
-                                    cert_url = (!string.IsNullOrEmpty(cert1) && !string.IsNullOrEmpty(cert2)) ? $"{GlobalConstant.Certificate_url}muser=ebusiness&mcert={cert1}&mcert2={cert2}" : ""// GlobalConstant.Certificate_url + string.Format("muser=ebusiness&mcert={0}&mcert2={1}", cert_number, cert_number)
+                                    cert_url = (!string.IsNullOrEmpty(cert1) && !string.IsNullOrEmpty(cert2)) ? $"{GlobalConstant.Certificate_url}muser=ebusiness&mcert={cert1}&mcert2={cert2}" : "",// GlobalConstant.Certificate_url + string.Format("muser=ebusiness&mcert={0}&mcert2={1}", cert_number, cert_number)
+                                    policy_number = policynumeber
                                 }
                             };
 

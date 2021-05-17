@@ -5,6 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\oitaba\Documents\Deploy</_PublishTargetUrl>
+    <History>True|2021-04-21T09:00:22.0243226Z;True|2021-04-20T08:29:01.0057645+01:00;True|2021-04-14T09:57:21.7436233+01:00;True|2021-04-14T08:40:35.4009492+01:00;True|2021-04-14T08:04:41.6694431+01:00;False|2021-04-13T11:50:43.3772214+01:00;True|2021-04-13T11:34:14.0513854+01:00;False|2021-04-13T11:20:02.0474639+01:00;False|2021-04-13T11:14:46.3984322+01:00;False|2021-04-13T11:11:28.4303892+01:00;False|2021-04-13T11:09:19.1570855+01:00;True|2021-04-13T11:00:40.0238350+01:00;True|2021-03-30T10:56:58.3159049+01:00;True|2021-03-29T20:12:38.6718398+01:00;True|2021-03-29T19:09:49.8654332+01:00;True|2021-03-29T19:08:27.9245096+01:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -95,34 +96,34 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/24/2020 11:56:38</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.dll">
-      <publishTime>03/23/2021 16:05:27</publishTime>
+      <publishTime>05/17/2021 22:52:43</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.pdb">
-      <publishTime>03/23/2021 16:05:27</publishTime>
+      <publishTime>05/17/2021 22:52:43</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.XmlSerializers.dll">
-      <publishTime>03/23/2021 16:05:30</publishTime>
+      <publishTime>05/17/2021 22:52:45</publishTime>
     </File>
     <File Include="bin/Dapper.dll">
       <publishTime>09/24/2020 11:57:03</publishTime>
     </File>
     <File Include="bin/DapperLayer.dll">
-      <publishTime>03/23/2021 16:05:15</publishTime>
+      <publishTime>05/17/2021 22:52:37</publishTime>
     </File>
     <File Include="bin/DapperLayer.dll.config">
-      <publishTime>03/23/2021 10:17:35</publishTime>
+      <publishTime>04/14/2021 11:56:22</publishTime>
     </File>
     <File Include="bin/DapperLayer.pdb">
-      <publishTime>03/23/2021 16:05:15</publishTime>
+      <publishTime>05/17/2021 22:52:37</publishTime>
     </File>
     <File Include="bin/DataStore.dll">
-      <publishTime>03/23/2021 16:05:13</publishTime>
+      <publishTime>05/17/2021 22:52:36</publishTime>
     </File>
     <File Include="bin/DataStore.dll.config">
-      <publishTime>02/23/2021 20:08:28</publishTime>
+      <publishTime>04/14/2021 11:56:20</publishTime>
     </File>
     <File Include="bin/DataStore.pdb">
-      <publishTime>03/23/2021 16:05:13</publishTime>
+      <publishTime>05/17/2021 22:52:36</publishTime>
     </File>
     <File Include="bin/DotNetZip.dll">
       <publishTime>09/24/2020 11:57:03</publishTime>
@@ -240,6 +241,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="bin/Oracle.DataAccess.dll">
       <publishTime>09/24/2020 11:56:52</publishTime>
+    </File>
+    <File Include="bin/Oracle.ManagedDataAccess.dll">
+      <publishTime>03/05/2021 02:07:52</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>09/24/2020 11:57:14</publishTime>
@@ -473,7 +477,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/24/2020 11:56:40</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>03/23/2021 10:22:54</publishTime>
+      <publishTime>04/14/2021 10:27:41</publishTime>
     </File>
     <File Include="Properties/DataSources/System.Data.DataSet.datasource">
       <publishTime>09/24/2020 11:56:37</publishTime>
@@ -905,7 +909,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/24/2020 11:56:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/23/2021 16:05:32</publishTime>
+      <publishTime>05/17/2021 22:52:46</publishTime>
     </File>
   </ItemGroup>
 </Project>

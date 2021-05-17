@@ -13,11 +13,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using WindowsService1.NewsAPIJob;
-using DapperLayer.Dapper.Core;
-using DapperLayer.utilities;
 using System.Dynamic;
 using System.Reflection;
-using UpSellingAndCrossSelling.CrossSelling;
 using DataStore;
 using System.Text.RegularExpressions;
 using DataStore.Utilities;
@@ -25,6 +22,7 @@ using System.Security.Cryptography;
 using System.Xml.Serialization;
 using System.Numerics;
 using DataStore.ViewModels;
+using RecurringDebitService.BLogic;
 
 namespace TestSerials
 {
@@ -32,34 +30,31 @@ namespace TestSerials
     {
         public static void Grouper()
         {
-            Core<policyInfo> _policyinfo = new Core<policyInfo>();
-            var getPolicies = _policyinfo.GetAgentPolicies("103574").GetAwaiter().GetResult();
-            var groupBy = getPolicies.Select(x => new AgentPoliciesView
-            {
-                Data_source = (x.Data_source == "ABS") ? "General" : "Life",
-                Email = x.Email,
-                EndDate = x.EndDate?.ToShortDateString(),
-                FullName = x.FullName?.Trim().ToUpper(),
-                Phone = x.Phone?.Trim(),
-                policy_no = x.policy_no?.Trim(),
-                Policy_status = x.Policy_status?.Trim().ToUpper(),
-                Product_lng_descr = x.Product_lng_descr?.Trim(),
-                StartDate = x.StartDate?.ToShortDateString(),
-                Sub_prod_lng_descr = x.Sub_prod_lng_descr
-            }).GroupBy(x => x.Data_source);
+            //Core<policyInfo> _policyinfo = new Core<policyInfo>();
+            //var getPolicies = _policyinfo.GetAgentPolicies("103574").GetAwaiter().GetResult();
+            //var groupBy = getPolicies.Select(x => new AgentPoliciesView
+            //{
+            //    Data_source = (x.Data_source == "ABS") ? "General" : "Life",
+            //    Email = x.Email,
+            //    EndDate = x.EndDate?.ToShortDateString(),
+            //    FullName = x.FullName?.Trim().ToUpper(),
+            //    Phone = x.Phone?.Trim(),
+            //    policy_no = x.policy_no?.Trim(),
+            //    Policy_status = x.Policy_status?.Trim().ToUpper(),
+            //    Product_lng_descr = x.Product_lng_descr?.Trim(),
+            //    StartDate = x.StartDate?.ToShortDateString(),
+            //    Sub_prod_lng_descr = x.Sub_prod_lng_descr
+            //}).GroupBy(x => x.Data_source);
 
-            Dictionary<string, List<AgentPoliciesView>> groupKey = new Dictionary<string, List<AgentPoliciesView>>();
-            foreach (var item in groupBy)
-            {
-                groupKey.Add(item.Key, item.ToList());
-            }
-
-            var json = Newtonsoft.Json.JsonConvert.SerializeObject(groupKey);
+            //Dictionary<string, List<AgentPoliciesView>> groupKey = new Dictionary<string, List<AgentPoliciesView>>();
+            //foreach (var item in groupBy)
+            //{
+            //    groupKey.Add(item.Key, item.ToList());
+            //}
+            //var json = Newtonsoft.Json.JsonConvert.SerializeObject(groupKey);
         }
-
         private static string alphanums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789";
         private const int codeLen = 15; //Length of coded string. Must be at least 4
-
         public static string EncodeNumber(int num)
         {
             if (num < 1 || num > 999999) //or throw an exception
@@ -80,7 +75,6 @@ namespace TestSerials
 
             return result;
         }
-
         public static string DecodeNumber(string str)
         {
             //Check for invalid string
@@ -99,48 +93,42 @@ namespace TestSerials
                 return "Error";
             return num.ToString();
         }
-
-
         static void Main(string[] args)
         {
-            var encode = EncodeNumber(16318);
-            var decode = DecodeNumber(encode);
-
+           //var encode = EncodeNumber(16318);
+           //var decode = DecodeNumber(encode);
+            CardProcessor.RecurringEngine();
            // Grouper();
            //var uti = new Utility().GetChakaOauthToken("Godreigns2").GetAwaiter().GetResult();
            //string v = "1TzfOhvNJUcr6u8vZlBHa8cp1yKNauO24jyWP008d2RhNi5uac4Rj9U+sUdicEpARJ8+HqvRSNmuFR/tz0bKmINquT2BDgbFwFRl2nMwRAtz1CFzZrpKznDeoKtKIavNRyUo47NLoUNKuXF18T4uMWYQk+lhpnHwYp1se10hZfjyja4bpEZLgMbLcwH6Yn26BFnjjDfkEYDJ6Vf69ltu58JKg78HTUAwQ01UZwjb2zBBajX+y0WjdskBnbHVB5j0GyIxDM3HgdrShnku4wPICyhG0kPMgJNIQHfLsBOO73N2bP6mWo0PUjj7HrOvRjOeIcDk9m3+XPSIOyuBUb1Pzw=="
            // var path = $"{AppDomain.CurrentDomain.BaseDirectory}/Config/InterStatePrivateKey.txt";
            // var signature = InterStateEncryption.GetSignature("OJOdammie365@gmail.comC7N1", path);
            // var verify = InterStateEncryption.VerifySignature("AMAGASHIamagashi.pat@mail.com001", signature);
-            //var _key = verify;
-            //RSA();
-            //byte[] data = Encoding.Unicode.GetBytes("AMAGASHIamagashi.pat@mail.com001");
-            //RSACryptoServiceProvider csp = new RSACryptoServiceProvider();//make a new csp with a new keypair
-            //var pub_key = csp.ExportParameters(false); // export public key
-            //var priv_key = csp.ExportParameters(true); // export private key
-            //
-            //var encData = csp.Encrypt(data, false); // encrypt with PKCS#1_V1.5 Padding
-            //var output = Convert.ToBase64String(encData);
-            //var decBytes = MyRSAImpl.plainDecryptPriv(encData, priv_key); //decrypt with own BigInteger based implementation
-            //var decData = decBytes.SkipWhile(x => x != 0).Skip(1).ToArray();//strip PKCS#1_V1.5 padding
-            // 
-            //var test = new Utility().RoundValueToNearst100(5227.20);
-            //var test1 = new Utility().RoundValueToNearst100(7597.26);
-            //var test2 = new Utility().RoundValueToNearst100(8624.88);
-            //var encrypt = new Utility().Encrypt("Amagashi".ToUpper() + "amagashi.pat@mail.com".ToLower() + "001");
-            // var t = encrypt;
-            //declare the array.
-            //used this instead of a list, it is simpler to handle
-            //GetAllLeague.GetLeague();
-            //List<int> xx = new List<int>()
-            //{
-            //   3,6,1,7,3,9,1,12
-            //};
-
-
+           //var _key = verify;
+           //RSA();
+           //byte[] data = Encoding.Unicode.GetBytes("AMAGASHIamagashi.pat@mail.com001");
+           //RSACryptoServiceProvider csp = new RSACryptoServiceProvider();//make a new csp with a new keypair
+           //var pub_key = csp.ExportParameters(false); // export public key
+           //var priv_key = csp.ExportParameters(true); // export private key
+           //
+           //var encData = csp.Encrypt(data, false); // encrypt with PKCS#1_V1.5 Padding
+           //var output = Convert.ToBase64String(encData);
+           //var decBytes = MyRSAImpl.plainDecryptPriv(encData, priv_key); //decrypt with own BigInteger based implementation
+           //var decData = decBytes.SkipWhile(x => x != 0).Skip(1).ToArray();//strip PKCS#1_V1.5 padding
+           // 
+           //var test = new Utility().RoundValueToNearst100(5227.20);
+           //var test1 = new Utility().RoundValueToNearst100(7597.26);
+           //var test2 = new Utility().RoundValueToNearst100(8624.88);
+           //var encrypt = new Utility().Encrypt("Amagashi".ToUpper() + "amagashi.pat@mail.com".ToLower() + "001");
+           // var t = encrypt;
+           //declare the array.
+           //used this instead of a list, it is simpler to handle
+           //GetAllLeague.GetLeague();
+           //List<int> xx = new List<int>()
+           //{
+           //   3,6,1,7,3,9,1,12
+           //};
             //int[] array = xx.ToArray();
-
-
             //int sortedIndex = 0;
 
             //Console.Write("Sorting started  with : ");
@@ -148,9 +136,7 @@ namespace TestSerials
             //{
             //    Console.Write(i);
             //}
-
             //Console.WriteLine("");
-
             //while(sortedIndex < (array.Length - 1))
             //for (int topindex = 0; topindex < (array.Length - 1); topindex++)
             //{
@@ -765,13 +751,13 @@ namespace TestSerials
             }
         }
 
-        (string, object, int) LookupName(long id) // tuple return type
-        {
-            var first = "";
-            var last = "";
-            var middle = 60;
-            return (first, middle, Convert.ToInt32(last)); // tuple literal
-        }
+        //(string, object, int) LookupName(long id) // tuple return type
+        //{
+        //    var first = "";
+        //    var last = "";
+        //    var middle = 60;
+        //    return (first, middle, Convert.ToInt32(last)); // tuple literal
+        //}
 
         public static void Closest(int[] arr1, int[] arr2)
         {
