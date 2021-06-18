@@ -28,6 +28,7 @@ namespace DataStore.ViewModels
         public string hash { get; set; }
         [Required]
         public PolicyType policy_type { get; set; }
+        public decimal sum_assured { get; set; }
     }
 
     public class LifePolicy

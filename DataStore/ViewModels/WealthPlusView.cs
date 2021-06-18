@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataStore.ViewModels
 {
-   public class WealthPlusView: CoreModels
+    public class WealthPlusView : CoreModels
     {
         [MaxLength(10)]
         public string Title { get; set; }
@@ -50,5 +50,17 @@ namespace DataStore.ViewModels
         public string address { get; set; }
         [Required]
         public DateTime DOB { get; set; }
+    }
+
+    public class WPPCal
+    {
+        public WPPCal()
+        {
+
+        }
+
+        public int status { get; set; }
+        public string message { get; set; }
+        public decimal projectedAmount { get; set; }
     }
 }

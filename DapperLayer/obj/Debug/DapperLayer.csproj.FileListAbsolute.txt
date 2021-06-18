@@ -116,3 +116,5 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLay
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\obj\Debug\DapperLayer.csproj.CopyComplete
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\obj\Debug\DapperLayer.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\obj\Debug\DapperLayer.pdb
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\DecimalMath.DecimalEx.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Debug\DecimalMath.DecimalEx.xml

@@ -30,7 +30,7 @@ namespace RecurringDebitService
         protected override void OnStop()
         {
             log.Info("===========Paystack recurring debit has been turn off ===============");
-            CardProcessor.SendMail(null, templateTypes.FailedDebit, "Paystack recurring service has been turned off from the windows service dialog");
+            new CardProcessor().SendMail(null, templateTypes.FailedDebit, "Paystack recurring service has been turned off from the windows service dialog");
             JobScheduler.Stop();
         }
     }

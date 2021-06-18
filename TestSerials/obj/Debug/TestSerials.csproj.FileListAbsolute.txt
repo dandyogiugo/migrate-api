@@ -224,3 +224,5 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSeria
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\obj\Debug\TestSerials.csproj.CopyComplete
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\obj\Debug\TestSerials.exe
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\obj\Debug\TestSerials.pdb
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\bin\Debug\DecimalMath.DecimalEx.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\bin\Debug\DecimalMath.DecimalEx.xml

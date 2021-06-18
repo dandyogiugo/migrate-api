@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Text;
+using System.Web;
 
 namespace DataStore.Utilities
 {
@@ -10,9 +12,12 @@ namespace DataStore.Utilities
         private static int PROVIDER_RSA_FULL = 1;
         private static string KEY_CONTAINER_NAME = "FolioAPIKeyContainer";
         private static int KEY_SIZE = 2048;
-        public static string GetSignature(string text, string pubKeyPath)
+
+       // private static string IMPORT_FOLDER = @"C:\Users\oitaba\Desktop\icon";
+        private static string KEY_FILE = @"CustodianKey.xml";
+        public static string GetSignature(string text, string pubKeyPath = "")
         {
-            GenerateKeyPair(pubKeyPath);
+            //GenerateKeyPair(pubKeyPath);
             byte[] signatureBytes = SignText(text);
             if (signatureBytes != null)
             {
@@ -86,6 +91,7 @@ namespace DataStore.Utilities
 
         private static void GenerateKeyPair(string pubKeyPath)
         {
+            
             CspParameters cspParams = new CspParameters(PROVIDER_RSA_FULL);
             cspParams.KeyContainerName = KEY_CONTAINER_NAME;
             cspParams.Flags = CspProviderFlags.UseMachineKeyStore;
@@ -100,7 +106,7 @@ namespace DataStore.Utilities
             // rsa.ImportParameters();
             string privateKey = System.IO.File.ReadAllText(pubKeyPath);
             rsa.FromXmlString(privateKey.Trim());
-            rsa = GetRSACryptoServiceProviderFromContainer();
+            //rsa = GetRSACryptoServiceProviderFromContainer();
             //var pub_key = rsa.ToXmlString(false); // export public key
             //var priv_key = rsa.ToXmlString(true); // export private key
             // Display the key information to the console.
@@ -114,7 +120,7 @@ namespace DataStore.Utilities
             rsa.Clear();
             //Console.WriteLine("The RSA key pair was deleted from the container: \"{0}\".", KEY_CONTAINER_NAME);
         }
-        private static RSACryptoServiceProvider GetRSACryptoServiceProviderFromContainer()
+        public static RSACryptoServiceProvider GetRSACryptoServiceProviderFromContainer()
         {
             // Create the CspParameters object and set the key container
             // name used to store the RSA key pair.
@@ -124,6 +130,40 @@ namespace DataStore.Utilities
             // the key container.
             RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(KEY_SIZE, cspParams);
             return rsa;
+        }
+
+        public static void ImportKeyPairIntoContainer()
+        {
+            string path = HttpContext.Current.Server.MapPath("~/Cert");
+            FileInfo fi = new FileInfo(Path.Combine(path, KEY_FILE));
+            if (fi.Exists)
+            {
+                using (StreamReader reader = new StreamReader(Path.Combine(path, KEY_FILE)))
+                {
+                    RSACryptoServiceProvider rsa = GetRSACryptoServiceProviderFromContainer();
+                    string keyText = reader.ReadToEnd();
+                    rsa.FromXmlString(keyText);
+                    rsa.PersistKeyInCsp = true;
+                    //Console.WriteLine("The RSA key pair from \"{0}\\{1}\" was imported into the container: \"{2}\".", IMPORT_FOLDER, KEY_FILE, KEY_CONTAINER_NAME);
+                }
+            }
+        }
+        public static dynamic GetRSACryptoServiceProviderFromContainerString()
+        {
+            // Create the CspParameters object and set the key container
+            // name used to store the RSA key pair.
+            CspParameters cspParams = new CspParameters();
+            cspParams.KeyContainerName = KEY_CONTAINER_NAME;
+            // Create a new instance of RSACryptoServiceProvider that accesses
+            // the key container.
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(KEY_SIZE, cspParams);
+
+            return new
+            {
+                key = rsa.ToXmlString(true),
+                containerName = rsa.CspKeyContainerInfo.KeyContainerName,
+                uniqueName = rsa.CspKeyContainerInfo.UniqueKeyContainerName
+            };
         }
     }
 }

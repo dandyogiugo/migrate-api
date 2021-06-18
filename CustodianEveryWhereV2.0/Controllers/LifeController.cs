@@ -365,7 +365,28 @@ namespace CustodianEveryWhereV2._0.Controllers
                             };
                         }
 
-                        var wealthplus = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), "", 41, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
+                        if (quote.sum_assured <= 0)
+                        {
+                            return new notification_response
+                            {
+                                status = 204,
+                                message = "WPP(Wealth Plus Plan) requires sum assured",
+                            };
+                        }
+
+                        var validate = await util.ValidateWealthPlusCoverLimits(quote.sum_assured, quote.frequency, quote.amount, quote.terms);
+                        if (validate != null && validate.status != 200)
+                        {
+                            return new notification_response
+                            {
+                                status = 302,
+                                message = validate.message
+                            };
+                        }
+
+
+
+                        var wealthplus = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), quote.sum_assured.ToString(), 1089, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
 
                         if (!string.IsNullOrEmpty(wealthplus))
                         {
@@ -377,7 +398,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 status = 200,
                                 message = "operation was successful",
                                 data = _quote,
-                                sum_insured = Convert.ToDecimal(_quote.sumInsured)
+                                sum_insured = Convert.ToDecimal(string.Format("{0:N}", validate.projectedAmount))
                             };
                         }
                         else

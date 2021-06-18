@@ -974,6 +974,10 @@ namespace DataStore.Utilities
             {
                 frq = "M";
             }
+            else if (frequency.ToLower() == "semi-annually")
+            {
+                frq = "S";
+            }
             else
             {
                 frq = "F";
@@ -1743,6 +1747,260 @@ namespace DataStore.Utilities
 
             return claimType;
         }
+        public List<string> GeneralClaimTypeUpdated(string policy_number, out List<dynamic> damageType)
+        {
+            List<string> claimType = new List<string>();
+            damageType = new List<dynamic>();
+            List<string> types = null;
+            var loss = new List<string>() { "V/29", "V/30", "V/31" };
+            foreach (var item in loss)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    types = new List<string>();
+                    var to = new List<string>() { "Fire", "Accident", "Flood" };
+                    types.Add("Partial Loss");
+                    types.Add("Total Loss");
+                    damageType.Add(new
+                    {
+                        //Category = "MOTOR",
+                        DamageTypes = types,
+                        AppliesTo = to
+                    });
+
+                    claimType.Add("Theft");
+                    claimType.Add("Vandalization");
+                    claimType.Add("Accident");
+                }
+            }
+            var accidental = new List<string>() { "A/16", "A/15", "P/62" };
+            foreach (var item in accidental)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+
+                    claimType.Add("Accidental Injury");
+
+                }
+            }
+
+            var death = new List<string>() { "F/01", "P/62", "A/09", "A/15", "V/29", "V/30", "V/31" };
+            foreach (var item in death)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    types = new List<string>();
+                    var to = new List<string>() { "3rd Party" };
+                    types.Add("Death");
+                    types.Add("Property");
+                    types.Add("Bodily Injury");
+                    damageType.Add(new
+                    {
+                        //Category = "MOTOR",
+                        DamageTypes = types,
+                        AppliesTo = to
+                    });
+
+                    claimType.Add("3rd Party");
+
+                }
+            }
+
+            var burglary = new List<string>() { "A/03", "F/01", "P/62", "A/16" };
+            foreach (var item in burglary)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Burglary");
+
+                }
+            }
+
+            var theft = new List<string>() { "A/03", "F/01", "P/62", "A/16" };
+            foreach (var item in theft)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Theft");
+
+                }
+            }
+
+            var flood = new List<string>() { "F/01", "P/62", "A/16", "V/29", "V/30", "V/31" };
+            foreach (var item in flood)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Flood");
+                    claimType.Add("Fire");
+
+                }
+            }
+
+            var damageofgoods = new List<string>() { "F/01", "P/62", "A/07" };
+            foreach (var item in damageofgoods)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Damage to goods");
+                }
+            }
+
+            var guarantee = new List<string>() { "F/01", "A/14", "P/62" };
+            foreach (var item in guarantee)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Fidelity guarantee");
+                }
+            }
+
+            var money = new List<string>() { "F/01", "P/62", "A/05" };
+            foreach (var item in money)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Money");
+                }
+            }
+
+            var liability = new List<string>() { "F/01", "P/62", "A/11" };
+            foreach (var item in liability)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    claimType.Add("Liability");
+                }
+            }
+
+            var employee = new List<string>() { "F/01", "P/62", "A/15" };
+            foreach (var item in employee)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    types = new List<string>();
+                    var to = new List<string>() { "Employee accident" };
+                    types.Add("Accidental Injury");
+                    types.Add("Death");
+                    claimType.Add("Employee accident");
+                    damageType.Add(new
+                    {
+                        // Category = "NON_MOTOR",
+                        DamageTypes = types,
+                        AppliesTo = to
+                    });
+                }
+            }
+
+            return claimType;
+        }
+
+        public string GeneralClaimCategory(string policy_number)
+        {
+
+            var loss = new List<string>() { "V/29", "V/30", "V/31" };
+            foreach (var item in loss)
+            {
+                return "MOTOR";
+            }
+            var accidental = new List<string>() { "A/16", "A/15", "P/62" };
+            foreach (var item in accidental)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+
+                    return "NON_MOTOR";
+
+                }
+            }
+
+            var death = new List<string>() { "F/01", "P/62", "A/09", "A/15", "V/29", "V/30", "V/31" };
+            foreach (var item in death)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    return "MOTOR";
+
+                }
+            }
+
+            var burglary = new List<string>() { "A/03", "F/01", "P/62", "A/16" };
+            foreach (var item in burglary)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    return "NON_MOTOR";
+
+                }
+            }
+
+            var theft = new List<string>() { "A/03", "F/01", "P/62", "A/16" };
+            foreach (var item in theft)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    return "NON_MOTOR";
+
+                }
+            }
+
+            var flood = new List<string>() { "F/01", "P/62", "A/16", "V/29", "V/30", "V/31" };
+            foreach (var item in flood)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    return "NON_MOTOR";
+
+                }
+            }
+
+            var damageofgoods = new List<string>() { "F/01", "P/62", "A/07" };
+            foreach (var item in damageofgoods)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    return "NON_MOTOR";
+                }
+            }
+
+            var guarantee = new List<string>() { "F/01", "A/14", "P/62" };
+            foreach (var item in guarantee)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    return "NON_MOTOR";
+                }
+            }
+
+            var money = new List<string>() { "F/01", "P/62", "A/05" };
+            foreach (var item in money)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    return "NON_MOTOR";
+                }
+            }
+
+            var liability = new List<string>() { "F/01", "P/62", "A/11" };
+            foreach (var item in liability)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    return "NON_MOTOR";
+                }
+            }
+
+            var employee = new List<string>() { "F/01", "P/62", "A/15" };
+            foreach (var item in employee)
+            {
+                if (new Regex($@".{item}").IsMatch(policy_number))
+                {
+                    return "NON_MOTOR";
+                }
+            }
+
+            return "NON_MOTOR";
+        }
         public List<string> LifeClaimTypes(string productName)
         {
             var termination = new List<string>() { "esusu", "capital",
@@ -2281,7 +2539,7 @@ namespace DataStore.Utilities
                     };
 
                     var request = await api.PostAsJsonAsync(Config.FIREBASE_URL, payload);
-                    if(!request.IsSuccessStatusCode)
+                    if (!request.IsSuccessStatusCode)
                     {
                         return new
                         {
@@ -2303,6 +2561,68 @@ namespace DataStore.Utilities
 
                 throw ex;
             }
+        }
+
+        public async Task<WPPCal> ValidateWealthPlusCoverLimits(decimal sumAssured, Frequency frequency, decimal premium, int terms)
+        {
+            int multiplyer = 0;
+            decimal projectAmount = 0;
+            var rate = GlobalConstant.WPP_RATE / 100m;
+
+
+            if (frequency == Frequency.Monthly)
+            {
+                multiplyer = 12; //10,000 * (1 + 0.05/1) ^ (10*1)
+                
+            }
+            else if (frequency == Frequency.Annually)
+            {
+                multiplyer = 1;
+            }
+            else if (frequency == Frequency.Quarterly)
+            {
+                multiplyer = 4;
+            }
+            else if (frequency == Frequency.Semi_Annually)
+            {
+                multiplyer = 2;
+            }
+
+            if (multiplyer == 0)
+            {
+                //return new
+                //{
+                //    message = "Invalid Frequency type",
+                //    status = 203
+                //};
+                return new WPPCal
+                {
+                    status = 206,
+                    message = "Invalid Frequency type"
+                };
+            }
+
+            var targetAmount = (terms * multiplyer) * premium;
+            var getMaxPercentage = (targetAmount * GlobalConstant.GET_WEALTHPLUS_PERCENTAGE) / 100m;
+            if (sumAssured > getMaxPercentage)
+            {
+                //return $"Life cover Sum Assured {string.Format("{0:N}", sumAssured)} Cannot be greater than Investment Sum Assured {string.Format("{0:N}", targetAmount)}";
+                return new WPPCal
+                {
+                    message = $"Life cover Sum Assured {string.Format("{0:N}", sumAssured)} Cannot be greater than Investment Sum Assured {string.Format("{0:N}", targetAmount)}",
+                    status = 203
+                };
+            }
+
+            decimal cal = (1 + rate / multiplyer);
+           projectAmount = premium * DecimalMath.DecimalEx.Pow(cal, terms * multiplyer);
+            return new WPPCal
+            {
+                message = "validation passed",
+                status = 200,
+                projectedAmount = projectAmount
+            };
+           // return null;
         }
     }
 
@@ -2439,7 +2759,7 @@ namespace DataStore.Utilities
                 }
                 else
                 {
-                    return "https://self.chakaent.com/assets/js/chakasdk.js";
+                    return "https://self.chakaent.com/assets/js/chakasdk.js";//https://sdk.chakaent.com/assets/js/chakasdk.js 
                 }
             }
         }

@@ -54,6 +54,8 @@ namespace DataStore.context
         public DbSet<TempSaveData> TempSaveData { get; set; }
         public DbSet<AgentServices> AgentServices { get; set; }
         public DbSet<WealthPlus> WealthPlus { get; set; }
+
+        public DbSet<SessionTokenTracker> SessionTokenTracker { get; set; }
         public DbSet<PaystackRecurringDump> PaystackRecurringDump { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

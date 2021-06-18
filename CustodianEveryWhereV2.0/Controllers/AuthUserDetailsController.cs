@@ -2,6 +2,8 @@
 using DataStore.repository;
 using DataStore.Utilities;
 using DataStore.ViewModels;
+using JWT.Algorithms;
+using JWT.Builder;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -22,11 +24,13 @@ namespace CustodianEveryWhereV2._0.Controllers
         private store<ApiConfiguration> _apiconfig = null;
         private Utility util = null;
         private store<AdaptLeads> auth_user = null;
+        private store<SessionTokenTracker> session = null;
         public AuthUserDetailsController()
         {
             _apiconfig = new store<ApiConfiguration>();
             util = new Utility();
             auth_user = new store<AdaptLeads>();
+            session = new store<SessionTokenTracker>();
         }
 
         [HttpPost]
@@ -358,6 +362,154 @@ namespace CustodianEveryWhereV2._0.Controllers
                 {
                     status = 404,
                     message = "Oops!, Unable to authenticate user with active directory"
+                };
+            }
+        }
+
+        [HttpGet]
+        public async Task<notification_response> GenerateJWT(string merchant_id, string hash)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("GenerateJWT", merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                var checkhash = await util.ValidateHash2(merchant_id, config.secret_key, hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                string secret = GlobalConstant.JWT_SECRET; //"GQDstcKsx0NHjPOuXOYg5MbeJ1XT0uFiwDVvVBrk";
+                string sessionId = await util.MD_5(Guid.NewGuid().ToString() + DateTime.Now.Ticks);
+                string token = JwtBuilder.Create()
+                      .WithAlgorithm(new HMACSHA256Algorithm()) // symmetric
+                      .WithSecret(secret)
+                      .AddClaim("exp", new DateTimeOffset(DateTime.UtcNow.AddHours(5), TimeSpan.Zero).ToUnixTimeSeconds())
+                      .AddClaim("claim2", sessionId)
+                      .Encode();
+                var track = new SessionTokenTracker
+                {
+                    createdat = DateTime.Now,
+                    expiresin = DateTime.Now.AddMinutes(GlobalConstant.JWT_ACTIVE_TIME),
+                    isactive = true,
+                    jwt = token,
+                    refreshat = DateTime.Now,
+                    sessionid = sessionId
+                };
+                await session.Save(track);
+                return new notification_response
+                {
+                    status = 200,
+                    data = new
+                    {
+                        authorization = track.jwt,
+                        sessionId = track.sessionid,
+                        createdat = DateTime.Now,
+                        message = $"Inactivity period is set to {GlobalConstant.JWT_ACTIVE_TIME} mins"
+                    }
+                };
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "Oops!, something happend while generating token"
+                };
+            }
+        }
+
+        [HttpGet]
+        public async Task<notification_response> DestroyJWT(string merchant_id, string sessionid, string hash)
+        {
+            try
+            {
+                var check_user_function = await util.CheckForAssignedFunction("DestroyJWT", merchant_id);
+                if (!check_user_function)
+                {
+                    return new notification_response
+                    {
+                        status = 401,
+                        message = "Permission denied from accessing this feature",
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id.Trim());
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                var checkhash = await util.ValidateHash2(merchant_id + sessionid, config.secret_key, hash);
+                if (!checkhash)
+                {
+                    log.Info($"Hash missmatched from request {merchant_id}");
+                    return new notification_response
+                    {
+                        status = 405,
+                        message = "Data mismatched"
+                    };
+                }
+
+                var getToken = await session.FindOneByCriteria(x => x.sessionid == sessionid && x.isactive == true);
+                if (getToken == null)
+                {
+                    return new notification_response
+                    {
+                        status = 403,
+                        message = "Token doesnt exist"
+                    };
+                }
+
+                getToken.isactive = false;
+                getToken.refreshat = DateTime.Now;
+                await session.Update(getToken);
+                return new notification_response
+                {
+                    status = 200,
+                    message = "Token was deactivated successfully"
+                };
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "Oops!, something happend while destroying token"
                 };
             }
         }

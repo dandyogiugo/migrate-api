@@ -701,3 +701,8 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\Custodian
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\obj\Release\CustodianEveryWhereV2.0.XmlSerializers.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\Oracle.ManagedDataAccess.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\JWT.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\JWT.pdb
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\JWT.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\DecimalMath.DecimalEx.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\CustodianEveryWhereV2.0\bin\DecimalMath.DecimalEx.xml

@@ -11,6 +11,8 @@ namespace DataStore.ViewModels
     {
         public static string merchant_id { get; } = ConfigurationManager.AppSettings["Merchant_ID"];
         public static string password { get; } = ConfigurationManager.AppSettings["Password"];
+        public static string merchant_id2 { get; } = ConfigurationManager.AppSettings["Merchant_ID2"];
+        public static string password2 { get; } = ConfigurationManager.AppSettings["Password2"];
         public static string Certificate_url { get; } = ConfigurationManager.AppSettings["TRAVEL_CERT_URL"];
         public static string Reciept_url { get; } = ConfigurationManager.AppSettings["RecieptBaseUrl"];
         public static string base_url { get; } = ConfigurationManager.AppSettings["HALOGEN_API"];
@@ -21,7 +23,33 @@ namespace DataStore.ViewModels
         public static string LabelHalogen { get; } = ConfigurationManager.AppSettings["LabelHalogen"];
         public static string LoadingPrice { get; } = ConfigurationManager.AppSettings["LoadingPrice"];
         public static string GTBANK { get; } = ConfigurationManager.AppSettings["GTBANK"];
-        public static string CONTACT { get; } =  ConfigurationManager.AppSettings["contact"];
+        public static string CONTACT { get; } = ConfigurationManager.AppSettings["contact"];
+        public static string JWT_SECRET { get; } = ConfigurationManager.AppSettings["JWT_SECRET"];
+        public static int JWT_ACTIVE_TIME
+        {
+            get
+            {
+                string active_time = ConfigurationManager.AppSettings["JWT_ACTIVE_TIME"];
+                if (string.IsNullOrEmpty(active_time))
+                {
+                    return 5; // active time 5mins
+                }
+                return Convert.ToInt32(active_time);
+            }
+        }
+
+        public static int WPP_RATE
+        {
+            get
+            {
+                string rate = ConfigurationManager.AppSettings["WPP_RATE"];
+                if (string.IsNullOrEmpty(rate))
+                {
+                    return 5; // Wealth plus rate
+                }
+                return Convert.ToInt32(rate);
+            }
+        }
         public static bool IsDemoMode
         {
             get
@@ -151,7 +179,18 @@ namespace DataStore.ViewModels
                 return baseurl;
             }
         }
+
+        public static int GET_WEALTHPLUS_PERCENTAGE
+        {
+            get
+            {
+                string max = ConfigurationManager.AppSettings["GET_WEALTHPLUS_PERCENTAGE"];
+                if (!string.IsNullOrEmpty(max))
+                    return Convert.ToInt32(max);
+                return 30;
+            }
+        }
     }
 
-   
+
 }

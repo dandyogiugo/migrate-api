@@ -13,15 +13,19 @@ using System.Threading.Tasks;
 
 namespace RecurringDebitService.BLogic
 {
-    public static class CardProcessor
+    public class CardProcessor
     {
         private static connectionStr conn = new connectionStr();
         private static Logger log = LogManager.GetCurrentClassLogger();
+        public CardProcessor()
+        {
+
+        }
 
         /// <summary>
         /// This method does the debit from Paystack and is the entry method 
         /// </summary>
-        public static void RecurringEngine()
+        public void RecurringEngine()
         {
             try
             {
@@ -37,17 +41,23 @@ namespace RecurringDebitService.BLogic
                     return;
                 }
                 DateTime today = DateTime.Now;
-                var getTodaysPayment = conn.PaystackRecurringCharges.Where(x => x.recurring_start_month.Day == today.Day && x.recurring_start_month.Month == today.Month
-                && (x.reocurrance_state == "SCHEDULED" || x.reocurrance_state == "STARTED")).ToList();
-                if (getTodaysPayment.Count() == 0)
+                //var getTodaysPayment = conn.PaystackRecurringCharges.Where(x => x.recurring_start_month.Day == today.Day && x.recurring_start_month.Month == today.Month
+                //&& x.reocurrance_state == "SCHEDULED").ToList();
+
+                //var getStartedTransaction = conn.PaystackRecurringCharges.Where(x => x.recurring_start_month.Day == today.Day && x.reocurrance_state == "STARTED").ToList();
+                //var totalTrans = getStartedTransaction.Concat(getTodaysPayment);
+                List<PaystackRecurringCharge> getCards = null;
+                getCards = conn.PaystackRecurringCharges.SqlQuery($@"select * from [PaystackRecurringCharges]  where (month(recurring_start_month) = {today.Month} and  day(recurring_start_month) = {today.Day} and reocurrance_state = 'SCHEDULED') 
+                                                                        or (day(recurring_start_month) = {today.Day} and reocurrance_state = 'STARTED')").ToList();
+                if (getCards.Count() == 0)
                 {
                     log.Info($"No recurring payment for today: {today}");
                     return;
                 }
-                var last_run_today = DateTime.Now.Date;
-                foreach (var item in getTodaysPayment)
+                //var last_run_today = DateTime.Now.Date;
+                foreach (var item in getCards)
                 {
-                    if (last_run_today != item.last_run_date?.Date)
+                    if (today.Date.Day != item.last_run_date?.Day && today.Date.Month != item.last_run_date?.Month && today.Year != item.last_run_date?.Year)
                     {
                         log.Info("================Debit Process started====================");
                         var debit = DebitCard(item);
@@ -55,6 +65,10 @@ namespace RecurringDebitService.BLogic
                         {
                             item.last_attempt_date = DateTime.Now;
                             item.last_run_date = DateTime.Now;
+                            if (item.reocurrance_state == "SCHEDULED")
+                            {
+                                item.reocurrance_state = "STARTED";
+                            }
                             if (debit._templateTypes != templateTypes.SuccessDebit)
                             {
                                 item.number_of_attempt_failed += 1;
@@ -66,12 +80,19 @@ namespace RecurringDebitService.BLogic
                             //Update records
                             conn.Entry(item).State = System.Data.Entity.EntityState.Modified;
                             conn.SaveChanges();
-                            PosTransaction(item, debit.policyDet, debit.data.data.reference);
+
+
+                            if (debit._templateTypes == templateTypes.SuccessDebit)
+                            {
+                                string _ref = $"{ debit.data.data.reference }";
+                                PosTransaction(item, debit.policyDet, _ref);
+                            }
+
                         }
                     }
                     else
                     {
-                        log.Info($"Recurring payment has ran for this transaction for today {item.customer_email}---{item.product_name}---{item.customer_name}");
+                        log.Info($"Recurring payment has ran for this transaction for today {item.customer_email}---{item.product_name}---{item.customer_name}--{item.last_run_date}");
                     }
 
 
@@ -91,7 +112,7 @@ namespace RecurringDebitService.BLogic
         /// <summary>
         /// Set expired card status to EXPIRED
         /// </summary>
-        private static bool UpdateExpiredCard()
+        private bool UpdateExpiredCard()
         {
             try
             {
@@ -132,7 +153,7 @@ namespace RecurringDebitService.BLogic
         /// <param name="details"></param>
         /// <param name="_templateTypes"></param>
         /// <param name="errorMessage"></param>
-        public static void SendMail(PaystackRecurringCharge details, templateTypes _templateTypes, string errorMessage = "")
+        public void SendMail(PaystackRecurringCharge details, templateTypes _templateTypes, string errorMessage = "")
         {
             try
             {
@@ -179,7 +200,7 @@ namespace RecurringDebitService.BLogic
         /// <param name="_templateTypes"></param>
         /// <param name="errorMessage"></param>
         /// <returns></returns>
-        private static EmailData GetTemplateType(PaystackRecurringCharge details, templateTypes _templateTypes, string errorMessage = "")
+        private EmailData GetTemplateType(PaystackRecurringCharge details, templateTypes _templateTypes, string errorMessage = "")
         {
             try
             {
@@ -190,7 +211,7 @@ namespace RecurringDebitService.BLogic
                     sb.AppendLine("<p>We noticed that one of your card settup for recurring payment has expired. Kindly update your card deatils. </p>");
                     sb.AppendLine("<p>Thank you.</p>");
                     string month = (Convert.ToInt32(details.exp_month) < 10) ? $"0{details.exp_month}" : details.exp_month;
-                    sb.AppendLine($"<table border = '1' style = 'border-collapse: collapse><tr><td>Card Type</td><td>{details.card_type}</td></tr>");
+                    sb.AppendLine($"<table  border= '0' width='600' cellpadding='0' cellspacing='0' class='container'><tr><td>Card Type</td><td>{details.card_type}</td></tr>");
                     sb.AppendLine($"<tr><td>Expiry Year</td><td>{details.exp_year}</td></tr>");
                     sb.AppendLine($"<tr><td>Expiry Month</td><td>{month}</td></tr>");
                     sb.AppendLine($"<tr><td>Bank</td><td>{details.bank}</td></tr>");
@@ -212,7 +233,7 @@ namespace RecurringDebitService.BLogic
                     sb.AppendLine($"<p>This is to notify you that a debit failed on card details below. Reasons for failure is <strong>'{errorMessage}'</strong> </p>");
                     sb.AppendLine("<p>Thank you.</p>");
                     string month = (Convert.ToInt32(details.exp_month) < 10) ? $"0{details.exp_month}" : details.exp_month;
-                    sb.AppendLine($"<table border = '1' style = 'border-collapse: collapse><tr><td>Card Type</td><td>{details.card_type}</td></tr>");
+                    sb.AppendLine($"<table  border= '0' width='600' cellpadding='0' cellspacing='0' class='container'><tr><td>Card Type</td><td>{details.card_type}</td></tr>");
                     sb.AppendLine($"<tr><td>Expiry Year</td><td>{details.exp_year}</td></tr>");
                     sb.AppendLine($"<tr><td>Expiry Month</td><td>{month}</td></tr>");
                     sb.AppendLine($"<tr><td>Bank</td><td>{details.bank}</td></tr>");
@@ -235,7 +256,7 @@ namespace RecurringDebitService.BLogic
                     sb.AppendLine($"<p>We wish to inform you that a <strong>Successful Debit</strong> has occurred on the card details below</p>");
                     sb.AppendLine("<p>Thank you.</p>");
                     string month = (Convert.ToInt32(details.exp_month) < 10) ? $"0{details.exp_month}" : details.exp_month;
-                    sb.AppendLine($"<table border = '1' style = 'border-collapse: collapse><tr><td>Card Type</td><td>{details.card_type}</td></tr>");
+                    sb.AppendLine($"<table  border= '0' width='600' cellpadding='0' cellspacing='0' class='container'><tr><td>Card Type</td><td>{details.card_type}</td></tr>");
                     sb.AppendLine($"<tr><td>Expiry Year</td><td>{details.exp_year}</td></tr>");
                     sb.AppendLine($"<tr><td>Expiry Month</td><td>{month}</td></tr>");
                     sb.AppendLine($"<tr><td>Bank</td><td>{details.bank}</td></tr>");
@@ -258,7 +279,8 @@ namespace RecurringDebitService.BLogic
                     sb.AppendLine($"<p>We wish to inform you that we're unable to perform debit on card details below</p>");
                     sb.AppendLine("<p>Thank you.</p>");
                     string month = (Convert.ToInt32(details.exp_month) < 10) ? $"0{details.exp_month}" : details.exp_month;
-                    sb.AppendLine($"<table border = '1' style = 'border-collapse: collapse><tr><td>Card Type</td><td>{details.card_type}</td></tr>");
+                    sb.AppendLine($"<table  border= '0' width='600' cellpadding='0' cellspacing='0' class='container'>");
+                    sb.AppendLine($"<tr><td>Card Type</td><td>{details.card_type}</td></tr>");
                     sb.AppendLine($"<tr><td>Expiry Year</td><td>{details.exp_year}</td></tr>");
                     sb.AppendLine($"<tr><td>Expiry Month</td><td>{month}</td></tr>");
                     sb.AppendLine($"<tr><td>Bank</td><td>{details.bank}</td></tr>");
@@ -281,7 +303,7 @@ namespace RecurringDebitService.BLogic
                     sb.AppendLine($"<p>We wish to inform you that you recurring payment has ended on <strong>{details.recurring_end_month.ToShortDateString()}</strong></p>");
                     sb.AppendLine("<p>Thank you.</p>");
                     string month = (Convert.ToInt32(details.exp_month) < 10) ? $"0{details.exp_month}" : details.exp_month;
-                    sb.AppendLine($"<table border = '1' style = 'border-collapse: collapse><tr><td>Card Type</td><td>{details.card_type}</td></tr>");
+                    sb.AppendLine($"<table  border= '0' width='600' cellpadding='0' cellspacing='0' class='container'><tr><td>Card Type</td><td>{details.card_type}</td></tr>");
                     sb.AppendLine($"<tr><td>Expiry Year</td><td>{details.exp_year}</td></tr>");
                     sb.AppendLine($"<tr><td>Expiry Month</td><td>{month}</td></tr>");
                     sb.AppendLine($"<tr><td>Bank</td><td>{details.bank}</td></tr>");
@@ -312,7 +334,7 @@ namespace RecurringDebitService.BLogic
         /// <summary>
         /// Check for end recuuing payment and flag to COMPLETED
         /// </summary>
-        private static void CheckRecurringEndDate()
+        private void CheckRecurringEndDate()
         {
             try
             {
@@ -347,7 +369,7 @@ namespace RecurringDebitService.BLogic
         /// </summary>
         /// <param name="paystackRecurringCharge"></param>
         /// <returns></returns>
-        private static PaystackChargeResponse DebitCard(PaystackRecurringCharge paystackRecurringCharge)
+        private PaystackChargeResponse DebitCard(PaystackRecurringCharge paystackRecurringCharge)
         {
             try
             {
@@ -371,7 +393,7 @@ namespace RecurringDebitService.BLogic
                     //Send message to client
                     SendMail(paystackRecurringCharge, chargeCardFromPayStack._templateTypes, chargeCardFromPayStack.message);
                     SendFirebaseNotification(paystackRecurringCharge.customer_email, templateTypes.FailedDebit);
-                    return null;
+                    return chargeCardFromPayStack;
                 }
                 chargeCardFromPayStack.policyDet = lookUp;
                 return chargeCardFromPayStack;
@@ -391,7 +413,7 @@ namespace RecurringDebitService.BLogic
         /// </summary>
         /// <param name="paystackRecurringCharge"></param>
         /// <param name="policyDetails"></param>
-        private static PaystackChargeResponse ChargeCardFromPayStack(PaystackRecurringCharge paystackRecurringCharge, PolicyDet policyDetails)
+        private PaystackChargeResponse ChargeCardFromPayStack(PaystackRecurringCharge paystackRecurringCharge, PolicyDet policyDetails)
         {
             try
             {
@@ -451,21 +473,29 @@ namespace RecurringDebitService.BLogic
                             {"custom_fields", custom_fields }
                         }
                     };
-
+                    bool isError = false;
+                    bool status = false;
+                    string message = "";
+                    string errorDump = "";
                     var request = api.PostAsJsonAsync(Const.PAYSTACK_ENDPOINT, payload).GetAwaiter().GetResult();
                     if (!request.IsSuccessStatusCode)
                     {
-                        log.Info("Unable to connect to paystack to collect payment");
-                        return new PaystackChargeResponse
-                        {
-                            _templateTypes = templateTypes.SystemError,
-                            message = "Unable to connect to paystack to collect payment"
-                        };
+                        var errorMsg = request.Content.ReadAsAsync<dynamic>().GetAwaiter().GetResult();
+                        status = (bool)errorMsg["status"];
+                        message = errorMsg["message"];
+                        isError = true;
+                        errorDump = Newtonsoft.Json.JsonConvert.SerializeObject(errorMsg);
+                        //log.Info($"Unable to connect to paystack to collect payment: {error}");
+                        //return new PaystackChargeResponse
+                        //{
+                        //    _templateTypes = templateTypes.SystemError,
+                        //    message = "Unable to connect to paystack to collect payment"
+                        //};
                     }
 
                     var response = request.Content.ReadAsAsync<dynamic>().GetAwaiter().GetResult();
-                    bool status = (bool)response["status"];
-                    string message = response["message"];
+                    status = (isError) ? status : (bool)response["status"];
+                    message = (isError) ? message : response["message"];
                     var dumpData = new PaystackRecurringDump
                     {
                         coresystememail = policyDetails.InsuredEmail?.Trim(),
@@ -475,7 +505,7 @@ namespace RecurringDebitService.BLogic
                         logonemail = paystackRecurringCharge.customer_email,
                         policynumber = paystackRecurringCharge.policy_number,
                         productname = paystackRecurringCharge.product_name,
-                        paystackrawdump = Newtonsoft.Json.JsonConvert.SerializeObject(response)
+                        paystackrawdump = (isError) ? errorDump : Newtonsoft.Json.JsonConvert.SerializeObject(response)
                     };
 
                     conn.PaystackRecurringDumps.Add(dumpData);
@@ -518,7 +548,7 @@ namespace RecurringDebitService.BLogic
         /// </summary>
         /// <param name="policyno"></param>
         /// <param name="company"></param>
-        private static PolicyDet PolicyLookUp(string policyno, Company company)
+        private PolicyDet PolicyLookUp(string policyno, Company company)
         {
             try
             {
@@ -550,7 +580,7 @@ namespace RecurringDebitService.BLogic
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        private static bool IsMailValid(string email)
+        private bool IsMailValid(string email)
         {
             try
             {
@@ -572,7 +602,7 @@ namespace RecurringDebitService.BLogic
         /// </summary>
         /// <param name="email"></param>
         /// <param name="_templateTypes"></param>
-        private static void SendFirebaseNotification(string email, templateTypes _templateTypes)
+        private void SendFirebaseNotification(string email, templateTypes _templateTypes)
         {
             try
             {
@@ -613,7 +643,7 @@ namespace RecurringDebitService.BLogic
                 };
                 using (var firebase = new HttpClient())
                 {
-                    firebase.DefaultRequestHeaders.Add("Authorization", $"key={Const.FIREBASE_TOKEN}");
+                    firebase.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"key={Const.FIREBASE_TOKEN}");
                     var request = firebase.PostAsJsonAsync(Const.FIREBASE_ENDPOINT, payload).GetAwaiter().GetResult();
                     if (!request.IsSuccessStatusCode)
                     {
@@ -638,7 +668,7 @@ namespace RecurringDebitService.BLogic
         /// </summary>
         /// <param name="paystackChargeResponse"></param>
         /// <param name="policyDet"></param>
-        private static bool PosTransaction(PaystackRecurringCharge paystackRecurringCharge, PolicyDet policyDet, string tranxRef)
+        private bool PosTransaction(PaystackRecurringCharge paystackRecurringCharge, PolicyDet policyDet, string tranxRef)
         {
             try
             {
@@ -666,7 +696,7 @@ namespace RecurringDebitService.BLogic
 
                 using (var api = new HttpClient())
                 {
-                    api.DefaultRequestHeaders.Add("Authorization", Const.CUSTODIAN_AUTHORIZATION);
+                    api.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"{Const.CUSTODIAN_AUTHORIZATION}");
                     var request = api.PostAsJsonAsync(Const.CUSTODIAN_ENDPOINT, payload).GetAwaiter().GetResult();
                     if (!request.IsSuccessStatusCode)
                     {

@@ -386,7 +386,7 @@ namespace DataStore.ViewModels
         {
 
         }
-        [Required]
+        //[Required]
         public string policy_number { get; set; }
         [Required]
         public string merchant_id { get; set; }

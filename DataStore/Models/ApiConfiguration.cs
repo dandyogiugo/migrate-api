@@ -30,6 +30,7 @@ namespace DataStore.Models
         public string AD_client_secret { get; set; }
         public string AD_client_id { get; set; }
         public string AD_redirect_uri { get; set; }
+        public bool EnableBearerAuthorization { get; set; }
     }
 }
 

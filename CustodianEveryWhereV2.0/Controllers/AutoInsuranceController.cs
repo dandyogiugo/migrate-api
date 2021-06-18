@@ -51,6 +51,13 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = "Permission denied from accessing this feature"
                     };
                 }
+
+
+                return new res
+                {
+                    status = 405,
+                    message = "Features temporary disabled"
+                };
                 #region old api version-- depricated by auto reg
                 //var reg = new AutoReg.VehicleCheckSoapClient();
                 //var resp = await reg.WS_LicenseInfoByRegNoAsync(regno, "", "", "", "", "", "6492CUS15");
@@ -80,6 +87,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                 //    };
                 //}
                 #endregion
+
+
                 using (var api = new HttpClient())
                 {
                     regno = Regex.Replace(regno, @"\s", "");// remove spaces between text

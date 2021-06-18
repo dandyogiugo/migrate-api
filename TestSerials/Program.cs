@@ -95,39 +95,49 @@ namespace TestSerials
         }
         static void Main(string[] args)
         {
-           //var encode = EncodeNumber(16318);
-           //var decode = DecodeNumber(encode);
-            CardProcessor.RecurringEngine();
-           // Grouper();
-           //var uti = new Utility().GetChakaOauthToken("Godreigns2").GetAwaiter().GetResult();
-           //string v = "1TzfOhvNJUcr6u8vZlBHa8cp1yKNauO24jyWP008d2RhNi5uac4Rj9U+sUdicEpARJ8+HqvRSNmuFR/tz0bKmINquT2BDgbFwFRl2nMwRAtz1CFzZrpKznDeoKtKIavNRyUo47NLoUNKuXF18T4uMWYQk+lhpnHwYp1se10hZfjyja4bpEZLgMbLcwH6Yn26BFnjjDfkEYDJ6Vf69ltu58JKg78HTUAwQ01UZwjb2zBBajX+y0WjdskBnbHVB5j0GyIxDM3HgdrShnku4wPICyhG0kPMgJNIQHfLsBOO73N2bP6mWo0PUjj7HrOvRjOeIcDk9m3+XPSIOyuBUb1Pzw=="
-           // var path = $"{AppDomain.CurrentDomain.BaseDirectory}/Config/InterStatePrivateKey.txt";
-           // var signature = InterStateEncryption.GetSignature("OJOdammie365@gmail.comC7N1", path);
-           // var verify = InterStateEncryption.VerifySignature("AMAGASHIamagashi.pat@mail.com001", signature);
-           //var _key = verify;
-           //RSA();
-           //byte[] data = Encoding.Unicode.GetBytes("AMAGASHIamagashi.pat@mail.com001");
-           //RSACryptoServiceProvider csp = new RSACryptoServiceProvider();//make a new csp with a new keypair
-           //var pub_key = csp.ExportParameters(false); // export public key
-           //var priv_key = csp.ExportParameters(true); // export private key
-           //
-           //var encData = csp.Encrypt(data, false); // encrypt with PKCS#1_V1.5 Padding
-           //var output = Convert.ToBase64String(encData);
-           //var decBytes = MyRSAImpl.plainDecryptPriv(encData, priv_key); //decrypt with own BigInteger based implementation
-           //var decData = decBytes.SkipWhile(x => x != 0).Skip(1).ToArray();//strip PKCS#1_V1.5 padding
-           // 
-           //var test = new Utility().RoundValueToNearst100(5227.20);
-           //var test1 = new Utility().RoundValueToNearst100(7597.26);
-           //var test2 = new Utility().RoundValueToNearst100(8624.88);
-           //var encrypt = new Utility().Encrypt("Amagashi".ToUpper() + "amagashi.pat@mail.com".ToLower() + "001");
-           // var t = encrypt;
-           //declare the array.
-           //used this instead of a list, it is simpler to handle
-           //GetAllLeague.GetLeague();
-           //List<int> xx = new List<int>()
-           //{
-           //   3,6,1,7,3,9,1,12
-           //};
+            //var encode = EncodeNumber(16318);
+            //var decode = DecodeNumber(encode);
+            //new CardProcessor().RecurringEngine();
+            // Grouper();
+            //var uti = new Utility().GetChakaOauthToken("Godreigns2").GetAwaiter().GetResult();
+            //  string v = "1TzfOhvNJUcr6u8vZlBHa8cp1yKNauO24jyWP008d2RhNi5uac4Rj9U+sUdicEpARJ8+HqvRSNmuFR/tz0bKmINquT2BDgbFwFRl2nMwRAtz1CFzZrpKznDeoKtKIavNRyUo47NLoUNKuXF18T4uMWYQk+lhpnHwYp1se10hZfjyja4bpEZLgMbLcwH6Yn26BFnjjDfkEYDJ6Vf69ltu58JKg78HTUAwQ01UZwjb2zBBajX+y0WjdskBnbHVB5j0GyIxDM3HgdrShnku4wPICyhG0kPMgJNIQHfLsBOO73N2bP6mWo0PUjj7HrOvRjOeIcDk9m3+XPSIOyuBUb1Pzw=="
+            //var path = $"{AppDomain.CurrentDomain.BaseDirectory}/Config/InterStatePrivateKey.txt";
+            //var signature = InterStateEncryption.GetSignature("BALEWApkofon@gmail.comC7N1", path);
+            //var verify = InterStateEncryption.VerifySignature("BALEWApkofon@gmail.comC7N1", signature);
+            // var _key = verify;
+            //InterStateEncryption.ImportKeyPairIntoContainer();
+            //var cp = InterStateEncryption.GetRSACryptoServiceProviderFromContainer();
+            //Console.WriteLine($"ProviderName {cp}");
+            //Console.WriteLine($"UniqueKeyContainerName {cp.CspKeyContainerInfo.UniqueKeyContainerName}");
+            //Console.WriteLine($"{cp.ExportParameters(true)}");
+            //var signature = InterStateEncryption.GetSignature("BALEWApkofon@gmail.comC7N1");
+            //var test = cp.ExportParameters(true);
+            var util = new Utility().ValidateWealthPlusCoverLimits(100000, Frequency.Monthly, 10000, 10).GetAwaiter().GetResult();
+
+            //var test = "47783";
+            //RSA();
+            //byte[] data = Encoding.Unicode.GetBytes("AMAGASHIamagashi.pat@mail.com001");
+            //RSACryptoServiceProvider csp = new RSACryptoServiceProvider();//make a new csp with a new keypair
+            //var pub_key = csp.ExportParameters(false); // export public key
+            //var priv_key = csp.ExportParameters(true); // export private key
+            //
+            //var encData = csp.Encrypt(data, false); // encrypt with PKCS#1_V1.5 Padding
+            //var output = Convert.ToBase64String(encData);
+            //var decBytes = MyRSAImpl.plainDecryptPriv(encData, priv_key); //decrypt with own BigInteger based implementation
+            //var decData = decBytes.SkipWhile(x => x != 0).Skip(1).ToArray();//strip PKCS#1_V1.5 padding
+            // 
+            //var test = new Utility().RoundValueToNearst100(5227.20);
+            //var test1 = new Utility().RoundValueToNearst100(7597.26);
+            //var test2 = new Utility().RoundValueToNearst100(8624.88);
+            //var encrypt = new Utility().Encrypt("Amagashi".ToUpper() + "amagashi.pat@mail.com".ToLower() + "001");
+            // var t = encrypt;
+            //declare the array.
+            //used this instead of a list, it is simpler to handle
+            //GetAllLeague.GetLeague();
+            //List<int> xx = new List<int>()
+            //{
+            //   3,6,1,7,3,9,1,12
+            //};
             //int[] array = xx.ToArray();
             //int sortedIndex = 0;
 
@@ -166,7 +176,7 @@ namespace TestSerials
             //    Console.Write(i);
             //}
 
-            Console.ReadLine();
+            //Console.ReadLine();
         }
         //static void Main(string[] args)
         //{

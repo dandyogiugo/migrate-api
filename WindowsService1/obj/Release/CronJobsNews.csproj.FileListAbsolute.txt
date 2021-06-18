@@ -135,7 +135,6 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsSe
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\NLog.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Quartz.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Spire.Doc.dll
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Oracle.DataAccess.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Hangfire.Core.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\CustodianEmailSMSGateway.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Hangfire.Console.dll
@@ -178,3 +177,4 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsSe
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\obj\Release\WindowsService1.exe
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\obj\Release\WindowsService1.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Oracle.ManagedDataAccess.dll

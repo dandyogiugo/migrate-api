@@ -164,3 +164,5 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLay
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\obj\Release\DapperLayer.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\System.Net.Http.Formatting.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\Oracle.ManagedDataAccess.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\DecimalMath.DecimalEx.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DapperLayer\bin\Release\DecimalMath.DecimalEx.xml

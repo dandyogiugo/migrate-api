@@ -48,8 +48,23 @@ namespace RecurringDebitService.BLogic
         public static string SECRET_KEY { get; } = ConfigurationManager.AppSettings["SECRET_KEY"];
         public static string CUSTODIAN_ENDPOINT { get; } = ConfigurationManager.AppSettings["CUSTODIAN_ENDPOINT"];
         public static string CUSTODIAN_AUTHORIZATION { get; } = ConfigurationManager.AppSettings["CUSTODIAN_AUTHORIZATION"];
+        public static int TRIGER_TIME_HOURS_GMT
+        {
+            get
+            {
+                var hours = ConfigurationManager.AppSettings["TRIGER_TIME_HOUSE_GMT"];
+                return Convert.ToInt32(hours);
+            }
+        }
+        public static int TRIGER_TIME_SECONDS_GMT
+        {
+            get
+            {
+                var seconds = ConfigurationManager.AppSettings["TRIGER_TIME_SECONDS_GMT"];
+                return Convert.ToInt32(seconds);
+            }
+        }
     }
-
     public class PaystackPayload
     {
         public PaystackPayload()
@@ -109,7 +124,5 @@ namespace RecurringDebitService.BLogic
         public Notification notification { get; set; }
         public string to { get; set; }
     }
-
-
 
 }

@@ -105,7 +105,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     pushStatus = false
                 };
                 // call inter state api here
-                var getPrivateKeyPath = HttpContext.Current.Server.MapPath("~/Cert/InterStatePrivateKey.txt");
+                var getPrivateKeyPath = HttpContext.Current.Server.MapPath("~/Cert");
                 string hashPattern = interState.name.last.Trim().ToUpper() + interState.email.Trim().ToLower() + Config.INTER_STATE_TERMINALID;
                 InterStatePost prepare = new InterStatePost
                 {
@@ -172,7 +172,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 log.Info($"verify hash: {InterStateEncryption.VerifySignature(hashPattern, prepare.hash)}");
                 log.Info($"hash generated {prepare.hash}");
                 log.Info($"pattern {hashPattern}");
-               // InterStateEncryption.DeleteKeyPairFromContainer();
+                // InterStateEncryption.DeleteKeyPairFromContainer();
                 using (var api = new HttpClient())
                 {
                     var request = await api.PostAsJsonAsync(Config.INTER_STATE_URL, prepare);
@@ -407,7 +407,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         {
             try
             {
-                var title = new List<string>() { "Alh", "Chief", "Dr", "Engr", "Miss","Mrs", "Mr", "Prof" };
+                var title = new List<string>() { "Alh", "Chief", "Dr", "Engr", "Miss", "Mrs", "Mr", "Prof" };
                 var gender = new List<string>() { "M", "F" };
                 var idtypes = new List<dynamic>()
                 {
@@ -614,13 +614,62 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
-        public async Task<dynamic> GenerateKey(string passphrase)
+        public async Task<dynamic> GenerateKey(string passphrase,string pattern)
         {
             try
             {
                 if (passphrase == "NethaN_")//This is only known by the developer and nobody else 
                 {
-                    return InterStateEncryption.GenerateKeys();
+                    //return InterStateEncryption.GenerateKeys();
+                    InterStateEncryption.ImportKeyPairIntoContainer();
+                    var cp = InterStateEncryption.GetRSACryptoServiceProviderFromContainerString();
+                    //Console.WriteLine($"ProviderName {cp}");
+                    //Console.WriteLine($"UniqueKeyContainerName {cp.CspKeyContainerInfo.UniqueKeyContainerName}");
+                    //Console.WriteLine($"{cp.ExportParameters(true)}");
+                    var signature = InterStateEncryption.GetSignature(pattern);
+                    return new
+                    {
+                        PubKey = cp,
+                        Singnature = signature
+                    };
+                }
+                else
+                {
+                    return new res
+                    {
+                        status = 209,
+                        message = "Wrong Passphrase"
+                    };
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error((ex.InnerException != null) ? ex.InnerException.ToString() : "");
+                return new res { message = "System error, Try Again", status = 404 };
+            }
+        }
+
+        [HttpGet]
+        public async Task<dynamic> ConfirmKey(string passphrase, string pattern)
+        {
+            try
+            {
+                if (passphrase == "NethaN_")//This is only known by the developer and nobody else 
+                {
+                    //return InterStateEncryption.GenerateKeys();
+                    //var cp = InterStateEncryption.GetRSACryptoServiceProviderFromContainerString();
+                    //Console.WriteLine($"ProviderName {cp}");
+                    //Console.WriteLine($"UniqueKeyContainerName {cp.CspKeyContainerInfo.UniqueKeyContainerName}");
+                    //Console.WriteLine($"{cp.ExportParameters(true)}");
+                    var signature = InterStateEncryption.GetSignature(pattern);
+                    return new
+                    {
+                        Singnature = signature
+                    };
                 }
                 else
                 {

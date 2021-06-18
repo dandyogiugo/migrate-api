@@ -481,6 +481,50 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:CustodianEveryWhereV2._0.Controllers.EDMSGeneralClaimsController">
+            <summary>
+            EDMS Claims method extracted from the channels apis 
+            All methods within this controller required JWT header for Authorization
+            </summary>
+        </member>
+        <member name="M:CustodianEveryWhereV2._0.Controllers.EDMSGeneralClaimsController.SubmitClaims(DataStore.ViewModels.GeneralPayload)">
+            <summary>
+            Submit a Genrateclaims
+            </summary>
+            <param name="generalPayload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CustodianEveryWhereV2._0.Controllers.EDMSGeneralClaimsController.UpdateStatus(DataStore.ViewModels.GeneralClaimStatus)">
+            <summary>
+            Update Claims status
+            </summary>
+            <param name="generalClaimStatus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CustodianEveryWhereV2._0.Controllers.EDMSGeneralClaimsController.GetClaimsStatusList(System.String)">
+            <summary>
+            Get List of all claims status type
+            </summary>
+            <param name="merchant_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CustodianEveryWhereV2._0.Controllers.EDMSGeneralClaimsController.GetClaimStatus(System.String,System.String)">
+            <summary>
+            Get Claims status
+            </summary>
+            <param name="merchant_id"></param>
+            <param name="claim_number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CustodianEveryWhereV2._0.Controllers.EDMSGeneralClaimsController.PolicyEnquiry(System.String,System.String,System.Boolean)">
+            <summary>
+            Policy enquiry
+            </summary>
+            <param name="merchant_id"></param>
+            <param name="policy_number"></param>
+            <param name="Include_vehicle_list"></param>
+            <returns></returns>
+        </member>
         <member name="M:CustodianEveryWhereV2._0.Controllers.FitfamPlusController.GetDeals(System.String)">
             <summary>
             Get deals from Fitfam plus api

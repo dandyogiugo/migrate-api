@@ -116,7 +116,8 @@ namespace DataStore.ViewModels
         Annually = 2,
         Quarterly = 3,
         Bi_Annually = 4,
-        Single = 5
+        Single = 5,
+        Semi_Annually = 6
     }
 
     public enum ReOccurranceState

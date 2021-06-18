@@ -74,7 +74,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                             min = 18
                         },
                         frequency = new List<string>() { "Monthly", "Quarterly", "Semi-Annually", "Annually" },
-                        gender = new List<string>() { "Male", "Female" }
+                        gender = new List<string>() { "Male", "Female" },
+                        maxPercentage = GlobalConstant.GET_WEALTHPLUS_PERCENTAGE
                     }
                 };
             }

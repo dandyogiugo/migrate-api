@@ -1,5 +1,6 @@
 ﻿using CustodianEmailSMSGateway.Email;
 using CustodianEmailSMSGateway.SMS;
+using CustodianEveryWhereV2._0.ActionFilters;
 using DapperLayer.Dapper.Core;
 using DataStore.Models;
 using DataStore.repository;
@@ -37,6 +38,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpPost]
+        [ValidateJWT]
         public async Task<res> Setup(setup policy)
         {
             try
@@ -97,7 +99,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     return new res
                     {
                         status = (int)HttpStatusCode.BadRequest,
-                        message = "No valid phone number or email attached to provided policy (Please contact custodain care centre to update your record)"
+                        message = "No valid phone number or email attached to provided policy (Please contact custodian carecentre to update your record)"
                     };
                 }
                 var obj = lookup.First();
@@ -234,6 +236,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpPost]
+        [ValidateJWT]
         public async Task<res> ValidateOTP(ValidatePolicy validate)
         {
             try
@@ -321,6 +324,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
+        [ValidateJWT]
         public async Task<res> GetPolicies(string merchant_id, string pin, string customer_id, string hash)
         {
             try
@@ -425,6 +429,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
+        [ValidateJWT]
         public async Task<res> ResetPIN(string merchant_id, string newpin, string otp, string customer_id, string hash)
         {
             try
@@ -517,6 +522,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
+        [ValidateJWT]
         public async Task<res> GetPolicyDetails(string merchant_id, string source, string pin, string policynumber, string customer_id, string hash)
         {
             try
@@ -564,7 +570,19 @@ namespace CustodianEveryWhereV2._0.Controllers
                         message = $"Invalid PIN for '{policynumber}'"
                     };
                 }
+                var lookup = await _policyinfo.GetPolicyServices(policynumber);
 
+                if (lookup.Count() > 0)
+                {
+                    if (customer_id.Trim() != lookup.First().customerid.ToString().Trim())
+                    {
+                        return new res
+                        {
+                            status = 309,
+                            message = $"Customer ID does not match login information"
+                        };
+                    }
+                }
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     var request = api.GetMorePolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, source, policynumber);
@@ -597,7 +615,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             InsOccup = request.InsOccup?.Trim(),
                             InsState = request.InsState?.Trim(),
                             InstPremium = request.InstPremium,
-                            InsuredEmail = (Config.isDemo) ? "CustodianDirect@gmail.com" : (request.InsuredEmail?.Trim() == null || string.IsNullOrEmpty(request.InsuredEmail?.Trim()) || request.InsuredEmail?.Trim() == "NULL") ? $"{Guid.NewGuid().ToString().Split('-')[0]}@gmail.com" : request.InsuredEmail?.Trim(),
+                            InsuredEmail = (Config.isDemo) ? "demo@gmail.com" : (request.InsuredEmail?.Trim() == null || string.IsNullOrEmpty(request.InsuredEmail?.Trim()) || request.InsuredEmail?.Trim() == "NULL") ? $"{Guid.NewGuid().ToString().Split('-')[0]}@gmail.com" : request.InsuredEmail?.Trim(),
                             InsuredName = request.InsuredName?.Trim(),
                             InsuredNum = request.InsuredNum?.Trim(),
                             InsuredOthName = request.InsuredOthName?.Trim(),
@@ -623,6 +641,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
+        [ValidateJWT]
         public async Task<res> GenerateOTP(string customer_id, string merchant_id, string hash)
         {
             try
@@ -716,6 +735,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
+        [ValidateJWT]
         public async Task<res> GetLifeTransactions(string merchant_id, string policy_number, string hash)
         {
             try
@@ -752,6 +772,20 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
+                //var lookup = await _policyinfo.GetPolicyServices(policy_number);
+
+                //if (lookup.Count() > 0)
+                //{
+                //    if (customer_id.Trim() != lookup.First().customerid.ToString().Trim())
+                //    {
+                //        return new res
+                //        {
+                //            status = 309,
+                //            message = $"Customer ID does not match login information"
+                //        };
+                //    }
+                //}
+
                 var getTranscation = await util.GetTransactionFromTQ(policy_number);
                 if (getTranscation == null)
                 {
@@ -781,6 +815,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
+        [ValidateJWT]
         public async Task<res> GetVehicleList(string merchant_id, string policy_number, string hash)
         {
             try

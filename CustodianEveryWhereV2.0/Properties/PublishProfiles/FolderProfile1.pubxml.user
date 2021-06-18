@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\oitaba\Documents\Deploy</_PublishTargetUrl>
-    <History>True|2021-04-21T09:00:22.0243226Z;True|2021-04-20T08:29:01.0057645+01:00;True|2021-04-14T09:57:21.7436233+01:00;True|2021-04-14T08:40:35.4009492+01:00;True|2021-04-14T08:04:41.6694431+01:00;False|2021-04-13T11:50:43.3772214+01:00;True|2021-04-13T11:34:14.0513854+01:00;False|2021-04-13T11:20:02.0474639+01:00;False|2021-04-13T11:14:46.3984322+01:00;False|2021-04-13T11:11:28.4303892+01:00;False|2021-04-13T11:09:19.1570855+01:00;True|2021-04-13T11:00:40.0238350+01:00;True|2021-03-30T10:56:58.3159049+01:00;True|2021-03-29T20:12:38.6718398+01:00;True|2021-03-29T19:09:49.8654332+01:00;True|2021-03-29T19:08:27.9245096+01:00;</History>
+    <History>True|2021-06-18T15:38:32.2686791Z;True|2021-06-18T15:16:02.9068757+01:00;True|2021-06-17T14:36:45.4468240+01:00;True|2021-06-15T13:52:19.7615536+01:00;True|2021-06-11T17:00:24.8243467+01:00;True|2021-06-11T16:53:08.5728782+01:00;True|2021-06-11T16:48:21.1832839+01:00;True|2021-06-11T15:59:57.7205957+01:00;True|2021-06-11T13:55:06.2423303+01:00;True|2021-06-11T13:49:17.1068564+01:00;True|2021-06-11T13:38:30.4993677+01:00;True|2021-06-07T16:21:26.9842845+01:00;True|2021-06-07T16:20:27.8431907+01:00;True|2021-06-01T12:23:55.4068191+01:00;True|2021-06-01T12:23:26.2800389+01:00;True|2021-06-01T12:16:12.6654620+01:00;True|2021-05-31T10:20:24.1242469+01:00;True|2021-05-19T19:57:29.8906912+01:00;True|2021-05-19T17:42:48.8225839+01:00;True|2021-05-19T16:56:22.3231108+01:00;True|2021-05-19T16:54:51.6164306+01:00;True|2021-04-21T10:00:22.0243226+01:00;True|2021-04-20T08:29:01.0057645+01:00;True|2021-04-14T09:57:21.7436233+01:00;True|2021-04-14T08:40:35.4009492+01:00;True|2021-04-14T08:04:41.6694431+01:00;False|2021-04-13T11:50:43.3772214+01:00;True|2021-04-13T11:34:14.0513854+01:00;False|2021-04-13T11:20:02.0474639+01:00;False|2021-04-13T11:14:46.3984322+01:00;False|2021-04-13T11:11:28.4303892+01:00;False|2021-04-13T11:09:19.1570855+01:00;True|2021-04-13T11:00:40.0238350+01:00;True|2021-03-30T10:56:58.3159049+01:00;True|2021-03-29T20:12:38.6718398+01:00;True|2021-03-29T19:09:49.8654332+01:00;True|2021-03-29T19:08:27.9245096+01:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -96,34 +96,37 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/24/2020 11:56:38</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.dll">
-      <publishTime>05/17/2021 22:52:43</publishTime>
+      <publishTime>06/18/2021 16:38:25</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.pdb">
-      <publishTime>05/17/2021 22:52:43</publishTime>
+      <publishTime>06/18/2021 16:38:25</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.XmlSerializers.dll">
-      <publishTime>05/17/2021 22:52:45</publishTime>
+      <publishTime>06/18/2021 16:38:27</publishTime>
     </File>
     <File Include="bin/Dapper.dll">
       <publishTime>09/24/2020 11:57:03</publishTime>
     </File>
     <File Include="bin/DapperLayer.dll">
-      <publishTime>05/17/2021 22:52:37</publishTime>
+      <publishTime>06/18/2021 16:38:16</publishTime>
     </File>
     <File Include="bin/DapperLayer.dll.config">
-      <publishTime>04/14/2021 11:56:22</publishTime>
+      <publishTime>06/18/2021 16:15:04</publishTime>
     </File>
     <File Include="bin/DapperLayer.pdb">
-      <publishTime>05/17/2021 22:52:37</publishTime>
+      <publishTime>06/18/2021 16:38:16</publishTime>
     </File>
     <File Include="bin/DataStore.dll">
-      <publishTime>05/17/2021 22:52:36</publishTime>
+      <publishTime>06/18/2021 16:38:15</publishTime>
     </File>
     <File Include="bin/DataStore.dll.config">
-      <publishTime>04/14/2021 11:56:20</publishTime>
+      <publishTime>06/18/2021 16:15:03</publishTime>
     </File>
     <File Include="bin/DataStore.pdb">
-      <publishTime>05/17/2021 22:52:36</publishTime>
+      <publishTime>06/18/2021 16:38:15</publishTime>
+    </File>
+    <File Include="bin/DecimalMath.DecimalEx.dll">
+      <publishTime>05/25/2015 12:03:14</publishTime>
     </File>
     <File Include="bin/DotNetZip.dll">
       <publishTime>09/24/2020 11:57:03</publishTime>
@@ -157,6 +160,12 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="bin/Hangfire.SqlServer.dll">
       <publishTime>09/24/2020 11:57:07</publishTime>
+    </File>
+    <File Include="bin/JWT.dll">
+      <publishTime>05/15/2021 16:38:38</publishTime>
+    </File>
+    <File Include="bin/JWT.pdb">
+      <publishTime>05/15/2021 16:38:38</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>09/24/2020 11:57:09</publishTime>
@@ -402,13 +411,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/24/2020 11:57:07</publishTime>
     </File>
     <File Include="Cert/Adapt.html">
-      <publishTime>02/21/2021 19:22:17</publishTime>
+      <publishTime>05/27/2021 13:58:47</publishTime>
     </File>
     <File Include="Cert/Adaptbk.html">
       <publishTime>09/24/2020 11:56:36</publishTime>
     </File>
     <File Include="Cert/claims.html">
-      <publishTime>03/08/2021 17:53:01</publishTime>
+      <publishTime>05/19/2021 11:03:33</publishTime>
     </File>
     <File Include="Cert/config.json">
       <publishTime>09/24/2020 11:56:36</publishTime>
@@ -477,7 +486,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/24/2020 11:56:40</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>04/14/2021 10:27:41</publishTime>
+      <publishTime>05/19/2021 19:47:11</publishTime>
     </File>
     <File Include="Properties/DataSources/System.Data.DataSet.datasource">
       <publishTime>09/24/2020 11:56:37</publishTime>
@@ -909,7 +918,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/24/2020 11:56:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/17/2021 22:52:46</publishTime>
+      <publishTime>05/19/2021 19:57:28</publishTime>
     </File>
   </ItemGroup>
 </Project>

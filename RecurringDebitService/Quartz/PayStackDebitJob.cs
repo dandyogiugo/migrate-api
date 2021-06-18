@@ -15,7 +15,7 @@ namespace RecurringDebitService.Quartz
         public void Execute(IJobExecutionContext context)
         {
             log.Info("about to start paystack debit Jobs");
-            CardProcessor.RecurringEngine();
+            new CardProcessor().RecurringEngine();
             log.Info("Paystack debit Jobs Job completed");
         }
     }

@@ -103,6 +103,7 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\Microsoft.Extensions.Logging.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\Newtonsoft.Json.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\NLog.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\Oracle.ManagedDataAccess.dll
@@ -117,6 +118,12 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.ValueTuple.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Web.Helpers.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Web.Mvc.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Web.Razor.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Web.WebPages.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Web.WebPages.Razor.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\Microsoft.mshtml.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\EntityFramework.xml
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\EntityFramework.SqlServer.xml
@@ -139,6 +146,12 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\Spire.License.xml
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.ValueTuple.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Web.Helpers.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Web.Mvc.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Web.Razor.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Web.WebPages.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\es\Hangfire.Core.resources.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\fa\Hangfire.Core.resources.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\fr\Hangfire.Core.resources.dll
@@ -156,4 +169,5 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.csproj.CopyComplete
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.pdb
-C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.csprojAssemblyReference.cache
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\DecimalMath.DecimalEx.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\DecimalMath.DecimalEx.xml

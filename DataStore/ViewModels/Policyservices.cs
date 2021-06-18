@@ -21,7 +21,7 @@ namespace DataStore.ViewModels
         public string hash { get; set; }
  
         public string imei { get; set; }
-        [Required]
+        //[Required]
         public string email { get; set; }
         public string devicename { get; set; }
         public string os { get; set; }
