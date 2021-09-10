@@ -25,6 +25,8 @@ namespace DataStore.ViewModels
         public static string GTBANK { get; } = ConfigurationManager.AppSettings["GTBANK"];
         public static string CONTACT { get; } = ConfigurationManager.AppSettings["contact"];
         public static string JWT_SECRET { get; } = ConfigurationManager.AppSettings["JWT_SECRET"];
+
+        public static string AD_CREDENTAILS { get; } = ConfigurationManager.AppSettings["AD_CREDENTAILS"];
         public static int JWT_ACTIVE_TIME
         {
             get
@@ -38,16 +40,16 @@ namespace DataStore.ViewModels
             }
         }
 
-        public static int WPP_RATE
+        public static decimal WPP_RATE
         {
             get
             {
                 string rate = ConfigurationManager.AppSettings["WPP_RATE"];
                 if (string.IsNullOrEmpty(rate))
                 {
-                    return 5; // Wealth plus rate
+                    return 7.5m; // Wealth plus rate
                 }
-                return Convert.ToInt32(rate);
+                return Convert.ToDecimal(rate);
             }
         }
         public static bool IsDemoMode

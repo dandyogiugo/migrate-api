@@ -699,33 +699,33 @@ namespace CustodianEveryWhereV2._0.Controllers
                             Boolean.TryParse(ConfigurationManager.AppSettings["IsDemoMode"], out result);
 
                             #region -- This section can only be executed on Demo mode (Test evnvironment)
-                            if (result)
-                            {
-                                Task.Run(() =>
-                                 {
-                                     try
-                                     {
-                                         using (var api2 = new CustodianAPI.PolicyServicesSoapClient())
-                                         {
-                                             foreach (var item in travelList)
-                                             {
-                                                 string country = (item.nationality.ToLower().Contains("nigeria")) ? "NIGERIAN NIGERIA" : item.nationality;
-                                                 var response = api2.PostTravel2Raga(item.depature_date, item.return_date,
-                                                     item.firstname, item.surname, item.type, item.passport_number, item.date_of_birth, country,
-                                                     "NIGERIA", item.Email, item.destination);
-                                                 log.Info($"pushing to raga {item.passport_number} response from Raga {Newtonsoft.Json.JsonConvert.SerializeObject(response)}");
-                                             }
-                                         }
-                                     }
-                                     catch (Exception ex)
-                                     {
+                            //if (result)
+                            //{
+                            //    Task.Run(() =>
+                            //     {
+                            //         try
+                            //         {
+                            //             using (var api2 = new CustodianAPI.PolicyServicesSoapClient())
+                            //             {
+                            //                 foreach (var item in travelList)
+                            //                 {
+                            //                     string country = (item.nationality.ToLower().Contains("nigeria")) ? "NIGERIAN NIGERIA" : item.nationality;
+                            //                     var response = api2.PostTravel2Raga(item.depature_date, item.return_date,
+                            //                         item.firstname, item.surname, item.type, item.passport_number, item.date_of_birth, country,
+                            //                         "NIGERIA", item.Email, item.destination);
+                            //                     log.Info($"pushing to raga {item.passport_number} response from Raga {Newtonsoft.Json.JsonConvert.SerializeObject(response)}");
+                            //                 }
+                            //             }
+                            //         }
+                            //         catch (Exception ex)
+                            //         {
 
-                                         log.Error(ex.Message);
-                                         log.Error(ex.InnerException);
-                                         log.Error(ex.StackTrace);
-                                     }
-                                 });
-                            }
+                            //             log.Error(ex.Message);
+                            //             log.Error(ex.InnerException);
+                            //             log.Error(ex.StackTrace);
+                            //         }
+                            //     });
+                            //}
                             #endregion
                             // string _cert_url = ConfigurationManager.AppSettings["TRAVEL_CERT_URL"];
                             return new notification_response

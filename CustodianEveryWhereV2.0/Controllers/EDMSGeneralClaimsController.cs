@@ -503,7 +503,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
                     List<dynamic> damageType = null;
 
-                    List<string> motor = new List<string>() { "car", "third" };
+                    List<string> motor = new List<string>() { "car", "third", "vehicle" };
 
                     return new
                     {
@@ -521,6 +521,74 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new
+                {
+                    status = 404,
+                    message = "System malfunction, Please Try again"
+                };
+            }
+        }
+
+        [HttpGet]
+        [ValidateJWT]
+        public async Task<dynamic> GetProposalDetails(string merchant_id, string proposal_number)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(proposal_number))
+                {
+                    return new
+                    {
+                        status = 401,
+                        message = "proposal_number is required"
+                    };
+                }
+                var config = await _apiconfig.FindOneByCriteria(x => x.merchant_id == merchant_id);
+                if (config == null)
+                {
+                    log.Info($"Invalid merchant Id {merchant_id}");
+                    return new
+                    {
+                        status = 402,
+                        message = "Invalid merchant Id"
+                    };
+                }
+
+                var check_user_function = await util.CheckForAssignedFunction("GetProposalDetails", merchant_id);
+                if (!check_user_function)
+                {
+                    return new
+                    {
+                        status = 301,
+                        message = "Permission denied from accessing this feature"
+                    };
+                }
+                using (var api = new CustodianAPI.PolicyServicesSoapClient())
+                {
+                    var request = api.Get_Life_Proposal(proposal_number);
+
+                    if(request.message_Code != "200")
+                    {
+                        return new
+                        {
+                            status = 309,
+                            message = "Invalid proposal number"
+                        };
+                    }
+
+                    return new
+                    {
+                        status = 200,
+                        message = "Proposal number is valid",
+                        data = request
+                    };
+                }
             }
             catch (Exception ex)
             {

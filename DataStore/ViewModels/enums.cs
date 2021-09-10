@@ -157,6 +157,23 @@ namespace DataStore.ViewModels
         IOS = 2
     }
 
+    public enum Divisions
+    {
+        PUBLIC_SECTOR = 1,
+        PERSONAL_LINES = 2,
+        FINANCIAL_INSTITUTIONS = 3,
+        MANUFACTURING = 4,
+        TRADING_SERVICES = 5,
+        ENGINEERING_TELECOM = 6,
+        OIL_AND_GAS_SPECIAL_RISK = 7,
+        RETAIL_BANCASSURANCE = 8,
+        E_BUSINESS = 9,
+        BRANCH_OPERATIONS_NETWORK = 10,
+        MARKETING = 11,
+        NORTHERN_REGION = 12,
+        WESTERN_REGION = 13,
+        EASTERN_REGION = 14
+    }
     //World Wide => 1
     // Schengen => 2
     // Middle East & Asia => 3

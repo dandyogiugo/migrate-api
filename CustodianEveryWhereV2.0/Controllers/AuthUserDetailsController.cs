@@ -513,5 +513,28 @@ namespace CustodianEveryWhereV2._0.Controllers
                 };
             }
         }
+
+        [HttpGet]
+        public async Task<notification_response> LDAPAuthentication()
+        {
+            try
+            {
+                //System.DirectoryServices.
+                //DirectoryEntry directoryEntry = new DirectoryEntry(GlobalConstant.AD_CREDENTAILS, "username", "password");
+                return null;
+            }
+            catch (Exception ex)
+            {
+
+                log.Error(ex.Message);
+                log.Error(ex.StackTrace);
+                log.Error(ex.InnerException);
+                return new notification_response
+                {
+                    status = 404,
+                    message = "Oops!, something happend while destroying token"
+                };
+            }
+        }
     }
 }

@@ -375,7 +375,7 @@ namespace RecurringDebitService.BLogic
             {
                 if (paystackRecurringCharge == null)
                 {
-                    log.Info("Process terminated at DebitCard becausse paystackRecurringCharge was null");
+                    log.Info("Process terminated at DebitCard because paystackRecurringCharge was null");
                     return null;
                 }
                 var company = (Company)Enum.Parse(typeof(Company), paystackRecurringCharge.subsidiary, false);

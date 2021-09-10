@@ -3499,6 +3499,227 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRM_ProposalDetails", Namespace="http://Custodianservices.com/")]
+    [System.SerializableAttribute()]
+    public partial class CRM_ProposalDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string message_CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string message_StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AGN_CODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROPOSAL_NOField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROD_CODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PRP_CODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SURNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OTHER_NAMESField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PRPSTATUSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AGN_NAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SHT_DESCField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProdNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string message_Code {
+            get {
+                return this.message_CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.message_CodeField, value) != true)) {
+                    this.message_CodeField = value;
+                    this.RaisePropertyChanged("message_Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string message_Status {
+            get {
+                return this.message_StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.message_StatusField, value) != true)) {
+                    this.message_StatusField = value;
+                    this.RaisePropertyChanged("message_Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string AGN_CODE {
+            get {
+                return this.AGN_CODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AGN_CODEField, value) != true)) {
+                    this.AGN_CODEField = value;
+                    this.RaisePropertyChanged("AGN_CODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string PROPOSAL_NO {
+            get {
+                return this.PROPOSAL_NOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROPOSAL_NOField, value) != true)) {
+                    this.PROPOSAL_NOField = value;
+                    this.RaisePropertyChanged("PROPOSAL_NO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string PROD_CODE {
+            get {
+                return this.PROD_CODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROD_CODEField, value) != true)) {
+                    this.PROD_CODEField = value;
+                    this.RaisePropertyChanged("PROD_CODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string PRP_CODE {
+            get {
+                return this.PRP_CODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PRP_CODEField, value) != true)) {
+                    this.PRP_CODEField = value;
+                    this.RaisePropertyChanged("PRP_CODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string SURNAME {
+            get {
+                return this.SURNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SURNAMEField, value) != true)) {
+                    this.SURNAMEField = value;
+                    this.RaisePropertyChanged("SURNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string OTHER_NAMES {
+            get {
+                return this.OTHER_NAMESField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OTHER_NAMESField, value) != true)) {
+                    this.OTHER_NAMESField = value;
+                    this.RaisePropertyChanged("OTHER_NAMES");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string PRPSTATUS {
+            get {
+                return this.PRPSTATUSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PRPSTATUSField, value) != true)) {
+                    this.PRPSTATUSField = value;
+                    this.RaisePropertyChanged("PRPSTATUS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string AGN_NAME {
+            get {
+                return this.AGN_NAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AGN_NAMEField, value) != true)) {
+                    this.AGN_NAMEField = value;
+                    this.RaisePropertyChanged("AGN_NAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string SHT_DESC {
+            get {
+                return this.SHT_DESCField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SHT_DESCField, value) != true)) {
+                    this.SHT_DESCField = value;
+                    this.RaisePropertyChanged("SHT_DESC");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string ProdName {
+            get {
+                return this.ProdNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProdNameField, value) != true)) {
+                    this.ProdNameField = value;
+                    this.RaisePropertyChanged("ProdName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CRM_Dashboard", Namespace="http://Custodianservices.com/")]
     [System.SerializableAttribute()]
     public partial class CRM_Dashboard : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -5482,6 +5703,13 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_Claims", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsResponse> GetCRM_ClaimsAsync(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_ClaimsRequest request);
         
+        // CODEGEN: Generating message contract since element name ProposalNumber from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Get_Life_Proposal", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalResponse Get_Life_Proposal(CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Get_Life_Proposal", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalResponse> Get_Life_ProposalAsync(CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalRequest request);
+        
         // CODEGEN: Generating message contract since element name MDescription from namespace http://Custodianservices.com/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetCRM_DashBoard", ReplyAction="*")]
         CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardResponse GetCRM_DashBoard(CustodianEveryWhereV2._0.CustodianAPI.GetCRM_DashBoardRequest request);
@@ -5614,6 +5842,34 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/GetPolicyNumber", ReplyAction="*")]
         System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberResponse> GetPolicyNumberAsync(CustodianEveryWhereV2._0.CustodianAPI.GetPolicyNumberRequest request);
+        
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POST_LIFE_Naicom", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomResponse POST_LIFE_Naicom(CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POST_LIFE_Naicom", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomResponse> POST_LIFE_NaicomAsync(CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomRequest request);
+        
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POST_General_Naicom", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomResponse POST_General_Naicom(CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/POST_General_Naicom", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomResponse> POST_General_NaicomAsync(CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomRequest request);
+        
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Delete_Naicom_Data", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataResponse Delete_Naicom_Data(CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Delete_Naicom_Data", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataResponse> Delete_Naicom_DataAsync(CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataRequest request);
+        
+        // CODEGEN: Generating message contract since element name MerchantID from namespace http://Custodianservices.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Post_Naicom_CoInsured", ReplyAction="*")]
+        CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredResponse Post_Naicom_CoInsured(CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Custodianservices.com/Post_Naicom_CoInsured", ReplyAction="*")]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredResponse> Post_Naicom_CoInsuredAsync(CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10422,10 +10678,13 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public string country_destination;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string TravelPackages;
+        
         public PostTravel2RagaRequestBody() {
         }
         
-        public PostTravel2RagaRequestBody(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+        public PostTravel2RagaRequestBody(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination, string TravelPackages) {
             this.start_date = start_date;
             this.end_date = end_date;
             this.first_name = first_name;
@@ -10437,6 +10696,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             this.country_residence = country_residence;
             this.email = email;
             this.country_destination = country_destination;
+            this.TravelPackages = TravelPackages;
         }
     }
     
@@ -12216,6 +12476,74 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         public GetCRM_ClaimsResponseBody(CustodianEveryWhereV2._0.CustodianAPI.CRM_Claims[] GetCRM_ClaimsResult) {
             this.GetCRM_ClaimsResult = GetCRM_ClaimsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Get_Life_ProposalRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Get_Life_Proposal", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalRequestBody Body;
+        
+        public Get_Life_ProposalRequest() {
+        }
+        
+        public Get_Life_ProposalRequest(CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class Get_Life_ProposalRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ProposalNumber;
+        
+        public Get_Life_ProposalRequestBody() {
+        }
+        
+        public Get_Life_ProposalRequestBody(string ProposalNumber) {
+            this.ProposalNumber = ProposalNumber;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Get_Life_ProposalResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Get_Life_ProposalResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalResponseBody Body;
+        
+        public Get_Life_ProposalResponse() {
+        }
+        
+        public Get_Life_ProposalResponse(CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class Get_Life_ProposalResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_ProposalDetails Get_Life_ProposalResult;
+        
+        public Get_Life_ProposalResponseBody() {
+        }
+        
+        public Get_Life_ProposalResponseBody(CustodianEveryWhereV2._0.CustodianAPI.CRM_ProposalDetails Get_Life_ProposalResult) {
+            this.Get_Life_ProposalResult = Get_Life_ProposalResult;
         }
     }
     
@@ -14184,6 +14512,600 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
         
         public GetPolicyNumberResponseBody(CustodianEveryWhereV2._0.CustodianAPI.mResponse GetPolicyNumberResult) {
             this.GetPolicyNumberResult = GetPolicyNumberResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class POST_LIFE_NaicomRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="POST_LIFE_Naicom", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomRequestBody Body;
+        
+        public POST_LIFE_NaicomRequest() {
+        }
+        
+        public POST_LIFE_NaicomRequest(CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class POST_LIFE_NaicomRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Mpassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string FirstName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string LastName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string PolicyTerm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string ProductName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string PhoneNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string Occupation;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string MaritalStatus;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string HolderGender;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public System.DateTime HolderDOB;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        public string HolderAddress;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public decimal Premium;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public decimal SUMINSURED;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string PolicyNo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        public System.DateTime startdate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+        public System.DateTime Enddate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public System.DateTime BENDOB;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
+        public string BENEMAIL;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
+        public string BENFNAME;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
+        public string BENLNAME;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
+        public string BENPHONE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
+        public string BENGENDER;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+        public System.DateTime MEMDOB;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=25)]
+        public string MEMNAME;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=26)]
+        public string MEMADDR;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=27)]
+        public string MEMGENDER;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=28)]
+        public string MEMID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=29)]
+        public string MEMPHONE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=30)]
+        public string MEMEMAIL;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=31)]
+        public string BUSTYPE;
+        
+        public POST_LIFE_NaicomRequestBody() {
+        }
+        
+        public POST_LIFE_NaicomRequestBody(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string FirstName, 
+                    string LastName, 
+                    string PolicyTerm, 
+                    string ProductName, 
+                    string Email, 
+                    string PhoneNumber, 
+                    string Occupation, 
+                    string MaritalStatus, 
+                    string HolderGender, 
+                    System.DateTime HolderDOB, 
+                    string HolderAddress, 
+                    decimal Premium, 
+                    decimal SUMINSURED, 
+                    string PolicyNo, 
+                    System.DateTime startdate, 
+                    System.DateTime Enddate, 
+                    System.DateTime BENDOB, 
+                    string BENEMAIL, 
+                    string BENFNAME, 
+                    string BENLNAME, 
+                    string BENPHONE, 
+                    string BENGENDER, 
+                    System.DateTime MEMDOB, 
+                    string MEMNAME, 
+                    string MEMADDR, 
+                    string MEMGENDER, 
+                    string MEMID, 
+                    string MEMPHONE, 
+                    string MEMEMAIL, 
+                    string BUSTYPE) {
+            this.MerchantID = MerchantID;
+            this.Mpassword = Mpassword;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.PolicyTerm = PolicyTerm;
+            this.ProductName = ProductName;
+            this.Email = Email;
+            this.PhoneNumber = PhoneNumber;
+            this.Occupation = Occupation;
+            this.MaritalStatus = MaritalStatus;
+            this.HolderGender = HolderGender;
+            this.HolderDOB = HolderDOB;
+            this.HolderAddress = HolderAddress;
+            this.Premium = Premium;
+            this.SUMINSURED = SUMINSURED;
+            this.PolicyNo = PolicyNo;
+            this.startdate = startdate;
+            this.Enddate = Enddate;
+            this.BENDOB = BENDOB;
+            this.BENEMAIL = BENEMAIL;
+            this.BENFNAME = BENFNAME;
+            this.BENLNAME = BENLNAME;
+            this.BENPHONE = BENPHONE;
+            this.BENGENDER = BENGENDER;
+            this.MEMDOB = MEMDOB;
+            this.MEMNAME = MEMNAME;
+            this.MEMADDR = MEMADDR;
+            this.MEMGENDER = MEMGENDER;
+            this.MEMID = MEMID;
+            this.MEMPHONE = MEMPHONE;
+            this.MEMEMAIL = MEMEMAIL;
+            this.BUSTYPE = BUSTYPE;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class POST_LIFE_NaicomResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="POST_LIFE_NaicomResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomResponseBody Body;
+        
+        public POST_LIFE_NaicomResponse() {
+        }
+        
+        public POST_LIFE_NaicomResponse(CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class POST_LIFE_NaicomResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.mResponse POST_LIFE_NaicomResult;
+        
+        public POST_LIFE_NaicomResponseBody() {
+        }
+        
+        public POST_LIFE_NaicomResponseBody(CustodianEveryWhereV2._0.CustodianAPI.mResponse POST_LIFE_NaicomResult) {
+            this.POST_LIFE_NaicomResult = POST_LIFE_NaicomResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class POST_General_NaicomRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="POST_General_Naicom", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomRequestBody Body;
+        
+        public POST_General_NaicomRequest() {
+        }
+        
+        public POST_General_NaicomRequest(CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class POST_General_NaicomRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Mpassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string FirstName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string LastName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string ProductName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string PhoneNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Occupation;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string MaritalStatus;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string HolderGender;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public System.DateTime HolderDOB;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string HolderAddress;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public decimal Premium;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public decimal SUMINSURED;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string PolicyNo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public System.DateTime startdate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        public System.DateTime Enddate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        public string RISKTYPE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
+        public string INSRDTYPE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
+        public string COVERTYPE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
+        public string LGA;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
+        public string STATE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
+        public string REGNO;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
+        public string CHASSISNO;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
+        public string VEHMAKE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=25)]
+        public string VEHMODEL;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=26)]
+        public string VEHCOLOR;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=27)]
+        public string VEHYEAR;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=28)]
+        public string ENGINECAP;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=29)]
+        public string BUSTYPE;
+        
+        public POST_General_NaicomRequestBody() {
+        }
+        
+        public POST_General_NaicomRequestBody(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string FirstName, 
+                    string LastName, 
+                    string ProductName, 
+                    string Email, 
+                    string PhoneNumber, 
+                    string Occupation, 
+                    string MaritalStatus, 
+                    string HolderGender, 
+                    System.DateTime HolderDOB, 
+                    string HolderAddress, 
+                    decimal Premium, 
+                    decimal SUMINSURED, 
+                    string PolicyNo, 
+                    System.DateTime startdate, 
+                    System.DateTime Enddate, 
+                    string RISKTYPE, 
+                    string INSRDTYPE, 
+                    string COVERTYPE, 
+                    string LGA, 
+                    string STATE, 
+                    string REGNO, 
+                    string CHASSISNO, 
+                    string VEHMAKE, 
+                    string VEHMODEL, 
+                    string VEHCOLOR, 
+                    string VEHYEAR, 
+                    string ENGINECAP, 
+                    string BUSTYPE) {
+            this.MerchantID = MerchantID;
+            this.Mpassword = Mpassword;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.ProductName = ProductName;
+            this.Email = Email;
+            this.PhoneNumber = PhoneNumber;
+            this.Occupation = Occupation;
+            this.MaritalStatus = MaritalStatus;
+            this.HolderGender = HolderGender;
+            this.HolderDOB = HolderDOB;
+            this.HolderAddress = HolderAddress;
+            this.Premium = Premium;
+            this.SUMINSURED = SUMINSURED;
+            this.PolicyNo = PolicyNo;
+            this.startdate = startdate;
+            this.Enddate = Enddate;
+            this.RISKTYPE = RISKTYPE;
+            this.INSRDTYPE = INSRDTYPE;
+            this.COVERTYPE = COVERTYPE;
+            this.LGA = LGA;
+            this.STATE = STATE;
+            this.REGNO = REGNO;
+            this.CHASSISNO = CHASSISNO;
+            this.VEHMAKE = VEHMAKE;
+            this.VEHMODEL = VEHMODEL;
+            this.VEHCOLOR = VEHCOLOR;
+            this.VEHYEAR = VEHYEAR;
+            this.ENGINECAP = ENGINECAP;
+            this.BUSTYPE = BUSTYPE;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class POST_General_NaicomResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="POST_General_NaicomResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomResponseBody Body;
+        
+        public POST_General_NaicomResponse() {
+        }
+        
+        public POST_General_NaicomResponse(CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class POST_General_NaicomResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.mResponse POST_General_NaicomResult;
+        
+        public POST_General_NaicomResponseBody() {
+        }
+        
+        public POST_General_NaicomResponseBody(CustodianEveryWhereV2._0.CustodianAPI.mResponse POST_General_NaicomResult) {
+            this.POST_General_NaicomResult = POST_General_NaicomResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Delete_Naicom_DataRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Delete_Naicom_Data", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataRequestBody Body;
+        
+        public Delete_Naicom_DataRequest() {
+        }
+        
+        public Delete_Naicom_DataRequest(CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class Delete_Naicom_DataRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Mpassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string SUBSIDIARY;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string ProductName;
+        
+        public Delete_Naicom_DataRequestBody() {
+        }
+        
+        public Delete_Naicom_DataRequestBody(string MerchantID, string Mpassword, string SUBSIDIARY, string ProductName) {
+            this.MerchantID = MerchantID;
+            this.Mpassword = Mpassword;
+            this.SUBSIDIARY = SUBSIDIARY;
+            this.ProductName = ProductName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Delete_Naicom_DataResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Delete_Naicom_DataResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataResponseBody Body;
+        
+        public Delete_Naicom_DataResponse() {
+        }
+        
+        public Delete_Naicom_DataResponse(CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class Delete_Naicom_DataResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.mResponse Delete_Naicom_DataResult;
+        
+        public Delete_Naicom_DataResponseBody() {
+        }
+        
+        public Delete_Naicom_DataResponseBody(CustodianEveryWhereV2._0.CustodianAPI.mResponse Delete_Naicom_DataResult) {
+            this.Delete_Naicom_DataResult = Delete_Naicom_DataResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Post_Naicom_CoInsuredRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Post_Naicom_CoInsured", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredRequestBody Body;
+        
+        public Post_Naicom_CoInsuredRequest() {
+        }
+        
+        public Post_Naicom_CoInsuredRequest(CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class Post_Naicom_CoInsuredRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string MerchantID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Mpassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string SUBSIDIARY;
+        
+        public Post_Naicom_CoInsuredRequestBody() {
+        }
+        
+        public Post_Naicom_CoInsuredRequestBody(string MerchantID, string Mpassword, string SUBSIDIARY) {
+            this.MerchantID = MerchantID;
+            this.Mpassword = Mpassword;
+            this.SUBSIDIARY = SUBSIDIARY;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Post_Naicom_CoInsuredResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Post_Naicom_CoInsuredResponse", Namespace="http://Custodianservices.com/", Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredResponseBody Body;
+        
+        public Post_Naicom_CoInsuredResponse() {
+        }
+        
+        public Post_Naicom_CoInsuredResponse(CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Custodianservices.com/")]
+    public partial class Post_Naicom_CoInsuredResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CustodianEveryWhereV2._0.CustodianAPI.mResponse Post_Naicom_CoInsuredResult;
+        
+        public Post_Naicom_CoInsuredResponseBody() {
+        }
+        
+        public Post_Naicom_CoInsuredResponseBody(CustodianEveryWhereV2._0.CustodianAPI.mResponse Post_Naicom_CoInsuredResult) {
+            this.Post_Naicom_CoInsuredResult = Post_Naicom_CoInsuredResult;
         }
     }
     
@@ -17032,7 +17954,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             return base.Channel.PostTravel2Raga(request);
         }
         
-        public CustodianEveryWhereV2._0.CustodianAPI.certificate_out PostTravel2Raga(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+        public CustodianEveryWhereV2._0.CustodianAPI.certificate_out PostTravel2Raga(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination, string TravelPackages) {
             CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest();
             inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequestBody();
             inValue.Body.start_date = start_date;
@@ -17046,6 +17968,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.country_residence = country_residence;
             inValue.Body.email = email;
             inValue.Body.country_destination = country_destination;
+            inValue.Body.TravelPackages = TravelPackages;
             CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostTravel2Raga(inValue);
             return retVal.Body.PostTravel2RagaResult;
         }
@@ -17055,7 +17978,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             return base.Channel.PostTravel2RagaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaResponse> PostTravel2RagaAsync(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination) {
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaResponse> PostTravel2RagaAsync(System.DateTime start_date, System.DateTime end_date, string first_name, string last_name, string Area_Type, string num_passport, System.DateTime date_birth, string nationality, string country_residence, string email, string country_destination, string TravelPackages) {
             CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequest();
             inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.PostTravel2RagaRequestBody();
             inValue.Body.start_date = start_date;
@@ -17069,6 +17992,7 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.country_residence = country_residence;
             inValue.Body.email = email;
             inValue.Body.country_destination = country_destination;
+            inValue.Body.TravelPackages = TravelPackages;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).PostTravel2RagaAsync(inValue);
         }
         
@@ -17977,6 +18901,31 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.BusinessUnit = BusinessUnit;
             inValue.Body.Pages = Pages;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetCRM_ClaimsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.Get_Life_Proposal(CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalRequest request) {
+            return base.Channel.Get_Life_Proposal(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.CRM_ProposalDetails Get_Life_Proposal(string ProposalNumber) {
+            CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalRequestBody();
+            inValue.Body.ProposalNumber = ProposalNumber;
+            CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).Get_Life_Proposal(inValue);
+            return retVal.Body.Get_Life_ProposalResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.Get_Life_ProposalAsync(CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalRequest request) {
+            return base.Channel.Get_Life_ProposalAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalResponse> Get_Life_ProposalAsync(string ProposalNumber) {
+            CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalRequestBody();
+            inValue.Body.ProposalNumber = ProposalNumber;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).Get_Life_ProposalAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -19018,6 +19967,360 @@ namespace CustodianEveryWhereV2._0.CustodianAPI {
             inValue.Body.CommRate = CommRate;
             inValue.Body.Gender = Gender;
             return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).GetPolicyNumberAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POST_LIFE_Naicom(CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomRequest request) {
+            return base.Channel.POST_LIFE_Naicom(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.mResponse POST_LIFE_Naicom(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string FirstName, 
+                    string LastName, 
+                    string PolicyTerm, 
+                    string ProductName, 
+                    string Email, 
+                    string PhoneNumber, 
+                    string Occupation, 
+                    string MaritalStatus, 
+                    string HolderGender, 
+                    System.DateTime HolderDOB, 
+                    string HolderAddress, 
+                    decimal Premium, 
+                    decimal SUMINSURED, 
+                    string PolicyNo, 
+                    System.DateTime startdate, 
+                    System.DateTime Enddate, 
+                    System.DateTime BENDOB, 
+                    string BENEMAIL, 
+                    string BENFNAME, 
+                    string BENLNAME, 
+                    string BENPHONE, 
+                    string BENGENDER, 
+                    System.DateTime MEMDOB, 
+                    string MEMNAME, 
+                    string MEMADDR, 
+                    string MEMGENDER, 
+                    string MEMID, 
+                    string MEMPHONE, 
+                    string MEMEMAIL, 
+                    string BUSTYPE) {
+            CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.PolicyTerm = PolicyTerm;
+            inValue.Body.ProductName = ProductName;
+            inValue.Body.Email = Email;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Occupation = Occupation;
+            inValue.Body.MaritalStatus = MaritalStatus;
+            inValue.Body.HolderGender = HolderGender;
+            inValue.Body.HolderDOB = HolderDOB;
+            inValue.Body.HolderAddress = HolderAddress;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SUMINSURED = SUMINSURED;
+            inValue.Body.PolicyNo = PolicyNo;
+            inValue.Body.startdate = startdate;
+            inValue.Body.Enddate = Enddate;
+            inValue.Body.BENDOB = BENDOB;
+            inValue.Body.BENEMAIL = BENEMAIL;
+            inValue.Body.BENFNAME = BENFNAME;
+            inValue.Body.BENLNAME = BENLNAME;
+            inValue.Body.BENPHONE = BENPHONE;
+            inValue.Body.BENGENDER = BENGENDER;
+            inValue.Body.MEMDOB = MEMDOB;
+            inValue.Body.MEMNAME = MEMNAME;
+            inValue.Body.MEMADDR = MEMADDR;
+            inValue.Body.MEMGENDER = MEMGENDER;
+            inValue.Body.MEMID = MEMID;
+            inValue.Body.MEMPHONE = MEMPHONE;
+            inValue.Body.MEMEMAIL = MEMEMAIL;
+            inValue.Body.BUSTYPE = BUSTYPE;
+            CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POST_LIFE_Naicom(inValue);
+            return retVal.Body.POST_LIFE_NaicomResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POST_LIFE_NaicomAsync(CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomRequest request) {
+            return base.Channel.POST_LIFE_NaicomAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomResponse> POST_LIFE_NaicomAsync(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string FirstName, 
+                    string LastName, 
+                    string PolicyTerm, 
+                    string ProductName, 
+                    string Email, 
+                    string PhoneNumber, 
+                    string Occupation, 
+                    string MaritalStatus, 
+                    string HolderGender, 
+                    System.DateTime HolderDOB, 
+                    string HolderAddress, 
+                    decimal Premium, 
+                    decimal SUMINSURED, 
+                    string PolicyNo, 
+                    System.DateTime startdate, 
+                    System.DateTime Enddate, 
+                    System.DateTime BENDOB, 
+                    string BENEMAIL, 
+                    string BENFNAME, 
+                    string BENLNAME, 
+                    string BENPHONE, 
+                    string BENGENDER, 
+                    System.DateTime MEMDOB, 
+                    string MEMNAME, 
+                    string MEMADDR, 
+                    string MEMGENDER, 
+                    string MEMID, 
+                    string MEMPHONE, 
+                    string MEMEMAIL, 
+                    string BUSTYPE) {
+            CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.PolicyTerm = PolicyTerm;
+            inValue.Body.ProductName = ProductName;
+            inValue.Body.Email = Email;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Occupation = Occupation;
+            inValue.Body.MaritalStatus = MaritalStatus;
+            inValue.Body.HolderGender = HolderGender;
+            inValue.Body.HolderDOB = HolderDOB;
+            inValue.Body.HolderAddress = HolderAddress;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SUMINSURED = SUMINSURED;
+            inValue.Body.PolicyNo = PolicyNo;
+            inValue.Body.startdate = startdate;
+            inValue.Body.Enddate = Enddate;
+            inValue.Body.BENDOB = BENDOB;
+            inValue.Body.BENEMAIL = BENEMAIL;
+            inValue.Body.BENFNAME = BENFNAME;
+            inValue.Body.BENLNAME = BENLNAME;
+            inValue.Body.BENPHONE = BENPHONE;
+            inValue.Body.BENGENDER = BENGENDER;
+            inValue.Body.MEMDOB = MEMDOB;
+            inValue.Body.MEMNAME = MEMNAME;
+            inValue.Body.MEMADDR = MEMADDR;
+            inValue.Body.MEMGENDER = MEMGENDER;
+            inValue.Body.MEMID = MEMID;
+            inValue.Body.MEMPHONE = MEMPHONE;
+            inValue.Body.MEMEMAIL = MEMEMAIL;
+            inValue.Body.BUSTYPE = BUSTYPE;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POST_LIFE_NaicomAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POST_General_Naicom(CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomRequest request) {
+            return base.Channel.POST_General_Naicom(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.mResponse POST_General_Naicom(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string FirstName, 
+                    string LastName, 
+                    string ProductName, 
+                    string Email, 
+                    string PhoneNumber, 
+                    string Occupation, 
+                    string MaritalStatus, 
+                    string HolderGender, 
+                    System.DateTime HolderDOB, 
+                    string HolderAddress, 
+                    decimal Premium, 
+                    decimal SUMINSURED, 
+                    string PolicyNo, 
+                    System.DateTime startdate, 
+                    System.DateTime Enddate, 
+                    string RISKTYPE, 
+                    string INSRDTYPE, 
+                    string COVERTYPE, 
+                    string LGA, 
+                    string STATE, 
+                    string REGNO, 
+                    string CHASSISNO, 
+                    string VEHMAKE, 
+                    string VEHMODEL, 
+                    string VEHCOLOR, 
+                    string VEHYEAR, 
+                    string ENGINECAP, 
+                    string BUSTYPE) {
+            CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.ProductName = ProductName;
+            inValue.Body.Email = Email;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Occupation = Occupation;
+            inValue.Body.MaritalStatus = MaritalStatus;
+            inValue.Body.HolderGender = HolderGender;
+            inValue.Body.HolderDOB = HolderDOB;
+            inValue.Body.HolderAddress = HolderAddress;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SUMINSURED = SUMINSURED;
+            inValue.Body.PolicyNo = PolicyNo;
+            inValue.Body.startdate = startdate;
+            inValue.Body.Enddate = Enddate;
+            inValue.Body.RISKTYPE = RISKTYPE;
+            inValue.Body.INSRDTYPE = INSRDTYPE;
+            inValue.Body.COVERTYPE = COVERTYPE;
+            inValue.Body.LGA = LGA;
+            inValue.Body.STATE = STATE;
+            inValue.Body.REGNO = REGNO;
+            inValue.Body.CHASSISNO = CHASSISNO;
+            inValue.Body.VEHMAKE = VEHMAKE;
+            inValue.Body.VEHMODEL = VEHMODEL;
+            inValue.Body.VEHCOLOR = VEHCOLOR;
+            inValue.Body.VEHYEAR = VEHYEAR;
+            inValue.Body.ENGINECAP = ENGINECAP;
+            inValue.Body.BUSTYPE = BUSTYPE;
+            CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POST_General_Naicom(inValue);
+            return retVal.Body.POST_General_NaicomResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.POST_General_NaicomAsync(CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomRequest request) {
+            return base.Channel.POST_General_NaicomAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomResponse> POST_General_NaicomAsync(
+                    string MerchantID, 
+                    string Mpassword, 
+                    string FirstName, 
+                    string LastName, 
+                    string ProductName, 
+                    string Email, 
+                    string PhoneNumber, 
+                    string Occupation, 
+                    string MaritalStatus, 
+                    string HolderGender, 
+                    System.DateTime HolderDOB, 
+                    string HolderAddress, 
+                    decimal Premium, 
+                    decimal SUMINSURED, 
+                    string PolicyNo, 
+                    System.DateTime startdate, 
+                    System.DateTime Enddate, 
+                    string RISKTYPE, 
+                    string INSRDTYPE, 
+                    string COVERTYPE, 
+                    string LGA, 
+                    string STATE, 
+                    string REGNO, 
+                    string CHASSISNO, 
+                    string VEHMAKE, 
+                    string VEHMODEL, 
+                    string VEHCOLOR, 
+                    string VEHYEAR, 
+                    string ENGINECAP, 
+                    string BUSTYPE) {
+            CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.FirstName = FirstName;
+            inValue.Body.LastName = LastName;
+            inValue.Body.ProductName = ProductName;
+            inValue.Body.Email = Email;
+            inValue.Body.PhoneNumber = PhoneNumber;
+            inValue.Body.Occupation = Occupation;
+            inValue.Body.MaritalStatus = MaritalStatus;
+            inValue.Body.HolderGender = HolderGender;
+            inValue.Body.HolderDOB = HolderDOB;
+            inValue.Body.HolderAddress = HolderAddress;
+            inValue.Body.Premium = Premium;
+            inValue.Body.SUMINSURED = SUMINSURED;
+            inValue.Body.PolicyNo = PolicyNo;
+            inValue.Body.startdate = startdate;
+            inValue.Body.Enddate = Enddate;
+            inValue.Body.RISKTYPE = RISKTYPE;
+            inValue.Body.INSRDTYPE = INSRDTYPE;
+            inValue.Body.COVERTYPE = COVERTYPE;
+            inValue.Body.LGA = LGA;
+            inValue.Body.STATE = STATE;
+            inValue.Body.REGNO = REGNO;
+            inValue.Body.CHASSISNO = CHASSISNO;
+            inValue.Body.VEHMAKE = VEHMAKE;
+            inValue.Body.VEHMODEL = VEHMODEL;
+            inValue.Body.VEHCOLOR = VEHCOLOR;
+            inValue.Body.VEHYEAR = VEHYEAR;
+            inValue.Body.ENGINECAP = ENGINECAP;
+            inValue.Body.BUSTYPE = BUSTYPE;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).POST_General_NaicomAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.Delete_Naicom_Data(CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataRequest request) {
+            return base.Channel.Delete_Naicom_Data(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.mResponse Delete_Naicom_Data(string MerchantID, string Mpassword, string SUBSIDIARY, string ProductName) {
+            CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.SUBSIDIARY = SUBSIDIARY;
+            inValue.Body.ProductName = ProductName;
+            CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).Delete_Naicom_Data(inValue);
+            return retVal.Body.Delete_Naicom_DataResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.Delete_Naicom_DataAsync(CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataRequest request) {
+            return base.Channel.Delete_Naicom_DataAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataResponse> Delete_Naicom_DataAsync(string MerchantID, string Mpassword, string SUBSIDIARY, string ProductName) {
+            CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.SUBSIDIARY = SUBSIDIARY;
+            inValue.Body.ProductName = ProductName;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).Delete_Naicom_DataAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredResponse CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.Post_Naicom_CoInsured(CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredRequest request) {
+            return base.Channel.Post_Naicom_CoInsured(request);
+        }
+        
+        public CustodianEveryWhereV2._0.CustodianAPI.mResponse Post_Naicom_CoInsured(string MerchantID, string Mpassword, string SUBSIDIARY) {
+            CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.SUBSIDIARY = SUBSIDIARY;
+            CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredResponse retVal = ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).Post_Naicom_CoInsured(inValue);
+            return retVal.Body.Post_Naicom_CoInsuredResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredResponse> CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap.Post_Naicom_CoInsuredAsync(CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredRequest request) {
+            return base.Channel.Post_Naicom_CoInsuredAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredResponse> Post_Naicom_CoInsuredAsync(string MerchantID, string Mpassword, string SUBSIDIARY) {
+            CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredRequest inValue = new CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredRequest();
+            inValue.Body = new CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredRequestBody();
+            inValue.Body.MerchantID = MerchantID;
+            inValue.Body.Mpassword = Mpassword;
+            inValue.Body.SUBSIDIARY = SUBSIDIARY;
+            return ((CustodianEveryWhereV2._0.CustodianAPI.PolicyServicesSoap)(this)).Post_Naicom_CoInsuredAsync(inValue);
         }
     }
 }

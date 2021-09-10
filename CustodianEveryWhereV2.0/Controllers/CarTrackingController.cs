@@ -1065,9 +1065,9 @@ namespace CustodianEveryWhereV2._0.Controllers
                     var imagepath = HttpContext.Current.Server.MapPath("~/Images/adapt_logo.png");
                     await Task.Factory.StartNew(() =>
                     {
-                        List<string> cc = new List<string>();
-                        cc.Add("technology@custodianplc.com.ng");
-                        new SendEmail().Send_Email(email, "Adapt-Telematics Authentication", sb.ToString(), "Telematics Authentication", true, imagepath, cc, null, null);
+                      //  List<string> cc = new List<string>();
+                       // cc.Add("technology@custodianplc.com.ng");
+                        new SendEmail().Send_Email(email, "Adapt-Telematics Authentication", sb.ToString(), "Telematics Authentication", true, imagepath, null, null, null);
                     });
 
                     log.Info($"Otp was sent successfully to {email}");
@@ -1184,8 +1184,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     await Task.Factory.StartNew(() =>
                      {
                          List<string> bcc = new List<string>();
-                         bcc.Add("technology@custodianplc.com.ng");
-                         new SendEmail().Send_Email(userAuth.email, "Adapt-Telematics Authentication successful", sb.ToString(), "Telematics Authentication successful", true, imagepath, null, bcc, null);
+                        // bcc.Add("technology@custodianplc.com.ng");
+                         new SendEmail().Send_Email(userAuth.email, "Adapt-Telematics Authentication successful", sb.ToString(), "Telematics Authentication successful", true, imagepath, null, null, null);
                      });
 
                     // successful process
@@ -1344,8 +1344,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                         await Task.Factory.StartNew(() =>
                         {
                             List<string> cc = new List<string>();
-                            cc.Add("technology@custodianplc.com.ng");
-                            new SendEmail().Send_Email(reset.email, "Adapt-Telematics Password Reset", sb.ToString(), "Password Reset", true, imagepath, cc, null, null);
+                           // cc.Add("technology@custodianplc.com.ng");
+                            new SendEmail().Send_Email(reset.email, "Adapt-Telematics Password Reset", sb.ToString(), "Password Reset", true, imagepath, null, null, null);
                         });
 
                         return new notification_response

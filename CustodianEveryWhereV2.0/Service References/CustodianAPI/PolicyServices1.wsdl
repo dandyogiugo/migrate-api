@@ -1297,6 +1297,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="country_residence" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="country_destination" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TravelPackages" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1806,6 +1807,36 @@
           <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Products" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Life_Proposal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProposalNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Life_ProposalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Life_ProposalResult" type="tns:CRM_ProposalDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CRM_ProposalDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="message_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="message_Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AGN_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROPOSAL_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROD_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PRP_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SURNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OTHER_NAMES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PRPSTATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AGN_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SHT_DESC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProdName" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetCRM_DashBoard">
@@ -2396,6 +2427,127 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="POST_LIFE_Naicom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mpassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyTerm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Occupation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MaritalStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HolderGender" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="HolderDOB" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="HolderAddress" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Premium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="SUMINSURED" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startdate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Enddate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="BENDOB" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="BENEMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BENFNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BENLNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BENPHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BENGENDER" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MEMDOB" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="MEMNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MEMADDR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MEMGENDER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MEMID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MEMPHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MEMEMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BUSTYPE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POST_LIFE_NaicomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POST_LIFE_NaicomResult" type="tns:mResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POST_General_Naicom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mpassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Occupation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MaritalStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HolderGender" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="HolderDOB" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="HolderAddress" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Premium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="SUMINSURED" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startdate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Enddate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="RISKTYPE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="INSRDTYPE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="COVERTYPE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LGA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="STATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="REGNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CHASSISNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VEHMAKE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VEHMODEL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VEHCOLOR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VEHYEAR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ENGINECAP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BUSTYPE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POST_General_NaicomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POST_General_NaicomResult" type="tns:mResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Naicom_Data">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mpassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SUBSIDIARY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Naicom_DataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Delete_Naicom_DataResult" type="tns:mResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Post_Naicom_CoInsured">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mpassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SUBSIDIARY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Post_Naicom_CoInsuredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Post_Naicom_CoInsuredResult" type="tns:mResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetClaimStatusSoapIn">
@@ -2776,6 +2928,12 @@
   <wsdl:message name="GetCRM_ClaimsSoapOut">
     <wsdl:part name="parameters" element="tns:GetCRM_ClaimsResponse" />
   </wsdl:message>
+  <wsdl:message name="Get_Life_ProposalSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Life_Proposal" />
+  </wsdl:message>
+  <wsdl:message name="Get_Life_ProposalSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Life_ProposalResponse" />
+  </wsdl:message>
   <wsdl:message name="GetCRM_DashBoardSoapIn">
     <wsdl:part name="parameters" element="tns:GetCRM_DashBoard" />
   </wsdl:message>
@@ -2889,6 +3047,30 @@
   </wsdl:message>
   <wsdl:message name="GetPolicyNumberSoapOut">
     <wsdl:part name="parameters" element="tns:GetPolicyNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="POST_LIFE_NaicomSoapIn">
+    <wsdl:part name="parameters" element="tns:POST_LIFE_Naicom" />
+  </wsdl:message>
+  <wsdl:message name="POST_LIFE_NaicomSoapOut">
+    <wsdl:part name="parameters" element="tns:POST_LIFE_NaicomResponse" />
+  </wsdl:message>
+  <wsdl:message name="POST_General_NaicomSoapIn">
+    <wsdl:part name="parameters" element="tns:POST_General_Naicom" />
+  </wsdl:message>
+  <wsdl:message name="POST_General_NaicomSoapOut">
+    <wsdl:part name="parameters" element="tns:POST_General_NaicomResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_Naicom_DataSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_Naicom_Data" />
+  </wsdl:message>
+  <wsdl:message name="Delete_Naicom_DataSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_Naicom_DataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Post_Naicom_CoInsuredSoapIn">
+    <wsdl:part name="parameters" element="tns:Post_Naicom_CoInsured" />
+  </wsdl:message>
+  <wsdl:message name="Post_Naicom_CoInsuredSoapOut">
+    <wsdl:part name="parameters" element="tns:Post_Naicom_CoInsuredResponse" />
   </wsdl:message>
   <wsdl:portType name="PolicyServicesSoap">
     <wsdl:operation name="GetClaimStatus">
@@ -3143,6 +3325,10 @@
       <wsdl:input message="tns:GetCRM_ClaimsSoapIn" />
       <wsdl:output message="tns:GetCRM_ClaimsSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Get_Life_Proposal">
+      <wsdl:input message="tns:Get_Life_ProposalSoapIn" />
+      <wsdl:output message="tns:Get_Life_ProposalSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetCRM_DashBoard">
       <wsdl:input message="tns:GetCRM_DashBoardSoapIn" />
       <wsdl:output message="tns:GetCRM_DashBoardSoapOut" />
@@ -3218,6 +3404,22 @@
     <wsdl:operation name="GetPolicyNumber">
       <wsdl:input message="tns:GetPolicyNumberSoapIn" />
       <wsdl:output message="tns:GetPolicyNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POST_LIFE_Naicom">
+      <wsdl:input message="tns:POST_LIFE_NaicomSoapIn" />
+      <wsdl:output message="tns:POST_LIFE_NaicomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POST_General_Naicom">
+      <wsdl:input message="tns:POST_General_NaicomSoapIn" />
+      <wsdl:output message="tns:POST_General_NaicomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Naicom_Data">
+      <wsdl:input message="tns:Delete_Naicom_DataSoapIn" />
+      <wsdl:output message="tns:Delete_Naicom_DataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Post_Naicom_CoInsured">
+      <wsdl:input message="tns:Post_Naicom_CoInsuredSoapIn" />
+      <wsdl:output message="tns:Post_Naicom_CoInsuredSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="PolicyServicesSoap" type="tns:PolicyServicesSoap">
@@ -3789,6 +3991,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Get_Life_Proposal">
+      <soap:operation soapAction="http://Custodianservices.com/Get_Life_Proposal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetCRM_DashBoard">
       <soap:operation soapAction="http://Custodianservices.com/GetCRM_DashBoard" style="document" />
       <wsdl:input>
@@ -3953,6 +4164,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetPolicyNumber">
       <soap:operation soapAction="http://Custodianservices.com/GetPolicyNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POST_LIFE_Naicom">
+      <soap:operation soapAction="http://Custodianservices.com/POST_LIFE_Naicom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POST_General_Naicom">
+      <soap:operation soapAction="http://Custodianservices.com/POST_General_Naicom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Naicom_Data">
+      <soap:operation soapAction="http://Custodianservices.com/Delete_Naicom_Data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Post_Naicom_CoInsured">
+      <soap:operation soapAction="http://Custodianservices.com/Post_Naicom_CoInsured" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4530,6 +4777,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Get_Life_Proposal">
+      <soap12:operation soapAction="http://Custodianservices.com/Get_Life_Proposal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetCRM_DashBoard">
       <soap12:operation soapAction="http://Custodianservices.com/GetCRM_DashBoard" style="document" />
       <wsdl:input>
@@ -4701,13 +4957,49 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="POST_LIFE_Naicom">
+      <soap12:operation soapAction="http://Custodianservices.com/POST_LIFE_Naicom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POST_General_Naicom">
+      <soap12:operation soapAction="http://Custodianservices.com/POST_General_Naicom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Naicom_Data">
+      <soap12:operation soapAction="http://Custodianservices.com/Delete_Naicom_Data" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Post_Naicom_CoInsured">
+      <soap12:operation soapAction="http://Custodianservices.com/Post_Naicom_CoInsured" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="PolicyServices">
     <wsdl:port name="PolicyServicesSoap" binding="tns:PolicyServicesSoap">
-      <soap:address location="https://developers.custodianplc.com.ng/testapi/Policyservices.asmx" />
+      <soap:address location="https://apitestv1.custodianplc.com.ng/PolicyServices.asmx" />
     </wsdl:port>
     <wsdl:port name="PolicyServicesSoap12" binding="tns:PolicyServicesSoap12">
-      <soap12:address location="https://developers.custodianplc.com.ng/testapi/Policyservices.asmx" />
+      <soap12:address location="https://apitestv1.custodianplc.com.ng/PolicyServices.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

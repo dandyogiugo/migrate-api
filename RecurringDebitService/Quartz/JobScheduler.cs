@@ -20,8 +20,10 @@ namespace RecurringDebitService.Quartz
             scheduler.Start();
             IJobDetail Tranxjob = JobBuilder.Create<PayStackDebitJob>().Build();
             ITrigger Ttrigger = TriggerBuilder.Create()
-                  .WithDailyTimeIntervalSchedule(s => s.OnEveryDay()
+                .WithDailyTimeIntervalSchedule(s => s.WithIntervalInHours(24).OnEveryDay()
                   .StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(Const.TRIGER_TIME_HOURS_GMT, Const.TRIGER_TIME_SECONDS_GMT))).Build();
+            //.WithDailyTimeIntervalSchedule(s => s.OnEveryDay()
+            //.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(Const.TRIGER_TIME_HOURS_GMT, Const.TRIGER_TIME_SECONDS_GMT))).Build();
             scheduler.ScheduleJob(Tranxjob, Ttrigger);
         }
         public static void Stop()

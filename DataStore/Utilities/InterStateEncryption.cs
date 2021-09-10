@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.IO;
 using System.Security.AccessControl;
 using System.Security.Cryptography;
@@ -12,8 +13,9 @@ namespace DataStore.Utilities
         private static int PROVIDER_RSA_FULL = 1;
         private static string KEY_CONTAINER_NAME = "FolioAPIKeyContainer";
         private static int KEY_SIZE = 2048;
+        private static readonly Logger log = LogManager.GetCurrentClassLogger();
 
-       // private static string IMPORT_FOLDER = @"C:\Users\oitaba\Desktop\icon";
+        // private static string IMPORT_FOLDER = @"C:\Users\oitaba\Desktop\icon";
         private static string KEY_FILE = @"CustodianKey.xml";
         public static string GetSignature(string text, string pubKeyPath = "")
         {
@@ -91,7 +93,7 @@ namespace DataStore.Utilities
 
         private static void GenerateKeyPair(string pubKeyPath)
         {
-            
+
             CspParameters cspParams = new CspParameters(PROVIDER_RSA_FULL);
             cspParams.KeyContainerName = KEY_CONTAINER_NAME;
             cspParams.Flags = CspProviderFlags.UseMachineKeyStore;
@@ -136,6 +138,7 @@ namespace DataStore.Utilities
         {
             string path = HttpContext.Current.Server.MapPath("~/Cert");
             FileInfo fi = new FileInfo(Path.Combine(path, KEY_FILE));
+            log.Info($"file path: {fi.FullName}");
             if (fi.Exists)
             {
                 using (StreamReader reader = new StreamReader(Path.Combine(path, KEY_FILE)))

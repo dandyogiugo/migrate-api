@@ -95,6 +95,8 @@ namespace TestSerials
         }
         static void Main(string[] args)
         {
+           // var util = new Utility();
+            //var testAD = util.AuthenticateLDAP("Oitaba", "vmADMIN22$2").GetAwaiter().GetResult();
             //var encode = EncodeNumber(16318);
             //var decode = DecodeNumber(encode);
             //new CardProcessor().RecurringEngine();
@@ -112,7 +114,7 @@ namespace TestSerials
             //Console.WriteLine($"{cp.ExportParameters(true)}");
             //var signature = InterStateEncryption.GetSignature("BALEWApkofon@gmail.comC7N1");
             //var test = cp.ExportParameters(true);
-            var util = new Utility().ValidateWealthPlusCoverLimits(100000, Frequency.Monthly, 10000, 10).GetAwaiter().GetResult();
+            //var util = new Utility().ValidateWealthPlusCoverLimits(10000, Frequency.Annually, Convert.ToDecimal(2000), 8).GetAwaiter().GetResult();
 
             //var test = "47783";
             //RSA();
@@ -133,7 +135,7 @@ namespace TestSerials
             // var t = encrypt;
             //declare the array.
             //used this instead of a list, it is simpler to handle
-            //GetAllLeague.GetLeague();
+             GetAllLeague.GetLeague();
             //List<int> xx = new List<int>()
             //{
             //   3,6,1,7,3,9,1,12

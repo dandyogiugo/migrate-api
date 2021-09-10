@@ -374,31 +374,43 @@ namespace CustodianEveryWhereV2._0.Controllers
                             };
                         }
 
-                        var validate = await util.ValidateWealthPlusCoverLimits(quote.sum_assured, quote.frequency, quote.amount, quote.terms);
-                        if (validate != null && validate.status != 200)
+
+                        var validate2 = await util.ValidateWealthPlusCoverLimits(quote.sum_assured, quote.frequency, quote.amount, quote.terms);
+                        if (validate2 != null && validate2.status != 200)
                         {
                             return new notification_response
                             {
                                 status = 302,
-                                message = validate.message
+                                message = validate2.message
                             };
                         }
 
-
-
-                        var wealthplus = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), quote.sum_assured.ToString(), 1089, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
-
+                        string wealthplus = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), quote.sum_assured.ToString(), 1089, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
+                        log.Info($"Raw response: {wealthplus}");
                         if (!string.IsNullOrEmpty(wealthplus))
                         {
-                            var _quote = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(wealthplus);
+                            var _quote = Newtonsoft.Json.JsonConvert.DeserializeObject<WealthPlusResponse>(wealthplus);
                             // var parseHtml = new HtmlDocument();
+                            log.Info($"Value from QT:{_quote.investmentAmount}");
+                            //decimal investmentAmount = 0m;
+                            // var investmentAmount = Convert.ToDouble($"{_quote.investmentAmount}");
+
+                            var validate = await util.ValidateWealthPlusCoverLimits(quote.sum_assured, quote.frequency, _quote.investmentAmount, quote.terms);
+                            if (validate != null && validate.status != 200)
+                            {
+                                return new notification_response
+                                {
+                                    status = 302,
+                                    message = validate.message
+                                };
+                            }
 
                             return new notification_response
                             {
                                 status = 200,
                                 message = "operation was successful",
                                 data = _quote,
-                                sum_insured = Convert.ToDecimal(string.Format("{0:N}", validate.projectedAmount))
+                                sum_insured = validate.projectedAmount
                             };
                         }
                         else

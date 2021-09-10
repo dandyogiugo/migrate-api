@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CustodianEmailSMSGateway.dll" size="17920">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CustodianEmailSMSGateway.dll" size="18432">
       <assemblyIdentity name="CustodianEmailSMSGateway" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gkOQS7a5vgz6cxUPFBOQszsYoScPuNVa89HL1mUvL/Y=</dsig:DigestValue>
+        <dsig:DigestValue>eBrvCtZs2RSS5/PIXghwyCCmnvL5a0IPFFW9oOxKH6g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -145,7 +145,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KKfodzkCbza5ajjz54v/7bVFx0icwdKLHHIPNQb6EAQ=</dsig:DigestValue>
+        <dsig:DigestValue>J37H931f5RB0duztBD6bkPs6Nyea5O+7GwLlI74+do4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

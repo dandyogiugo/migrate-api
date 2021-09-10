@@ -6,6 +6,7 @@ using JWT.Algorithms;
 using JWT.Builder;
 using JWT.Exceptions;
 using JWT.Serializers;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace CustodianEveryWhereV2._0.ActionFilters
 {
     public class ValidateJWTAttribute : ActionFilterAttribute
     {
+        private static Logger log = LogManager.GetCurrentClassLogger();
         public override async Task OnActionExecutingAsync(HttpActionContext actionContext, CancellationToken cancellationToken)
         {
             try
@@ -56,6 +58,7 @@ namespace CustodianEveryWhereV2._0.ActionFilters
                             status = (int)HttpStatusCode.Unauthorized,
                             message = "Authorization denied(Invalid session Id or authorization code)"
                         };
+                        log.Info("Authorization denied(Invalid session Id or authorization code)");
                         actionContext.Response = new HttpResponseMessage
                         {
                             Content = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(resp), Encoding.UTF8, "application/json"),
@@ -71,15 +74,19 @@ namespace CustodianEveryWhereV2._0.ActionFilters
                                 status = (int)HttpStatusCode.Unauthorized,
                                 message = "Invalid authorization format: Bearer <token value> "
                             };
+                            log.Info("Invalid authorization format: Bearer <token value>");
                             actionContext.Response = new HttpResponseMessage
                             {
                                 Content = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(resp), Encoding.UTF8, "application/json"),
                                 StatusCode = HttpStatusCode.Unauthorized
                             };
                         }
+                        log.Info($"Authorization {authorization.ToList()[0].Split(' ').Last()}");
+                        log.Info($"Sessionid {sessionid.ToList().First()}");
                         var validateJWT = await JWTValidator(authorization.ToList()[0].Split(' ').Last(), sessionid.ToList().First());
                         if (!validateJWT.isvalid)
                         {
+                            log.Info(validateJWT.message);
                             var resp = new
                             {
                                 status = (int)HttpStatusCode.Unauthorized,
@@ -94,8 +101,10 @@ namespace CustodianEveryWhereV2._0.ActionFilters
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                log.Info(ex.Message);
+                log.Info(ex.StackTrace);
             }
 
 
@@ -109,6 +118,7 @@ namespace CustodianEveryWhereV2._0.ActionFilters
                 var getSessionId = await session.FindOneByCriteria(x => x.sessionid == sessionid && x.isactive == true);
                 if (getSessionId == null)
                 {
+                    log.Info("Invalid session Id");
                     return new validationMsg
                     {
                         message = "Invalid session Id",
@@ -118,6 +128,7 @@ namespace CustodianEveryWhereV2._0.ActionFilters
 
                 if (!getSessionId.jwt.Equals(token))
                 {
+                    log.Info("Token mismatched");
                     return new validationMsg
                     {
                         message = "Token mismatched",
@@ -131,8 +142,10 @@ namespace CustodianEveryWhereV2._0.ActionFilters
                 {
                     getSessionId.isactive = false;
                     await session.Update(getSessionId);
+                    log.Info("Token has expired");
                     return new validationMsg
                     {
+
                         message = "Token has expired",
                         isvalid = false
                     };

@@ -128,7 +128,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
                 var imagepath = HttpContext.Current.Server.MapPath("~/Images/adapt_logo.png");
                 List<string> cc = new List<string>();
-                cc.Add("technology@custodianplc.com.ng");
+                //cc.Add("technology@custodianplc.com.ng");
                 //use handfire
                 if (!string.IsNullOrEmpty(email))
                 {
@@ -139,7 +139,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     new SendEmail().Send_Email(_email,
                                $"Adapt-PolicyServices Authentication {test}",
                                sb.ToString(), $"PolicyServices Authentication {test}",
-                               true, imagepath, cc, null, null);
+                               true, imagepath, null, null, null);
                 }
 
                 if (!Config.isDemo)
@@ -596,7 +596,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                         };
                     }
 
-
+                    List<string> motor = new List<string>() { "car", "third","vehicle" };
                     return new res
                     {
                         status = 200,
@@ -628,6 +628,11 @@ namespace CustodianEveryWhereV2._0.Controllers
                             OutPremium = request.OutPremium,
                             mPremium = request.mPremium
                         },
+                        extra_data = new
+                        {
+                            Category = (motor.Any(x => request.BizUnit.ToLower().Contains(x.ToLower()))) ? "MOTOR" : "NON_MOTOR",
+                        }
+
                     };
                 }
             }
@@ -696,7 +701,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
                 var imagepath = HttpContext.Current.Server.MapPath("~/Images/adapt_logo.png");
                 List<string> bcc = new List<string>();
-                bcc.Add("technology@custodianplc.com.ng");
+               // bcc.Add("technology@custodianplc.com.ng");
                 //use handfire
                 if (!string.IsNullOrEmpty(checkuser.email))
                 {
@@ -707,7 +712,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     new SendEmail().Send_Email(email,
                           $"Adapt-PolicyServices PIN Reset {test}",
                           sb.ToString(), $"Adapt-PolicyServices PIN Reset {test}",
-                          true, imagepath, null, bcc, null);
+                          true, imagepath, null, null, null);
                 }
 
                 if (!Config.isDemo)
@@ -855,6 +860,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 using (var api = new CustodianAPI.PolicyServicesSoapClient())
                 {
                     var request = api.GetMotorPolicyDetails(GlobalConstant.merchant_id, GlobalConstant.password, policy_number);
+                    log.Info($"Raw response from GetMotorPolicyDetails {request}");
                     if (request == null || request.Length == 0)
                     {
                         return new res

@@ -413,8 +413,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                                 Task.Factory.StartNew(() =>
                                 {
                                     List<string> cc = new List<string>();
-                                    cc.Add("technology@custodianplc.com.ng");
-                                    new SendEmail().Send_Email(deal.email, "Adapt-Deal", sb.ToString(), "Adapt-Deal", true, imagepath, cc, null, null);
+                                    //cc.Add("technology@custodianplc.com.ng");
+                                    new SendEmail().Send_Email(deal.email, "Adapt-Deal", sb.ToString(), "Adapt-Deal", true, imagepath, null, null, null);
                                 });
 
                                 log.Info($"Gym processing to api success");

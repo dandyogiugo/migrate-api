@@ -171,3 +171,4 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\DecimalMath.DecimalEx.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\bin\Debug\DecimalMath.DecimalEx.xml
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\DataStore\obj\Debug\DataStore.csprojAssemblyReference.cache

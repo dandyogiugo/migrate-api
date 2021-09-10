@@ -155,6 +155,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.IO.Compression" />
@@ -823,12 +824,30 @@
     <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Passing_SafetyPlus_PostSource_Destionation_From_To1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\CustodianAPI\Policyservices.wsdl" />
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Delete_Naicom_DataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.POST_General_NaicomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.POST_LIFE_NaicomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Post_Naicom_CoInsuredResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.CRM_ProposalDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CustodianAPI\CustodianEveryWhereV2._0.CustodianAPI.Get_Life_ProposalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\CustodianAPI\PolicyServices1.wsdl" />
     <None Include="Service References\CustodianAPI\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\CustodianAPI\Policyservices.disco" />
+    <None Include="Service References\CustodianAPI\PolicyServices1.disco" />
     <Content Include="TravelCategoryJSON\RagaSchema.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

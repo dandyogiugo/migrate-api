@@ -809,7 +809,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
                     var imagepath = HttpContext.Current.Server.MapPath("~/Images/adapt_logo.png");
                     List<string> cc = new List<string>();
-                    cc.Add("technology@custodianplc.com.ng");  // Todo: move to webconfig 
+                   // cc.Add("technology@custodianplc.com.ng");  // Todo: move to webconfig 
 
                     string test_email = "oscardybabaphd@gmail.com"; //Todo:  move to webconfig
                     //email.email
@@ -818,7 +818,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     new SendEmail().Send_Email(email,
                                $"Adapt-PolicyServices Authentication {test}",
                                sb.ToString(), $"PolicyServices Authentication {test}",
-                               true, imagepath, cc, null, null);
+                               true, imagepath, null, null, null);
                 }
 
                 if (!Config.isDemo)
@@ -1132,7 +1132,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                 sb.Replace("#TIMESTAMP#", string.Format("{0:F}", DateTime.Now));
                 var imagepath = HttpContext.Current.Server.MapPath("~/Images/adapt_logo.png");
                 List<string> bcc = new List<string>();
-                bcc.Add("technology@custodianplc.com.ng");
+               // bcc.Add("technology@custodianplc.com.ng");
                 //use handfire
                 if (!string.IsNullOrEmpty(checkuser.email))
                 {
@@ -1143,7 +1143,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     new SendEmail().Send_Email(email,
                           $"Adapt-PolicyServices PIN Reset {test}",
                           sb.ToString(), $"Adapt-PolicyServices PIN Reset {test}",
-                          true, imagepath, null, bcc, null);
+                          true, imagepath, null, null, null);
                 }
 
                 if (!Config.isDemo)

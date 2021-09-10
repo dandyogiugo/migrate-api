@@ -238,7 +238,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                     is_valid = true,
                     mobile_number = send.mobile,
                     platform = send.platform,
-                    otp = Security.Transactions.UID.Codes.TransactionCodes.GenTransactionCodes(6)
+                    otp = (GlobalConstant.IsDemoMode) ? "123456" : Security.Transactions.UID.Codes.TransactionCodes.GenTransactionCodes(6)
                 };
                 await _otp.Save(new_otp);
                 log.Info($"otp was saved successfully: {send.mobile}");
@@ -253,8 +253,32 @@ namespace CustodianEveryWhereV2._0.Controllers
                 {
                     number = new_otp.mobile_number;
                 }
-                var response = await sms.Send_SMS(body, number);
-                if (response == "SUCCESS")
+                if (!GlobalConstant.IsDemoMode)
+                {
+                    var response = await sms.Send_SMS(body, number);
+                    if (response == "SUCCESS")
+                    {
+                        log.Info($"otp was sent successfully to mobile: {send.mobile}");
+                        return new notification_response
+                        {
+                            status = 200,
+                            message = "OTP sent successfully",
+                            type = DataStore.ViewModels.Type.OTP.ToString()
+                        };
+
+                    }
+                    else
+                    {
+                        log.Info($"error sending otp to : {send.mobile}");
+                        return new notification_response
+                        {
+                            status = 207,
+                            message = "Oops! we couldn't send OTP to the provided number",
+                            type = DataStore.ViewModels.Type.OTP.ToString()
+                        };
+                    }
+                }
+                else
                 {
                     log.Info($"otp was sent successfully to mobile: {send.mobile}");
                     return new notification_response
@@ -264,16 +288,6 @@ namespace CustodianEveryWhereV2._0.Controllers
                         type = DataStore.ViewModels.Type.OTP.ToString()
                     };
 
-                }
-                else
-                {
-                    log.Info($"error sending otp to : {send.mobile}");
-                    return new notification_response
-                    {
-                        status = 207,
-                        message = "Oops! we couldn't send OTP to the provided number",
-                        type = DataStore.ViewModels.Type.OTP.ToString()
-                    };
                 }
             }
             catch (Exception ex)

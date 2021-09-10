@@ -63,4 +63,26 @@ namespace DataStore.ViewModels
         public string message { get; set; }
         public decimal projectedAmount { get; set; }
     }
+
+
+    public class CoverTypeAllocation
+    {
+        public string cvtShtDesc { get; set; }
+        public int cvtCode { get; set; }
+        public int cvtSa { get; set; }
+        public string cvtDesc { get; set; }
+    }
+
+    public class WealthPlusResponse
+    {
+        public int policyTerm { get; set; }
+        public int premium { get; set; }
+        public int sumInsured { get; set; }
+        public int quoCode { get; set; }
+        public List<CoverTypeAllocation> coverTypeAllocations { get; set; }
+        public List<int> lifeCoverSumAssureds { get; set; }
+        public decimal lifeCoverPremium { get; set; }
+        public decimal investmentAmount { get; set; }
+    }
+
 }

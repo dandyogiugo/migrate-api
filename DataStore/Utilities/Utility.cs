@@ -28,6 +28,7 @@ using System.Net.Http.Formatting;
 using System.Net;
 using System.Security.Authentication;
 using Oracle.ManagedDataAccess.Client;
+using System.DirectoryServices;
 
 namespace DataStore.Utilities
 {
@@ -2408,7 +2409,6 @@ namespace DataStore.Utilities
                 throw ex;
             }
         }
-
         public void SendWealthPlusMail(WealthPlusView mail, bool IsCustodian, string template, string imagepath, string attachmentpath, string divisionemail = "")
         {
             try
@@ -2562,7 +2562,6 @@ namespace DataStore.Utilities
                 throw ex;
             }
         }
-
         public async Task<WPPCal> ValidateWealthPlusCoverLimits(decimal sumAssured, Frequency frequency, decimal premium, int terms)
         {
             int multiplyer = 0;
@@ -2573,7 +2572,7 @@ namespace DataStore.Utilities
             if (frequency == Frequency.Monthly)
             {
                 multiplyer = 12; //10,000 * (1 + 0.05/1) ^ (10*1)
-                
+
             }
             else if (frequency == Frequency.Annually)
             {
@@ -2609,20 +2608,69 @@ namespace DataStore.Utilities
                 //return $"Life cover Sum Assured {string.Format("{0:N}", sumAssured)} Cannot be greater than Investment Sum Assured {string.Format("{0:N}", targetAmount)}";
                 return new WPPCal
                 {
-                    message = $"Life cover Sum Assured {string.Format("{0:N}", sumAssured)} Cannot be greater than Investment Sum Assured {string.Format("{0:N}", targetAmount)}",
-                    status = 203
+                    // message = $"Life cover Sum Assured {string.Format("{0:N}", sumAssured)} Cannot be greater than Investment Sum Assured {string.Format("{0:N}", targetAmount)}",
+                    status = 203,
+                    message = $"Sum assured of {string.Format("N {0:N}", sumAssured)} amount cannot be higher than 30% of your Total contribution of {string.Format("N {0:N}", targetAmount)} amount"
                 };
             }
 
-            decimal cal = (1 + rate / multiplyer);
-           projectAmount = premium * DecimalMath.DecimalEx.Pow(cal, terms * multiplyer);
+            decimal total = 0;
+            if (frequency != Frequency.Annually)
+            {
+                decimal _rate = 1 + (rate / multiplyer);
+                decimal cal = DecimalMath.DecimalEx.Pow(_rate, multiplyer);
+                decimal power = 1 / Convert.ToDecimal(multiplyer);
+                decimal interest_rate = DecimalMath.DecimalEx.Pow(cal, power) - 1;
+                for (int i = 1; i <= terms; ++i)
+                {
+                    for (int k = 1; k <= multiplyer; k++)
+                    {
+                        var p = (premium + total) * interest_rate;
+                        total += premium + p;
+                    }
+
+                }
+            }
+            else
+            {
+                decimal interest_rate = 1 + (rate / multiplyer) - 1;
+                for (int k = 1; k <= terms; k++)
+                {
+                    var p = (premium + total) * interest_rate;
+                    total += premium + p;
+                }
+            }
+
             return new WPPCal
             {
                 message = "validation passed",
                 status = 200,
-                projectedAmount = projectAmount
+                projectedAmount = Convert.ToDecimal(string.Format("{0:N}", total))
             };
-           // return null;
+            // return null;
+        }
+        public async Task<dynamic> AuthenticateLDAP(string username, string password)
+        {
+            try
+            {
+                DirectoryEntry directoryEntry = new DirectoryEntry($"LDAP://{GlobalConstant.AD_CREDENTAILS}", username, password);
+                directoryEntry.AuthenticationType = AuthenticationTypes.Secure;
+                DirectorySearcher ds = new DirectorySearcher(directoryEntry);
+                ds.PropertiesToLoad.Add("name");
+                ds.PropertiesToLoad.Add("mail");
+                ds.PropertiesToLoad.Add("givenname");
+                ds.PropertiesToLoad.Add("sn");
+                ds.PropertiesToLoad.Add("userPrincipalName");
+                ds.PropertiesToLoad.Add("distinguishedName");
+                //ds.Filter = $"(&(objectCategory=User)(objectClass=person)(name={username}))";
+                var result = ds.FindOne();
+                //var name = result.Properties;
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 
@@ -2782,7 +2830,6 @@ namespace DataStore.Utilities
         }
         public static string INTER_STATE_TERMINALID { get; } = ConfigurationManager.AppSettings["INTER_STATE_TERMINALID"];
         public static string FIREBASE_AUTHORIZATION { get; } = ConfigurationManager.AppSettings["FIREBASE_AUTHORIZATION"];
-
         public static string FIREBASE_URL
         {
             get
