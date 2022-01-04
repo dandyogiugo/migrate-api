@@ -178,3 +178,5 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsSe
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\obj\Release\WindowsService1.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\System.Net.Http.Formatting.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\Oracle.ManagedDataAccess.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\DecimalMath.DecimalEx.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\WindowsService1\bin\Release\DecimalMath.DecimalEx.xml

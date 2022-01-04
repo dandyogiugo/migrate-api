@@ -2603,14 +2603,14 @@ namespace DataStore.Utilities
 
             var targetAmount = (terms * multiplyer) * premium;
             var getMaxPercentage = (targetAmount * GlobalConstant.GET_WEALTHPLUS_PERCENTAGE) / 100m;
-            if (sumAssured > getMaxPercentage)
+            if (sumAssured < getMaxPercentage)
             {
                 //return $"Life cover Sum Assured {string.Format("{0:N}", sumAssured)} Cannot be greater than Investment Sum Assured {string.Format("{0:N}", targetAmount)}";
                 return new WPPCal
                 {
                     // message = $"Life cover Sum Assured {string.Format("{0:N}", sumAssured)} Cannot be greater than Investment Sum Assured {string.Format("{0:N}", targetAmount)}",
                     status = 203,
-                    message = $"Sum assured of {string.Format("N {0:N}", sumAssured)} amount cannot be higher than 30% of your Total contribution of {string.Format("N {0:N}", targetAmount)} amount"
+                    message = $"Sum assured of {string.Format("N {0:N}", sumAssured)} amount cannot be less than 30% of your Total contribution of {string.Format("N {0:N}", targetAmount)} amount"
                 };
             }
 

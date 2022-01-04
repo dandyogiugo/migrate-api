@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\oitaba\Documents\Deploy</_PublishTargetUrl>
-    <History>True|2021-08-03T07:42:30.7078386Z;True|2021-08-02T15:27:25.1285629+01:00;True|2021-07-27T17:35:28.6269229+01:00;True|2021-07-12T14:05:51.5061977+01:00;True|2021-07-06T14:37:00.0812482+01:00;True|2021-06-22T13:23:22.3404929+01:00;True|2021-06-22T10:34:00.0173721+01:00;True|2021-06-22T10:25:39.5107133+01:00;True|2021-06-21T11:15:28.0385761+01:00;True|2021-06-18T16:38:32.2686791+01:00;True|2021-06-18T15:16:02.9068757+01:00;True|2021-06-17T14:36:45.4468240+01:00;True|2021-06-15T13:52:19.7615536+01:00;True|2021-06-11T17:00:24.8243467+01:00;True|2021-06-11T16:53:08.5728782+01:00;True|2021-06-11T16:48:21.1832839+01:00;True|2021-06-11T15:59:57.7205957+01:00;True|2021-06-11T13:55:06.2423303+01:00;True|2021-06-11T13:49:17.1068564+01:00;True|2021-06-11T13:38:30.4993677+01:00;True|2021-06-07T16:21:26.9842845+01:00;True|2021-06-07T16:20:27.8431907+01:00;True|2021-06-01T12:23:55.4068191+01:00;True|2021-06-01T12:23:26.2800389+01:00;True|2021-06-01T12:16:12.6654620+01:00;True|2021-05-31T10:20:24.1242469+01:00;True|2021-05-19T19:57:29.8906912+01:00;True|2021-05-19T17:42:48.8225839+01:00;True|2021-05-19T16:56:22.3231108+01:00;True|2021-05-19T16:54:51.6164306+01:00;True|2021-04-21T10:00:22.0243226+01:00;True|2021-04-20T08:29:01.0057645+01:00;True|2021-04-14T09:57:21.7436233+01:00;True|2021-04-14T08:40:35.4009492+01:00;True|2021-04-14T08:04:41.6694431+01:00;False|2021-04-13T11:50:43.3772214+01:00;True|2021-04-13T11:34:14.0513854+01:00;False|2021-04-13T11:20:02.0474639+01:00;False|2021-04-13T11:14:46.3984322+01:00;False|2021-04-13T11:11:28.4303892+01:00;False|2021-04-13T11:09:19.1570855+01:00;True|2021-04-13T11:00:40.0238350+01:00;True|2021-03-30T10:56:58.3159049+01:00;True|2021-03-29T20:12:38.6718398+01:00;True|2021-03-29T19:09:49.8654332+01:00;True|2021-03-29T19:08:27.9245096+01:00;</History>
+    <History>True|2021-12-27T19:25:24.2038680Z;True|2021-12-27T19:59:23.8460643+01:00;False|2021-12-27T19:58:43.5052384+01:00;True|2021-12-27T19:56:32.7870878+01:00;True|2021-12-07T13:47:37.0374403+01:00;False|2021-12-07T13:46:34.0468783+01:00;True|2021-10-28T14:35:35.4546529+01:00;True|2021-10-28T14:30:35.6219275+01:00;True|2021-10-11T18:02:14.1489386+01:00;True|2021-10-06T15:21:50.2758896+01:00;True|2021-08-03T08:42:30.7078386+01:00;True|2021-08-02T15:27:25.1285629+01:00;True|2021-07-27T17:35:28.6269229+01:00;True|2021-07-12T14:05:51.5061977+01:00;True|2021-07-06T14:37:00.0812482+01:00;True|2021-06-22T13:23:22.3404929+01:00;True|2021-06-22T10:34:00.0173721+01:00;True|2021-06-22T10:25:39.5107133+01:00;True|2021-06-21T11:15:28.0385761+01:00;True|2021-06-18T16:38:32.2686791+01:00;True|2021-06-18T15:16:02.9068757+01:00;True|2021-06-17T14:36:45.4468240+01:00;True|2021-06-15T13:52:19.7615536+01:00;True|2021-06-11T17:00:24.8243467+01:00;True|2021-06-11T16:53:08.5728782+01:00;True|2021-06-11T16:48:21.1832839+01:00;True|2021-06-11T15:59:57.7205957+01:00;True|2021-06-11T13:55:06.2423303+01:00;True|2021-06-11T13:49:17.1068564+01:00;True|2021-06-11T13:38:30.4993677+01:00;True|2021-06-07T16:21:26.9842845+01:00;True|2021-06-07T16:20:27.8431907+01:00;True|2021-06-01T12:23:55.4068191+01:00;True|2021-06-01T12:23:26.2800389+01:00;True|2021-06-01T12:16:12.6654620+01:00;True|2021-05-31T10:20:24.1242469+01:00;True|2021-05-19T19:57:29.8906912+01:00;True|2021-05-19T17:42:48.8225839+01:00;True|2021-05-19T16:56:22.3231108+01:00;True|2021-05-19T16:54:51.6164306+01:00;True|2021-04-21T10:00:22.0243226+01:00;True|2021-04-20T08:29:01.0057645+01:00;True|2021-04-14T09:57:21.7436233+01:00;True|2021-04-14T08:40:35.4009492+01:00;True|2021-04-14T08:04:41.6694431+01:00;False|2021-04-13T11:50:43.3772214+01:00;True|2021-04-13T11:34:14.0513854+01:00;False|2021-04-13T11:20:02.0474639+01:00;False|2021-04-13T11:14:46.3984322+01:00;False|2021-04-13T11:11:28.4303892+01:00;False|2021-04-13T11:09:19.1570855+01:00;True|2021-04-13T11:00:40.0238350+01:00;True|2021-03-30T10:56:58.3159049+01:00;True|2021-03-29T20:12:38.6718398+01:00;True|2021-03-29T19:09:49.8654332+01:00;True|2021-03-29T19:08:27.9245096+01:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -96,34 +96,34 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/24/2020 11:56:38</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.dll">
-      <publishTime>08/03/2021 08:42:21</publishTime>
+      <publishTime>12/27/2021 20:25:16</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.pdb">
-      <publishTime>08/03/2021 08:42:21</publishTime>
+      <publishTime>12/27/2021 20:25:16</publishTime>
     </File>
     <File Include="bin/CustodianEveryWhereV2.0.XmlSerializers.dll">
-      <publishTime>08/03/2021 08:42:27</publishTime>
+      <publishTime>12/27/2021 20:25:19</publishTime>
     </File>
     <File Include="bin/Dapper.dll">
       <publishTime>09/24/2020 11:57:03</publishTime>
     </File>
     <File Include="bin/DapperLayer.dll">
-      <publishTime>08/02/2021 15:27:09</publishTime>
+      <publishTime>12/27/2021 19:58:01</publishTime>
     </File>
     <File Include="bin/DapperLayer.dll.config">
-      <publishTime>06/18/2021 16:15:04</publishTime>
+      <publishTime>08/04/2021 11:17:33</publishTime>
     </File>
     <File Include="bin/DapperLayer.pdb">
-      <publishTime>08/02/2021 15:27:09</publishTime>
+      <publishTime>12/27/2021 19:58:01</publishTime>
     </File>
     <File Include="bin/DataStore.dll">
-      <publishTime>08/02/2021 15:27:08</publishTime>
+      <publishTime>12/27/2021 19:57:44</publishTime>
     </File>
     <File Include="bin/DataStore.dll.config">
-      <publishTime>06/18/2021 16:15:03</publishTime>
+      <publishTime>08/04/2021 11:17:29</publishTime>
     </File>
     <File Include="bin/DataStore.pdb">
-      <publishTime>08/02/2021 15:27:08</publishTime>
+      <publishTime>12/27/2021 19:57:44</publishTime>
     </File>
     <File Include="bin/DecimalMath.DecimalEx.dll">
       <publishTime>05/25/2015 12:03:14</publishTime>
@@ -486,7 +486,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/24/2020 11:56:40</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>05/19/2021 19:47:11</publishTime>
+      <publishTime>08/04/2021 11:09:24</publishTime>
     </File>
     <File Include="Properties/DataSources/System.Data.DataSet.datasource">
       <publishTime>09/24/2020 11:56:37</publishTime>
@@ -936,7 +936,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/24/2020 11:56:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/02/2021 15:27:19</publishTime>
+      <publishTime>12/27/2021 19:59:15</publishTime>
     </File>
   </ItemGroup>
 </Project>

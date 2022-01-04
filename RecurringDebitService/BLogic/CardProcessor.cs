@@ -29,6 +29,10 @@ namespace RecurringDebitService.BLogic
         {
             try
             {
+                log.Info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ");
+                log.Info("Paystack Key: ", Const.PAYSTACK_KEY);
+                log.Info("Paystack EndPoint: ", Const.PAYSTACK_ENDPOINT);
+                log.Info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ");
                 // Do some house cleaning chores before process start
                 var canIProceed = UpdateExpiredCard();
                 if (!canIProceed)
@@ -57,7 +61,7 @@ namespace RecurringDebitService.BLogic
                 //var last_run_today = DateTime.Now.Date;
                 foreach (var item in getCards)
                 {
-                    if (today.Date.Day != item.last_run_date?.Day && today.Date.Month != item.last_run_date?.Month && today.Year != item.last_run_date?.Year)
+                    if ((item.last_run_date.HasValue && today.Date != item.last_run_date.Value.Date) || !item.last_run_date.HasValue)
                     {
                         log.Info("================Debit Process started====================");
                         var debit = DebitCard(item);
@@ -425,6 +429,8 @@ namespace RecurringDebitService.BLogic
                 using (var api = new HttpClient())
                 {
                     api.DefaultRequestHeaders.Add("Authorization", $"Bearer {Const.PAYSTACK_KEY}");
+                    log.Info("Paystack key: ", Const.PAYSTACK_KEY);
+                    log.Info("Header set: ", api.DefaultRequestHeaders?.GetValues("Authorization"));
                     //   api.DefaultRequestHeaders.Add("Content-Type", "application/json");
                     List<dynamic> custom_fields = new List<dynamic>();
                     custom_fields.Add(new
@@ -477,6 +483,7 @@ namespace RecurringDebitService.BLogic
                     bool status = false;
                     string message = "";
                     string errorDump = "";
+                    log.Info("Payload to paystack", Newtonsoft.Json.JsonConvert.SerializeObject(payload));
                     var request = api.PostAsJsonAsync(Const.PAYSTACK_ENDPOINT, payload).GetAwaiter().GetResult();
                     if (!request.IsSuccessStatusCode)
                     {

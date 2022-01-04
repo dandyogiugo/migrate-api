@@ -67,6 +67,20 @@ namespace CustodianEveryWhereV2._0.Controllers
                     };
                 }
 
+                //temp fix to cater for covid-19 fraud alert raised by the business 
+
+                //var ckToday = DateTime.Now;
+                //double isDepatureDateCloseTo72Or24Hours = quote.DepartureDate.Subtract(ckToday).TotalHours;
+
+                //if (isDepatureDateCloseTo72Or24Hours <= 72)
+                //{
+                //    return new notification_response
+                //    {
+                //        status = 302,
+                //        message = "Due to Covid-19 restriction you cannot purchase travel insurance within 24-72hrs before departure "
+                //    };
+                //}
+
                 if (quote.DateOfBirth.Count() < 1)
                 {
                     return new notification_response

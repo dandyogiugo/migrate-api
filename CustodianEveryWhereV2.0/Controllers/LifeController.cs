@@ -385,7 +385,7 @@ namespace CustodianEveryWhereV2._0.Controllers
                             };
                         }
 
-                        string wealthplus = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), quote.sum_assured.ToString(), 1089, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
+                        string wealthplus = api.GetLifeQuote(Convert.ToInt32(clientobj.webTempClntCode), quote.amount.ToString(), quote.sum_assured.ToString(), 41, await util.Transposer(quote.frequency.ToString().Replace("_", "-").ToLower()), quote.terms, "");
                         log.Info($"Raw response: {wealthplus}");
                         if (!string.IsNullOrEmpty(wealthplus))
                         {

@@ -95,7 +95,7 @@ namespace TestSerials
         }
         static void Main(string[] args)
         {
-           // var util = new Utility();
+            // var util = new Utility();
             //var testAD = util.AuthenticateLDAP("Oitaba", "vmADMIN22$2").GetAwaiter().GetResult();
             //var encode = EncodeNumber(16318);
             //var decode = DecodeNumber(encode);
@@ -135,7 +135,7 @@ namespace TestSerials
             // var t = encrypt;
             //declare the array.
             //used this instead of a list, it is simpler to handle
-             GetAllLeague.GetLeague();
+            NewsProcessor.GetNews();
             //List<int> xx = new List<int>()
             //{
             //   3,6,1,7,3,9,1,12

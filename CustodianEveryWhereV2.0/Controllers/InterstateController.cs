@@ -211,6 +211,8 @@ namespace CustodianEveryWhereV2._0.Controllers
                     }
                     else
                     {
+                        log.Info($"Response code from Interstate => {request.StatusCode}");
+                        log.Info($"Raw response payload =>{ await request.Content.ReadAsStringAsync()}");
                         return new res
                         {
                             status = 402,
@@ -614,7 +616,7 @@ namespace CustodianEveryWhereV2._0.Controllers
         }
 
         [HttpGet]
-        public async Task<dynamic> GenerateKey(string passphrase,string pattern)
+        public async Task<dynamic> GenerateKey(string passphrase, string pattern)
         {
             try
             {

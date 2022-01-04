@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>eBrvCtZs2RSS5/PIXghwyCCmnvL5a0IPFFW9oOxKH6g=</dsig:DigestValue>
+        <dsig:DigestValue>Ik8oohmwqx+RHkt9a0XqF+G8iPqVjAQXrOyYdzJHP1Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -138,14 +138,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RecurringDebitService.exe" size="316352">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RecurringDebitService.exe" size="316864">
       <assemblyIdentity name="RecurringDebitService" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>J37H931f5RB0duztBD6bkPs6Nyea5O+7GwLlI74+do4=</dsig:DigestValue>
+        <dsig:DigestValue>hOXA/LXT+AsEU7kcV/Gnuk8Jj7Wc8p8pVtGUAhc++ug=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -224,13 +224,13 @@
       <dsig:DigestValue>5xdhiOIgoJdjESr7QqiILvdeMF6Jc3cuUGJO1UyWkeE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RecurringDebitService.exe.config" size="4159">
+  <file name="RecurringDebitService.exe.config" size="4071">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>QDpFAoe9GgDS076Jm5rx2lMS/tJPm5kBx45soFH6Tig=</dsig:DigestValue>
+      <dsig:DigestValue>SHzJ41khZVYWGMBXXkXhYW2RolBq5VmYm+OMUFTfygw=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

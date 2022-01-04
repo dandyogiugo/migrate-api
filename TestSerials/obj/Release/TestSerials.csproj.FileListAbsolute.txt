@@ -230,3 +230,5 @@ C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSeria
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\bin\Release\Oracle.ManagedDataAccess.dll
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\bin\Release\RecurringDebitService.pdb
 C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\bin\Release\RecurringDebitService.exe.config
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\bin\Release\DecimalMath.DecimalEx.dll
+C:\Users\oitaba\Documents\custodian projects\custodianeverywhere2.0new\TestSerials\bin\Release\DecimalMath.DecimalEx.xml
